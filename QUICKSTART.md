@@ -1,4 +1,4 @@
-# SoakAtlas Quick Start Guide
+# Soak Trail Quick Start Guide
 
 ## 🚀 Deploy to Cloudflare Pages (Website)
 
@@ -90,7 +90,7 @@ curl -X POST https://YOUR_WORKER.workers.dev/mcp \
 ## 📁 Project Structure
 
 ```
-SoakAtlas/
+Soak Trail/
 ├── src/                    # Website source (Astro)
 │   ├── pages/
 │   └── layouts/

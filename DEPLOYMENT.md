@@ -1,6 +1,6 @@
 # Cloudflare Deployment Guide
 
-This guide covers deploying both the SoakAtlas website and MCP server to Cloudflare.
+This guide covers deploying both the Soak Trail website and MCP server to Cloudflare.
 
 ## Prerequisites
 
@@ -66,7 +66,7 @@ curl https://<your-worker>.workers.dev/health
 2. Navigate to **Workers & Pages** > **Pages**
 3. Click **Create a project** > **Connect to Git**
 4. Select your Git provider and authorize Cloudflare
-5. Choose your SoakAtlas repository
+5. Choose your Soak Trail repository
 
 ### Configure Build Settings
 

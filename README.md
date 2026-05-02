@@ -1,4 +1,4 @@
-# SoakAtlas
+# Soak Trail
 
 https://soaktrail.com
 
@@ -95,4 +95,4 @@ wrangler deploy
 
 ## License
 
-All rights reserved © 2025 SoakAtlas
+All rights reserved © 2025 Soak Trail

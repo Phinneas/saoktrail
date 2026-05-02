@@ -2,7 +2,7 @@
 
 This workspace contains two separate but related projects:
 
-## 1. SoakAtlas Website (`/`) - Cloudflare Pages
+## 1. Soak Trail Website (`/`) - Cloudflare Pages
 
 **Location**: Root directory  
 **Deployment**: Cloudflare Pages (for soaktrail.com)  
