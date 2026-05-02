@@ -1,12 +1,21 @@
 {
-  "name": "soakatlas-site",
+  "name": "soaktrail-hot-springs",
   "type": "module",
   "version": "1.0.0",
+  "description": "Comprehensive hot springs directory for the American West",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "deploy:mcp": "./deploy-mcp.sh"
   },
+  "keywords": [
+    "hot-springs",
+    "astro",
+    "cloudflare",
+    "mcp",
+    "directory"
+  ],
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.4",
     "@astrojs/tailwind": "^6.0.2",
