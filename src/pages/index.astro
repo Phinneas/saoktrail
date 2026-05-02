@@ -64,7 +64,7 @@ const regions = [
         {['Destinations', 'About', 'MCP', 'Contact'].map((item) => (
           <a
             href={`#${item.toLowerCase()}`}
-            class="text-sm font-display font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper"
+            class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper"
           >
             {item}
           </a>
@@ -82,10 +82,10 @@ const regions = [
     <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
 
     <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
-      <p class="text-white/80 text-sm md:text-base tracking-[0.3em] uppercase mb-6 font-display">
+      <p class="text-white/80 text-sm md:text-base tracking-[0.3em] uppercase mb-6 font-body">
         Discover the American West
       </p>
-      <h1 class="font-body text-5xl md:text-7xl lg:text-8xl font-light text-white leading-[1.1] mb-8">
+      <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-light text-white leading-[1.1] mb-8">
         Find Your
         <span class="italic font-light block mt-2">Perfect Soak</span>
       </h1>
@@ -96,7 +96,7 @@ const regions = [
         href="#destinations"
         class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full hover:bg-white/20 hover:border-white/50 transition-all duration-300 group"
       >
-        <span class="text-sm font-display font-medium tracking-wide uppercase">Explore Destinations</span>
+        <span class="text-sm font-body font-medium tracking-wide uppercase">Explore Destinations</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:translate-y-1 transition-transform duration-300">
           <path d="M12 5v14M5 12l7 7 7-7" />
         </svg>
@@ -113,10 +113,10 @@ const regions = [
   <!-- Introduction Section -->
   <section class="py-24 md:py-32 px-6">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-6 font-display">
+      <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-6 font-body">
         Natural Thermal Waters
       </p>
-      <h2 class="font-body text-4xl md:text-5xl lg:text-6xl font-light text-sa-dark leading-tight mb-10">
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-light text-sa-dark leading-tight mb-10">
         Earth's Ancient
         <span class="italic"> Healing Gift</span>
       </h2>
@@ -137,7 +137,7 @@ const regions = [
         ].map((stat) => (
           <div class="text-center">
             <p class="font-body text-5xl md:text-6xl font-light text-sa-copper mb-2">{stat.number}</p>
-            <p class="text-sa-text text-sm tracking-wider uppercase font-display">{stat.label}</p>
+            <p class="text-sa-text text-sm tracking-wider uppercase font-body">{stat.label}</p>
           </div>
         ))}
       </div>
@@ -156,7 +156,7 @@ const regions = [
         <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-6 font-display">
           Regional Guides
         </p>
-        <h2 class="font-body text-4xl md:text-5xl lg:text-6xl font-light text-sa-dark leading-tight">
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-light text-sa-dark leading-tight">
           Choose Your
           <span class="italic"> Destination</span>
         </h2>
@@ -176,7 +176,7 @@ const regions = [
                 />
               </div>
               <div class="absolute top-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
-                <span class="text-xs font-display font-medium text-sa-dark tracking-wide uppercase">
+                <span class="text-xs font-body font-medium text-sa-dark tracking-wide uppercase">
                   {region.location}
                 </span>
               </div>
@@ -184,10 +184,10 @@ const regions = [
 
             <!-- Content -->
             <div class={`${index % 2 === 1 ? 'lg:order-1 lg:text-right' : ''}`}>
-              <p class="text-sa-copper text-xs tracking-[0.25em] uppercase mb-4 font-display">
+              <p class="text-sa-copper text-xs tracking-[0.25em] uppercase mb-4 font-body">
                 {region.subtitle}
               </p>
-              <h3 class="font-body text-3xl md:text-4xl font-medium text-sa-dark mb-6">
+              <h3 class="font-display text-3xl md:text-4xl font-medium text-sa-dark mb-6">
                 {region.title}
               </h3>
               <p class="text-sa-text text-lg leading-relaxed mb-8 max-w-lg">
@@ -199,7 +199,7 @@ const regions = [
                 rel="noopener noreferrer"
                 class={`inline-flex items-center gap-3 text-sa-dark hover:text-sa-copper transition-colors duration-300 group/link ${index % 2 === 1 ? 'flex-row-reverse' : ''}`}
               >
-                <span class="text-sm font-display font-medium tracking-wide uppercase border-b border-current pb-1">
+                <span class="text-sm font-body font-medium tracking-wide uppercase border-b border-current pb-1">
                   Visit Website
                 </span>
                 <svg
@@ -234,7 +234,7 @@ const regions = [
           <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-6 font-display">
             Our Philosophy
           </p>
-          <h2 class="font-body text-4xl md:text-5xl font-light text-sa-dark leading-tight mb-8">
+          <h2 class="font-display text-4xl md:text-5xl font-light text-sa-dark leading-tight mb-8">
             Preserving the Soak
             <span class="italic"> for Generations</span>
           </h2>
@@ -281,7 +281,7 @@ const regions = [
         <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-6 font-display">
           For AI Assistants & Developers
         </p>
-        <h2 class="font-body text-4xl md:text-5xl font-light text-white leading-tight mb-6">
+        <h2 class="font-display text-4xl md:text-5xl font-light text-white leading-tight mb-6">
           SoakAtlas MCP Server
         </h2>
         <p class="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
@@ -291,7 +291,7 @@ const regions = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-          <h3 class="font-body text-xl font-medium text-white mb-4">5 Search Tools</h3>
+          <h3 class="font-display text-xl font-medium text-white mb-4">5 Search Tools</h3>
           <ul class="space-y-2 text-white/70 text-sm font-display">
             <li>Find springs near a location (Haversine distance)</li>
             <li>Search within map bounding box</li>
@@ -301,7 +301,7 @@ const regions = [
           </ul>
         </div>
         <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
-          <h3 class="font-body text-xl font-medium text-white mb-4">Coverage</h3>
+          <h3 class="font-display text-xl font-medium text-white mb-4">Coverage</h3>
           <ul class="space-y-2 text-white/70 text-sm font-display">
             <li><span class="text-sa-copper font-semibold">Desert</span> — AZ, NV, UT (92 springs)</li>
             <li><span class="text-sa-copper font-semibold">Rockies</span> — ID, MT, WY (261 springs)</li>
@@ -313,7 +313,7 @@ const regions = [
       </div>
 
       <div class="bg-white/5 border border-white/10 rounded-2xl p-6 mb-12">
-        <h3 class="font-body text-xl font-medium text-white mb-4">Quick Start</h3>
+        <h3 class="font-display text-xl font-medium text-white mb-4">Quick Start</h3>
         <p class="text-white/60 text-sm mb-4 font-display">Add to your MCP client configuration:</p>
         <pre class="bg-black/30 rounded-lg p-4 text-sm text-white/80 overflow-x-auto font-mono"><code>{`{
   "mcpServers": {
@@ -349,7 +349,7 @@ const regions = [
   <!-- CTA Banner -->
   <section class="py-20 px-6 bg-sa-dark border-t border-white/5">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="font-body text-3xl md:text-4xl lg:text-5xl font-light text-white leading-tight mb-6">
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-light text-white leading-tight mb-6">
         Ready to Find Your
         <span class="italic"> Perfect Spring?</span>
       </h2>
@@ -360,7 +360,7 @@ const regions = [
         href="#destinations"
         class="inline-flex items-center gap-3 bg-sa-copper text-white px-8 py-4 rounded-full hover:bg-sa-copper-hover transition-colors duration-300"
       >
-        <span class="text-sm font-display font-medium tracking-wide uppercase">Explore All Regions</span>
+        <span class="text-sm font-body font-medium tracking-wide uppercase">Explore All Regions</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M5 12h14M12 5l7 7-7-7" />
         </svg>
@@ -387,7 +387,7 @@ const regions = [
           </p>
         </div>
         <div>
-          <h4 class="text-xs font-display font-medium tracking-[0.2em] uppercase text-white/40 mb-6">
+          <h4 class="text-xs font-body font-medium tracking-[0.2em] uppercase text-white/40 mb-6">
             Regional Sites
           </h4>
           <ul class="space-y-3">
