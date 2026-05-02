@@ -1,0 +1,28 @@
+name = "soakatlas-mcp"
+main = "src/index.ts"
+compatibility_date = "2026-04-22"
+
+[[d1_databases]]
+binding = "DB_DESERT"
+database_name = "desertsoak-db"
+database_id = "89215d24-0939-4268-89f0-bfb4d98268b8"
+
+[[d1_databases]]
+binding = "DB_ROCKIES"
+database_name = "soaktherockies-springs-db"
+database_id = "5666d199-3ec6-4076-8401-d96e072d4a17"
+
+[[d1_databases]]
+binding = "DB_COLORADO"
+database_name = "soakcolorado-springs-db"
+database_id = "0a9cc6d8-1102-40ed-9e32-460ea4eb1988"
+
+[[d1_databases]]
+binding = "DB_SHASTA"
+database_name = "shastahotsprings-db"
+database_id = "09e47871-3935-47f1-ab67-70ce330e6f4b"
+
+[[d1_databases]]
+binding = "DB_WASHINGTON"
+database_name = "washingtonhotsprings-db"
+database_id = "afa0b2ee-9af9-4b37-802e-3793b6dccf95"
