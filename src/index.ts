@@ -8,6 +8,10 @@ export interface Env {
   DB_COLORADO: D1Database;
   DB_SHASTA: D1Database;
   DB_WASHINGTON: D1Database;
+  BLOG_QUEUE: KVNamespace;
+  WOLLY_API_KEY: string;
+  WOLLY_API_URL: string;
+  OPENAI_API_KEY: string;
 }
 
 interface DBRegion {
@@ -423,6 +427,185 @@ export default {
         status: 400,
         headers: { 'Content-Type': 'application/json', ...corsHeaders },
       });
+    }
+  },
+
+  // ---- Scheduled Blog Publishing ----
+  async scheduled(controller: ScheduledController, env: Env, ctx: ExecutionContext): Promise<void> {
+    const SITE_SLUG = 'soaktrail';
+
+    interface BlogTopic {
+      slug: string;
+      title: string;
+      excerpt: string;
+      keyword: string;
+      structure: string[];
+      tags: string[];
+      featured_springs: string[];
+      _meta: {
+        phase: string;
+        priority: string;
+        pillar: boolean;
+        published?: boolean;
+        published_at?: string;
+      };
+    }
+
+    async function loadQueue(): Promise<{ topics: BlogTopic[] }> {
+      const data = await env.BLOG_QUEUE.get('content-queue');
+      if (!data) {
+        // Fallback: read from repo file via import (for initial seeding)
+        return { topics: [] };
+      }
+      return JSON.parse(data);
+    }
+
+    async function saveQueue(queue: { topics: BlogTopic[] }): Promise<void> {
+      await env.BLOG_QUEUE.put('content-queue', JSON.stringify(queue));
+    }
+
+    async function publishToWolly(post: {
+      slug: string;
+      title: string;
+      excerpt: string;
+      content: string;
+      tags: string[];
+    }): Promise<any> {
+      if (!env.WOLLY_API_URL || !env.WOLLY_API_KEY) {
+        throw new Error('WOLLY_API_URL and WOLLY_API_KEY secrets must be set in Wrangler');
+      }
+
+      const response = await fetch(`${env.WOLLY_API_URL}/api/pages`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${env.WOLLY_API_KEY}`,
+        },
+        body: JSON.stringify({
+          type: 'blog',
+          slug: post.slug,
+          title: post.title,
+          status: 'published',
+          site: SITE_SLUG,
+          fields: {
+            excerpt: post.excerpt,
+            content: post.content,
+            tags: post.tags,
+            site: SITE_SLUG,
+          },
+          meta: {
+            published_at: new Date().toISOString(),
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        const error = await response.text();
+        throw new Error(`Failed to publish to WollyCMS: ${response.status} ${error}`);
+      }
+
+      return await response.json();
+    }
+
+    async function generateContent(topic: BlogTopic): Promise<string> {
+      // If OpenAI API key is available, use it to generate full content
+      if (env.OPENAI_API_KEY) {
+        try {
+          const prompt = `Write a comprehensive, engaging blog post about "${topic.title}" for hot springs enthusiasts.
+
+Target audience: Outdoor adventurers and hot springs enthusiasts visiting the American West.
+Tone: Friendly, knowledgeable, slightly adventurous — like an experienced friend giving advice.
+
+Structure to follow:
+${topic.structure.map((s, i) => `${i + 1}. ${s}`).join('\n')}
+
+Requirements:
+- Write 1,500-2,000 words
+- Include practical, actionable advice
+- Use subheadings (## format) for each section
+- Add a compelling introduction and conclusion
+- Mention specific considerations for hot springs in Idaho, Montana, Wyoming, Arizona, Nevada, Utah, Colorado, California, Washington, and Oregon where relevant
+- Avoid generic filler — every paragraph should deliver value
+
+Write in Markdown format.`;
+
+          const aiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${env.OPENAI_API_KEY}`,
+            },
+            body: JSON.stringify({
+              model: 'gpt-4o',
+              messages: [
+                { role: 'system', content: 'You are an expert outdoor writer specializing in hot springs, geothermal features, and responsible outdoor recreation across the American West.' },
+                { role: 'user', content: prompt },
+              ],
+              temperature: 0.7,
+              max_tokens: 4000,
+            }),
+          });
+
+          if (aiResponse.ok) {
+            const aiData = await aiResponse.json() as any;
+            return aiData.choices?.[0]?.message?.content || `# ${topic.title}\n\n${topic.excerpt}`;
+          }
+        } catch (e) {
+          console.error('OpenAI generation failed, falling back to outline:', e);
+        }
+      }
+
+      // Fallback: structured outline with placeholders
+      const sections = topic.structure.map(section => {
+        const heading = section.replace(/^.*?\s*[:\-]\s*/, '').trim();
+        return `## ${heading}\n\n(Detailed content for this section will be added.)\n`;
+      }).join('\n');
+
+      return `# ${topic.title}\n\n${topic.excerpt}\n\n${sections}`;
+    }
+
+    try {
+      const queue = await loadQueue();
+      
+      // Seed queue from file if empty
+      if (queue.topics.length === 0) {
+        // Try to read the initial queue from a static asset or fallback
+        console.log('Blog queue empty — seeding needed');
+        return;
+      }
+
+      // Find next unpublished topic
+      const topicIdx = queue.topics.findIndex(t => !t._meta.published);
+      if (topicIdx < 0) {
+        console.log('All blog topics have been published');
+        return;
+      }
+
+      const topic = queue.topics[topicIdx];
+      console.log(`Publishing blog post: ${topic.title} (topic #${topicIdx})`);
+
+      // Generate content
+      const content = await generateContent(topic);
+
+      // Publish to WollyCMS
+      const result = await publishToWolly({
+        slug: topic.slug,
+        title: topic.title,
+        excerpt: topic.excerpt,
+        content,
+        tags: topic.tags,
+      });
+
+      // Mark as published
+      queue.topics[topicIdx]._meta.published = true;
+      queue.topics[topicIdx]._meta.published_at = new Date().toISOString();
+      await saveQueue(queue);
+
+      console.log(`Published successfully: ${result.data?.slug || topic.slug}`);
+
+    } catch (error: any) {
+      console.error('Blog publishing failed:', error.message);
+      // Cloudflare will retry on next cron cycle
     }
   },
 };

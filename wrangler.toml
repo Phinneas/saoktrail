@@ -2,6 +2,13 @@ name = "soakatlas-mcp"
 main = "src/index.ts"
 compatibility_date = "2026-04-22"
 
+[[kv_namespaces]]
+binding = "BLOG_QUEUE"
+id = "soakatlas-blog-queue"
+
+[triggers]
+crons = ["0 10 * * 1"]
+
 [[d1_databases]]
 binding = "DB_DESERT"
 database_name = "desertsoak-db"
