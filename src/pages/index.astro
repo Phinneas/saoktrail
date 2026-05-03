@@ -1,25 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { wolly } from '../lib/wolly';
-
-// Fetch latest blog posts from all regional sites
-let blogPosts: any[] = [];
-let blogError = false;
-try {
-  const allPosts: any[] = [];
-  let offset = 0;
-  const limit = 50;
-  while (true) {
-    const result = await wolly.pages.list({ type: 'blog', sort: 'published_at:desc', status: 'published', limit, offset });
-    allPosts.push(...(result.data ?? []));
-    const total = result.meta?.total || 0;
-    offset += limit;
-    if (offset >= total) break;
-  }
-  blogPosts = allPosts.slice(0, 6);
-} catch {
-  blogError = true;
-}
 
 const regions = [
   {
@@ -81,7 +61,7 @@ const regions = [
         </span>
       </a>
       <div class="hidden md:flex items-center gap-8">
-        {['Destinations', 'Blog', 'About', 'MCP', 'Contact'].map((item) => (
+        {['Destinations', 'About', 'MCP', 'Contact'].map((item) => (
           <a
             href={`#${item.toLowerCase()}`}
             class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper"
@@ -241,89 +221,6 @@ const regions = [
     </div>
   </section>
 
-  <!-- Divider -->
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="h-px bg-sa-divider" />
-  </div>
-
-  <!-- Blogroll -->
-  <section id="blog" class="py-24 md:py-32 px-6 bg-sa-cream">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-6 font-display">
-          From Our Regional Guides
-        </p>
-        <h2 class="font-display text-4xl md:text-5xl font-light text-sa-dark leading-tight mb-6">
-          Latest
-          <span class="italic"> Dispatches</span>
-        </h2>
-        <p class="text-sa-text text-lg max-w-2xl mx-auto leading-relaxed">
-          Stories, guides, and field notes from hot springs explorers across the American West.
-        </p>
-      </div>
-
-      {blogError || blogPosts.length === 0 ? (
-        <div class="text-center py-12">
-          <p class="text-sa-text/60">Blog posts loading soon — check back for dispatches from the field.</p>
-        </div>
-      ) : (
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map(post => {
-            const siteSlug = post.fields?.site || 'unknown';
-            const siteLabels = {
-              desertsoak: 'Desert Soak',
-              soaktherockies: 'Soak the Rockies',
-              soakcolorado: 'Soak Colorado',
-              shastahotsprings: 'Shasta Hot Springs',
-              washingtonhotsprings: 'Washington Hot Springs',
-            };
-            const siteLink = {
-              desertsoak: 'https://www.desertsoak.com',
-              soaktherockies: 'https://www.soaktherockies.com',
-              soakcolorado: 'https://www.soakcolorado.com',
-              shastahotsprings: 'https://www.shastahotsprings.com',
-              washingtonhotsprings: 'https://www.washingtonhotsprings.com',
-            };
-            return (
-              <article class="bg-white border border-sa-divider rounded-2xl overflow-hidden group hover:shadow-lg transition-shadow duration-300">
-                <div class="p-6">
-                  <div class="flex items-center gap-2 mb-4">
-                    <span class="text-xs font-display font-medium tracking-wide uppercase text-sa-copper">
-                      {siteLabels[siteSlug] || siteSlug}
-                    </span>
-                    <span class="text-sa-divider">|</span>
-                    <time class="text-xs text-sa-text/60 font-display">
-                      {new Date(post.meta?.published_at || post.meta?.updated_at || Date.now()).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                    </time>
-                  </div>
-                  <h3 class="font-display text-xl font-medium text-sa-dark mb-3 group-hover:text-sa-copper transition-colors line-clamp-2">
-                    <a href={`${siteLink[siteSlug] || '#'}/blog/${post.slug}`} target="_blank" rel="noopener noreferrer">
-                      {post.title}
-                    </a>
-                  </h3>
-                  <p class="text-sa-text/80 text-sm leading-relaxed line-clamp-3 mb-4">
-                    {post.fields?.excerpt || ''}
-                  </p>
-                  <a
-                    href={`${siteLink[siteSlug] || '#'}/blog/${post.slug}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-sm font-display font-medium text-sa-dark hover:text-sa-copper transition-colors"
-                  >
-                    <span class="border-b border-current pb-0.5">Read article</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      )}
-    </div>
-  </section>
-
   <!-- About Section -->
   <section id="about" class="py-24 md:py-32 px-6">
     <div class="max-w-7xl mx-auto">
@@ -380,7 +277,7 @@ const regions = [
           For AI Assistants & Developers
         </p>
         <h2 class="font-display text-4xl md:text-5xl font-light text-white leading-tight mb-6">
-          SoakAtlas MCP Server
+          Soak Trail MCP Server
         </h2>
         <p class="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
           Query 500+ hot springs across the American West directly from AI assistants like Claude, ChatGPT, and any MCP-compatible client.

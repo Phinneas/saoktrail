@@ -1,0 +1,207 @@
+{
+  "settings": {
+    "author": "Soak Trail Team",
+    "tone": "friendly, knowledgeable, adventurous",
+    "site": "soaktrail"
+  },
+  "topics": [
+    {
+      "slug": "hot-spring-chemistry-guide",
+      "title": "Understanding Hot Spring Chemistry: What's in the Water?",
+      "excerpt": "A soaker's guide to reading mineral content, pH, and temperature so you can choose the perfect spring.",
+      "keyword": "hot spring chemistry",
+      "structure": [
+        "Introduction: Every spring has a unique chemical fingerprint",
+        "The major minerals: Calcium, Sodium Chloride, Sulfur, Lithium",
+        "pH and safety: what acidity means for your skin",
+        "Temperature rules: how hot is too hot",
+        "Conclusion: choose your soak intentionally"
+      ],
+      "tags": ["education", "chemistry", "safety"],
+      "featured_springs": [],
+      "_meta": {
+        "phase": "Phase 1",
+        "priority": "critical",
+        "pillar": true,
+        "published": false
+      }
+    },
+    {
+      "slug": "hot-spring-etiquette-guide",
+      "title": "Hot Spring Etiquette: The Unwritten Rules Every Soaker Should Know",
+      "excerpt": "From clothing-optional customs to Leave No Trace principles, here's how to soak respectfully.",
+      "keyword": "hot spring etiquette",
+      "structure": [
+        "Introduction: why etiquette matters",
+        "Clothing policies: when optional means optional",
+        "Noise and solitude: reading the room",
+        "Leave No Trace at springs",
+        "Sharing pools with strangers",
+        "Photography and privacy",
+        "Conclusion: etiquette preserves access"
+      ],
+      "tags": ["etiquette", "culture", "safety"],
+      "featured_springs": [],
+      "_meta": {
+        "phase": "Phase 1",
+        "priority": "critical",
+        "pillar": true,
+        "published": false
+      }
+    },
+    {
+      "slug": "how-hot-springs-work",
+      "title": "How Hot Springs Work: From Magma to Mineral Water",
+      "excerpt": "The geology behind geothermal springs — why some are boiling, some are lukewarm, and no two are alike.",
+      "keyword": "how do hot springs work",
+      "structure": [
+        "Introduction: water's underground journey",
+        "Geothermal heat sources",
+        "The rock connection: why geology shapes chemistry",
+        "Why temperatures vary",
+        "Geothermal vs solar-heated 'hot springs'",
+        "Conclusion: every spring tells a story"
+      ],
+      "tags": ["geology", "education", "science"],
+      "featured_springs": [],
+      "_meta": {
+        "phase": "Phase 1",
+        "priority": "high",
+        "pillar": true,
+        "published": false
+      }
+    },
+    {
+      "slug": "hot-spring-road-trip-planning",
+      "title": "How to Plan the Ultimate Hot Springs Road Trip",
+      "excerpt": "Multi-state itineraries, gear lists, and the apps that keep you on track from soak to soak.",
+      "keyword": "hot springs road trip",
+      "structure": [
+        "Introduction: the appeal of the soak circuit",
+        "Mapping your route: 500+ springs across the West",
+        "Seasonal considerations",
+        "Gear and vehicle prep",
+        "Apps and offline maps",
+        "Budgeting for a springs trip",
+        "Conclusion: the open road leads to warm water"
+      ],
+      "tags": ["road-trip", "planning", "guide"],
+      "featured_springs": [],
+      "_meta": {
+        "phase": "Phase 1",
+        "priority": "high",
+        "pillar": true,
+        "published": false
+      }
+    },
+    {
+      "slug": "winter-hot-spring-safety",
+      "title": "Winter Hot Spring Safety: What Every Cold-Weather Soaker Needs to Know",
+      "excerpt": "Hypothermia prevention, gear essentials, and why winter springs demand extra respect.",
+      "keyword": "winter hot springs safety",
+      "structure": [
+        "Introduction: winter transforms the experience",
+        "Hypothermia prevention: the post-soak danger zone",
+        "Essential winter gear",
+        "Road and trail conditions",
+        "Emergency preparedness",
+        "Conclusion: winter rewards the prepared"
+      ],
+      "tags": ["winter", "safety", "guide"],
+      "featured_springs": [],
+      "_meta": {
+        "phase": "Phase 1",
+        "priority": "high",
+        "pillar": false,
+        "published": false
+      }
+    },
+    {
+      "slug": "history-of-hot-springs",
+      "title": "Sacred Waters: The Ancient History of Hot Springs Soaking",
+      "excerpt": "From Roman baths to Native American ceremonies, humans have sought healing in hot water for millennia.",
+      "keyword": "history of hot springs",
+      "structure": [
+        "Introduction: the oldest spa tradition",
+        "Indigenous North American soaking traditions",
+        "Roman and Japanese bath culture parallels",
+        "The American West's soaking revival",
+        "Modern conservation and access",
+        "Conclusion: continuing an ancient practice"
+      ],
+      "tags": ["history", "culture", "indigenous"],
+      "featured_springs": [],
+      "_meta": {
+        "phase": "Phase 2",
+        "priority": "medium",
+        "pillar": false,
+        "published": false
+      }
+    },
+    {
+      "slug": "hot-spring-health-benefits",
+      "title": "Do Hot Springs Actually Have Health Benefits? What Science Says",
+      "excerpt": "Separating mineral-soak myth from medical reality — what research actually supports.",
+      "keyword": "hot springs health benefits",
+      "structure": [
+        "Introduction: the wellness claim landscape",
+        "Circulation and muscle relaxation (evidence)",
+        "Skin conditions and mineral absorption",
+        "Stress reduction and mental health",
+        "What hot springs cannot do",
+        "Conclusion: enjoy with informed expectations"
+      ],
+      "tags": ["health", "wellness", "science"],
+      "featured_springs": [],
+      "_meta": {
+        "phase": "Phase 2",
+        "priority": "medium",
+        "pillar": false,
+        "published": false
+      }
+    },
+    {
+      "slug": "primitive-vs-developed-hot-springs",
+      "title": "Primitive vs. Developed Hot Springs: Which Experience Is Right for You?",
+      "excerpt": "From wild backcountry pools to resort amenities — finding your perfect soaking style.",
+      "keyword": "primitive hot springs vs developed",
+      "structure": [
+        "Introduction: the spectrum of soaking",
+        "Primitive springs: the wild experience",
+        "Developed springs: comfort and amenities",
+        "Resort springs: full-service relaxation",
+        "Hybrid options",
+        "Conclusion: match the experience to your goals"
+      ],
+      "tags": ["guide", "planning", "accessibility"],
+      "featured_springs": [],
+      "_meta": {
+        "phase": "Phase 2",
+        "priority": "medium",
+        "pillar": false
+      }
+    },
+    {
+      "slug": "best-hot-springs-for-beginners",
+      "title": "The Best Hot Springs for First-Time Soakers",
+      "excerpt": "Easy-access springs across the West that welcome newcomers without intimidating hikes or tricky etiquette.",
+      "keyword": "best hot springs for beginners",
+      "structure": [
+        "Introduction: getting started without overwhelm",
+        "Drive-up developed springs",
+        "Entry-level hike-in options",
+        "What to bring your first time",
+        "Common beginner mistakes to avoid",
+        "Conclusion: your first soak is just the beginning"
+      ],
+      "tags": ["beginners", "guide", "accessibility"],
+      "featured_springs": [],
+      "_meta": {
+        "phase": "Phase 2",
+        "priority": "low",
+        "pillar": false,
+        "published": false
+      }
+    }
+  ]
+}
