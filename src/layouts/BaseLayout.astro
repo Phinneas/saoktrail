@@ -1,4 +1,6 @@
 ---
+import SocialLinks from '../components/SocialLinks.astro';
+
 interface Props {
   title?: string;
 }
@@ -20,5 +22,17 @@ const { title = 'Soak Trail — Find Your Perfect Spring' } = Astro.props;
   </head>
   <body class="bg-sa-cream text-sa-dark font-body antialiased">
     <slot />
+    <footer class="px-4 py-8 mt-16">
+      <div class="container mx-auto flex items-center justify-between">
+        <p class="text-sm">
+          &copy; {new Date().getFullYear()} Soak Trail. All rights reserved.
+        </p>
+        <SocialLinks
+          instagram="https://www.instagram.com/soaktrail"
+          pinterest="https://www.pinterest.com/soaktrail"
+          bluesky="https://bsky.app/profile/soaktrail.bsky.social"
+        />
+      </div>
+    </footer>
   </body>
 </html>
