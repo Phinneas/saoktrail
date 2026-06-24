@@ -1,6 +1,6 @@
 FROM node:20-slim
 
-# System deps required by @maplibre/maplibre-gl-native
+# System deps for @maplibre/maplibre-gl-native + headless OpenGL
 RUN apt-get update && apt-get install -y \
   libcurl4 \
   libuv1 \
@@ -8,13 +8,22 @@ RUN apt-get update && apt-get install -y \
   libpng-dev \
   libwebp-dev \
   xvfb \
+  libgl1-mesa-glx \
+  libgl1-mesa-dri \
+  libgles2-mesa \
+  libgbm1 \
+  libegl1 \
+  libxi6 \
+  libxrandr2 \
+  libxrender1 \
+  libxext6 \
   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
 # Install dependencies first (better layer caching)
-COPY package.json package-lock.json* ./
-RUN npm ci --omit=dev
+COPY package.json ./
+RUN npm install --omit=dev
 
 # Copy source
 COPY . .
