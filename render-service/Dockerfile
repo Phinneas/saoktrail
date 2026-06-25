@@ -23,13 +23,14 @@ WORKDIR /app
 
 # Install dependencies first (better layer caching)
 COPY package.json ./
-RUN npm install --omit=dev
+RUN npm install
 
-# Copy source
+# Copy source and build TypeScript
 COPY . .
-
-# Build TypeScript
 RUN npm run build
+
+# Remove devDependencies after build
+RUN npm prune --omit=dev
 
 # Fonts directory (populated separately — see README)
 RUN mkdir -p src/fonts
