@@ -1,4 +1,3 @@
-import mbgl from '@maplibre/maplibre-gl-native';
 import sharp from 'sharp';
 import https from 'https';
 import http from 'http';
@@ -292,7 +291,8 @@ export async function renderPoster(params: RenderParams): Promise<Buffer> {
   const mapH   = dims.height - panelH;
 
   const styleObj = buildStyle(style, lat, lng, thunderforestKey);
-  const map = new mbgl.Map({ request: fetchTile });
+  const mbgl = await import('@maplibre/maplibre-gl-native');
+  const map = new mbgl.default.Map({ request: fetchTile });
 
   const rawBuffer = await new Promise<Buffer>((resolve, reject) => {
     map.load(styleObj);
