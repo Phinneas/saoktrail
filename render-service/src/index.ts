@@ -41,8 +41,8 @@ app.post('/render', async (c) => {
   const errors: string[] = [];
   if (typeof lat !== 'number' || lat < -90 || lat > 90) errors.push('lat must be a number between -90 and 90');
   if (typeof lng !== 'number' || lng < -180 || lng > 180) errors.push('lng must be a number between -180 and 180');
-  if (typeof style !== 'string' || !VALID_STYLES.includes(style)) errors.push(`style must be one of: ${VALID_STYLES.join(', ')}`);
-  if (typeof size !== 'string' || !VALID_SIZES.includes(size)) errors.push(`size must be one of: ${VALID_SIZES.join(', ')}`);
+  if (typeof style !== 'string' || !(VALID_STYLES as readonly string[]).includes(style)) errors.push(`style must be one of: ${VALID_STYLES.join(', ')}`);
+  if (typeof size !== 'string' || !(VALID_SIZES as readonly string[]).includes(size)) errors.push(`size must be one of: ${VALID_SIZES.join(', ')}`);
 
   if (errors.length > 0) {
     return c.json({ error: 'Validation failed', details: errors }, 422);
@@ -60,7 +60,7 @@ app.post('/render', async (c) => {
       thunderforestKey: THUNDERFOREST_API_KEY,
     });
 
-    return new Response(png, {
+    return new Response(new Uint8Array(png), {
       headers: {
         'Content-Type': 'image/png',
         'Content-Length': String(png.byteLength),
