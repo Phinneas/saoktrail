@@ -143,9 +143,25 @@ async function renderMap(
       const buf  = await job.bufP;
       const left = offsetX + (job.tx - startTX) * TILE_PX;
       const top  = offsetY + (job.ty - startTY) * TILE_PX;
-      if (left < mapWidth && top < mapHeight && left + TILE_PX > 0 && top + TILE_PX > 0) {
-        composites.push({ input: buf, left, top });
-      }
+
+      // Skip tiles entirely outside canvas
+      if (left >= mapWidth || top >= mapHeight || left + TILE_PX <= 0 || top + TILE_PX <= 0) return;
+
+      // Clamp to canvas: figure out which portion of the tile to use
+      const srcLeft = Math.max(0, -left);
+      const srcTop  = Math.max(0, -top);
+      const dstLeft = Math.max(0, left);
+      const dstTop  = Math.max(0, top);
+      const cropW   = Math.min(TILE_PX - srcLeft, mapWidth  - dstLeft);
+      const cropH   = Math.min(TILE_PX - srcTop,  mapHeight - dstTop);
+      if (cropW <= 0 || cropH <= 0) return;
+
+      const needsCrop = srcLeft > 0 || srcTop > 0 || cropW < TILE_PX || cropH < TILE_PX;
+      const input = needsCrop
+        ? await sharp(buf).extract({ left: srcLeft, top: srcTop, width: cropW, height: cropH }).toBuffer()
+        : buf;
+
+      composites.push({ input, left: dstLeft, top: dstTop });
     } catch (e) {
       console.warn(`Tile skip ${job.tx}/${job.ty}:`, e);
     }
