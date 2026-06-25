@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
   libgles2-mesa \
   libgbm1 \
   libegl1 \
+  libopengl0 \
   libxi6 \
   libxrandr2 \
   libxrender1 \
