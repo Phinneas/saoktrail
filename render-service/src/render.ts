@@ -202,11 +202,11 @@ async function renderMap(
     .png()
     .toBuffer();
 
-  // Post-process: subtle warm tone for topo — keep roads/trails readable
+  // Post-process: boost contrast so road/trail outlines go dark, terrain stays bright
   if (styleName === 'soaktrail-topo') {
     return sharp(raw)
-      .modulate({ saturation: 0.90, brightness: 1.02 })
-      .tint({ r: 255, g: 250, b: 242 })
+      .linear(1.25, -30)  // output = input * 1.25 - 30 — darks get darker, lights stay bright
+      .modulate({ saturation: 1.05 })
       .png()
       .toBuffer();
   }
