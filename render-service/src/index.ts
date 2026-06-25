@@ -1,3 +1,5 @@
+console.error('[STARTUP] index.ts loaded');
+
 import { createServer } from 'node:http';
 import { Hono } from 'hono';
 import { renderPoster, VALID_SIZES, VALID_STYLES } from './render.js';
@@ -107,6 +109,7 @@ const server = createServer(async (req, res) => {
   res.end(Buffer.from(arrayBuffer));
 });
 
+console.error('[STARTUP] About to call server.listen()');
 server.listen(PORT, '0.0.0.0', () => {
-  console.log(`Render service listening on 0.0.0.0:${PORT}`);
+  console.error(`[STARTUP] Server listening on 0.0.0.0:${PORT}`);
 });
