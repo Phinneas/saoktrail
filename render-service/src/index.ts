@@ -1,3 +1,4 @@
+import { createServer } from 'node:http';
 import { Hono } from 'hono';
 import { renderPoster, VALID_SIZES, VALID_STYLES } from './render.js';
 
@@ -74,8 +75,36 @@ app.post('/render', async (c) => {
 });
 
 // ─── Start ────────────────────────────────────────────────────────────────────
-console.log(`Render service starting on port ${PORT}`);
-export default {
-  fetch: app.fetch,
-  port: PORT,
-};
+const server = createServer(async (req, res) => {
+  const url = `http://localhost:${PORT}${req.url ?? '/'}`;
+  const headers = new Headers();
+  for (const [key, value] of Object.entries(req.headers)) {
+    if (value !== undefined) {
+      headers.set(key, Array.isArray(value) ? value.join(', ') : value);
+    }
+  }
+
+  const body = req.method !== 'GET' && req.method !== 'HEAD'
+    ? await new Promise<Buffer>((resolve) => {
+        const chunks: Buffer[] = [];
+        req.on('data', (chunk: Buffer) => chunks.push(chunk));
+        req.on('end', () => resolve(Buffer.concat(chunks)));
+      })
+    : undefined;
+
+  const request = new Request(url, {
+    method: req.method,
+    headers,
+    body,
+  });
+
+  const response = await app.fetch(request);
+
+  res.writeHead(response.status, Object.fromEntries(response.headers.entries()));
+  const arrayBuffer = await response.arrayBuffer();
+  res.end(Buffer.from(arrayBuffer));
+});
+
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`Render service listening on 0.0.0.0:${PORT}`);
+});
