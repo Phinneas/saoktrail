@@ -3,6 +3,6 @@ builder = "DOCKERFILE"
 dockerfilePath = "Dockerfile"
 
 [deploy]
-startCommand = "Xvfb :99 -screen 0 1024x768x24 & sleep 2 && DISPLAY=:99 node dist/index.js"
+startCommand = "/bin/sh -c 'Xvfb :99 -screen 0 1024x768x24 & sleep 2 && DISPLAY=:99 node dist/index.js'"
 healthcheckPath = "/health"
 healthcheckTimeout = 60
