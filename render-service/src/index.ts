@@ -97,7 +97,7 @@ const server = createServer(async (req, res) => {
   const request = new Request(url, {
     method: req.method,
     headers,
-    body,
+    body: bodyBuffer ? new Uint8Array(bodyBuffer) : undefined,
   });
 
   const response = await app.fetch(request);
