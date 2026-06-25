@@ -84,7 +84,7 @@ const server = createServer(async (req, res) => {
     }
   }
 
-  const body = req.method !== 'GET' && req.method !== 'HEAD'
+  const bodyBuffer = req.method !== 'GET' && req.method !== 'HEAD'
     ? await new Promise<Buffer>((resolve) => {
         const chunks: Buffer[] = [];
         req.on('data', (chunk: Buffer) => chunks.push(chunk));
@@ -95,7 +95,7 @@ const server = createServer(async (req, res) => {
   const request = new Request(url, {
     method: req.method,
     headers,
-    body,
+    body: bodyBuffer ? new Uint8Array(bodyBuffer) : undefined,
   });
 
   const response = await app.fetch(request);
