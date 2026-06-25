@@ -23,16 +23,19 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /app
 
+# Install pnpm globally
+RUN npm install -g pnpm
+
 # Install dependencies first (better layer caching)
-COPY package.json ./
-RUN npm install
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
 
 # Copy source and build TypeScript
 COPY . .
 RUN npm run build
 
 # Remove devDependencies after build
-RUN npm prune --omit=dev
+RUN pnpm prune --prod
 
 # Fonts directory (populated separately — see README)
 RUN mkdir -p src/fonts
