@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
   libpng-dev \
   libwebp-dev \
   xvfb \
+  xauth \
   libgl1-mesa-glx \
   libgl1-mesa-dri \
   libgles2-mesa \
