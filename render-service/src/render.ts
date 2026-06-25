@@ -54,13 +54,13 @@ const MUTED_COLOR: Record<string, string> = {
 
 function fetchTile(
   req: { url: string; kind: number },
-  callback: (err: Error | null, response?: { data: Buffer }) => void
+  callback: (err?: Error, response?: { data: Buffer }) => void
 ): void {
   const proto = req.url.startsWith('https') ? https : http;
   proto.get(req.url, { headers: { 'User-Agent': 'SoakTrail-Render/1.0' } }, (res) => {
     const chunks: Buffer[] = [];
     res.on('data', (chunk: Buffer) => chunks.push(chunk));
-    res.on('end', () => callback(null, { data: Buffer.concat(chunks) }));
+    res.on('end', () => callback(undefined, { data: Buffer.concat(chunks) }));
     res.on('error', (err: Error) => callback(err));
   }).on('error', (err: Error) => callback(err));
 }
@@ -301,7 +301,7 @@ export async function renderPoster(params: RenderParams): Promise<Buffer> {
       (err, buffer) => {
         map.release();
         if (err) reject(err);
-        else resolve(buffer);
+        else resolve(Buffer.from(buffer));
       },
     );
   });
