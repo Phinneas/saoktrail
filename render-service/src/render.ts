@@ -103,6 +103,7 @@ async function renderMap(
   mapWidth: number, mapHeight: number,
   styleName: string,
   thunderforestKey: string,
+  title: string = '',
 ): Promise<Buffer> {
   const tf = latLngToTileFrac(lat, lng, zoom);
   const n  = Math.pow(2, zoom);
@@ -167,6 +168,29 @@ async function renderMap(
     top:  Math.round(mapHeight / 2) - mr,
   });
 
+  // Spring name label above marker
+  if (title) {
+    const fontSize  = Math.max(12, Math.round(mapWidth / 55));
+    const padX      = Math.round(fontSize * 0.7);
+    const padY      = Math.round(fontSize * 0.45);
+    const labelW    = Math.min(Math.round(fontSize * title.length * 0.62) + padX * 2, mapWidth - 20);
+    const labelH    = fontSize + padY * 2;
+    const labelLeft = Math.round(mapWidth / 2) - Math.round(labelW / 2);
+    const labelTop  = Math.round(mapHeight / 2) - mr - labelH - 6;
+    const labelSvg  = Buffer.from(
+      `<svg width="${labelW}" height="${labelH}" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="${labelW}" height="${labelH}" rx="${Math.round(labelH / 2)}" ry="${Math.round(labelH / 2)}" fill="white" fill-opacity="0.88"/>
+        <text x="${labelW / 2}" y="${padY + fontSize * 0.78}"
+          font-family="Georgia, serif" font-weight="700"
+          font-size="${fontSize}" fill="${mc}"
+          text-anchor="middle"
+          letter-spacing="0.5"
+        >${escapeXml(title)}</text>
+      </svg>`
+    );
+    composites.push({ input: labelSvg, left: Math.max(0, labelLeft), top: Math.max(0, labelTop) });
+  }
+
   const bg = styleName === 'soaktrail-midnight'
     ? { r: 10,  g: 22,  b: 40  }
     : { r: 240, g: 235, b: 225 };
@@ -178,11 +202,11 @@ async function renderMap(
     .png()
     .toBuffer();
 
-  // Post-process: warm desaturation for topo style gives a print/paper feel
+  // Post-process: subtle warm tone for topo — keep roads/trails readable
   if (styleName === 'soaktrail-topo') {
     return sharp(raw)
-      .modulate({ saturation: 0.72, brightness: 1.04 })
-      .tint({ r: 252, g: 244, b: 232 })
+      .modulate({ saturation: 0.90, brightness: 1.02 })
+      .tint({ r: 255, g: 250, b: 242 })
       .png()
       .toBuffer();
   }
@@ -297,7 +321,7 @@ export async function renderPoster(params: RenderParams): Promise<Buffer> {
   const panelH = Math.round(dims.height * 0.20);
   const mapH   = dims.height - panelH;
 
-  const mapBuf = await renderMap(lat, lng, zoom, dims.width, mapH, style, thunderforestKey);
+  const mapBuf = await renderMap(lat, lng, zoom, dims.width, mapH, style, thunderforestKey, title ?? '');
 
   return compositePoster(
     mapBuf, dims.width, dims.height,
