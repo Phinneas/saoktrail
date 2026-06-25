@@ -1,45 +1,21 @@
 FROM node:20-slim
 
-# System deps for @maplibre/maplibre-gl-native + headless OpenGL
+# sharp needs these for PNG/JPEG processing
 RUN apt-get update && apt-get install -y \
-  libcurl4 \
-  libuv1 \
   libjpeg-dev \
   libpng-dev \
   libwebp-dev \
-  xvfb \
-  xauth \
-  libgl1-mesa-glx \
-  libgl1-mesa-dri \
-  libgles2-mesa \
-  libgbm1 \
-  libegl1 \
-  libopengl0 \
-  libxi6 \
-  libxrandr2 \
-  libxrender1 \
-  libxext6 \
   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# Install pnpm globally
-RUN npm install -g pnpm
+COPY package.json ./
+RUN npm install
 
-# Install dependencies first (better layer caching)
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
-
-# Copy source and build TypeScript
 COPY . .
 RUN npm run build
-
-# Remove devDependencies after build
-RUN pnpm prune --prod
-
-# Fonts directory (populated separately — see README)
-RUN mkdir -p src/fonts
+RUN npm prune --omit=dev
 
 EXPOSE 3000
 
-CMD ["xvfb-run", "-a", "node", "dist/index.js"]
+CMD ["node", "dist/index.js"]
