@@ -117,71 +117,96 @@ async function renderMap(
   title: string = '',
   mapboxKey: string = '',
 ): Promise<Buffer> {
-  const tf = latLngToTileFrac(lat, lng, zoom);
-  const n  = Math.pow(2, zoom);
 
-  const tilesAcrossF = mapWidth  / TILE_PX;
-  const tilesDownF   = mapHeight / TILE_PX;
+  let baseBuf: Buffer;
 
-  const startFracX = tf.x - tilesAcrossF / 2;
-  const startFracY = tf.y - tilesDownF   / 2;
+  // ── Path 1: Mapbox Static Image API — single seamless render, no tile seams
+  if (mapboxKey && mapWidth <= 1280 && mapHeight <= 1280) {
+    const style = MAPBOX_STYLE[styleName] ?? 'mapbox/outdoors-v12';
+    const url = `https://api.mapbox.com/styles/v1/${style}/static/${lng},${lat},${zoom}/${mapWidth}x${mapHeight}?access_token=${mapboxKey}`;
+    baseBuf = await fetchBuffer(url);
 
-  const startTX = Math.floor(startFracX);
-  const startTY = Math.floor(startFracY);
-  const endTX   = Math.ceil(startFracX + tilesAcrossF);
-  const endTY   = Math.ceil(startFracY + tilesDownF);
+  // ── Path 2: Tile stitching — for large print sizes that exceed Static API limits
+  } else {
+    const tf = latLngToTileFrac(lat, lng, zoom);
+    const n  = Math.pow(2, zoom);
 
-  const offsetX = -Math.round((startFracX - startTX) * TILE_PX);
-  const offsetY = -Math.round((startFracY - startTY) * TILE_PX);
+    const tilesAcrossF = mapWidth  / TILE_PX;
+    const tilesDownF   = mapHeight / TILE_PX;
 
-  type TileJob = { tx: number; ty: number; bufP: Promise<Buffer> };
-  const jobs: TileJob[] = [];
+    const startFracX = tf.x - tilesAcrossF / 2;
+    const startFracY = tf.y - tilesDownF   / 2;
 
-  for (let ty = startTY; ty <= endTY; ty++) {
-    if (ty < 0 || ty >= n) continue;
-    for (let tx = startTX; tx <= endTX; tx++) {
-      const wrappedTX = ((tx % n) + n) % n;
-      jobs.push({
-        tx, ty,
-        bufP: fetchBuffer(tileUrl(styleName, zoom, wrappedTX, ty, thunderforestKey, mapboxKey)),
-      });
+    const startTX = Math.floor(startFracX);
+    const startTY = Math.floor(startFracY);
+    const endTX   = Math.ceil(startFracX + tilesAcrossF);
+    const endTY   = Math.ceil(startFracY + tilesDownF);
+
+    const offsetX = -Math.round((startFracX - startTX) * TILE_PX);
+    const offsetY = -Math.round((startFracY - startTY) * TILE_PX);
+
+    type TileJob = { tx: number; ty: number; bufP: Promise<Buffer> };
+    const jobs: TileJob[] = [];
+
+    for (let ty = startTY; ty <= endTY; ty++) {
+      if (ty < 0 || ty >= n) continue;
+      for (let tx = startTX; tx <= endTX; tx++) {
+        const wrappedTX = ((tx % n) + n) % n;
+        jobs.push({
+          tx, ty,
+          bufP: fetchBuffer(tileUrl(styleName, zoom, wrappedTX, ty, thunderforestKey, mapboxKey)),
+        });
+      }
     }
+
+    const tileComposites: sharp.OverlayOptions[] = [];
+
+    await Promise.allSettled(jobs.map(async (job) => {
+      try {
+        const buf  = await job.bufP;
+        const left = offsetX + (job.tx - startTX) * TILE_PX;
+        const top  = offsetY + (job.ty - startTY) * TILE_PX;
+
+        if (left >= mapWidth || top >= mapHeight || left + TILE_PX <= 0 || top + TILE_PX <= 0) return;
+
+        const srcLeft = Math.max(0, -left);
+        const srcTop  = Math.max(0, -top);
+        const dstLeft = Math.max(0, left);
+        const dstTop  = Math.max(0, top);
+        const cropW   = Math.min(TILE_PX - srcLeft, mapWidth  - dstLeft);
+        const cropH   = Math.min(TILE_PX - srcTop,  mapHeight - dstTop);
+        if (cropW <= 0 || cropH <= 0) return;
+
+        const needsCrop = srcLeft > 0 || srcTop > 0 || cropW < TILE_PX || cropH < TILE_PX;
+        const input = needsCrop
+          ? await sharp(buf).extract({ left: srcLeft, top: srcTop, width: cropW, height: cropH }).toBuffer()
+          : buf;
+
+        tileComposites.push({ input, left: dstLeft, top: dstTop });
+      } catch (e) {
+        console.warn(`Tile skip ${job.tx}/${job.ty}:`, e);
+      }
+    }));
+
+    const bg = styleName === 'soaktrail-midnight'
+      ? { r: 10,  g: 22,  b: 40  }
+      : { r: 240, g: 235, b: 225 };
+
+    const raw = await sharp({
+      create: { width: mapWidth, height: mapHeight, channels: 3, background: bg },
+    })
+      .composite(tileComposites)
+      .png()
+      .toBuffer();
+
+    baseBuf = (styleName === 'soaktrail-topo' && !mapboxKey)
+      ? await sharp(raw).modulate({ brightness: 0.82, saturation: 1.1 }).png().toBuffer()
+      : raw;
   }
 
-  const composites: sharp.OverlayOptions[] = [];
-
-  await Promise.allSettled(jobs.map(async (job) => {
-    try {
-      const buf  = await job.bufP;
-      const left = offsetX + (job.tx - startTX) * TILE_PX;
-      const top  = offsetY + (job.ty - startTY) * TILE_PX;
-
-      // Skip tiles entirely outside canvas
-      if (left >= mapWidth || top >= mapHeight || left + TILE_PX <= 0 || top + TILE_PX <= 0) return;
-
-      // Clamp to canvas: figure out which portion of the tile to use
-      const srcLeft = Math.max(0, -left);
-      const srcTop  = Math.max(0, -top);
-      const dstLeft = Math.max(0, left);
-      const dstTop  = Math.max(0, top);
-      const cropW   = Math.min(TILE_PX - srcLeft, mapWidth  - dstLeft);
-      const cropH   = Math.min(TILE_PX - srcTop,  mapHeight - dstTop);
-      if (cropW <= 0 || cropH <= 0) return;
-
-      const needsCrop = srcLeft > 0 || srcTop > 0 || cropW < TILE_PX || cropH < TILE_PX;
-      const input = needsCrop
-        ? await sharp(buf).extract({ left: srcLeft, top: srcTop, width: cropW, height: cropH }).toBuffer()
-        : buf;
-
-      composites.push({ input, left: dstLeft, top: dstTop });
-    } catch (e) {
-      console.warn(`Tile skip ${job.tx}/${job.ty}:`, e);
-    }
-  }));
-
-  // Spring marker — size scales with image width
+  // ── Marker + label overlay (both paths) ───────────────────────────────────
   const mc = MARKER_COLOR[styleName] ?? '#e85d04';
-  const mr = Math.round(mapWidth / 28); // radius scales with image
+  const mr = Math.round(mapWidth / 28);
   const ms = mr * 2;
   const markerSvg = Buffer.from(
     `<svg width="${ms}" height="${ms}" xmlns="http://www.w3.org/2000/svg">
@@ -190,13 +215,13 @@ async function renderMap(
       <circle cx="${mr}" cy="${mr}" r="${Math.round(mr * 0.40)}" fill="${mc}"/>
     </svg>`
   );
-  composites.push({
+
+  const overlays: sharp.OverlayOptions[] = [{
     input: markerSvg,
     left: Math.round(mapWidth  / 2) - mr,
     top:  Math.round(mapHeight / 2) - mr,
-  });
+  }];
 
-  // Spring name label above marker
   if (title) {
     const fontSize  = Math.max(12, Math.round(mapWidth / 55));
     const padX      = Math.round(fontSize * 0.7);
@@ -211,34 +236,14 @@ async function renderMap(
         <text x="${labelW / 2}" y="${padY + fontSize * 0.78}"
           font-family="Georgia, serif" font-weight="700"
           font-size="${fontSize}" fill="${mc}"
-          text-anchor="middle"
-          letter-spacing="0.5"
+          text-anchor="middle" letter-spacing="0.5"
         >${escapeXml(title)}</text>
       </svg>`
     );
-    composites.push({ input: labelSvg, left: Math.max(0, labelLeft), top: Math.max(0, labelTop) });
+    overlays.push({ input: labelSvg, left: Math.max(0, labelLeft), top: Math.max(0, labelTop) });
   }
 
-  const bg = styleName === 'soaktrail-midnight'
-    ? { r: 10,  g: 22,  b: 40  }
-    : { r: 240, g: 235, b: 225 };
-
-  const raw = await sharp({
-    create: { width: mapWidth, height: mapHeight, channels: 3, background: bg },
-  })
-    .composite(composites)
-    .png()
-    .toBuffer();
-
-  // Post-process: only apply when using Thunderforest (Mapbox tiles need no correction)
-  if (styleName === 'soaktrail-topo' && !mapboxKey) {
-    return sharp(raw)
-      .modulate({ brightness: 0.82, saturation: 1.1 })
-      .png()
-      .toBuffer();
-  }
-
-  return raw;
+  return sharp(baseBuf).composite(overlays).png().toBuffer();
 }
 
 // ─── Poster info panel ────────────────────────────────────────────────────────
