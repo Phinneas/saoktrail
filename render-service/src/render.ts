@@ -12,7 +12,8 @@ export const VALID_SIZES  = ['preview', 'digital', '12x18', '18x24'] as const;
 export const VALID_STYLES = ['soaktrail-topo', 'soaktrail-midnight', 'soaktrail-minimal'] as const;
 
 const SIZE_MAP: Record<string, { width: number; height: number }> = {
-  preview:  { width: 1200, height: 630  },
+  // preview: portrait 2:3 ratio, both dims ≤1280 → always uses Mapbox Static API (seamless)
+  preview:  { width: 840,  height: 1260 },
   digital:  { width: 1200, height: 1800 },
   '12x18':  { width: 1800, height: 2700 },
   '18x24':  { width: 2657, height: 3543 },
@@ -350,7 +351,7 @@ export async function renderPoster(params: RenderParams): Promise<Buffer> {
   const dims = SIZE_MAP[size];
   if (!dims) throw new Error(`Unknown size: ${size}`);
 
-  const zoom   = params.zoom ?? (size === 'preview' ? 10 : 14);
+  const zoom   = params.zoom ?? 12;
   const panelH = Math.round(dims.height * 0.20);
   const mapH   = dims.height - panelH;
 
