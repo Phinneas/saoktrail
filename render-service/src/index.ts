@@ -1,0 +1,117 @@
+console.error('[STARTUP] index.ts loaded');
+
+import { createServer } from 'node:http';
+import { Hono } from 'hono';
+import { renderPoster, VALID_SIZES, VALID_STYLES } from './render.js';
+
+const app = new Hono();
+const SECRET = process.env.RENDER_SERVICE_SECRET;
+const THUNDERFOREST_API_KEY = process.env.THUNDERFOREST_API_KEY ?? '';
+const MAPBOX_ACCESS_TOKEN = process.env.MAPBOX_ACCESS_TOKEN ?? '';
+const PORT = parseInt(process.env.PORT ?? '3000', 10);
+
+// ─── Auth middleware ──────────────────────────────────────────────────────────
+app.use('/render', async (c, next) => {
+  if (SECRET) {
+    const auth = c.req.header('x-render-secret');
+    if (auth !== SECRET) {
+      return c.json({ error: 'Unauthorized' }, 401);
+    }
+  }
+  await next();
+});
+
+// ─── Health check ─────────────────────────────────────────────────────────────
+app.get('/health', (c) => c.json({ ok: true, ts: Date.now() }));
+
+// ─── Render endpoint ──────────────────────────────────────────────────────────
+// POST /render
+// Body: { lat, lng, style, size, title?, subtitle?, zoom? }
+// Returns: image/png
+app.post('/render', async (c) => {
+  let body: Record<string, unknown>;
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({ error: 'Invalid JSON body' }, 400);
+  }
+
+  const { lat, lng, style, size, title, subtitle, zoom } = body as {
+    lat: unknown; lng: unknown; style: unknown; size: unknown;
+    title?: string; subtitle?: string; zoom?: number;
+  };
+
+  // Validate
+  const errors: string[] = [];
+  if (typeof lat !== 'number' || lat < -90 || lat > 90) errors.push('lat must be a number between -90 and 90');
+  if (typeof lng !== 'number' || lng < -180 || lng > 180) errors.push('lng must be a number between -180 and 180');
+  if (typeof style !== 'string' || !(VALID_STYLES as readonly string[]).includes(style)) errors.push(`style must be one of: ${VALID_STYLES.join(', ')}`);
+  if (typeof size !== 'string' || !(VALID_SIZES as readonly string[]).includes(size)) errors.push(`size must be one of: ${VALID_SIZES.join(', ')}`);
+
+  if (errors.length > 0) {
+    return c.json({ error: 'Validation failed', details: errors }, 422);
+  }
+
+  try {
+    const png = await renderPoster({
+      lat: lat as number,
+      lng: lng as number,
+      style: style as string,
+      size: size as string,
+      title: typeof title === 'string' ? title : undefined,
+      subtitle: typeof subtitle === 'string' ? subtitle : undefined,
+      zoom: typeof zoom === 'number' ? zoom : undefined,
+      thunderforestKey: THUNDERFOREST_API_KEY,
+      mapboxKey: MAPBOX_ACCESS_TOKEN,
+    });
+
+    return new Response(new Uint8Array(png), {
+      headers: {
+        'Content-Type': 'image/png',
+        'Content-Length': String(png.byteLength),
+        'Cache-Control': 'no-store',
+      },
+    });
+  } catch (err) {
+    console.error('Render error:', err);
+    return c.json({ error: 'Render failed', message: String(err) }, 500);
+  }
+});
+
+// ─── Start ────────────────────────────────────────────────────────────────────
+const server = createServer(async (req, res) => {
+  const url = `http://localhost:${PORT}${req.url ?? '/'}`;
+  const headers = new Headers();
+  for (const [key, value] of Object.entries(req.headers)) {
+    if (value !== undefined) {
+      headers.set(key, Array.isArray(value) ? value.join(', ') : value);
+    }
+  }
+
+  const bodyBuffer = req.method !== 'GET' && req.method !== 'HEAD'
+    ? await new Promise<Buffer>((resolve) => {
+        const chunks: Buffer[] = [];
+        req.on('data', (chunk: Buffer) => chunks.push(chunk));
+        req.on('end', () => resolve(Buffer.concat(chunks)));
+      })
+    : undefined;
+
+  const body = bodyBuffer ? new Uint8Array(bodyBuffer) : undefined;
+
+  const request = new Request(url, {
+    method: req.method,
+    headers,
+    body: bodyBuffer ? new Uint8Array(bodyBuffer) : undefined,
+  });
+
+  const response = await app.fetch(request);
+
+  res.writeHead(response.status, Object.fromEntries(response.headers.entries()));
+  const arrayBuffer = await response.arrayBuffer();
+  res.end(Buffer.from(arrayBuffer));
+});
+
+console.error('[STARTUP] About to call server.listen()');
+server.listen(PORT, '0.0.0.0', () => {
+  console.error(`[STARTUP] Server listening on 0.0.0.0:${PORT}`);
+});
