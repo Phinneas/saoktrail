@@ -234,7 +234,7 @@ async function renderMap(
       `<svg width="${labelW}" height="${labelH}" xmlns="http://www.w3.org/2000/svg">
         <rect x="0" y="0" width="${labelW}" height="${labelH}" rx="${Math.round(labelH / 2)}" ry="${Math.round(labelH / 2)}" fill="white" fill-opacity="0.88"/>
         <text x="${labelW / 2}" y="${padY + fontSize * 0.78}"
-          font-family="Georgia, serif" font-weight="700"
+          font-family="Liberation Serif, Georgia, serif" font-weight="700"
           font-size="${fontSize}" fill="${mc}"
           text-anchor="middle" letter-spacing="0.5"
         >${escapeXml(title)}</text>
@@ -295,12 +295,12 @@ async function compositePoster(
   <rect width="${width}" height="${panelH}" fill="${panelBg}"/>
   <rect x="${pad}" y="${lineY}" width="${width - pad * 2}" height="3" fill="${accentClr}"/>
   <text x="${width/2}" y="${titleY}"
-    font-family="Georgia, serif" font-weight="700"
+    font-family="Liberation Serif, Georgia, serif" font-weight="700"
     font-size="${titleSize}" fill="${textClr}"
     text-anchor="middle" dominant-baseline="middle" letter-spacing="1"
   >${escapeXml(title)}</text>
   <text x="${width/2}" y="${subY}"
-    font-family="Arial, sans-serif" font-weight="300"
+    font-family="Liberation Sans, Arial, sans-serif" font-weight="300"
     font-size="${subtitleSize}" fill="${mutedClr}"
     text-anchor="middle" dominant-baseline="middle" letter-spacing="4"
   >${escapeXml(subtitle.toUpperCase())}</text>
@@ -312,7 +312,7 @@ async function compositePoster(
   <line x1="${pad*3}" y1="${markY - coordSize * 0.8}" x2="${width - pad*3}" y2="${markY - coordSize * 0.8}"
     stroke="${accentClr}" stroke-width="1" stroke-opacity="0.35"/>
   <text x="${width/2}" y="${markY}"
-    font-family="Arial, sans-serif" font-weight="600"
+    font-family="Liberation Sans, Arial, sans-serif" font-weight="600"
     font-size="${wordmarkSize}" fill="${accentClr}"
     text-anchor="middle" dominant-baseline="middle" letter-spacing="6"
   >SOAKTRAIL.COM</text>

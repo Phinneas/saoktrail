@@ -1,11 +1,15 @@
 FROM node:20-slim
 
-# sharp needs these for PNG/JPEG processing
+# sharp + fonts for librsvg SVG text rendering
 RUN apt-get update && apt-get install -y \
   libjpeg-dev \
   libpng-dev \
   libwebp-dev \
-  && rm -rf /var/lib/apt/lists/*
+  fontconfig \
+  fonts-liberation \
+  fonts-dejavu-core \
+  && rm -rf /var/lib/apt/lists/* \
+  && fc-cache -fv
 
 WORKDIR /app
 
