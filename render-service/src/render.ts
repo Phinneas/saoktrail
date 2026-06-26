@@ -351,7 +351,7 @@ export async function renderPoster(params: RenderParams): Promise<Buffer> {
   const dims = SIZE_MAP[size];
   if (!dims) throw new Error(`Unknown size: ${size}`);
 
-  const zoom   = params.zoom ?? 12;
+  const zoom   = params.zoom ?? 10;
   const panelH = Math.round(dims.height * 0.20);
   const mapH   = dims.height - panelH;
 
