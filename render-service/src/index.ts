@@ -7,6 +7,7 @@ import { renderPoster, VALID_SIZES, VALID_STYLES } from './render.js';
 const app = new Hono();
 const SECRET = process.env.RENDER_SERVICE_SECRET;
 const THUNDERFOREST_API_KEY = process.env.THUNDERFOREST_API_KEY ?? '';
+const MAPBOX_ACCESS_TOKEN = process.env.MAPBOX_ACCESS_TOKEN ?? '';
 const PORT = parseInt(process.env.PORT ?? '3000', 10);
 
 // ─── Auth middleware ──────────────────────────────────────────────────────────
@@ -61,6 +62,7 @@ app.post('/render', async (c) => {
       subtitle: typeof subtitle === 'string' ? subtitle : undefined,
       zoom: typeof zoom === 'number' ? zoom : undefined,
       thunderforestKey: THUNDERFOREST_API_KEY,
+      mapboxKey: MAPBOX_ACCESS_TOKEN,
     });
 
     return new Response(new Uint8Array(png), {

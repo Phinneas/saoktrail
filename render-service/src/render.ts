@@ -52,11 +52,22 @@ const MUTED_COLOR: Record<string, string> = {
 
 // ─── Tile URL ─────────────────────────────────────────────────────────────────
 
+const MAPBOX_STYLE: Record<string, string> = {
+  'soaktrail-topo':     'mapbox/outdoors-v12',
+  'soaktrail-midnight': 'mapbox/dark-v11',
+  'soaktrail-minimal':  'mapbox/light-v11',
+};
+
 function tileUrl(
   styleName: string,
   z: number, x: number, y: number,
   thunderforestKey: string,
+  mapboxKey: string,
 ): string {
+  if (mapboxKey) {
+    const style = MAPBOX_STYLE[styleName] ?? 'mapbox/outdoors-v12';
+    return `https://api.mapbox.com/styles/v1/${style}/tiles/512/${z}/${x}/${y}@2x?access_token=${mapboxKey}`;
+  }
   if (styleName === 'soaktrail-midnight' && thunderforestKey) {
     return `https://tile.thunderforest.com/transport-dark/${z}/${x}/${y}@2x.png?apikey=${thunderforestKey}`;
   }
@@ -104,6 +115,7 @@ async function renderMap(
   styleName: string,
   thunderforestKey: string,
   title: string = '',
+  mapboxKey: string = '',
 ): Promise<Buffer> {
   const tf = latLngToTileFrac(lat, lng, zoom);
   const n  = Math.pow(2, zoom);
@@ -131,7 +143,7 @@ async function renderMap(
       const wrappedTX = ((tx % n) + n) % n;
       jobs.push({
         tx, ty,
-        bufP: fetchBuffer(tileUrl(styleName, zoom, wrappedTX, ty, thunderforestKey)),
+        bufP: fetchBuffer(tileUrl(styleName, zoom, wrappedTX, ty, thunderforestKey, mapboxKey)),
       });
     }
   }
@@ -218,8 +230,8 @@ async function renderMap(
     .png()
     .toBuffer();
 
-  // Post-process: darken the map so road/trail lines go near-black, terrain stays readable
-  if (styleName === 'soaktrail-topo') {
+  // Post-process: only apply when using Thunderforest (Mapbox tiles need no correction)
+  if (styleName === 'soaktrail-topo' && !mapboxKey) {
     return sharp(raw)
       .modulate({ brightness: 0.82, saturation: 1.1 })
       .png()
@@ -324,19 +336,20 @@ export interface RenderParams {
   subtitle?: string;
   zoom?: number;
   thunderforestKey?: string;
+  mapboxKey?: string;
 }
 
 export async function renderPoster(params: RenderParams): Promise<Buffer> {
-  const { lat, lng, style, size, title, subtitle, thunderforestKey = '' } = params;
+  const { lat, lng, style, size, title, subtitle, thunderforestKey = '', mapboxKey = '' } = params;
 
   const dims = SIZE_MAP[size];
   if (!dims) throw new Error(`Unknown size: ${size}`);
 
-  const zoom   = params.zoom ?? (size === 'preview' ? 9 : 13);
+  const zoom   = params.zoom ?? (size === 'preview' ? 10 : 14);
   const panelH = Math.round(dims.height * 0.20);
   const mapH   = dims.height - panelH;
 
-  const mapBuf = await renderMap(lat, lng, zoom, dims.width, mapH, style, thunderforestKey, title ?? '');
+  const mapBuf = await renderMap(lat, lng, zoom, dims.width, mapH, style, thunderforestKey, title ?? '', mapboxKey);
 
   return compositePoster(
     mapBuf, dims.width, dims.height,
