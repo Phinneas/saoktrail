@@ -11,7 +11,7 @@ export default defineConfig({
   image: { service: passthroughImageService() },
   vite: {
     ssr: {
-      external: ['node:crypto'],
+      external: ['node:crypto', 'node:async_hooks'],
     },
   },
 });
