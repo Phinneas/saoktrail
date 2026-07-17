@@ -1,0 +1,110 @@
+---
+import { plainify } from "@lib/textConverter";
+import Footer from "@components/base/Footer.astro";
+import Header from "@components/base/Header.astro";
+import ObserverScript from "@components/base/ObserverScript.astro";
+import SeoHead from "@components/common/SeoHead.astro";
+import "@/styles/main.scss";
+import { ClientRouter } from "astro:transitions";
+import Background from "@/components/base/Background.astro";
+import { Tooltips } from "astro-tooltips";
+import { siteConfig } from "@site/config";
+
+export interface Props {
+  title?: string;
+  description?: string | null;
+  image?: string;
+  noindex?: boolean;
+  canonical?: string;
+  ogType?: 'website' | 'article' | 'profile';
+  author?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  jsonLd?: Record<string, unknown>[] | Record<string, unknown>;
+}
+
+const {
+  title,
+  description,
+  image,
+  noindex,
+  canonical,
+  ogType,
+  author,
+  publishedAt,
+  updatedAt,
+  jsonLd,
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    {siteConfig.googleSiteVerification && (
+      <meta name="google-site-verification" content={siteConfig.googleSiteVerification} />
+    )}
+
+    <meta name="theme-name" content="pages" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#fff"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#000"
+    />
+    <meta name="generator" content={Astro.generator} />
+
+    <SeoHead
+      title={title ? plainify(title) : undefined}
+      description={description ? plainify(description) : undefined}
+      ogImage={image}
+      ogType={ogType}
+      canonicalUrl={canonical}
+      noIndex={noindex}
+      author={author}
+      publishedAt={publishedAt}
+      updatedAt={updatedAt}
+      jsonLd={jsonLd}
+    />
+
+    <slot name="head" />
+
+    <!-- https://docs.astro.build/en/guides/view-transitions -->
+    <ClientRouter fallback="swap" />
+    <Tooltips interactive={false} delay={[333, 0]} />
+  </head>
+  <body>
+    <Background />
+    <Header />
+    <main id="main-content" class="flex-1">
+      <slot/>
+    </main>
+    <Footer />
+    <!-- <ObserverScript /> -->
+  </body>
+</html>

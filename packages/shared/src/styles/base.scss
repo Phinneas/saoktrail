@@ -1,0 +1,107 @@
+:root {
+  --font-display: "National Park", sans-serif;
+  --font-body: "Fraunces", serif;
+}
+
+html {
+  @apply text-base h-screen;
+  font-family: var(--font-body);
+}
+
+body {
+  @apply font-body font-normal text-txt-s dark:text-darkmode-txt-s;
+  @apply bg-bg-p dark:bg-darkmode-bg-p;
+  @apply flex flex-col min-h-screen lg:mx-8;
+  line-height: 1.6;
+  font-variation-settings: "opsz" 16;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-display font-bold leading-tight text-txt-p dark:text-darkmode-txt-p intersect:animate-fade opacity-0;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+h4,
+h5,
+h6 {
+  @apply font-display font-bold leading-tight text-txt-p dark:text-darkmode-txt-p intersect:animate-fade opacity-0;
+}
+
+button,
+.btn,
+a.nav-link,
+.nav-link,
+label,
+.field-label {
+  @apply font-display;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+h1,
+.h1 {
+  @apply text-h1-sm md:text-h1;
+}
+h2,
+.h2 {
+  @apply text-h2-sm md:text-h2;
+}
+h3,
+.h3 {
+  @apply text-h3-sm md:text-h3;
+}
+h4,
+.h4 {
+  @apply text-h4 font-medium;
+}
+h5,
+.h5 {
+  @apply text-h5 font-medium;
+}
+h6,
+.h6 {
+  @apply text-h6 font-medium;
+}
+
+p, li {
+  @apply intersect:animate-fade opacity-0;
+  line-height: 1.6;
+}
+
+b,
+strong {
+  @apply font-semibold;
+}
+
+img {
+  @apply mx-auto;
+}
+
+a:hover,
+.a:hover {
+  @apply opacity-60;
+}
+
+hr {
+  @apply border-border dark:border-darkmode-border;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+html.dark .astro-code,
+html.dark .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+}

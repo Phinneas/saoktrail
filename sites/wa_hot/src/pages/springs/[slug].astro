@@ -1,0 +1,232 @@
+---
+import BaseLayout from "@components/base/BaseLayout.astro";
+import Breadcrumbs from "@components/common/Breadcrumbs.astro";
+import SchemaScript from "@components/schema/SchemaScript.astro";
+import { buildBreadcrumbSchema } from "@lib/schema";
+import { mapboxAccessToken } from "@/config/map";
+import springsData from "../../../public/springs.json";
+
+export const prerender = false;
+
+const { slug } = Astro.params;
+
+const spring = springsData.find((s: any) => s.slug === slug);
+
+if (!spring) {
+  return new Response(null, { status: 404, statusText: "Not Found" });
+}
+
+const pageDescription = spring.description
+  ? `${spring.description.slice(0, 155)}${spring.description.length > 155 ? "..." : ""}`
+  : `${spring.name} — ${spring.temp_f ? spring.temp_f + "°F " : ""}${spring.access_type || ""} hot spring in ${spring.state}.`;
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { label: "Home", href: "/" },
+  { label: "Directory", href: "/directory" },
+  { label: spring.name, href: `/springs/${slug}` },
+]);
+
+const relatedSprings = springsData
+  .filter((s: any) => s.state === spring.state && s.slug !== slug)
+  .slice(0, 4);
+---
+
+<BaseLayout
+  title={`${spring.name} — Washington Hot Springs`}
+  description={pageDescription}
+  image={spring.image_url}
+>
+  <Fragment slot="head">
+    <SchemaScript schema={breadcrumbSchema} />
+  </Fragment>
+
+  <section class="section">
+    <div class="container">
+      <Breadcrumbs />
+
+      <h1 class="h1 mb-6 intersect:animate-fadeUp opacity-0">{spring.name}</h1>
+
+      {spring.image_url && (
+        <div class="mb-6 rounded-lg overflow-hidden intersect:animate-fadeUp opacity-0">
+          <img
+            src={spring.image_url}
+            alt={`${spring.name} hot spring in ${spring.state}`}
+            class="w-full h-auto object-cover max-h-[500px]"
+            fetchpriority="high"
+          />
+        </div>
+      )}
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        <div class="lg:col-span-2">
+          <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
+            <h2 class="h3 mb-4">Details</h2>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              {spring.temp_f && (
+                <div>
+                  <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider text-xs">Temperature</span>
+                  <p class="font-mono text-lg font-bold text-txt-p dark:text-darkmode-txt-p">{spring.temp_f}°F</p>
+                </div>
+              )}
+              {spring.elevation_ft && (
+                <div>
+                  <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider text-xs">Elevation</span>
+                  <p class="font-mono text-txt-p dark:text-darkmode-txt-p">{spring.elevation_ft.toLocaleString()} ft</p>
+                </div>
+              )}
+              <div>
+                <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider text-xs">Coordinates</span>
+                <p class="font-mono text-txt-p dark:text-darkmode-txt-p">{spring.lat.toFixed(4)}, {spring.lng.toFixed(4)}</p>
+              </div>
+              {spring.access_type && (
+                <div>
+                  <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider text-xs">Access</span>
+                  <p class="capitalize text-txt-p dark:text-darkmode-txt-p">{spring.access_type}</p>
+                </div>
+              )}
+              {spring.development && (
+                <div>
+                  <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider text-xs">Development</span>
+                  <p class="capitalize text-txt-p dark:text-darkmode-txt-p">{spring.development}</p>
+                </div>
+              )}
+              {spring.season && (
+                <div>
+                  <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider text-xs">Season</span>
+                  <p class="capitalize text-txt-p dark:text-darkmode-txt-p">{spring.season}</p>
+                </div>
+              )}
+              {spring.fee !== undefined && (
+                <div>
+                  <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider text-xs">Fee</span>
+                  <p class="text-txt-p dark:text-darkmode-txt-p">{spring.fee === 0 ? "Free" : `$${spring.fee}`}</p>
+                </div>
+              )}
+              {spring.clothing && (
+                <div>
+                  <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider text-xs">Clothing</span>
+                  <p class="capitalize text-txt-p dark:text-darkmode-txt-p">{spring.clothing}</p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {spring.description && (
+            <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
+              <h2 class="h3 mb-4">About</h2>
+              <p class="text-txt-s dark:text-darkmode-txt-s leading-relaxed">{spring.description}</p>
+            </div>
+          )}
+        </div>
+
+        <div class="lg:col-span-1">
+          <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
+            <h3 class="h4 mb-4">Quick Links</h3>
+            <div class="space-y-3">
+              <a
+                href={`https://www.google.com/maps/dir/?api=1&destination=${spring.lat},${spring.lng}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block w-full py-3 text-center glass-t border border-border dark:border-darkmode-border rounded font-display font-bold text-txt-p dark:text-darkmode-txt-p hover:bg-accent hover:text-white transition-colors"
+              >
+                Get Directions
+              </a>
+              <a
+                href={`https://www.google.com/maps/@${spring.lat},${spring.lng},14z`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block w-full py-3 text-center glass-t border border-border dark:border-darkmode-border rounded font-display font-bold text-txt-p dark:text-darkmode-txt-p hover:bg-accent hover:text-white transition-colors"
+              >
+                View on Google Maps
+              </a>
+            </div>
+          </div>
+
+          {spring.cell_coverage && (
+            <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
+              <h3 class="h4 mb-2">Cell Coverage</h3>
+              <p class="text-sm text-txt-s dark:text-darkmode-txt-s capitalize">{spring.cell_coverage}</p>
+            </div>
+          )}
+
+          {spring.dog_policy && (
+            <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
+              <h3 class="h4 mb-2">Dog Policy</h3>
+              <p class="text-sm text-txt-s dark:text-darkmode-txt-s">{spring.dog_policy}</p>
+            </div>
+          )}
+
+          {spring.ada_accessible && (
+            <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
+              <h3 class="h4 mb-2">Accessibility</h3>
+              <p class="text-sm text-txt-s dark:text-darkmode-txt-s">ADA Accessible</p>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div class="glass p-6 mb-12 intersect:animate-fadeUp opacity-0">
+        <h2 class="h3 mb-4">Location</h2>
+        <div id="spring-map" class="h-[400px] rounded-lg overflow-hidden" data-lat={spring.lat} data-lng={spring.lng} data-name={spring.name} data-token={mapboxAccessToken}>
+        </div>
+      </div>
+
+      {relatedSprings.length > 0 && (
+        <div class="intersect:animate-fadeUp opacity-0">
+          <h2 class="h2 mb-6">More Springs in {spring.state}</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {relatedSprings.map((related: any) => (
+              <a
+                href={`/springs/${related.slug}`}
+                class="glass p-4 hover:scale-[1.02] transition-transform"
+              >
+                <h3 class="font-display font-bold text-txt-p dark:text-darkmode-txt-p text-sm">{related.name}</h3>
+                {related.temp_f && (
+                  <p class="text-xs font-mono text-accent mt-1">{related.temp_f}°F</p>
+                )}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const mapEl = document.getElementById('spring-map');
+  if (mapEl) {
+    const lat = parseFloat(mapEl.dataset.lat || '0');
+    const lng = parseFloat(mapEl.dataset.lng || '0');
+    const name = mapEl.dataset.name || '';
+    const token = mapEl.dataset.token || '';
+
+    if (token && lat && lng) {
+      const script = document.createElement('script');
+      script.src = 'https://api.mapbox.com/mapbox-gl-js/v3.21.0/mapbox-gl.js';
+      script.onload = () => {
+        // @ts-ignore
+        mapboxgl.accessToken = token;
+        // @ts-ignore
+        const map = new mapboxgl.Map({
+          container: 'spring-map',
+          style: 'mapbox://styles/mapbox/outdoors-v12',
+          center: [lng, lat],
+          zoom: 13,
+          pitch: 45,
+        });
+        map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+        new mapboxgl.Marker({ color: '#E86020' })
+          .setLngLat([lng, lat])
+          .setPopup(new mapboxgl.Popup({ offset: 25 }).setHTML(`<strong>${name}</strong>`))
+          .addTo(map)
+          .togglePopup();
+      };
+      document.head.appendChild(script);
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://api.mapbox.com/mapbox-gl-js/v3.21.0/mapbox-gl.css';
+      document.head.appendChild(link);
+    }
+  }
+</script>

@@ -1,0 +1,25 @@
+---
+import type { SearchableEntry } from "@/types";
+import BaseLayout from "@components/base/BaseLayout.astro";
+import SchemaScript from "@components/schema/SchemaScript.astro";
+import { buildBreadcrumbSchema } from "@lib/schema";
+import Search from "@components/search/Search";
+
+interface Props {
+  searchList: SearchableEntry[];
+}
+
+const { searchList } = Astro.props;
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { label: "Home", href: "/" },
+  { label: "Search", href: "/search" },
+]);
+---
+
+<BaseLayout title="Search" description="Search for content on this site" noindex>
+  <Fragment slot="head">
+    <SchemaScript schema={breadcrumbSchema} />
+  </Fragment>
+  <Search client:load searchList={searchList} />
+</BaseLayout>

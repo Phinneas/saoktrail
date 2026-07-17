@@ -1,0 +1,100 @@
+---
+import BaseLayout from "@components/base/BaseLayout.astro";
+import { markdownify } from "@lib/textConverter";
+import type { AboutEntry } from "@/types";
+
+interface Props {
+  entry: AboutEntry;
+}
+
+const { entry } = Astro.props;
+const {
+  title,
+  description,
+  mission,
+  methodologyHeading,
+  methodology,
+  verificationHeading,
+  verification,
+  disclosureHeading,
+  disclosure,
+} = entry.data;
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="section">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-8">
+          <!-- Mission -->
+          <div class="text-center mb-12">
+            <h1 class="h1 mb-6">{title}</h1>
+            {mission && (
+              <p class="text-lg leading-relaxed text-txt-s dark:text-darkmode-txt-s">
+                {mission}
+              </p>
+            )}
+          </div>
+
+          <!-- Methodology -->
+          {methodology && methodology.length > 0 && (
+            <div class="mb-8">
+              <h2 class="h3 mb-6 text-txt-p dark:text-darkmode-txt-p">
+                {methodologyHeading || "Our Methodology"}
+              </h2>
+              <ul class="list-none p-0 m-0 space-y-3">
+                {methodology.map((item) => (
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1 text-lg leading-none">✦</span>
+                    <span set:html={markdownify(item)} class="text-txt-s dark:text-darkmode-txt-s" />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <!-- Verification -->
+          {verification && verification.length > 0 && (
+            <div class="mb-8">
+              <h2 class="h3 mb-6 text-txt-p dark:text-darkmode-txt-p">
+                {verificationHeading || "How Conditions Are Verified"}
+              </h2>
+              <ul class="list-none p-0 m-0 space-y-3">
+                {verification.map((item) => (
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1 text-lg leading-none">✦</span>
+                    <span set:html={markdownify(item)} class="text-txt-s dark:text-darkmode-txt-s" />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <!-- Disclosure -->
+          {disclosure && disclosure.length > 0 && (
+            <div class="mb-8 border border-accent rounded-lg p-6">
+              <h2 class="h3 mb-6 text-txt-p dark:text-darkmode-txt-p">
+                {disclosureHeading || "Funding & Affiliate Disclosure"}
+              </h2>
+              <ul class="list-none p-0 m-0 space-y-3">
+                {disclosure.map((item) => (
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1 text-lg leading-none">✦</span>
+                    <span set:html={markdownify(item)} class="text-txt-s dark:text-darkmode-txt-s" />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <!-- Body content -->
+          {entry.body && (
+            <div class="glass rounded-lg p-8 mb-8">
+              <div set:html={markdownify(entry.body, true)} class="prose-here" />
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

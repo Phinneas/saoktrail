@@ -1,0 +1,28 @@
+---
+import Social from "@components/common/Social.astro";
+import { siteConfig } from "@site/config";
+---
+
+<footer class="glass container lg:my-4 lg:rounded-lg intersect:animate-fadeUp opacity-0">
+  <div class="row py-2 lg:py-0 items-center flex-wrap-reverse">
+    <div class="text-center lg:col-6 lg:mb-0 lg:text-left">
+      <ul>
+        <li class="m-2 inline-block">
+          <a href="/">&copy; {siteConfig.name} 2025</a>
+        </li>
+        <li class="m-2 inline-block">
+          <a href="/about">About</a>
+        </li>
+        <li class="m-2 inline-block">
+          <a href="/about#disclosure">Disclosure</a>
+        </li>
+      </ul>
+    </div>
+    <div class="text-center lg:col-6 lg:my-0 flex items-center justify-center lg:justify-end">
+      <Social
+        links={siteConfig.social}
+        shares={siteConfig.shares}
+      />
+    </div>
+  </div>
+</footer>
