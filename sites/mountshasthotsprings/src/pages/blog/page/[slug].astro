@@ -1,0 +1,39 @@
+---
+export const prerender = false;
+import CollectionLayout from "@components/blog/CollectionLayout.astro";
+import { getWollyBlogEntries } from "@lib/wolly";
+import type { BlogEntry } from "@/types";
+
+const { slug } = Astro.params;
+const currentPageIndex = slug && !isNaN(Number(slug)) ? Number(slug) : 1;
+
+const entries = await getWollyBlogEntries();
+
+const entryIndex = {
+  id: "-index",
+  collection: "blog",
+  data: { title: "Blog", description: "Mount Shasta hot springs blog" },
+  body: "",
+};
+
+const allCategories: string[] = [];
+const categories: string[] = [];
+const tags: string[] = [];
+
+const entriesPerPage = 4;
+const indexOfLastEntry = currentPageIndex * entriesPerPage;
+const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
+const currentEntries = entries.slice(indexOfFirstEntry, indexOfLastEntry);
+
+const pageCount: number = Math.ceil(entries.length / entriesPerPage);
+---
+
+<CollectionLayout
+  entryIndex={entryIndex}
+  entries={currentEntries}
+  categories={categories}
+  tags={tags}
+  allCategories={allCategories}
+  pageIndex={currentPageIndex}
+  pageCount={pageCount}
+/>

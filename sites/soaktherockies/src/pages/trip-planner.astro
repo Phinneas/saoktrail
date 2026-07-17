@@ -1,0 +1,262 @@
+---
+import BaseLayout from "@components/base/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Rockies Hot Springs Trip Planner | Soak the Rockies"
+  description="Create custom itineraries, optimize routes, and discover the perfect hot springs adventure for your timeline and interests."
+>
+
+  <!-- Hero -->
+  <section class="section">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="text-center lg:col-8">
+          <h1 class="mb-6">Rockies Hot Springs Trip Planner</h1>
+          <p class="text-lg text-txt-s dark:text-darkmode-txt-s mb-8 max-w-prose mx-auto">
+            Create custom itineraries, optimize routes, and discover the perfect hot springs adventure for your timeline and interests.
+          </p>
+          <div class="row justify-center gap-6">
+            <div class="sm:col-12 md:col-4 text-center">
+              <div class="glass rounded-lg p-6">
+                <div class="text-3xl mb-3">🗺️</div>
+                <h3 class="font-primary font-bold text-lg mb-2 text-txt-p dark:text-darkmode-txt-p">Interactive Map</h3>
+                <p class="text-sm text-txt-s dark:text-darkmode-txt-s">View all springs, get directions, and see drive times</p>
+              </div>
+            </div>
+            <div class="sm:col-12 md:col-4 text-center">
+              <div class="glass rounded-lg p-6">
+                <div class="text-3xl mb-3">⏱️</div>
+                <h3 class="font-primary font-bold text-lg mb-2 text-txt-p dark:text-darkmode-txt-p">Drive Time Zones</h3>
+                <p class="text-sm text-txt-s dark:text-darkmode-txt-s">See what's reachable from Boise, Bozeman, or Jackson in 30 min to 3 hours</p>
+              </div>
+            </div>
+            <div class="sm:col-12 md:col-4 text-center">
+              <div class="glass rounded-lg p-6">
+                <div class="text-3xl mb-3">🛂</div>
+                <h3 class="font-primary font-bold text-lg mb-2 text-txt-p dark:text-darkmode-txt-p">Passport Tracking</h3>
+                <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Track visited springs and earn badges</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8">
+            <a
+              href="/colorado-hot-springs-map"
+              class="inline-block bg-accent text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open Full Map & Planner →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Itineraries -->
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <h2 class="text-center mb-8">Featured Itineraries</h2>
+
+          <!-- Itinerary 1: Sawatch Range Loop -->
+          <div class="glass rounded-lg p-8 mb-8">
+            <h3 class="font-primary font-bold text-2xl mb-2 text-txt-p dark:text-darkmode-txt-p">The Sawatch Range Loop</h3>
+            <p class="text-txt-s dark:text-darkmode-txt-s mb-6">A relaxed 3-day weekend combining developed river-fed pools, a historic bathhouse, and one reservation-only soak.</p>
+
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">1</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Buena Vista</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Soak at <a href="/blog/cottonwood-hot-springs" class="text-accent hover:underline">Cottonwood Hot Springs</a>, developed pools at the base of the Collegiate Peaks. Camp nearby or stay in town.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">2</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Chalk Creek</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Drive to <a href="/blog/chalk-creek-hot-springs" class="text-accent hover:underline">Chalk Creek Hot Springs</a> for a natural creek soak where hot and cold water meet. Overnight in Buena Vista or Salida.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">3</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Clothing-Optional Soak</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Return via <a href="/blog" class="text-accent hover:underline">our Rockies hot springs guides</a> before heading home.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-border dark:border-darkmode-border flex flex-wrap gap-4 text-sm text-txt-s dark:text-darkmode-txt-s">
+              <span><strong>Distance:</strong> ~180 miles</span>
+              <span><strong>Best Season:</strong> Year-round (Cottonwood Pass closes in winter)</span>
+              <span><strong>Difficulty:</strong> Easy to Moderate</span>
+            </div>
+          </div>
+
+          <!-- Itinerary 2: San Luis Valley & Sand Dunes -->
+          <div class="glass rounded-lg p-8 mb-8">
+            <h3 class="font-primary font-bold text-2xl mb-2 text-txt-p dark:text-darkmode-txt-p">The San Luis Valley & Sand Dunes Circuit</h3>
+            <p class="text-txt-s dark:text-darkmode-txt-s mb-6">A diverse 4-day adventure combining high desert, national park scenery, and one of the deepest geothermal aquifers in the world.</p>
+
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">1</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Joyful Journey</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Soak at <a href="/blog/joyful-journey-hot-springs" class="text-accent hover:underline">Joyful Journey Hot Springs</a> in the San Luis Valley, stay in the on-site geodesic domes.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">2</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Sand Dunes & Valley View</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Sunrise at Great Sand Dunes National Park, then afternoon soak at <a href="/blog/valley-view-hot-springs-colorado" class="text-accent hover:underline">Valley View Hot Springs</a>, a clothing-optional wilderness pool with some of the darkest skies in the state.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">3</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">South to Pagosa</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Drive toward Pagosa Springs, stopping in Del Norte along the way.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">4</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">The Springs Resort</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Soak the terraced mineral pools at <a href="/blog/the-springs-resort-pagosa-springs" class="text-accent hover:underline">The Springs Resort</a> along the San Juan River before your return drive.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-border dark:border-darkmode-border flex flex-wrap gap-4 text-sm text-txt-s dark:text-darkmode-txt-s">
+              <span><strong>Distance:</strong> ~320 miles</span>
+              <span><strong>Best Season:</strong> Spring through fall</span>
+              <span><strong>Difficulty:</strong> Easy</span>
+            </div>
+          </div>
+
+          <!-- Itinerary 3: Conundrum Creek Backcountry -->
+          <div class="glass rounded-lg p-8 mb-8">
+            <h3 class="font-primary font-bold text-2xl mb-2 text-txt-p dark:text-darkmode-txt-p">The Conundrum Creek Backcountry Trek</h3>
+            <p class="text-txt-s dark:text-darkmode-txt-s mb-6">A strenuous 3-day backpacking adventure for experienced hikers seeking a true wilderness soak.</p>
+
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">1</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Trek In</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Hike 8.5 miles into the Maroon Bells-Snowmass Wilderness to <a href="/blog/colorados-conundrum-hot-springs" class="text-accent hover:underline">Conundrum Hot Springs</a>, climbing through aspen groves and alpine meadows. Camp at a designated site (permit required in peak season).</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">2</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Full Day at the Springs</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Soak beneath 14,000-foot peaks and day-hike into the surrounding basin.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">3</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Hike Out</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Descend back to the Conundrum Creek trailhead near Aspen.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-border dark:border-darkmode-border flex flex-wrap gap-4 text-sm text-txt-s dark:text-darkmode-txt-s">
+              <span><strong>Distance:</strong> ~17 miles round trip</span>
+              <span><strong>Best Season:</strong> Late June through September</span>
+              <span><strong>Difficulty:</strong> Strenuous — Expert hikers only</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planning Tips -->
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <h2 class="text-center mb-8">Planning Tips</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="glass rounded-lg p-6">
+              <h3 class="font-primary font-bold text-lg mb-3 text-txt-p dark:text-darkmode-txt-p">📅 Seasonal Considerations</h3>
+              <ul class="space-y-2 text-sm text-txt-s dark:text-darkmode-txt-s">
+                <li><strong>Summer (Jun–Aug):</strong> Best for high-alpine springs like Conundrum, but also the busiest</li>
+                <li><strong>Fall (Sep–Oct):</strong> Cooler temps, changing aspens, thinner crowds</li>
+                <li><strong>Winter (Nov–Mar):</strong> Many high-elevation springs snowed in; lower-elevation resorts stay open</li>
+                <li><strong>Spring (Apr–May):</strong> Runoff makes creek crossings dangerous at backcountry springs — check conditions</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-lg p-6">
+              <h3 class="font-primary font-bold text-lg mb-3 text-txt-p dark:text-darkmode-txt-p">🎒 What to Bring</h3>
+              <ul class="space-y-2 text-sm text-txt-s dark:text-darkmode-txt-s">
+                <li>Multiple swimsuits (they stay damp)</li>
+                <li>Quick-dry towel and sandals</li>
+                <li>Plenty of water and snacks — most springs sit above 7,000 feet</li>
+                <li>First aid kit and navigation tools</li>
+                <li>Sun protection — UV is stronger at elevation</li>
+                <li>Headlamp for evening or pre-dawn soaks</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-lg p-6">
+              <h3 class="font-primary font-bold text-lg mb-3 text-txt-p dark:text-darkmode-txt-p">🚗 Transportation</h3>
+              <ul class="space-y-2 text-sm text-txt-s dark:text-darkmode-txt-s">
+                <li>AWD/4WD recommended for forest roads and passes above 9,000 feet</li>
+                <li>Check CDOT road conditions before departure, especially over mountain passes</li>
+                <li>Download offline maps — cell service is spotty in most canyons and wilderness areas</li>
+                <li>Carry chains and an emergency kit in winter months</li>
+                <li>EV charging stations marked on our map</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-lg p-6">
+              <h3 class="font-primary font-bold text-lg mb-3 text-txt-p dark:text-darkmode-txt-p">🏕️ Accommodation</h3>
+              <ul class="space-y-2 text-sm text-txt-s dark:text-darkmode-txt-s">
+                <li>Campgrounds marked on the map</li>
+                <li>Hot springs resorts offer on-site lodging (Mount Princeton, Pagosa Springs, Glenwood)</li>
+                <li>Nearby mountain towns have hotels and motels</li>
+                <li>Backcountry camping at wilderness springs requires a permit</li>
+                <li>Book popular resort spots in advance, especially summer weekends</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-8 text-center">
+          <div class="glass rounded-lg p-8">
+            <h2 class="font-primary font-bold text-2xl mb-4 text-txt-p dark:text-darkmode-txt-p">Ready to Start Planning?</h2>
+            <p class="text-txt-s dark:text-darkmode-txt-s mb-6">Use our interactive map to build your custom route, check current conditions, and track your progress.</p>
+            <a
+              href="/colorado-hot-springs-map"
+              class="inline-block bg-accent text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open Trip Planner Map →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

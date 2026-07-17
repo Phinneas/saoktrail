@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Washington Hot Springs on Washington Hot Springs Directory</title>
+    <link>https://directory.washingtonhotsprings.com/springs/</link>
+    <description>Recent content in Washington Hot Springs on Washington Hot Springs Directory</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://directory.washingtonhotsprings.com/springs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sol Duc Hot Springs</title>
+      <link>https://directory.washingtonhotsprings.com/springs/sol-duc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://directory.washingtonhotsprings.com/springs/sol-duc/</guid>
+      <description>&lt;h1 id=&#34;sol-duc-hot-springs&#34;&gt;Sol Duc Hot Springs&lt;/h1&gt;&#xA;&lt;p&gt;Olympic Hot Springs in Olympic National Park&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Temperature:&lt;/strong&gt; 78°F&lt;br&gt;&#xA;&lt;strong&gt;Fee:&lt;/strong&gt; $18&lt;br&gt;&#xA;&lt;strong&gt;GPS:&lt;/strong&gt; 47.9689° N, 123.8631° W&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

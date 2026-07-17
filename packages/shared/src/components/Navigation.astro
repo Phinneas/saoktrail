@@ -1,0 +1,82 @@
+---
+import { siteConfig } from "@site/config";
+
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+];
+---
+
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="/" class="logo">{siteConfig.name}</a>
+    <ul class="nav-links">
+      {navItems.map(item => (
+        <li>
+          <a 
+            href={item.href} 
+            class={currentPath === item.href ? 'active' : ''}
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    background: #5C1A0A;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    color: #e2c7a1;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    color: #e2c7a1;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    border-bottom-color: #E86020;
+  }
+
+  @media (max-width: 768px) {
+    .nav-container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .nav-links {
+      gap: 1rem;
+    }
+  }
+</style>

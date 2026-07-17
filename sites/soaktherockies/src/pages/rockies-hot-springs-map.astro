@@ -1,0 +1,1868 @@
+---
+import BaseLayout from '@components/base/BaseLayout.astro';
+import SchemaScript from '@components/schema/SchemaScript.astro';
+import { mapboxAccessToken } from '@/config/map';
+import { buildItemListSchema, buildBreadcrumbSchema } from '@lib/schema';
+import springsData from '../../public/springs.json';
+
+const itemListSchema = buildItemListSchema(springsData);
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { label: "Home", href: "/" },
+  { label: "Rockies Hot Springs Map", href: "/rockies-hot-springs-map" },
+]);
+---
+
+<BaseLayout
+  title="Rockies Hot Springs Map"
+  description="Interactive map of all hot springs across Idaho, Montana, and Wyoming with conditions, access info, and trip planning."
+>
+  <Fragment slot="head">
+    <SchemaScript schema={itemListSchema} />
+    <SchemaScript schema={breadcrumbSchema} />
+  </Fragment>
+  <div class="map-page" data-mapbox-token={mapboxAccessToken}>
+    <aside class="map-sidebar">
+      <div class="sidebar-header">
+        <h1>Hot Springs Map</h1>
+        <p>Click a spring to see details</p>
+      </div>
+
+      <div class="search-wrapper">
+        <div id="geocoder"></div>
+      </div>
+
+      <!-- Isochrone drive-time zones -->
+      <div class="sidebar-section">
+        <span class="field-label">Drive Time Zones</span>
+        <div class="isochrone-row">
+          <select id="isochrone-city">
+            <option value="">Pick a city...</option>
+            <option value="-116.2145,43.6151">Boise, ID</option>
+            <option value="-112.0364,46.5936">Butte, MT</option>
+            <option value="-112.0205,45.9814">Bozeman, MT</option>
+            <option value="-114.0163,46.8721">Missoula, MT</option>
+            <option value="-111.0443,45.6802">Livingston, MT</option>
+            <option value="-110.7253,43.4752">Jackson, WY</option>
+            <option value="-106.3125,44.8084">Casper, WY</option>
+            <option value="-104.7747,41.1399">Cheyenne, WY</option>
+            <option value="-106.6509,42.8662">Lander, WY</option>
+            <option value="-106.9531,44.3233">Thermopolis, WY</option>
+            <option value="-114.4444,42.5689">Twin Falls, ID</option>
+            <option value="-116.9937,44.4759">Sun Valley/Ketchum, ID</option>
+            <option value="-111.9738,43.4835">Idaho Falls, ID</option>
+            <option value="-111.6513,44.4298">Challis, ID</option>
+          </select>
+          <select id="isochrone-time">
+            <option value="30">30 min</option>
+            <option value="60" selected>1 hour</option>
+            <option value="90">1.5 hrs</option>
+            <option value="120">2 hrs</option>
+            <option value="180">3 hrs</option>
+          </select>
+        </div>
+        <button id="show-isochrone" class="btn-isochrone" disabled>Show zone</button>
+        <button id="clear-isochrone" class="btn-isochrone-clear hidden">Clear zone</button>
+      </div>
+
+      <div id="springs-list" class="springs-list">
+        <div class="loading-placeholder">Loading springs...</div>
+      </div>
+    </aside>
+
+    <div class="map-container">
+      <div id="map"></div>
+
+      <!-- Map style switcher -->
+      <div class="style-switcher">
+        <button class="style-btn active" data-style="satellite" title="Satellite streets">
+          🛰️ Satellite
+        </button>
+        <button class="style-btn" data-style="outdoors" title="Outdoors">
+          🏔️ Outdoors
+        </button>
+      </div>
+
+      <!-- Layer controls -->
+      <div class="layer-controls">
+        <button id="toggle-3d" class="layer-btn" title="Toggle 3D terrain">🏔 3D</button>
+        <button id="toggle-fullscreen" class="layer-btn" title="Toggle fullscreen">⛶ Full</button>
+        <button id="toggle-gas" class="layer-btn" title="Gas stations">⛽ Gas</button>
+        <button id="toggle-poi" class="layer-btn" title="Nearby restaurants & camping">🍽 POI</button>
+        <button id="toggle-aqi" class="layer-btn" title="Air quality index">🌬 AQI</button>
+        <button id="toggle-snow" class="layer-btn" title="Snow depth">❄ Snow</button>
+        <button id="toggle-ev" class="layer-btn" title="EV charging stations">🔌 EV</button>
+        <button id="toggle-draw" class="layer-btn" title="Draw route annotations">✏ Draw</button>
+      </div>
+
+      <!-- Spring detail panel -->
+      <div id="spring-detail" class="spring-detail hidden">
+        <button id="detail-close" class="detail-close" aria-label="Close">✕</button>
+        <div id="detail-content"></div>
+      </div>
+
+      <!-- Passport panel -->
+      <div id="passport-panel" class="passport-panel hidden">
+        <button id="passport-close" class="passport-close" aria-label="Close">✕</button>
+        <div class="passport-header">
+          <h3>♨ Hot Springs Passport</h3>
+          <p>Track your soaking journey</p>
+        </div>
+        <div class="passport-progress">
+          <div class="progress-bar">
+            <div id="passport-fill" class="progress-fill" style="width: 0%"></div>
+          </div>
+          <div class="progress-stats">
+            <span id="passport-count">0</span> / <span id="passport-total">0</span> springs visited
+          </div>
+        </div>
+        <div id="passport-badges" class="passport-badges"></div>
+        <div id="passport-visited-list" class="passport-visited-list"></div>
+        <button id="passport-share" class="btn-passport-share">Share Progress</button>
+      </div>
+
+      <!-- Passport toggle button -->
+      <button id="passport-btn" class="passport-toggle" title="Your passport">🛂</button>
+    </div>
+  </div>
+</BaseLayout>
+
+<!-- Mapbox GL JS v3 (required for TerrainControl) -->
+<script src="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.js"></script>
+<link
+  href="https://api.mapbox.com/mapbox-gl-js/v3.9.4/mapbox-gl.css"
+  rel="stylesheet"
+/>
+<!-- Mapbox Geocoder -->
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
+  type="text/css"/>
+<!-- Mapbox GL Draw -->
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.4.3/mapbox-gl-draw.css" type="text/css" />
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.4.3/mapbox-gl-draw.js"></script>
+
+<script>
+// ─── Wait for Mapbox scripts to load ─────────────────────────────────────────
+function waitForScript(scriptName, callback) {
+  if (typeof window[scriptName] !== 'undefined') {
+    callback();
+  } else {
+    setTimeout(() => waitForScript(scriptName, callback), 100);
+  }
+}
+
+async function ensureScriptsLoaded() {
+  return new Promise((resolve) => {
+    // Check both mapboxgl and MapboxGeocoder
+    const checkScripts = () => {
+      if (typeof mapboxgl !== 'undefined' && typeof MapboxGeocoder !== 'undefined') {
+        resolve();
+      } else {
+        setTimeout(checkScripts, 100);
+      }
+    };
+    checkScripts();
+  });
+}
+
+// ─── Map initialisation ────────────────────────────────────────────────────────
+async function initMap() {
+  try {
+    await ensureScriptsLoaded();
+  } catch (e) {
+    console.error('Failed to load Mapbox scripts:', e);
+    return;
+  }
+  // Get Mapbox token from environment variables
+  const mapboxToken = document.querySelector('.map-page')?.dataset.mapboxToken || '';
+
+  if (!mapboxToken || mapboxToken === 'pk.YOUR_MAPBOX_TOKEN') {
+    console.error('Mapbox token not found. Please set PUBLIC_MAPBOX_ACCESS_TOKEN environment variable.');
+    return;
+  }
+
+  // Map style options
+  const mapStyles = {
+    satellite: 'mapbox://styles/mapbox/satellite-streets-v12',
+    outdoors: 'mapbox://styles/mapbox/outdoors-v12'
+  };
+
+  // Initialize Mapbox map
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: mapStyles.satellite,
+    center: [-111.0, 44.5],
+    zoom: 6,
+    accessToken: mapboxToken
+  });
+
+  // Add navigation controls
+  map.addControl(new mapboxgl.NavigationControl());
+
+  // Enable terrain 3D (requires Mapbox GL JS v3+)
+  try {
+    map.addControl(new mapboxgl.TerrainControl({ source: 'mapbox' }), 'top-right');
+  } catch (e) {
+    console.warn('TerrainControl not available:', e.message);
+  }
+
+  // ─── Load springs ────────────────────────────────────────────────────────────
+  let springs = [];
+  try {
+    const res = await fetch('/springs.json');
+    if (!res.ok) throw new Error('Failed to load springs data');
+    springs = await res.json();
+
+    // Filter out invalid springs before processing
+    springs = springs.filter(s => s.lat && s.lng && s.slug);
+
+    // Sort springs by name for better search performance
+    springs.sort((a, b) => a.name.localeCompare(b.name));
+
+    console.log(`Loaded ${springs.length} springs successfully`);
+  } catch (e) {
+    console.error('Failed to load springs:', e);
+    alert('Failed to load hot springs data. Please try refreshing the page.');
+  }
+
+  // ─── Temperature color helper ───────────────────────────────────────────────
+  function getTempColor(temp) {
+    if (!temp) return '#2d6a4f';
+    const colors = [
+      { min: 90,  max: 200, color: '#ef4444' },  // scalding red
+      { min: 80,  max: 89,  color: '#f97316' },  // hot orange
+      { min: 70,  max: 79,  color: '#eab308' },  // warm yellow
+      { min: 60,  max: 69,  color: '#22c55e' },  // cool green
+      { min: 0,   max: 59,  color: '#3b82f6' },  // cold blue
+    ];
+    const range = colors.find(r => temp >= r.min && temp <= r.max);
+    return range ? range.color : '#2d6a4f';
+  }
+
+  // ─── Custom pin markers ─────────────────────────────────────────────────────
+  // Create a distinct drop-pin shape with ♨ icon and temperature-based color
+  function createPinElement(spring) {
+    const color = getTempColor(spring.temp_f);
+    const el = document.createElement('div');
+    el.className = 'hot-spring-pin';
+    el.dataset.slug = spring.slug;
+    el.innerHTML = `
+      <svg width="36" height="48" viewBox="0 0 36 48" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="pin-shadow-${spring.id}" x="-20%" y="-10%" width="140%" height="130%">
+            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+          </filter>
+        </defs>
+        <path d="M18 47 C18 47 2 28 2 16 C2 8 9 2 18 2 C27 2 34 8 34 16 C34 28 18 47 18 47Z"
+              fill="${color}" stroke="#fff" stroke-width="2" filter="url(#pin-shadow-${spring.id})"/>
+        <text x="18" y="21" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">♨</text>
+      </svg>
+    `;
+    return el;
+  }
+
+  // ─── Springs data, markers, and cluster layers ────────────────────────────────
+  const springMarkers = {};
+
+  // Add GeoJSON source + cluster layers (called on load and after style changes)
+  function addSpringsToMap() {
+    if (!map.getSource('springs')) {
+      const features = springs.map(spring => ({
+        type: 'Feature',
+        geometry: { type: 'Point', coordinates: [spring.lng, spring.lat] },
+        properties: spring
+      }));
+
+      map.addSource('springs', {
+        type: 'geojson',
+        data: { type: 'FeatureCollection', features },
+        cluster: true,
+        clusterMaxZoom: 14,
+        clusterRadius: 50
+      });
+    }
+
+    // Cluster circles
+    if (!map.getLayer('clusters')) {
+      map.addLayer({
+        id: 'clusters',
+        type: 'circle',
+        source: 'springs',
+        filter: ['has', 'point_count'],
+        paint: {
+          'circle-color': [
+            'step', ['get', 'point_count'],
+            '#2d6a4f', 5, '#f97316', 10, '#ef4444'
+          ],
+          'circle-radius': [
+            'step', ['get', 'point_count'],
+            28, 5, 38, 10, 48
+          ],
+          'circle-stroke-width': 4,
+          'circle-stroke-color': '#ffffff'
+        }
+      });
+    }
+
+    if (!map.getLayer('cluster-count')) {
+      map.addLayer({
+        id: 'cluster-count',
+        type: 'symbol',
+        source: 'springs',
+        filter: ['has', 'point_count'],
+        layout: {
+          'text-field': ['get', 'point_count_abbreviated'],
+          'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+          'text-size': 18,
+          'text-anchor': 'center'
+        },
+        paint: {
+          'text-color': '#ffffff',
+          'text-halo-color': 'rgba(0,0,0,0.8)',
+          'text-halo-width': 3
+        }
+      });
+    }
+  }
+
+  // Rebuild individual pin markers from current view (safe to call repeatedly)
+  function addIndividualMarkers() {
+    // Remove existing markers
+    Object.values(springMarkers).forEach(m => m.remove());
+    for (const key in springMarkers) delete springMarkers[key];
+
+    // Guard: springs source may not exist yet (during style transition)
+    if (!map.getSource('springs')) return;
+
+    // Get features that are NOT part of a cluster
+    const unclustered = map.querySourceFeatures('springs', {
+      filter: ['!', ['has', 'point_count']]
+    });
+
+    // Deduplicate by slug (querySourceFeatures can return duplicates at tile boundaries)
+    const seen = new Set();
+    unclustered.forEach(f => {
+      const slug = f.properties.slug;
+      if (seen.has(slug)) return;
+      seen.add(slug);
+
+      const spring = springs.find(s => s.slug === slug);
+      if (!spring) return;
+
+      const el = createPinElement(spring);
+      const marker = new mapboxgl.Marker({
+        element: el,
+        anchor: 'bottom'
+      })
+      .setLngLat([spring.lng, spring.lat])
+      .addTo(map);
+
+      // Click on pin → open detail panel
+      el.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openDetail(spring, map);
+      });
+
+      springMarkers[slug] = marker;
+    });
+  }
+
+  // ─── Register event listeners ONCE (not inside addSpringsToMap) ────────────
+  // Cluster click → zoom in
+  map.on('click', 'clusters', (e) => {
+    const features = map.queryRenderedFeatures(e.point, { layers: ['clusters'] });
+    if (features.length > 0) {
+      map.zoomTo(Math.min(map.getZoom() + 3, 15), {
+        center: features[0].geometry.coordinates,
+        duration: 800
+      });
+    }
+  });
+  map.on('mouseenter', 'clusters', () => { map.getCanvas().style.cursor = 'pointer'; });
+  map.on('mouseleave', 'clusters', () => { map.getCanvas().style.cursor = ''; });
+
+  // Re-render individual markers on every render (pins appear/disappear as clusters split)
+  map.on('idle', addIndividualMarkers);
+
+  // Initial load: add data + first marker render
+  map.on('load', () => {
+    addSpringsToMap();
+    addIndividualMarkers();
+  });
+
+  // ─── Isochrone drive-time zones ────────────────────────────────────────────
+  const citySelect = document.getElementById('isochrone-city');
+  const timeSelect = document.getElementById('isochrone-time');
+  const showBtn = document.getElementById('show-isochrone');
+  const clearBtn = document.getElementById('clear-isochrone');
+
+  citySelect.addEventListener('change', () => {
+    showBtn.disabled = !citySelect.value;
+  });
+
+  showBtn.addEventListener('click', async () => {
+    const [lng, lat] = citySelect.value.split(',').map(Number);
+    const minutes = timeSelect.value;
+    showBtn.textContent = 'Loading...';
+    showBtn.disabled = true;
+
+    try {
+      const res = await fetch(
+        `https://api.mapbox.com/isochrone/v1/mapbox/driving/${lng},${lat}?contours_minutes=${minutes}&polygons=true&denoise=1&generalize=50&access_token=${mapboxToken}`
+      );
+      if (!res.ok) throw new Error(`Isochrone API ${res.status}`);
+      const data = await res.json();
+
+      // Remove previous isochrone layer
+      if (map.getLayer('isochrone-fill')) map.removeLayer('isochrone-fill');
+      if (map.getLayer('isochrone-outline')) map.removeLayer('isochrone-outline');
+      if (map.getSource('isochrone')) map.removeSource('isochrone');
+
+      map.addSource('isochrone', { type: 'geojson', data });
+      map.addLayer({
+        id: 'isochrone-fill',
+        type: 'fill',
+        source: 'isochrone',
+        paint: {
+          'fill-color': '#2d6a4f',
+          'fill-opacity': 0.15
+        }
+      });
+      map.addLayer({
+        id: 'isochrone-outline',
+        type: 'line',
+        source: 'isochrone',
+        paint: {
+          'line-color': '#2d6a4f',
+          'line-width': 2,
+          'line-dasharray': [3, 3]
+        }
+      });
+
+      // Count springs within the zone
+      const bounds = new mapboxgl.LngLatBounds();
+      data.features.forEach(f => {
+        if (f.geometry.type === 'Polygon') {
+          f.geometry.coordinates[0].forEach(c => bounds.extend(c));
+        }
+      });
+      map.fitBounds(bounds, { padding: 40 });
+
+      clearBtn.classList.remove('hidden');
+    } catch (e) {
+      console.error('Isochrone error:', e);
+      alert('Failed to load drive-time zone. Try a shorter time.');
+    } finally {
+      showBtn.textContent = 'Show zone';
+      showBtn.disabled = !citySelect.value;
+    }
+  });
+
+  clearBtn.addEventListener('click', () => {
+    if (map.getLayer('isochrone-fill')) map.removeLayer('isochrone-fill');
+    if (map.getLayer('isochrone-outline')) map.removeLayer('isochrone-outline');
+    if (map.getSource('isochrone')) map.removeSource('isochrone');
+    clearBtn.classList.add('hidden');
+  });
+
+  // ─── Data layer toggles (gas, POI, AQI, snow) ────────────────────────────
+  const overpassUrls = [
+    'https://overpass.kumi.systems/api/interpreter',
+    'https://overpass.osm.ch/api/interpreter',
+    'https://overpass-api.de/api/interpreter'
+  ];
+
+  async function fetchOverpass(query) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    for (const url of overpassUrls) {
+      try {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `data=${encodeURIComponent(query)}`,
+          signal: controller.signal
+        });
+        if (res.ok) {
+          clearTimeout(timeout);
+          return await res.json();
+        }
+      } catch (e) {
+        console.warn(`Overpass endpoint ${url} failed, trying next...`, e.message);
+      }
+    }
+    clearTimeout(timeout);
+    throw new Error('All Overpass API endpoints failed');
+  }
+  const activeLayers = { gas: false, poi: false, aqi: false, snow: false };
+
+  // ─── Load static POI data (pre-fetched from OpenStreetMap) ────────────────
+  let gasData = null, poiData = null, evData = null;
+
+  async function loadStaticData() {
+    try {
+      const [gasRes, poiRes, evRes] = await Promise.all([
+        fetch('/data/gas-stations.json'),
+        fetch('/data/poi.json'),
+        fetch('/data/ev-stations.json')
+      ]);
+      gasData = await gasRes.json();
+      poiData = await poiRes.json();
+      evData = await evRes.json();
+      console.log(`Static data loaded: ${gasData.features.length} gas, ${poiData.features.length} POI, ${evData.features.length} EV`);
+    } catch (e) {
+      console.error('Failed to load static POI data:', e);
+    }
+  }
+  loadStaticData();
+
+  // Gas stations layer
+  document.getElementById('toggle-gas').addEventListener('click', async (e) => {
+    const btn = e.currentTarget;
+    activeLayers.gas = !activeLayers.gas;
+    btn.classList.toggle('active', activeLayers.gas);
+
+    if (!activeLayers.gas) {
+      if (map.getLayer('gas-markers')) map.removeLayer('gas-markers');
+      if (map.getSource('gas-data')) map.removeSource('gas-data');
+      return;
+    }
+
+    if (map.getSource('gas-data')) return;
+
+    try {
+      if (!gasData) { alert('Gas station data still loading, try again in a moment.'); activeLayers.gas = false; btn.classList.remove('active'); return; }
+
+      map.addSource('gas-data', { type: 'geojson', data: gasData });
+      map.addLayer({
+        id: 'gas-markers',
+        type: 'circle',
+        source: 'gas-data',
+        paint: {
+          'circle-radius': 12,
+          'circle-color': '#f59e0b',
+          'circle-stroke-width': 2,
+          'circle-stroke-color': '#ffffff'
+        }
+      });
+
+      map.on('click', 'gas-markers', (ev) => {
+        const f = ev.features[0];
+        new mapboxgl.Popup().setLngLat(f.geometry.coordinates).setHTML(`<strong>⛽ ${f.properties.name}</strong>`).addTo(map);
+      });
+      map.on('mouseenter', 'gas-markers', () => { map.getCanvas().style.cursor = 'pointer'; });
+      map.on('mouseleave', 'gas-markers', () => { map.getCanvas().style.cursor = ''; });
+    } catch (e) {
+      console.error('Gas layer error:', e);
+      alert('Failed to load gas stations: ' + e.message);
+    }
+  });
+
+  // POI layer (restaurants + campgrounds)
+  document.getElementById('toggle-poi').addEventListener('click', async (e) => {
+    const btn = e.currentTarget;
+    activeLayers.poi = !activeLayers.poi;
+    btn.classList.toggle('active', activeLayers.poi);
+
+    if (!activeLayers.poi) {
+      if (map.getLayer('poi-rest-markers')) map.removeLayer('poi-rest-markers');
+      if (map.getLayer('poi-camp-markers')) map.removeLayer('poi-camp-markers');
+      if (map.getSource('poi-data')) map.removeSource('poi-data');
+      return;
+    }
+
+    if (map.getSource('poi-data')) return;
+
+    try {
+      if (!poiData) { alert('POI data still loading, try again in a moment.'); activeLayers.poi = false; btn.classList.remove('active'); return; }
+
+      map.addSource('poi-data', { type: 'geojson', data: poiData });
+      map.addLayer({
+        id: 'poi-rest-markers',
+        type: 'circle',
+        source: 'poi-data',
+        filter: ['==', ['get', 'type'], 'restaurant'],
+        paint: {
+          'circle-radius': 10,
+          'circle-color': '#dc2626',
+          'circle-stroke-width': 2,
+          'circle-stroke-color': '#ffffff'
+        }
+      });
+      map.addLayer({
+        id: 'poi-camp-markers',
+        type: 'circle',
+        source: 'poi-data',
+        filter: ['==', ['get', 'type'], 'camp_site'],
+        paint: {
+          'circle-radius': 10,
+          'circle-color': '#7c3aed',
+          'circle-stroke-width': 2,
+          'circle-stroke-color': '#ffffff'
+        }
+      });
+
+      const poiPopup = (layer, icon) => (ev) => {
+        const f = ev.features[0];
+        new mapboxgl.Popup().setLngLat(f.geometry.coordinates).setHTML(`<strong>${icon} ${f.properties.name}</strong>`).addTo(map);
+      };
+      map.on('click', 'poi-rest-markers', poiPopup('poi-rest-markers', '🍽'));
+      map.on('click', 'poi-camp-markers', poiPopup('poi-camp-markers', '🏕'));
+      ['poi-rest-markers', 'poi-camp-markers'].forEach(l => {
+        map.on('mouseenter', l, () => { map.getCanvas().style.cursor = 'pointer'; });
+        map.on('mouseleave', l, () => { map.getCanvas().style.cursor = ''; });
+      });
+    } catch (e) {
+      console.error('POI layer error:', e);
+      alert('Failed to load POI data: ' + e.message);
+    }
+  });
+
+  // Air quality index overlay (EPA AirNow tile layer)
+  document.getElementById('toggle-aqi').addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    activeLayers.aqi = !activeLayers.aqi;
+    btn.classList.toggle('active', activeLayers.aqi);
+
+    if (!activeLayers.aqi) {
+      if (map.getLayer('aqi-layer')) map.removeLayer('aqi-layer');
+      if (map.getSource('aqi-source')) map.removeSource('aqi-source');
+      return;
+    }
+
+    if (map.getSource('aqi-source')) return;
+
+    map.addSource('aqi-source', {
+      type: 'raster',
+      tiles: [
+        'https://tiles.aqicn.org/tiles/useiaqi/{z}/{x}/{y}.png'
+      ],
+      tileSize: 256,
+      attribution: 'WAQI / EPA AirNow'
+    });
+    map.addLayer({
+      id: 'aqi-layer',
+      type: 'raster',
+      source: 'aqi-source',
+      paint: { 'raster-opacity': 0.5 }
+    }, 'clusters'); // below cluster layer so springs stay visible
+  });
+
+  // Snow depth overlay (NOAA NOHRSC Snow Analysis)
+  document.getElementById('toggle-snow').addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    activeLayers.snow = !activeLayers.snow;
+    btn.classList.toggle('active', activeLayers.snow);
+
+    if (!activeLayers.snow) {
+      if (map.getLayer('snow-layer')) map.removeLayer('snow-layer');
+      if (map.getSource('snow-source')) map.removeSource('snow-source');
+      return;
+    }
+
+    if (map.getSource('snow-source')) return;
+
+    map.addSource('snow-source', {
+      type: 'raster',
+      tiles: [
+        'https://mapservices.weather.noaa.gov/raster/rest/services/snow/NOHRSC_Snow_Analysis/MapServer/export?bbox={bbox-epsg-3857}&bboxSR=3857&size=256,256&format=png&transparent=true&f=image&layers=show:0'
+      ],
+      tileSize: 256,
+      attribution: 'NOAA NOHRSC Snow Analysis'
+    });
+    map.addLayer({
+      id: 'snow-layer',
+      type: 'raster',
+      source: 'snow-source',
+      paint: { 'raster-opacity': 0.6 }
+    }, 'clusters');
+  });
+
+  // EV charging stations layer
+  activeLayers.ev = false;
+  document.getElementById('toggle-ev').addEventListener('click', async (e) => {
+    const btn = e.currentTarget;
+    activeLayers.ev = !activeLayers.ev;
+    btn.classList.toggle('active', activeLayers.ev);
+
+    if (!activeLayers.ev) {
+      if (map.getLayer('ev-markers')) map.removeLayer('ev-markers');
+      if (map.getSource('ev-data')) map.removeSource('ev-data');
+      return;
+    }
+
+    if (map.getSource('ev-data')) return;
+
+    try {
+      if (!evData) { alert('EV station data still loading, try again in a moment.'); activeLayers.ev = false; btn.classList.remove('active'); return; }
+
+      map.addSource('ev-data', { type: 'geojson', data: evData });
+      map.addLayer({
+        id: 'ev-markers',
+        type: 'circle',
+        source: 'ev-data',
+        paint: {
+          'circle-radius': 12,
+          'circle-color': '#10b981',
+          'circle-stroke-width': 2,
+          'circle-stroke-color': '#ffffff'
+        }
+      });
+
+      map.on('click', 'ev-markers', (ev) => {
+        const f = ev.features[0];
+        const p = f.properties;
+        const details = p.capacity ? `<br><small>${p.capacity} chargers${p.socket_type ? ' · ' + p.socket_type : ''}</small>` : '';
+        new mapboxgl.Popup().setLngLat(f.geometry.coordinates).setHTML(`<strong>🔌 ${p.name}</strong>${details}`).addTo(map);
+      });
+      map.on('mouseenter', 'ev-markers', () => { map.getCanvas().style.cursor = 'pointer'; });
+      map.on('mouseleave', 'ev-markers', () => { map.getCanvas().style.cursor = ''; });
+    } catch (e) {
+      console.error('EV layer error:', e);
+      alert('Failed to load EV stations: ' + e.message);
+    }
+  });
+
+  // ─── Draw/route annotation ────────────────────────────────────────────────
+  let drawEnabled = false;
+  let draw = null;
+
+  document.getElementById('toggle-draw').addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    drawEnabled = !drawEnabled;
+    btn.classList.toggle('active', drawEnabled);
+
+    if (drawEnabled) {
+      if (!draw) {
+        // Initialize MapboxDraw on first use
+        draw = new MapboxDraw({
+          displayControlsDefault: false,
+          controls: {
+            line_string: true,
+            polygon: true,
+            trash: true
+          },
+          styles: [
+            { id: 'gl-draw-line', type: 'line', filter: ['all', ['==', '$type', 'LineString']],
+              paint: { 'line-color': '#2d6a4f', 'line-width': 3, 'line-dasharray': [2, 2] } },
+            { id: 'gl-draw-polygon-fill', type: 'fill', filter: ['all', ['==', '$type', 'Polygon']],
+              paint: { 'fill-color': '#2d6a4f', 'fill-opacity': 0.15 } },
+            { id: 'gl-draw-polygon-stroke', type: 'line', filter: ['all', ['==', '$type', 'Polygon']],
+              paint: { 'line-color': '#2d6a4f', 'line-width': 2, 'line-dasharray': [3, 3] } },
+            { id: 'gl-draw-point', type: 'circle', filter: ['all', ['==', '$type', 'Point']],
+              paint: { 'circle-radius': 5, 'circle-color': '#2d6a4f', 'circle-stroke-width': 2, 'circle-stroke-color': '#fff' } },
+          ]
+        });
+        map.addControl(draw, 'top-left');
+      }
+      // Show draw controls
+      document.querySelectorAll('.mapbox-gl-draw_ctrl-draw-btn').forEach(btn => btn.style.display = 'block');
+    } else if (draw) {
+      // Hide draw controls without removing the plugin
+      document.querySelectorAll('.mapbox-gl-draw_ctrl-draw-btn').forEach(btn => btn.style.display = 'none');
+      draw.changeMode('simple_select');
+    }
+  });
+
+  // ─── Render sidebar list ─────────────────────────────────────────────────────
+  const listEl = document.getElementById('springs-list');
+  const geocoder = document.getElementById('geocoder');
+
+  // Configure Mapbox Geocoder
+  const geocoderControl = new MapboxGeocoder({
+    accessToken: mapboxToken,
+    mapboxgl: mapboxgl,
+    marker: false, // Don't add a marker for geocoding results
+    placeholder: 'Search springs, cities...',
+    proximity: { longitude: -111.0, latitude: 44.5 }, // Bias toward Rockies (ID/MT/WY)
+    countries: 'us',
+    types: 'poi,place,locality', // Search for points of interest, places, localities
+    limit: 5,
+  });
+
+  geocoderControl.addTo(geocoder);
+
+  // Handle geocoding results - filter springs list
+  geocoderControl.on('result', (e) => {
+    const searchTerm = e.result.text.toLowerCase();
+    renderList(springs.filter(s =>
+      s.name.toLowerCase().includes(searchTerm) ||
+      s.description?.toLowerCase().includes(searchTerm)
+    ));
+  });
+
+  geocoderControl.on('clear', () => {
+    renderList(springs);
+  });
+
+  function renderList(filtered) {
+    if (!filtered.length) {
+      listEl.innerHTML = '<p class="no-results">No springs found.</p>';
+      return;
+    }
+    listEl.innerHTML = filtered.map(s => `
+      <button class="spring-list-item" data-slug="${s.slug}">
+        <span class="list-icon" style="color: ${getTempColor(s.temp_f)}">♨</span>
+        <div class="list-info">
+          <strong>${s.name}</strong>
+          <span>${s.temp_f ? s.temp_f + '°F' : '—'} · ${s.access_type ?? '—'} · ${s.fee != null ? (s.fee === 0 ? 'Free' : '$' + s.fee) : '—'}</span>
+        </div>
+      </button>
+    `).join('');
+
+    // Sidebar item → fly to + open detail
+    listEl.querySelectorAll('.spring-list-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const spring = springs.find(s => s.slug === btn.dataset.slug);
+        if (spring) openDetail(spring, map);
+      });
+    });
+  }
+
+  function getTempColor(temp) {
+    if (!temp) return '#2d6a4f'; // default green
+    const colors = [
+      { min: 90,  max: 100, color: '#ef4444' },  // hot red
+      { min: 80,  max: 89,  color: '#f97316' },  // orange
+      { min: 70,  max: 79,  color: '#eab308' },  // yellow
+      { min: 60,  max: 69,  color: '#22c55e' },  // green
+      { min: 0,   max: 59,  color: '#3b82f6' },  // blue
+    ];
+    const range = colors.find(r => temp >= r.min && temp <= r.max);
+    return range ? range.color : '#2d6a4f';
+  }
+
+  renderList(springs);
+
+  // ─── Analytics helper ──────────────────────────────────────────────────────
+  function trackEvent(event, slug, extra) {
+    fetch('/api/analytics/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ event, slug, extra })
+    }).catch(() => {}); // silently fail - analytics shouldn't break the map
+  }
+
+  // ─── Hot Springs Passport ─────────────────────────────────────────────────
+  const PASSPORT_KEY = 'co-hot-springs-passport';
+
+  function getVisited() {
+    try { return JSON.parse(localStorage.getItem(PASSPORT_KEY) || '[]'); } catch { return []; }
+  }
+  function setVisited(list) {
+    localStorage.setItem(PASSPORT_KEY, JSON.stringify(list));
+    updatePassportUI();
+  }
+  function markVisited(slug) {
+    const visited = getVisited();
+    if (!visited.includes(slug)) {
+      visited.push(slug);
+      setVisited(visited);
+    }
+  }
+  function unmarkVisited(slug) {
+    const visited = getVisited().filter(s => s !== slug);
+    setVisited(visited);
+  }
+  function isVisited(slug) {
+    return getVisited().includes(slug);
+  }
+
+  function updatePassportUI() {
+    const visited = getVisited();
+    const total = springs.length;
+    const count = visited.length;
+    const pct = total > 0 ? (count / total * 100) : 0;
+
+    // Update progress bar
+    const fill = document.getElementById('passport-fill');
+    const countEl = document.getElementById('passport-count');
+    const totalEl = document.getElementById('passport-total');
+    if (fill) fill.style.width = `${pct}%`;
+    if (countEl) countEl.textContent = count;
+    if (totalEl) totalEl.textContent = total;
+
+    // Badges
+    const badgesEl = document.getElementById('passport-badges');
+    if (badgesEl) {
+      const badges = [
+        { threshold: 1, icon: '🏕', label: 'First Soak', earned: count >= 1 },
+        { threshold: 5, icon: '♨', label: 'Getting Warm', earned: count >= 5 },
+        { threshold: 10, icon: '🌋', label: 'Hot Streak', earned: count >= 10 },
+        { threshold: 20, icon: '🏔', label: 'Mountain Soaker', earned: count >= 20 },
+        { threshold: 30, icon: '👑', label: 'Thermal Royalty', earned: count >= 30 },
+        { threshold: total, icon: '🏆', label: '100% Soaker', earned: count >= total },
+      ];
+      badgesEl.innerHTML = badges.map(b => `
+        <div class="badge ${b.earned ? 'earned' : 'locked'}" title="${b.label}">
+          <span class="badge-icon">${b.earned ? b.icon : '🔒'}</span>
+          <span class="badge-label">${b.label}</span>
+          <span class="badge-threshold">${b.threshold} needed</span>
+        </div>
+      `).join('');
+    }
+
+    // Visited list
+    const listEl = document.getElementById('passport-visited-list');
+    if (listEl) {
+      if (visited.length === 0) {
+        listEl.innerHTML = '<p class="passport-empty">Click the ✓ button on any spring to start your passport.</p>';
+      } else {
+        listEl.innerHTML = visited.map(slug => {
+          const spring = springs.find(s => s.slug === slug);
+          if (!spring) return '';
+          return `
+            <div class="visited-item">
+              <span class="visited-icon">♨</span>
+              <span class="visited-name">${spring.name}</span>
+              <button class="unvisit-btn" data-slug="${slug}" title="Remove">✕</button>
+            </div>
+          `;
+        }).join('');
+
+        listEl.querySelectorAll('.unvisit-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            unmarkVisited(btn.dataset.slug);
+          });
+        });
+      }
+    }
+
+    // Update visited pins on map
+    document.querySelectorAll('.hot-spring-pin').forEach(pin => {
+      const slug = pin.dataset.slug;
+      pin.classList.toggle('pin-visited', isVisited(slug));
+    });
+  }
+
+  // Passport panel toggle
+  document.getElementById('passport-btn')?.addEventListener('click', () => {
+    document.getElementById('passport-panel')?.classList.toggle('hidden');
+  });
+  document.getElementById('passport-close')?.addEventListener('click', () => {
+    document.getElementById('passport-panel')?.classList.add('hidden');
+  });
+
+  // Passport share
+  document.getElementById('passport-share')?.addEventListener('click', () => {
+    const visited = getVisited();
+    const pct = springs.length > 0 ? Math.round(visited.length / springs.length * 100) : 0;
+    const text = `♨ Hot Springs Passport\n${visited.length}/${springs.length} springs visited (${pct}%)\n🎒 ${visited.map(s => { const sp = springs.find(x => x.slug === s); return sp ? sp.name : s; }).join(', ')}\n\nTrack yours at soaktherockies.com/rockies-hot-springs-map`;
+    navigator.clipboard.writeText(text).then(() => alert('Passport copied to clipboard!')).catch(() => {});
+  });
+
+  // Initialize passport on load
+  updatePassportUI();
+
+  // ─── Mobile touch gestures ────────────────────────────────────────────────
+  // ─── Panel close helpers ────────────────────────────────────────────────────
+  function closeDirectionsPanel() {
+    const panel = document.getElementById('directions-panel');
+    if (panel) panel.classList.add('hidden');
+    if (map.getLayer('route-line')) {
+      map.removeLayer('route-line');
+      map.removeSource('route-data');
+    }
+  }
+
+  // ─── Detail panel ────────────────────────────────────────────────────────────
+  function openDetail(spring, map) {
+    map.flyTo({ center: [spring.lng, spring.lat], zoom: 12, duration: 800 });
+    trackEvent('click', spring.slug);
+
+    // Close directions panel if open
+    closeDirectionsPanel();
+
+    const detail = document.getElementById('spring-detail');
+    const content = document.getElementById('detail-content');
+    detail.classList.remove('hidden');
+    detail.style.display = '';
+
+    const blogSlug = spring.slug;
+
+    content.innerHTML = `
+      <h2>${spring.name}</h2>
+      <div class="detail-chips">
+        ${spring.temp_f ? `<span class="chip">🌡 ${spring.temp_f}°F</span>` : ''}
+        ${spring.fee != null ? `<span class="chip">💰 ${spring.fee === 0 ? 'Free' : '$' + spring.fee}</span>` : ''}
+        ${spring.access_type ? `<span class="chip">🥾 ${spring.access_type}</span>` : ''}
+        ${spring.season ? `<span class="chip">📅 ${spring.season}</span>` : ''}
+      </div>
+      ${spring.description ? `<p class="detail-desc">${spring.description}</p>` : ''}
+      <dl class="detail-grid">
+        ${spring.hours ? `<dt>Hours</dt><dd>${spring.hours}</dd>` : ''}
+        ${spring.clothing ? `<dt>Clothing</dt><dd>${spring.clothing}</dd>` : ''}
+        ${spring.parking ? `<dt>Parking</dt><dd>${spring.parking}</dd>` : ''}
+        ${spring.cell_coverage ? `<dt>Cell</dt><dd>${spring.cell_coverage}</dd>` : ''}
+        ${spring.road_condition ? `<dt>Road</dt><dd>${spring.road_condition}</dd>` : ''}
+        ${spring.best_time ? `<dt>Best time</dt><dd>${spring.best_time}</dd>` : ''}
+        ${spring.alerts ? `<dt>Alerts</dt><dd class="alert-text">${spring.alerts}</dd>` : ''}
+      </dl>
+      ${spring.insider_tips ? `<div class="insider-tip"><strong>💡 Insider tip:</strong> ${spring.insider_tips}</div>` : ''}
+      <div class="detail-actions">
+        <button onclick="toggleVisited('${spring.slug}')" id="visited-btn-${spring.slug}" class="btn-detail ${isVisited(spring.slug) ? 'btn-visited' : 'btn-secondary'}">
+          ${isVisited(spring.slug) ? '✓ Visited' : '✓ Mark Visited'}
+        </button>
+        ${spring.has_post !== false ? `<a href="/blog/${blogSlug}" class="btn-detail">Read full guide →</a>` : ''}
+        <button onclick="getDirectionsTo(${spring.lat}, ${spring.lng}, '${spring.slug}')" class="btn-detail btn-secondary">Get Directions ↗</button>
+      </div>
+    `;
+
+    // Update visited button state after render
+    updateVisitedButton(spring.slug);
+  }
+
+  function updateVisitedButton(slug) {
+    const btn = document.getElementById(`visited-btn-${slug}`);
+    if (!btn) return;
+    const visited = isVisited(slug);
+    btn.className = `btn-detail ${visited ? 'btn-visited' : 'btn-secondary'}`;
+    btn.textContent = visited ? '✓ Visited' : '✓ Mark Visited';
+  }
+
+  window.toggleVisited = function(slug) {
+    if (isVisited(slug)) {
+      unmarkVisited(slug);
+    } else {
+      markVisited(slug);
+      trackEvent('visited', slug);
+    }
+    updateVisitedButton(slug);
+  };
+
+  // ─── Directions functionality ────────────────────────────────────────────
+  function getDirectionsTo(lat, lng, name) {
+    // Track direction request
+    const spring = springs.find(s => Math.abs(s.lat - lat) < 0.01 && Math.abs(s.lng - lng) < 0.01);
+    if (spring) trackEvent('directions', spring.slug);
+
+    // On mobile, route directly to Google Maps
+    if (window.innerWidth <= 640) {
+      window.open(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`, '_blank');
+      return;
+    }
+
+    // Close detail panel
+    document.getElementById('spring-detail')?.classList.add('hidden');
+
+    // Open directions panel
+    const directionsPanel = document.getElementById('directions-panel');
+    const directionsContent = document.getElementById('directions-content');
+    directionsPanel.classList.remove('hidden');
+
+    // Get user's location
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        const userLat = position.coords.latitude;
+        const userLng = position.coords.longitude;
+
+        await fetchDirections(userLat, userLng, lat, lng, name);
+      }, (error) => {
+        console.error('Geolocation error:', error);
+        directionsContent.innerHTML = '<p class="error">Unable to get your location. Please enable location services.</p>';
+      });
+    } else {
+      directionsContent.innerHTML = '<p class="error">Location services not supported in this browser.</p>';
+    }
+  }
+
+  async function fetchDirections(fromLat, fromLng, toLat, toLng, destinationName) {
+    const directionsContent = document.getElementById('directions-content');
+    directionsContent.innerHTML = '<p>Calculating directions...</p>';
+
+    try {
+      const res = await fetch(
+        `https://api.mapbox.com/directions/v5/mapbox/driving/${fromLng},${fromLat};${toLng},${toLat}?steps=true&geometries=geojson&overview=full&access_token=${mapboxToken}`
+      );
+
+      if (!res.ok) { const errBody = await res.text().catch(() => ''); throw new Error(`Directions API ${res.status}: ${errBody}`); }
+
+      const data = await res.json();
+      const route = data.routes[0];
+      const legs = route.legs[0];
+
+      // Display directions
+      let directionsHTML = `
+        <div class="route-summary">
+          <div class="summary-distance">${(legs.distance / 1609.34).toFixed(1)} miles</div>
+          <div class="summary-duration">${formatDuration(legs.duration)}</div>
+        </div>
+        <div class="directions-list">
+      `;
+
+      legs.steps.forEach((step, index) => {
+        directionsHTML += `
+          <div class="direction-step">
+            <div class="step-number">${index + 1}</div>
+            <div class="step-instruction">${step.maneuver.instruction}</div>
+            <div class="step-distance">${(step.distance / 1609.34).toFixed(1)} mi · ${step.duration > 60 ? Math.floor(step.duration/60) + 'min ' + step.duration%60 + 's' : step.duration + 's'}</div>
+          </div>
+        `;
+      });
+
+      directionsHTML += `
+        </div>
+        <div class="directions-footer">
+          <button onclick="window.open('https://www.google.com/maps/dir/?api=1&origin=${fromLat},${fromLng}&destination=${toLat},${toLng}')" class="btn-detail btn-secondary">Open in Google Maps ↗</button>
+        </div>
+      `;
+
+      directionsContent.innerHTML = directionsHTML;
+
+      // Draw route on map
+      if (map.getLayer('route-line')) {
+        map.removeLayer('route-line');
+        map.removeSource('route-data');
+      }
+
+      map.addSource('route-data', {
+        type: 'geojson',
+        data: route.geometry
+      });
+
+      map.addLayer({
+        id: 'route-line',
+        type: 'line',
+        source: 'route-data',
+        layout: {
+          'line-join': 'round',
+          'line-cap': 'round'
+        },
+        paint: {
+          'line-color': '#2563eb',
+          'line-width': 5,
+          'line-opacity': 0.8
+        }
+      });
+
+      // Fit map to route
+      const bounds = new mapboxgl.LngLatBounds();
+      route.geometry.coordinates.forEach(coord => {
+        bounds.extend(coord);
+      });
+      map.fitBounds(bounds, { padding: 50 });
+
+    } catch (error) {
+      console.error('Directions error:', error);
+      directionsContent.innerHTML = `<p class="error">Failed to get directions: ${error.message || error}. Please try again.</p>`;
+    }
+  }
+
+  function formatDuration(seconds) {
+    const h = Math.floor(seconds / 3600);
+    const m = Math.floor((seconds % 3600) / 60);
+    return h > 0 ? `${h}h ${m}m` : `${m}m`;
+  }
+
+  function openPopupDetail(slug) {
+    const spring = springs.find(s => s.slug === slug);
+    if (spring) {
+      openDetail(spring, map);
+    }
+  }
+
+  // Expose functions globally for onclick handlers
+  window.getDirectionsTo = getDirectionsTo;
+  window.openPopupDetail = openPopupDetail;
+
+  // ─── Buttons ────────────────────────────────────────────────────────────────
+
+  document.getElementById('detail-close')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    const panel = document.getElementById('spring-detail');
+    if (panel) {
+      panel.style.display = 'none';
+      panel.classList.add('hidden');
+    }
+  });
+
+  document.getElementById('directions-close')?.addEventListener('click', () => {
+    closeDirectionsPanel();
+  });
+
+  document.getElementById('directions-btn')?.addEventListener('click', () => {
+    // Find the currently selected spring if any
+    const urlSpring = new URLSearchParams(window.location.search).get('spring');
+    if (urlSpring) {
+      const target = springs.find(s => s.slug === urlSpring);
+      if (target) {
+        getDirectionsTo(target.lat, target.lng, target.name);
+      }
+    } else {
+      // If no spring is selected, use the first spring as an example
+      if (springs.length > 0) {
+        const firstSpring = springs[0];
+        alert(`Please select a spring first, or we'll use ${firstSpring.name} as an example.`);
+        getDirectionsTo(firstSpring.lat, firstSpring.lng, firstSpring.name);
+      }
+    }
+  });
+
+  // Close directions panel when clicking empty map space
+  map.on('click', (e) => {
+    const features = map.queryRenderedFeatures(e.point);
+    const isInteractive = features.some(f =>
+      f.layer.id === 'unclustered-point' ||
+      f.layer.id === 'clusters' ||
+      f.layer.id?.startsWith('gas-') ||
+      f.layer.id?.startsWith('poi-') ||
+      f.layer.id?.startsWith('ev-') ||
+      f.layer.id?.startsWith('aqi-') ||
+      f.layer.id?.startsWith('snow-')
+    );
+    if (!isInteractive) {
+      closeDirectionsPanel();
+    }
+  });
+
+  // ─── Style switcher ──────────────────────────────────────────────────────────
+  const styleButtons = document.querySelectorAll('.style-btn');
+  styleButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const style = btn.dataset.style;
+      if (mapStyles[style]) {
+        map.setStyle(mapStyles[style]);
+        // Update active button state
+        styleButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        // Re-add springs source/layers after style loads (setStyle wipes them)
+        map.once('style.load', () => {
+          addSpringsToMap();
+          addIndividualMarkers();
+        });
+      }
+    });
+  });
+
+  // Set initial active state (satellite as default)
+  document.querySelector('.style-btn[data-style="satellite"]')?.classList.add('active');
+
+  // ─── Layer controls ──────────────────────────────────────────────────────────
+  const toggle3D = document.getElementById('toggle-3d');
+  let terrainEnabled = true;
+
+  toggle3D?.addEventListener('click', () => {
+    terrainEnabled = !terrainEnabled;
+    try {
+      if (terrainEnabled) {
+        map.addSource('mapbox-dem', {
+          type: 'raster-dem',
+          url: 'mapbox://mapbox.terrain-rgb',
+          tileSize: 512,
+          maxzoom: 15
+        });
+        map.addLayer({
+          id: 'mapbox-dem',
+          type: 'raster',
+          source: 'mapbox-dem',
+          minzoom: 0,
+          maxzoom: 22
+        });
+        toggle3D.classList.add('active');
+        toggle3D.title = 'Disable 3D terrain';
+      } else {
+        if (map.getLayer('mapbox-dem')) {
+          map.removeLayer('mapbox-dem');
+        }
+        if (map.getSource('mapbox-dem')) {
+          map.removeSource('mapbox-dem');
+        }
+        toggle3D.classList.remove('active');
+        toggle3D.title = 'Enable 3D terrain';
+      }
+    } catch (e) {
+      console.error('Failed to toggle terrain:', e);
+      alert('3D terrain requires the Mapbox GL JS premium plan.');
+    }
+  });
+
+  const toggleFullscreen = document.getElementById('toggle-fullscreen');
+  toggleFullscreen?.addEventListener('click', () => {
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+      toggleFullscreen.title = 'Toggle fullscreen';
+    } else if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+      toggleFullscreen.title = 'Exit fullscreen';
+    }
+  });
+
+  // ─── Auto-open spring from ?spring= URL param ────────────────────────────────
+  const urlSpring = new URLSearchParams(window.location.search).get('spring');
+  if (urlSpring) {
+    const target = springs.find(s => s.slug === urlSpring);
+    if (target) {
+      trackEvent('flyto', target.slug, { source: 'blog_link' });
+      // Wait for map to be ready before flying to the spring
+      map.on('load', () => {
+        map.flyTo({ center: [target.lng, target.lat], zoom: 12, duration: 1500 });
+        // Open detail after flyTo completes
+        map.once('idle', () => openDetail(target, map));
+      });
+      // If map already loaded (race condition), fly immediately
+      if (map.loaded()) {
+        map.flyTo({ center: [target.lng, target.lat], zoom: 12, duration: 1500 });
+        setTimeout(() => openDetail(target, map), 1600);
+      }
+    }
+  }
+}
+
+initMap();
+
+document.addEventListener('astro:page-load', () => {
+  initMap();
+});
+</script>
+
+<style>
+  :root {
+    --color-surface: #E8D5C0;
+    --color-bg: #D5BA9C;
+    --color-border: #A1553D;
+    --color-text: #5E5137;
+    --color-text-muted: #8B7355;
+    --color-accent: #DF804D;
+    --color-accent-light: #E89A6F;
+  }
+
+  /* Custom pin markers */
+  .hot-spring-pin {
+    cursor: pointer;
+    transition: transform 0.15s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
+  }
+  .hot-spring-pin:hover {
+    transform: scale(1.2) translateY(-4px);
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.35));
+  }
+  .hot-spring-pin.pin-visited svg path {
+    stroke: #fbbf24;
+    stroke-width: 3;
+  }
+
+  /* Passport */
+  .passport-panel {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1rem;
+    width: min(380px, calc(100% - 2rem));
+    background: var(--color-surface);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    padding: 1.5rem;
+    z-index: 1000;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  .passport-panel.hidden { display: none; }
+  .passport-close {
+    position: absolute; top: 1rem; right: 1rem;
+    background: var(--color-bg); border: 1px solid var(--color-border);
+    border-radius: 50%; width: 28px; height: 28px;
+    cursor: pointer; font-size: 0.8rem; display: flex; align-items: center; justify-content: center;
+  }
+  .passport-header h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.2rem; }
+  .passport-header p { font-size: 0.8rem; color: var(--color-text-muted); }
+  .passport-progress { margin: 1rem 0; }
+  .progress-bar {
+    width: 100%; height: 12px;
+    background: var(--color-bg); border-radius: 6px;
+    border: 1px solid var(--color-border); overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%; background: linear-gradient(90deg, #2d6a4f, #40916c);
+    border-radius: 6px; transition: width 0.4s ease;
+  }
+  .progress-stats { font-size: 0.8rem; color: var(--color-text-muted); margin-top: 0.3rem; text-align: center; }
+  .progress-stats span:first-child { font-weight: 700; color: var(--color-accent); }
+
+  .passport-badges {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .badge {
+    text-align: center; padding: 0.5rem 0.25rem;
+    border-radius: 8px; border: 1px solid var(--color-border);
+    transition: all 0.2s;
+  }
+  .badge.earned { background: #f0fdf4; border-color: #86efac; }
+  .badge.locked { opacity: 0.4; background: var(--color-bg); }
+  .badge-icon { display: block; font-size: 1.5rem; }
+  .badge-label { display: block; font-size: 0.65rem; font-weight: 600; margin-top: 0.15rem; }
+  .badge-threshold { display: block; font-size: 0.55rem; color: var(--color-text-muted); }
+
+  .passport-visited-list { margin-bottom: 1rem; max-height: 150px; overflow-y: auto; }
+  .passport-empty { font-size: 0.85rem; color: var(--color-text-muted); padding: 1rem 0; text-align: center; }
+  .visited-item {
+    display: flex; align-items: center; gap: 0.5rem;
+    padding: 0.4rem 0; border-bottom: 1px solid var(--color-border); font-size: 0.85rem;
+  }
+  .visited-icon { font-size: 1rem; }
+  .visited-name { flex: 1; font-weight: 500; }
+  .unvisit-btn {
+    background: none; border: none; cursor: pointer;
+    color: var(--color-text-muted); font-size: 0.7rem; opacity: 0.5;
+  }
+  .unvisit-btn:hover { opacity: 1; color: #ef4444; }
+
+  .btn-passport-share {
+    width: 100%; padding: 0.5rem;
+    background: var(--color-accent); color: white;
+    border: none; border-radius: 6px; font-size: 0.85rem;
+    font-weight: 600; cursor: pointer; transition: background 0.15s;
+  }
+  .btn-passport-share:hover { background: var(--color-accent-light); }
+
+  .passport-toggle {
+    position: absolute; top: 5rem; left: 3.5rem;
+    background: var(--color-surface); border: 1px solid var(--color-border);
+    border-radius: 8px; padding: 0.6rem 0.8rem;
+    cursor: pointer; font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 1000; transition: all 0.15s;
+  }
+  .passport-toggle:hover { background: var(--color-bg); transform: scale(1.05); }
+
+  .btn-visited {
+    background: #166534 !important; color: white !important;
+    border: none !important;
+  }
+  .hot-spring-pin-selected svg path {
+    stroke-width: 3;
+    stroke: #fbbf24;
+  }
+
+  /* Full-height layout */
+  .map-page {
+    display: flex;
+    height: calc(100dvh - 60px); /* subtract header height */
+    overflow: hidden;
+  }
+
+  /* Sidebar */
+  .map-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--color-border);
+    background: rgba(232, 213, 192, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    overflow: hidden;
+  }
+  .sidebar-header {
+    padding: 1.25rem 1.25rem 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .sidebar-header h1 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.2rem; }
+  .sidebar-header p { font-size: 0.8125rem; color: var(--color-text-muted); }
+
+  .search-wrapper { padding: 0.75rem 1.25rem; border-bottom: 1px solid var(--color-border); }
+  .search-wrapper :global(.mapboxgl-ctrl-geocoder) {
+    width: 100%;
+    border-radius: 6px;
+    font-size: 0.875rem;
+  }
+  .search-wrapper :global(.mapboxgl-ctrl-geocoder--input) {
+    padding: 0.5rem 0.75rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+  }
+  .search-wrapper :global(.mapboxgl-ctrl-geocoder--input:focus) {
+    border-color: var(--color-accent);
+    outline: none;
+  }
+  .search-wrapper :global(.mapboxgl-ctrl-geocoder--suggestions) {
+    background: var(--color-surface);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .search-wrapper :global(.mapboxgl-ctrl-geocoder--suggestion) {
+    padding: 0.6rem 1rem;
+    border-color: var(--color-border);
+    color: var(--color-text);
+  }
+  .search-wrapper :global(.mapboxgl-ctrl-geocoder--suggestion:hover) {
+    background: var(--color-bg);
+    color: var(--color-accent);
+  }
+  .search-wrapper :global(.mapboxgl-ctrl-geocoder--icon-marker),
+  .search-wrapper :global(.mapboxgl-ctrl-geocoder--icon-close) {
+    display: flex;  /* Hide icons */
+    width: 0;       /* Hide icons */
+  }
+
+  /* Isochrone sidebar section */
+  .sidebar-section {
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .field-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .isochrone-row {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .isochrone-row select {
+    flex: 1;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.8rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+  .btn-isochrone {
+    width: 100%;
+    padding: 0.45rem;
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .btn-isochrone:hover:not(:disabled) { background: var(--color-accent-light); }
+  .btn-isochrone:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-isochrone-clear {
+    width: 100%;
+    padding: 0.35rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    margin-top: 0.4rem;
+  }
+  .btn-isochrone-clear:hover { background: var(--color-border); }
+  .btn-isochrone-clear.hidden { display: none; }
+
+  .springs-list { flex: 1; overflow-y: auto; padding: 0.5rem 0; }
+  .loading-placeholder { padding: 1rem 1.25rem; color: var(--color-text-muted); font-size: 0.875rem; }
+  .no-results { padding: 1rem 1.25rem; color: var(--color-text-muted); font-size: 0.875rem; }
+
+  .spring-list-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.1s;
+  }
+  .spring-list-item:hover { background: var(--color-bg); }
+  .list-icon { font-size: 1.25rem; flex-shrink: 0; }
+  .list-info { display: flex; flex-direction: column; min-width: 0; }
+  .list-info strong { font-size: 0.9rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .list-info span { font-size: 0.75rem; color: var(--color-text-muted); margin-top: 0.1rem; }
+
+  /* Map */
+  .map-container { flex: 1; position: relative; }
+  #map { width: 100%; height: 100%; }
+
+  /* Style switcher */
+  .style-switcher {
+    position: absolute;
+    top: 1rem;
+    right: 4.5rem;
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    background: rgba(232, 213, 192, 0.85);
+    padding: 0.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+  .style-btn {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 0.72rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .style-btn:hover { background: var(--color-border); }
+  .style-btn.active {
+    background: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent);
+  }
+  .style-btn:first-letter { font-size: 1rem; }
+
+  /* Layer controls */
+  .layer-controls {
+    position: absolute;
+    bottom: 3.5rem;
+    right: 1rem;
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .layer-btn {
+    height: 36px;
+    padding: 0 0.75rem;
+    border-radius: 8px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex; align-items: center; gap: 0.35rem;
+    white-space: nowrap;
+  }
+  .layer-btn:hover { background: var(--color-bg); transform: scale(1.05); }
+  .layer-btn.active {
+    background: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent);
+  }
+
+  /* Custom marker */
+  :global(.spring-marker) { background: none; border: none; }
+  :global(.marker-dot) {
+    width: 32px; height: 32px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    transition: transform 0.15s;
+  }
+  :global(.marker-dot:hover) { transform: scale(1.2); }
+
+  /* Detail panel */
+  .spring-detail {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(480px, calc(100% - 3rem));
+    background: rgba(232, 213, 192, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    padding: 1.5rem;
+    z-index: 1000;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  .spring-detail.hidden { display: none; }
+
+  /* Directions panel */
+  .directions-panel {
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+    width: min(380px, calc(100% - 2rem));
+    background: rgba(232, 213, 192, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    padding: 1.5rem;
+    z-index: 1000;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  .directions-panel.hidden { display: none; }
+  .directions-close {
+    position: absolute; top: 1rem; right: 1rem;
+    background: var(--color-bg); border: 1px solid var(--color-border);
+    border-radius: 50%; width: 28px; height: 28px;
+    cursor: pointer; font-size: 0.8rem; display: flex; align-items: center; justify-content: center;
+  }
+  .directions-header h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; }
+
+  .route-summary {
+    display: flex; gap: 1rem; margin-bottom: 1rem;
+    padding: 0.75rem; background: var(--color-bg);
+    border-radius: 8px; border: 1px solid var(--color-border);
+  }
+  .summary-distance { font-size: 1.25rem; font-weight: 700; color: var(--color-accent); }
+  .summary-duration { font-size: 1rem; font-weight: 600; color: var(--color-text-muted); align-self: center; }
+
+  .directions-list { margin-bottom: 1rem; }
+  .direction-step {
+    display: flex; gap: 0.75rem;
+    padding: 0.75rem; margin-bottom: 0.5rem;
+    background: var(--color-bg); border-radius: 8px;
+    border: 1px solid var(--color-border);
+  }
+  .step-number {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: var(--color-accent); color: white;
+    font-size: 0.85rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-instruction { flex: 1; font-size: 0.9rem; line-height: 1.4; }
+  .step-distance { font-size: 0.75rem; color: var(--color-text-muted); align-self: center; }
+
+  .directions-footer { margin-top: 1rem; }
+  .error { color: #b45309; font-weight: 500; text-align: center; padding: 1rem; }
+
+  /* Directions toggle button */
+  .directions-toggle {
+    position: absolute; top: 5rem; left: 1rem;
+    background: var(--color-surface); border: 1px solid var(--color-border);
+    border-radius: 8px; padding: 0.6rem 0.8rem;
+    cursor: pointer; font-size: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 1000;
+    transition: all 0.15s;
+  }
+  .directions-toggle:hover { background: var(--color-bg); transform: scale(1.05); }
+  .detail-close {
+    position: absolute; top: 1rem; right: 1rem;
+    background: var(--color-bg); border: 1px solid var(--color-border);
+    border-radius: 50%; width: 28px; height: 28px;
+    cursor: pointer; font-size: 0.8rem; display: flex; align-items: center; justify-content: center;
+    z-index: 10;
+  }
+  .spring-detail h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; padding-right: 2rem; }
+
+  .detail-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.875rem; }
+  .chip {
+    background: var(--color-bg); border: 1px solid var(--color-border);
+    border-radius: 20px; padding: 0.2rem 0.6rem;
+    font-size: 0.75rem; font-weight: 500;
+  }
+  .detail-desc { font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 1rem; line-height: 1.6; }
+  .detail-grid { display: grid; grid-template-columns: auto 1fr; gap: 0.3rem 0.75rem; font-size: 0.85rem; margin-bottom: 1rem; }
+  .detail-grid dt { font-weight: 600; color: var(--color-text-muted); white-space: nowrap; }
+  .detail-grid dd { color: var(--color-text); }
+  .alert-text { color: #b45309; font-weight: 500; }
+  .insider-tip {
+    background: #f0fdf4; border: 1px solid #bbf7d0;
+    border-radius: 8px; padding: 0.75rem; font-size: 0.85rem;
+    margin-bottom: 1rem; line-height: 1.5;
+  }
+  .detail-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .btn-detail {
+    display: inline-block; padding: 0.5rem 1rem;
+    background: var(--color-accent); color: white;
+    border-radius: 6px; font-size: 0.875rem; font-weight: 600;
+    transition: background 0.15s;
+  }
+  .btn-detail:hover { background: var(--color-accent-light); color: white; }
+  .btn-detail.btn-secondary {
+    background: var(--color-bg); color: var(--color-text);
+    border: 1px solid var(--color-border);
+  }
+  .btn-detail.btn-secondary:hover { background: var(--color-border); }
+
+  /* Mapbox popups */
+  .mapbox-popup :global(.mapboxgl-popup-content) {
+    background: var(--color-surface);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    padding: 1rem;
+    font-family: var(--font-display);
+    max-width: 300px;
+  }
+  .mapbox-popup :global(.mapboxgl-popup-tip) {
+    background: var(--color-accent);
+    border-top-color: var(--color-accent);
+  }
+  .mapbox-popup :global(.mapboxgl-popup-close-button) {
+    color: var(--color-text);
+    font-size: 1.2rem;
+    padding: 0.3rem 0.4rem;
+  }
+  .mapbox-popup :global(.mapboxgl-popup-close-button:hover) {
+    color: var(--color-accent);
+    background: var(--color-bg);
+  }
+
+  .popup-btn {
+    flex: 1;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s;
+  }
+  .popup-btn:hover { background: var(--color-border); transform: translateY(-1px); }
+  .popup-btn.popup-btn-primary {
+    background: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent);
+  }
+  .popup-btn.popup-btn-primary:hover { background: var(--color-accent-light); transform: translateY(-1px); }
+  .popup-btn.popup-btn-primary:link {
+    color: white;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .map-page { flex-direction: column; height: 100dvh; }
+    .map-sidebar { width: 100%; height: auto; max-height: 40vh; flex-shrink: 0; border-right: none; border-bottom: 1px solid var(--color-border); overflow: hidden; }
+    .springs-list { display: flex; flex-direction: row; overflow-x: auto; overflow-y: hidden; padding: 0.5rem; gap: 0.5rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+    .spring-list-item { min-width: 180px; scroll-snap-align: start; border: 1px solid var(--color-border); border-radius: 8px; flex-shrink: 0; }
+
+    /* Swipe card for detail panel on mobile */
+    .spring-detail {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      border-radius: 16px 16px 0 0;
+      max-height: 80vh;
+      width: 100%;
+    }
+    .spring-detail:not(.hidden) { transform: translateY(0); }
+    .spring-detail.hidden { transform: translateY(100%); }
+
+    .passport-panel {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      border-radius: 16px 16px 0 0;
+      width: 100%;
+    }
+
+    .style-switcher { top: 0.5rem; right: 0.5rem; grid-template-columns: repeat(3, 1fr); gap: 0.3rem; padding: 0.3rem; }
+    .style-btn { padding: 0.3rem 0.5rem; font-size: 0.6rem; }
+
+    .layer-controls { bottom: 0.5rem; right: 0.5rem; flex-wrap: wrap; gap: 0.3rem; }
+    .layer-btn { height: 32px; font-size: 0.75rem; padding: 0 0.5rem; }
+
+    .map-container { flex: 1; min-height: 60dvh; position: relative; }
+    #map { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+    .passport-toggle { top: 0.5rem; left: 0.5rem; padding: 0.4rem 0.6rem; font-size: 1rem; }
+    .directions-toggle { display: none; }
+    .directions-panel { top: 0.5rem; right: 0.5rem; width: calc(100% - 1rem); }
+
+    /* Sidebar sections hidden on mobile to save space */
+    .sidebar-section { padding: 0.5rem 1rem; }
+    .isochrone-row { flex-direction: column; }
+  }
+</style>

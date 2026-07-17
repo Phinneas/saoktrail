@@ -1,0 +1,17 @@
+---
+export const prerender = false;
+import EntryLayout from "@components/blog/EntryLayout.astro";
+import { getWollyBlogEntry, getWollyBlogEntries } from "@lib/wolly";
+import similerItems from "@lib/similarItems";
+
+const { entry: slug } = Astro.params;
+if (!slug) return Astro.redirect("/blog");
+
+const entry = await getWollyBlogEntry(slug);
+if (!entry) return Astro.redirect("/blog");
+
+const allEntries = await getWollyBlogEntries();
+const relatedEntries = similerItems(entry, allEntries, entry.id);
+---
+
+<EntryLayout entry={entry} relatedEntries={relatedEntries} />

@@ -1,0 +1,4 @@
+# Allow WollyCMS to embed blog pages in the preview iframe
+/blog/*
+  Content-Security-Policy: frame-ancestors 'self' https://wollycms.buzzuw2.workers.dev
+  X-Frame-Options: ALLOWALL
