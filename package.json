@@ -7,7 +7,9 @@
     "sites/*"
   ],
   "scripts": {
+    "build": "npm --prefix shop run build",
     "build:shared": "echo 'shared package has no build step (source-only)'",
+    "dev:shop": "npm --prefix shop run dev",
     "dev:soakcolorados": "npm run dev --workspace sites/soakcolorados",
     "dev:wa_hot": "npm run dev --workspace sites/wa_hot"
   }
