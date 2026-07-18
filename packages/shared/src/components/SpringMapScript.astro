@@ -1,0 +1,52 @@
+---
+---
+<script>
+  function initSpringMap() {
+    const mapEl = document.getElementById('spring-map');
+    if (!mapEl || mapEl.dataset.initialized) return;
+    mapEl.dataset.initialized = 'true';
+
+    const lat = parseFloat(mapEl.dataset.lat || '0');
+    const lng = parseFloat(mapEl.dataset.lng || '0');
+    const name = mapEl.dataset.name || '';
+    const token = mapEl.dataset.token || '';
+    if (!token || !lat || !lng) return;
+
+    function createMap() {
+      // @ts-ignore
+      mapboxgl.accessToken = token;
+      // @ts-ignore
+      const map = new mapboxgl.Map({
+        container: 'spring-map',
+        style: 'mapbox://styles/mapbox/outdoors-v12',
+        center: [lng, lat],
+        zoom: 13,
+        pitch: 45,
+      });
+      map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+      new mapboxgl.Marker({ color: '#E86020' })
+        .setLngLat([lng, lat])
+        .setPopup(new mapboxgl.Popup({ offset: 25 }).setHTML(`<strong>${name}</strong>`))
+        .addTo(map)
+        .togglePopup();
+    }
+
+    // @ts-ignore
+    if (window.mapboxgl) {
+      createMap();
+    } else {
+      const script = document.createElement('script');
+      script.src = 'https://api.mapbox.com/mapbox-gl-js/v3.21.0/mapbox-gl.js';
+      script.onload = createMap;
+      document.head.appendChild(script);
+      if (!document.querySelector('link[href*="mapbox-gl.css"]')) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://api.mapbox.com/mapbox-gl-js/v3.21.0/mapbox-gl.css';
+        document.head.appendChild(link);
+      }
+    }
+  }
+
+  document.addEventListener('astro:page-load', initSpringMap);
+</script>

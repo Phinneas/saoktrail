@@ -4,6 +4,7 @@ import Breadcrumbs from "@components/common/Breadcrumbs.astro";
 import SchemaScript from "@components/schema/SchemaScript.astro";
 import { buildBreadcrumbSchema } from "@lib/schema";
 import { mapboxAccessToken } from "@/config/map";
+import SpringMapScript from "@components/SpringMapScript.astro";
 import springsData from "../../../public/springs.json";
 
 export const prerender = false;
@@ -198,41 +199,4 @@ const relatedSprings = springsData
   </section>
 </BaseLayout>
 
-<script>
-  // Initialize Mapbox map for spring location
-  const mapEl = document.getElementById('spring-map');
-  if (mapEl) {
-    const lat = parseFloat(mapEl.dataset.lat || '0');
-    const lng = parseFloat(mapEl.dataset.lng || '0');
-    const name = mapEl.dataset.name || '';
-    const token = mapEl.dataset.token || '';
-
-    if (token && lat && lng) {
-      const script = document.createElement('script');
-      script.src = 'https://api.mapbox.com/mapbox-gl-js/v3.21.0/mapbox-gl.js';
-      script.onload = () => {
-        // @ts-ignore
-        mapboxgl.accessToken = token;
-        // @ts-ignore
-        const map = new mapboxgl.Map({
-          container: 'spring-map',
-          style: 'mapbox://styles/mapbox/outdoors-v12',
-          center: [lng, lat],
-          zoom: 13,
-          pitch: 45,
-        });
-        map.addControl(new mapboxgl.NavigationControl(), 'top-right');
-        new mapboxgl.Marker({ color: '#E86020' })
-          .setLngLat([lng, lat])
-          .setPopup(new mapboxgl.Popup({ offset: 25 }).setHTML(`<strong>${name}</strong>`))
-          .addTo(map)
-          .togglePopup();
-      };
-      document.head.appendChild(script);
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = 'https://api.mapbox.com/mapbox-gl-js/v3.21.0/mapbox-gl.css';
-      document.head.appendChild(link);
-    }
-  }
-</script>
+<SpringMapScript />
