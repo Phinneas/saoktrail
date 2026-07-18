@@ -1,0 +1,14 @@
+-- Seed data for New Mexico hot springs
+-- Generated from Exa API search on 2026-07-18T20:10:05.793Z
+-- Target: colorado D1 database
+
+INSERT INTO springs (name, slug, lat, lon, state, region, access_type, development, description, temperature_f) VALUES ('Turkey Creek Hot Spring', 'turkey-creek-hot-spring-nm', 33.108, -108.483, 'nm', 'colorado', 'hike', 'primitive', 'Backcountry spring in the Gila Wilderness.', 165);
+INSERT INTO springs (name, slug, lat, lon, state, region, access_type, development, description, temperature_f) VALUES ('San Antonio Hot Spring', 'san-antonio-hot-spring-nm', 35.938, -106.646, 'nm', 'colorado', 'hike', 'primitive', 'Popular natural hot spring in the Jemez Mountains.', 129);
+INSERT INTO springs (name, slug, lat, lon, state, region, access_type, development, description, temperature_f) VALUES ('Spence Hot Springs', 'spence-hot-springs-nm', 35.849, -106.629, 'nm', 'colorado', 'hike', 'primitive', 'Natural hot spring in the Jemez National Forest.', 100);
+INSERT INTO springs (name, slug, lat, lon, state, region, access_type, development, description, temperature_f) VALUES ('Manby Hot Springs', 'manby-hot-springs-nm', 36.508, -105.722, 'nm', 'colorado', 'hike', 'primitive', 'Located on the banks of the Rio Grande near Taos.', 100);
+INSERT INTO springs (name, slug, lat, lon, state, region, access_type, development, description, temperature_f) VALUES ('Gila Hot Springs', 'gila-hot-springs-nm', 33.199, -108.209, 'nm', 'colorado', 'drive-up', 'developed', 'Located along the Gila River.', 151);
+INSERT INTO springs (name, slug, lat, lon, state, region, access_type, development, description, temperature_f) VALUES ('McCauley Hot Springs', 'mccauley-hot-springs-nm', 35.82, -106.627, 'nm', 'colorado', 'hike', 'primitive', 'Natural spring near Jemez Springs.', 99);
+INSERT INTO springs (name, slug, lat, lon, state, region, access_type, development, description, temperature_f) VALUES ('Montezuma Hot Springs', 'montezuma-hot-springs-nm', 35.653, -105.29, 'nm', 'colorado', 'drive-up', 'developed', 'Historic hot springs located in Montezuma.', 138);
+INSERT INTO springs (name, slug, lat, lon, state, region, access_type, development, description, temperature_f) VALUES ('Faywood Hot Springs', 'faywood-hot-springs-nm', 32.554, -107.994, 'nm', 'colorado', 'drive-up', 'resort', 'Commercial resort near Hurley.', 129);
+INSERT INTO springs (name, slug, lat, lon, state, region, access_type, development, description, temperature_f) VALUES ('Radium Springs', 'radium-springs-nm', 32.501, -106.926, 'nm', 'colorado', 'drive-up', 'developed', 'Located near the town of Radium Springs.', 127);
+INSERT INTO springs (name, slug, lat, lon, state, region, access_type, development, description, temperature_f) VALUES ('Soda Dam Hot Springs', 'soda-dam-hot-springs-nm', 35.793, -106.685, 'nm', 'colorado', 'hike', 'primitive', 'Thermal spring located near Jemez Pueblo.', 117);

@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TripFinder from '../../components/TripFinder.tsx';
+import { REGIONS } from '../../lib/regions';
+import { getCollection } from 'astro:content';
+
+const itineraries = await getCollection('itineraries', ({ data }) => !data.draft).catch(() => []);
+
+const jsonLd = {
+  '@type': 'WebPage',
+  name: 'Hot Springs Trip Planner',
+  url: 'https://soaktrail.com/trip-planner',
+  description: 'Plan your perfect hot springs road trip across the American West. Filter by region, access type, temperature, vehicle requirements, and more.',
+};
+---
+
+<BaseLayout
+  title="Trip Planner — Soak Trail"
+  description="Plan your perfect hot springs road trip across the American West. Filter by region, access type, temperature, and vehicle requirements."
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="px-4 pt-16 pb-8 md:pt-24 md:pb-12">
+    <div class="container mx-auto max-w-4xl text-center">
+      <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-4 font-display">Plan Your Trip</p>
+      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-light text-sa-dark leading-tight mb-6">
+        Hot Springs
+        <span class="italic"> Trip Planner</span>
+      </h1>
+      <p class="text-sa-text text-lg leading-relaxed max-w-2xl mx-auto">
+        Find the perfect hot springs for your next adventure. Filter by region, access type, temperature, vehicle requirements, and more across all six Soak Trail regions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Region Cards -->
+  <section class="px-4 py-8">
+    <div class="container mx-auto max-w-6xl">
+      <h2 class="font-display text-2xl md:text-3xl text-sa-dark mb-6">Explore by Region</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {REGIONS.map((region) => (
+          <a
+            href={`/trip-planner/${region.slug}`}
+            class="block p-5 rounded-xl bg-white border border-sa-divider hover:border-sa-copper transition-colors"
+          >
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="font-display text-lg font-semibold text-sa-dark">{region.name}</h3>
+              <span class="text-xs font-body text-sa-copper font-medium uppercase">{region.shortName}</span>
+            </div>
+            <p class="text-sm text-sa-text leading-relaxed">{region.description}</p>
+            <p class="text-xs text-sa-copper mt-3 font-medium">View springs &rarr;</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trip Finder -->
+  <section class="px-4 py-8">
+    <div class="container mx-auto max-w-6xl">
+      <h2 class="font-display text-2xl md:text-3xl text-sa-dark mb-2">Find Your Spring</h2>
+      <p class="text-sa-text text-sm mb-6">Filter 500+ hot springs across the American West. Results link to detailed spring guides on our regional sites.</p>
+      <TripFinder client:visible mcpUrl="https://soakatlas-mcp.buzzuw2.workers.dev/mcp" />
+    </div>
+  </section>
+
+  <!-- Itineraries -->
+  <section class="px-4 py-8">
+    <div class="container mx-auto max-w-4xl">
+      <h2 class="font-display text-2xl md:text-3xl text-sa-dark mb-6">Featured Itineraries</h2>
+      {itineraries.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {itineraries.map((it) => (
+            <a href={`/itineraries/${it.slug}`} class="block p-5 rounded-xl bg-white border border-sa-divider hover:border-sa-copper transition-colors">
+              <h3 class="font-display text-lg font-semibold text-sa-dark mb-1">{it.data.title}</h3>
+              <p class="text-sm text-sa-text">{it.data.duration_days} days &middot; {it.data.difficulty} &middot; {it.data.region}</p>
+              <p class="text-sm text-sa-text mt-2">{it.data.description}</p>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-8 px-4 rounded-xl bg-white border border-sa-divider">
+          <p class="text-sa-text">Detailed itineraries are being written. In the meantime, use the Trip Finder above to discover springs and plan your route.</p>
+          <p class="text-sa-copper text-sm mt-2">Itineraries launching soon — check back or follow us on social for updates.</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

@@ -12,6 +12,14 @@ const regions = [
     location: 'Washington State',
   },
   {
+    title: 'Alaska Hot Springs',
+    subtitle: 'Last Frontier Thermal Waters',
+    description: "From remote wilderness pools accessible only by bush plane to natural seaside soaks along the coast, discover Alaska's rugged geothermal treasures under the northern lights.",
+    link: 'https://www.alaskahotsprings.com',
+    image: '/alaska-hotspring.jpg',
+    location: 'Alaska',
+  },
+  {
     title: 'Soak Colorado',
     subtitle: 'Rocky Mountain Mineral Waters',
     description: 'Colorado sits atop remarkable geothermal activity with over 30 developed resorts and countless primitive soaking spots scattered throughout the Rockies.',
@@ -44,9 +52,40 @@ const regions = [
     location: 'Southwest Desert',
   },
 ];
+
+const homeDescription = 'Your trusted guide to the American West\'s finest natural hot springs. Explore regional directories for Washington, Alaska, Colorado, Shasta, the Rockies, and the Desert Southwest.';
+
+const jsonLd = [
+  {
+    '@type': 'Organization',
+    name: 'Soak Trail',
+    url: 'https://soaktrail.com',
+    logo: 'https://soaktrail.com/hero-hotspring.jpg',
+    sameAs: [
+      'https://www.instagram.com/soaktrail',
+      'https://www.pinterest.com/soaktrail',
+      'https://bsky.app/profile/soaktrail.bsky.social',
+    ],
+    description: homeDescription,
+  },
+  {
+    '@type': 'WebSite',
+    name: 'Soak Trail',
+    url: 'https://soaktrail.com',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://soaktrail.com/blog?q={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
+  },
+];
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Soak Trail — Find Your Perfect Spring"
+  description={homeDescription}
+  jsonLd={jsonLd}
+>
   <!-- Navigation -->
   <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent py-6">
     <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -85,11 +124,13 @@ const regions = [
     />
     <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
 
-    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
-      <p class="text-white/80 text-sm md:text-base tracking-[0.3em] uppercase mb-6 font-body">
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto h-card">
+      <img src="/hero-hotspring.jpg" alt="Soak Trail" class="u-photo hidden" />
+      <a class="u-url hidden" href="https://soaktrail.com">Soak Trail</a>
+      <p class="text-white/80 text-sm md:text-base tracking-[0.3em] uppercase mb-6 font-body p-note">
         Discover the American West
       </p>
-      <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-light text-white leading-[1.1] mb-8">
+      <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-light text-white leading-[1.1] mb-8 p-name">
         Find Your
         <span class="italic font-light block mt-2">Perfect Soak</span>
       </h1>
@@ -136,8 +177,8 @@ const regions = [
       <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
           { number: '500+', label: 'Natural Springs Mapped' },
-          { number: '5', label: 'Regional Guides' },
-          { number: '12', label: 'States Covered' },
+          { number: '6', label: 'Regional Guides' },
+          { number: '11', label: 'States Covered' },
         ].map((stat) => (
           <div class="text-center">
             <p class="font-body text-5xl md:text-6xl font-light text-sa-copper mb-2">{stat.number}</p>
@@ -307,6 +348,7 @@ const regions = [
             <li><span class="text-sa-copper font-semibold">Colorado</span> — CO (37 springs)</li>
             <li><span class="text-sa-copper font-semibold">Shasta</span> — CA, OR (64 springs)</li>
             <li><span class="text-sa-copper font-semibold">Washington</span> — WA (46 springs)</li>
+            <li><span class="text-sa-copper font-semibold">Alaska</span> — AK (seeding in progress)</li>
           </ul>
         </div>
       </div>

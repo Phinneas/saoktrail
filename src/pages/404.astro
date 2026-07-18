@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page Not Found — Soak Trail" noIndex={true}>
+  <nav class="sticky top-0 z-50 bg-sa-cream/95 backdrop-blur-md shadow-sm py-4">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-full bg-sa-copper flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2c0 4-4 8-4 14 0 2.2 1.8 4 4 4s4-1.8 4-4c0-6-4-10-4-14z"/>
+            <path d="M9 21h6"/>
+          </svg>
+        </div>
+        <span class="font-body text-xl font-semibold tracking-tight text-sa-dark">Soak Trail</span>
+      </a>
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-sm font-body font-medium tracking-wide uppercase text-sa-text hover:text-sa-copper transition-colors duration-300">Home</a>
+        <a href="/blog" class="text-sm font-body font-medium tracking-wide uppercase text-sa-text hover:text-sa-copper transition-colors duration-300">Journal</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-7xl mx-auto px-6 py-24 md:py-32 text-center">
+    <h1 class="font-display text-6xl md:text-8xl font-light text-sa-dark mb-6">404</h1>
+    <p class="text-sa-text text-lg md:text-xl max-w-md mx-auto mb-10">
+      This spring seems to have dried up. The page you're looking for doesn't exist.
+    </p>
+    <a
+      href="/"
+      class="inline-flex items-center gap-3 bg-sa-copper text-white px-8 py-4 rounded-full hover:bg-sa-copper-hover transition-colors duration-300 text-sm font-body font-medium tracking-wide uppercase"
+    >
+      Back to Soak Trail
+    </a>
+  </main>
+</BaseLayout>
