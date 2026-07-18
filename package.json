@@ -5,6 +5,9 @@
     "packages/*",
     "sites/*"
   ],
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.62.2"
+  },
   "scripts": {
     "build": "npm --prefix shop run build",
     "build:shared": "echo 'shared package has no build step (source-only)'",
