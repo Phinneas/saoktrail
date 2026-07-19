@@ -1,0 +1,300 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { getRegion } from '../../lib/regions';
+import {
+  getVerificationForSlugs,
+  getItinerarySpringSlugs,
+  statusLabel,
+  statusColor,
+  type SpringVerification,
+} from '../../lib/verification';
+
+const { slug } = Astro.params;
+const allItineraries = await getCollection('itineraries', ({ data }) => !data.draft).catch(() => []);
+const itinerary = allItineraries.find((it) => it.slug === slug);
+
+if (!itinerary) {
+  return Astro.redirect('/itineraries');
+}
+
+const { Content } = await itinerary.render();
+const data = itinerary.data;
+const region = getRegion(data.region);
+const childSite = region?.childSite || '#';
+
+// Lookup verification for all spring slugs in the itinerary
+const allSlugs = getItinerarySpringSlugs(data.days);
+const verifications = await getVerificationForSlugs(allSlugs);
+
+// Helper: get verification status for a spring slug
+function getVer(slug: string): SpringVerification | null {
+  return verifications.get(slug) || null;
+}
+
+// Helper: convert slug to readable name for Maps
+function slugToName(slug: string): string {
+  return slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+// Helper: Google Maps search URL for a spring
+function mapsUrl(slug: string): string {
+  return `https://www.google.com/maps/search/${encodeURIComponent(slugToName(slug) + ' hot springs')}`;
+}
+
+// Helper: Google Maps directions for full route
+function fullRouteUrl(): string {
+  const names = allSlugs.map((s) => slugToName(s));
+  if (names.length === 0) return '#';
+  if (names.length === 1) return mapsUrl(allSlugs[0]);
+  const origin = encodeURIComponent(names[0]);
+  const destination = encodeURIComponent(names[names.length - 1]);
+  const waypoints = names.slice(1, -1).map((n) => encodeURIComponent(n)).join('|');
+  return `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${destination}${waypoints ? `&waypoints=${waypoints}` : ''}`;
+}
+
+// Count springs with stale/unknown verification
+const staleCount = allSlugs.filter((s) => {
+  const v = getVer(s);
+  return !v || v.status === 'verify_before_departure' || v.status === 'unknown';
+}).length;
+
+const jsonLd = {
+  '@type': 'Trip',
+  name: data.title,
+  description: data.description,
+  url: `https://soaktrail.com/itineraries/${itinerary.slug}`,
+};
+---
+
+<BaseLayout
+  title={`${data.title} — Itinerary`}
+  description={data.description}
+  jsonLd={jsonLd}
+>
+  <!-- Hero -->
+  <section class="px-4 pt-16 pb-6 md:pt-20">
+    <div class="container mx-auto max-w-4xl">
+      <a href="/itineraries" class="text-sa-copper text-sm hover:underline mb-4 inline-block">&larr; All Itineraries</a>
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="text-xs px-3 py-1 rounded-full bg-sa-cream border border-sa-divider text-sa-text capitalize">{data.region.replace(/_/g, ' ')}</span>
+        <span class="text-xs px-3 py-1 rounded-full bg-sa-cream border border-sa-divider text-sa-text capitalize">{data.difficulty}</span>
+        <span class="text-xs px-3 py-1 rounded-full bg-sa-cream border border-sa-divider text-sa-text">{data.duration_days} days</span>
+        {data.ferry_dependent && <span class="text-xs px-3 py-1 rounded-full bg-sa-cream border border-sa-divider text-sa-text">Ferry Required</span>}
+      </div>
+      <h1 class="font-display text-3xl md:text-4xl lg:text-5xl font-light text-sa-dark leading-tight mb-4">
+        {data.title}
+      </h1>
+      <p class="text-sa-text text-lg leading-relaxed max-w-2xl">{data.description}</p>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="px-4 py-4">
+    <div class="container mx-auto max-w-4xl">
+      <div class="flex flex-wrap gap-6 py-4 px-6 rounded-xl bg-white border border-sa-divider">
+        <div>
+          <p class="text-xs text-sa-text uppercase tracking-wider mb-1">Duration</p>
+          <p class="font-display text-lg text-sa-dark">{data.duration_days} days</p>
+        </div>
+        {data.total_distance && (
+          <div>
+            <p class="text-xs text-sa-text uppercase tracking-wider mb-1">Distance</p>
+            <p class="font-display text-lg text-sa-dark">{data.total_distance}</p>
+          </div>
+        )}
+        <div>
+          <p class="text-xs text-sa-text uppercase tracking-wider mb-1">Difficulty</p>
+          <p class="font-display text-lg text-sa-dark capitalize">{data.difficulty}</p>
+        </div>
+        <div>
+          <p class="text-xs text-sa-text uppercase tracking-wider mb-1">Vehicle</p>
+          <p class="font-display text-lg text-sa-dark capitalize">{data.vehicle_requirement.replace(/_/g, ' ')}</p>
+        </div>
+        {data.best_season && (
+          <div>
+            <p class="text-xs text-sa-text uppercase tracking-wider mb-1">Best Season</p>
+            <p class="font-display text-lg text-sa-dark">{data.best_season}</p>
+          </div>
+        )}
+        <div class="ml-auto flex items-center">
+          <a
+            href={fullRouteUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-sa-copper hover:underline font-medium"
+          >
+            View Full Route &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verification Warning -->
+  {staleCount > 0 && (
+    <section class="px-4 py-2">
+      <div class="container mx-auto max-w-4xl">
+        <div class="flex items-center gap-3 p-4 rounded-xl bg-[#fdf6ec] border border-[#e8d9b8]">
+          <span class="text-lg">&#9888;</span>
+          <p class="text-sm text-sa-text">
+            {staleCount} {staleCount === 1 ? 'spring needs' : 'springs need'} verification before departure. Check conditions and official sources before visiting.
+          </p>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Day-by-Day Plan -->
+  <section class="px-4 py-6">
+    <div class="container mx-auto max-w-4xl">
+      <h2 class="font-display text-2xl text-sa-dark mb-6">Trip Plan</h2>
+      <div class="space-y-6">
+        {data.days.map((day, i) => (
+          <div class="rounded-xl bg-white border border-sa-divider overflow-hidden">
+            <!-- Day Header -->
+            <div class="flex items-center gap-4 p-5 border-b border-sa-divider bg-sa-cream/50">
+              <div class="w-10 h-10 rounded-full bg-sa-copper text-white flex items-center justify-center font-display font-semibold flex-shrink-0">
+                {day.day_number}
+              </div>
+              <div class="flex-1">
+                <h3 class="font-display text-lg font-semibold text-sa-dark">{day.title}</h3>
+                <div class="flex flex-wrap gap-3 text-xs text-sa-text mt-1">
+                  {day.overnight_type !== 'none' && <span class="capitalize">{day.overnight_type}</span>}
+                  {day.lodging_area && <span>Near {day.lodging_area}</span>}
+                  {day.drive_distance && <span>{day.drive_distance}</span>}
+                  {day.ferry_dependent && <span class="text-sa-copper font-medium">Ferry required</span>}
+                </div>
+              </div>
+            </div>
+
+            <!-- Day Content -->
+            <div class="p-5">
+              <p class="text-sa-text text-sm leading-relaxed mb-4">{day.summary}</p>
+
+              <!-- Springs on this day -->
+              {day.spring_slugs.length > 0 && (
+                <div class="space-y-3 mb-4">
+                  <p class="text-xs font-semibold text-sa-text uppercase tracking-wider">Springs</p>
+                  {day.spring_slugs.map((slug) => {
+                    const ver = getVer(slug);
+                    const sColor = ver ? statusColor(ver.status) : '#95a5a6';
+                    const sLabel = ver ? statusLabel(ver.status) : 'Not Verified';
+                    return (
+                      <div class="flex items-start justify-between gap-4 p-3 rounded-lg border border-sa-divider">
+                        <div class="flex-1">
+                          <a
+                            href={`${childSite}/blog/${slug}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="font-display text-sm font-semibold text-sa-dark hover:text-sa-copper"
+                          >
+                            {slugToName(slug)}
+                          </a>
+                          {ver?.notes && <p class="text-xs text-sa-text mt-1">{ver.notes}</p>}
+                          {ver?.source_url && (
+                            <a href={ver.source_url} target="_blank" rel="noopener noreferrer" class="text-xs text-sa-copper hover:underline mt-1 inline-block">
+                              Source &rarr;
+                            </a>
+                          )}
+                        </div>
+                        <div class="flex flex-col items-end gap-1.5 flex-shrink-0">
+                          <span
+                            class="text-xs px-2.5 py-1 rounded-full font-medium"
+                            style={`background: ${sColor}20; color: ${sColor}; border: 1px solid ${sColor}40`}
+                          >
+                            {sLabel}
+                          </span>
+                          {ver?.downgraded && (
+                            <span class="text-xs text-sa-text italic">Status may be stale</span>
+                          )}
+                          {ver && (
+                            <span class="text-xs text-sa-text">
+                              Verified {ver.verified_at.toLocaleDateString()}
+                            </span>
+                          )}
+                          <a
+                            href={mapsUrl(slug)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xs text-sa-copper hover:underline"
+                          >
+                            Directions &rarr;
+                          </a>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+
+              <!-- AFFILIATE ZONE: lodging (populated in Session 5) -->
+              {day.overnight_type === 'lodging' && day.lodging_area && (
+                <div data-affiliate-zone="lodging" data-lodging-area={day.lodging_area} class="hidden p-3 rounded-lg bg-sa-cream border border-sa-divider">
+                  <!-- Booking.com/Stay22 widget injected here in Session 5 -->
+                </div>
+              )}
+
+              <!-- AFFILIATE ZONE: camping (populated in Session 5) -->
+              {day.overnight_type === 'camping' && day.lodging_area && (
+                <div data-affiliate-zone="camping" data-lodging-area={day.lodging_area} class="hidden p-3 rounded-lg bg-sa-cream border border-sa-divider">
+                  <!-- Hipcamp widget injected here in Session 5 -->
+                </div>
+              )}
+
+              <!-- Ferry notice -->
+              {day.ferry_dependent && (
+                <div class="flex items-center gap-2 p-3 rounded-lg bg-blue-50 border border-blue-200 mt-3">
+                  <span>&#9888;</span>
+                  <p class="text-xs text-sa-text">
+                    Ferry required. Check schedules at{' '}
+                    <a href="https://www.wsdot.com/ferries/" target="_blank" rel="noopener noreferrer" class="text-sa-copper hover:underline">WSDOT Ferries</a>
+                    {' '}or{' '}
+                    <a href="https://www.alaska.gov/ferry/" target="_blank" rel="noopener noreferrer" class="text-sa-copper hover:underline">Alaska Marine Highway</a>.
+                    Have a backup plan if sailing is full or canceled.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- MDX Body (narrative content) -->
+  <section class="px-4 py-6">
+    <div class="container mx-auto max-w-3xl">
+      <div class="prose prose-sa max-w-none">
+        <Content />
+      </div>
+    </div>
+  </section>
+
+  <!-- AFFILIATE ZONE: navigation (populated in Session 5) -->
+  <section class="px-4 py-4 hidden" data-affiliate-zone="navigation">
+    <div class="container mx-auto max-w-4xl">
+      <div class="p-4 rounded-xl bg-sa-cream border border-sa-divider text-center">
+        <!-- Gaia GPS / onX widget injected here in Session 5 -->
+        <p class="text-sm text-sa-text">Offline maps recommended for this trip.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Links -->
+  <section class="px-4 py-8">
+    <div class="container mx-auto max-w-4xl flex flex-wrap gap-4 justify-center">
+      <a href={`/trip-planner/${data.region}`} class="text-sm text-sa-copper hover:underline">
+        More springs in {region?.name || data.region} &rarr;
+      </a>
+      {region && (
+        <a href={region.childSite} target="_blank" rel="noopener noreferrer" class="text-sm text-sa-copper hover:underline">
+          Visit {region.childSiteName} &rarr;
+        </a>
+      )}
+      <a href="/trip-planner" class="text-sm text-sa-copper hover:underline">
+        Trip Planner &rarr;
+      </a>
+    </div>
+  </section>
+</BaseLayout>
