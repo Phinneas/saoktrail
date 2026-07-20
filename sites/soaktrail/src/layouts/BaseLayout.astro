@@ -1,6 +1,7 @@
 ---
 import SocialLinks from '../components/SocialLinks.astro';
 import SeoHead from '../components/SeoHead.astro';
+import Nav from '../components/Nav.astro';
 
 interface Props {
   title?: string;
@@ -13,9 +14,10 @@ interface Props {
   publishedAt?: string;
   updatedAt?: string;
   jsonLd?: Record<string, unknown>[] | Record<string, unknown>;
+  transparentNav?: boolean;
 }
 
-const { title, description, ogImage, ogType, canonicalUrl, noIndex, author, publishedAt, updatedAt, jsonLd } = Astro.props;
+const { title, description, ogImage, ogType, canonicalUrl, noIndex, author, publishedAt, updatedAt, jsonLd, transparentNav = false } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -40,7 +42,10 @@ const { title, description, ogImage, ogType, canonicalUrl, noIndex, author, publ
     />
   </head>
   <body class="bg-sa-cream text-sa-dark font-body antialiased">
-    <slot />
+    <Nav transparent={transparentNav} />
+    <div class={transparentNav ? '' : 'pt-20'}>
+      <slot />
+    </div>
     <footer class="px-4 py-8 mt-16">
       <div class="container mx-auto flex items-center justify-between">
         <p class="text-sm">

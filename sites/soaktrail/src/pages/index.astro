@@ -85,33 +85,8 @@ const jsonLd = [
   title="Soak Trail — Find Your Perfect Spring"
   description={homeDescription}
   jsonLd={jsonLd}
+  transparentNav
 >
-  <!-- Navigation -->
-  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent py-6">
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-full bg-sa-copper flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2c0 4-4 8-4 14 0 2.2 1.8 4 4 4s4-1.8 4-4c0-6-4-10-4-14z"/>
-            <path d="M9 21h6"/>
-          </svg>
-        </div>
-        <span class="font-body text-2xl font-semibold tracking-tight text-white transition-colors duration-300" id="nav-title">
-          Soak Trail
-        </span>
-      </a>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#destinations" class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper">Destinations</a>
-        <a href="/trip-planner" class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper">Trip Planner</a>
-        <a href="/blog" class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper">Journal</a>
-        <a href="https://shop.soaktrail.com" target="_blank" rel="noopener noreferrer" class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper">Shop</a>
-        <a href="#about" class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper">About</a>
-        <a href="#mcp" class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper">MCP</a>
-        <a href="#contact" class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper">Contact</a>
-      </div>
-    </div>
-  </nav>
-
   <!-- Hero Section -->
   <section class="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
     <div
@@ -479,24 +454,3 @@ const jsonLd = [
     </div>
   </footer>
 </BaseLayout>
-
-<script>
-  // Scroll-triggered nav style
-  const nav = document.getElementById('main-nav');
-  const navTitle = document.getElementById('nav-title');
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY > 50;
-    if (nav) {
-      nav.classList.toggle('bg-sa-cream/95', scrolled);
-      nav.classList.toggle('backdrop-blur-md', scrolled);
-      nav.classList.toggle('shadow-sm', scrolled);
-      nav.classList.toggle('py-4', scrolled);
-      nav.classList.toggle('bg-transparent', !scrolled);
-      nav.classList.toggle('py-6', !scrolled);
-    }
-    if (navTitle) {
-      navTitle.classList.toggle('text-white', !scrolled);
-      navTitle.classList.toggle('text-sa-dark', scrolled);
-    }
-  }, { passive: true });
-</script>

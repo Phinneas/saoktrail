@@ -71,7 +71,12 @@ const jsonLd = {
       {springs.length > 0 ? (
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {springs.map((s) => (
-            <div class="p-4 rounded-xl bg-white border border-sa-divider">
+            <a
+              href={`${region.childSite}/springs/${s.slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block p-4 rounded-xl bg-white border border-sa-divider hover:border-sa-copper transition-colors"
+            >
               <div class="flex justify-between items-start mb-1">
                 <h3 class="font-display text-base font-semibold text-sa-dark">{s.name}</h3>
                 <span class="text-xs text-sa-copper font-medium uppercase">{s.state.toUpperCase()}</span>
@@ -84,7 +89,8 @@ const jsonLd = {
                 <span class="text-xs px-2 py-0.5 rounded-full bg-sa-cream text-sa-text border border-sa-divider">{s.development}</span>
                 {s.ferry_dependent && <span class="text-xs px-2 py-0.5 rounded-full bg-sa-cream text-sa-text border border-sa-divider">ferry</span>}
               </div>
-            </div>
+              <p class="text-xs text-sa-copper mt-2 font-medium">View details &rarr;</p>
+            </a>
           ))}
         </div>
       ) : (

@@ -150,8 +150,9 @@ async function fetchSprings(mcpUrl: string, args: Record<string, unknown>): Prom
 }
 
 function SpringCard({ s }: { s: SpringResult }) {
-  const childSite = CHILD_SITES[regionFromState(s.state)] || '#';
-  const tags: string[] = [];
+  const region = regionFromState(s.state);
+  const childSite = CHILD_SITES[region] || '';
+  const springUrl = childSite ? `${childSite}/springs/${s.slug}` : '';  const tags: string[] = [];
   if (s.temperature_f) tags.push(`${s.temperature_f}°F`);
   tags.push(s.access_type);
   tags.push(s.development);
@@ -161,9 +162,9 @@ function SpringCard({ s }: { s: SpringResult }) {
 
   return (
     <a
-      href={`${childSite}/blog/${s.slug}`}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={springUrl || '/trip-planner'}
+      target={springUrl ? '_blank' : undefined}
+      rel={springUrl ? 'noopener noreferrer' : undefined}
       style={{
         display: 'block', padding: '1.25rem', borderRadius: '0.75rem',
         background: '#fff', border: '1px solid #e5e0d8',
