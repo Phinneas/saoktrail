@@ -53,6 +53,10 @@ const hasDisclosure = offers.some((o) => o.disclosure_required);
           href={buildOfferUrl(offer.url, { location: lodgingArea })}
           target="_blank"
           rel="sponsored noopener noreferrer"
+          data-analytics="affiliate-click"
+          data-provider={offer.provider}
+          data-category={offer.category}
+          data-location={lodgingArea || 'unknown'}
           class="block p-3 rounded-lg bg-sa-cream border border-sa-divider hover:border-sa-copper transition-colors"
         >
           <span class="font-display text-sm font-semibold text-sa-dark">{offer.provider}</span>
@@ -74,6 +78,10 @@ const hasDisclosure = offers.some((o) => o.disclosure_required);
           href={buildOfferUrl(offer.url, { location: lodgingArea })}
           target="_blank"
           rel="sponsored noopener noreferrer"
+          data-analytics="affiliate-click"
+          data-provider={offer.provider}
+          data-category={offer.category}
+          data-location={lodgingArea || 'unknown'}
           class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-sa-divider hover:border-sa-copper transition-colors text-sm font-medium text-sa-dark"
         >
           {offer.provider}

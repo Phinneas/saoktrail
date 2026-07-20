@@ -1,6 +1,7 @@
 ---
 import SocialLinks from '../components/SocialLinks.astro';
 import SeoHead from '../components/SeoHead.astro';
+import Analytics from '../components/Analytics.astro';
 
 interface Props {
   title?: string;
@@ -38,6 +39,7 @@ const { title, description, ogImage, ogType, canonicalUrl, noIndex, author, publ
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600;1,9..144,700&family=National+Park:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <Analytics />
   </head>
   <body class="bg-sa-cream text-sa-dark font-body antialiased">
     <slot />

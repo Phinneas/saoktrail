@@ -1,0 +1,42 @@
+---
+import { getPlausibleDomain } from '../lib/analytics';
+
+const plausibleDomain = getPlausibleDomain();
+---
+
+<!-- Plausible Analytics (privacy-friendly, no cookies) -->
+{plausibleDomain && (
+  <script
+    defer
+    data-domain={plausibleDomain}
+    src="https://plausible.io/js/script.tagged-events.outbound-links.js"
+  ></script>
+)}
+
+<!-- Affiliate click tracking + view transition pageviews -->
+<script>
+  // Track affiliate link clicks via event delegation
+  document.addEventListener('click', (e) => {
+    const target = (e.target as HTMLElement)?.closest('[data-analytics="affiliate-click"]');
+    if (!target) return;
+
+    const provider = target.getAttribute('data-provider') || 'unknown';
+    const category = target.getAttribute('data-category') || 'unknown';
+    const location = target.getAttribute('data-location') || 'unknown';
+
+    const w = window as unknown as { plausible?: (...args: unknown[]) => void };
+    if (typeof w.plausible === 'function') {
+      w.plausible('affiliate_click', {
+        props: { provider, category, location },
+      });
+    }
+  });
+
+  // Track pageviews on Astro view transitions
+  document.addEventListener('astro:after-swap', () => {
+    const w = window as unknown as { plausible?: (...args: unknown[]) => void };
+    if (typeof w.plausible === 'function') {
+      w.plausible('pageview');
+    }
+  });
+</script>

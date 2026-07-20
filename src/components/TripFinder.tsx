@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { trackSearch, trackSpringClick } from '../lib/analytics';
 
 interface SpringResult {
   name: string;
@@ -164,6 +165,7 @@ function SpringCard({ s }: { s: SpringResult }) {
       href={`${childSite}/blog/${s.slug}`}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackSpringClick({ slug: s.slug, name: s.name, state: s.state })}
       style={{
         display: 'block', padding: '1.25rem', borderRadius: '0.75rem',
         background: '#fff', border: '1px solid #e5e0d8',
@@ -247,6 +249,18 @@ export default function TripFinder({ initialRegion = '', mcpUrl = 'https://soaka
       setSprings(results);
       setLoading(false);
       setSearched(true);
+      trackSearch({
+        region,
+        resultCount: results.length,
+        filters: {
+          access_type: accessType || 'any',
+          development: development || 'any',
+          min_temp_f: minTemp,
+          vehicle_req: vehicleReq || 'any',
+          ferry_dependent: ferryDependent,
+          dog_friendly: dogFriendly,
+        },
+      });
     }, 400);
     return () => { if (debounceRef.current) clearTimeout(debounceRef.current); };
   }, [region, accessType, development, minTemp, vehicleReq, ferryDependent, dogFriendly, mcpUrl]);
