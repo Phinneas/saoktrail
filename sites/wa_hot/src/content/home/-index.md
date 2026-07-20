@@ -28,17 +28,13 @@ content: |
 
   ## Plan a Weekend, Not Just a Stop
 
-  Our trip planner turns individual springs into full itineraries. Here is one we mapped last month:
+  Here is one itinerary we mapped last month:
 
   ### The Rainier-to-Gorge Loop
 
   - **Day 1:** Soak at [Ohanapecosh](https://washingtonhotsprings.com/blog/ohanapecosh-hot-springs) under old-growth canopy inside Mount Rainier National Park.
   - **Day 2:** Drive the White Pass Scenic Byway to [Carson Hot Springs](https://washingtonhotsprings.com/blog/carson-hot-springs-complete-visitor-guide) for a historic stone soak and Columbia River Gorge views.
   - **Day 3:** Return via [Baker Hot Springs](https://washingtonhotsprings.com/blog/baker-hot-springs-washington-state) for a final alpine soak before heading home.
-
-  <div class="mt-6 text-center">
-    <a href="/trip-planner" class="btn btn-primary">Customize this route in the Trip Planner →</a>
-  </div>
 
   ---
 

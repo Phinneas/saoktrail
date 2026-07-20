@@ -3,8 +3,8 @@ import {
   IoMail,
   IoLogoFacebook,
   IoLogoPinterest,
-  IoLogoTwitter,
 } from "react-icons/io5";
+import { SiBluesky } from "react-icons/si";
 
 interface Props {
   title?: string;
@@ -50,12 +50,12 @@ const iconClass =
   <li class="inline-block px-1">
     <a
       class={iconClass}
-      aria-label="twitter share button"
-      href={`https://twitter.com/intent/tweet/?text=${title}&amp;url=${baseURL}/${folder}/${id}`}
+      aria-label="bluesky share button"
+      href={`https://bsky.app/intent/compose?text=${encodeURIComponent(title)}&url=${encodeURIComponent(`${baseURL}/${folder}/${id}`)}`}
       target="_blank"
       rel="noreferrer noopener"
     >
-      <IoLogoTwitter className="h-6 w-6" />
+      <SiBluesky className="h-6 w-6" />
     </a>
   </li>
   <li class="inline-block px-1">
