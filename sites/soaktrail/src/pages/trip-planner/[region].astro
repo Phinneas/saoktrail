@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TripFinder from '../../components/TripFinder.tsx';
+import { REGIONS, getRegion, MCP_URL } from '../../lib/regions';
+import { getSpringsByRegion, parseSpringText, type SpringResult } from '../../lib/mcp';
+import { getCollection } from 'astro:content';
+
+const { region: regionSlug } = Astro.params;
+const region = getRegion(regionSlug || '');
+
+if (!region) {
+  return Astro.redirect('/trip-planner');
+}
+
+// Server-rendered spring list (no-JS fallback)
+let springs: SpringResult[] = [];
+try {
+  springs = await getSpringsByRegion(region.slug);
+} catch {
+  springs = [];
+}
+
+// Itineraries for this region
+const itineraries = await getCollection('itineraries', ({ data }) => !data.draft && data.region === region.slug).catch(() => []);
+
+const jsonLd = {
+  '@type': 'WebPage',
+  name: `Hot Springs in ${region.name}`,
+  url: `https://soaktrail.com/trip-planner/${region.slug}`,
+  description: region.description,
+};
+---
+
+<BaseLayout
+  title={`${region.name} Hot Springs — Trip Planner`}
+  description={region.description}
+  jsonLd={jsonLd}
+>
+  <!-- Region Header -->
+  <section class="px-4 pt-16 pb-6 md:pt-20">
+    <div class="container mx-auto max-w-4xl">
+      <a href="/trip-planner" class="text-sa-copper text-sm hover:underline mb-4 inline-block">&larr; All Regions</a>
+      <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-3 font-display">{region.states}</p>
+      <h1 class="font-display text-4xl md:text-5xl font-light text-sa-dark leading-tight mb-4">
+        {region.name}
+        <span class="italic"> Hot Springs</span>
+      </h1>
+      <p class="text-sa-text text-lg leading-relaxed max-w-2xl">{region.description}</p>
+      <div class="flex gap-4 mt-4 text-sm text-sa-text">
+        <span>{springs.length} springs mapped</span>
+        <span>&middot;</span>
+        <a href={region.childSite} target="_blank" rel="noopener noreferrer" class="text-sa-copper hover:underline">
+          Visit {region.childSiteName} &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trip Finder (pre-filtered to this region) -->
+  <section class="px-4 py-6">
+    <div class="container mx-auto max-w-6xl">
+      <h2 class="font-display text-xl text-sa-dark mb-4">Filter Springs</h2>
+      <TripFinder client:visible initialRegion={region.slug} mcpUrl={MCP_URL} />
+    </div>
+  </section>
+
+  <!-- No-JS Fallback: Server-Rendered Spring List -->
+  <section class="px-4 py-6">
+    <div class="container mx-auto max-w-6xl">
+      <h2 class="font-display text-xl text-sa-dark mb-4">All Springs in {region.name}</h2>
+      {springs.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {springs.map((s) => (
+            <div class="p-4 rounded-xl bg-white border border-sa-divider">
+              <div class="flex justify-between items-start mb-1">
+                <h3 class="font-display text-base font-semibold text-sa-dark">{s.name}</h3>
+                <span class="text-xs text-sa-copper font-medium uppercase">{s.state.toUpperCase()}</span>
+              </div>
+              {s.nearby_town && <p class="text-xs text-sa-text">Near {s.nearby_town}</p>}
+              {s.description && <p class="text-xs text-sa-text mt-1 leading-relaxed">{s.description}</p>}
+              <div class="flex flex-wrap gap-1.5 mt-2">
+                {s.temperature_f && <span class="text-xs px-2 py-0.5 rounded-full bg-sa-cream text-sa-text border border-sa-divider">{s.temperature_f}°F</span>}
+                <span class="text-xs px-2 py-0.5 rounded-full bg-sa-cream text-sa-text border border-sa-divider">{s.access_type}</span>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-sa-cream text-sa-text border border-sa-divider">{s.development}</span>
+                {s.ferry_dependent && <span class="text-xs px-2 py-0.5 rounded-full bg-sa-cream text-sa-text border border-sa-divider">ferry</span>}
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-8 px-4 rounded-xl bg-white border border-sa-divider">
+          <p class="text-sa-text">Spring data for this region is being seeded. Check back soon.</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Region Itineraries -->
+  <section class="px-4 py-6">
+    <div class="container mx-auto max-w-4xl">
+      <h2 class="font-display text-xl text-sa-dark mb-4">Itineraries in {region.name}</h2>
+      {itineraries.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {itineraries.map((it) => (
+            <a href={`/itineraries/${it.slug}`} class="block p-5 rounded-xl bg-white border border-sa-divider hover:border-sa-copper transition-colors">
+              <h3 class="font-display text-lg font-semibold text-sa-dark mb-1">{it.data.title}</h3>
+              <p class="text-sm text-sa-text">{it.data.duration_days} days &middot; {it.data.difficulty}</p>
+              <p class="text-sm text-sa-text mt-2">{it.data.description}</p>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-6 px-4 rounded-xl bg-white border border-sa-divider">
+          <p class="text-sa-text text-sm">Itineraries for {region.name} are coming soon. Use the Trip Finder above to discover springs and start planning.</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

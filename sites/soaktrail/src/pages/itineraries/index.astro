@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ItineraryComparison from '../../components/ItineraryComparison.tsx';
+import { getCollection } from 'astro:content';
+import { getItinerarySpringSlugs } from '../../lib/verification';
+
+const itineraries = await getCollection('itineraries', ({ data }) => !data.draft).catch(() => []);
+
+const summaries = itineraries.map((it) => ({
+  slug: it.slug,
+  title: it.data.title,
+  region: it.data.region,
+  duration_days: it.data.duration_days,
+  difficulty: it.data.difficulty,
+  total_distance: it.data.total_distance,
+  vehicle_requirement: it.data.vehicle_requirement,
+  ferry_dependent: it.data.ferry_dependent,
+  best_season: it.data.best_season,
+  spring_count: getItinerarySpringSlugs(it.data.days).length,
+  description: it.data.description,
+}));
+
+const jsonLd = {
+  '@type': 'WebPage',
+  name: 'Hot Springs Itineraries',
+  url: 'https://soaktrail.com/itineraries',
+  description: 'Curated hot springs road trip itineraries across the American West.',
+};
+---
+
+<BaseLayout
+  title="Itineraries — Soak Trail"
+  description="Curated hot springs road trip itineraries across the American West."
+  jsonLd={jsonLd}
+>
+  <section class="px-4 pt-16 pb-8 md:pt-24">
+    <div class="container mx-auto max-w-4xl text-center">
+      <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-4 font-display">Trip Itineraries</p>
+      <h1 class="font-display text-4xl md:text-5xl font-light text-sa-dark leading-tight mb-6">
+        Hot Springs
+        <span class="italic"> Road Trips</span>
+      </h1>
+      <p class="text-sa-text text-lg leading-relaxed max-w-2xl mx-auto">
+        Curated multi-day itineraries combining the best hot springs across the American West. Each itinerary includes day-by-day plans, spring conditions, and route guidance.
+      </p>
+    </div>
+  </section>
+
+  <!-- Itinerary Cards -->
+  <section class="px-4 py-8">
+    <div class="container mx-auto max-w-6xl">
+      {summaries.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {summaries.map((it) => (
+            <a
+              href={`/itineraries/${it.slug}`}
+              class="block p-5 rounded-xl bg-white border border-sa-divider hover:border-sa-copper transition-colors"
+            >
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="font-display text-lg font-semibold text-sa-dark">{it.title}</h3>
+              </div>
+              <p class="text-sm text-sa-text mb-3">{it.description}</p>
+              <div class="flex flex-wrap gap-2 text-xs">
+                <span class="px-2 py-0.5 rounded-full bg-sa-cream border border-sa-divider text-sa-text">{it.duration_days} days</span>
+                <span class="px-2 py-0.5 rounded-full bg-sa-cream border border-sa-divider text-sa-text capitalize">{it.difficulty}</span>
+                <span class="px-2 py-0.5 rounded-full bg-sa-cream border border-sa-divider text-sa-text capitalize">{it.region.replace(/_/g, ' ')}</span>
+                {it.ferry_dependent && <span class="px-2 py-0.5 rounded-full bg-sa-cream border border-sa-divider text-sa-text">ferry</span>}
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-12 px-4 rounded-xl bg-white border border-sa-divider">
+          <p class="text-sa-text text-lg mb-2">Itineraries are being written.</p>
+          <p class="text-sa-text text-sm">Detailed road trip itineraries launch soon. In the meantime, use the <a href="/trip-planner" class="text-sa-copper hover:underline">Trip Planner</a> to discover springs and build your own route.</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Comparison Tool -->
+  {summaries.length >= 2 && (
+    <section class="px-4 py-8">
+      <div class="container mx-auto max-w-5xl">
+        <h2 class="font-display text-2xl text-sa-dark mb-2">Compare Itineraries</h2>
+        <p class="text-sa-text text-sm mb-6">Select 2-3 itineraries to compare side-by-side.</p>
+        <ItineraryComparison client:visible itineraries={summaries} />
+      </div>
+    </section>
+  )}
+</BaseLayout>

@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "include": [
+    "/*"
+  ],
+  "exclude": [
+    "/_astro/*",
+    "/colorado-hotspring.jpg",
+    "/desert-hotspring.jpg",
+    "/hero-hotspring.jpg",
+    "/rockies-hotspring.jpg",
+    "/shasta-hotspring.jpg",
+    "/washington-hotspring.jpg"
+  ]
+}
