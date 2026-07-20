@@ -1,0 +1,205 @@
+---
+import { formatDate } from "@lib/formatDate";
+import readingTime from "@lib/readingTime";
+import {
+  lowerHumanize,
+  upperHumanize,
+  markdownify,
+  slugify,
+} from "@lib/textConverter";
+
+import { Image } from "astro:assets";
+import {
+  FaRegCalendarAlt,
+  FaRegFolder,
+  FaRegUserCircle,
+  FaHashtag,
+  FaRegClock,
+} from "react-icons/fa";
+import type { GenericEntry, EntryReference, AuthorsEntry } from "@/types";
+
+interface EntryData {
+  title: string;
+  image?: string | { src: string };
+  imageAlt?: string;
+  author?: EntryReference;
+  date?: string;
+  pubDate?: string;
+  modDate?: string;
+  categories?: string[];
+  tags?: string[];
+  complexity?: number;
+}
+
+interface Props {
+  entry: GenericEntry;
+  authorEntry?: AuthorsEntry;
+  showInfo?: boolean;
+  showImage?: boolean;
+  showTitle?: boolean;
+  showAuthor?: boolean;
+  showDate?: boolean;
+  showPubDate?: boolean;
+  showModDate?: boolean;
+  showReadingTime?: boolean;
+  showCategories?: boolean;
+  showTags?: boolean;
+}
+
+const {
+  entry,
+  authorEntry,
+  showInfo = true,
+  showImage = false,
+  showTitle = false,
+  showAuthor = false,
+  showDate = false,
+  showPubDate = false,
+  showModDate = false,
+  showReadingTime = false,
+  showCategories = false,
+  showTags = false,
+}: Props = Astro.props;
+
+const {
+  title,
+  author,
+  categories,
+  tags,
+  image,
+  imageAlt,
+  date,
+  pubDate,
+  modDate,
+  complexity,
+} = entry.data as EntryData;
+
+categories?.sort((a: string, b: string) => a.localeCompare(b));
+tags?.sort((a: string, b: string) => a.localeCompare(b));
+---
+
+<div class="mt-2">
+  {
+    image && showImage && (
+      <div class="mb-8 glass rounded-lg intersect:animate-fadeDown opacity-0 intersect-no-queue">
+        {
+          (typeof image === 'string' && image.startsWith('http')) || (typeof image === 'object' && image.src && image.src.startsWith('http')) ? (
+            <img
+              class="w-full rounded-lg object-cover aspect-[12/5]"
+              src={typeof image === 'string' ? image : image.src}
+              alt={imageAlt || ""}
+              loading="eager"
+            />
+          ) : (
+            <Image
+              class="w-full rounded-lg"
+              src={typeof image === 'string' ? image : image.src}
+              alt={imageAlt || ""}
+              height={500}
+              width={1200}
+              loading="eager"
+            />
+          )
+        }
+      </div>
+    )
+  }
+  {
+    showInfo && (
+      <div class="glass mb-8 p-4 rounded-lg intersect:animate-fade opacity-0 intersect-no-queue">
+        <h1 set:html={markdownify(title)} class="mb-4" />
+
+        {/* Rich Author Byline */}
+        {showAuthor && authorEntry && (
+          <div class="mb-4 p-3 rounded-lg border border-border dark:border-darkmode-border bg-bg-s dark:bg-darkmode-bg-s">
+            <div class="flex items-start gap-3">
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <a
+                    href={`/authors/${slugify(authorEntry.id)}`}
+                    class="font-primary font-bold text-txt-p dark:text-darkmode-txt-p hover:text-accent transition"
+                  >
+                    {authorEntry.data.title}
+                  </a>
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-accent/10 text-accent border border-accent/20">
+                    ✓ Field-Verified Guide
+                  </span>
+                </div>
+                {authorEntry.data.description && (
+                  <p class="text-sm text-txt-light dark:text-darkmode-txt-light mt-1 m-0 line-clamp-2">
+                    {authorEntry.data.description}
+                  </p>
+                )}
+                <div class="flex items-center gap-3 mt-1.5 text-xs text-txt-light dark:text-darkmode-txt-light">
+                  <a href="/about" class="hover:text-accent transition underline">Our Methodology</a>
+                  <a href={`/authors/${slugify(authorEntry.id)}`} class="hover:text-accent transition underline">Full Profile</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Fallback minimal byline when no authorEntry */}
+        {showAuthor && !authorEntry && author && (
+          <div class="mb-4 text-sm text-txt-light dark:text-darkmode-txt-light">
+            <a href={`/authors/${slugify(author.id)}`} class="hover:text-accent transition">
+              <FaRegUserCircle className={"-mt-1 inline-block"} />
+              {upperHumanize(author.id)}
+            </a>
+            <span class="mx-2">·</span>
+            <a href="/about" class="hover:text-accent transition underline">About our methodology</a>
+          </div>
+        )}
+
+        <ul>
+          {date && showDate && (
+            <li class="mr-1 inline-block">
+              <FaRegCalendarAlt className={"ml-2 -mt-1 inline-block"} />
+              {formatDate(date)}
+            </li>
+          )}
+          {pubDate && showPubDate && (
+            <li class="mr-1 inline-block">
+              <FaRegCalendarAlt className={"ml-2 -mt-1 inline-block"} />
+              Published
+              {formatDate(pubDate)}
+            </li>
+          )}
+          {modDate && showModDate && (
+            <li class="mr-1 inline-block">
+              <FaRegCalendarAlt className={"ml-2 -mt-1 inline-block"} />
+              Updated
+              {formatDate(modDate)}
+            </li>
+          )}
+          {complexity && complexity > 0 && showReadingTime && (
+            <li class="mr-1 inline-block">
+              <FaRegClock className={"ml-2 -mt-1 inline-block"} />
+              {readingTime(entry.body!, complexity)}
+            </li>
+          )}
+          {categories && showCategories && (
+            <li class="mr-1 inline-block">
+              {categories.map((category: string, index: number) => (
+                <a href={`/blog/categories/${slugify(category)}`}>
+                  <FaRegFolder className={"ml-2 -mt-1 inline-block"} />
+                  {upperHumanize(category)}
+                </a>
+              ))}
+            </li>
+          )}
+          {tags && showTags && (
+            <li class="mr-1 inline-block">
+              {tags.map((tag: string, index: number) => (
+                <a href={`/blog/tags/${slugify(tag)}`}>
+                  <FaHashtag className={"ml-2 -mt-1 inline-block"} />
+                  {lowerHumanize(tag)}
+                </a>
+              ))}
+            </li>
+          )}
+        </ul>
+      </div>
+    )
+  }
+</div>

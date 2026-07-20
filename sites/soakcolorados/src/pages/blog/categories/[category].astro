@@ -1,0 +1,22 @@
+---
+import { getEntries } from "@lib/contentParser";
+import { sortByDate } from "@lib/sortFunctions";
+import taxonomyFilter from "@lib/taxonomyFilter";
+import TaxonLayout from "@components/blog/TaxonLayout.astro";
+import type { BlogEntry } from "@/types";
+
+export async function getStaticPaths() {
+  const entries = (await getEntries("blog", sortByDate)) as BlogEntry[];
+  const categories = [...new Set(entries.flatMap((e) => e.data.categories || []))];
+  return categories.map((category) => ({
+    params: { category },
+  }));
+}
+
+const { category } = Astro.params;
+
+const entries = (await getEntries("blog", sortByDate)) as BlogEntry[];
+const filteredEntries = taxonomyFilter(entries, "categories", category);
+---
+
+<TaxonLayout taxon={category} entries={filteredEntries} />

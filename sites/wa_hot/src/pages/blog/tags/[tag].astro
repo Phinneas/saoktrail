@@ -1,0 +1,14 @@
+---
+export const prerender = false;
+import { getWollyBlogEntries } from "@lib/wolly";
+import taxonomyFilter from "@lib/taxonomyFilter";
+import TaxonLayout from "@components/blog/TaxonLayout.astro";
+
+const { tag } = Astro.params;
+if (!tag) return Astro.redirect("/blog");
+
+const entries = await getWollyBlogEntries();
+const filteredEntries = taxonomyFilter(entries, "tags", tag);
+---
+
+<TaxonLayout taxon={tag} entries={filteredEntries} />

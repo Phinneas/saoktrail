@@ -1,0 +1,241 @@
+---
+import BaseLayout from "@components/base/BaseLayout.astro";
+import SchemaScript from "@components/schema/SchemaScript.astro";
+import { markdownify } from "@lib/textConverter";
+import { buildWebSiteSchema, buildOrganizationSchema, buildBreadcrumbSchema } from "@lib/schema";
+import Button from "@components/common/Button.astro";
+import AskAI from "@components/common/AskAI.astro";
+import type { HomeEntry } from "@/types";
+import { Image } from "astro:assets";
+
+interface Props {
+  entry: HomeEntry;
+}
+
+const { entry } = Astro.props;
+const {
+  image,
+  imageAlt,
+  title,
+  content,
+  button,
+  navCards,
+  proofHeading,
+  proofItems,
+  proofSubtext,
+  proofButton,
+  tripHeading,
+  tripSubtext,
+  tripExample,
+  tripButton,
+  coverageHeading,
+  coverageText,
+  coverageButton,
+} = entry.data;
+
+const websiteSchema = buildWebSiteSchema();
+const organizationSchema = buildOrganizationSchema();
+const breadcrumbSchema = buildBreadcrumbSchema([{ label: "Home", href: "/" }]);
+---
+
+<BaseLayout>
+  <Fragment slot="head">
+    <SchemaScript schema={websiteSchema} />
+    <SchemaScript schema={organizationSchema} />
+    <SchemaScript schema={breadcrumbSchema} />
+  </Fragment>
+
+  <!-- Block 1: The Manifesto -->
+  <section class="section">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="text-center lg:col-8">
+          {
+            image && (
+              <div class="blur-[0px]">
+                <Image
+                  class="mb-6 w-64"
+                  src={image}
+                  alt={imageAlt}
+                  width={1024}
+                  height={1024}
+                  loading="eager"
+                />
+              </div>
+            )
+          }
+          <h1 set:html={markdownify(title)} class="mb-6" />
+          <div set:html={markdownify(content, true)} class="mb-8 text-lg leading-relaxed prose-here" />
+          {
+            button && (
+              <Button
+                label={button.label}
+                link={button.link}
+                newtab
+                hoverInvert
+                color=""
+              />
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Block 2: Quick Navigation Row -->
+  {
+    navCards && navCards.length > 0 && (
+      <section class="section pt-0">
+        <div class="container">
+          <div class="row justify-center">
+            <div class="lg:col-8">
+              <div class="row justify-center gap-4">
+                {navCards.map((card) => (
+                  <a
+                    href={card.link}
+                    class="no-underline lg:col-4 sm:col-12 group"
+                  >
+                    <div class="glass rounded-lg p-6 h-full transition-all hover:scale-[1.02]">
+                      <h3 class="font-primary font-bold text-xl mb-2 text-txt-p dark:text-darkmode-txt-p">
+                        {card.title}
+                      </h3>
+                      <p class="text-txt-light dark:text-darkmode-txt-light text-sm m-0">
+                        {card.description}
+                      </p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Block 3: The Proof -->
+  {
+    proofHeading && proofItems && proofItems.length > 0 && (
+      <section class="section pt-0">
+        <div class="container">
+          <div class="row justify-center">
+            <div class="lg:col-8">
+              <h2 class="font-primary font-bold text-2xl mb-6 text-txt-p dark:text-darkmode-txt-p">
+                {proofHeading}
+              </h2>
+              <ul class="list-none p-0 m-0 space-y-3">
+                {proofItems.map((item) => (
+                  <li class="flex items-start gap-3">
+                    <span class="text-accent mt-1 text-lg leading-none">✦</span>
+                    <span set:html={markdownify(item)} class="text-txt-s dark:text-darkmode-txt-s" />
+                  </li>
+                ))}
+              </ul>
+              {
+                proofSubtext && (
+                  <p class="mt-6 mb-0 text-txt-light dark:text-darkmode-txt-light italic">
+                    {proofSubtext}
+                  </p>
+                )
+              }
+              {
+                proofButton && (
+                  <div class="mt-6">
+                    <Button
+                      label={proofButton.label}
+                      link={proofButton.link}
+                      newtab
+                      hoverInvert
+                      color=""
+                    />
+                  </div>
+                )
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Block 4: Plan a Weekend -->
+  {
+    tripHeading && tripExample && (
+      <section class="section pt-0">
+        <div class="container">
+          <div class="row justify-center">
+            <div class="lg:col-8">
+              <h2 class="font-primary font-bold text-2xl mb-2 text-txt-p dark:text-darkmode-txt-p">
+                {tripHeading}
+              </h2>
+              {tripSubtext && (
+                <p class="text-txt-s dark:text-darkmode-txt-s mb-6">{tripSubtext}</p>
+              )}
+              <div class="space-y-4">
+                {tripExample.map((day) => (
+                  <div class="flex gap-3">
+                    <span class="text-accent font-bold text-lg leading-none mt-1">{day.day}</span>
+                    <span set:html={markdownify(day.description)} class="text-txt-s dark:text-darkmode-txt-s" />
+                  </div>
+                ))}
+              </div>
+              {
+                tripButton && (
+                  <div class="mt-6">
+                    <Button
+                      label={tripButton.label}
+                      link={tripButton.link}
+                      hoverInvert
+                      color=""
+                    />
+                  </div>
+                )
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Block 5: Coverage -->
+  {
+    coverageHeading && (
+      <section class="section pt-0">
+        <div class="container">
+          <div class="row justify-center">
+            <div class="lg:col-8 text-center">
+              <h2 class="font-primary font-bold text-2xl mb-4 text-txt-p dark:text-darkmode-txt-p">
+                {coverageHeading}
+              </h2>
+              {coverageText && (
+                <p class="text-txt-s dark:text-darkmode-txt-s mb-6 max-w-prose mx-auto">{coverageText}</p>
+              )}
+              {
+                coverageButton && (
+                  <Button
+                    label={coverageButton.label}
+                    link={coverageButton.link}
+                    hoverInvert
+                    color=""
+                  />
+                )
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Block 6: Ask AI -->
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-8">
+          <AskAI />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,506 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AskAI from '../components/AskAI.astro';
+
+const regions = [
+  {
+    title: 'Washington Hot Springs',
+    subtitle: 'Pacific Northwest Soaks',
+    description: "From moss-carpeted rainforest pools to Cascade mountain retreats, discover Washington's hidden thermal treasures among ancient evergreens and misty valleys.",
+    link: 'https://www.washingtonhotsprings.com',
+    image: '/washington-hotspring.jpg',
+    location: 'Washington State',
+  },
+  {
+    title: 'Alaska Hot Springs',
+    subtitle: 'Last Frontier Thermal Waters',
+    description: "From remote wilderness pools accessible only by bush plane to natural seaside soaks along the coast, discover Alaska's rugged geothermal treasures under the northern lights.",
+    link: 'https://www.alaskahotsprings.com',
+    image: '/alaska-hotspring.jpg',
+    location: 'Alaska',
+  },
+  {
+    title: 'Soak Colorado',
+    subtitle: 'Rocky Mountain Mineral Waters',
+    description: 'Colorado sits atop remarkable geothermal activity with over 30 developed resorts and countless primitive soaking spots scattered throughout the Rockies.',
+    link: 'https://www.soakcolorado.com',
+    image: '/colorado-hotspring.jpg',
+    location: 'Colorado',
+  },
+  {
+    title: 'Shasta Hot Springs',
+    subtitle: 'Northern California & Southern Oregon',
+    description: 'Sacred waters beneath the shadow of Mount Shasta. Explore volcanic thermal pools, creekside soaking, and healing mineral springs in the spiritual heart of the Cascades.',
+    link: 'https://www.shastahotsprings.com',
+    image: '/shasta-hotspring.jpg',
+    location: 'Mount Shasta Region',
+  },
+  {
+    title: 'Soak the Rockies',
+    subtitle: 'Idaho, Montana & Wyoming',
+    description: "A geological survey-style directory of the Northern Rockies' best hot springs. Find natural thermal pools with real-time conditions across vast wilderness landscapes.",
+    link: 'https://www.soaktherockies.com',
+    image: '/rockies-hotspring.jpg',
+    location: 'Northern Rockies',
+  },
+  {
+    title: 'Desert Soak',
+    subtitle: 'Desert Oasis Thermal Pools',
+    description: 'Discover steaming oases tucked between red rock canyons and sagebrush valleys. The Southwest holds hundreds of natural springs in its dramatic desert terrain.',
+    link: 'https://www.desertsoak.com',
+    image: '/desert-hotspring.jpg',
+    location: 'Southwest Desert',
+  },
+];
+
+const homeDescription = 'Your trusted guide to the American West\'s finest natural hot springs. Explore regional directories for Washington, Alaska, Colorado, Shasta, the Rockies, and the Desert Southwest.';
+
+const jsonLd = [
+  {
+    '@type': 'Organization',
+    name: 'Soak Trail',
+    url: 'https://soaktrail.com',
+    logo: 'https://soaktrail.com/hero-hotspring.jpg',
+    sameAs: [
+      'https://www.instagram.com/soaktrail',
+      'https://www.pinterest.com/soaktrail',
+      'https://bsky.app/profile/soaktrail.bsky.social',
+    ],
+    description: homeDescription,
+  },
+  {
+    '@type': 'WebSite',
+    name: 'Soak Trail',
+    url: 'https://soaktrail.com',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://soaktrail.com/blog?q={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
+  },
+];
+---
+
+<BaseLayout
+  title="Soak Trail — Find Your Perfect Spring"
+  description={homeDescription}
+  jsonLd={jsonLd}
+>
+  <!-- Navigation -->
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent py-6">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full bg-sa-copper flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2c0 4-4 8-4 14 0 2.2 1.8 4 4 4s4-1.8 4-4c0-6-4-10-4-14z"/>
+            <path d="M9 21h6"/>
+          </svg>
+        </div>
+        <span class="font-body text-2xl font-semibold tracking-tight text-white transition-colors duration-300" id="nav-title">
+          Soak Trail
+        </span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        {['Destinations', 'About', 'MCP', 'Contact'].map((item) => (
+          <a
+            href={`#${item.toLowerCase()}`}
+            class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper"
+          >
+            {item}
+          </a>
+        ))}
+        <a href="/blog" class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper">
+          Journal
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style="background-image: url('/hero-hotspring.jpg');"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto h-card">
+      <img src="/hero-hotspring.jpg" alt="Soak Trail" class="u-photo hidden" />
+      <a class="u-url hidden" href="https://soaktrail.com">Soak Trail</a>
+      <p class="text-white/80 text-sm md:text-base tracking-[0.3em] uppercase mb-6 font-body p-note">
+        Discover the American West
+      </p>
+      <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-light text-white leading-[1.1] mb-8 p-name">
+        Find Your
+        <span class="italic font-light block mt-2">Perfect Soak</span>
+      </h1>
+      <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12 font-light">
+        From desert oasis pools to alpine thermal retreats, explore the West's most remarkable natural hot springs.
+      </p>
+      <a
+        href="#destinations"
+        class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full hover:bg-white/20 hover:border-white/50 transition-all duration-300 group"
+      >
+        <span class="text-sm font-body font-medium tracking-wide uppercase">Explore Destinations</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:translate-y-1 transition-transform duration-300">
+          <path d="M12 5v14M5 12l7 7 7-7" />
+        </svg>
+      </a>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" opacity="0.6">
+        <path d="M12 5v14M5 12l7 7 7-7" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="py-24 md:py-32 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-6 font-body">
+        Natural Thermal Waters
+      </p>
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-light text-sa-dark leading-tight mb-10">
+        Earth's Ancient
+        <span class="italic"> Healing Gift</span>
+      </h2>
+      <div class="space-y-6 text-sa-text text-lg leading-relaxed max-w-3xl mx-auto">
+        <p>
+          For thousands of years, indigenous peoples across the American West have revered natural hot springs as sacred healing waters. From the Ute tribes of Colorado to the Washoe people of the Eastern Sierra, these geothermal wonders have served as places of restoration, ceremony, and communion with nature.
+        </p>
+        <p>
+          Today, the West remains home to some of the world's most diverse and spectacular hot springs. Mineral-rich waters bubble up through ancient volcanic rock, creating everything from remote wilderness pools to world-class resort experiences — each with its own character, chemistry, and sense of place.
+        </p>
+      </div>
+
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          { number: '500+', label: 'Natural Springs Mapped' },
+          { number: '6', label: 'Regional Guides' },
+          { number: '11', label: 'States Covered' },
+        ].map((stat) => (
+          <div class="text-center">
+            <p class="font-body text-5xl md:text-6xl font-light text-sa-copper mb-2">{stat.number}</p>
+            <p class="text-sa-text text-sm tracking-wider uppercase font-body">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="h-px bg-sa-divider" />
+  </div>
+
+  <!-- Destinations Section -->
+  <section id="destinations" class="py-24 md:py-32 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-20">
+        <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-6 font-display">
+          Regional Guides
+        </p>
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-light text-sa-dark leading-tight">
+          Choose Your
+          <span class="italic"> Destination</span>
+        </h2>
+      </div>
+
+      <div class="space-y-16 md:space-y-24">
+        {regions.map((region, index) => (
+          <div class={`group grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center`}>
+            <!-- Image -->
+            <div class={`relative overflow-hidden rounded-2xl ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+              <div class="aspect-[4/3] overflow-hidden">
+                <img
+                  src={region.image}
+                  alt={region.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+              </div>
+              <div class="absolute top-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full">
+                <span class="text-xs font-body font-medium text-sa-dark tracking-wide uppercase">
+                  {region.location}
+                </span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class={`${index % 2 === 1 ? 'lg:order-1 lg:text-right' : ''}`}>
+              <p class="text-sa-copper text-xs tracking-[0.25em] uppercase mb-4 font-body">
+                {region.subtitle}
+              </p>
+              <h3 class="font-display text-3xl md:text-4xl font-medium text-sa-dark mb-6">
+                {region.title}
+              </h3>
+              <p class="text-sa-text text-lg leading-relaxed mb-8 max-w-lg">
+                {region.description}
+              </p>
+              <a
+                href={region.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class={`inline-flex items-center gap-3 text-sa-dark hover:text-sa-copper transition-colors duration-300 group/link ${index % 2 === 1 ? 'flex-row-reverse' : ''}`}
+              >
+                <span class="text-sm font-body font-medium tracking-wide uppercase border-b border-current pb-1">
+                  Visit Website
+                </span>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  class={`group-hover/link:translate-x-1 transition-transform duration-300 ${index % 2 === 1 ? 'rotate-180 group-hover/link:-translate-x-1' : ''}`}
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 md:py-32 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-6 font-display">
+            Our Philosophy
+          </p>
+          <h2 class="font-display text-4xl md:text-5xl font-light text-sa-dark leading-tight mb-8">
+            Preserving the Soak
+            <span class="italic"> for Generations</span>
+          </h2>
+          <div class="space-y-5 text-sa-text text-lg leading-relaxed">
+            <p>
+              Hot springs are fragile ecosystems. The same geothermal forces that create these magical pools can be disrupted by overuse, pollution, and disrespect. We believe in responsible soaking — leaving no trace, respecting local customs, and preserving these natural wonders for future generations.
+            </p>
+            <p>
+              Each of our regional partner sites shares this commitment. They provide accurate, up-to-date information on access conditions, seasonal closures, and local etiquette so you can enjoy these springs responsibly.
+            </p>
+          </div>
+          <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {['Leave No Trace', 'Respect Local Customs', 'Check Seasonal Access', 'Support Local Communities'].map((item) => (
+              <div class="flex items-center gap-3">
+                <div class="w-2 h-2 rounded-full bg-sa-copper flex-shrink-0" />
+                <span class="text-sa-text text-sm font-display font-medium">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-[3/4] rounded-2xl overflow-hidden">
+            <img
+              src="/hero-hotspring.jpg"
+              alt="Natural hot spring pool"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="absolute -bottom-8 -left-8 bg-sa-dark text-white p-8 rounded-2xl max-w-xs hidden md:block">
+            <p class="font-body text-2xl italic leading-relaxed">
+              "The water remembers. Treat it with reverence."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MCP Section -->
+  <section id="mcp" class="py-24 md:py-32 px-6 bg-sa-dark">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-6 font-display">
+          For AI Assistants & Developers
+        </p>
+        <h2 class="font-display text-4xl md:text-5xl font-light text-white leading-tight mb-6">
+          Soak Trail MCP Server
+        </h2>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+          Query 500+ hot springs across the American West directly from AI assistants like Claude, ChatGPT, and any MCP-compatible client.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+          <h3 class="font-display text-xl font-medium text-white mb-4">5 Search Tools</h3>
+          <ul class="space-y-2 text-white/70 text-sm font-display">
+            <li>Find springs near a location (Haversine distance)</li>
+            <li>Search within map bounding box</li>
+            <li>Filter by state, access, temperature, dogs, fees</li>
+            <li>Get details for a specific spring by slug</li>
+            <li>List all springs in a region</li>
+          </ul>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+          <h3 class="font-display text-xl font-medium text-white mb-4">Coverage</h3>
+          <ul class="space-y-2 text-white/70 text-sm font-display">
+            <li><span class="text-sa-copper font-semibold">Desert</span> — AZ, NV, UT (92 springs)</li>
+            <li><span class="text-sa-copper font-semibold">Rockies</span> — ID, MT, WY (261 springs)</li>
+            <li><span class="text-sa-copper font-semibold">Colorado</span> — CO (37 springs)</li>
+            <li><span class="text-sa-copper font-semibold">Shasta</span> — CA, OR (64 springs)</li>
+            <li><span class="text-sa-copper font-semibold">Washington</span> — WA (46 springs)</li>
+            <li><span class="text-sa-copper font-semibold">Alaska</span> — AK (seeding in progress)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 mb-12">
+        <h3 class="font-display text-xl font-medium text-white mb-4">Quick Start</h3>
+        <p class="text-white/60 text-sm mb-4 font-display">Add to your MCP client configuration:</p>
+        <pre class="bg-black/30 rounded-lg p-4 text-sm text-white/80 overflow-x-auto font-mono"><code>{`{
+  "mcpServers": {
+    "soakatlas": {
+      "url": "https://soakatlas-mcp.buzzuw2.workers.dev/mcp"
+    }
+  }
+}`}</code></pre>
+        <p class="text-white/60 text-sm mt-4 font-display">
+          Or test with curl:
+        </p>
+        <pre class="bg-black/30 rounded-lg p-4 text-sm text-white/80 overflow-x-auto font-mono"><code>{`curl -X POST https://soakatlas-mcp.buzzuw2.workers.dev/mcp \\
+  -H "Content-Type: application/json" \\
+  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","clientInfo":{"name":"test","version":"1.0"}}}'`}</code></pre>
+      </div>
+
+      <div class="text-center">
+        <a
+          href="https://soakatlas-mcp.buzzuw2.workers.dev/health"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 bg-sa-copper text-white px-8 py-4 rounded-full hover:bg-sa-copper-hover transition-colors duration-300"
+        >
+          <span class="text-sm font-display font-medium tracking-wide uppercase">Server Health Check</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-20 px-6 bg-sa-dark border-t border-white/5">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-light text-white leading-tight mb-6">
+        Ready to Find Your
+        <span class="italic"> Perfect Spring?</span>
+      </h2>
+      <p class="text-white/60 text-lg mb-10 max-w-2xl mx-auto">
+        Browse our regional guides for detailed maps, reviews, seasonal tips, and everything you need to plan your next hot springs adventure.
+      </p>
+      <a
+        href="#destinations"
+        class="inline-flex items-center gap-3 bg-sa-copper text-white px-8 py-4 rounded-full hover:bg-sa-copper-hover transition-colors duration-300"
+      >
+        <span class="text-sm font-body font-medium tracking-wide uppercase">Explore All Regions</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7-7" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Ask AI Section -->
+  <AskAI
+    productName="SoakTrail"
+    url="https://soaktrail.com"
+    useCase="find and plan hot springs trips in the Western US"
+    alternatives={["AllTrails", "general Google Maps"]}
+  />
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-[#0f0f0f] text-white py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-full bg-sa-copper flex items-center justify-center">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2c0 4-4 8-4 14 0 2.2 1.8 4 4 4s4-1.8 4-4c0-6-4-10-4-14z"/>
+                <path d="M9 21h6"/>
+              </svg>
+            </div>
+            <span class="font-body text-2xl font-semibold">Soak Trail</span>
+          </div>
+          <p class="text-white/50 text-base leading-relaxed max-w-md">
+            Your trusted guide to the American West's finest natural hot springs. We connect soakers with authentic thermal experiences across five unique regions.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-xs font-body font-medium tracking-[0.2em] uppercase text-white/40 mb-6">
+            Regional Sites
+          </h4>
+          <ul class="space-y-3">
+            {regions.map((region) => (
+              <li>
+                <a
+                  href={region.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-white/60 hover:text-sa-copper transition-colors duration-300 text-sm font-display"
+                >
+                  {region.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-display font-medium tracking-[0.2em] uppercase text-white/40 mb-6">
+            Quick Links
+          </h4>
+          <ul class="space-y-3">
+            {['Home', 'Destinations', 'About', 'MCP Server'].map((item) => (
+              <li>
+                <a
+                  href={item === 'MCP Server' ? '#mcp' : `#${item.toLowerCase()}`}
+                  class="text-white/60 hover:text-sa-copper transition-colors duration-300 text-sm font-display"
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-white/30 text-sm font-display">
+          &copy; {new Date().getFullYear()} Soak Trail. All rights reserved.
+        </p>
+        <p class="text-white/30 text-sm font-display">
+          Connecting soakers with America's best hot springs.
+        </p>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>
+
+<script>
+  // Scroll-triggered nav style
+  const nav = document.getElementById('main-nav');
+  const navTitle = document.getElementById('nav-title');
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 50;
+    if (nav) {
+      nav.classList.toggle('bg-sa-cream/95', scrolled);
+      nav.classList.toggle('backdrop-blur-md', scrolled);
+      nav.classList.toggle('shadow-sm', scrolled);
+      nav.classList.toggle('py-4', scrolled);
+      nav.classList.toggle('bg-transparent', !scrolled);
+      nav.classList.toggle('py-6', !scrolled);
+    }
+    if (navTitle) {
+      navTitle.classList.toggle('text-white', !scrolled);
+      navTitle.classList.toggle('text-sa-dark', scrolled);
+    }
+  }, { passive: true });
+</script>

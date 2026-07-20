@@ -1,0 +1,112 @@
+---
+import BaseLayout from "@components/base/BaseLayout.astro";
+import SchemaScript from "@components/schema/SchemaScript.astro";
+import { buildBreadcrumbSchema } from "@lib/schema";
+import springsData from "../../public/springs.json";
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { label: "Home", href: "/" },
+  { label: "Directory", href: "/directory" },
+]);
+
+const pageDescription = `Explore ${springsData.length}+ hot springs across Washington and Oregon. Filter by temperature, access type, and state.`;
+---
+
+<BaseLayout
+  title="Hot Springs Directory — Washington Hot Springs"
+  description={pageDescription}
+>
+  <Fragment slot="head">
+    <SchemaScript schema={breadcrumbSchema} />
+  </Fragment>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="h1 mb-4 intersect:animate-fadeUp opacity-0">Hot Springs Directory</h1>
+      <p class="text-txt-s dark:text-darkmode-txt-s mb-8 intersect:animate-fadeUp opacity-0">
+        Browse all {springsData.length}+ catalogued hot springs across Washington and Oregon.
+      </p>
+
+      <div id="directory-app" data-springs={JSON.stringify(springsData)}>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="spring-grid">
+          {springsData.map((spring: any) => (
+            <a
+              href={`/springs/${spring.slug}`}
+              data-state={spring.state}
+              class="glass p-6 hover:scale-[1.02] transition-transform duration-200 intersect:animate-fadeUp opacity-0"
+            >
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <h3 class="font-display font-bold text-txt-p dark:text-darkmode-txt-p">{spring.name}</h3>
+                  <p class="text-sm text-txt-light dark:text-darkmode-txt-light capitalize">{spring.state}</p>
+                </div>
+                {spring.temp_f && (
+                  <span class={`px-2 py-1 text-xs font-mono font-bold rounded ${
+                    spring.temp_f >= 105 ? 'bg-accent text-white' :
+                    spring.temp_f >= 100 ? 'bg-border text-white' :
+                    'bg-bg-t dark:bg-darkmode-bg-t text-txt-p dark:text-darkmode-txt-p'
+                  }`}>
+                    {spring.temp_f}°F
+                  </span>
+                )}
+              </div>
+
+              <div class="space-y-1 text-sm text-txt-s dark:text-darkmode-txt-s">
+                {spring.access_type && (
+                  <p class="capitalize">{spring.access_type}</p>
+                )}
+                {spring.description && (
+                  <p class="text-txt-light dark:text-darkmode-txt-light line-clamp-2">{spring.description}</p>
+                )}
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const springsData = JSON.parse(document.getElementById('directory-app')?.dataset.springs || '[]');
+  const grid = document.getElementById('spring-grid');
+
+  if (grid && springsData.length > 0) {
+    const searchHtml = `
+      <div class="mb-8 flex flex-col sm:flex-row gap-4">
+        <input
+          type="text"
+          id="spring-search"
+          placeholder="Search springs..."
+          class="flex-1 px-4 py-2 glass rounded font-body text-txt-p dark:text-darkmode-txt-p placeholder-txt-light dark:placeholder-darkmode-txt-light"
+        />
+        <select id="state-filter" class="px-4 py-2 glass rounded font-body text-txt-p dark:text-darkmode-txt-p">
+          <option value="">All States</option>
+          <option value="WA">Washington</option>
+          <option value="OR">Oregon</option>
+        </select>
+      </div>
+    `;
+    grid.insertAdjacentHTML('beforebegin', searchHtml);
+
+    const searchInput = document.getElementById('spring-search') as HTMLInputElement;
+    const stateFilter = document.getElementById('state-filter') as HTMLSelectElement;
+    const cards = grid.querySelectorAll('a');
+
+    function filterSprings() {
+      const search = searchInput.value.toLowerCase();
+      const state = stateFilter.value;
+
+      cards.forEach((card) => {
+        const text = card.textContent?.toLowerCase() || '';
+        const matchesSearch = !search || text.includes(search);
+        const cardState = card.getAttribute('data-state') || '';
+        const matchesState = !state || cardState === state;
+        (card as HTMLElement).style.display = matchesSearch && matchesState ? '' : 'none';
+      });
+    }
+
+    searchInput.addEventListener('input', filterSprings);
+    stateFilter.addEventListener('change', filterSprings);
+  }
+</script>

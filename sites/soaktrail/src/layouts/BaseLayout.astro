@@ -1,0 +1,57 @@
+---
+import SocialLinks from '../components/SocialLinks.astro';
+import SeoHead from '../components/SeoHead.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article' | 'profile';
+  canonicalUrl?: string;
+  noIndex?: boolean;
+  author?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  jsonLd?: Record<string, unknown>[] | Record<string, unknown>;
+}
+
+const { title, description, ogImage, ogType, canonicalUrl, noIndex, author, publishedAt, updatedAt, jsonLd } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <SeoHead
+      title={title}
+      description={description}
+      ogImage={ogImage}
+      ogType={ogType}
+      canonicalUrl={canonicalUrl}
+      noIndex={noIndex}
+      author={author}
+      publishedAt={publishedAt}
+      updatedAt={updatedAt}
+      jsonLd={jsonLd}
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600;1,9..144,700&family=National+Park:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-sa-cream text-sa-dark font-body antialiased">
+    <slot />
+    <footer class="px-4 py-8 mt-16">
+      <div class="container mx-auto flex items-center justify-between">
+        <p class="text-sm">
+          &copy; {new Date().getFullYear()} Soak Trail. All rights reserved.
+        </p>
+        <SocialLinks
+          instagram="https://www.instagram.com/soaktrail"
+          pinterest="https://www.pinterest.com/soaktrail"
+          bluesky="https://bsky.app/profile/soaktrail.bsky.social"
+        />
+      </div>
+    </footer>
+  </body>
+</html>

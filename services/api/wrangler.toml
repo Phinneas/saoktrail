@@ -1,0 +1,32 @@
+name = "soaktherockies-api"
+main = "src/index.ts"
+compatibility_date = "2026-03-26"
+
+# Required Secrets (set via `wrangler secret put <NAME>`):
+# - GEMINI_API_KEY
+# - ADMIN_SECRET
+[vars]
+ENVIRONMENT = "production"
+
+[env.development]
+vars = { ENVIRONMENT = "development" }
+
+[env.local]
+vars = { ENVIRONMENT = "local" }
+
+[[d1_databases]]
+binding = "DB"
+database_name = "soaktherockies-springs-db"
+database_id = "5666d199-3ec6-4076-8401-d96e072d4a17"
+
+[ai]
+binding = "AI"
+
+# Service binding to WollyCMS Worker (avoids *.workers.dev subrequest 1042 error)
+[[services]]
+binding = "WOLLYCMS"
+service = "wollycms"
+
+[triggers]
+# Run at 06:00 UTC (~11pm MST previous day) every Monday and Thursday
+crons = ["0 6 * * 1,4"]
