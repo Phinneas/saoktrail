@@ -1,0 +1,68 @@
+---
+import type { WeatherData } from "@lib/weather";
+
+interface Props {
+  weather: WeatherData;
+}
+
+const { weather } = Astro.props;
+const { current, forecast, source } = weather;
+
+const sourceLabel = source === 'noaa' ? 'NOAA' : 'wttr.in';
+---
+
+<div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
+  <div class="flex items-center justify-between mb-4">
+    <h3 class="h4">Weather</h3>
+    <span class="text-xs text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider">{sourceLabel}</span>
+  </div>
+
+  <div class="flex items-center gap-4 mb-4">
+    {current.icon && (
+      <img src={current.icon} alt={current.shortForecast} class="w-12 h-12" loading="lazy" />
+    )}
+    <div>
+      <p class="font-mono text-2xl font-bold text-txt-p dark:text-darkmode-txt-p">
+        {current.temperature}&deg;{current.temperatureUnit}
+      </p>
+      <p class="text-sm text-txt-s dark:text-darkmode-txt-s">{current.shortForecast}</p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 gap-2 text-xs text-txt-s dark:text-darkmode-txt-s mb-4">
+    <div>
+      <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider">Wind</span>
+      <p class="text-txt-p dark:text-darkmode-txt-p">{current.windSpeed} {current.windDirection}</p>
+    </div>
+    {current.precipitationChance !== null && (
+      <div>
+        <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider">Precip</span>
+        <p class="text-txt-p dark:text-darkmode-txt-p">{current.precipitationChance}%</p>
+      </div>
+    )}
+  </div>
+
+  {forecast.length > 0 && (
+    <div class="border-t border-border dark:border-darkmode-border pt-3">
+      <p class="text-xs text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider mb-2">Forecast</p>
+      <div class="space-y-2">
+        {forecast.map((period) => (
+          <div class="flex items-center justify-between text-sm">
+            <div class="flex items-center gap-2">
+              {period.icon && (
+                <img src={period.icon} alt={period.shortForecast} class="w-7 h-7" loading="lazy" />
+              )}
+              <span class="text-txt-s dark:text-darkmode-txt-s text-xs">{period.name}</span>
+            </div>
+            <div class="text-right">
+              <span class="font-mono font-bold text-txt-p dark:text-darkmode-txt-p">
+                {period.temperature}&deg;
+              </span>
+              <span class="text-xs text-txt-light dark:text-darkmode-txt-light ml-1">{period.shortForecast}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+</div>

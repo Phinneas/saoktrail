@@ -5,6 +5,8 @@ import SchemaScript from "@components/schema/SchemaScript.astro";
 import { buildBreadcrumbSchema } from "@lib/schema";
 import { mapboxAccessToken } from "@/config/map";
 import SpringMapScript from "@components/SpringMapScript.astro";
+import { getWeather } from "@lib/weather";
+import WeatherCard from "@components/WeatherCard.astro";
 import springsData from "../../../public/springs.json";
 
 export const prerender = false;
@@ -30,6 +32,8 @@ const breadcrumbSchema = buildBreadcrumbSchema([
 const relatedSprings = springsData
   .filter((s: any) => s.state === spring.state && s.slug !== slug)
   .slice(0, 4);
+
+const weather = spring.lat && spring.lng ? await getWeather(spring.lat, spring.lng) : null;
 ---
 
 <BaseLayout
@@ -150,6 +154,8 @@ const relatedSprings = springsData
               </a>
             </div>
           </div>
+
+          {weather && <WeatherCard weather={weather} />}
 
           {spring.cell_coverage && (
             <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
