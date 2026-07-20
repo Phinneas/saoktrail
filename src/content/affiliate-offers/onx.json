@@ -1,0 +1,10 @@
+{
+  "provider": "onX Backcountry",
+  "category": "navigation",
+  "program": "onX Direct Affiliate Program",
+  "url": "https://www.onxmaps.com/backcountry/app?ref=soaktrail",
+  "cookie_days": 60,
+  "commission": "15-25% per subscription",
+  "do_not_display_when": ["urban_easy", "paved_roads_only"],
+  "disclosure_required": true
+}

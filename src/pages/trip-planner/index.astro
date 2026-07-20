@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TripFinder from '../../components/TripFinder.tsx';
+import AffiliateZone from '../../components/AffiliateZone.astro';
 import { REGIONS } from '../../lib/regions';
 import { getCollection } from 'astro:content';
 
@@ -84,6 +85,13 @@ const jsonLd = {
           <p class="text-sa-copper text-sm mt-2">Itineraries launching soon — check back or follow us on social for updates.</p>
         </div>
       )}
+    </div>
+  </section>
+
+  <!-- Navigation Affiliate Zone -->
+  <section class="px-4 py-4">
+    <div class="container mx-auto max-w-4xl">
+      <AffiliateZone category="navigation" variant="card" vehicleRequirement="awd_4wd" />
     </div>
   </section>
 </BaseLayout>

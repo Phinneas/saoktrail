@@ -1,0 +1,10 @@
+{
+  "provider": "Booking.com",
+  "category": "lodging",
+  "program": "Booking.com Affiliate Partner Program",
+  "url": "https://www.booking.com/searchresults.html?aid=YOUR_BOOKING_AID&ss={location}",
+  "cookie_days": 30,
+  "commission": "3-6% per completed stay",
+  "do_not_display_when": ["backcountry_only", "no_lodging_nearby"],
+  "disclosure_required": true
+}

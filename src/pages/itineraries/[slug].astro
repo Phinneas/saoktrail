@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import AffiliateZone from '../../components/AffiliateZone.astro';
 import { getCollection } from 'astro:content';
 import { getRegion } from '../../lib/regions';
 import {
@@ -228,18 +229,36 @@ const jsonLd = {
                 </div>
               )}
 
-              <!-- AFFILIATE ZONE: lodging (populated in Session 5) -->
+              <!-- AFFILIATE ZONE: lodging -->
               {day.overnight_type === 'lodging' && day.lodging_area && (
-                <div data-affiliate-zone="lodging" data-lodging-area={day.lodging_area} class="hidden p-3 rounded-lg bg-sa-cream border border-sa-divider">
-                  <!-- Booking.com/Stay22 widget injected here in Session 5 -->
-                </div>
+                <AffiliateZone
+                  category="lodging"
+                  lodgingArea={day.lodging_area}
+                  overnightType={day.overnight_type}
+                  difficulty={data.difficulty}
+                  vehicleRequirement={data.vehicle_requirement}
+                />
               )}
 
-              <!-- AFFILIATE ZONE: camping (populated in Session 5) -->
+              <!-- AFFILIATE ZONE: camping -->
               {day.overnight_type === 'camping' && day.lodging_area && (
-                <div data-affiliate-zone="camping" data-lodging-area={day.lodging_area} class="hidden p-3 rounded-lg bg-sa-cream border border-sa-divider">
-                  <!-- Hipcamp widget injected here in Session 5 -->
-                </div>
+                <AffiliateZone
+                  category="camping"
+                  lodgingArea={day.lodging_area}
+                  overnightType={day.overnight_type}
+                  difficulty={data.difficulty}
+                  vehicleRequirement={data.vehicle_requirement}
+                />
+              )}
+
+              <!-- AFFILIATE ZONE: backpacking (navigation/gear) -->
+              {day.overnight_type === 'backpacking' && (
+                <AffiliateZone
+                  category="navigation"
+                  overnightType={day.overnight_type}
+                  difficulty={data.difficulty}
+                  vehicleRequirement={data.vehicle_requirement}
+                />
               )}
 
               <!-- Ferry notice -->
@@ -271,13 +290,29 @@ const jsonLd = {
     </div>
   </section>
 
-  <!-- AFFILIATE ZONE: navigation (populated in Session 5) -->
-  <section class="px-4 py-4 hidden" data-affiliate-zone="navigation">
+  <!-- AFFILIATE ZONE: navigation (trip-level) -->
+  <section class="px-4 py-4">
     <div class="container mx-auto max-w-4xl">
-      <div class="p-4 rounded-xl bg-sa-cream border border-sa-divider text-center">
-        <!-- Gaia GPS / onX widget injected here in Session 5 -->
-        <p class="text-sm text-sa-text">Offline maps recommended for this trip.</p>
-      </div>
+      <AffiliateZone
+        category="navigation"
+        variant="card"
+        difficulty={data.difficulty}
+        vehicleRequirement={data.vehicle_requirement}
+      />
+    </div>
+  </section>
+
+  <!-- Affiliate Disclosure -->
+  <section class="px-4 py-4">
+    <div class="container mx-auto max-w-3xl">
+      <details class="p-4 rounded-lg bg-sa-cream/50 border border-sa-divider">
+        <summary class="text-xs text-sa-text cursor-pointer hover:text-sa-copper">
+          Affiliate Disclosure
+        </summary>
+        <p class="text-xs text-sa-text mt-2 leading-relaxed">
+          Some links on this page are affiliate links. If you book lodging, camping, or navigation services through these links, SoakTrail may earn a commission at no additional cost to you. This helps us maintain and improve our trip planning resources. We only recommend services we believe are useful for hot springs travelers. All affiliate links on this page are marked with <code class="text-sa-copper">rel="sponsored"</code> in the page source.
+        </p>
+      </details>
     </div>
   </section>
 

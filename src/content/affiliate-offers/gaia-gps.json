@@ -1,0 +1,10 @@
+{
+  "provider": "Gaia GPS",
+  "category": "navigation",
+  "program": "Gaia GPS Affiliate Program",
+  "url": "https://www.gaiagps.com/subscribe/?ref=soaktrail",
+  "cookie_days": 90,
+  "commission": "20% per subscription",
+  "do_not_display_when": ["urban_easy", "paved_roads_only"],
+  "disclosure_required": true
+}

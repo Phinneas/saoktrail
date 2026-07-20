@@ -1,0 +1,10 @@
+{
+  "provider": "Hipcamp",
+  "category": "camping",
+  "program": "Hipcamp Affiliate Program (via AvantLink)",
+  "url": "https://www.hipcamp.com/search?ref=soaktrail&location={location}",
+  "cookie_days": 30,
+  "commission": "8% per booking",
+  "do_not_display_when": ["lodging_only", "no_camping_nearby"],
+  "disclosure_required": true
+}

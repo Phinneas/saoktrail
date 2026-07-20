@@ -1,0 +1,88 @@
+---
+import { getFilteredOffers, buildOfferUrl, type AffiliateCategory, type AffiliateOfferData } from '../lib/affiliate';
+
+interface Props {
+  category: AffiliateCategory;
+  lodgingArea?: string;
+  difficulty?: string;
+  vehicleRequirement?: string;
+  overnightType?: string;
+  variant?: 'inline' | 'card';
+}
+
+const {
+  category,
+  lodgingArea,
+  difficulty,
+  vehicleRequirement,
+  overnightType,
+  variant = 'inline',
+} = Astro.props;
+
+const offers = await getFilteredOffers(category, {
+  difficulty,
+  overnight_type: overnightType,
+  vehicle_requirement: vehicleRequirement,
+  has_lodging_area: !!lodgingArea,
+});
+
+if (offers.length === 0) {
+  return;
+}
+
+const categoryLabels: Record<AffiliateCategory, { title: string; icon: string; cta: string }> = {
+  lodging: { title: 'Find Lodging', icon: '\u{1F3E8}', cta: 'Search hotels' },
+  camping: { title: 'Find Camping', icon: '\u{1F3E5}', cta: 'Search campsites' },
+  navigation: { title: 'Offline Maps', icon: '\u{1F5FA}', cta: 'Get maps' },
+  gear: { title: 'Gear Up', icon: '\u{1F392}', cta: 'Shop gear' },
+  tours: { title: 'Book a Tour', icon: '\u{1F9ED}', cta: 'Browse tours' },
+  insurance: { title: 'Travel Insurance', icon: '\u{1F6E1}', cta: 'Get a quote' },
+};
+
+const meta = categoryLabels[category];
+const hasDisclosure = offers.some((o) => o.disclosure_required);
+---
+
+{variant === 'card' ? (
+  <div class="p-5 rounded-xl bg-white border border-sa-divider">
+    <h3 class="font-display text-lg font-semibold text-sa-dark mb-3">{meta.icon} {meta.title}</h3>
+    {lodgingArea && <p class="text-sm text-sa-text mb-3">Near {lodgingArea}</p>}
+    <div class="space-y-2">
+      {offers.map((offer: AffiliateOfferData) => (
+        <a
+          href={buildOfferUrl(offer.url, { location: lodgingArea })}
+          target="_blank"
+          rel="sponsored noopener noreferrer"
+          class="block p-3 rounded-lg bg-sa-cream border border-sa-divider hover:border-sa-copper transition-colors"
+        >
+          <span class="font-display text-sm font-semibold text-sa-dark">{offer.provider}</span>
+          {offer.commission && <span class="text-xs text-sa-text block mt-0.5">{offer.commission}</span>}
+          <span class="text-xs text-sa-copper block mt-1">{meta.cta} &rarr;</span>
+        </a>
+      ))}
+    </div>
+    {hasDisclosure && (
+      <p class="text-xs text-sa-text mt-3 italic">Affiliate links. We earn a commission at no extra cost to you.</p>
+    )}
+  </div>
+) : (
+  <div class="p-3 rounded-lg bg-sa-cream border border-sa-divider mt-3">
+    <p class="text-xs font-semibold text-sa-text uppercase tracking-wider mb-2">{meta.icon} {meta.title}{lodgingArea ? ` near ${lodgingArea}` : ''}</p>
+    <div class="flex flex-wrap gap-2">
+      {offers.map((offer: AffiliateOfferData) => (
+        <a
+          href={buildOfferUrl(offer.url, { location: lodgingArea })}
+          target="_blank"
+          rel="sponsored noopener noreferrer"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-sa-divider hover:border-sa-copper transition-colors text-sm font-medium text-sa-dark"
+        >
+          {offer.provider}
+          <span class="text-sa-copper">&rarr;</span>
+        </a>
+      ))}
+    </div>
+    {hasDisclosure && (
+      <p class="text-xs text-sa-text mt-2 italic">Affiliate links. We earn a commission at no extra cost to you.</p>
+    )}
+  </div>
+)}

@@ -1,0 +1,10 @@
+{
+  "provider": "Stay22",
+  "category": "lodging",
+  "program": "Stay22 Affiliate Program",
+  "url": "https://www.stay22.com/embed/gm?aid=YOUR_STAY22_AID&checkin={checkin}&checkout={checkout}&place={location}",
+  "cookie_days": 30,
+  "commission": "5-10% per booking (varies by provider)",
+  "do_not_display_when": ["backcountry_only", "no_lodging_nearby"],
+  "disclosure_required": true
+}
