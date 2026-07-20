@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ShareButtons from '../../components/ShareButtons.astro';
+
+const pageDescription = 'A well-packed bag makes the difference between a relaxing soak and a shivering dash back to the car. Here\'s what experienced soakers bring to every hot springs trip.';
+
+const jsonLd = {
+  '@type': 'BlogPosting',
+  headline: 'Hot Springs Essentials: What to Bring',
+  description: pageDescription,
+  url: 'https://soaktrail.com/blog/hot-springs-essentials',
+  author: { '@type': 'Organization', name: 'Soak Trail', url: 'https://soaktrail.com' },
+  publisher: { '@type': 'Organization', name: 'Soak Trail' },
+  datePublished: '2026-07-20',
+};
+
+const essentials = [
+  { name: 'Quick-dry towel', category: 'Gear', desc: 'Cotton towels stay wet and heavy. A microfiber or quick-dry towel packs small, dries fast, and won\'t soak your car seat on the drive home.' },
+  { name: 'Swimsuit', category: 'Clothing', desc: 'Even at clothing-optional springs, bring one. You\'ll want it for changing areas, nearby hikes, or conservative neighbors.' },
+  { name: 'Stainless steel water bottle', category: 'Gear', desc: 'Soaking dehydrates you faster than you realize. Bring plenty of water and drink before, during, and after your soak.' },
+  { name: 'Sandals or water shoes', category: 'Gear', desc: 'Rocky paths, hot surfaces, and slippery pool decks are standard. Protect your feet with something that can get wet.' },
+  { name: 'Mineral sunscreen', category: 'Safety', desc: 'High-altitude springs mean intense UV. Apply before you go and reapply after soaking.' },
+];
+
+const niceToHaves = [
+  { name: 'Dry bag', category: 'Gear', desc: 'Keeps your phone, keys, and clothes dry at primitive springs where there\'s no locker or changing room.' },
+  { name: 'Insulated cooler bag', category: 'Comfort', desc: 'Bring cold drinks and snacks. A post-soak beer or cold water hits different.' },
+  { name: 'Headlamp', category: 'Safety', desc: 'Essential for night visits to primitive springs. Hot spring water + darkness + rocky trails = twisted ankles without one.' },
+  { name: 'First aid kit', category: 'Safety', desc: 'Remote springs mean remote help. Bandages, tweezers (for splinters), and blister pads go a long way.' },
+  { name: 'Phone dry pouch', category: 'Electronics', desc: 'If you want photos at the springs, a waterproof pouch keeps your phone alive. Cheap insurance for a $1000 device.' },
+];
+---
+
+<BaseLayout
+  title="Hot Springs Essentials: What to Bring — Soak Trail Journal"
+  description={pageDescription}
+  ogType="article"
+  jsonLd={jsonLd}
+>
+  <main class="max-w-3xl mx-auto px-6 py-16 md:py-24">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Journal', href: '/blog' },
+      { label: 'Hot Springs Essentials' },
+    ]} />
+
+    <article>
+      <header class="mb-10">
+        <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-4 font-body">Gear Guide</p>
+        <h1 class="font-display text-3xl md:text-5xl font-medium text-sa-dark leading-tight mb-6">
+          Hot Springs Essentials
+        </h1>
+        <p class="text-sa-text text-lg leading-relaxed">
+          A well-packed bag makes the difference between a relaxing soak and a shivering dash back to the car. Here's what experienced soakers bring to every trip.
+        </p>
+      </header>
+
+      <section class="mb-12">
+        <h2 class="font-display text-2xl font-medium text-sa-dark mb-6">Essentials (Don't Forget)</h2>
+        <div class="space-y-6">
+          {essentials.map((item) => (
+            <div class="border-l-2 border-sa-copper pl-5">
+              <div class="flex items-center gap-3 mb-1">
+                <h3 class="font-display text-lg font-semibold text-sa-dark">{item.name}</h3>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-sa-cream text-sa-text border border-sa-divider capitalize">{item.category}</span>
+              </div>
+              <p class="text-sa-text text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="font-display text-2xl font-medium text-sa-dark mb-6">Nice to Have</h2>
+        <div class="space-y-6">
+          {niceToHaves.map((item) => (
+            <div class="border-l-2 border-sa-divider pl-5">
+              <div class="flex items-center gap-3 mb-1">
+                <h3 class="font-display text-lg font-semibold text-sa-dark">{item.name}</h3>
+                <span class="text-xs px-2 py-0.5 rounded-full bg-sa-cream text-sa-text border border-sa-divider capitalize">{item.category}</span>
+              </div>
+              <p class="text-sa-text text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div class="bg-sa-cream border border-sa-divider rounded-xl p-6 mb-8">
+        <p class="text-sa-text text-sm">
+          <strong class="text-sa-dark">Planning a trip?</strong> Use our
+          <a href="/trip-planner" class="text-sa-copper hover:underline font-medium"> Trip Planner</a>
+          to find the perfect hot springs by region, access type, and temperature.
+        </p>
+      </div>
+
+      <p class="text-xs text-sa-text italic mb-8">
+        Some links may be affiliate links. We may earn a commission on qualifying purchases at no extra cost to you.
+      </p>
+
+      <ShareButtons
+        url="https://soaktrail.com/blog/hot-springs-essentials"
+        title="Hot Springs Essentials: What to Bring"
+        description={pageDescription}
+      />
+    </article>
+
+    <div class="mt-16 pt-8 border-t border-sa-divider">
+      <a href="/blog" class="inline-flex items-center gap-2 text-sa-copper hover:text-sa-dark transition-colors duration-300 text-sm font-body font-medium">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 5l-7 7 7 7" />
+        </svg>
+        More from the Journal
+      </a>
+    </div>
+  </main>
+</BaseLayout>

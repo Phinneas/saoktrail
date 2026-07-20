@@ -6,11 +6,6 @@ import { getCollection } from 'astro:content';
 
 const itineraries = await getCollection('itineraries', ({ data }) => !data.draft).catch(() => []);
 
-const packingList = await getCollection('packing-lists').then(lists => lists[0]).catch(() => null);
-const packingItems = packingList?.data.items || [];
-const essentials = packingItems.filter(i => i.essential);
-const niceToHaves = packingItems.filter(i => !i.essential);
-
 const jsonLd = {
   '@type': 'WebPage',
   name: 'Hot Springs Trip Planner',
@@ -91,47 +86,26 @@ const jsonLd = {
       )}
     </div>
   </section>
-  <!-- Gear & Packing Section -->
-  {packingItems.length > 0 && (
-    <section class="px-4 py-8">
-      <div class="container mx-auto max-w-4xl">
-        <h2 class="font-display text-2xl md:text-3xl text-sa-dark mb-2">Gear & Packing</h2>
-        <p class="text-sa-text text-sm mb-6">Don't show up unprepared. Here's what experienced soakers bring to every trip.</p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="rounded-xl bg-white border border-sa-divider p-6">
-            <h3 class="font-display text-lg font-semibold text-sa-dark mb-4">Essentials</h3>
-            <ul class="space-y-3">
-              {essentials.map((item) => (
-                <li class="flex items-start gap-3">
-                  <span class="text-sa-copper mt-0.5">&#10003;</span>
-                  <div>
-                    <p class="text-sm font-medium text-sa-dark">{item.name}</p>
-                    <p class="text-xs text-sa-text capitalize">{item.category}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+  <!-- Gear Guide Link -->
+  <section class="px-4 py-8">
+    <div class="container mx-auto max-w-4xl">
+      <a
+        href="/blog/hot-springs-essentials"
+        class="block rounded-xl bg-gradient-to-br from-sa-copper/10 to-sa-cream border border-sa-divider hover:border-sa-copper transition-colors p-8 group"
+      >
+        <div class="flex items-center justify-between gap-6">
+          <div>
+            <p class="text-sa-copper text-xs tracking-[0.3em] uppercase mb-2 font-body">Gear Guide</p>
+            <h2 class="font-display text-2xl font-medium text-sa-dark mb-2">Hot Springs Essentials</h2>
+            <p class="text-sa-text text-sm max-w-md">
+              Don't show up unprepared. Here's what experienced soakers bring to every trip - from quick-dry towels to headlamps.
+            </p>
           </div>
-
-          <div class="rounded-xl bg-white border border-sa-divider p-6">
-            <h3 class="font-display text-lg font-semibold text-sa-dark mb-4">Nice to Have</h3>
-            <ul class="space-y-3">
-              {niceToHaves.map((item) => (
-                <li class="flex items-start gap-3">
-                  <span class="text-sa-text mt-0.5">&#8226;</span>
-                  <div>
-                    <p class="text-sm font-medium text-sa-dark">{item.name}</p>
-                    <p class="text-xs text-sa-text capitalize">{item.category}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-sa-copper group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
         </div>
-
-        <p class="text-xs text-sa-text mt-4 italic">Some links may be affiliate links. We may earn a commission on qualifying purchases at no extra cost to you.</p>
-      </div>
-    </section>
-  )}
+      </a>
+    </div>
+  </section>
 </BaseLayout>
