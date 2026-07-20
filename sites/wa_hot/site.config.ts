@@ -13,7 +13,6 @@ export const siteConfig: SiteConfig = {
     { name: "Directory", url: "/directory" },
     { name: "Map", url: "/washington-hot-springs-map" },
     { name: "Blog", url: "/blog" },
-    { name: "Trip Planner", url: "/trip-planner" },
     { name: "About", url: "/about" },
   ],
   mapUrl: "/washington-hot-springs-map",
