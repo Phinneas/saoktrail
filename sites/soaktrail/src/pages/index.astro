@@ -101,17 +101,13 @@ const jsonLd = [
         </span>
       </a>
       <div class="hidden md:flex items-center gap-8">
-        {['Destinations', 'About', 'MCP', 'Contact'].map((item) => (
-          <a
-            href={`#${item.toLowerCase()}`}
-            class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper"
-          >
-            {item}
-          </a>
-        ))}
-        <a href="/blog" class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper">
-          Journal
-        </a>
+        <a href="#destinations" class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper">Destinations</a>
+        <a href="/trip-planner" class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper">Trip Planner</a>
+        <a href="/blog" class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper">Journal</a>
+        <a href="https://shop.soaktrail.com" target="_blank" rel="noopener noreferrer" class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper">Shop</a>
+        <a href="#about" class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper">About</a>
+        <a href="#mcp" class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper">MCP</a>
+        <a href="#contact" class="text-sm font-body font-medium tracking-wide uppercase text-white/90 transition-colors duration-300 hover:text-sa-copper">Contact</a>
       </div>
     </div>
   </nav>

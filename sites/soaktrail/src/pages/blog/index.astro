@@ -8,15 +8,19 @@ const PAGE_SIZE = 9;
 const page = Math.max(1, Number(Astro.url.searchParams.get('page')) || 1);
 
 const allPosts: any[] = [];
-let offset = 0;
-const limit = 50;
-while (true) {
-  const result = await wolly.pages.list({ type: 'blog', sort: 'published_at:desc', status: 'published', limit, offset });
-  const filtered = result.data.filter((post: any) => post.fields?.site === SITE_SLUG);
-  allPosts.push(...filtered);
-  const total = result.meta?.total || 0;
-  offset += limit;
-  if (offset >= total) break;
+try {
+  let offset = 0;
+  const limit = 50;
+  while (true) {
+    const result = await wolly.pages.list({ type: 'blog', sort: 'published_at:desc', status: 'published', limit, offset });
+    const filtered = result.data.filter((post: any) => post.fields?.site === SITE_SLUG);
+    allPosts.push(...filtered);
+    const total = result.meta?.total || 0;
+    offset += limit;
+    if (offset >= total) break;
+  }
+} catch (e) {
+  console.error('Blog: WollyCMS API error:', e);
 }
 
 const totalPages = Math.max(1, Math.ceil(allPosts.length / PAGE_SIZE));
@@ -60,7 +64,9 @@ const jsonLd = {
       </a>
       <div class="flex items-center gap-6">
         <a href="/#destinations" class="text-sm font-body font-medium tracking-wide uppercase text-sa-text hover:text-sa-copper transition-colors duration-300">Destinations</a>
+        <a href="/trip-planner" class="text-sm font-body font-medium tracking-wide uppercase text-sa-text hover:text-sa-copper transition-colors duration-300">Trip Planner</a>
         <a href="/blog" class="text-sm font-body font-medium tracking-wide uppercase text-sa-copper">Journal</a>
+        <a href="https://shop.soaktrail.com" target="_blank" rel="noopener noreferrer" class="text-sm font-body font-medium tracking-wide uppercase text-sa-text hover:text-sa-copper transition-colors duration-300">Shop</a>
       </div>
     </div>
   </nav>
