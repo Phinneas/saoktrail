@@ -14,8 +14,11 @@ const sharedSrc = fileURLToPath(new URL("../../packages/shared/src/", import.met
 export default defineConfig({
   site: "https://www.alaskahotsprings.com",
   base: "/",
-  trailingSlash: "ignore",
+  trailingSlash: "never",
   prefetch: { prefetchAll: true },
+  redirects: {
+    "/trip-planner": { status: 301, destination: "/" },
+  },
   adapter: cloudflare(),
   integrations: [
     react(),

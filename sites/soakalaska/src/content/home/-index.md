@@ -18,9 +18,6 @@ navCards:
   - title: Spring Directory
     description: Browse all catalogued springs with filters by temperature and access
     link: /directory
-  - title: Trip Planner
-    description: Build custom itineraries with drive times and route optimization
-    link: /trip-planner
 proofHeading: Find Your Soak
 proofSubtext: Not all Alaska hot springs are the same. Pick the experience you're looking for.
 proofItems:
@@ -32,7 +29,7 @@ proofButton:
   label: Browse the Directory →
   link: /directory
 tripHeading: Plan an Alaska Adventure, Not Just a Soak
-tripSubtext: "Our trip planner turns individual springs into full itineraries. Here's one we mapped:"
+tripSubtext: "Here's a sample multi-stop Alaska hot springs itinerary to inspire your route:"
 tripExample:
   - day: "Day 1"
     description: "Soak at Chena Hot Springs Resort, 56 miles northeast of Fairbanks. Enjoy indoor and outdoor mineral pools, and if it's winter, watch for the northern lights."

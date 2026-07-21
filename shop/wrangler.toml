@@ -13,7 +13,7 @@ binding = "SHOP_ASSETS"
 bucket_name = "soaktrail-shop-assets"
 
 [vars]
-RENDER_SERVICE_URL = "https://saoktrail-production.up.railway.app"
+RENDER_SERVICE_URL = "https://soaktrail-render.chesterbeard.workers.dev"
 SOAKATLAS_MCP_URL = "https://soakatlas-mcp.buzzuw2.workers.dev"
 R2_PUBLIC_URL = "https://r2.soaktrail.com"
 

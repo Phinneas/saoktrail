@@ -3,7 +3,8 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "sites/*"
+    "sites/*",
+    "shop"
   ],
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.62.2"

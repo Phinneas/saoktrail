@@ -1,6 +1,6 @@
 import type { SiteConfig } from "@soaktrail/shared/config";
 export const siteConfig: SiteConfig = {
-  name: "Shasta Hot Springs", url: "https://shastahotsprings.com",
+  name: "Shasta Hot Springs", url: "https://www.shastahotsprings.com",
   description: "Your guide to Northern California and Southern Oregon's best hot springs near Mount Shasta — natural pools, resort soaks, and wilderness gems.",
   author: "Shasta Hot Springs", ogImage: "/og-image.png",
   googleSiteVerification: "wqxocztLV8bKLFf1C8ZQBvCssEwGSvte6DY_fK-Qqzw",

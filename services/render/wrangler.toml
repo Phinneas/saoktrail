@@ -1,0 +1,13 @@
+name = "soaktrail-render"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# Secrets (set via: wrangler secret put <KEY>)
+# THUNDERFOREST_API_KEY
+# RENDER_SERVICE_SECRET
+
+[[rules]]
+type = "Data"
+globs = ["**/*.ttf"]
+fallthrough = true

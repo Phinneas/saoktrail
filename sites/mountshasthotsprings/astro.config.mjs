@@ -8,14 +8,18 @@ import { defineConfig } from "astro/config";
 import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
 import cloudflare from "@astrojs/cloudflare";
+import { ghostRedirects } from "./ghost-redirects.mjs";
 
 const sharedSrc = fileURLToPath(new URL("../../packages/shared/src/", import.meta.url));
 
 export default defineConfig({
-  site: "https://shastahotsprings.com",
+  site: "https://www.shastahotsprings.com",
   base: "/",
-  trailingSlash: "ignore",
+  trailingSlash: "never",
   prefetch: { prefetchAll: true },
+  redirects: {
+    ...ghostRedirects,
+  },
   adapter: cloudflare(),
   integrations: [
     react(),

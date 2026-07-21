@@ -2,7 +2,7 @@ import type { SiteConfig } from "@soaktrail/shared/config";
 
 export const siteConfig: SiteConfig = {
   name: "Soak Colorado",
-  url: "https://soakcolorado.com",
+  url: "https://www.soakcolorado.com",
   description:
     "Your guide to Colorado's best hot springs — natural pools, resort soaks, and hidden wilderness gems.",
   author: "Soak Colorado",
