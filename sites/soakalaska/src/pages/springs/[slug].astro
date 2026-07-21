@@ -197,6 +197,31 @@ const weather = spring.lat && spring.lng ? await getWeather(spring.lat, spring.l
               </a>
             </div>
           )}
+
+          {spring.usgs?.water_quality?.length > 0 && (
+            <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
+              <h3 class="h4 mb-2">USGS Water Quality</h3>
+              <p class="text-xs text-txt-light dark:text-darkmode-txt-light mb-3">
+                Nearest site: {spring.usgs.site_name} ({spring.usgs.distance_miles} mi)
+              </p>
+              <div class="space-y-2">
+                {spring.usgs.water_quality.map((wq: any) => (
+                  <div class="flex justify-between text-sm">
+                    <span class="text-txt-s dark:text-darkmode-txt-s">{wq.parameter}</span>
+                    <span class="font-mono text-txt-p dark:text-darkmode-txt-p">{wq.value} {wq.unit}</span>
+                  </div>
+                ))}
+              </div>
+              <a
+                href={spring.usgs.usgs_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs font-display font-bold text-accent hover:underline mt-3 block"
+              >
+                USGS Site {spring.usgs.site_no} →
+              </a>
+            </div>
+          )}
         </div>
       </div>
 

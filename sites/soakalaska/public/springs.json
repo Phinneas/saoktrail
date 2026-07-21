@@ -20,7 +20,52 @@
     "has_post": false,
     "elevation_ft": 1214,
     "wikipedia_url": "https://en.wikipedia.org/wiki/Chena_Hot_Springs%2C_Alaska",
-    "wikipedia_summary": "Chena Hot Springs is an unincorporated community and hot spring resort in the Fairbanks North Star Borough, Alaska, United States, 56.5 miles (90.9\u00a0km) northeast of Fairbanks near the Chena River State Recreation Area. The resort makes use of the first low-temperature binary geothermal power plant built in Alaska, and is working on several alternative energy projects, including production and use of hydrogen and vegetable oil for fuel. The resort is conducting collaborative experiments in greenhouse production of vegetables with the University of Alaska Fairbanks Agricultural and Forestry Experiment Station."
+    "wikipedia_summary": "Chena Hot Springs is an unincorporated community and hot spring resort in the Fairbanks North Star Borough, Alaska, United States, 56.5 miles (90.9 km) northeast of Fairbanks near the Chena River State Recreation Area. The resort makes use of the first low-temperature binary geothermal power plant built in Alaska, and is working on several alternative energy projects, including production and use of hydrogen and vegetable oil for fuel. The resort is conducting collaborative experiments in greenhouse production of vegetables with the University of Alaska Fairbanks Agricultural and Forestry Experiment Station.",
+    "usgs": {
+      "site_no": "15490000",
+      "site_name": "MONUMENT C AT CHENA HOT SPRINGS AK",
+      "distance_miles": 0.2,
+      "site_type": "ST",
+      "site_elevation_ft": null,
+      "water_quality": [
+        {
+          "parameter": "Temperature, water",
+          "value": 1.5,
+          "unit": "deg C",
+          "date": "1971-09-29",
+          "media": "Water"
+        },
+        {
+          "parameter": "Specific conductance",
+          "value": 66,
+          "unit": "uS/cm @25C",
+          "date": "1971-09-29",
+          "media": "Water"
+        },
+        {
+          "parameter": "pH",
+          "value": 7.4,
+          "unit": "std units",
+          "date": "1971-09-29",
+          "media": "Water"
+        },
+        {
+          "parameter": "Alkalinity",
+          "value": 25,
+          "unit": "mg/l CaCO3",
+          "date": "1971-09-29",
+          "media": "Water"
+        },
+        {
+          "parameter": "Total dissolved solids",
+          "value": 43,
+          "unit": "mg/l",
+          "date": "1971-09-29",
+          "media": "Water"
+        }
+      ],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=15490000"
+    }
   },
   {
     "id": "2",
@@ -42,7 +87,16 @@
     "has_post": false,
     "elevation_ft": 482,
     "wikipedia_url": "https://en.wikipedia.org/wiki/Alyeska_Resort",
-    "wikipedia_summary": "Alyeska Resort is a ski resort in the Girdwood area of Anchorage, Alaska, approximately 30 miles (48\u00a0km) from downtown Anchorage. Mount Alyeska is part of the Chugach mountain range and the Alyeska Resort is the largest ski area in the state. It includes the mountaintop Mt. Alyeska Roundhouse, which is listed on the National Register of Historic Places."
+    "wikipedia_summary": "Alyeska Resort is a ski resort in the Girdwood area of Anchorage, Alaska, approximately 30 miles (48 km) from downtown Anchorage. Mount Alyeska is part of the Chugach mountain range and the Alyeska Resort is the largest ski area in the state. It includes the mountaintop Mt. Alyeska Roundhouse, which is listed on the National Register of Historic Places.",
+    "usgs": {
+      "site_no": "605750149062401",
+      "site_name": "SA01000216BAAA1  011",
+      "distance_miles": 0.4,
+      "site_type": "GW",
+      "site_elevation_ft": 280,
+      "water_quality": [],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=605750149062401"
+    }
   },
   {
     "id": "3",
@@ -62,7 +116,38 @@
     "has_post": false,
     "elevation_ft": 16,
     "wikipedia_url": "https://en.wikipedia.org/wiki/Pilgrim_Hot_Springs",
-    "wikipedia_summary": "Pilgrim Hot Springs is a ghost town in the interior of the Seward Peninsula of northwestern Arctic Alaska. Also known as Kruzgamepa, Kruzgamepa Springs and Unaatuq. It is located on the southeast bank of the Kruzgamepa River, about 8 miles (13\u00a0km) south of milepost 65 of the Kougarok Road, on the traditional lands of the Kauweramiut, also known as the People of Kauwerak, also known as people of the Village of Mary's Igloo and their descendants."
+    "wikipedia_summary": "Pilgrim Hot Springs is a ghost town in the interior of the Seward Peninsula of northwestern Arctic Alaska. Also known as Kruzgamepa, Kruzgamepa Springs and Unaatuq. It is located on the southeast bank of the Kruzgamepa River, about 8 miles (13 km) south of milepost 65 of the Kougarok Road, on the traditional lands of the Kauweramiut, also known as the People of Kauwerak, also known as people of the Village of Mary's Igloo and their descendants.",
+    "usgs": {
+      "site_no": "650535164551001",
+      "site_name": "KC00403136DDDA1S",
+      "distance_miles": 0.1,
+      "site_type": "SP",
+      "site_elevation_ft": 25,
+      "water_quality": [
+        {
+          "parameter": "Temperature, water",
+          "value": 69,
+          "unit": "deg C",
+          "date": "1915-09-02",
+          "media": "Water"
+        },
+        {
+          "parameter": "Alkalinity",
+          "value": 17,
+          "unit": "mg/l CaCO3",
+          "date": "1915-09-02",
+          "media": "Water"
+        },
+        {
+          "parameter": "Total dissolved solids",
+          "value": 5960,
+          "unit": "mg/l",
+          "date": "1915-09-02",
+          "media": "Water"
+        }
+      ],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=650535164551001"
+    }
   },
   {
     "id": "4",
@@ -81,7 +166,52 @@
     "has_post": false,
     "elevation_ft": 978,
     "wikipedia_url": "https://en.wikipedia.org/wiki/Kanuti_Hot_Springs",
-    "wikipedia_summary": "Kanuti Hot Springs is a geothermal spring in an area of critical environmental concern in the Kanuti National Wildlife Refuge, Alaska, 15 miles north of the Arctic Circle."
+    "wikipedia_summary": "Kanuti Hot Springs is a geothermal spring in an area of critical environmental concern in the Kanuti National Wildlife Refuge, Alaska, 15 miles north of the Arctic Circle.",
+    "usgs": {
+      "site_no": "662603150380700",
+      "site_name": "KANUTI R NR BETTLES AK",
+      "distance_miles": 8.6,
+      "site_type": "ST",
+      "site_elevation_ft": null,
+      "water_quality": [
+        {
+          "parameter": "Temperature, water",
+          "value": 5.5,
+          "unit": "deg C",
+          "date": "1977-09-17",
+          "media": "Water"
+        },
+        {
+          "parameter": "Specific conductance",
+          "value": 123,
+          "unit": "uS/cm @25C",
+          "date": "1972-03-14",
+          "media": "Water"
+        },
+        {
+          "parameter": "pH",
+          "value": 7.2,
+          "unit": "std units",
+          "date": "1972-03-14",
+          "media": "Water"
+        },
+        {
+          "parameter": "Alkalinity",
+          "value": 53,
+          "unit": "mg/l CaCO3",
+          "date": "1972-03-14",
+          "media": "Water"
+        },
+        {
+          "parameter": "Total dissolved solids",
+          "value": 82,
+          "unit": "mg/l",
+          "date": "1972-03-14",
+          "media": "Water"
+        }
+      ],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=662603150380700"
+    }
   },
   {
     "id": "5",
@@ -101,7 +231,52 @@
     "has_post": false,
     "elevation_ft": 184,
     "wikipedia_url": "https://en.wikipedia.org/wiki/Baranof_Warm_Springs%2C_Alaska",
-    "wikipedia_summary": "Baranof Warm Springs is a small, primarily seasonally-occupied community located in the city and borough of Sitka, Alaska, on the eastern side of Baranof Island, from which it likely derives its name, in the Alexander Archipelago. It is occasionally referred to simply as Baranof. Baranof Warm Springs is located at 57\u00b005\u203222\u2033N 134\u00b049\u203259\u2033W."
+    "wikipedia_summary": "Baranof Warm Springs is a small, primarily seasonally-occupied community located in the city and borough of Sitka, Alaska, on the eastern side of Baranof Island, from which it likely derives its name, in the Alexander Archipelago. It is occasionally referred to simply as Baranof. Baranof Warm Springs is located at 57°05′22″N 134°49′59″W.",
+    "usgs": {
+      "site_no": "570520134502501",
+      "site_name": "CD05506624ADCB1S",
+      "distance_miles": 0.3,
+      "site_type": "SP",
+      "site_elevation_ft": 75,
+      "water_quality": [
+        {
+          "parameter": "Alkalinity",
+          "value": 67,
+          "unit": "mg/l CaCO3",
+          "date": "1972-03-23",
+          "media": "Water"
+        },
+        {
+          "parameter": "Total dissolved solids",
+          "value": 190,
+          "unit": "mg/l",
+          "date": "1972-03-23",
+          "media": "Water"
+        },
+        {
+          "parameter": "Temperature, water",
+          "value": 41,
+          "unit": "deg C",
+          "date": "1972-03-23",
+          "media": "Water"
+        },
+        {
+          "parameter": "Specific conductance",
+          "value": 242,
+          "unit": "uS/cm @25C",
+          "date": "1972-03-23",
+          "media": "Water"
+        },
+        {
+          "parameter": "pH",
+          "value": 9.4,
+          "unit": "std units",
+          "date": "1972-03-23",
+          "media": "Water"
+        }
+      ],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=570520134502501"
+    }
   },
   {
     "id": "6",
@@ -121,7 +296,52 @@
     "state": "AK",
     "development": "Community",
     "has_post": false,
-    "elevation_ft": 2644
+    "elevation_ft": 2644,
+    "usgs": {
+      "site_no": "15107920",
+      "site_name": "INDIAN R NR TENAKEE AK",
+      "distance_miles": 1.5,
+      "site_type": "ST",
+      "site_elevation_ft": 334,
+      "water_quality": [
+        {
+          "parameter": "Temperature, water",
+          "value": 6,
+          "unit": "deg C",
+          "date": "1981-10-07",
+          "media": "Water"
+        },
+        {
+          "parameter": "Specific conductance",
+          "value": 153,
+          "unit": "uS/cm @25C",
+          "date": "1981-10-07",
+          "media": "Water"
+        },
+        {
+          "parameter": "pH",
+          "value": 7,
+          "unit": "std units",
+          "date": "1981-10-07",
+          "media": "Water"
+        },
+        {
+          "parameter": "Alkalinity",
+          "value": 65,
+          "unit": "mg/l CaCO3",
+          "date": "1981-10-07",
+          "media": "Water"
+        },
+        {
+          "parameter": "Total dissolved solids",
+          "value": 81,
+          "unit": "mg/l",
+          "date": "1981-07-14",
+          "media": "Water"
+        }
+      ],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=15107920"
+    }
   },
   {
     "id": "7",
@@ -137,7 +357,52 @@
     "state": "AK",
     "development": "Primitive",
     "has_post": false,
-    "elevation_ft": 115
+    "elevation_ft": 115,
+    "usgs": {
+      "site_no": "555600131340000",
+      "site_name": "CD06809031BCAC1S",
+      "distance_miles": 0.4,
+      "site_type": "SP",
+      "site_elevation_ft": 50,
+      "water_quality": [
+        {
+          "parameter": "Temperature, water",
+          "value": 74,
+          "unit": "deg C",
+          "date": "1976-07-06",
+          "media": "Water"
+        },
+        {
+          "parameter": "Alkalinity",
+          "value": 73,
+          "unit": "mg/l CaCO3",
+          "date": "1976-07-06",
+          "media": "Water"
+        },
+        {
+          "parameter": "Total dissolved solids",
+          "value": 702,
+          "unit": "mg/l",
+          "date": "1976-07-06",
+          "media": "Water"
+        },
+        {
+          "parameter": "Specific conductance",
+          "value": 920,
+          "unit": "uS/cm @25C",
+          "date": "1976-07-06",
+          "media": "Water"
+        },
+        {
+          "parameter": "pH",
+          "value": 8.4,
+          "unit": "std units",
+          "date": "1976-07-06",
+          "media": "Water"
+        }
+      ],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=555600131340000"
+    }
   },
   {
     "id": "8",
@@ -155,7 +420,38 @@
     "state": "AK",
     "development": "Primitive",
     "has_post": false,
-    "elevation_ft": 919
+    "elevation_ft": 919,
+    "usgs": {
+      "site_no": "651255149593001",
+      "site_name": "FB00501234DBCA1S",
+      "distance_miles": 0.4,
+      "site_type": "SP",
+      "site_elevation_ft": null,
+      "water_quality": [
+        {
+          "parameter": "Alkalinity",
+          "value": 410,
+          "unit": "mg/l CaCO3",
+          "date": "1931-08-16",
+          "media": "Water"
+        },
+        {
+          "parameter": "Total dissolved solids",
+          "value": 615,
+          "unit": "mg/l",
+          "date": "1931-08-16",
+          "media": "Water"
+        },
+        {
+          "parameter": "Temperature, water",
+          "value": 45.5,
+          "unit": "deg C",
+          "date": "1915-08-06",
+          "media": "Water"
+        }
+      ],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=651255149593001"
+    }
   },
   {
     "id": "9",
@@ -173,7 +469,52 @@
     "state": "AK",
     "development": "Community",
     "has_post": false,
-    "elevation_ft": 315
+    "elevation_ft": 315,
+    "usgs": {
+      "site_no": "564327132022701",
+      "site_name": "CD05908528CCAA1S",
+      "distance_miles": 1.5,
+      "site_type": "SP",
+      "site_elevation_ft": 50,
+      "water_quality": [
+        {
+          "parameter": "Temperature, water",
+          "value": 50.5,
+          "unit": "deg C",
+          "date": "1976-07-07",
+          "media": "Water"
+        },
+        {
+          "parameter": "Alkalinity",
+          "value": 37,
+          "unit": "mg/l CaCO3",
+          "date": "1976-07-07",
+          "media": "Water"
+        },
+        {
+          "parameter": "Total dissolved solids",
+          "value": 330,
+          "unit": "mg/l",
+          "date": "1976-07-07",
+          "media": "Water"
+        },
+        {
+          "parameter": "Specific conductance",
+          "value": 390,
+          "unit": "uS/cm @25C",
+          "date": "1976-07-07",
+          "media": "Water"
+        },
+        {
+          "parameter": "pH",
+          "value": 7.1,
+          "unit": "std units",
+          "date": "1976-07-07",
+          "media": "Water"
+        }
+      ],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=564327132022701"
+    }
   },
   {
     "id": "10",
@@ -189,7 +530,45 @@
     "state": "AK",
     "development": "Primitive",
     "has_post": false,
-    "elevation_ft": 902
+    "elevation_ft": 902,
+    "usgs": {
+      "site_no": "650735153344500",
+      "site_name": "YUKON R NR BIRCHES AK",
+      "distance_miles": 24.3,
+      "site_type": "ST",
+      "site_elevation_ft": null,
+      "water_quality": [
+        {
+          "parameter": "Specific conductance",
+          "value": 217,
+          "unit": "uS/cm @25C",
+          "date": "1956-07-19",
+          "media": "Water"
+        },
+        {
+          "parameter": "pH",
+          "value": 7.5,
+          "unit": "std units",
+          "date": "1956-07-19",
+          "media": "Water"
+        },
+        {
+          "parameter": "Alkalinity",
+          "value": 87,
+          "unit": "mg/l CaCO3",
+          "date": "1956-07-19",
+          "media": "Water"
+        },
+        {
+          "parameter": "Total dissolved solids",
+          "value": 123,
+          "unit": "mg/l",
+          "date": "1956-07-19",
+          "media": "Water"
+        }
+      ],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=650735153344500"
+    }
   },
   {
     "id": "11",
@@ -208,7 +587,16 @@
     "state": "AK",
     "development": "Community",
     "has_post": false,
-    "elevation_ft": 413
+    "elevation_ft": 413,
+    "usgs": {
+      "site_no": "90229000017",
+      "site_name": "MANLEY COMMUNITY WATER SYSTEM",
+      "distance_miles": 0,
+      "site_type": "FA-WDS",
+      "site_elevation_ft": null,
+      "water_quality": [],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=90229000017"
+    }
   },
   {
     "id": "12",
@@ -226,7 +614,52 @@
     "state": "AK",
     "development": "Primitive",
     "has_post": false,
-    "elevation_ft": 427
+    "elevation_ft": 427,
+    "usgs": {
+      "site_no": "655111164414701",
+      "site_name": "KB00502912BCBB1S",
+      "distance_miles": 0.5,
+      "site_type": "SP",
+      "site_elevation_ft": 450,
+      "water_quality": [
+        {
+          "parameter": "Temperature, water",
+          "value": 68,
+          "unit": "deg C",
+          "date": "1976-07-12",
+          "media": "Water"
+        },
+        {
+          "parameter": "Specific conductance",
+          "value": 4590,
+          "unit": "uS/cm @25C",
+          "date": "1976-07-12",
+          "media": "Water"
+        },
+        {
+          "parameter": "pH",
+          "value": 7.8,
+          "unit": "std units",
+          "date": "1976-07-12",
+          "media": "Water"
+        },
+        {
+          "parameter": "Alkalinity",
+          "value": 55,
+          "unit": "mg/l CaCO3",
+          "date": "1976-07-12",
+          "media": "Water"
+        },
+        {
+          "parameter": "Total dissolved solids",
+          "value": 2600,
+          "unit": "mg/l",
+          "date": "1976-07-12",
+          "media": "Water"
+        }
+      ],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=655111164414701"
+    }
   },
   {
     "id": "13",
@@ -244,7 +677,45 @@
     "state": "AK",
     "development": "Community",
     "has_post": false,
-    "elevation_ft": 1014
+    "elevation_ft": 1014,
+    "usgs": {
+      "site_no": "651627148505001",
+      "site_name": "FB00500607    1S",
+      "distance_miles": 0.1,
+      "site_type": "SP",
+      "site_elevation_ft": 1000,
+      "water_quality": [
+        {
+          "parameter": "Specific conductance",
+          "value": 2090,
+          "unit": "uS/cm @25C",
+          "date": "1962-07-01",
+          "media": "Water"
+        },
+        {
+          "parameter": "pH",
+          "value": 7.7,
+          "unit": "std units",
+          "date": "1962-07-01",
+          "media": "Water"
+        },
+        {
+          "parameter": "Alkalinity",
+          "value": 40,
+          "unit": "mg/l CaCO3",
+          "date": "1962-07-01",
+          "media": "Water"
+        },
+        {
+          "parameter": "Total dissolved solids",
+          "value": 1180,
+          "unit": "mg/l",
+          "date": "1962-07-01",
+          "media": "Water"
+        }
+      ],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=651627148505001"
+    }
   },
   {
     "id": "14",
@@ -262,7 +733,52 @@
     "state": "AK",
     "development": "Community",
     "has_post": false,
-    "elevation_ft": 925
+    "elevation_ft": 925,
+    "usgs": {
+      "site_no": "652857144381801",
+      "site_name": "FA00801534BACA1S",
+      "distance_miles": 0.2,
+      "site_type": "SP",
+      "site_elevation_ft": 900,
+      "water_quality": [
+        {
+          "parameter": "Alkalinity",
+          "value": 144,
+          "unit": "mg/l CaCO3",
+          "date": "1976-07-10",
+          "media": "Water"
+        },
+        {
+          "parameter": "Temperature, water",
+          "value": 56.5,
+          "unit": "deg C",
+          "date": "1976-07-10",
+          "media": "Water"
+        },
+        {
+          "parameter": "Total dissolved solids",
+          "value": 819,
+          "unit": "mg/l",
+          "date": "1976-07-10",
+          "media": "Water"
+        },
+        {
+          "parameter": "Specific conductance",
+          "value": 1180,
+          "unit": "uS/cm @25C",
+          "date": "1976-07-10",
+          "media": "Water"
+        },
+        {
+          "parameter": "pH",
+          "value": 7.2,
+          "unit": "std units",
+          "date": "1976-07-10",
+          "media": "Water"
+        }
+      ],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=652857144381801"
+    }
   },
   {
     "id": "15",
@@ -278,7 +794,16 @@
     "state": "AK",
     "development": "Primitive",
     "has_post": false,
-    "elevation_ft": 876
+    "elevation_ft": 876,
+    "usgs": {
+      "site_no": "662432150331201",
+      "site_name": "KANUTI RIVER TRIBUTARY NEAR PROSPECT CAMP AK",
+      "distance_miles": 32.6,
+      "site_type": "ST",
+      "site_elevation_ft": 1324,
+      "water_quality": [],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=662432150331201"
+    }
   },
   {
     "id": "16",
@@ -296,7 +821,38 @@
     "state": "AK",
     "development": "Community",
     "has_post": false,
-    "elevation_ft": 52
+    "elevation_ft": 52,
+    "usgs": {
+      "site_no": "574825136202501",
+      "site_name": "CD04705609    1S",
+      "distance_miles": 0.1,
+      "site_type": "SP",
+      "site_elevation_ft": 15,
+      "water_quality": [
+        {
+          "parameter": "Temperature, water",
+          "value": 44,
+          "unit": "deg C",
+          "date": "1915-06-28",
+          "media": "Water"
+        },
+        {
+          "parameter": "Alkalinity",
+          "value": 56,
+          "unit": "mg/l CaCO3",
+          "date": "1915-06-28",
+          "media": "Water"
+        },
+        {
+          "parameter": "Total dissolved solids",
+          "value": 276,
+          "unit": "mg/l",
+          "date": "1915-06-28",
+          "media": "Water"
+        }
+      ],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=574825136202501"
+    }
   },
   {
     "id": "17",
@@ -314,7 +870,52 @@
     "state": "AK",
     "development": "Community",
     "has_post": false,
-    "elevation_ft": 0
+    "elevation_ft": 0,
+    "usgs": {
+      "site_no": "565005135222001",
+      "site_name": "CD05806317CCCA1S",
+      "distance_miles": 0.9,
+      "site_type": "SP",
+      "site_elevation_ft": 60,
+      "water_quality": [
+        {
+          "parameter": "Temperature, water",
+          "value": 63,
+          "unit": "deg C",
+          "date": "1962-12-01",
+          "media": "Water"
+        },
+        {
+          "parameter": "Alkalinity",
+          "value": 26,
+          "unit": "mg/l CaCO3",
+          "date": "1962-12-01",
+          "media": "Water"
+        },
+        {
+          "parameter": "Total dissolved solids",
+          "value": 5010,
+          "unit": "mg/l",
+          "date": "1962-12-01",
+          "media": "Water"
+        },
+        {
+          "parameter": "Specific conductance",
+          "value": 9060,
+          "unit": "uS/cm @25C",
+          "date": "1962-12-01",
+          "media": "Water"
+        },
+        {
+          "parameter": "pH",
+          "value": 7.2,
+          "unit": "std units",
+          "date": "1962-12-01",
+          "media": "Water"
+        }
+      ],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=565005135222001"
+    }
   },
   {
     "id": "18",
@@ -330,7 +931,52 @@
     "state": "AK",
     "development": "Primitive",
     "has_post": false,
-    "elevation_ft": 98
+    "elevation_ft": 98,
+    "usgs": {
+      "site_no": "15081800",
+      "site_name": "NB TROCADERO C NR HYDABURG AK",
+      "distance_miles": 4.9,
+      "site_type": "ST",
+      "site_elevation_ft": 10,
+      "water_quality": [
+        {
+          "parameter": "Temperature, water",
+          "value": 4,
+          "unit": "deg C",
+          "date": "1972-06-07",
+          "media": "Water"
+        },
+        {
+          "parameter": "Specific conductance",
+          "value": 23,
+          "unit": "uS/cm @25C",
+          "date": "1972-06-07",
+          "media": "Water"
+        },
+        {
+          "parameter": "pH",
+          "value": 6.7,
+          "unit": "std units",
+          "date": "1971-05-23",
+          "media": "Water"
+        },
+        {
+          "parameter": "Alkalinity",
+          "value": 5,
+          "unit": "mg/l CaCO3",
+          "date": "1971-05-23",
+          "media": "Water"
+        },
+        {
+          "parameter": "Total dissolved solids",
+          "value": 21,
+          "unit": "mg/l",
+          "date": "1971-03-30",
+          "media": "Water"
+        }
+      ],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=15081800"
+    }
   },
   {
     "id": "19",
@@ -348,7 +994,16 @@
     "state": "AK",
     "development": "Primitive",
     "has_post": false,
-    "elevation_ft": 1765
+    "elevation_ft": 1765,
+    "usgs": {
+      "site_no": "90213000008",
+      "site_name": "KETCHIKAN PUBLIC UTILITIES",
+      "distance_miles": 0.8,
+      "site_type": "FA-WDS",
+      "site_elevation_ft": null,
+      "water_quality": [],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=90213000008"
+    }
   },
   {
     "id": "20",
@@ -364,6 +1019,51 @@
     "state": "AK",
     "development": "Primitive",
     "has_post": false,
-    "elevation_ft": 3527
+    "elevation_ft": 3527,
+    "usgs": {
+      "site_no": "673909149431800",
+      "site_name": "UNNAMED P NR MOUTH OF DIETRICH R NR WISEMAN AK",
+      "distance_miles": 9.1,
+      "site_type": "LK",
+      "site_elevation_ft": null,
+      "water_quality": [
+        {
+          "parameter": "Temperature, water",
+          "value": 0.5,
+          "unit": "deg C",
+          "date": "1972-03-15",
+          "media": "Water"
+        },
+        {
+          "parameter": "Specific conductance",
+          "value": 327,
+          "unit": "uS/cm @25C",
+          "date": "1972-03-15",
+          "media": "Water"
+        },
+        {
+          "parameter": "pH",
+          "value": 7.2,
+          "unit": "std units",
+          "date": "1972-03-15",
+          "media": "Water"
+        },
+        {
+          "parameter": "Alkalinity",
+          "value": 195,
+          "unit": "mg/l CaCO3",
+          "date": "1972-03-15",
+          "media": "Water"
+        },
+        {
+          "parameter": "Total dissolved solids",
+          "value": 198,
+          "unit": "mg/l",
+          "date": "1972-03-15",
+          "media": "Water"
+        }
+      ],
+      "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=673909149431800"
+    }
   }
 ]
