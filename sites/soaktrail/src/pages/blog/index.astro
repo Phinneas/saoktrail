@@ -8,6 +8,21 @@ const PAGE_SIZE = 9;
 const page = Math.max(1, Number(Astro.url.searchParams.get('page')) || 1);
 
 const allPosts: any[] = [];
+
+// Static local posts (not in WollyCMS)
+const localPosts = [
+  {
+    slug: 'hot-springs-essentials',
+    title: 'Hot Springs Essentials: What to Bring',
+    fields: {
+      excerpt: "A well-packed bag makes the difference between a relaxing soak and a shivering dash back to the car. Here's what experienced soakers bring to every trip.",
+      featured_image: '',
+    },
+    meta: { published_at: '2026-07-20' },
+    _local: true,
+  },
+];
+
 try {
   let offset = 0;
   const limit = 50;
@@ -22,6 +37,14 @@ try {
 } catch (e) {
   console.error('Blog: WollyCMS API error:', e);
 }
+
+// Merge local posts with WollyCMS posts, sorted by date
+allPosts.push(...localPosts);
+allPosts.sort((a: any, b: any) => {
+  const aDate = a.meta?.published_at || a.published_at || '';
+  const bDate = b.meta?.published_at || b.published_at || '';
+  return bDate.localeCompare(aDate);
+});
 
 const totalPages = Math.max(1, Math.ceil(allPosts.length / PAGE_SIZE));
 const safePage = Math.min(page, totalPages);
