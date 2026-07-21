@@ -10,15 +10,19 @@ import type { BlogEntry, AuthorsEntry } from "@/types";
 import TableOfContents from "@components/common/TableOfContents.astro";
 import EntryHeader from "@components/common/EntryHeader.astro";
 import { getEntry } from "astro:content";
+import type { MarkdownHeading } from "astro";
+import type { ComponentChildren } from "astro";
 interface Props {
   entry: BlogEntry;
   relatedEntries: BlogEntry[];
+  Content?: ComponentChildren;
+  headings?: MarkdownHeading[];
 }
 
-const { entry, relatedEntries }: Props = Astro.props;
+const { entry, relatedEntries, Content, headings: propHeadings }: Props = Astro.props;
 const { title, description, autodescription, image, hideToc } = entry.data;
 const htmlBody = entry.htmlBody || "";
-const headings = entry.headings || [];
+const headings = propHeadings || entry.headings || [];
 
 const descriptionLenth = 200; // the max length in characters for the auto-generated description
 const globalHideToc = false; // set true to always hide the table of contents (right side menu)
@@ -62,7 +66,7 @@ const authorEntry = authorId ? await getEntry("authors", authorId) : undefined;
           />
         </section>
         <section class="content mb-4 glass px-4 rounded-lg">
-          <div set:html={htmlBody} />
+          {Content ? <Content /> : <div set:html={htmlBody} />}
         </section>
       </article>
     </div>

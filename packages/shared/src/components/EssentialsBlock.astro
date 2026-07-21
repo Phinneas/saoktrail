@@ -1,0 +1,70 @@
+---
+/**
+ * EssentialsBlock.astro — dynamic per-spring "Before You Soak" unit.
+ *
+ * Renders (a) a link to the Hot Springs Essentials packing list and
+ * (b) 1–2 affiliate picks chosen from the spring's own traits by the shared
+ * rule engine in @lib/essentials. Styled with the site's .glass / accent
+ * classes so it matches each regional theme automatically.
+ *
+ * Usage in sites/<site>/src/pages/springs/[slug].astro:
+ *   import EssentialsBlock from "@components/EssentialsBlock.astro";
+ *   import { siteConfig } from "../../../site.config";
+ *   ...
+ *   <EssentialsBlock
+ *     spring={spring}
+ *     amazonTag={siteConfig.affiliate?.amazonTag}
+ *     essentialsUrl={siteConfig.affiliate?.essentialsUrl}
+ *   />
+ */
+import { getEssentials, type SpringLike } from "@lib/essentials";
+
+interface Props {
+  spring: SpringLike;
+  amazonTag?: string;
+  essentialsUrl?: string;
+}
+
+const { spring, amazonTag, essentialsUrl } = Astro.props;
+const { intro, picks, essentialsUrl: href, disclosure } = getEssentials(spring, {
+  amazonTag,
+  essentialsUrl,
+});
+---
+
+<aside class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0" aria-label="Before you soak">
+  <div class="flex items-center justify-between mb-2">
+    <h2 class="h3">Before You Soak</h2>
+    <a
+      href={href}
+      class="text-xs font-bold uppercase tracking-wider text-accent hover:underline whitespace-nowrap"
+    >
+      Full packing list →
+    </a>
+  </div>
+
+  <p class="text-sm text-txt-s dark:text-darkmode-txt-s leading-relaxed mb-4">{intro}</p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    {picks.map((p) => (
+      <a
+        href={p.url}
+        target="_blank"
+        rel="sponsored nofollow noopener"
+        class="block p-4 rounded border border-border dark:border-darkmode-border glass-t hover:bg-accent hover:text-white transition-colors group"
+      >
+        <span class="block font-display font-bold text-txt-p dark:text-darkmode-txt-p group-hover:text-white">
+          {p.name}
+        </span>
+        <span class="block text-xs text-txt-s dark:text-darkmode-txt-s leading-snug mt-1 group-hover:text-white/90">
+          {p.why}
+        </span>
+        <span class="block text-xs font-bold text-accent mt-2 group-hover:text-white">
+          View on Amazon →
+        </span>
+      </a>
+    ))}
+  </div>
+
+  <p class="text-[11px] text-txt-light dark:text-darkmode-txt-light mt-3">{disclosure}</p>
+</aside>

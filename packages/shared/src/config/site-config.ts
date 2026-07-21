@@ -41,6 +41,15 @@ export interface ColorPalette {
   border: string;
 }
 
+/** Affiliate / monetization settings for the per-spring EssentialsBlock. */
+export interface AffiliateConfig {
+  /** Amazon Associates tracking ID for this site, e.g. "soaktherockies-20". */
+  amazonTag: string;
+  /** Override where the "Hot Springs Essentials" packing list lives.
+   *  Defaults to the Soak Trail hub guide if omitted. */
+  essentialsUrl?: string;
+}
+
 export interface SiteConfig {
   /** Display name, e.g. "Soak Colorado" */
   name: string;
@@ -76,4 +85,6 @@ export interface SiteConfig {
   sameAs?: string[];
   /** State/region code for structured data, e.g. "CO", "WA", "CA" */
   region: string;
+  /** Affiliate settings for the per-spring EssentialsBlock (optional). */
+  affiliate?: AffiliateConfig;
 }

@@ -74,7 +74,7 @@ function regionFromState(state: string): string {
     co: 'colorado', nm: 'colorado', id: 'rockies', mt: 'rockies', wy: 'rockies',
     ut: 'desert', nv: 'desert', az: 'desert',
   };
-  return map[state] || '';
+  return map[state.toLowerCase()] || '';
 }
 
 function parseSpringsText(text: string): SpringResult[] {
