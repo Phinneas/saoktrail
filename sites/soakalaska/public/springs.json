@@ -17,7 +17,10 @@
     "insider_tips": "The outdoor rock lake is the highlight. Stay overnight for aurora viewing from the hot springs.",
     "state": "AK",
     "development": "Resort",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 1214,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Chena_Hot_Springs%2C_Alaska",
+    "wikipedia_summary": "Chena Hot Springs is an unincorporated community and hot spring resort in the Fairbanks North Star Borough, Alaska, United States, 56.5 miles (90.9\u00a0km) northeast of Fairbanks near the Chena River State Recreation Area. The resort makes use of the first low-temperature binary geothermal power plant built in Alaska, and is working on several alternative energy projects, including production and use of hydrogen and vegetable oil for fuel. The resort is conducting collaborative experiments in greenhouse production of vegetables with the University of Alaska Fairbanks Agricultural and Forestry Experiment Station."
   },
   {
     "id": "2",
@@ -36,7 +39,10 @@
     "insider_tips": "Book in advance. Stay at Alyeska Resort for spa package deals.",
     "state": "AK",
     "development": "Developed",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 482,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Alyeska_Resort",
+    "wikipedia_summary": "Alyeska Resort is a ski resort in the Girdwood area of Anchorage, Alaska, approximately 30 miles (48\u00a0km) from downtown Anchorage. Mount Alyeska is part of the Chugach mountain range and the Alyeska Resort is the largest ski area in the state. It includes the mountaintop Mt. Alyeska Roundhouse, which is listed on the National Register of Historic Places."
   },
   {
     "id": "3",
@@ -53,7 +59,10 @@
     "insider_tips": "The road from Nome requires a high-clearance vehicle. Check road conditions before heading out.",
     "state": "AK",
     "development": "Primitive",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 16,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Pilgrim_Hot_Springs",
+    "wikipedia_summary": "Pilgrim Hot Springs is a ghost town in the interior of the Seward Peninsula of northwestern Arctic Alaska. Also known as Kruzgamepa, Kruzgamepa Springs and Unaatuq. It is located on the southeast bank of the Kruzgamepa River, about 8 miles (13\u00a0km) south of milepost 65 of the Kougarok Road, on the traditional lands of the Kauweramiut, also known as the People of Kauwerak, also known as people of the Village of Mary's Igloo and their descendants."
   },
   {
     "id": "4",
@@ -69,7 +78,10 @@
     "best_time": "Summer for easier access. Winter for ski-in adventure.",
     "state": "AK",
     "development": "Primitive",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 978,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Kanuti_Hot_Springs",
+    "wikipedia_summary": "Kanuti Hot Springs is a geothermal spring in an area of critical environmental concern in the Kanuti National Wildlife Refuge, Alaska, 15 miles north of the Arctic Circle."
   },
   {
     "id": "5",
@@ -86,7 +98,10 @@
     "insider_tips": "The Baranof Cross-Island Trail from Sitka ends here. Bring all supplies.",
     "state": "AK",
     "development": "Community",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 184,
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Baranof_Warm_Springs%2C_Alaska",
+    "wikipedia_summary": "Baranof Warm Springs is a small, primarily seasonally-occupied community located in the city and borough of Sitka, Alaska, on the eastern side of Baranof Island, from which it likely derives its name, in the Alexander Archipelago. It is occasionally referred to simply as Baranof. Baranof Warm Springs is located at 57\u00b005\u203222\u2033N 134\u00b049\u203259\u2033W."
   },
   {
     "id": "6",
@@ -105,7 +120,8 @@
     "insider_tips": "The bathhouse has scheduled hours posted at the entrance. Respect local customs and quiet hours.",
     "state": "AK",
     "development": "Community",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 2644
   },
   {
     "id": "7",
@@ -120,7 +136,8 @@
     "description": "Natural thermal springs on Bell Island in the Ketchikan Gateway Borough of Southeast Alaska. Accessible by boat from Ketchikan. Remote and undeveloped.",
     "state": "AK",
     "development": "Primitive",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 115
   },
   {
     "id": "8",
@@ -137,7 +154,8 @@
     "insider_tips": "Trailhead is at mile 128 of the Elliott Highway. Watch for trapping equipment near the trail. A stone wall separates the hot pool from the cold creek.",
     "state": "AK",
     "development": "Primitive",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 919
   },
   {
     "id": "9",
@@ -154,7 +172,8 @@
     "insider_tips": "Bring your own drinking water. The tubs are first-come, first-served. Watch for bears along the river.",
     "state": "AK",
     "development": "Community",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 315
   },
   {
     "id": "10",
@@ -169,7 +188,8 @@
     "description": "Remote thermal spring in the Denali Borough of Interior Alaska. No facilities or maintained trails. Very difficult access, primarily visited by adventurous locals.",
     "state": "AK",
     "development": "Primitive",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 902
   },
   {
     "id": "11",
@@ -187,7 +207,8 @@
     "insider_tips": "Call ahead to arrange access. The road is paved most of the way but the last stretch can be rough.",
     "state": "AK",
     "development": "Community",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 413
   },
   {
     "id": "12",
@@ -204,7 +225,8 @@
     "insider_tips": "A backcountry permit may be required from the National Park Service. Weather can change rapidly.",
     "state": "AK",
     "development": "Primitive",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 427
   },
   {
     "id": "13",
@@ -221,7 +243,8 @@
     "insider_tips": "Cabin reservations required for overnight. Day use fee is $40/person. Trail can be challenging in shoulder seasons.",
     "state": "AK",
     "development": "Community",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 1014
   },
   {
     "id": "14",
@@ -238,7 +261,8 @@
     "insider_tips": "The resort buildings are condemned but the pool is still soakable. The site has a colorful history including ghost stories. Bring everything you need.",
     "state": "AK",
     "development": "Community",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 925
   },
   {
     "id": "15",
@@ -253,7 +277,8 @@
     "description": "A remote USGS-listed hot spring in the Yukon-Koyukuk Census Area of Interior Alaska. No facilities or developed access. Very rarely visited.",
     "state": "AK",
     "development": "Primitive",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 876
   },
   {
     "id": "16",
@@ -270,7 +295,8 @@
     "insider_tips": "Reserve the Forest Service cabin in advance. Bring all supplies. Short boat ride from Pelican.",
     "state": "AK",
     "development": "Community",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 52
   },
   {
     "id": "17",
@@ -287,7 +313,8 @@
     "insider_tips": "Accessible by boat or floatplane from Sitka. Tom Young Memorial Cabin available for overnight. Watch for black flies in summer.",
     "state": "AK",
     "development": "Community",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 0
   },
   {
     "id": "18",
@@ -302,7 +329,8 @@
     "description": "A remote soda spring on Prince of Wales Island in Southeast Alaska. Accessible only by boat. Primitive and undeveloped, offering a true wilderness soaking experience in the Tongass National Forest.",
     "state": "AK",
     "development": "Primitive",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 98
   },
   {
     "id": "19",
@@ -319,7 +347,8 @@
     "insider_tips": "Trailhead is near Saxman, south of Ketchikan. Bring insect repellent.",
     "state": "AK",
     "development": "Primitive",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 1765
   },
   {
     "id": "20",
@@ -334,6 +363,7 @@
     "description": "A roadside hot spring along the Dalton Highway in Alaska's Brooks Range. Informal and undeveloped, popular with truckers and adventurous travelers heading to the Arctic.",
     "state": "AK",
     "development": "Primitive",
-    "has_post": false
+    "has_post": false,
+    "elevation_ft": 3527
   }
 ]

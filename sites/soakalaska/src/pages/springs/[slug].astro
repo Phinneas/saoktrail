@@ -180,6 +180,23 @@ const weather = spring.lat && spring.lng ? await getWeather(spring.lat, spring.l
               <p class="text-sm text-txt-s dark:text-darkmode-txt-s">ADA Accessible</p>
             </div>
           )}
+
+          {spring.wikipedia_url && (
+            <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
+              <h3 class="h4 mb-2">Learn More</h3>
+              {spring.wikipedia_summary && (
+                <p class="text-sm text-txt-s dark:text-darkmode-txt-s mb-3">{spring.wikipedia_summary}</p>
+              )}
+              <a
+                href={spring.wikipedia_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm font-display font-bold text-accent hover:underline"
+              >
+                Read on Wikipedia →
+              </a>
+            </div>
+          )}
         </div>
       </div>
 
