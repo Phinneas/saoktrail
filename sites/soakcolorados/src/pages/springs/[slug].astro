@@ -2,7 +2,7 @@
 import BaseLayout from "@components/base/BaseLayout.astro";
 import Breadcrumbs from "@components/common/Breadcrumbs.astro";
 import SchemaScript from "@components/schema/SchemaScript.astro";
-import { buildBreadcrumbSchema } from "@lib/schema";
+import { buildBreadcrumbSchema, buildPlaceSchema } from "@lib/schema";
 import { mapboxAccessToken } from "@/config/map";
 import SpringMapScript from "@components/SpringMapScript.astro";
 import { getWeather } from "@lib/weather";
@@ -31,6 +31,8 @@ const breadcrumbSchema = buildBreadcrumbSchema([
   { label: spring.name, href: `/springs/${slug}` },
 ]);
 
+const placeSchema = buildPlaceSchema(spring);
+
 const relatedSprings = springsData
   .filter((s: any) => s.state === spring.state && s.slug !== slug)
   .slice(0, 4);
@@ -47,6 +49,7 @@ const nearCities = (nearCitiesData as any)[slug] || [];
 >
   <Fragment slot="head">
     <SchemaScript schema={breadcrumbSchema} />
+    <SchemaScript schema={placeSchema} />
   </Fragment>
 
   <section class="section">

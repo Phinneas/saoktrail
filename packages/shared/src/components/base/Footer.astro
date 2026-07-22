@@ -1,6 +1,9 @@
 ---
 import Social from "@components/common/Social.astro";
 import { siteConfig } from "@site/config";
+import { getAuthorByline, getAuthor } from "@lib/schema";
+
+const author = getAuthor();
 ---
 
 <footer class="glass container lg:my-4 lg:rounded-lg intersect:animate-fadeUp opacity-0">
@@ -21,6 +24,9 @@ import { siteConfig } from "@site/config";
         City data from <a href="https://simplemaps.com/data/us-cities" target="_blank" rel="noopener noreferrer" class="underline hover:text-accent">SimpleMaps</a> (CC BY 4.0).
         Hot spring data from <a href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer" class="underline hover:text-accent">OpenStreetMap</a> (ODbL).
         Images from <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener noreferrer" class="underline hover:text-accent">Wikimedia Commons</a>.
+      </p>
+      <p class="text-xs text-txt-s dark:text-darkmode-txt-s mt-1">
+        Researched &amp; maintained by <a href={author.url} class="underline hover:text-accent">{author.name}</a>
       </p>
     </div>
     <div class="text-center lg:col-6 lg:my-0 flex items-center justify-center lg:justify-end">

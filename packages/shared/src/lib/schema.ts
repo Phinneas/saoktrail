@@ -2,6 +2,106 @@ import { siteConfig } from "@site/config";
 
 const BASE_URL = siteConfig.url;
 
+const AUTHOR = {
+  name: "Chester Beard",
+  url: "https://soaktrail.com/about",
+  bio: "Independent researcher and field journalist documenting natural hot springs across North America. Has visited and catalogued hundreds of geothermal sites from Alaska to the Desert Southwest.",
+  sameAs: [
+    "https://www.instagram.com/soaktrail",
+    "https://bsky.app/profile/soaktrail.bsky.social",
+  ],
+};
+
+export function buildPersonSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: AUTHOR.name,
+    url: AUTHOR.url,
+    description: AUTHOR.bio,
+    jobTitle: "Researcher & Field Journalist",
+    worksFor: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: BASE_URL,
+    },
+    sameAs: AUTHOR.sameAs,
+  };
+}
+
+export function buildPlaceSchema(spring: {
+  name: string;
+  slug: string;
+  description: string;
+  lat: number;
+  lng: number;
+  state: string;
+  temp_f?: number;
+  fee?: number;
+  access_type?: string;
+  season?: string;
+  elevation_ft?: number;
+  hours?: string;
+  development?: string;
+}) {
+  const props: any[] = [];
+
+  if (spring.temp_f) {
+    props.push({ "@type": "PropertyValue", name: "Water Temperature", value: `${spring.temp_f}\u00b0F` });
+  }
+  if (spring.fee !== undefined) {
+    props.push({ "@type": "PropertyValue", name: "Entry Fee", value: spring.fee === 0 ? "Free" : `$${spring.fee}` });
+  }
+  if (spring.access_type) {
+    props.push({ "@type": "PropertyValue", name: "Access Type", value: spring.access_type });
+  }
+  if (spring.season) {
+    props.push({ "@type": "PropertyValue", name: "Season", value: spring.season });
+  }
+  if (spring.elevation_ft) {
+    props.push({ "@type": "PropertyValue", name: "Elevation", value: `${spring.elevation_ft} ft` });
+  }
+  if (spring.hours) {
+    props.push({ "@type": "PropertyValue", name: "Hours", value: spring.hours });
+  }
+  if (spring.development) {
+    props.push({ "@type": "PropertyValue", name: "Development", value: spring.development });
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    name: spring.name,
+    description: spring.description,
+    url: `${BASE_URL}/springs/${spring.slug}`,
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: spring.lat,
+      longitude: spring.lng,
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressRegion: spring.state,
+      addressCountry: "US",
+    },
+    isAccessibleForFree: spring.fee === 0 || spring.fee === undefined,
+    ...(props.length > 0 ? { additionalProperty: props } : {}),
+    author: {
+      "@type": "Person",
+      name: AUTHOR.name,
+      url: AUTHOR.url,
+    },
+  };
+}
+
+export function getAuthorByline() {
+  return `Researched & maintained by ${AUTHOR.name}`;
+}
+
+export function getAuthor() {
+  return AUTHOR;
+}
+
 export function buildWebSiteSchema() {
   return {
     "@context": "https://schema.org",

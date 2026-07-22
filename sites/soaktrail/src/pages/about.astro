@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Chester Beard',
+  url: 'https://soaktrail.com/about',
+  description: 'Independent researcher and field journalist documenting natural hot springs across North America. Has visited and catalogued hundreds of geothermal sites from Alaska to the Desert Southwest.',
+  jobTitle: 'Researcher & Field Journalist',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Soak Trail',
+    url: 'https://soaktrail.com',
+  },
+  sameAs: [
+    'https://www.instagram.com/soaktrail',
+    'https://bsky.app/profile/soaktrail.bsky.social',
+    'https://www.pinterest.com/soaktrail',
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
+    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://soaktrail.com/about' },
+  ],
+};
+---
+
+<BaseLayout
+  title="About — Soak Trail"
+  description="Meet the researcher behind Soak Trail's hot springs field guides and data."
+  ogType="profile"
+  jsonLd={[personSchema, breadcrumbSchema]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <div class="container mx-auto px-4 py-12 max-w-3xl">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'About', href: '/about' },
+    ]} />
+
+    <h1 class="font-display text-4xl font-bold text-sa-dark mt-8 mb-2">About Soak Trail</h1>
+    <p class="text-sa-copper font-display text-lg mb-8">Researched & maintained by Chester Beard</p>
+
+    <div class="prose prose-lg max-w-none">
+      <p class="text-lg text-sa-dark/80 leading-relaxed">
+        Soak Trail is an independent research project documenting natural hot springs
+        across North America. What started as personal trip planning evolved into a
+        systematic effort to catalog, verify, and publish accurate field data for
+        hundreds of geothermal sites — from remote wilderness pools in Alaska to
+        desert oases in the Southwest.
+      </p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4">The Researcher</h2>
+      <p class="text-sa-dark/80 leading-relaxed">
+        Chester Beard is an independent researcher and field journalist who has
+        visited and catalogued hundreds of geothermal sites across the United States.
+        His work combines on-the-ground field visits, USGS water quality data analysis,
+        OpenStreetMap contribution, and historical research to produce the most
+        comprehensive and accurate hot springs database available.
+      </p>
+      <p class="text-sa-dark/80 leading-relaxed mt-4">
+        Each spring in the Soak Trail network has been researched using multiple
+        data sources including:
+      </p>
+      <ul class="list-disc pl-6 mt-4 space-y-2 text-sa-dark/80">
+        <li>USGS NWIS water quality records (temperature, pH, conductivity, mineral content)</li>
+        <li>OpenStreetMap Overpass API (trail access, roads, amenities)</li>
+        <li>Wikipedia and Wikidata (historical context and articles)</li>
+        <li>Open-Meteo elevation data</li>
+        <li>Recreation.gov campground search</li>
+        <li>NOAA weather forecasts</li>
+        <li>Field visits and first-hand verification</li>
+      </ul>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="disclosure">Disclosure</h2>
+      <p class="text-sa-dark/80 leading-relaxed">
+        Soak Trail may earn affiliate commissions from gear recommendations and
+        booking links. This does not affect editorial content or spring ratings.
+        All spring data is independently researched and verified. Sponsored content,
+        if any, will be clearly labeled.
+      </p>
+      <p class="text-sa-dark/80 leading-relaxed mt-4">
+        Hot springs conditions change. Always verify access, temperature, and fees
+        before visiting. Natural hot springs can be dangerous — follow leave-no-trace
+        principles and respect private property.
+      </p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4">Connect</h2>
+      <div class="flex gap-4 mt-4">
+        <a href="https://www.instagram.com/soaktrail" target="_blank" rel="noopener noreferrer"
+          class="text-sa-copper hover:underline">Instagram</a>
+        <a href="https://bsky.app/profile/soaktrail.bsky.social" target="_blank" rel="noopener noreferrer"
+          class="text-sa-copper hover:underline">Bluesky</a>
+        <a href="https://www.pinterest.com/soaktrail" target="_blank" rel="noopener noreferrer"
+          class="text-sa-copper hover:underline">Pinterest</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
