@@ -222,6 +222,61 @@ const weather = spring.lat && spring.lng ? await getWeather(spring.lat, spring.l
               </a>
             </div>
           )}
+
+          {spring.osm && (
+            <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
+              <h3 class="h4 mb-2">OpenStreetMap Data</h3>
+              <p class="text-xs text-txt-light dark:text-darkmode-txt-light mb-3">
+                OSM: {spring.osm.osm_name} ({spring.osm.match_distance_miles} mi)
+              </p>
+              {spring.osm.nearby.trails.length > 0 && (
+                <div class="mb-3">
+                  <p class="text-xs font-bold uppercase tracking-wider text-txt-light dark:text-darkmode-txt-light mb-1">Trails</p>
+                  {spring.osm.nearby.trails.map((t: any) => (
+                    <p class="text-sm text-txt-s dark:text-darkmode-txt-s">
+                      {t.name || t.type}{t.surface ? ` (${t.surface})` : ''}
+                    </p>
+                  ))}
+                </div>
+              )}
+              {spring.osm.nearby.access_roads.length > 0 && (
+                <div class="mb-3">
+                  <p class="text-xs font-bold uppercase tracking-wider text-txt-light dark:text-darkmode-txt-light mb-1">Access Roads</p>
+                  {spring.osm.nearby.access_roads.map((r: any) => (
+                    <p class="text-sm text-txt-s dark:text-darkmode-txt-s">
+                      {r.name || r.type}{r.surface ? ` — ${r.surface}` : ''}
+                    </p>
+                  ))}
+                </div>
+              )}
+              {spring.osm.nearby.parking.length > 0 && (
+                <div class="mb-3">
+                  <p class="text-xs font-bold uppercase tracking-wider text-txt-light dark:text-darkmode-txt-light mb-1">Parking</p>
+                  {spring.osm.nearby.parking.map((p: any) => (
+                    <p class="text-sm text-txt-s dark:text-darkmode-txt-s">
+                      {p.name || 'Parking'}{p.capacity ? ` — ${p.capacity} spaces` : ''}
+                    </p>
+                  ))}
+                </div>
+              )}
+              {spring.osm.nearby.amenities.length > 0 && (
+                <div class="mb-3">
+                  <p class="text-xs font-bold uppercase tracking-wider text-txt-light dark:text-darkmode-txt-light mb-1">Nearby Amenities</p>
+                  {spring.osm.nearby.amenities.map((a: any) => (
+                    <p class="text-sm text-txt-s dark:text-darkmode-txt-s">{a.name || a.type}</p>
+                  ))}
+                </div>
+              )}
+              <a
+                href={spring.osm.osm_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs font-display font-bold text-accent hover:underline mt-2 block"
+              >
+                View on OpenStreetMap →
+              </a>
+            </div>
+          )}
         </div>
       </div>
 

@@ -715,6 +715,80 @@
         }
       ],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=651627148505001"
+    },
+    "osm": {
+      "osm_id": 11361079541,
+      "osm_name": "Middle Tub (Bento Box)",
+      "osm_url": "https://www.openstreetmap.org/node/11361079541",
+      "match_distance_miles": 0.17,
+      "tags": {
+        "bath:type": "hot_spring",
+        "name": "Middle Tub (Bento Box)",
+        "natural": "hot_spring"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "path",
+            "name": "Murphy Dome to Tolavana Hot Springs Winter Trail",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Tolovana Hot Springs Trail",
+            "surface": null,
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "path",
+            "name": "Murphy Dome to Tolavana Hot Springs Winter Trail",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "Tolovana Hot Springs Trail",
+            "surface": null,
+            "sac_scale": null
+          }
+        ],
+        "buildings": [
+          {
+            "type": "cabin",
+            "name": "Frame Cabin"
+          },
+          {
+            "type": "cabin",
+            "name": "Cedar Cabin"
+          },
+          {
+            "type": "cabin",
+            "name": "Log Cabin"
+          }
+        ],
+        "amenities": [
+          {
+            "type": "tourism:yes",
+            "name": "Tolovana Hot Springs"
+          }
+        ]
+      }
     }
   },
   {
