@@ -13,11 +13,28 @@ const schema = makeExecutableSchema({ typeDefs, resolvers: fieldResolvers });
 export const createApp = () => {
   const app = new Hono<{ Bindings: Bindings }>();
 
-  // CORS middleware - restricted by environment
+  // CORS middleware - allow all site domains
   app.use(
     '*',
     cors({
-      origin: ['https://soaktherockies.com', 'https://www.soaktherockies.com', 'http://localhost:4321'],
+      origin: [
+        'https://soaktherockies.com',
+        'https://www.soaktherockies.com',
+        'https://soakcolorado.com',
+        'https://www.soakcolorado.com',
+        'https://washingtonhotsprings.com',
+        'https://www.washingtonhotsprings.com',
+        'https://desertsoak.com',
+        'https://www.desertsoak.com',
+        'https://shastahotsprings.com',
+        'https://www.shastahotsprings.com',
+        'https://alaskahotsprings.com',
+        'https://www.alaskahotsprings.com',
+        'https://soaktrail.com',
+        'https://www.soaktrail.com',
+        'https://shop.soaktrail.com',
+        'http://localhost:4321',
+      ],
       allowMethods: ['GET', 'POST', 'OPTIONS'],
       allowHeaders: ['Content-Type'],
       credentials: true,
@@ -30,18 +47,29 @@ export const createApp = () => {
     const offset = parseInt(c.req.query('offset') || '0');
     const state = c.req.query('state');
     const accessType = c.req.query('access_type');
+    const site = c.req.query('site');
 
     let sql = 'SELECT * FROM springs';
     const params: any[] = [];
+    const conditions: string[] = [];
 
     if (state) {
-      sql += ' WHERE state = ?';
+      conditions.push('state = ?');
       params.push(state);
     }
 
     if (accessType) {
-      sql += state ? ' AND access_type = ?' : ' WHERE access_type = ?';
+      conditions.push('access_type = ?');
       params.push(accessType);
+    }
+
+    if (site) {
+      conditions.push('site = ?');
+      params.push(site);
+    }
+
+    if (conditions.length > 0) {
+      sql += ' WHERE ' + conditions.join(' AND ');
     }
 
     sql += ' LIMIT ? OFFSET ?';
@@ -51,10 +79,41 @@ export const createApp = () => {
     return c.json({ data: results.results, error: false });
   });
 
+  // Build-time export: returns all springs for a site (no pagination)
+  app.get('/api/springs/export/:site', async (c) => {
+    const site = c.req.param('site');
+    const results = await c.env.DB.prepare('SELECT * FROM springs WHERE site = ?').bind(site).all();
+
+    // Parse JSON fields for each spring
+    const springs = (results.results || []).map((s: any) => {
+      const parsed = { ...s };
+      // Parse JSON blob fields
+      for (const field of ['chemistry', 'chemistry_details', 'usgs_json', 'osm_json']) {
+        if (parsed[field] && typeof parsed[field] === 'string') {
+          try { parsed[field] = JSON.parse(parsed[field]); } catch {}
+        }
+      }
+      return parsed;
+    });
+
+    return c.json({ data: springs, error: false, count: springs.length });
+  });
+
   app.get('/api/springs/:slug', async (c) => {
     const slug = c.req.param('slug');
     const result = await c.env.DB.prepare('SELECT * FROM springs WHERE slug = ?').bind(slug).first();
-    return c.json({ data: result, error: !result });
+
+    if (result) {
+      const parsed = { ...result };
+      for (const field of ['chemistry', 'chemistry_details', 'usgs_json', 'osm_json']) {
+        if (parsed[field] && typeof parsed[field] === 'string') {
+          try { parsed[field] = JSON.parse(parsed[field]); } catch {}
+        }
+      }
+      return c.json({ data: parsed, error: false });
+    }
+
+    return c.json({ data: null, error: true });
   });
 
   app.get('/api/blog', async (c) => {
