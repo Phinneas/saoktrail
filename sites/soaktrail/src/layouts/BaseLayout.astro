@@ -2,6 +2,7 @@
 import SocialLinks from '../components/SocialLinks.astro';
 import SeoHead from '../components/SeoHead.astro';
 import Nav from '../components/Nav.astro';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title?: string;
@@ -40,6 +41,7 @@ const { title, description, ogImage, ogType, canonicalUrl, noIndex, author, publ
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600;1,9..144,700&family=National+Park:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <ClientRouter fallback="swap" />
   </head>
   <body class="bg-sa-cream text-sa-dark font-body antialiased">
     <Nav transparent={transparentNav} />
