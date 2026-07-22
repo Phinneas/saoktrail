@@ -11,6 +11,7 @@ Usage:
 import argparse
 import json
 import re
+import subprocess
 import sys
 import time
 import urllib.request
@@ -79,8 +80,23 @@ def query_osm_hot_springs(lat: float, lng: float, radius_deg: float = 0.5) -> li
 );
 out body;"""
 
-    data = api_get(OVERPASS_URL, {"data": query}, timeout=20)
-    return data.get("elements", []) if data else []
+    # Use subprocess curl for Overpass (urllib gets 504)
+    for attempt in range(3):
+        result = subprocess.run(
+            ["curl", "-s", "--max-time", "45", OVERPASS_URL,
+             "--data-urlencode", f"data={query}",
+             "-H", f"User-Agent: {USER_AGENT}"],
+            capture_output=True, text=True,
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            try:
+                data = json.loads(result.stdout)
+                return data.get("elements", [])
+            except json.JSONDecodeError:
+                pass
+        if attempt < 2:
+            time.sleep((attempt + 1) * 3)
+    return []
 
 
 def match_osm_to_spring(
@@ -133,10 +149,11 @@ def _safe_float(val) -> float | None:
 # --- Phase 2: Wikidata SPARQL ---
 
 def fetch_wikidata_hot_springs() -> list[dict]:
-    """Fetch all US hot springs from Wikidata via SPARQL."""
+    """Fetch US hot springs from Wikidata via SPARQL."""
     query = """SELECT ?spring ?springLabel ?description ?image ?coordinates ?inception ?heritage WHERE {
-  ?spring wdt:P31/wdt:P279* wd:Q177374 .
+  ?spring wdt:P31 wd:Q177380 .
   ?spring wdt:P625 ?coordinates .
+  ?spring wdt:P17 wd:Q30 .
   OPTIONAL { ?spring schema:description ?description . FILTER(LANG(?description) = "en") }
   OPTIONAL { ?spring wdt:P18 ?image . }
   OPTIONAL { ?spring wdt:P571 ?inception . }
@@ -306,7 +323,7 @@ def main():
             continue
 
         name = spring.get("name", slug)
-        print(f"[{i+1}/{len(springs)}] {name}")
+        print(f"[{i+1}/{len(springs)}] {name}", flush=True)
         nodes = query_osm_hot_springs(lat, lng)
         match = match_osm_to_spring(lat, lng, nodes)
         if match:
@@ -323,9 +340,9 @@ def main():
                  meta["osm_description"], meta["osm_tags"]),
             )
             osm_count += 1
-            print(f"  Matched OSM node {meta['osm_node_id']}: {meta['osm_name'] or 'unnamed'}")
+            print(f"  Matched OSM node {meta['osm_node_id']}: {meta['osm_name'] or 'unnamed'}", flush=True)
         else:
-            print(f"  No OSM match found")
+            print(f"  No OSM match found", flush=True)
         time.sleep(DELAY)
 
     conn.commit()
@@ -348,7 +365,7 @@ def main():
                 if slat is None or slng is None:
                     continue
                 dist = haversine(slat, slng, wd["latitude"], wd["longitude"])
-                if dist < 0.5:  # ~0.5 miles
+                if dist < 2.0:  # ~2 miles
                     slug = spring.get("slug", "")
                     if slug not in wd_matches:
                         wd_matches[slug] = wd

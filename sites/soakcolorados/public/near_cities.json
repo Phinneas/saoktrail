@@ -1,0 +1,1371 @@
+{
+  "antero-hot-springs-colorado": [
+    {
+      "city": "Ca\u00f1on City",
+      "state": "CO",
+      "distance_mi": 44.8,
+      "population": 17122,
+      "slug": "ca\u00f1on-city-co"
+    },
+    {
+      "city": "Salida",
+      "state": "CO",
+      "distance_mi": 13.2,
+      "population": 5861,
+      "slug": "salida-co"
+    },
+    {
+      "city": "Lincoln Park",
+      "state": "CO",
+      "distance_mi": 45.7,
+      "population": 3986,
+      "slug": "lincoln-park-co"
+    },
+    {
+      "city": "Buena Vista",
+      "state": "CO",
+      "distance_mi": 11.9,
+      "population": 3010,
+      "slug": "buena-vista-co"
+    },
+    {
+      "city": "Leadville",
+      "state": "CO",
+      "distance_mi": 40.4,
+      "population": 2620,
+      "slug": "leadville-co"
+    }
+  ],
+  "avalanche-ranch-hot-springs": [
+    {
+      "city": "Edwards",
+      "state": "CO",
+      "distance_mi": 42.8,
+      "population": 10785,
+      "slug": "edwards-co"
+    },
+    {
+      "city": "Rifle",
+      "state": "CO",
+      "distance_mi": 36.3,
+      "population": 10570,
+      "slug": "rifle-co"
+    },
+    {
+      "city": "Glenwood Springs",
+      "state": "CO",
+      "distance_mi": 23.2,
+      "population": 10241,
+      "slug": "glenwood-springs-co"
+    },
+    {
+      "city": "Gypsum",
+      "state": "CO",
+      "distance_mi": 32.3,
+      "population": 8941,
+      "slug": "gypsum-co"
+    },
+    {
+      "city": "Eagle",
+      "state": "CO",
+      "distance_mi": 36.4,
+      "population": 7442,
+      "slug": "eagle-co"
+    }
+  ],
+  "box-canyon-hot-springs": [
+    {
+      "city": "Montrose",
+      "state": "CO",
+      "distance_mi": 32.9,
+      "population": 21044,
+      "slug": "montrose-co"
+    },
+    {
+      "city": "Mountain Village",
+      "state": "CO",
+      "distance_mi": 11.6,
+      "population": 2185,
+      "slug": "mountain-village-co"
+    },
+    {
+      "city": "Telluride",
+      "state": "CO",
+      "distance_mi": 10.1,
+      "population": 2160,
+      "slug": "telluride-co"
+    },
+    {
+      "city": "Olathe",
+      "state": "CO",
+      "distance_mi": 44.2,
+      "population": 1793,
+      "slug": "olathe-co"
+    },
+    {
+      "city": "Ridgway",
+      "state": "CO",
+      "distance_mi": 10.7,
+      "population": 1237,
+      "slug": "ridgway-co"
+    }
+  ],
+  "cebolla-hot-springs": [
+    {
+      "city": "Montrose",
+      "state": "CO",
+      "distance_mi": 43.4,
+      "population": 21044,
+      "slug": "montrose-co"
+    },
+    {
+      "city": "Gunnison",
+      "state": "CO",
+      "distance_mi": 21.1,
+      "population": 6766,
+      "slug": "gunnison-co"
+    },
+    {
+      "city": "Mountain Village",
+      "state": "CO",
+      "distance_mi": 47.6,
+      "population": 2185,
+      "slug": "mountain-village-co"
+    },
+    {
+      "city": "Telluride",
+      "state": "CO",
+      "distance_mi": 46.0,
+      "population": 2160,
+      "slug": "telluride-co"
+    },
+    {
+      "city": "Paonia",
+      "state": "CO",
+      "distance_mi": 49.1,
+      "population": 1661,
+      "slug": "paonia-co"
+    }
+  ],
+  "cement-creek-hot-springs": [
+    {
+      "city": "Gunnison",
+      "state": "CO",
+      "distance_mi": 20.5,
+      "population": 6766,
+      "slug": "gunnison-co"
+    },
+    {
+      "city": "Aspen",
+      "state": "CO",
+      "distance_mi": 24.9,
+      "population": 6756,
+      "slug": "aspen-co"
+    },
+    {
+      "city": "Carbondale",
+      "state": "CO",
+      "distance_mi": 43.9,
+      "population": 6637,
+      "slug": "carbondale-co"
+    },
+    {
+      "city": "Salida",
+      "state": "CO",
+      "distance_mi": 49.4,
+      "population": 5861,
+      "slug": "salida-co"
+    },
+    {
+      "city": "Basalt",
+      "state": "CO",
+      "distance_mi": 38.5,
+      "population": 4335,
+      "slug": "basalt-co"
+    }
+  ],
+  "chalk-creek-hot-springs": [
+    {
+      "city": "Gunnison",
+      "state": "CO",
+      "distance_mi": 42.5,
+      "population": 6766,
+      "slug": "gunnison-co"
+    },
+    {
+      "city": "Aspen",
+      "state": "CO",
+      "distance_mi": 47.8,
+      "population": 6756,
+      "slug": "aspen-co"
+    },
+    {
+      "city": "Salida",
+      "state": "CO",
+      "distance_mi": 17.0,
+      "population": 5861,
+      "slug": "salida-co"
+    },
+    {
+      "city": "Buena Vista",
+      "state": "CO",
+      "distance_mi": 7.1,
+      "population": 3010,
+      "slug": "buena-vista-co"
+    },
+    {
+      "city": "Leadville",
+      "state": "CO",
+      "distance_mi": 36.1,
+      "population": 2620,
+      "slug": "leadville-co"
+    }
+  ],
+  "colorados-conundrum-hot-springs": [
+    {
+      "city": "Edwards",
+      "state": "CO",
+      "distance_mi": 44.5,
+      "population": 10785,
+      "slug": "edwards-co"
+    },
+    {
+      "city": "Glenwood Springs",
+      "state": "CO",
+      "distance_mi": 43.8,
+      "population": 10241,
+      "slug": "glenwood-springs-co"
+    },
+    {
+      "city": "Gypsum",
+      "state": "CO",
+      "distance_mi": 42.7,
+      "population": 8941,
+      "slug": "gypsum-co"
+    },
+    {
+      "city": "Eagle",
+      "state": "CO",
+      "distance_mi": 43.3,
+      "population": 7442,
+      "slug": "eagle-co"
+    },
+    {
+      "city": "Gunnison",
+      "state": "CO",
+      "distance_mi": 32.1,
+      "population": 6766,
+      "slug": "gunnison-co"
+    }
+  ],
+  "cottonwood-hot-springs": [
+    {
+      "city": "Gunnison",
+      "state": "CO",
+      "distance_mi": 42.1,
+      "population": 6766,
+      "slug": "gunnison-co"
+    },
+    {
+      "city": "Aspen",
+      "state": "CO",
+      "distance_mi": 42.3,
+      "population": 6756,
+      "slug": "aspen-co"
+    },
+    {
+      "city": "Salida",
+      "state": "CO",
+      "distance_mi": 23.0,
+      "population": 5861,
+      "slug": "salida-co"
+    },
+    {
+      "city": "Breckenridge",
+      "state": "CO",
+      "distance_mi": 48.4,
+      "population": 4959,
+      "slug": "breckenridge-co"
+    },
+    {
+      "city": "Buena Vista",
+      "state": "CO",
+      "distance_mi": 4.7,
+      "population": 3010,
+      "slug": "buena-vista-co"
+    }
+  ],
+  "dunton-hot-springs": [
+    {
+      "city": "Montrose",
+      "state": "CO",
+      "distance_mi": 49.8,
+      "population": 21044,
+      "slug": "montrose-co"
+    },
+    {
+      "city": "Durango",
+      "state": "CO",
+      "distance_mi": 36.9,
+      "population": 19411,
+      "slug": "durango-co"
+    },
+    {
+      "city": "Cortez",
+      "state": "CO",
+      "distance_mi": 39.3,
+      "population": 8976,
+      "slug": "cortez-co"
+    },
+    {
+      "city": "Bayfield",
+      "state": "CO",
+      "distance_mi": 46.1,
+      "population": 2901,
+      "slug": "bayfield-co"
+    },
+    {
+      "city": "Mountain Village",
+      "state": "CO",
+      "distance_mi": 17.0,
+      "population": 2185,
+      "slug": "mountain-village-co"
+    }
+  ],
+  "eldorado-springs-colorado": [
+    {
+      "city": "Denver",
+      "state": "CO",
+      "distance_mi": 24.4,
+      "population": 2714768,
+      "slug": "denver-co"
+    },
+    {
+      "city": "Aurora",
+      "state": "CO",
+      "distance_mi": 33.3,
+      "population": 394432,
+      "slug": "aurora-co"
+    },
+    {
+      "city": "Fort Collins",
+      "state": "CO",
+      "distance_mi": 44.1,
+      "population": 336364,
+      "slug": "fort-collins-co"
+    },
+    {
+      "city": "Lakewood",
+      "state": "CO",
+      "distance_mi": 18.3,
+      "population": 156583,
+      "slug": "lakewood-co"
+    },
+    {
+      "city": "Thornton",
+      "state": "CO",
+      "distance_mi": 17.8,
+      "population": 144187,
+      "slug": "thornton-co"
+    }
+  ],
+  "fish-creek-hot-springs-colorado-guide-to-a-secluded-wilderness-soak-and-scenic-adventure": [
+    {
+      "city": "Steamboat Springs",
+      "state": "CO",
+      "distance_mi": 21.0,
+      "population": 13433,
+      "slug": "steamboat-springs-co"
+    },
+    {
+      "city": "Craig",
+      "state": "CO",
+      "distance_mi": 19.2,
+      "population": 8991,
+      "slug": "craig-co"
+    },
+    {
+      "city": "Hayden",
+      "state": "CO",
+      "distance_mi": 6.9,
+      "population": 2057,
+      "slug": "hayden-co"
+    },
+    {
+      "city": "Oak Creek",
+      "state": "CO",
+      "distance_mi": 24.7,
+      "population": 700,
+      "slug": "oak-creek-co"
+    },
+    {
+      "city": "Walden",
+      "state": "CO",
+      "distance_mi": 49.3,
+      "population": 573,
+      "slug": "walden-co"
+    }
+  ],
+  "hartsel-hot-springs-colorado-guide": [
+    {
+      "city": "Roxborough Park",
+      "state": "CO",
+      "distance_mi": 48.7,
+      "population": 9085,
+      "slug": "roxborough-park-co"
+    },
+    {
+      "city": "Evergreen",
+      "state": "CO",
+      "distance_mi": 49.2,
+      "population": 8602,
+      "slug": "evergreen-co"
+    },
+    {
+      "city": "Woodland Park",
+      "state": "CO",
+      "distance_mi": 39.4,
+      "population": 7949,
+      "slug": "woodland-park-co"
+    },
+    {
+      "city": "Air Force Academy",
+      "state": "CO",
+      "distance_mi": 49.9,
+      "population": 6727,
+      "slug": "air-force-academy-co"
+    },
+    {
+      "city": "Salida",
+      "state": "CO",
+      "distance_mi": 35.4,
+      "population": 5861,
+      "slug": "salida-co"
+    }
+  ],
+  "hot-springs-near-buena-vista": [
+    {
+      "city": "Gunnison",
+      "state": "CO",
+      "distance_mi": 43.1,
+      "population": 6766,
+      "slug": "gunnison-co"
+    },
+    {
+      "city": "Aspen",
+      "state": "CO",
+      "distance_mi": 48.4,
+      "population": 6756,
+      "slug": "aspen-co"
+    },
+    {
+      "city": "Salida",
+      "state": "CO",
+      "distance_mi": 16.6,
+      "population": 5861,
+      "slug": "salida-co"
+    },
+    {
+      "city": "Buena Vista",
+      "state": "CO",
+      "distance_mi": 7.0,
+      "population": 3010,
+      "slug": "buena-vista-co"
+    },
+    {
+      "city": "Leadville",
+      "state": "CO",
+      "distance_mi": 36.3,
+      "population": 2620,
+      "slug": "leadville-co"
+    }
+  ],
+  "hot-springs-near-denver": [
+    {
+      "city": "Denver",
+      "state": "CO",
+      "distance_mi": 33.8,
+      "population": 2714768,
+      "slug": "denver-co"
+    },
+    {
+      "city": "Aurora",
+      "state": "CO",
+      "distance_mi": 41.9,
+      "population": 394432,
+      "slug": "aurora-co"
+    },
+    {
+      "city": "Lakewood",
+      "state": "CO",
+      "distance_mi": 21.2,
+      "population": 156583,
+      "slug": "lakewood-co"
+    },
+    {
+      "city": "Thornton",
+      "state": "CO",
+      "distance_mi": 32.6,
+      "population": 144187,
+      "slug": "thornton-co"
+    },
+    {
+      "city": "Arvada",
+      "state": "CO",
+      "distance_mi": 20.2,
+      "population": 122634,
+      "slug": "arvada-co"
+    }
+  ],
+  "hot-sulphur-springs-resort": [
+    {
+      "city": "Boulder",
+      "state": "CO",
+      "distance_mi": 45.6,
+      "population": 120289,
+      "slug": "boulder-co"
+    },
+    {
+      "city": "Steamboat Springs",
+      "state": "CO",
+      "distance_mi": 46.7,
+      "population": 13433,
+      "slug": "steamboat-springs-co"
+    },
+    {
+      "city": "Edwards",
+      "state": "CO",
+      "distance_mi": 41.3,
+      "population": 10785,
+      "slug": "edwards-co"
+    },
+    {
+      "city": "Gunbarrel",
+      "state": "CO",
+      "distance_mi": 49.7,
+      "population": 10051,
+      "slug": "gunbarrel-co"
+    },
+    {
+      "city": "Eagle",
+      "state": "CO",
+      "distance_mi": 48.0,
+      "population": 7442,
+      "slug": "eagle-co"
+    }
+  ],
+  "iron-mountain-hot-springs": [
+    {
+      "city": "Edwards",
+      "state": "CO",
+      "distance_mi": 38.5,
+      "population": 10785,
+      "slug": "edwards-co"
+    },
+    {
+      "city": "Rifle",
+      "state": "CO",
+      "distance_mi": 23.3,
+      "population": 10570,
+      "slug": "rifle-co"
+    },
+    {
+      "city": "Glenwood Springs",
+      "state": "CO",
+      "distance_mi": 0.7,
+      "population": 10241,
+      "slug": "glenwood-springs-co"
+    },
+    {
+      "city": "Gypsum",
+      "state": "CO",
+      "distance_mi": 22.0,
+      "population": 8941,
+      "slug": "gypsum-co"
+    },
+    {
+      "city": "Eagle",
+      "state": "CO",
+      "distance_mi": 28.4,
+      "population": 7442,
+      "slug": "eagle-co"
+    }
+  ],
+  "iron-mountain-hot-springs-geology": [
+    {
+      "city": "Edwards",
+      "state": "CO",
+      "distance_mi": 37.8,
+      "population": 10785,
+      "slug": "edwards-co"
+    },
+    {
+      "city": "Rifle",
+      "state": "CO",
+      "distance_mi": 24.0,
+      "population": 10570,
+      "slug": "rifle-co"
+    },
+    {
+      "city": "Glenwood Springs",
+      "state": "CO",
+      "distance_mi": 0.7,
+      "population": 10241,
+      "slug": "glenwood-springs-co"
+    },
+    {
+      "city": "Gypsum",
+      "state": "CO",
+      "distance_mi": 21.4,
+      "population": 8941,
+      "slug": "gypsum-co"
+    },
+    {
+      "city": "Eagle",
+      "state": "CO",
+      "distance_mi": 27.8,
+      "population": 7442,
+      "slug": "eagle-co"
+    }
+  ],
+  "joyful-journey-hot-springs": [
+    {
+      "city": "Alamosa",
+      "state": "CO",
+      "distance_mi": 25.9,
+      "population": 9879,
+      "slug": "alamosa-co"
+    },
+    {
+      "city": "Salida",
+      "state": "CO",
+      "distance_mi": 47.3,
+      "population": 5861,
+      "slug": "salida-co"
+    },
+    {
+      "city": "Monte Vista",
+      "state": "CO",
+      "distance_mi": 22.6,
+      "population": 4141,
+      "slug": "monte-vista-co"
+    },
+    {
+      "city": "Center",
+      "state": "CO",
+      "distance_mi": 12.5,
+      "population": 2120,
+      "slug": "center-co"
+    },
+    {
+      "city": "Del Norte",
+      "state": "CO",
+      "distance_mi": 26.6,
+      "population": 1653,
+      "slug": "del-norte-co"
+    }
+  ],
+  "ouray-hot-springs-pool": [
+    {
+      "city": "Montrose",
+      "state": "CO",
+      "distance_mi": 32.8,
+      "population": 21044,
+      "slug": "montrose-co"
+    },
+    {
+      "city": "Mountain Village",
+      "state": "CO",
+      "distance_mi": 11.4,
+      "population": 2185,
+      "slug": "mountain-village-co"
+    },
+    {
+      "city": "Telluride",
+      "state": "CO",
+      "distance_mi": 9.8,
+      "population": 2160,
+      "slug": "telluride-co"
+    },
+    {
+      "city": "Olathe",
+      "state": "CO",
+      "distance_mi": 44.1,
+      "population": 1793,
+      "slug": "olathe-co"
+    },
+    {
+      "city": "Ridgway",
+      "state": "CO",
+      "distance_mi": 10.6,
+      "population": 1237,
+      "slug": "ridgway-co"
+    }
+  ],
+  "paradise-hot-springs-colorado-guide": [
+    {
+      "city": "Alamosa",
+      "state": "CO",
+      "distance_mi": 37.5,
+      "population": 9879,
+      "slug": "alamosa-co"
+    },
+    {
+      "city": "Monte Vista",
+      "state": "CO",
+      "distance_mi": 28.5,
+      "population": 4141,
+      "slug": "monte-vista-co"
+    },
+    {
+      "city": "Dulce",
+      "state": "NM",
+      "distance_mi": 36.0,
+      "population": 3218,
+      "slug": "dulce-nm"
+    },
+    {
+      "city": "Center",
+      "state": "CO",
+      "distance_mi": 39.0,
+      "population": 2120,
+      "slug": "center-co"
+    },
+    {
+      "city": "Pagosa Springs",
+      "state": "CO",
+      "distance_mi": 28.1,
+      "population": 2090,
+      "slug": "pagosa-springs-co"
+    }
+  ],
+  "penny-hot-springs-colorado": [
+    {
+      "city": "Edwards",
+      "state": "CO",
+      "distance_mi": 42.4,
+      "population": 10785,
+      "slug": "edwards-co"
+    },
+    {
+      "city": "Rifle",
+      "state": "CO",
+      "distance_mi": 36.3,
+      "population": 10570,
+      "slug": "rifle-co"
+    },
+    {
+      "city": "Glenwood Springs",
+      "state": "CO",
+      "distance_mi": 22.9,
+      "population": 10241,
+      "slug": "glenwood-springs-co"
+    },
+    {
+      "city": "Gypsum",
+      "state": "CO",
+      "distance_mi": 31.8,
+      "population": 8941,
+      "slug": "gypsum-co"
+    },
+    {
+      "city": "Eagle",
+      "state": "CO",
+      "distance_mi": 35.9,
+      "population": 7442,
+      "slug": "eagle-co"
+    }
+  ],
+  "pinkerton-hot-springs": [
+    {
+      "city": "Durango",
+      "state": "CO",
+      "distance_mi": 13.2,
+      "population": 19411,
+      "slug": "durango-co"
+    },
+    {
+      "city": "Cortez",
+      "state": "CO",
+      "distance_mi": 42.9,
+      "population": 8976,
+      "slug": "cortez-co"
+    },
+    {
+      "city": "Bloomfield",
+      "state": "NM",
+      "distance_mi": 49.7,
+      "population": 7395,
+      "slug": "bloomfield-nm"
+    },
+    {
+      "city": "Aztec",
+      "state": "NM",
+      "distance_mi": 44.1,
+      "population": 6150,
+      "slug": "aztec-nm"
+    },
+    {
+      "city": "Bayfield",
+      "state": "CO",
+      "distance_mi": 18.7,
+      "population": 2901,
+      "slug": "bayfield-co"
+    }
+  ],
+  "poncha-hot-springs-colorado": [
+    {
+      "city": "Ca\u00f1on City",
+      "state": "CO",
+      "distance_mi": 46.5,
+      "population": 17122,
+      "slug": "ca\u00f1on-city-co"
+    },
+    {
+      "city": "Gunnison",
+      "state": "CO",
+      "distance_mi": 46.0,
+      "population": 6766,
+      "slug": "gunnison-co"
+    },
+    {
+      "city": "Salida",
+      "state": "CO",
+      "distance_mi": 4.8,
+      "population": 5861,
+      "slug": "salida-co"
+    },
+    {
+      "city": "Lincoln Park",
+      "state": "CO",
+      "distance_mi": 47.0,
+      "population": 3986,
+      "slug": "lincoln-park-co"
+    },
+    {
+      "city": "Buena Vista",
+      "state": "CO",
+      "distance_mi": 23.4,
+      "population": 3010,
+      "slug": "buena-vista-co"
+    }
+  ],
+  "radium-hot-springs-colorado": [
+    {
+      "city": "Steamboat Springs",
+      "state": "CO",
+      "distance_mi": 38.8,
+      "population": 13433,
+      "slug": "steamboat-springs-co"
+    },
+    {
+      "city": "Edwards",
+      "state": "CO",
+      "distance_mi": 23.7,
+      "population": 10785,
+      "slug": "edwards-co"
+    },
+    {
+      "city": "Gypsum",
+      "state": "CO",
+      "distance_mi": 31.0,
+      "population": 8941,
+      "slug": "gypsum-co"
+    },
+    {
+      "city": "Eagle",
+      "state": "CO",
+      "distance_mi": 26.6,
+      "population": 7442,
+      "slug": "eagle-co"
+    },
+    {
+      "city": "Avon",
+      "state": "CO",
+      "distance_mi": 21.9,
+      "population": 5972,
+      "slug": "avon-co"
+    }
+  ],
+  "rainbow-hot-springs": [
+    {
+      "city": "Monte Vista",
+      "state": "CO",
+      "distance_mi": 44.0,
+      "population": 4141,
+      "slug": "monte-vista-co"
+    },
+    {
+      "city": "Dulce",
+      "state": "NM",
+      "distance_mi": 39.5,
+      "population": 3218,
+      "slug": "dulce-nm"
+    },
+    {
+      "city": "Bayfield",
+      "state": "CO",
+      "distance_mi": 40.3,
+      "population": 2901,
+      "slug": "bayfield-co"
+    },
+    {
+      "city": "Center",
+      "state": "CO",
+      "distance_mi": 48.8,
+      "population": 2120,
+      "slug": "center-co"
+    },
+    {
+      "city": "Pagosa Springs",
+      "state": "CO",
+      "distance_mi": 17.3,
+      "population": 2090,
+      "slug": "pagosa-springs-co"
+    }
+  ],
+  "rico-hot-springs": [
+    {
+      "city": "Durango",
+      "state": "CO",
+      "distance_mi": 31.3,
+      "population": 19411,
+      "slug": "durango-co"
+    },
+    {
+      "city": "Cortez",
+      "state": "CO",
+      "distance_mi": 38.2,
+      "population": 8976,
+      "slug": "cortez-co"
+    },
+    {
+      "city": "Bayfield",
+      "state": "CO",
+      "distance_mi": 40.3,
+      "population": 2901,
+      "slug": "bayfield-co"
+    },
+    {
+      "city": "Mountain Village",
+      "state": "CO",
+      "distance_mi": 18.8,
+      "population": 2185,
+      "slug": "mountain-village-co"
+    },
+    {
+      "city": "Telluride",
+      "state": "CO",
+      "distance_mi": 19.9,
+      "population": 2160,
+      "slug": "telluride-co"
+    }
+  ],
+  "rico-hot-springs-colorado-guide": [
+    {
+      "city": "Durango",
+      "state": "CO",
+      "distance_mi": 29.8,
+      "population": 19411,
+      "slug": "durango-co"
+    },
+    {
+      "city": "Cortez",
+      "state": "CO",
+      "distance_mi": 38.4,
+      "population": 8976,
+      "slug": "cortez-co"
+    },
+    {
+      "city": "Bayfield",
+      "state": "CO",
+      "distance_mi": 38.7,
+      "population": 2901,
+      "slug": "bayfield-co"
+    },
+    {
+      "city": "Mountain Village",
+      "state": "CO",
+      "distance_mi": 19.3,
+      "population": 2185,
+      "slug": "mountain-village-co"
+    },
+    {
+      "city": "Telluride",
+      "state": "CO",
+      "distance_mi": 20.3,
+      "population": 2160,
+      "slug": "telluride-co"
+    }
+  ],
+  "routt-hot-springs-colorado-guide": [
+    {
+      "city": "Steamboat Springs",
+      "state": "CO",
+      "distance_mi": 5.8,
+      "population": 13433,
+      "slug": "steamboat-springs-co"
+    },
+    {
+      "city": "Craig",
+      "state": "CO",
+      "distance_mi": 37.2,
+      "population": 8991,
+      "slug": "craig-co"
+    },
+    {
+      "city": "Hayden",
+      "state": "CO",
+      "distance_mi": 21.1,
+      "population": 2057,
+      "slug": "hayden-co"
+    },
+    {
+      "city": "Kremmling",
+      "state": "CO",
+      "distance_mi": 42.7,
+      "population": 1807,
+      "slug": "kremmling-co"
+    },
+    {
+      "city": "Oak Creek",
+      "state": "CO",
+      "distance_mi": 20.5,
+      "population": 700,
+      "slug": "oak-creek-co"
+    }
+  ],
+  "salida-hot-springs-visitor-guide": [
+    {
+      "city": "Ca\u00f1on City",
+      "state": "CO",
+      "distance_mi": 42.6,
+      "population": 17122,
+      "slug": "ca\u00f1on-city-co"
+    },
+    {
+      "city": "Salida",
+      "state": "CO",
+      "distance_mi": 0.2,
+      "population": 5861,
+      "slug": "salida-co"
+    },
+    {
+      "city": "Lincoln Park",
+      "state": "CO",
+      "distance_mi": 43.1,
+      "population": 3986,
+      "slug": "lincoln-park-co"
+    },
+    {
+      "city": "Florence",
+      "state": "CO",
+      "distance_mi": 49.1,
+      "population": 3885,
+      "slug": "florence-co"
+    },
+    {
+      "city": "Buena Vista",
+      "state": "CO",
+      "distance_mi": 22.0,
+      "population": 3010,
+      "slug": "buena-vista-co"
+    }
+  ],
+  "schofield-hot-springs-colorado": [
+    {
+      "city": "Glenwood Springs",
+      "state": "CO",
+      "distance_mi": 47.2,
+      "population": 10241,
+      "slug": "glenwood-springs-co"
+    },
+    {
+      "city": "Gypsum",
+      "state": "CO",
+      "distance_mi": 49.0,
+      "population": 8941,
+      "slug": "gypsum-co"
+    },
+    {
+      "city": "Gunnison",
+      "state": "CO",
+      "distance_mi": 25.9,
+      "population": 6766,
+      "slug": "gunnison-co"
+    },
+    {
+      "city": "Aspen",
+      "state": "CO",
+      "distance_mi": 20.5,
+      "population": 6756,
+      "slug": "aspen-co"
+    },
+    {
+      "city": "Carbondale",
+      "state": "CO",
+      "distance_mi": 35.1,
+      "population": 6637,
+      "slug": "carbondale-co"
+    }
+  ],
+  "south-canyon-hot-springs": [
+    {
+      "city": "Edwards",
+      "state": "CO",
+      "distance_mi": 42.5,
+      "population": 10785,
+      "slug": "edwards-co"
+    },
+    {
+      "city": "Rifle",
+      "state": "CO",
+      "distance_mi": 19.3,
+      "population": 10570,
+      "slug": "rifle-co"
+    },
+    {
+      "city": "Glenwood Springs",
+      "state": "CO",
+      "distance_mi": 4.1,
+      "population": 10241,
+      "slug": "glenwood-springs-co"
+    },
+    {
+      "city": "Gypsum",
+      "state": "CO",
+      "distance_mi": 25.9,
+      "population": 8941,
+      "slug": "gypsum-co"
+    },
+    {
+      "city": "Eagle",
+      "state": "CO",
+      "distance_mi": 32.4,
+      "population": 7442,
+      "slug": "eagle-co"
+    }
+  ],
+  "strawberry-hot-springs-colorado": [
+    {
+      "city": "Steamboat Springs",
+      "state": "CO",
+      "distance_mi": 18.9,
+      "population": 13433,
+      "slug": "steamboat-springs-co"
+    },
+    {
+      "city": "Craig",
+      "state": "CO",
+      "distance_mi": 45.5,
+      "population": 8991,
+      "slug": "craig-co"
+    },
+    {
+      "city": "Hayden",
+      "state": "CO",
+      "distance_mi": 31.7,
+      "population": 2057,
+      "slug": "hayden-co"
+    },
+    {
+      "city": "Saratoga",
+      "state": "WY",
+      "distance_mi": 49.0,
+      "population": 1740,
+      "slug": "saratoga-wy"
+    },
+    {
+      "city": "Oak Creek",
+      "state": "CO",
+      "distance_mi": 34.4,
+      "population": 700,
+      "slug": "oak-creek-co"
+    }
+  ],
+  "tenderfoot-hot-springs": [
+    {
+      "city": "Steamboat Springs",
+      "state": "CO",
+      "distance_mi": 15.9,
+      "population": 13433,
+      "slug": "steamboat-springs-co"
+    },
+    {
+      "city": "Craig",
+      "state": "CO",
+      "distance_mi": 32.7,
+      "population": 8991,
+      "slug": "craig-co"
+    },
+    {
+      "city": "Hayden",
+      "state": "CO",
+      "distance_mi": 19.5,
+      "population": 2057,
+      "slug": "hayden-co"
+    },
+    {
+      "city": "Oak Creek",
+      "state": "CO",
+      "distance_mi": 28.1,
+      "population": 700,
+      "slug": "oak-creek-co"
+    },
+    {
+      "city": "Walden",
+      "state": "CO",
+      "distance_mi": 36.2,
+      "population": 573,
+      "slug": "walden-co"
+    }
+  ],
+  "the-springs-resort-pagosa-springs": [
+    {
+      "city": "Durango",
+      "state": "CO",
+      "distance_mi": 47.7,
+      "population": 19411,
+      "slug": "durango-co"
+    },
+    {
+      "city": "Dulce",
+      "state": "NM",
+      "distance_mi": 22.4,
+      "population": 3218,
+      "slug": "dulce-nm"
+    },
+    {
+      "city": "Bayfield",
+      "state": "CO",
+      "distance_mi": 32.2,
+      "population": 2901,
+      "slug": "bayfield-co"
+    },
+    {
+      "city": "Pagosa Springs",
+      "state": "CO",
+      "distance_mi": 1.1,
+      "population": 2090,
+      "slug": "pagosa-springs-co"
+    },
+    {
+      "city": "Del Norte",
+      "state": "CO",
+      "distance_mi": 46.0,
+      "population": 1653,
+      "slug": "del-norte-co"
+    }
+  ],
+  "valley-view-hot-springs-colorado": [
+    {
+      "city": "Ca\u00f1on City",
+      "state": "CO",
+      "distance_mi": 36.6,
+      "population": 17122,
+      "slug": "ca\u00f1on-city-co"
+    },
+    {
+      "city": "Alamosa",
+      "state": "CO",
+      "distance_mi": 49.7,
+      "population": 9879,
+      "slug": "alamosa-co"
+    },
+    {
+      "city": "Salida",
+      "state": "CO",
+      "distance_mi": 25.3,
+      "population": 5861,
+      "slug": "salida-co"
+    },
+    {
+      "city": "Monte Vista",
+      "state": "CO",
+      "distance_mi": 46.2,
+      "population": 4141,
+      "slug": "monte-vista-co"
+    },
+    {
+      "city": "Penrose",
+      "state": "CO",
+      "distance_mi": 46.9,
+      "population": 4087,
+      "slug": "penrose-co"
+    }
+  ],
+  "waunita-hot-springs-ranch": [
+    {
+      "city": "Gunnison",
+      "state": "CO",
+      "distance_mi": 22.6,
+      "population": 6766,
+      "slug": "gunnison-co"
+    },
+    {
+      "city": "Salida",
+      "state": "CO",
+      "distance_mi": 27.6,
+      "population": 5861,
+      "slug": "salida-co"
+    },
+    {
+      "city": "Buena Vista",
+      "state": "CO",
+      "distance_mi": 29.7,
+      "population": 3010,
+      "slug": "buena-vista-co"
+    },
+    {
+      "city": "Crested Butte",
+      "state": "CO",
+      "distance_mi": 35.2,
+      "population": 1229,
+      "slug": "crested-butte-co"
+    },
+    {
+      "city": "Howard",
+      "state": "CO",
+      "distance_mi": 36.7,
+      "population": 966,
+      "slug": "howard-co"
+    }
+  ],
+  "wiesbaden-hot-springs-colorado": [
+    {
+      "city": "Montrose",
+      "state": "CO",
+      "distance_mi": 32.7,
+      "population": 21044,
+      "slug": "montrose-co"
+    },
+    {
+      "city": "Mountain Village",
+      "state": "CO",
+      "distance_mi": 12.0,
+      "population": 2185,
+      "slug": "mountain-village-co"
+    },
+    {
+      "city": "Telluride",
+      "state": "CO",
+      "distance_mi": 10.5,
+      "population": 2160,
+      "slug": "telluride-co"
+    },
+    {
+      "city": "Olathe",
+      "state": "CO",
+      "distance_mi": 44.1,
+      "population": 1793,
+      "slug": "olathe-co"
+    },
+    {
+      "city": "Ridgway",
+      "state": "CO",
+      "distance_mi": 10.6,
+      "population": 1237,
+      "slug": "ridgway-co"
+    }
+  ]
+}

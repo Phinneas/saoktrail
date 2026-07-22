@@ -56,7 +56,7 @@ out center;"""
                 pass
         if attempt < 2:
             wait = (attempt + 1) * 5
-            print(f"  Retry {attempt+1}/3 in {wait}s...")
+            print(f"  Retry {attempt+1}/3 in {wait}s...", flush=True)
             time.sleep(wait)
     return []
 
@@ -171,16 +171,16 @@ def main():
             continue
 
         name = spring.get("name", slug)
-        print(f"[{i+1}/{len(springs)}] {name}")
+        print(f"[{i+1}/{len(springs)}] {name}", flush=True)
         raw = query_osm_campgrounds(lat, lng)
         camps = filter_and_enrich(lat, lng, raw)
         if camps:
             n = upsert_campgrounds(conn, slug, camps)
             total_camps += n
             springs_with_camps += 1
-            print(f"  Found {n} campgrounds within {MAX_DISTANCE_MI}mi")
+            print(f"  Found {n} campgrounds within {MAX_DISTANCE_MI}mi", flush=True)
         else:
-            print(f"  No campgrounds within {MAX_DISTANCE_MI}mi")
+            print(f"  No campgrounds within {MAX_DISTANCE_MI}mi", flush=True)
 
         if i < len(springs) - 1:
             time.sleep(DELAY_BETWEEN_REQUESTS)

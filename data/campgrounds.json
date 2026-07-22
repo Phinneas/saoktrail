@@ -1,0 +1,1864 @@
+{
+  "antero-hot-springs-colorado": [
+    {
+      "name": "Ruby Mountain Campground",
+      "type": "camp_site",
+      "distance_mi": 5.9,
+      "reservable": false,
+      "lat": 38.7529983,
+      "lng": -106.0703293,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Chalk Creek Campground and RV Park",
+      "type": "camp_site",
+      "distance_mi": 6.2,
+      "reservable": false,
+      "lat": 38.7419065,
+      "lng": -106.0811781,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Hecla Junction",
+      "type": "camp_site",
+      "distance_mi": 6.4,
+      "reservable": false,
+      "lat": 38.6518653,
+      "lng": -106.0514355,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Mushroom Gulch Site 1",
+      "type": "camp_site",
+      "distance_mi": 8.3,
+      "reservable": false,
+      "lat": 38.8379261,
+      "lng": -106.0019017,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Mushroom Gulch Site 2",
+      "type": "camp_site",
+      "distance_mi": 8.9,
+      "reservable": false,
+      "lat": 38.848088,
+      "lng": -105.9835861,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Mushroom Gulch Site 3",
+      "type": "camp_site",
+      "distance_mi": 9.4,
+      "reservable": false,
+      "lat": 38.8556667,
+      "lng": -105.9849042,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "BV Overlook Camp & Lodging",
+      "type": "camp_site",
+      "distance_mi": 9.5,
+      "reservable": false,
+      "lat": 38.8199506,
+      "lng": -106.092441,
+      "operator": "BV Outdoors LLC",
+      "url": "https://www.bvoverlook.com/"
+    }
+  ],
+  "avalanche-ranch-hot-springs": [
+    {
+      "name": "Avalanche campground",
+      "type": "camp_site",
+      "distance_mi": 1.8,
+      "reservable": false,
+      "lat": 39.2361139,
+      "lng": -107.2027321,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "McClure Campground",
+      "type": "camp_site",
+      "distance_mi": 8.0,
+      "reservable": false,
+      "lat": 39.1241394,
+      "lng": -107.3121558,
+      "operator": "United States Forest Service",
+      "url": "https://www.fs.usda.gov/recarea/gmug/recarea/?recid=33780"
+    },
+    {
+      "name": "Bogan Flats Campground",
+      "type": "camp_site",
+      "distance_mi": 8.5,
+      "reservable": false,
+      "lat": 39.0997451,
+      "lng": -107.2606759,
+      "operator": "USFS",
+      "url": ""
+    },
+    {
+      "name": "Bogan Flats Group Campground",
+      "type": "camp_site",
+      "distance_mi": 8.8,
+      "reservable": false,
+      "lat": 39.0936263,
+      "lng": -107.2539595,
+      "operator": "USFS",
+      "url": ""
+    }
+  ],
+  "box-canyon-hot-springs": [
+    {
+      "name": "Four J Campground",
+      "type": "camp_site",
+      "distance_mi": 0.6,
+      "reservable": false,
+      "lat": 38.0250083,
+      "lng": -107.6744134,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Amphitheatre Campground",
+      "type": "camp_site",
+      "distance_mi": 0.7,
+      "reservable": true,
+      "lat": 38.0223286,
+      "lng": -107.6618227,
+      "operator": "United States Forest Service",
+      "url": "https://www.fs.usda.gov/recarea/gmug/recarea/?recid=32522"
+    },
+    {
+      "name": "Angel Creek Campground",
+      "type": "camp_site",
+      "distance_mi": 1.4,
+      "reservable": false,
+      "lat": 38.0044119,
+      "lng": -107.6932148,
+      "operator": "U.S. Forest Service Ouray Ranger District",
+      "url": ""
+    },
+    {
+      "name": "Thistledown Campground",
+      "type": "camp_site",
+      "distance_mi": 2.2,
+      "reservable": false,
+      "lat": 37.9932477,
+      "lng": -107.7007002,
+      "operator": "United States Forest Service",
+      "url": "https://www.fs.usda.gov/recarea/gmug/recarea/?recid=32818"
+    },
+    {
+      "name": "Ouray KOA",
+      "type": "camp_site",
+      "distance_mi": 4.8,
+      "reservable": false,
+      "lat": 38.0807321,
+      "lng": -107.7065099,
+      "operator": "KOA",
+      "url": ""
+    },
+    {
+      "name": "Million Dollar Highway Free Campsite",
+      "type": "camp_site",
+      "distance_mi": 5.5,
+      "reservable": false,
+      "lat": 37.9363528,
+      "lng": -107.6765778,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Dispersed Camping Area",
+      "type": "camp_site",
+      "distance_mi": 6.4,
+      "reservable": false,
+      "lat": 37.9234378,
+      "lng": -107.6753629,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Dispersed camp site",
+      "type": "camp_site",
+      "distance_mi": 6.9,
+      "reservable": false,
+      "lat": 37.9183862,
+      "lng": -107.6971258,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Mill Creek Basin Backcountry Camp",
+      "type": "camp_site",
+      "distance_mi": 8.0,
+      "reservable": false,
+      "lat": 37.9799031,
+      "lng": -107.8119443,
+      "operator": "N/A",
+      "url": ""
+    },
+    {
+      "name": "Animas Fork Camp 2",
+      "type": "camp_site",
+      "distance_mi": 8.1,
+      "reservable": false,
+      "lat": 37.9320957,
+      "lng": -107.569311,
+      "operator": "",
+      "url": ""
+    }
+  ],
+  "cebolla-hot-springs": [
+    {
+      "name": "Cebolla Creek CG",
+      "type": "camp_site",
+      "distance_mi": 6.4,
+      "reservable": false,
+      "lat": 38.1869063,
+      "lng": -107.0556341,
+      "operator": "BLM",
+      "url": ""
+    }
+  ],
+  "cement-creek-hot-springs": [
+    {
+      "name": "Campsite CC5",
+      "type": "camp_site",
+      "distance_mi": 0.6,
+      "reservable": false,
+      "lat": 38.828003,
+      "lng": -106.8320317,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsite CC6",
+      "type": "camp_site",
+      "distance_mi": 0.6,
+      "reservable": false,
+      "lat": 38.8278175,
+      "lng": -106.8315172,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Cement Creek Campground",
+      "type": "camp_site",
+      "distance_mi": 0.7,
+      "reservable": false,
+      "lat": 38.8282136,
+      "lng": -106.835464,
+      "operator": "",
+      "url": "https://www.fs.usda.gov/recarea/gmug/recreation/camping-cabins/recarea/?recid=33152&actid=29"
+    },
+    {
+      "name": "Campsite CC7",
+      "type": "camp_site",
+      "distance_mi": 0.9,
+      "reservable": false,
+      "lat": 38.847117,
+      "lng": -106.8192832,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "WR 1-8",
+      "type": "camp_site",
+      "distance_mi": 1.0,
+      "reservable": false,
+      "lat": 38.8308074,
+      "lng": -106.8436873,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsite CC8",
+      "type": "camp_site",
+      "distance_mi": 1.2,
+      "reservable": false,
+      "lat": 38.8503449,
+      "lng": -106.8172943,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Lower Cement Creek Camping CC 1-4",
+      "type": "camp_site",
+      "distance_mi": 1.7,
+      "reservable": false,
+      "lat": 38.8244213,
+      "lng": -106.8553023,
+      "operator": "Forest Service",
+      "url": ""
+    },
+    {
+      "name": "Campsites CC9-12",
+      "type": "camp_site",
+      "distance_mi": 3.1,
+      "reservable": false,
+      "lat": 38.8742522,
+      "lng": -106.7981534,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsite CC13",
+      "type": "camp_site",
+      "distance_mi": 3.2,
+      "reservable": false,
+      "lat": 38.8760313,
+      "lng": -106.7975552,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsite CC14",
+      "type": "camp_site",
+      "distance_mi": 3.3,
+      "reservable": false,
+      "lat": 38.8765157,
+      "lng": -106.7976478,
+      "operator": "",
+      "url": ""
+    }
+  ],
+  "chalk-creek-hot-springs": [
+    {
+      "name": "Chalk Lake Camp",
+      "type": "camp_site",
+      "distance_mi": 3.5,
+      "reservable": false,
+      "lat": 38.7127028,
+      "lng": -106.2325654,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Cascade Camp",
+      "type": "camp_site",
+      "distance_mi": 4.1,
+      "reservable": false,
+      "lat": 38.7104498,
+      "lng": -106.2443537,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Chalk Creek Campground and RV Park",
+      "type": "camp_site",
+      "distance_mi": 5.0,
+      "reservable": false,
+      "lat": 38.7419065,
+      "lng": -106.0811781,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Ruby Mountain Campground",
+      "type": "camp_site",
+      "distance_mi": 5.7,
+      "reservable": false,
+      "lat": 38.7529983,
+      "lng": -106.0703293,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Cottonwood Lake Campground",
+      "type": "camp_site",
+      "distance_mi": 7.2,
+      "reservable": false,
+      "lat": 38.7824787,
+      "lng": -106.2922351,
+      "operator": "United States Forest Service",
+      "url": ""
+    },
+    {
+      "name": "BV Overlook Camp & Lodging",
+      "type": "camp_site",
+      "distance_mi": 7.4,
+      "reservable": false,
+      "lat": 38.8199506,
+      "lng": -106.092441,
+      "operator": "BV Outdoors LLC",
+      "url": "https://www.bvoverlook.com/"
+    },
+    {
+      "name": "Hecla Junction",
+      "type": "camp_site",
+      "distance_mi": 8.7,
+      "reservable": false,
+      "lat": 38.6518653,
+      "lng": -106.0514355,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Collegiate Peaks Campground",
+      "type": "camp_site",
+      "distance_mi": 9.6,
+      "reservable": false,
+      "lat": 38.8117001,
+      "lng": -106.3207905,
+      "operator": "",
+      "url": ""
+    }
+  ],
+  "colorados-conundrum-hot-springs": [
+    {
+      "name": "Campsite WB 8",
+      "type": "camp_site",
+      "distance_mi": 4.9,
+      "reservable": false,
+      "lat": 38.9416138,
+      "lng": -106.8843636,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsite WB 7",
+      "type": "camp_site",
+      "distance_mi": 5.2,
+      "reservable": false,
+      "lat": 38.9372139,
+      "lng": -106.8835911,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsite WB 6",
+      "type": "camp_site",
+      "distance_mi": 6.3,
+      "reservable": false,
+      "lat": 38.9214844,
+      "lng": -106.8791413,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsites GC 1-3",
+      "type": "camp_site",
+      "distance_mi": 6.6,
+      "reservable": false,
+      "lat": 38.9810193,
+      "lng": -107.0061976,
+      "operator": "",
+      "url": "https://www.fs.usda.gov/recarea/gmug/recarea/?recid=33288"
+    },
+    {
+      "name": "Campsites GC 4-8",
+      "type": "camp_site",
+      "distance_mi": 6.6,
+      "reservable": false,
+      "lat": 38.9858209,
+      "lng": -107.0096683,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsite WB 3",
+      "type": "camp_site",
+      "distance_mi": 6.8,
+      "reservable": false,
+      "lat": 38.9139028,
+      "lng": -106.880286,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsite WB 4",
+      "type": "camp_site",
+      "distance_mi": 6.8,
+      "reservable": false,
+      "lat": 38.9140802,
+      "lng": -106.879665,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsite WB 2",
+      "type": "camp_site",
+      "distance_mi": 6.9,
+      "reservable": false,
+      "lat": 38.9129928,
+      "lng": -106.8813066,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsite WB 5",
+      "type": "camp_site",
+      "distance_mi": 6.9,
+      "reservable": false,
+      "lat": 38.9134061,
+      "lng": -106.8795102,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsites GC 9-12",
+      "type": "camp_site",
+      "distance_mi": 7.0,
+      "reservable": false,
+      "lat": 38.9992358,
+      "lng": -107.0201692,
+      "operator": "",
+      "url": ""
+    }
+  ],
+  "cottonwood-hot-springs": [
+    {
+      "name": "Cottonwood Lake Campground",
+      "type": "camp_site",
+      "distance_mi": 4.3,
+      "reservable": false,
+      "lat": 38.7824787,
+      "lng": -106.2922351,
+      "operator": "United States Forest Service",
+      "url": ""
+    },
+    {
+      "name": "Collegiate Peaks Campground",
+      "type": "camp_site",
+      "distance_mi": 5.3,
+      "reservable": false,
+      "lat": 38.8117001,
+      "lng": -106.3207905,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Elephant Rock Campground",
+      "type": "camp_site",
+      "distance_mi": 6.3,
+      "reservable": false,
+      "lat": 38.8848413,
+      "lng": -106.1523371,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Chalk Lake Camp",
+      "type": "camp_site",
+      "distance_mi": 6.9,
+      "reservable": false,
+      "lat": 38.7127028,
+      "lng": -106.2325654,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "BV Overlook Camp & Lodging",
+      "type": "camp_site",
+      "distance_mi": 7.0,
+      "reservable": false,
+      "lat": 38.8199506,
+      "lng": -106.092441,
+      "operator": "BV Outdoors LLC",
+      "url": "https://www.bvoverlook.com/"
+    },
+    {
+      "name": "Cascade Camp",
+      "type": "camp_site",
+      "distance_mi": 7.2,
+      "reservable": false,
+      "lat": 38.7104498,
+      "lng": -106.2443537,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Chalk Creek Campground and RV Park",
+      "type": "camp_site",
+      "distance_mi": 9.0,
+      "reservable": false,
+      "lat": 38.7419065,
+      "lng": -106.0811781,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Iron City Campground",
+      "type": "camp_site",
+      "distance_mi": 9.4,
+      "reservable": false,
+      "lat": 38.7090472,
+      "lng": -106.3342027,
+      "operator": "USFS",
+      "url": ""
+    }
+  ],
+  "dunton-hot-springs": [
+    {
+      "name": "Burro Bridge Campground",
+      "type": "camp_site",
+      "distance_mi": 1.8,
+      "reservable": false,
+      "lat": 37.7870172,
+      "lng": -108.0676609,
+      "operator": "USFS",
+      "url": ""
+    },
+    {
+      "name": "Dunton River Camp",
+      "type": "camp_site",
+      "distance_mi": 4.1,
+      "reservable": false,
+      "lat": 37.7372576,
+      "lng": -108.1550702,
+      "operator": "",
+      "url": "https://www.duntondestinations.com/river-camp/"
+    },
+    {
+      "name": "Cayton Campground",
+      "type": "camp_site",
+      "distance_mi": 6.4,
+      "reservable": false,
+      "lat": 37.7715315,
+      "lng": -107.9767267,
+      "operator": "USFS",
+      "url": ""
+    },
+    {
+      "name": "Woods Lake Campground",
+      "type": "camp_site",
+      "distance_mi": 8.2,
+      "reservable": false,
+      "lat": 37.8865857,
+      "lng": -108.0566358,
+      "operator": "United States Forest Service",
+      "url": "https://www.fs.usda.gov/recarea/gmug/recarea/?recid=32380"
+    }
+  ],
+  "eldorado-springs-colorado": [
+    {
+      "name": "Camp Patiya",
+      "type": "camp_site",
+      "distance_mi": 3.9,
+      "reservable": false,
+      "lat": 39.9650337,
+      "lng": -105.3386949,
+      "operator": "Boy Scouts of America",
+      "url": "https://longspeakbsa.org/programs/camps-camping/camp-patiya/"
+    },
+    {
+      "name": "Winegar Ridge Campground",
+      "type": "camp_site",
+      "distance_mi": 5.6,
+      "reservable": false,
+      "lat": 39.952714,
+      "lng": -105.3819376,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Deer Creek Campground",
+      "type": "camp_site",
+      "distance_mi": 6.5,
+      "reservable": false,
+      "lat": 39.8583501,
+      "lng": -105.3557472,
+      "operator": "Golden Gate Canyon State Park",
+      "url": ""
+    },
+    {
+      "name": "Sourdough Springs Campground",
+      "type": "camp_site",
+      "distance_mi": 6.8,
+      "reservable": false,
+      "lat": 39.8336613,
+      "lng": -105.2903198,
+      "operator": "Jefferson County Open Space",
+      "url": "https://www.jeffco.us/1437/White-Ranch-Park"
+    },
+    {
+      "name": "Forgotten Valley Campground",
+      "type": "camp_site",
+      "distance_mi": 7.6,
+      "reservable": false,
+      "lat": 39.8556296,
+      "lng": -105.3831362,
+      "operator": "Golden Gate Canyon State Park",
+      "url": ""
+    },
+    {
+      "name": "Rifleman Phillips Group Campground",
+      "type": "camp_site",
+      "distance_mi": 8.0,
+      "reservable": false,
+      "lat": 39.8654754,
+      "lng": -105.4036822,
+      "operator": "Golden Gate Canyon State Park",
+      "url": ""
+    },
+    {
+      "name": "Sawmill Campground",
+      "type": "camp_site",
+      "distance_mi": 8.4,
+      "reservable": false,
+      "lat": 39.8102848,
+      "lng": -105.2876099,
+      "operator": "Jefferson County Open Space",
+      "url": "https://www.jeffco.us/1437/White-Ranch-Park"
+    },
+    {
+      "name": "Aspen Meadows Campground",
+      "type": "camp_site",
+      "distance_mi": 8.5,
+      "reservable": false,
+      "lat": 39.8661115,
+      "lng": -105.4156916,
+      "operator": "Golden Gate Canyon State Park",
+      "url": ""
+    },
+    {
+      "name": "Greenfield Meadow Campground",
+      "type": "camp_site",
+      "distance_mi": 9.5,
+      "reservable": false,
+      "lat": 39.8450879,
+      "lng": -105.4201166,
+      "operator": "Golden Gate Canyon State Park",
+      "url": ""
+    },
+    {
+      "name": "Frazer Meadow Campground",
+      "type": "camp_site",
+      "distance_mi": 9.6,
+      "reservable": false,
+      "lat": 39.8504442,
+      "lng": -105.4268906,
+      "operator": "Golden Gate Canyon State Park",
+      "url": ""
+    }
+  ],
+  "fish-creek-hot-springs-colorado-guide-to-a-secluded-wilderness-soak-and-scenic-adventure": [
+    {
+      "name": "Bison Carpenter Camp",
+      "type": "camp_site",
+      "distance_mi": 7.2,
+      "reservable": false,
+      "lat": 40.673734,
+      "lng": -107.1399997,
+      "operator": "",
+      "url": ""
+    }
+  ],
+  "hartsel-hot-springs-colorado-guide": [
+    {
+      "name": "Camp Indigo",
+      "type": "camp_site",
+      "distance_mi": 8.1,
+      "reservable": false,
+      "lat": 39.1206271,
+      "lng": -105.7235819,
+      "operator": "",
+      "url": "https://www.hipcamp.com/colorado/chelsea-b-s-land-1/camp-indigo-at-compound-brown"
+    }
+  ],
+  "hot-springs-near-buena-vista": [
+    {
+      "name": "Chalk Lake Camp",
+      "type": "camp_site",
+      "distance_mi": 4.1,
+      "reservable": false,
+      "lat": 38.7127028,
+      "lng": -106.2325654,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Chalk Creek Campground and RV Park",
+      "type": "camp_site",
+      "distance_mi": 4.4,
+      "reservable": false,
+      "lat": 38.7419065,
+      "lng": -106.0811781,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Cascade Camp",
+      "type": "camp_site",
+      "distance_mi": 4.7,
+      "reservable": false,
+      "lat": 38.7104498,
+      "lng": -106.2443537,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Ruby Mountain Campground",
+      "type": "camp_site",
+      "distance_mi": 5.1,
+      "reservable": false,
+      "lat": 38.7529983,
+      "lng": -106.0703293,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "BV Overlook Camp & Lodging",
+      "type": "camp_site",
+      "distance_mi": 7.1,
+      "reservable": false,
+      "lat": 38.8199506,
+      "lng": -106.092441,
+      "operator": "BV Outdoors LLC",
+      "url": "https://www.bvoverlook.com/"
+    },
+    {
+      "name": "Cottonwood Lake Campground",
+      "type": "camp_site",
+      "distance_mi": 7.9,
+      "reservable": false,
+      "lat": 38.7824787,
+      "lng": -106.2922351,
+      "operator": "United States Forest Service",
+      "url": ""
+    },
+    {
+      "name": "Hecla Junction",
+      "type": "camp_site",
+      "distance_mi": 8.1,
+      "reservable": false,
+      "lat": 38.6518653,
+      "lng": -106.0514355,
+      "operator": "",
+      "url": ""
+    }
+  ],
+  "hot-springs-near-denver": [
+    {
+      "name": "Indian Springs Campsites",
+      "type": "camp_site",
+      "distance_mi": 0.1,
+      "reservable": false,
+      "lat": 39.740658,
+      "lng": -105.512034,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Denver West/Central City KOA",
+      "type": "camp_site",
+      "distance_mi": 3.6,
+      "reservable": false,
+      "lat": 39.7915455,
+      "lng": -105.5109327,
+      "operator": "",
+      "url": "https://koa.com/campgrounds/denver-west/"
+    },
+    {
+      "name": "Site 12",
+      "type": "camp_site",
+      "distance_mi": 5.8,
+      "reservable": false,
+      "lat": 39.817262,
+      "lng": -105.5506139,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Site 9",
+      "type": "camp_site",
+      "distance_mi": 5.8,
+      "reservable": false,
+      "lat": 39.8171618,
+      "lng": -105.5504088,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Base Camp at Golden Gate Canyon",
+      "type": "camp_site",
+      "distance_mi": 7.2,
+      "reservable": false,
+      "lat": 39.8403873,
+      "lng": -105.4805915,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Rim Meadow Campground",
+      "type": "camp_site",
+      "distance_mi": 8.6,
+      "reservable": false,
+      "lat": 39.8442871,
+      "lng": -105.424255,
+      "operator": "Golden Gate Canyon State Park",
+      "url": ""
+    },
+    {
+      "name": "Greenfield Meadow Campground",
+      "type": "camp_site",
+      "distance_mi": 8.8,
+      "reservable": false,
+      "lat": 39.8450879,
+      "lng": -105.4201166,
+      "operator": "Golden Gate Canyon State Park",
+      "url": ""
+    },
+    {
+      "name": "West Chicago Creek Campground",
+      "type": "camp_site",
+      "distance_mi": 8.8,
+      "reservable": false,
+      "lat": 39.678664,
+      "lng": -105.658099,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Frazer Meadow Campground",
+      "type": "camp_site",
+      "distance_mi": 8.9,
+      "reservable": false,
+      "lat": 39.8504442,
+      "lng": -105.4268906,
+      "operator": "Golden Gate Canyon State Park",
+      "url": ""
+    }
+  ],
+  "hot-sulphur-springs-resort": [
+    {
+      "name": "Pioneer Park Campground/Day Use",
+      "type": "camp_site",
+      "distance_mi": 0.2,
+      "reservable": false,
+      "lat": 40.0743774,
+      "lng": -106.1093281,
+      "operator": "",
+      "url": ""
+    }
+  ],
+  "iron-mountain-hot-springs": [
+    {
+      "name": "Glenwood Canyon Resort",
+      "type": "camp_site",
+      "distance_mi": 2.4,
+      "reservable": false,
+      "lat": 39.5586694,
+      "lng": -107.2923442,
+      "operator": "",
+      "url": "https://www.glenwoodcanyonresort.com/"
+    }
+  ],
+  "iron-mountain-hot-springs-geology": [
+    {
+      "name": "Glenwood Canyon Resort",
+      "type": "camp_site",
+      "distance_mi": 1.7,
+      "reservable": false,
+      "lat": 39.5586694,
+      "lng": -107.2923442,
+      "operator": "",
+      "url": "https://www.glenwoodcanyonresort.com/"
+    }
+  ],
+  "joyful-journey-hot-springs": [
+    {
+      "name": "Group Campsite",
+      "type": "camp_site",
+      "distance_mi": 5.8,
+      "reservable": false,
+      "lat": 37.7799361,
+      "lng": -105.85475,
+      "operator": "",
+      "url": ""
+    }
+  ],
+  "ouray-hot-springs-pool": [
+    {
+      "name": "Four J Campground",
+      "type": "camp_site",
+      "distance_mi": 0.6,
+      "reservable": false,
+      "lat": 38.0250083,
+      "lng": -107.6744134,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Amphitheatre Campground",
+      "type": "camp_site",
+      "distance_mi": 1.0,
+      "reservable": true,
+      "lat": 38.0223286,
+      "lng": -107.6618227,
+      "operator": "United States Forest Service",
+      "url": "https://www.fs.usda.gov/recarea/gmug/recarea/?recid=32522"
+    },
+    {
+      "name": "Angel Creek Campground",
+      "type": "camp_site",
+      "distance_mi": 1.2,
+      "reservable": false,
+      "lat": 38.0044119,
+      "lng": -107.6932148,
+      "operator": "U.S. Forest Service Ouray Ranger District",
+      "url": ""
+    },
+    {
+      "name": "Thistledown Campground",
+      "type": "camp_site",
+      "distance_mi": 2.0,
+      "reservable": false,
+      "lat": 37.9932477,
+      "lng": -107.7007002,
+      "operator": "United States Forest Service",
+      "url": "https://www.fs.usda.gov/recarea/gmug/recarea/?recid=32818"
+    },
+    {
+      "name": "Ouray KOA",
+      "type": "camp_site",
+      "distance_mi": 4.7,
+      "reservable": false,
+      "lat": 38.0807321,
+      "lng": -107.7065099,
+      "operator": "KOA",
+      "url": ""
+    },
+    {
+      "name": "Million Dollar Highway Free Campsite",
+      "type": "camp_site",
+      "distance_mi": 5.6,
+      "reservable": false,
+      "lat": 37.9363528,
+      "lng": -107.6765778,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Dispersed Camping Area",
+      "type": "camp_site",
+      "distance_mi": 6.4,
+      "reservable": false,
+      "lat": 37.9234378,
+      "lng": -107.6753629,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Dispersed camp site",
+      "type": "camp_site",
+      "distance_mi": 6.9,
+      "reservable": false,
+      "lat": 37.9183862,
+      "lng": -107.6971258,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Mill Creek Basin Backcountry Camp",
+      "type": "camp_site",
+      "distance_mi": 7.7,
+      "reservable": false,
+      "lat": 37.9799031,
+      "lng": -107.8119443,
+      "operator": "N/A",
+      "url": ""
+    },
+    {
+      "name": "Animas Fork Camp 2",
+      "type": "camp_site",
+      "distance_mi": 8.3,
+      "reservable": false,
+      "lat": 37.9320957,
+      "lng": -107.569311,
+      "operator": "",
+      "url": ""
+    }
+  ],
+  "paradise-hot-springs-colorado-guide": [
+    {
+      "name": "Lake Fork Campground",
+      "type": "camp_site",
+      "distance_mi": 2.7,
+      "reservable": false,
+      "lat": 37.3084595,
+      "lng": -106.4775726,
+      "operator": "United States Forest Service",
+      "url": "https://www.fs.usda.gov/recarea/riogrande/recarea/?recid=29546"
+    },
+    {
+      "name": "Mix Lake Campground",
+      "type": "camp_site",
+      "distance_mi": 4.9,
+      "reservable": false,
+      "lat": 37.3580691,
+      "lng": -106.5447519,
+      "operator": "United States Forest Service",
+      "url": "https://www.fs.usda.gov/recarea/riogrande/recarea/?recid=29558"
+    },
+    {
+      "name": "Stunner Campground",
+      "type": "camp_site",
+      "distance_mi": 6.8,
+      "reservable": false,
+      "lat": 37.3777089,
+      "lng": -106.5742179,
+      "operator": "United States Forest Service",
+      "url": "https://www.fs.usda.gov/recarea/riogrande/recarea/?recid=29616"
+    },
+    {
+      "name": "Conejos Campground",
+      "type": "camp_site",
+      "distance_mi": 9.2,
+      "reservable": false,
+      "lat": 37.17116,
+      "lng": -106.4435026,
+      "operator": "United States Forest Service",
+      "url": "https://www.fs.usda.gov/recarea/riogrande/recarea/?recid=29510"
+    },
+    {
+      "name": "Spectacle Lake Campground",
+      "type": "camp_site",
+      "distance_mi": 9.6,
+      "reservable": false,
+      "lat": 37.1666529,
+      "lng": -106.4386478,
+      "operator": "United States Forest Service",
+      "url": "https://www.fs.usda.gov/recarea/riogrande/recarea/?recid=29612"
+    }
+  ],
+  "penny-hot-springs-colorado": [
+    {
+      "name": "Avalanche campground",
+      "type": "camp_site",
+      "distance_mi": 1.4,
+      "reservable": false,
+      "lat": 39.2361139,
+      "lng": -107.2027321,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "McClure Campground",
+      "type": "camp_site",
+      "distance_mi": 8.5,
+      "reservable": false,
+      "lat": 39.1241394,
+      "lng": -107.3121558,
+      "operator": "United States Forest Service",
+      "url": "https://www.fs.usda.gov/recarea/gmug/recarea/?recid=33780"
+    },
+    {
+      "name": "Bogan Flats Campground",
+      "type": "camp_site",
+      "distance_mi": 8.9,
+      "reservable": false,
+      "lat": 39.0997451,
+      "lng": -107.2606759,
+      "operator": "USFS",
+      "url": ""
+    },
+    {
+      "name": "Bogan Flats Group Campground",
+      "type": "camp_site",
+      "distance_mi": 9.3,
+      "reservable": false,
+      "lat": 39.0936263,
+      "lng": -107.2539595,
+      "operator": "USFS",
+      "url": ""
+    }
+  ],
+  "pinkerton-hot-springs": [
+    {
+      "name": "Lower Hermosa Campground",
+      "type": "camp_site",
+      "distance_mi": 3.0,
+      "reservable": false,
+      "lat": 37.4555115,
+      "lng": -107.8584067,
+      "operator": "USFS",
+      "url": ""
+    },
+    {
+      "name": "Haviland Lake Campground",
+      "type": "camp_site",
+      "distance_mi": 6.0,
+      "reservable": false,
+      "lat": 37.5347,
+      "lng": -107.8059,
+      "operator": "USFS",
+      "url": ""
+    },
+    {
+      "name": "Florida Campground",
+      "type": "camp_site",
+      "distance_mi": 6.7,
+      "reservable": false,
+      "lat": 37.4536306,
+      "lng": -107.6824799,
+      "operator": "USFS",
+      "url": ""
+    },
+    {
+      "name": "Transfer Park Campground",
+      "type": "camp_site",
+      "distance_mi": 6.9,
+      "reservable": false,
+      "lat": 37.4626571,
+      "lng": -107.6800614,
+      "operator": "USFS",
+      "url": ""
+    },
+    {
+      "name": "Alpen Rose RV Park",
+      "type": "camp_site",
+      "distance_mi": 7.2,
+      "reservable": false,
+      "lat": 37.350617,
+      "lng": -107.856056,
+      "operator": "",
+      "url": "https://alpenroservpark.com/"
+    },
+    {
+      "name": "Miller Creek Campground",
+      "type": "camp_site",
+      "distance_mi": 8.4,
+      "reservable": false,
+      "lat": 37.4045883,
+      "lng": -107.6611289,
+      "operator": "USFS",
+      "url": ""
+    },
+    {
+      "name": "Junction Creek Campground",
+      "type": "camp_site",
+      "distance_mi": 9.7,
+      "reservable": false,
+      "lat": 37.3387687,
+      "lng": -107.9171171,
+      "operator": "USFS",
+      "url": ""
+    },
+    {
+      "name": "Junction Creek Campground - Day Use",
+      "type": "camp_site",
+      "distance_mi": 9.9,
+      "reservable": false,
+      "lat": 37.3347096,
+      "lng": -107.9168974,
+      "operator": "San Juan National Forest",
+      "url": ""
+    }
+  ],
+  "poncha-hot-springs-colorado": [
+    {
+      "name": "Marshall Pass Dispersed Campground",
+      "type": "camp_site",
+      "distance_mi": 5.9,
+      "reservable": false,
+      "lat": 38.4234281,
+      "lng": -106.1321032,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "O'Haver Campground",
+      "type": "camp_site",
+      "distance_mi": 6.0,
+      "reservable": false,
+      "lat": 38.4273744,
+      "lng": -106.1444533,
+      "operator": "USFS",
+      "url": ""
+    },
+    {
+      "name": "Poncha Pass Dispersed Campground",
+      "type": "camp_site",
+      "distance_mi": 6.2,
+      "reservable": false,
+      "lat": 38.4085742,
+      "lng": -106.0950995,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Salida East",
+      "type": "camp_site",
+      "distance_mi": 6.3,
+      "reservable": false,
+      "lat": 38.5081836,
+      "lng": -105.9612231,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Silver Creek Dispersed Campground",
+      "type": "camp_site",
+      "distance_mi": 6.9,
+      "reservable": false,
+      "lat": 38.4041225,
+      "lng": -106.1262614,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Angel of Shavano Campground",
+      "type": "camp_site",
+      "distance_mi": 9.8,
+      "reservable": false,
+      "lat": 38.5828363,
+      "lng": -106.2204162,
+      "operator": "USFS",
+      "url": "https://www.fs.usda.gov/r02/psicc/recreation/angel-shavano-campground"
+    }
+  ],
+  "radium-hot-springs-colorado": [
+    {
+      "name": "Radium Recreation Area",
+      "type": "camp_site",
+      "distance_mi": 1.0,
+      "reservable": false,
+      "lat": 39.9503245,
+      "lng": -106.5556255,
+      "operator": "BLM - Kremmling Field Office",
+      "url": ""
+    }
+  ],
+  "rainbow-hot-springs": [
+    {
+      "name": "West Fork Campground",
+      "type": "camp_site",
+      "distance_mi": 5.1,
+      "reservable": false,
+      "lat": 37.4449856,
+      "lng": -106.903457,
+      "operator": "USFS",
+      "url": ""
+    },
+    {
+      "name": "Primitive Camping",
+      "type": "camp_site",
+      "distance_mi": 6.8,
+      "reservable": false,
+      "lat": 37.4840902,
+      "lng": -106.828801,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Big Meadows Campground",
+      "type": "camp_site",
+      "distance_mi": 8.5,
+      "reservable": false,
+      "lat": 37.5385421,
+      "lng": -106.796818,
+      "operator": "United States Forest Service",
+      "url": "https://www.fs.usda.gov/recarea/riogrande/recarea/?recid=28918"
+    },
+    {
+      "name": "East Fork Campground",
+      "type": "camp_site",
+      "distance_mi": 9.9,
+      "reservable": false,
+      "lat": 37.3741201,
+      "lng": -106.8869582,
+      "operator": "USFS",
+      "url": "https://www.fs.usda.gov/recarea/sanjuan/recarea/?recid=42876"
+    }
+  ],
+  "rico-hot-springs": [
+    {
+      "name": "Cayton Campground",
+      "type": "camp_site",
+      "distance_mi": 5.9,
+      "reservable": false,
+      "lat": 37.7715315,
+      "lng": -107.9767267,
+      "operator": "USFS",
+      "url": ""
+    },
+    {
+      "name": "Burro Bridge Campground",
+      "type": "camp_site",
+      "distance_mi": 6.2,
+      "reservable": false,
+      "lat": 37.7870172,
+      "lng": -108.0676609,
+      "operator": "USFS",
+      "url": ""
+    },
+    {
+      "name": "Dunton River Camp",
+      "type": "camp_site",
+      "distance_mi": 7.0,
+      "reservable": false,
+      "lat": 37.7372576,
+      "lng": -108.1550702,
+      "operator": "",
+      "url": "https://www.duntondestinations.com/river-camp/"
+    }
+  ],
+  "rico-hot-springs-colorado-guide": [
+    {
+      "name": "Cayton Campground",
+      "type": "camp_site",
+      "distance_mi": 6.5,
+      "reservable": false,
+      "lat": 37.7715315,
+      "lng": -107.9767267,
+      "operator": "USFS",
+      "url": ""
+    },
+    {
+      "name": "Burro Bridge Campground",
+      "type": "camp_site",
+      "distance_mi": 7.7,
+      "reservable": false,
+      "lat": 37.7870172,
+      "lng": -108.0676609,
+      "operator": "USFS",
+      "url": ""
+    },
+    {
+      "name": "Sig Creek Campground",
+      "type": "camp_site",
+      "distance_mi": 8.1,
+      "reservable": false,
+      "lat": 37.6335466,
+      "lng": -107.8835223,
+      "operator": "USFS",
+      "url": ""
+    },
+    {
+      "name": "Dunton River Camp",
+      "type": "camp_site",
+      "distance_mi": 8.4,
+      "reservable": false,
+      "lat": 37.7372576,
+      "lng": -108.1550702,
+      "operator": "",
+      "url": "https://www.duntondestinations.com/river-camp/"
+    }
+  ],
+  "routt-hot-springs-colorado-guide": [
+    {
+      "name": "Dry Lake Campground",
+      "type": "camp_site",
+      "distance_mi": 3.9,
+      "reservable": false,
+      "lat": 40.5362154,
+      "lng": -106.7819702,
+      "operator": "Forest Service",
+      "url": ""
+    }
+  ],
+  "salida-hot-springs-visitor-guide": [
+    {
+      "name": "Salida East",
+      "type": "camp_site",
+      "distance_mi": 2.7,
+      "reservable": false,
+      "lat": 38.5081836,
+      "lng": -105.9612231,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Point Barr",
+      "type": "camp_site",
+      "distance_mi": 8.1,
+      "reservable": false,
+      "lat": 38.4709281,
+      "lng": -105.8711028,
+      "operator": "Arkansas Headwaters Recreation Area",
+      "url": ""
+    },
+    {
+      "name": "Rincon Campground",
+      "type": "camp_site",
+      "distance_mi": 8.4,
+      "reservable": false,
+      "lat": 38.470125,
+      "lng": -105.865693,
+      "operator": "Arkansas Headwaters Recreation Area",
+      "url": ""
+    },
+    {
+      "name": "Hecla Junction",
+      "type": "camp_site",
+      "distance_mi": 8.7,
+      "reservable": false,
+      "lat": 38.6518653,
+      "lng": -106.0514355,
+      "operator": "",
+      "url": ""
+    }
+  ],
+  "schofield-hot-springs-colorado": [
+    {
+      "name": "Mount Crested Butte Campground",
+      "type": "camp_site",
+      "distance_mi": 1.0,
+      "reservable": false,
+      "lat": 38.9135569,
+      "lng": -106.9642908,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsite WG 1",
+      "type": "camp_site",
+      "distance_mi": 2.0,
+      "reservable": false,
+      "lat": 38.9319335,
+      "lng": -107.0140591,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsite WG 11",
+      "type": "camp_site",
+      "distance_mi": 2.1,
+      "reservable": false,
+      "lat": 38.9331496,
+      "lng": -107.0143729,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsite WG 9",
+      "type": "camp_site",
+      "distance_mi": 2.1,
+      "reservable": false,
+      "lat": 38.9350295,
+      "lng": -107.0136273,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsites WG 3-5",
+      "type": "camp_site",
+      "distance_mi": 2.1,
+      "reservable": false,
+      "lat": 38.9343931,
+      "lng": -107.0139921,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsites WG 12-20",
+      "type": "camp_site",
+      "distance_mi": 2.2,
+      "reservable": false,
+      "lat": 38.9323923,
+      "lng": -107.0169667,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsite WG 10",
+      "type": "camp_site",
+      "distance_mi": 2.3,
+      "reservable": false,
+      "lat": 38.9393659,
+      "lng": -107.0144494,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsites WG 21-26",
+      "type": "camp_site",
+      "distance_mi": 2.3,
+      "reservable": false,
+      "lat": 38.9332561,
+      "lng": -107.0190159,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsite WG 27",
+      "type": "camp_site",
+      "distance_mi": 2.4,
+      "reservable": false,
+      "lat": 38.93526,
+      "lng": -107.0195805,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Campsite WG 29",
+      "type": "camp_site",
+      "distance_mi": 2.6,
+      "reservable": false,
+      "lat": 38.9405832,
+      "lng": -107.021572,
+      "operator": "",
+      "url": ""
+    }
+  ],
+  "south-canyon-hot-springs": [
+    {
+      "name": "Glenwood Canyon Resort",
+      "type": "camp_site",
+      "distance_mi": 6.3,
+      "reservable": false,
+      "lat": 39.5586694,
+      "lng": -107.2923442,
+      "operator": "",
+      "url": "https://www.glenwoodcanyonresort.com/"
+    },
+    {
+      "name": "Elk Creek Campground",
+      "type": "camp_site",
+      "distance_mi": 8.3,
+      "reservable": false,
+      "lat": 39.6000917,
+      "lng": -107.5553579,
+      "operator": "",
+      "url": ""
+    }
+  ],
+  "tenderfoot-hot-springs": [
+    {
+      "name": "Dutch Hill Campground",
+      "type": "camp_site",
+      "distance_mi": 8.7,
+      "reservable": false,
+      "lat": 40.8054509,
+      "lng": -106.9760175,
+      "operator": "",
+      "url": "cpwshop.com"
+    },
+    {
+      "name": "Sunrise Vista Campground",
+      "type": "camp_site",
+      "distance_mi": 8.9,
+      "reservable": false,
+      "lat": 40.8091287,
+      "lng": -106.9670647,
+      "operator": "",
+      "url": ""
+    }
+  ],
+  "the-springs-resort-pagosa-springs": [
+    {
+      "name": "Pagosa Riverside Campground",
+      "type": "camp_site",
+      "distance_mi": 2.3,
+      "reservable": false,
+      "lat": 37.2858737,
+      "lng": -106.9795778,
+      "operator": "",
+      "url": "https://www.pagosariverside.com"
+    },
+    {
+      "name": "Park Creek",
+      "type": "camp_site",
+      "distance_mi": 6.1,
+      "reservable": false,
+      "lat": 37.3480702,
+      "lng": -107.0479367,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Jackson Dispersed Campground",
+      "type": "camp_site",
+      "distance_mi": 7.1,
+      "reservable": false,
+      "lat": 37.3518059,
+      "lng": -106.9435788,
+      "operator": "",
+      "url": ""
+    }
+  ],
+  "valley-view-hot-springs-colorado": [
+    {
+      "name": "Valley View Hot Springs",
+      "type": "camp_site",
+      "distance_mi": 0.0,
+      "reservable": false,
+      "lat": 38.1920566,
+      "lng": -105.8153263,
+      "operator": "Orient Land Trust",
+      "url": "https://www.olt.org/vvhs"
+    },
+    {
+      "name": "San Luis Valley Campground",
+      "type": "camp_site",
+      "distance_mi": 7.7,
+      "reservable": false,
+      "lat": 38.2171478,
+      "lng": -105.9527475,
+      "operator": "",
+      "url": "https://www.slvcampground.com/San_Luis_Valley_Campground/SLVC_Home.html"
+    },
+    {
+      "name": "Hayden Creek",
+      "type": "camp_site",
+      "distance_mi": 9.5,
+      "reservable": false,
+      "lat": 38.3290157,
+      "lng": -105.8253527,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Hayden Creek CG",
+      "type": "camp_site",
+      "distance_mi": 9.5,
+      "reservable": false,
+      "lat": 38.3292702,
+      "lng": -105.8244038,
+      "operator": "",
+      "url": ""
+    }
+  ],
+  "waunita-hot-springs-ranch": [
+    {
+      "name": "Snowblind Campground",
+      "type": "camp_site",
+      "distance_mi": 5.1,
+      "reservable": false,
+      "lat": 38.5206486,
+      "lng": -106.4152645,
+      "operator": "United States Forest Service",
+      "url": "https://www.fs.usda.gov/recarea/gmug/recarea/?recid=33530"
+    },
+    {
+      "name": "Pitkin Campground",
+      "type": "camp_site",
+      "distance_mi": 6.7,
+      "reservable": false,
+      "lat": 38.6103808,
+      "lng": -106.5001077,
+      "operator": "USFS",
+      "url": "https://www.fs.usda.gov/recarea/gmug/recarea/?recid=33456"
+    },
+    {
+      "name": "Middle Quartz Creek Campground",
+      "type": "camp_site",
+      "distance_mi": 8.7,
+      "reservable": false,
+      "lat": 38.6222943,
+      "lng": -106.4258632,
+      "operator": "USFS",
+      "url": "https://www.fs.usda.gov/recarea/gmug/recarea/?recid=33388"
+    },
+    {
+      "name": "Quartz Creek Campground",
+      "type": "camp_site",
+      "distance_mi": 8.8,
+      "reservable": false,
+      "lat": 38.6381715,
+      "lng": -106.4685279,
+      "operator": "USFS",
+      "url": "https://www.fs.usda.gov/recarea/gmug/recarea/?recid=33470"
+    }
+  ],
+  "wiesbaden-hot-springs-colorado": [
+    {
+      "name": "Amphitheatre Campground",
+      "type": "camp_site",
+      "distance_mi": 0.3,
+      "reservable": true,
+      "lat": 38.0223286,
+      "lng": -107.6618227,
+      "operator": "United States Forest Service",
+      "url": "https://www.fs.usda.gov/recarea/gmug/recarea/?recid=32522"
+    },
+    {
+      "name": "Four J Campground",
+      "type": "camp_site",
+      "distance_mi": 0.5,
+      "reservable": false,
+      "lat": 38.0250083,
+      "lng": -107.6744134,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Angel Creek Campground",
+      "type": "camp_site",
+      "distance_mi": 1.8,
+      "reservable": false,
+      "lat": 38.0044119,
+      "lng": -107.6932148,
+      "operator": "U.S. Forest Service Ouray Ranger District",
+      "url": ""
+    },
+    {
+      "name": "Thistledown Campground",
+      "type": "camp_site",
+      "distance_mi": 2.6,
+      "reservable": false,
+      "lat": 37.9932477,
+      "lng": -107.7007002,
+      "operator": "United States Forest Service",
+      "url": "https://www.fs.usda.gov/recarea/gmug/recarea/?recid=32818"
+    },
+    {
+      "name": "Ouray KOA",
+      "type": "camp_site",
+      "distance_mi": 4.7,
+      "reservable": false,
+      "lat": 38.0807321,
+      "lng": -107.7065099,
+      "operator": "KOA",
+      "url": ""
+    },
+    {
+      "name": "Million Dollar Highway Free Campsite",
+      "type": "camp_site",
+      "distance_mi": 5.9,
+      "reservable": false,
+      "lat": 37.9363528,
+      "lng": -107.6765778,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Dispersed Camping Area",
+      "type": "camp_site",
+      "distance_mi": 6.7,
+      "reservable": false,
+      "lat": 37.9234378,
+      "lng": -107.6753629,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Dispersed camp site",
+      "type": "camp_site",
+      "distance_mi": 7.3,
+      "reservable": false,
+      "lat": 37.9183862,
+      "lng": -107.6971258,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Animas Fork Camp 2",
+      "type": "camp_site",
+      "distance_mi": 8.1,
+      "reservable": false,
+      "lat": 37.9320957,
+      "lng": -107.569311,
+      "operator": "",
+      "url": ""
+    },
+    {
+      "name": "Mill Creek Basin Backcountry Camp",
+      "type": "camp_site",
+      "distance_mi": 8.4,
+      "reservable": false,
+      "lat": 37.9799031,
+      "lng": -107.8119443,
+      "operator": "N/A",
+      "url": ""
+    }
+  ]
+}

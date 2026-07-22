@@ -8,6 +8,8 @@ import SpringMapScript from "@components/SpringMapScript.astro";
 import { getWeather } from "@lib/weather";
 import WeatherCard from "@components/WeatherCard.astro";
 import springsData from "../../../public/springs.json";
+import campgroundsData from "../../../public/campgrounds.json";
+import nearCitiesData from "../../../public/near_cities.json";
 
 export const prerender = false;
 
@@ -34,6 +36,8 @@ const relatedSprings = springsData
   .slice(0, 4);
 
 const weather = spring.lat && spring.lng ? await getWeather(spring.lat, spring.lng) : null;
+const campgrounds = (campgroundsData as any)[slug] || [];
+const nearCities = (nearCitiesData as any)[slug] || [];
 ---
 
 <BaseLayout
@@ -156,6 +160,50 @@ const weather = spring.lat && spring.lng ? await getWeather(spring.lat, spring.l
           </div>
 
           {weather && <WeatherCard weather={weather} />}
+
+          {campgrounds.length > 0 && (
+            <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
+              <h3 class="h4 mb-3">Nearby Campgrounds</h3>
+              <div class="space-y-3">
+                {campgrounds.slice(0, 3).map((c: any) => (
+                  <div class="text-sm">
+                    <div class="flex justify-between items-start">
+                      <span class="font-display font-bold text-txt-p dark:text-darkmode-txt-p">{c.name}</span>
+                      <span class="text-xs font-mono text-accent">{c.distance_mi}mi</span>
+                    </div>
+                    <div class="flex gap-2 mt-1">
+                      {c.reservable && (
+                        <span class="text-xs px-2 py-0.5 bg-accent/10 text-accent rounded">Reservable</span>
+                      )}
+                      {c.operator && (
+                        <span class="text-xs text-txt-s dark:text-darkmode-txt-s">{c.operator}</span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+                {campgrounds.length > 3 && (
+                  <p class="text-xs text-txt-s dark:text-darkmode-txt-s">+{campgrounds.length - 3} more campgrounds nearby</p>
+                )}
+              </div>
+            </div>
+          )}
+
+          {nearCities.length > 0 && (
+            <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
+              <h3 class="h4 mb-3">Nearest Towns</h3>
+              <div class="space-y-2">
+                {nearCities.slice(0, 3).map((c: any) => (
+                  <a
+                    href={`/near/${c.slug}`}
+                    class="flex justify-between items-center text-sm hover:text-accent transition-colors"
+                  >
+                    <span class="font-display font-bold text-txt-p dark:text-darkmode-txt-p">{c.city}, {c.state}</span>
+                    <span class="text-xs font-mono text-txt-s dark:text-darkmode-txt-s">{c.distance_mi}mi</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
 
           {spring.cell_coverage && (
             <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">

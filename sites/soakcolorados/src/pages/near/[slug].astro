@@ -1,0 +1,113 @@
+---
+import BaseLayout from "@components/base/BaseLayout.astro";
+import Breadcrumbs from "@components/common/Breadcrumbs.astro";
+import SchemaScript from "@components/schema/SchemaScript.astro";
+import { buildBreadcrumbSchema } from "@lib/schema";
+import springsData from "../../../public/springs.json";
+import nearCitiesData from "../../../public/near_cities.json";
+import campgroundsData from "../../../public/campgrounds.json";
+
+export const prerender = false;
+
+const { slug } = Astro.params;
+
+// Find the city by slug across all near_cities entries
+let cityInfo: any = null;
+let springsInArea: any[] = [];
+
+for (const [springSlug, cities] of Object.entries(nearCitiesData as any)) {
+  for (const city of cities as any[]) {
+    if (city.slug === slug) {
+      cityInfo = city;
+      break;
+    }
+  }
+  if (cityInfo) break;
+}
+
+if (!cityInfo) {
+  return new Response(null, { status: 404, statusText: "Not Found" });
+}
+
+// Find all springs near this city (within 50mi)
+for (const spring of springsData as any[]) {
+  for (const [springSlug, cities] of Object.entries(nearCitiesData as any[])) {
+    if (spring.slug === springSlug) {
+      const match = (cities as any[]).find((c: any) => c.slug === slug);
+      if (match) {
+        springsInArea.push({
+          ...spring,
+          distance_to_city: match.distance_mi,
+        });
+      }
+    }
+  }
+}
+
+springsInArea.sort((a: any, b: any) => a.distance_to_city - b.distance_to_city);
+
+const pageDescription = `Discover hot springs near ${cityInfo.city}, ${cityInfo.state}. ${springsInArea.length} natural hot springs within driving distance.`;
+
+const breadcrumbSchema = buildBreadcrumbSchema([
+  { label: "Home", href: "/" },
+  { label: "Directory", href: "/directory" },
+  { label: `Hot Springs Near ${cityInfo.city}`, href: `/near/${slug}` },
+]);
+---
+
+<BaseLayout
+  title={`Hot Springs Near ${cityInfo.city}, ${cityInfo.state} — Soak Colorado`}
+  description={pageDescription}
+>
+  <Fragment slot="head">
+    <SchemaScript schema={breadcrumbSchema} />
+  </Fragment>
+
+  <section class="section">
+    <div class="container">
+      <Breadcrumbs />
+
+      <h1 class="h1 mb-2 intersect:animate-fadeUp opacity-0">
+        Hot Springs Near {cityInfo.city}, {cityInfo.state}
+      </h1>
+      <p class="text-txt-s dark:text-darkmode-txt-s mb-8 intersect:animate-fadeUp opacity-0">
+        {springsInArea.length} natural hot springs within driving distance
+        {cityInfo.population > 0 && ` of ${cityInfo.population.toLocaleString()} people`}
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {springsInArea.map((spring: any) => (
+          <a
+            href={`/springs/${spring.slug}`}
+            class="glass p-6 hover:scale-[1.02] transition-transform intersect:animate-fadeUp opacity-0"
+          >
+            {spring.image_url && (
+              <img
+                src={spring.image_url}
+                alt={spring.name}
+                class="w-full h-40 object-cover rounded-lg mb-4"
+                loading="lazy"
+              />
+            )}
+            <h2 class="font-display font-bold text-txt-p dark:text-darkmode-txt-p mb-2">{spring.name}</h2>
+            <div class="flex items-center gap-4 text-sm">
+              {spring.temp_f && (
+                <span class="font-mono text-accent">{spring.temp_f}°F</span>
+              )}
+              <span class="text-txt-s dark:text-darkmode-txt-s">{spring.distance_to_city}mi from {cityInfo.city}</span>
+            </div>
+            {spring.access_type && (
+              <p class="text-xs text-txt-s dark:text-darkmode-txt-s mt-2 capitalize">{spring.access_type}</p>
+            )}
+          </a>
+        ))}
+      </div>
+
+      {springsInArea.length === 0 && (
+        <div class="glass p-8 text-center">
+          <p class="text-txt-s dark:text-darkmode-txt-s">No hot springs found near this city.</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
