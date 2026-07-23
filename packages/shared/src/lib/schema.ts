@@ -29,7 +29,7 @@ export function buildPersonSchema() {
   };
 }
 
-export function buildPlaceSchema(spring: {
+export function buildLocalBusinessSchema(spring: {
   name: string;
   slug: string;
   description: string;
@@ -44,36 +44,49 @@ export function buildPlaceSchema(spring: {
   hours?: string;
   development?: string;
 }) {
+  // Map development level to schema type
+  const dev = (spring.development || '').toLowerCase();
+  let schemaType = 'TouristAttraction';
+  if (dev.includes('resort')) schemaType = 'Resort';
+  else if (dev.includes('commercial') || dev.includes('developed') || dev.includes('lodge')) schemaType = 'HealthAndBeautySpa';
+
   const props: any[] = [];
+  if (spring.temp_f) props.push({ "@type": "PropertyValue", name: "Water Temperature", value: `${spring.temp_f}\u00b0F` });
+  if (spring.access_type) props.push({ "@type": "PropertyValue", name: "Access Type", value: spring.access_type });
+  if (spring.season) props.push({ "@type": "PropertyValue", name: "Season", value: spring.season });
+  if (spring.elevation_ft) props.push({ "@type": "PropertyValue", name: "Elevation", value: `${spring.elevation_ft} ft` });
+  if (spring.development) props.push({ "@type": "PropertyValue", name: "Development", value: spring.development });
 
-  if (spring.temp_f) {
-    props.push({ "@type": "PropertyValue", name: "Water Temperature", value: `${spring.temp_f}\u00b0F` });
+  // Build service offers
+  const offers: any[] = [];
+  if (spring.fee !== undefined && spring.fee !== null) {
+    offers.push({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name: "Hot Springs Soaking" },
+      price: spring.fee,
+      priceCurrency: "USD",
+      description: spring.fee === 0 ? "Free admission" : `Entry fee $${spring.fee}`,
+    });
   }
-  if (spring.fee !== undefined) {
-    props.push({ "@type": "PropertyValue", name: "Entry Fee", value: spring.fee === 0 ? "Free" : `$${spring.fee}` });
-  }
-  if (spring.access_type) {
-    props.push({ "@type": "PropertyValue", name: "Access Type", value: spring.access_type });
-  }
-  if (spring.season) {
-    props.push({ "@type": "PropertyValue", name: "Season", value: spring.season });
-  }
-  if (spring.elevation_ft) {
-    props.push({ "@type": "PropertyValue", name: "Elevation", value: `${spring.elevation_ft} ft` });
-  }
-  if (spring.hours) {
-    props.push({ "@type": "PropertyValue", name: "Hours", value: spring.hours });
-  }
-  if (spring.development) {
-    props.push({ "@type": "PropertyValue", name: "Development", value: spring.development });
+  if (schemaType === 'Resort') {
+    offers.push({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name: "Lodging" },
+      priceCurrency: "USD",
+      description: "Overnight accommodations available",
+    });
   }
 
-  return {
+  // Price range symbol
+  const priceRange = spring.fee === 0 || spring.fee === undefined ? '$' : spring.fee < 15 ? '$' : spring.fee < 30 ? '$$' : '$$$';
+
+  const schema: Record<string, any> = {
     "@context": "https://schema.org",
-    "@type": "TouristAttraction",
+    "@type": schemaType,
     name: spring.name,
     description: spring.description,
     url: `${BASE_URL}/springs/${spring.slug}`,
+    image: `${BASE_URL}/og-image.png`,
     geo: {
       "@type": "GeoCoordinates",
       latitude: spring.lat,
@@ -84,15 +97,38 @@ export function buildPlaceSchema(spring: {
       addressRegion: spring.state,
       addressCountry: "US",
     },
+    areaServed: { "@type": "State", name: spring.state },
     isAccessibleForFree: spring.fee === 0 || spring.fee === undefined,
+    priceRange,
+    sameAs: [
+      `https://www.google.com/maps/@${spring.lat},${spring.lng},14z`,
+      `https://www.openstreetmap.org/?mlat=${spring.lat}&mlon=${spring.lng}#map=14/${spring.lat}/${spring.lng}`,
+    ],
     ...(props.length > 0 ? { additionalProperty: props } : {}),
+    ...(offers.length > 0 ? {
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Services",
+        itemListElement: offers,
+      },
+    } : {}),
     author: {
       "@type": "Person",
       name: AUTHOR.name,
       url: AUTHOR.url,
     },
   };
+
+  // Add openingHours if available
+  if (spring.hours) {
+    schema.openingHours = spring.hours;
+  }
+
+  return schema;
 }
+
+// Backward-compatible alias
+export const buildPlaceSchema = buildLocalBusinessSchema;
 
 export function getAuthorByline() {
   return `Researched & maintained by ${AUTHOR.name}`;
@@ -192,9 +228,9 @@ export function buildArticleSchema(
     datePublished,
     dateModified,
     author: {
-      "@type": authorName === siteConfig.name ? "Organization" : "Person",
-      name: authorName,
-      url: `${BASE_URL}/authors/${typeof author === "object" && author?.id ? author.id : "soak-colorado"}`,
+      "@type": "Person",
+      name: AUTHOR.name,
+      url: AUTHOR.url,
     },
     publisher: {
       "@type": "Organization",

@@ -10,6 +10,9 @@ import { PexelsClient } from '../lib/pexels.js';
 
 const schema = makeExecutableSchema({ typeDefs, resolvers: fieldResolvers });
 
+// In-memory rate limiting for chat (20 req/hour per IP)
+const chatRateLimits = new Map<string, { count: number; windowStart: number }>();
+
 export const createApp = () => {
   const app = new Hono<{ Bindings: Bindings }>();
 
@@ -438,84 +441,91 @@ export const createApp = () => {
     return c.json({ success: true, slug, method });
   });
 
-  // Chat endpoint
+  // Chat endpoint — AI Trip Assistant
   app.post('/api/chat', async (c) => {
-    // R-CHAT-5: Rate limiting
+    // In-memory rate limiting (20 req/hour per IP)
     const ip = c.req.header('CF-Connecting-IP') || '127.0.0.1';
     const now = Date.now();
     const oneHourMs = 60 * 60 * 1000;
-    
-    // Check rate limit
-    let limitRecord = await c.env.DB.prepare('SELECT * FROM chat_rate_limits WHERE ip = ?').bind(ip).first();
-    
-    if (limitRecord) {
-      if (now - (limitRecord.window_start as number) > oneHourMs) {
-        // Reset window
-        await c.env.DB.prepare('UPDATE chat_rate_limits SET count = 1, window_start = ? WHERE ip = ?').bind(now, ip).run();
-      } else if ((limitRecord.count as number) >= 20) {
-        return c.json({ reply: "Too many questions — come back in an hour and we'll find you a spring.", sources: [] }, 429);
+    const limit = chatRateLimits.get(ip);
+
+    if (limit) {
+      if (now - limit.windowStart > oneHourMs) {
+        chatRateLimits.set(ip, { count: 1, windowStart: now });
+      } else if (limit.count >= 20) {
+        return c.json({ reply: "Too many questions — come back in an hour.", sources: [] }, 429);
       } else {
-        // Increment
-        await c.env.DB.prepare('UPDATE chat_rate_limits SET count = count + 1 WHERE ip = ?').bind(ip).run();
+        limit.count++;
       }
     } else {
-      await c.env.DB.prepare('INSERT INTO chat_rate_limits (ip, count, window_start) VALUES (?, 1, ?)').bind(ip, now).run();
+      chatRateLimits.set(ip, { count: 1, windowStart: now });
     }
 
     const body = await c.req.json();
     const { messages = [], context = {} } = body;
-    const { currentPage, currentSpringSlug } = context;
+    const { siteUrl = '', siteName = 'Soaktrail', region = '', currentSpringSlug } = context;
+
+    // Fetch springs data (cached 1hr via Cloudflare Cache API)
+    let springsSummary = '';
+    let springsData: any[] = [];
+    try {
+      if (siteUrl) {
+        const cacheKey = new Request(`${siteUrl}/springs.json`);
+        const cache = caches.default;
+        let cached = await cache.match(cacheKey);
+        let springs: any;
+        if (cached) {
+          springs = await cached.json();
+        } else {
+          const res = await fetch(`${siteUrl}/springs.json`);
+          springs = await res.json();
+          await cache.put(cacheKey, new Response(JSON.stringify(springs), {
+            headers: { 'Cache-Control': 'public, max-age=3600' }
+          }));
+        }
+        springsData = Array.isArray(springs) ? springs : (springs.data || []);
+
+        springsSummary = springsData.map((s: any) => {
+          const parts = [s.name, `/springs/${s.slug}`];
+          if (s.temp_f || s.temperature_f) parts.push(`${s.temp_f || s.temperature_f}F`);
+          if (s.fee !== undefined && s.fee !== null) parts.push(s.fee === 0 ? 'Free' : `$${s.fee}`);
+          if (s.access_type) parts.push(s.access_type);
+          if (s.development) parts.push(s.development);
+          if (s.lat && s.lng) parts.push(`${s.lat},${s.lng}`);
+          return parts.join(' | ');
+        }).join('\n');
+      }
+    } catch (e) {
+      console.error('Failed to fetch springs data:', e);
+    }
+
+    const today = new Date().toISOString().split('T')[0];
 
     let currentSpringContext = '';
-    if (currentSpringSlug) {
-      const spring = await c.env.DB.prepare('SELECT * FROM springs WHERE slug = ?').bind(currentSpringSlug).first();
+    if (currentSpringSlug && springsData.length > 0) {
+      const spring = springsData.find((s: any) => s.slug === currentSpringSlug);
       if (spring) {
-        currentSpringContext = `\nThe user is currently viewing the page for the hot spring: ${(spring as any).name}. Details: ${JSON.stringify(spring)}`;
+        currentSpringContext = `\nThe user is currently viewing: ${spring.name}. Details: ${JSON.stringify({ temp_f: spring.temp_f, fee: spring.fee, access_type: spring.access_type, development: spring.development, description: spring.description })}`;
       }
     }
 
-    const siteName = (c.env as any).CHAT_SITE_NAME || 'Soak the Rockies';
-    const siteRegion = (c.env as any).CHAT_SITE_REGION || 'Rocky Mountains (CO, ID, MT, WY)';
-    const topic = (c.env as any).CHAT_TOPIC || 'hot springs';
+    const systemPrompt = `You are a hot springs trip planner for ${siteName}, covering ${region}.
 
-    const systemPrompt = `You are a helpful ${topic} guide for ${siteName}, a directory of ${topic} across the ${siteRegion} region.
+Available springs (recommend only from this list):
+${springsSummary}
 
-You help visitors find ${topic}, understand access conditions, plan trips, and learn about the healing properties of geothermal waters. Answer warmly and knowledgeably. Use the search_springs and get_spring_details tools to look up real data from the site's database when answering specific questions.
+When helping plan trips:
+- Structure multi-day itineraries as "Day 1:", "Day 2:", etc.
+- Link each spring as ${siteUrl}/springs/{slug}
+- Include campground search links: https://www.recreation.gov/search?latitude={lat}&longitude={lng}&radius=20&inventory_type=camping
+- Recommend gear from https://shop.soaktrail.com
+- Note access conditions, fees, and seasonal considerations
+- Ask about trip duration, vehicle type, and preferences if not stated
+- Keep responses concise and scannable using markdown
 
-If asked about something unrelated to ${topic} or outdoor recreation, politely redirect the conversation.
+If asked about unrelated topics, politely redirect to hot springs and trip planning.
 
-Current date: ${new Date().toISOString().split('T')[0]}
-Site region: ${siteRegion}${currentSpringContext}`;
-
-    const tools = [
-      {
-        name: "search_springs",
-        description: "Search hot springs in the database by location, state, access type, development level, or temperature range",
-        parameters: {
-          type: "object",
-          properties: {
-            state: { type: "string", description: "Two-letter state abbreviation: CO, ID, MT, or WY" },
-            access_type: { type: "string", enum: ["paved", "gravel", "4wd", "hike"] },
-            development: { type: "string", enum: ["primitive", "developed", "resort"] },
-            min_temp_f: { type: "number" },
-            max_temp_f: { type: "number" },
-            name_query: { type: "string", description: "Partial name match" },
-            limit: { type: "number", description: "limit the search results to this many items, default 5" }
-          }
-        }
-      },
-      {
-        name: "get_spring_details",
-        description: "Get full details for a specific hot spring by its slug identifier",
-        parameters: {
-          type: "object",
-          properties: {
-            slug: { type: "string", description: "The spring's URL slug, e.g. 'strawberry-hot-springs'" }
-          },
-          required: ["slug"]
-        }
-      }
-    ];
+Current date: ${today}${currentSpringContext}`;
 
     const modelMessages = [
       { role: 'system', content: systemPrompt },
@@ -523,77 +533,28 @@ Site region: ${siteRegion}${currentSpringContext}`;
     ];
 
     try {
-      let finalSources: any[] = [];
-      const aiResponse = await c.env.AI.run('@cf/meta/llama-3.1-8b-instruct', {
+      const aiResponse = await c.env.AI.run('@cf/meta/llama-3.3-70b-instruct-fp8-fast', {
         messages: modelMessages,
-        tools: tools as any
       });
 
-      let finalReply = aiResponse;
-      
-      // Check if it's a tool call
-      if (aiResponse && (aiResponse as any).tool_calls && (aiResponse as any).tool_calls.length > 0) {
-        const toolResultsMessage: any = { role: 'tool', content: '' };
-        
-        for (const toolCall of (aiResponse as any).tool_calls) {
-           let args = toolCall.arguments;
-           if (typeof args === 'string') {
-             try { args = JSON.parse(args); } catch (e) {}
-           }
-           let result = null;
+      const replyText = typeof aiResponse === 'string' ? aiResponse : (aiResponse as any).response;
 
-           if (toolCall.name === 'search_springs') {
-             let sql = 'SELECT slug, name, state, temperature_f, access_type, development FROM springs WHERE 1=1';
-             const params: any[] = [];
-             
-             if (args.state) { sql += ' AND state = ?'; params.push(args.state); }
-             if (args.access_type) { sql += ' AND access_type = ?'; params.push(args.access_type); }
-             if (args.development) { sql += ' AND development = ?'; params.push(args.development); }
-             if (args.min_temp_f) { sql += ' AND temperature_f >= ?'; params.push(args.min_temp_f); }
-             if (args.max_temp_f) { sql += ' AND temperature_f <= ?'; params.push(args.max_temp_f); }
-             if (args.name_query) { sql += ' AND name LIKE ?'; params.push(`%${args.name_query}%`); }
-             
-             sql += ' LIMIT ?';
-             params.push(args.limit || 5);
-             
-             const queryRes = await c.env.DB.prepare(sql).bind(...params).all();
-             result = queryRes.results;
-             
-             for (const r of (result as any[])) {
-               finalSources.push({ name: r.name, slug: r.slug, type: 'spring' });
-             }
-           } else if (toolCall.name === 'get_spring_details') {
-             const queryRes = await c.env.DB.prepare('SELECT slug, name, state, temperature_f, access_type, development, description, lat, lon FROM springs WHERE slug = ?').bind(args.slug).first();
-             result = queryRes;
-             if (result) {
-               finalSources.push({ name: (result as any).name, slug: (result as any).slug, type: 'spring' });
-             }
-           }
+      // Extract mentioned springs as sources
+      const slugPattern = /\/springs\/([a-z0-9-]+)/gi;
+      const matches = [...replyText.matchAll(slugPattern)];
+      const mentionedSlugs = [...new Set(matches.map(m => m[1]))];
+      const sources = mentionedSlugs
+        .map(slug => {
+          const spring = springsData.find((s: any) => s.slug === slug);
+          return spring ? { name: spring.name, slug: spring.slug, type: 'spring' } : null;
+        })
+        .filter(Boolean);
 
-           toolResultsMessage.content += `Tool ${toolCall.name} returned: ${JSON.stringify(result)}\n`;
-        }
+      return c.json({ reply: replyText, sources });
 
-        // Second pass
-        modelMessages.push(aiResponse as any); // The assistant's tool call request
-        modelMessages.push(toolResultsMessage);
-        
-        const finalAIResponse = await c.env.AI.run('@cf/meta/llama-3.1-8b-instruct', {
-          messages: modelMessages
-        });
-        
-        finalReply = finalAIResponse;
-      }
-
-      const replyText = typeof finalReply === 'string' ? finalReply : (finalReply as any).response;
-      
-      // Deduplicate sources
-      const uniqueSources = finalSources.filter((v, i, a) => a.findIndex(t => (t.slug === v.slug)) === i);
-
-      return c.json({ reply: replyText, sources: uniqueSources });
-      
     } catch (error: any) {
       console.error('AI Error:', error);
-      return c.json({ reply: "I'm sorry, I'm having trouble connecting to my knowledge base right now.", sources: [] }, 500);
+      return c.json({ reply: "I'm having trouble connecting right now. Please try again in a moment.", sources: [] }, 500);
     }
   });
 

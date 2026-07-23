@@ -9,6 +9,7 @@ import { ClientRouter } from "astro:transitions";
 import Background from "@/components/base/Background.astro";
 import { Tooltips } from "astro-tooltips";
 import { siteConfig } from "@site/config";
+import { ChatWidget } from "@components/ChatWidget.jsx";
 
 export interface Props {
   title?: string;
@@ -35,6 +36,14 @@ const {
   updatedAt,
   jsonLd,
 } = Astro.props;
+
+const apiUrl = import.meta.env.PUBLIC_API_URL;
+const chatPrompts = [
+  `Plan a 3-day hot springs trip in ${siteConfig.region}`,
+  "Which springs are best for winter soaking?",
+  "Find me primitive wilderness springs",
+  "What gear do I need for a hot springs trip?"
+];
 ---
 
 <!DOCTYPE html>
@@ -105,6 +114,15 @@ const {
       <slot/>
     </main>
     <Footer />
-    <!-- <ObserverScript /> -->
+    {apiUrl && (
+      <ChatWidget
+        client:load
+        apiUrl={apiUrl}
+        siteName={siteConfig.name}
+        siteUrl={siteConfig.url}
+        region={siteConfig.region}
+        suggestedPrompts={chatPrompts}
+      />
+    )}
   </body>
 </html>

@@ -3,6 +3,7 @@ import SocialLinks from '../components/SocialLinks.astro';
 import SeoHead from '../components/SeoHead.astro';
 import Nav from '../components/Nav.astro';
 import { ClientRouter } from 'astro:transitions';
+import { ChatWidget } from '@soaktrail/shared/components/ChatWidget.jsx';
 
 interface Props {
   title?: string;
@@ -19,6 +20,14 @@ interface Props {
 }
 
 const { title, description, ogImage, ogType, canonicalUrl, noIndex, author, publishedAt, updatedAt, jsonLd, transparentNav = false } = Astro.props;
+
+const apiUrl = import.meta.env.PUBLIC_API_URL;
+const chatPrompts = [
+  "What are the best hot springs in the US?",
+  "Plan a Colorado hot springs road trip",
+  "Find hot springs in Alaska",
+  "What gear do I need for a hot springs trip?"
+];
 ---
 <!doctype html>
 <html lang="en">
@@ -60,5 +69,15 @@ const { title, description, ogImage, ogType, canonicalUrl, noIndex, author, publ
         />
       </div>
     </footer>
+    {apiUrl && (
+      <ChatWidget
+        client:load
+        apiUrl={apiUrl}
+        siteName="Soak Trail"
+        siteUrl="https://soaktrail.com"
+        region="the United States"
+        suggestedPrompts={chatPrompts}
+      />
+    )}
   </body>
 </html>

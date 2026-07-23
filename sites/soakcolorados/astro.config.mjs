@@ -1,6 +1,7 @@
 import { fileURLToPath } from "node:url";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
+import solid from "@astrojs/solid-js";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import AutoImport from "astro-auto-import";
@@ -27,6 +28,7 @@ export default defineConfig({
   adapter: cloudflare(),
   integrations: [
     react(),
+    solid(),
     sitemap({
       filter: (page) =>
         !page.includes("/search") &&
