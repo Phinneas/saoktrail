@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Goldbug Hot Springs",
     "slug": "goldbug-hot-springs",
-    "lat": 44.905,
+    "lat": 39.7093859,
     "lon": -113.929,
     "elevation_ft": null,
     "temperature_f": 136,
@@ -39,8 +39,20 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -113.929,
-    "temp_f": 136
+    "lng": -113.9136058,
+    "temp_f": 136,
+    "huc_cd": "16020301",
+    "nwis": {
+      "site_no": "394234113544600",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": 2,
@@ -83,7 +95,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.6789,
-    "temp_f": 122
+    "temp_f": 122,
+    "_provenance": {}
   },
   {
     "id": 3,
@@ -126,7 +139,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.008,
-    "temp_f": 130
+    "temp_f": 130,
+    "_provenance": {}
   },
   {
     "id": 4,
@@ -169,15 +183,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.8901,
-    "temp_f": 145
+    "temp_f": 145,
+    "_provenance": {}
   },
   {
     "id": 5,
     "name": "Baker Hot Springs",
     "slug": "baker-hot-springs",
-    "lat": 43.8765,
+    "lat": 39.61355949,
     "lon": -114.2345,
-    "elevation_ft": null,
+    "elevation_ft": 4625.0,
     "temperature_f": 118,
     "access_type": "dirt",
     "development": "developed",
@@ -211,16 +226,29 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -114.2345,
-    "temp_f": 118
+    "lng": -112.7310665,
+    "temp_f": 118,
+    "huc_cd": "16030005",
+    "nwis": {
+      "site_no": "393649112434900",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": 6,
     "name": "Cottonwood Hot Springs",
     "slug": "cottonwood-hot-springs",
-    "lat": 44.3456,
+    "lat": 36.02442815,
     "lon": -116.1234,
-    "elevation_ft": null,
+    "elevation_ft": 4600.0,
     "temperature_f": 100,
     "access_type": "paved",
     "development": "developed",
@@ -254,8 +282,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -116.1234,
-    "temp_f": 100
+    "lng": -111.9882199,
+    "temp_f": 100,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    },
+    "huc_cd": "15010001",
+    "nwis": {
+      "site_no": "360128111591200",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    }
   },
   {
     "id": 7,
@@ -298,7 +339,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -113.9876,
-    "temp_f": 128
+    "temp_f": 128,
+    "_provenance": {}
   },
   {
     "id": 8,
@@ -341,15 +383,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.9929,
-    "temp_f": 130
+    "temp_f": 130,
+    "_provenance": {}
   },
   {
     "id": 9,
     "name": "Bald Mountain Hot Springs",
     "slug": "bald-mountain-hot-springs",
-    "lat": 43.678889,
+    "lat": 36.52304167,
     "lon": -114.361667,
-    "elevation_ft": null,
+    "elevation_ft": 3640.0,
     "temperature_f": 115,
     "access_type": "hike",
     "development": "primitive",
@@ -383,8 +426,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -114.361667,
-    "temp_f": 115
+    "lng": -112.5715917,
+    "temp_f": 115,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    },
+    "huc_cd": "15010003",
+    "nwis": {
+      "site_no": "363115112342601",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    }
   },
   {
     "id": 10,
@@ -427,7 +483,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.35624,
-    "temp_f": 105
+    "temp_f": 105,
+    "_provenance": {}
   },
   {
     "id": 11,
@@ -470,7 +527,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.928215,
-    "temp_f": 112
+    "temp_f": 112,
+    "_provenance": {}
   },
   {
     "id": 12,
@@ -513,7 +571,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.178152,
-    "temp_f": 108
+    "temp_f": 108,
+    "_provenance": {}
   },
   {
     "id": 13,
@@ -556,7 +615,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.2552,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 14,
@@ -599,7 +659,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.549713,
-    "temp_f": 112
+    "temp_f": 112,
+    "_provenance": {}
   },
   {
     "id": 15,
@@ -642,7 +703,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -110.691,
-    "temp_f": 199
+    "temp_f": 199,
+    "_provenance": {}
   },
   {
     "id": 16,
@@ -685,7 +747,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -110.69216,
-    "temp_f": 114
+    "temp_f": 114,
+    "_provenance": {}
   },
   {
     "id": 17,
@@ -728,15 +791,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -110.692,
-    "temp_f": 120
+    "temp_f": 120,
+    "_provenance": {}
   },
   {
     "id": 18,
     "name": "Red Rock Hot Springs",
     "slug": "red-rock-hot-springs",
-    "lat": 44.5678,
+    "lat": 41.62770737,
     "lon": -110.6789,
-    "elevation_ft": null,
+    "elevation_ft": 4251.0,
     "temperature_f": 138,
     "access_type": "dirt",
     "development": "developed",
@@ -770,8 +834,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -110.6789,
-    "temp_f": 138
+    "lng": -112.267732,
+    "temp_f": 138,
+    "huc_cd": "16010204",
+    "nwis": {
+      "site_no": "413740112160100",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": 19,
@@ -814,7 +891,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -109.3456,
-    "temp_f": 112
+    "temp_f": 112,
+    "_provenance": {}
   },
   {
     "id": 20,
@@ -857,7 +935,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.1234,
-    "temp_f": 106
+    "temp_f": 106,
+    "_provenance": {}
   },
   {
     "id": 21,
@@ -900,7 +979,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.5678,
-    "temp_f": 116
+    "temp_f": 116,
+    "_provenance": {}
   },
   {
     "id": 22,
@@ -943,7 +1023,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.5726,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 23,
@@ -986,7 +1067,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.03536,
-    "temp_f": 110
+    "temp_f": 110,
+    "_provenance": {}
   },
   {
     "id": 25,
@@ -1029,7 +1111,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -110.801,
-    "temp_f": 160
+    "temp_f": 160,
+    "_provenance": {}
   },
   {
     "id": 26,
@@ -1072,7 +1155,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -110.714411,
-    "temp_f": 162
+    "temp_f": 162,
+    "_provenance": {}
   },
   {
     "id": 27,
@@ -1115,7 +1199,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -110.727,
-    "temp_f": 185
+    "temp_f": 185,
+    "_provenance": {}
   },
   {
     "id": 28,
@@ -1158,15 +1243,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -110.4567,
-    "temp_f": 145
+    "temp_f": 145,
+    "_provenance": {}
   },
   {
     "id": 29,
     "name": "Grand Prismatic Spring",
     "slug": "grand-prismatic-spring",
-    "lat": 44.525,
+    "lat": 36.0756581,
     "lon": -110.8381,
-    "elevation_ft": null,
+    "elevation_ft": 3880.0,
     "temperature_f": 160,
     "access_type": "paved",
     "development": "developed",
@@ -1200,8 +1286,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -110.8381,
-    "temp_f": 160
+    "lng": -112.0631674,
+    "temp_f": 160,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    },
+    "huc_cd": "15010001",
+    "nwis": {
+      "site_no": "360513112044001",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    }
   },
   {
     "id": 30,
@@ -1244,7 +1343,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -110.8547,
-    "temp_f": 165
+    "temp_f": 165,
+    "_provenance": {}
   },
   {
     "id": 31,
@@ -1287,7 +1387,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -110.78688,
-    "temp_f": 140
+    "temp_f": 140,
+    "_provenance": {}
   },
   {
     "id": 32,
@@ -1330,7 +1431,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -110.445947,
-    "temp_f": 112
+    "temp_f": 112,
+    "_provenance": {}
   },
   {
     "id": 33,
@@ -1373,7 +1475,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.338,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 34,
@@ -1416,7 +1519,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.745,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 35,
@@ -1459,7 +1563,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.695,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 36,
@@ -1502,7 +1607,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.129,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 37,
@@ -1545,15 +1651,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.314,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 38,
     "name": "Boiling Springs",
     "slug": "boiling-springs",
-    "lat": 44.364,
+    "lat": 39.24162844,
     "lon": -115.856,
-    "elevation_ft": null,
+    "elevation_ft": 5455.0,
     "temperature_f": 102,
     "access_type": "hike",
     "development": "primitive",
@@ -1587,8 +1694,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -115.856,
-    "temp_f": 102
+    "lng": -111.6668638,
+    "temp_f": 102,
+    "huc_cd": "16030004",
+    "nwis": {
+      "site_no": "391430111395801",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": 39,
@@ -1631,7 +1751,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.928,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 40,
@@ -1674,13 +1795,14 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.798,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 41,
     "name": "Deer Hot Springs",
     "slug": "deer-hot-springs",
-    "lat": 44.092,
+    "lat": 39.83330159,
     "lon": -116.052,
     "elevation_ft": null,
     "temperature_f": 102,
@@ -1716,8 +1838,20 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -116.052,
-    "temp_f": 102
+    "lng": -109.2353933,
+    "temp_f": 102,
+    "huc_cd": "14050007",
+    "nwis": {
+      "site_no": "395000109141501",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": 42,
@@ -1760,7 +1894,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.707,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 43,
@@ -1803,7 +1938,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.571,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 44,
@@ -1846,15 +1982,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.748,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 45,
     "name": "Warm Springs Creek Hot Springs",
     "slug": "warm-springs-creek-hot-springs",
-    "lat": 44.154,
+    "lat": 41.70270106,
     "lon": -115.993,
-    "elevation_ft": null,
+    "elevation_ft": 6335.0,
     "temperature_f": 102,
     "access_type": "hike",
     "development": "primitive",
@@ -1888,8 +2025,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -115.993,
-    "temp_f": 102
+    "lng": -112.913316,
+    "temp_f": 102,
+    "huc_cd": "16020306",
+    "nwis": {
+      "site_no": "414210112544501",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": 46,
@@ -1932,7 +2082,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.908,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 47,
@@ -1975,7 +2126,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.399,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 48,
@@ -2018,7 +2170,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.928,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 49,
@@ -2061,7 +2214,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.123,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 50,
@@ -2104,7 +2258,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.031,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 51,
@@ -2147,15 +2302,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.65,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 52,
     "name": "Hot Springs",
     "slug": "hot-springs",
-    "lat": 43.155,
+    "lat": 35.981947,
     "lon": -115.518,
-    "elevation_ft": null,
+    "elevation_ft": 3070.0,
     "temperature_f": 102,
     "access_type": "hike",
     "development": "primitive",
@@ -2189,8 +2345,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -115.518,
-    "temp_f": 102
+    "lng": -110.2606835,
+    "temp_f": 102,
+    "huc_cd": "15010008",
+    "nwis": {
+      "site_no": "355855110153600",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": 53,
@@ -2233,7 +2402,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.63,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 54,
@@ -2276,7 +2446,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.41,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 55,
@@ -2319,7 +2490,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.215,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 56,
@@ -2362,7 +2534,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.583,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 57,
@@ -2405,7 +2578,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.305,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 58,
@@ -2448,7 +2622,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.856,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 59,
@@ -2491,15 +2666,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.716,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 60,
     "name": "Twin Springs",
     "slug": "twin-springs",
-    "lat": 43.671,
+    "lat": 39.41522219,
     "lon": -115.696,
-    "elevation_ft": null,
+    "elevation_ft": 4820.0,
     "temperature_f": 102,
     "access_type": "hike",
     "development": "primitive",
@@ -2533,8 +2709,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -115.696,
-    "temp_f": 102
+    "lng": -113.8747122,
+    "temp_f": 102,
+    "huc_cd": "16020301",
+    "nwis": {
+      "site_no": "392455113522601",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": 61,
@@ -2577,7 +2766,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.434,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 62,
@@ -2620,7 +2810,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.543,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 63,
@@ -2663,7 +2854,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.553,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 64,
@@ -2706,7 +2898,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.931,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 65,
@@ -2749,7 +2942,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.952,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 66,
@@ -2792,7 +2986,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.739,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 67,
@@ -2835,7 +3030,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.291,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 68,
@@ -2878,7 +3074,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.305,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 69,
@@ -2921,7 +3118,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.722,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 70,
@@ -2964,7 +3162,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.658,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 71,
@@ -3007,7 +3206,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.816,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 72,
@@ -3050,7 +3250,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.116,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 73,
@@ -3093,7 +3294,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.829,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 74,
@@ -3136,7 +3338,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.046,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 75,
@@ -3179,7 +3382,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.231,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 76,
@@ -3222,7 +3426,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.288,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 77,
@@ -3265,7 +3470,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.693,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 78,
@@ -3308,7 +3514,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.841,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 79,
@@ -3351,7 +3558,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.685,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 80,
@@ -3394,7 +3602,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.826,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 81,
@@ -3437,7 +3646,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.617,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 82,
@@ -3480,7 +3690,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.885,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 83,
@@ -3523,7 +3734,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.34,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 84,
@@ -3566,7 +3778,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.652,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 85,
@@ -3609,7 +3822,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.948,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 86,
@@ -3652,15 +3866,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.818,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 87,
     "name": "Owen Cabin Hot Spring",
     "slug": "owen-cabin-hot-spring",
-    "lat": 44.652,
+    "lat": 31.362,
     "lon": -114.734,
-    "elevation_ft": null,
+    "elevation_ft": 5556.0,
     "temperature_f": 102,
     "access_type": "hike",
     "development": "primitive",
@@ -3694,8 +3909,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -114.734,
-    "temp_f": 102
+    "lng": -110.2843333,
+    "temp_f": 102,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    },
+    "huc_cd": "15050202",
+    "nwis": {
+      "site_no": "312143110170401",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    }
   },
   {
     "id": 88,
@@ -3738,7 +3966,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.354,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 89,
@@ -3781,7 +4010,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.859,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 90,
@@ -3824,13 +4054,14 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.401,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 91,
     "name": "Cox Hot Springs",
     "slug": "cox-hot-springs",
-    "lat": 44.785,
+    "lat": 37.58192219,
     "lon": -114.855,
     "elevation_ft": null,
     "temperature_f": 102,
@@ -3866,8 +4097,20 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -114.855,
-    "temp_f": 102
+    "lng": -113.1182826,
+    "temp_f": 102,
+    "huc_cd": "16030006",
+    "nwis": {
+      "site_no": "373455113070301",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": 92,
@@ -3910,15 +4153,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.842,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 93,
     "name": "Willow Creek Hot Spring",
     "slug": "willow-creek-hot-spring",
-    "lat": 43.637,
+    "lat": 39.7605216,
     "lon": -115.13,
-    "elevation_ft": null,
+    "elevation_ft": 5335.0,
     "temperature_f": 102,
     "access_type": "hike",
     "development": "primitive",
@@ -3952,8 +4196,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -115.13,
-    "temp_f": 102
+    "lng": -109.6112425,
+    "temp_f": 102,
+    "huc_cd": "14060006",
+    "nwis": {
+      "site_no": "394538109363801",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": 94,
@@ -3996,7 +4253,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.442,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 95,
@@ -4039,7 +4297,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.851,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 96,
@@ -4082,7 +4341,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.71,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 97,
@@ -4125,7 +4385,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.198,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 98,
@@ -4168,7 +4429,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.167,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 99,
@@ -4211,7 +4473,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.697,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 100,
@@ -4254,7 +4517,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.604,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 101,
@@ -4297,7 +4561,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.943,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 102,
@@ -4340,7 +4605,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.754,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 103,
@@ -4383,7 +4649,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.627,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 104,
@@ -4426,7 +4693,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.267,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 105,
@@ -4469,7 +4737,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.687,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 106,
@@ -4512,7 +4781,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -113.861,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 107,
@@ -4555,7 +4825,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.264,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 108,
@@ -4598,7 +4869,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.723,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 109,
@@ -4641,7 +4913,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.696,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 110,
@@ -4684,7 +4957,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.79,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 111,
@@ -4727,7 +5001,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.207,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 112,
@@ -4770,7 +5045,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.912,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 113,
@@ -4813,7 +5089,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.044,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 114,
@@ -4856,7 +5133,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.327,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 115,
@@ -4899,7 +5177,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.435,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 116,
@@ -4942,7 +5221,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.07,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 117,
@@ -4985,7 +5265,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.295,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 118,
@@ -5028,7 +5309,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.173,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 119,
@@ -5071,15 +5353,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.988,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 120,
     "name": "Pierson Hot Springs",
     "slug": "pierson-hot-springs",
-    "lat": 43.99,
+    "lat": 39.90549725,
     "lon": -114.8,
-    "elevation_ft": null,
+    "elevation_ft": 4298.0,
     "temperature_f": 102,
     "access_type": "hike",
     "development": "primitive",
@@ -5113,8 +5396,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -114.8,
-    "temp_f": 102
+    "lng": -113.4313717,
+    "temp_f": 102,
+    "huc_cd": "16020306",
+    "nwis": {
+      "site_no": "395920113255000",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": 121,
@@ -5157,7 +5453,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.085,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 122,
@@ -5200,7 +5497,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.203,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 123,
@@ -5243,7 +5541,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.725,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 124,
@@ -5286,7 +5585,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.865,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 125,
@@ -5329,7 +5629,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.807,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 126,
@@ -5372,7 +5673,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.509,
-    "temp_f": 95
+    "temp_f": 95,
+    "_provenance": {}
   },
   {
     "id": 127,
@@ -5415,7 +5717,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.495,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 128,
@@ -5458,7 +5761,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.726,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 129,
@@ -5501,7 +5805,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.983,
-    "temp_f": 90
+    "temp_f": 90,
+    "_provenance": {}
   },
   {
     "id": 130,
@@ -5544,7 +5849,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.045,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 131,
@@ -5587,7 +5893,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.872,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 132,
@@ -5630,7 +5937,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.239,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 133,
@@ -5673,7 +5981,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.296,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 134,
@@ -5716,7 +6025,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.643,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 135,
@@ -5759,7 +6069,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.458,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 136,
@@ -5802,7 +6113,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.743,
-    "temp_f": 90
+    "temp_f": 90,
+    "_provenance": {}
   },
   {
     "id": 137,
@@ -5845,7 +6157,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.378,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 138,
@@ -5888,15 +6201,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.239,
-    "temp_f": 90
+    "temp_f": 90,
+    "_provenance": {}
   },
   {
     "id": 139,
     "name": "Whittaker Warm Springs",
     "slug": "whittaker-warm-springs",
-    "lat": 44.612,
+    "lat": 35.8108383,
     "lon": -113.363,
-    "elevation_ft": null,
+    "elevation_ft": 6310.0,
     "temperature_f": 85,
     "access_type": "hike",
     "development": "primitive",
@@ -5930,8 +6244,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -113.363,
-    "temp_f": 85
+    "lng": -110.5290235,
+    "temp_f": 85,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    },
+    "huc_cd": "15020013",
+    "nwis": {
+      "site_no": "354839110314200",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    }
   },
   {
     "id": 140,
@@ -5974,7 +6301,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.715,
-    "temp_f": 90
+    "temp_f": 90,
+    "_provenance": {}
   },
   {
     "id": 141,
@@ -6017,7 +6345,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -113.564,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 142,
@@ -6060,7 +6389,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.592,
-    "temp_f": 90
+    "temp_f": 90,
+    "_provenance": {}
   },
   {
     "id": 143,
@@ -6103,7 +6433,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -117.042,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 144,
@@ -6146,7 +6477,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -113.107,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 145,
@@ -6189,7 +6521,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.325,
-    "temp_f": 90
+    "temp_f": 90,
+    "_provenance": {}
   },
   {
     "id": 146,
@@ -6232,7 +6565,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.189,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 147,
@@ -6275,7 +6609,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.01,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 148,
@@ -6318,15 +6653,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.018,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 149,
     "name": "Robinson Bar Hot Springs",
     "slug": "robinson-bar-hot-springs",
-    "lat": 44.247,
+    "lat": 37.27664836,
     "lon": -114.676,
-    "elevation_ft": null,
+    "elevation_ft": 5950.0,
     "temperature_f": 102,
     "access_type": "hike",
     "development": "primitive",
@@ -6360,8 +6696,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -114.676,
-    "temp_f": 102
+    "lng": -112.3438102,
+    "temp_f": 102,
+    "huc_cd": "15010003",
+    "nwis": {
+      "site_no": "371636112203501",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": 150,
@@ -6404,15 +6753,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.499,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 151,
     "name": "Sharkey Hot Spring",
     "slug": "sharkey-hot-spring",
-    "lat": 45.013,
+    "lat": 35.94611379,
     "lon": -113.605,
-    "elevation_ft": null,
+    "elevation_ft": 5980.0,
     "temperature_f": 102,
     "access_type": "hike",
     "development": "primitive",
@@ -6446,8 +6796,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -113.605,
-    "temp_f": 102
+    "lng": -110.4909679,
+    "temp_f": 102,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    },
+    "huc_cd": "15020012",
+    "nwis": {
+      "site_no": "355646110292500",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    }
   },
   {
     "id": 152,
@@ -6490,7 +6853,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.486,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 153,
@@ -6533,7 +6897,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -113.918,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 154,
@@ -6576,7 +6941,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.907,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 155,
@@ -6619,7 +6985,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.487,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 156,
@@ -6662,15 +7029,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.486,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 157,
     "name": "Shower Bath Springs",
     "slug": "shower-bath-springs",
-    "lat": 44.628,
+    "lat": 36.46720574,
     "lon": -114.601,
-    "elevation_ft": null,
+    "elevation_ft": 2880.0,
     "temperature_f": 102,
     "access_type": "hike",
     "development": "primitive",
@@ -6704,16 +7072,29 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -114.601,
-    "temp_f": 102
+    "lng": -112.6301906,
+    "temp_f": 102,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    },
+    "huc_cd": "15010003",
+    "nwis": {
+      "site_no": "362802112374601",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    }
   },
   {
     "id": 158,
     "name": "Trail Creek Hot Spring",
     "slug": "trail-creek-hot-spring",
-    "lat": 44.626,
+    "lat": 37.79665487,
     "lon": -115.749,
-    "elevation_ft": null,
+    "elevation_ft": 5350.0,
     "temperature_f": 102,
     "access_type": "hike",
     "development": "primitive",
@@ -6747,8 +7128,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -115.749,
-    "temp_f": 102
+    "lng": -111.4129465,
+    "temp_f": 102,
+    "huc_cd": "14070005",
+    "nwis": {
+      "site_no": "374748111244401",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": 159,
@@ -6791,15 +7185,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.624,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 160,
     "name": "Rocky Canyon Hot Springs",
     "slug": "rocky-canyon-hot-springs",
-    "lat": 44.253,
+    "lat": 35.80415479,
     "lon": -115.891,
-    "elevation_ft": null,
+    "elevation_ft": 1800.0,
     "temperature_f": 102,
     "access_type": "hike",
     "development": "primitive",
@@ -6833,8 +7228,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -115.891,
-    "temp_f": 102
+    "lng": -113.322987,
+    "temp_f": 102,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    },
+    "huc_cd": "15010002",
+    "nwis": {
+      "site_no": "354815113192000",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    }
   },
   {
     "id": 161,
@@ -6877,7 +7285,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.806,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 162,
@@ -6920,7 +7329,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.872,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 163,
@@ -6963,7 +7373,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.035,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 164,
@@ -7006,7 +7417,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -113.779,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 165,
@@ -7049,7 +7461,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.037,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 166,
@@ -7092,7 +7505,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.463,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 167,
@@ -7135,7 +7549,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.715,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 168,
@@ -7178,7 +7593,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.616,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 169,
@@ -7221,7 +7637,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.939,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 170,
@@ -7264,15 +7681,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.172,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 171,
     "name": "Running Warm Springs",
     "slug": "running-warm-springs",
-    "lat": 45.852,
+    "lat": 36.6738884,
     "lon": -114.937,
-    "elevation_ft": null,
+    "elevation_ft": 5638.0,
     "temperature_f": 85,
     "access_type": "hike",
     "development": "primitive",
@@ -7306,8 +7724,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -114.937,
-    "temp_f": 85
+    "lng": -110.1837398,
+    "temp_f": 85,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    },
+    "huc_cd": "14080204",
+    "nwis": {
+      "site_no": "364026110105901",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    }
   },
   {
     "id": 172,
@@ -7350,7 +7781,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.819,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 173,
@@ -7393,7 +7825,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.208,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 174,
@@ -7436,15 +7869,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.83,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 175,
     "name": "Bruneau Hot Spring",
     "slug": "bruneau-hot-spring",
-    "lat": 42.798,
+    "lat": 40.2030184,
     "lon": -115.742,
-    "elevation_ft": null,
+    "elevation_ft": 4740.0,
     "temperature_f": 102,
     "access_type": "hike",
     "development": "primitive",
@@ -7478,8 +7912,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -115.742,
-    "temp_f": 102
+    "lng": -109.6190265,
+    "temp_f": 102,
+    "huc_cd": "14060001",
+    "nwis": {
+      "site_no": "401211109370600",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": 176,
@@ -7522,7 +7969,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -113.511,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 177,
@@ -7565,7 +8013,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.443,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 178,
@@ -7608,7 +8057,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.802,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 179,
@@ -7651,7 +8101,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.838,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 180,
@@ -7694,7 +8145,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.539,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 181,
@@ -7737,15 +8189,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.585,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 182,
     "name": "Rockland Warm Springs",
     "slug": "rockland-warm-springs",
-    "lat": 42.545,
+    "lat": 36.9144295,
     "lon": -112.906,
-    "elevation_ft": null,
+    "elevation_ft": 5225.0,
     "temperature_f": 85,
     "access_type": "hike",
     "development": "primitive",
@@ -7779,8 +8232,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -112.906,
-    "temp_f": 85
+    "lng": -112.7615942,
+    "temp_f": 85,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    },
+    "huc_cd": "15010003",
+    "nwis": {
+      "site_no": "365452112453901",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    }
   },
   {
     "id": 183,
@@ -7823,7 +8289,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.834,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 184,
@@ -7866,7 +8333,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.109,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 185,
@@ -7909,15 +8377,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.739,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 186,
     "name": "Poison Springs",
     "slug": "poison-springs",
-    "lat": 42.637,
+    "lat": 36.8708333,
     "lon": -114.892,
-    "elevation_ft": null,
+    "elevation_ft": 6470.0,
     "temperature_f": 102,
     "access_type": "hike",
     "development": "primitive",
@@ -7951,16 +8420,29 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -114.892,
-    "temp_f": 102
+    "lng": -112.7402778,
+    "temp_f": 102,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    },
+    "huc_cd": "15020012",
+    "nwis": {
+      "site_no": "365215112442501",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    }
   },
   {
     "id": 187,
     "name": "Mormon Ranch Warm Spring",
     "slug": "mormon-ranch-warm-spring",
-    "lat": 44.951,
+    "lat": 40.3971663,
     "lon": -114.704,
-    "elevation_ft": null,
+    "elevation_ft": 5000.0,
     "temperature_f": 85,
     "access_type": "hike",
     "development": "primitive",
@@ -7994,8 +8476,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -114.704,
-    "temp_f": 85
+    "lng": -112.421896,
+    "temp_f": 85,
+    "huc_cd": "16020304",
+    "nwis": {
+      "site_no": "402350112251601",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": 188,
@@ -8038,7 +8533,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.738,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 189,
@@ -8081,7 +8577,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.192,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 190,
@@ -8124,7 +8621,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.046,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 191,
@@ -8167,7 +8665,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.563,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 192,
@@ -8210,7 +8709,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.021,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 193,
@@ -8253,7 +8753,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.09,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 194,
@@ -8296,7 +8797,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.707,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 195,
@@ -8339,7 +8841,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.82,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 196,
@@ -8382,7 +8885,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.762,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 197,
@@ -8425,13 +8929,14 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.301,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 198,
     "name": "Sheepeater Hot Springs",
     "slug": "sheepeater-hot-springs",
-    "lat": 44.628,
+    "lat": 37.4999757,
     "lon": -115.197,
     "elevation_ft": null,
     "temperature_f": 102,
@@ -8467,8 +8972,20 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -115.197,
-    "temp_f": 102
+    "lng": -114.0258129,
+    "temp_f": 102,
+    "huc_cd": "15010010",
+    "nwis": {
+      "site_no": "373000114013001",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": 199,
@@ -8511,7 +9028,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.663,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 200,
@@ -8554,7 +9072,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.563,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 201,
@@ -8597,7 +9116,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.505,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 202,
@@ -8640,7 +9160,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.149,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 203,
@@ -8683,7 +9204,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.088,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 204,
@@ -8726,7 +9248,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.004,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 205,
@@ -8769,7 +9292,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.826,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 206,
@@ -8812,7 +9336,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -113.504,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 207,
@@ -8855,7 +9380,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.167,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 208,
@@ -8898,15 +9424,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -117.071,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 209,
     "name": "Big Spring",
     "slug": "big-spring",
-    "lat": 44.454,
+    "lat": 36.60193127,
     "lon": -112.696,
-    "elevation_ft": null,
+    "elevation_ft": 5560.0,
     "temperature_f": 85,
     "access_type": "hike",
     "development": "primitive",
@@ -8940,8 +9467,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -112.696,
-    "temp_f": 85
+    "lng": -112.3485147,
+    "temp_f": 85,
+    "huc_cd": "16020304",
+    "nwis": {
+      "site_no": "363607112205201",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": 210,
@@ -8984,15 +9524,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.703,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 211,
     "name": "Warm Springs",
     "slug": "warm-springs",
-    "lat": 43.816,
+    "lat": 40.6463304,
     "lon": -115.863,
-    "elevation_ft": null,
+    "elevation_ft": 4240.0,
     "temperature_f": 85,
     "access_type": "hike",
     "development": "primitive",
@@ -9026,8 +9567,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -115.863,
-    "temp_f": 85
+    "lng": -112.5246799,
+    "temp_f": 85,
+    "huc_cd": "16020304",
+    "nwis": {
+      "site_no": "403847112312601",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": 212,
@@ -9070,7 +9624,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.237,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 213,
@@ -9113,7 +9668,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.246,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 214,
@@ -9156,7 +9712,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.556,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 215,
@@ -9199,7 +9756,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.312,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 216,
@@ -9242,15 +9800,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -113.449,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 217,
     "name": "Soda Springs",
     "slug": "soda-springs",
-    "lat": 42.657,
+    "lat": 35.84056039,
     "lon": -111.604,
-    "elevation_ft": null,
+    "elevation_ft": 5840.0,
     "temperature_f": 102,
     "access_type": "hike",
     "development": "primitive",
@@ -9284,8 +9843,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -111.604,
-    "temp_f": 102
+    "lng": -110.3959647,
+    "temp_f": 102,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    },
+    "huc_cd": "15020013",
+    "nwis": {
+      "site_no": "355026110234300",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    }
   },
   {
     "id": 218,
@@ -9328,7 +9900,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.458,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 219,
@@ -9371,7 +9944,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.988,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 220,
@@ -9414,7 +9988,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.732,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 221,
@@ -9457,7 +10032,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.226,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 222,
@@ -9500,7 +10076,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.348,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 223,
@@ -9543,15 +10120,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.332,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 224,
     "name": "Kent Warm Spring",
     "slug": "kent-warm-spring",
-    "lat": 42.339,
+    "lat": 36.32971778,
     "lon": -112.436,
-    "elevation_ft": null,
+    "elevation_ft": 5750.0,
     "temperature_f": 85,
     "access_type": "hike",
     "development": "primitive",
@@ -9585,8 +10163,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -112.436,
-    "temp_f": 85
+    "lng": -110.6723639,
+    "temp_f": 85,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    },
+    "huc_cd": "15020018",
+    "nwis": {
+      "site_no": "361947110401801",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    }
   },
   {
     "id": 225,
@@ -9629,7 +10220,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.396,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 226,
@@ -9672,15 +10264,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -113.884,
-    "temp_f": 85
+    "temp_f": 85,
+    "_provenance": {}
   },
   {
     "id": 227,
     "name": "Rice Spring Ward Spring",
     "slug": "rice-spring-ward-spring",
-    "lat": 42.286,
+    "lat": 41.7207562,
     "lon": -113.446,
-    "elevation_ft": null,
+    "elevation_ft": 4220.0,
     "temperature_f": 102,
     "access_type": "hike",
     "development": "primitive",
@@ -9714,8 +10307,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -113.446,
-    "temp_f": 102
+    "lng": -112.9397058,
+    "temp_f": 102,
+    "huc_cd": "16020309",
+    "nwis": {
+      "site_no": "414315112562001",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": 228,
@@ -9758,7 +10364,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -113.39,
-    "temp_f": 105
+    "temp_f": 105,
+    "_provenance": {}
   },
   {
     "id": 229,
@@ -9801,7 +10408,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.571,
-    "temp_f": 105
+    "temp_f": 105,
+    "_provenance": {}
   },
   {
     "id": 230,
@@ -9844,7 +10452,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.518,
-    "temp_f": 105
+    "temp_f": 105,
+    "_provenance": {}
   },
   {
     "id": 231,
@@ -9887,7 +10496,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -116.015,
-    "temp_f": 105
+    "temp_f": 105,
+    "_provenance": {}
   },
   {
     "id": 232,
@@ -9930,7 +10540,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.80198,
-    "temp_f": 105
+    "temp_f": 105,
+    "_provenance": {}
   },
   {
     "id": 233,
@@ -9973,15 +10584,16 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.17,
-    "temp_f": 106
+    "temp_f": 106,
+    "_provenance": {}
   },
   {
     "id": 234,
     "name": "Yellowstone Hot Springs",
     "slug": "yellowstone-hot-springs",
-    "lat": 45.03,
+    "lat": 36.73021944,
     "lon": -110.72,
-    "elevation_ft": null,
+    "elevation_ft": 5340.0,
     "temperature_f": 104,
     "access_type": "resort",
     "development": "resort",
@@ -10015,8 +10627,21 @@
     "water_flow": "unknown",
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
-    "lng": -110.72,
-    "temp_f": 104
+    "lng": -112.9423806,
+    "temp_f": 104,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    },
+    "huc_cd": "15010003",
+    "nwis": {
+      "site_no": "364352112563301",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    }
   },
   {
     "id": 235,
@@ -10059,7 +10684,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.68,
-    "temp_f": 106
+    "temp_f": 106,
+    "_provenance": {}
   },
   {
     "id": 236,
@@ -10102,7 +10728,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -115.08,
-    "temp_f": 106
+    "temp_f": 106,
+    "_provenance": {}
   },
   {
     "id": 237,
@@ -10145,7 +10772,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.71,
-    "temp_f": 155
+    "temp_f": 155,
+    "_provenance": {}
   },
   {
     "id": 238,
@@ -10188,7 +10816,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.03,
-    "temp_f": 151
+    "temp_f": 151,
+    "_provenance": {}
   },
   {
     "id": 239,
@@ -10231,7 +10860,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.6,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 240,
@@ -10274,7 +10904,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.83,
-    "temp_f": 100
+    "temp_f": 100,
+    "_provenance": {}
   },
   {
     "id": 241,
@@ -10317,7 +10948,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -113.4,
-    "temp_f": 100
+    "temp_f": 100,
+    "_provenance": {}
   },
   {
     "id": 242,
@@ -10360,7 +10992,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -110.35,
-    "temp_f": 100
+    "temp_f": 100,
+    "_provenance": {}
   },
   {
     "id": 243,
@@ -10403,7 +11036,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.11,
-    "temp_f": 102
+    "temp_f": 102,
+    "_provenance": {}
   },
   {
     "id": 244,
@@ -10446,7 +11080,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.01,
-    "temp_f": 107
+    "temp_f": 107,
+    "_provenance": {}
   },
   {
     "id": 245,
@@ -10489,7 +11124,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -109,
-    "temp_f": 100
+    "temp_f": 100,
+    "_provenance": {}
   },
   {
     "id": 246,
@@ -10532,7 +11168,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.1,
-    "temp_f": 93
+    "temp_f": 93,
+    "_provenance": {}
   },
   {
     "id": 247,
@@ -10575,7 +11212,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -111.7,
-    "temp_f": 193
+    "temp_f": 193,
+    "_provenance": {}
   },
   {
     "id": 248,
@@ -10618,7 +11256,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.4,
-    "temp_f": 140
+    "temp_f": 140,
+    "_provenance": {}
   },
   {
     "id": 249,
@@ -10661,7 +11300,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112,
-    "temp_f": 100
+    "temp_f": 100,
+    "_provenance": {}
   },
   {
     "id": 250,
@@ -10704,7 +11344,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.7,
-    "temp_f": 80
+    "temp_f": 80,
+    "_provenance": {}
   },
   {
     "id": 251,
@@ -10747,7 +11388,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -108.4,
-    "temp_f": 77
+    "temp_f": 77,
+    "_provenance": {}
   },
   {
     "id": 252,
@@ -10790,7 +11432,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.365,
-    "temp_f": 95
+    "temp_f": 95,
+    "_provenance": {}
   },
   {
     "id": 253,
@@ -10833,7 +11476,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.1,
-    "temp_f": 95
+    "temp_f": 95,
+    "_provenance": {}
   },
   {
     "id": 254,
@@ -10876,7 +11520,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -113.99,
-    "temp_f": 100
+    "temp_f": 100,
+    "_provenance": {}
   },
   {
     "id": 255,
@@ -10919,7 +11564,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -114.2,
-    "temp_f": 100
+    "temp_f": 100,
+    "_provenance": {}
   },
   {
     "id": 256,
@@ -10962,7 +11608,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -112.2,
-    "temp_f": 105
+    "temp_f": 105,
+    "_provenance": {}
   },
   {
     "id": 257,
@@ -11005,7 +11652,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -108.21,
-    "temp_f": 104
+    "temp_f": 104,
+    "_provenance": {}
   },
   {
     "id": 258,
@@ -11048,7 +11696,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -106.78,
-    "temp_f": 112
+    "temp_f": 112,
+    "_provenance": {}
   },
   {
     "id": 259,
@@ -11091,7 +11740,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -110.7,
-    "temp_f": 110
+    "temp_f": 110,
+    "_provenance": {}
   },
   {
     "id": 260,
@@ -11134,7 +11784,8 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -106.8,
-    "temp_f": 100
+    "temp_f": 100,
+    "_provenance": {}
   },
   {
     "id": 261,
@@ -11177,6 +11828,7 @@
     "created_at": "2026-04-30 00:46:27",
     "updated_at": "2026-04-30 00:46:27",
     "lng": -110.85,
-    "temp_f": 105
+    "temp_f": 105,
+    "_provenance": {}
   }
 ]

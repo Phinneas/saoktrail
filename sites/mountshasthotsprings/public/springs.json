@@ -3,15 +3,29 @@
     "id": "1",
     "slug": "franklin-hot-springs",
     "name": "Franklin Hot Springs",
-    "lat": 35.5878,
-    "lng": -120.6421,
+    "lat": 45.17817306,
+    "lng": -121.5736828,
     "temp_f": null,
     "fee": null,
     "access_type": "Drive-up",
     "season": "Year-round",
     "description": "Hot springs in the Central Coast region of California.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 5252.0,
+    "huc_cd": "17120009",
+    "nwis": {
+      "site_no": "451042121342100",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "2",
@@ -25,7 +39,8 @@
     "season": "N/A",
     "description": "Geothermal field in the Mayacamas Mountains. Not a soaking spring \u2014 the world's largest geothermal steam field used for power generation.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "_provenance": {}
   },
   {
     "id": "3",
@@ -39,7 +54,8 @@
     "season": "Year-round",
     "description": "Geothermal hot springs in the remote Surprise Valley of Northeastern California near the Nevada border.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "_provenance": {}
   },
   {
     "id": "4",
@@ -53,7 +69,8 @@
     "season": "Year-round",
     "description": "Hot springs near Lake City in Modoc County, Northeastern California.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "_provenance": {}
   },
   {
     "id": "5",
@@ -67,35 +84,153 @@
     "season": "Year-round",
     "description": "Geothermal feature near Lassen Volcanic National Park with extremely hot water. Not recommended for soaking.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "osm": {
+      "osm_id": 358800325,
+      "osm_name": "Terminal Geyser",
+      "osm_url": "https://www.openstreetmap.org/node/358800325",
+      "match_distance_miles": 0.12,
+      "tags": {
+        "ele": "1785",
+        "geyser:type": "volcanic",
+        "gnis:feature_id": "268155",
+        "name": "Terminal Geyser",
+        "natural": "hot_spring",
+        "note": "this is not technically a geyser as name suggests",
+        "tourism": "attraction"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "path",
+            "name": "Pacific Crest Trail",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Terminal Geyser Trail",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Chester-Warner Valley Road",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": null,
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "path",
+            "name": "Pacific Crest Trail",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "Terminal Geyser Trail",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          }
+        ],
+        "buildings": [],
+        "amenities": [
+          {
+            "type": "tourism:attraction",
+            "name": "Terminal Geyser"
+          }
+        ]
+      }
+    },
+    "_provenance": {}
   },
   {
     "id": "6",
     "slug": "wendel-hot-springs",
     "name": "Wendel Hot Springs",
-    "lat": 40.355,
-    "lng": -120.257,
+    "lat": 43.38274444,
+    "lng": -119.1145389,
     "temp_f": 205,
     "fee": null,
     "access_type": "Drive-up",
     "season": "Year-round",
     "description": "Natural hot springs in Lassen County near the Nevada border.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 4791.0,
+    "huc_cd": "17120009",
+    "nwis": {
+      "site_no": "432258119065201",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "7",
     "slug": "morgan-hot-spring",
     "name": "Morgan Hot Spring",
-    "lat": 40.382,
-    "lng": -121.513,
+    "lat": 45.8800694,
+    "lng": -117.9393694,
     "temp_f": 205,
     "fee": null,
     "access_type": "Hike-in",
     "season": "Year-round",
     "description": "Geothermal hot spring near Lassen Volcanic National Park.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 4493.0,
+    "huc_cd": "16040201",
+    "nwis": {
+      "site_no": "455248117562201",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "8",
@@ -109,28 +244,43 @@
     "season": "Year-round",
     "description": "Remote hot springs in Modoc County, Northeastern California.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "_provenance": {}
   },
   {
     "id": "9",
     "slug": "whitmore-hot-springs",
     "name": "Whitmore Hot Springs",
-    "lat": 37.6324,
-    "lng": -118.8124,
+    "lat": 43.2396222,
+    "lng": -119.2402083,
     "temp_f": null,
     "fee": null,
     "access_type": "Drive-up",
     "season": "Year-round",
     "description": "Natural hot springs in the Eastern Sierra near Mammoth Lakes.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 5242.0,
+    "huc_cd": "17120007",
+    "nwis": {
+      "site_no": "431423119142501",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "10",
     "slug": "hill-top-hot-springs",
     "name": "Hill Top Hot Springs",
-    "lat": 37.6642,
-    "lng": -118.7883,
+    "lat": 43.54009167,
+    "lng": -119.0816806,
     "temp_f": null,
     "fee": 0,
     "access_type": "Hike-in",
@@ -139,14 +289,28 @@
     "description": "Free natural hot spring tubs in the Eastern Sierra with panoramic views of the Sierra Nevada.",
     "best_time": "Sunrise or sunset for best views",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 4151.0,
+    "huc_cd": "17120002",
+    "nwis": {
+      "site_no": "433224119045401",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "11",
     "slug": "willys-hot-spring",
     "name": "Willy's Hot Spring",
-    "lat": 37.6591,
-    "lng": -118.8425,
+    "lat": 45.79111667,
+    "lng": -118.0476389,
     "temp_f": null,
     "fee": 0,
     "access_type": "Hike-in",
@@ -155,14 +319,28 @@
     "description": "Popular free hot spring along the John Muir Trail near Mammoth Lakes.",
     "best_time": "Weekday mornings",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 5433.0,
+    "huc_cd": "17050109",
+    "nwis": {
+      "site_no": "454728118025201",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "12",
     "slug": "crab-cooker-hot-springs",
     "name": "Crab Cooker Hot Springs",
-    "lat": 37.6633,
-    "lng": -118.7995,
+    "lat": 42.7984361,
+    "lng": -121.6686472,
     "temp_f": null,
     "fee": 0,
     "access_type": "Hike-in",
@@ -170,14 +348,28 @@
     "clothing": "Clothing optional",
     "description": "Natural rock-walled hot spring near Mammoth Lakes in the Eastern Sierra.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 5517.0,
+    "huc_cd": "17120008",
+    "nwis": {
+      "site_no": "424754121400701",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "13",
     "slug": "shepard-hot-springs",
     "name": "Shepard Hot Springs",
-    "lat": 37.6668,
-    "lng": -118.8025,
+    "lat": 45.716725,
+    "lng": -118.0950778,
     "temp_f": null,
     "fee": 0,
     "access_type": "Hike-in",
@@ -185,21 +377,49 @@
     "clothing": "Clothing optional",
     "description": "Secluded natural hot spring tub near Mammoth Lakes in the Eastern Sierra.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 5594.0,
+    "huc_cd": "17120009",
+    "nwis": {
+      "site_no": "454300118054201",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "14",
     "slug": "rock-tub-hot-springs",
     "name": "Rock Tub Hot Springs",
-    "lat": 37.6474,
-    "lng": -118.808,
+    "lat": 44.45939167,
+    "lng": -117.6396139,
     "temp_f": null,
     "fee": 0,
     "access_type": "Hike-in",
     "season": "Year-round",
     "description": "Small natural hot spring tub near Mammoth Lakes in the Eastern Sierra.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 4922.0,
+    "huc_cd": "17120003",
+    "nwis": {
+      "site_no": "442734117382301",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "15",
@@ -215,28 +435,43 @@
     "description": "Natural hot creek in the Eastern Sierra near Mammoth Lakes. Hot water mixes with cool creek flow.",
     "best_time": "Early morning for warmer water",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "_provenance": {}
   },
   {
     "id": "16",
     "slug": "reds-meadow-hot-springs",
     "name": "Red's Meadow Hot Springs",
-    "lat": 37.618,
-    "lng": -119.074,
+    "lat": 45.8100194,
+    "lng": -118.077761,
     "temp_f": null,
     "fee": null,
     "access_type": "Hike-in",
     "season": "Summer only",
     "description": "Natural hot springs near Red's Meadow Resort in the Ansel Adams Wilderness.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 4840.0,
+    "huc_cd": "17070102",
+    "nwis": {
+      "site_no": "454836118044001",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "17",
     "slug": "iva-bell-hot-springs",
     "name": "Iva Bell Hot Springs",
-    "lat": 37.532,
-    "lng": -119.025,
+    "lat": 44.1076361,
+    "lng": -121.4501139,
     "temp_f": null,
     "fee": 0,
     "access_type": "Hike-in",
@@ -246,7 +481,21 @@
     "best_time": "Late summer when trail is snow-free",
     "insider_tips": "Requires a 10+ mile hike. Bring everything you need \u2014 no services.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 5882.0,
+    "huc_cd": "17120008",
+    "nwis": {
+      "site_no": "440627121270001",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "18",
@@ -263,14 +512,15 @@
     "best_time": "Sunrise for fewer visitors",
     "insider_tips": "The pools closest to the road are the most visited. Walk further for more secluded options.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "_provenance": {}
   },
   {
     "id": "19",
     "slug": "wilbur-hot-springs",
     "name": "Wilbur Hot Springs",
-    "lat": 39.0365,
-    "lng": -122.4192,
+    "lat": 45.71885,
+    "lng": -118.1871917,
     "temp_f": 105,
     "fee": null,
     "access_type": "Resort",
@@ -279,14 +529,28 @@
     "description": "Historic resort with naturally flowing mineral springs in Colusa County. Temperature ranges from 98-112\u00b0F.",
     "best_time": "Midweek for availability",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 4857.0,
+    "huc_cd": "16040201",
+    "nwis": {
+      "site_no": "454308118111401",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "20",
     "slug": "sierra-hot-springs",
     "name": "Sierra Hot Springs",
-    "lat": 39.575,
-    "lng": -120.3481,
+    "lat": 44.2601,
+    "lng": -119.0174694,
     "temp_f": 104,
     "fee": null,
     "access_type": "Resort",
@@ -296,7 +560,21 @@
     "best_time": "Weekday visits for fewer crowds",
     "insider_tips": "Book in advance \u2014 it's a popular retreat destination.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 5405.0,
+    "huc_cd": "17120009",
+    "nwis": {
+      "site_no": "441536119010301",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "21",
@@ -310,21 +588,36 @@
     "season": "Year-round",
     "description": "Natural hot springs in the Santa Ynez Mountains behind Santa Barbara.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "_provenance": {}
   },
   {
     "id": "22",
     "slug": "little-caliente-hot-springs",
     "name": "Little Caliente Hot Springs",
-    "lat": 34.5405,
-    "lng": -119.6196,
+    "lat": 42.11119444,
+    "lng": -117.6993167,
     "temp_f": null,
     "fee": null,
     "access_type": "Hike-in",
     "season": "Year-round",
     "description": "Smaller hot springs near Big Caliente in the Santa Ynez Mountains.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 4979.0,
+    "huc_cd": "16040201",
+    "nwis": {
+      "site_no": "420640117415801",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "23",
@@ -338,63 +631,120 @@
     "season": "Year-round",
     "description": "Natural hot springs in the Los Padres National Forest near Santa Barbara.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "_provenance": {}
   },
   {
     "id": "24",
     "slug": "california-hot-springs",
     "name": "California Hot Springs",
-    "lat": 35.881,
-    "lng": -118.67,
+    "lat": 44.65035,
+    "lng": -117.4186722,
     "temp_f": 122,
     "fee": null,
     "access_type": "Drive-up",
     "season": "Year-round",
     "description": "Historic hot springs community in the Sierra Nevada foothills of Tulare County.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 3678.0,
+    "huc_cd": "17050202",
+    "nwis": {
+      "site_no": "443901117250701",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "25",
     "slug": "slates-hot-springs",
     "name": "Slates Hot Springs",
-    "lat": 36.123,
-    "lng": -121.64,
+    "lat": 44.1418472,
+    "lng": -119.375661,
     "temp_f": 122,
     "fee": null,
     "access_type": "Hike-in",
     "season": "Year-round",
     "description": "Coastal hot springs on the Big Sur coastline. Access requires hiking or boat.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 6120.0,
+    "huc_cd": "17050107",
+    "nwis": {
+      "site_no": "440831119223201",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "26",
     "slug": "desert-hot-springs",
     "name": "Desert Hot Springs",
-    "lat": 34.1167,
-    "lng": -116.3833,
+    "lat": 45.8367611,
+    "lng": -117.9916278,
     "temp_f": null,
     "fee": null,
     "access_type": "Drive-up",
     "season": "Year-round",
     "description": "Desert community with multiple spa resorts fed by natural mineral hot springs near Palm Springs.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 7160.0,
+    "huc_cd": "17120009",
+    "nwis": {
+      "site_no": "455012117593001",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "27",
     "slug": "coso-hot-springs",
     "name": "Coso Hot Springs",
-    "lat": 36.045,
-    "lng": -117.769,
+    "lat": 44.31012778,
+    "lng": -121.63466111,
     "temp_f": 207,
     "fee": null,
     "access_type": "Not accessible",
     "season": "N/A",
     "description": "Geothermal area within the Naval Air Weapons Station China Lake. Not accessible to the public.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 6562.0,
+    "huc_cd": "17120009",
+    "nwis": {
+      "site_no": "441836121380501",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "28",
@@ -408,13 +758,14 @@
     "season": "N/A",
     "description": "Geothermal area near Coso Hot Springs within military grounds. Not accessible to the public.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "_provenance": {}
   },
   {
     "id": "29",
     "name": "Bagby Hot Springs",
-    "lat": 44.935,
-    "lng": -122.174,
+    "lat": 44.93518056,
+    "lng": -122.1735028,
     "temp_f": 136,
     "fee": 5,
     "access_type": "Hike-in",
@@ -423,13 +774,140 @@
     "state": "OR",
     "description": "Historic bathhouse in Mt Hood National Forest, 1.4-mile hike to rustic cedar tubs.",
     "has_post": false,
-    "slug": "bagby-hot-springs"
+    "slug": "bagby-hot-springs",
+    "osm": {
+      "osm_id": 13309162416,
+      "osm_name": "Bagby Bathhouse",
+      "osm_url": "https://www.openstreetmap.org/node/13309162416",
+      "match_distance_miles": 0.03,
+      "tags": {
+        "amenity": "public_bath",
+        "bath:open_air": "no",
+        "bath:sand_bath": "no",
+        "bath:type": "hot_spring",
+        "name": "Bagby Bathhouse"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 6341",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 7020",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 70",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Forest Road 70",
+            "surface": "paved",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Bagby Trail #544",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Bagby Trail",
+            "surface": null,
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 6341",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 7020",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 70",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "Bagby Trail #544",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "Bagby Trail",
+            "surface": null,
+            "sac_scale": null
+          }
+        ],
+        "buildings": [],
+        "amenities": [
+          {
+            "type": "public_bath",
+            "name": "Bagby Communal Bathhouse"
+          },
+          {
+            "type": "toilets",
+            "name": null
+          },
+          {
+            "type": "public_bath",
+            "name": "Bagby Bathhouse"
+          }
+        ]
+      }
+    },
+    "elevation_ft": 4241.0,
+    "huc_cd": "171200030108",
+    "nwis": {
+      "site_no": "445607122102500",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "30",
     "name": "Breitenbush Hot Springs",
-    "lat": 44.782,
-    "lng": -121.976,
+    "lat": 44.78151024,
+    "lng": -121.9772965,
     "temp_f": 112,
     "fee": 25,
     "access_type": "Drive-up",
@@ -438,13 +916,27 @@
     "state": "OR",
     "description": "Retreat center with natural rock pools along the Breitenbush River.",
     "has_post": false,
-    "slug": "breitenbush-hot-springs"
+    "slug": "breitenbush-hot-springs",
+    "elevation_ft": 5382.0,
+    "huc_cd": "17050202",
+    "nwis": {
+      "site_no": "444654121583400",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "31",
     "name": "Terwilliger (Cougar) Hot Springs",
-    "lat": 44.083,
-    "lng": -122.239,
+    "lat": 44.08340278,
+    "lng": -122.2387889,
     "temp_f": 104,
     "fee": 5,
     "access_type": "Hike-in",
@@ -453,7 +945,21 @@
     "state": "OR",
     "description": "Deep turquoise pool in old-growth forest, 0.25-mile hike from trailhead.",
     "has_post": false,
-    "slug": "terwilliger-cougar-hot-springs"
+    "slug": "terwilliger-cougar-hot-springs",
+    "elevation_ft": 1745.0,
+    "huc_cd": "17090004",
+    "nwis": {
+      "site_no": "440500122142000",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "32",
@@ -468,13 +974,135 @@
     "state": "OR",
     "description": "Scenic pools overlooking the Umpqua River, 0.3-mile hike.",
     "has_post": false,
-    "slug": "umpqua-hot-springs"
+    "slug": "umpqua-hot-springs",
+    "osm": {
+      "osm_id": 6721640185,
+      "osm_name": "Umpqua Hot Springs",
+      "osm_url": "https://www.openstreetmap.org/node/6721640185",
+      "match_distance_miles": 0.02,
+      "tags": {
+        "amenity": "public_bath",
+        "bath:open_air": "yes",
+        "bath:type": "hot_spring",
+        "name": "Umpqua Hot Springs",
+        "name:de": "Umpqua Heisse Quelle",
+        "natural": "hot_spring",
+        "nudism": "permissive"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Forest Road 3401",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "National Forest Development Road 252",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Forest Road 3401-500",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "National Forest Development Road 3402",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Toketee-Rigdon Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "North Umpqua Trail: Dread and Terror",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "North Umpqua Trail: Hot Springs",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "National Forest Development Road 252",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "North Umpqua Trail: Dread and Terror",
+            "surface": "unpaved",
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "North Umpqua Trail: Hot Springs",
+            "surface": "unpaved",
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          }
+        ],
+        "buildings": [],
+        "amenities": [
+          {
+            "type": "public_bath",
+            "name": "Umpqua Hot Springs"
+          },
+          {
+            "type": "toilets",
+            "name": null
+          },
+          {
+            "type": "tourism:information",
+            "name": null
+          }
+        ]
+      }
+    },
+    "_provenance": {}
   },
   {
     "id": "33",
     "name": "McCredie Hot Springs",
-    "lat": 43.706,
-    "lng": -122.288,
+    "lat": 43.50061944,
+    "lng": -118.5275194,
     "temp_f": 115,
     "fee": 0,
     "access_type": "Hike-in",
@@ -483,13 +1111,392 @@
     "state": "OR",
     "description": "Free roadside springs along the North Fork of the Willamette River.",
     "has_post": false,
-    "slug": "mccredie-hot-springs"
+    "slug": "mccredie-hot-springs",
+    "osm": {
+      "osm_id": 3635584298,
+      "osm_name": "McCredie Hot Springs - North Bank",
+      "osm_url": "https://www.openstreetmap.org/node/3635584298",
+      "match_distance_miles": 0,
+      "tags": {
+        "name": "McCredie Hot Springs - North Bank",
+        "natural": "hot_spring"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "track",
+            "name": "Forest Road 5874-342",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5871-321",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Warner Creek Road",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5870",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5800-371",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5874",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5871-371",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5871-323",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5871-322",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5874-341",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5874-340",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5874-302",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5877-351",
+            "surface": "dirt",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5877-352",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5870-245",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5870-120",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": "paved",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Shady Gap Road",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5875-210",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5875",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5875-125",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5875-126",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Forest Road 5875-128",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5875-104",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5876-130",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5876",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5875-124",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": "ground",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Forest Road 5875",
+            "surface": "unpaved",
+            "access": null
+          }
+        ],
+        "parking": [
+          {
+            "name": null,
+            "capacity": null,
+            "access": null,
+            "fee": null
+          }
+        ],
+        "trails": [
+          {
+            "type": "track",
+            "name": "Forest Road 5874-342",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5871-321",
+            "surface": "gravel",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5870",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5800-371",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5874",
+            "surface": "gravel",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5871-371",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5871-323",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5871-322",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5874-341",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5874-340",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5874-302",
+            "surface": "gravel",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5877-351",
+            "surface": "dirt",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5877-352",
+            "surface": "gravel",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5870-245",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5870-120",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5875-210",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5875",
+            "surface": "unpaved",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5875-125",
+            "surface": "gravel",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5875-126",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": "gravel",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5875-104",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5876-130",
+            "surface": "gravel",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5876",
+            "surface": "gravel",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 5875-124",
+            "surface": "gravel",
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": "ground",
+            "sac_scale": null
+          }
+        ],
+        "buildings": [],
+        "amenities": [
+          {
+            "type": "toilets",
+            "name": null
+          },
+          {
+            "type": "parking",
+            "name": null
+          }
+        ]
+      }
+    },
+    "elevation_ft": 5315.0,
+    "huc_cd": "16040201",
+    "nwis": {
+      "site_no": "433002118313901",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "34",
     "name": "Belknap Hot Springs",
-    "lat": 44.137,
-    "lng": -122.072,
+    "lat": 44.19421667,
+    "lng": -121.6052139,
     "temp_f": 130,
     "fee": 10,
     "access_type": "Drive-up",
@@ -498,7 +1505,106 @@
     "state": "OR",
     "description": "Landscaped pools at Belknap Lodge along the McKenzie River.",
     "has_post": false,
-    "slug": "belknap-hot-springs"
+    "slug": "belknap-hot-springs",
+    "osm": {
+      "osm_id": 12029621509,
+      "osm_name": "unnamed",
+      "osm_url": "https://www.openstreetmap.org/node/12029621509",
+      "match_distance_miles": 1.66,
+      "tags": {
+        "access": "private",
+        "natural": "hot_spring"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "track",
+            "name": "Forest Road 2643-410",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Wilelada Creek",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Avenue Creek Road",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Horse Creek Road",
+            "surface": "paved",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Forest Road 1993",
+            "surface": "paved",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": null,
+            "access": "private"
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "track",
+            "name": "Forest Road 2643-410",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Wilelada Creek",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Avenue Creek Road",
+            "surface": null,
+            "sac_scale": null
+          }
+        ],
+        "buildings": [],
+        "amenities": []
+      }
+    },
+    "elevation_ft": 5063.0,
+    "huc_cd": "17070303",
+    "nwis": {
+      "site_no": "441139121361901",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "35",
@@ -513,7 +1619,8 @@
     "state": "OR",
     "description": "Historic mineral bathhouse and hotel in the Columbia River Gorge.",
     "has_post": false,
-    "slug": "carson-hot-springs-resort"
+    "slug": "carson-hot-springs-resort",
+    "_provenance": {}
   },
   {
     "id": "36",
@@ -528,13 +1635,14 @@
     "state": "OR",
     "description": "Three rock pools along a creek in the Columbia Gorge, short hike.",
     "has_post": false,
-    "slug": "saint-martins-hot-springs"
+    "slug": "saint-martins-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "37",
     "name": "Moffett's Hot Springs",
-    "lat": 45.656,
-    "lng": -121.96,
+    "lat": 42.14066944,
+    "lng": -117.3879389,
     "temp_f": 100,
     "fee": 0,
     "access_type": "Hike-in",
@@ -543,13 +1651,27 @@
     "state": "OR",
     "description": "Natural pool along the Wind River, hidden forest setting.",
     "has_post": false,
-    "slug": "moffetts-hot-springs"
+    "slug": "moffetts-hot-springs",
+    "elevation_ft": 6072.0,
+    "huc_cd": "17050107",
+    "nwis": {
+      "site_no": "420826117231701",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "38",
     "name": "Kitson Hot Springs",
-    "lat": 43.69,
-    "lng": -122.375,
+    "lat": 44.4196833,
+    "lng": -120.5092528,
     "temp_f": 90,
     "fee": 0,
     "access_type": "Hike-in",
@@ -558,13 +1680,27 @@
     "state": "OR",
     "description": "Remote springs in the Willamette National Forest along Salt Creek.",
     "has_post": false,
-    "slug": "kitson-hot-springs"
+    "slug": "kitson-hot-springs",
+    "elevation_ft": 4295.0,
+    "huc_cd": "17120003",
+    "nwis": {
+      "site_no": "442511120303301",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "39",
     "name": "Alvord Hot Springs",
-    "lat": 42.544,
-    "lng": -118.534,
+    "lat": 44.7046472,
+    "lng": -117.5022417,
     "temp_f": 130,
     "fee": 0,
     "access_type": "Drive-up",
@@ -573,13 +1709,27 @@
     "state": "OR",
     "description": "Desert springs at the base of Steens Mountain with stunning views.",
     "has_post": false,
-    "slug": "alvord-hot-springs"
+    "slug": "alvord-hot-springs",
+    "elevation_ft": 4848.0,
+    "huc_cd": "17050116",
+    "nwis": {
+      "site_no": "444217117300801",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "40",
     "name": "Mickey Hot Springs",
-    "lat": 42.679,
-    "lng": -118.348,
+    "lat": 44.4697444,
+    "lng": -121.5735417,
     "temp_f": 180,
     "fee": 0,
     "access_type": "Drive-up",
@@ -588,13 +1738,27 @@
     "state": "OR",
     "description": "Geothermal area in the Alvord Desert, pools too hot for soaking in most spots.",
     "has_post": false,
-    "slug": "mickey-hot-springs"
+    "slug": "mickey-hot-springs",
+    "elevation_ft": 6522.0,
+    "huc_cd": "16040201",
+    "nwis": {
+      "site_no": "442811121342501",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "41",
     "name": "Crystal Crane Hot Springs",
-    "lat": 43.441,
-    "lng": -118.64,
+    "lat": 43.44155278,
+    "lng": -118.6404972,
     "temp_f": 104,
     "fee": 15,
     "access_type": "Drive-up",
@@ -603,13 +1767,27 @@
     "state": "OR",
     "description": "Resort with a large outdoor pool and private soaking tubs in Harney County.",
     "has_post": false,
-    "slug": "crystal-crane-hot-springs"
+    "slug": "crystal-crane-hot-springs",
+    "elevation_ft": 4133.0,
+    "huc_cd": "17120001",
+    "nwis": {
+      "site_no": "432630118382601",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "42",
     "name": "Hart Mountain Hot Springs",
-    "lat": 42.501,
-    "lng": -119.69,
+    "lat": 42.5016361,
+    "lng": -119.6895,
     "temp_f": 100,
     "fee": 0,
     "access_type": "Drive-up",
@@ -618,7 +1796,21 @@
     "state": "OR",
     "description": "Natural rock pool on Hart Mountain National Antelope Refuge.",
     "has_post": false,
-    "slug": "hart-mountain-hot-springs"
+    "slug": "hart-mountain-hot-springs",
+    "elevation_ft": 5955.0,
+    "huc_cd": "17120008",
+    "nwis": {
+      "site_no": "423006119412201",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "43",
@@ -633,13 +1825,14 @@
     "state": "OR",
     "description": "Riverside pool along the Owyhee River in eastern Oregon canyon country.",
     "has_post": false,
-    "slug": "snively-hot-springs"
+    "slug": "snively-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "44",
     "name": "Givens Hot Springs",
-    "lat": 43.416,
-    "lng": -116.707,
+    "lat": 44.5011694,
+    "lng": -120.6115694,
     "temp_f": 100,
     "fee": 5,
     "access_type": "Drive-up",
@@ -648,13 +1841,27 @@
     "state": "OR",
     "description": "Historic roadside soaking pool along the Snake River in eastern Oregon.",
     "has_post": false,
-    "slug": "givens-hot-springs"
+    "slug": "givens-hot-springs",
+    "elevation_ft": 5656.0,
+    "huc_cd": "17070305",
+    "nwis": {
+      "site_no": "443004120364201",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "45",
     "name": "Mundo Hot Springs",
-    "lat": 44.583,
-    "lng": -116.631,
+    "lat": 45.6692861,
+    "lng": -118.6194389,
     "temp_f": 104,
     "fee": 8,
     "access_type": "Drive-up",
@@ -663,13 +1870,27 @@
     "state": "OR",
     "description": "Small resort with covered soaking pool in eastern Oregon ranching country.",
     "has_post": false,
-    "slug": "mundo-hot-springs"
+    "slug": "mundo-hot-springs",
+    "elevation_ft": 6879.0,
+    "huc_cd": "17120009",
+    "nwis": {
+      "site_no": "454009118371001",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "46",
     "name": "Paulina Hot Springs",
-    "lat": 43.73,
-    "lng": -121.247,
+    "lat": 44.43110556,
+    "lng": -117.5076528,
     "temp_f": 95,
     "fee": 0,
     "access_type": "Hike-in",
@@ -678,13 +1899,27 @@
     "state": "OR",
     "description": "Natural pools near East Lake in the Newberry National Volcanic Monument.",
     "has_post": false,
-    "slug": "paulina-hot-springs"
+    "slug": "paulina-hot-springs",
+    "huc_cd": "17070302",
+    "nwis": {
+      "site_no": "442552117302801",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "elevation_ft": 3358.0,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": "47",
     "name": "Three Forks Hot Spring",
-    "lat": 42.53,
-    "lng": -117.185,
+    "lat": 42.53487907,
+    "lng": -117.1862519,
     "temp_f": 100,
     "fee": 0,
     "access_type": "Hike-in",
@@ -693,13 +1928,27 @@
     "state": "OR",
     "description": "Remote canyon springs at the confluence of three streams in SE Oregon.",
     "has_post": false,
-    "slug": "three-forks-hot-spring"
+    "slug": "three-forks-hot-spring",
+    "elevation_ft": 3994.0,
+    "huc_cd": "17050107",
+    "nwis": {
+      "site_no": "423206117110701",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "48",
     "name": "Willow Creek Hot Springs",
-    "lat": 42.276,
-    "lng": -118.265,
+    "lat": 44.5366611,
+    "lng": -121.5794028,
     "temp_f": 95,
     "fee": 0,
     "access_type": "Drive-up",
@@ -708,13 +1957,27 @@
     "state": "OR",
     "description": "BLM campground with natural soaking pool in the high desert.",
     "has_post": false,
-    "slug": "willow-creek-hot-springs"
+    "slug": "willow-creek-hot-springs",
+    "elevation_ft": 5528.0,
+    "huc_cd": "16040201",
+    "nwis": {
+      "site_no": "443212121344601",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "49",
     "name": "Bigelow Hot Spring",
-    "lat": 44.239,
-    "lng": -122.059,
+    "lat": 45.74211389,
+    "lng": -118.2344444,
     "temp_f": 96,
     "fee": 0,
     "access_type": "Hike-in",
@@ -723,13 +1986,233 @@
     "state": "OR",
     "description": "Small natural pool along the McKenzie River trail.",
     "has_post": false,
-    "slug": "bigelow-hot-spring"
+    "slug": "bigelow-hot-spring",
+    "osm": {
+      "osm_id": 6514317313,
+      "osm_name": "Bigelow Hot Spring",
+      "osm_url": "https://www.openstreetmap.org/node/6514317313",
+      "match_distance_miles": 0.01,
+      "tags": {
+        "name": "Bigelow Hot Spring",
+        "natural": "hot_spring",
+        "spring": "hot_spring"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "track",
+            "name": "Forest Road 2653-715",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Deer Creek Road",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Boulder Creek Road",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 2653-724",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 610",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Forest Road 2655",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "McKenzie River Trail #3507",
+            "surface": "ground",
+            "access": "yes"
+          },
+          {
+            "type": "track",
+            "name": "Dutch",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Fjord",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 2600-728",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 2653-690",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 2653-704",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 2653-708",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Norwegian Creek Road",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 650",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 782",
+            "surface": "unpaved",
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "track",
+            "name": "Forest Road 2653-715",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Boulder Creek Road",
+            "surface": "gravel",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 2653-724",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 610",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "McKenzie River Trail #3507",
+            "surface": "ground",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Dutch",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Fjord",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 2600-728",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 2653-690",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 2653-704",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 2653-708",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Norwegian Creek Road",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 650",
+            "surface": "unpaved",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 782",
+            "surface": "unpaved",
+            "sac_scale": null
+          }
+        ],
+        "buildings": [],
+        "amenities": []
+      }
+    },
+    "elevation_ft": 6921.0,
+    "huc_cd": "17120009",
+    "nwis": {
+      "site_no": "454432118140401",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "50",
     "name": "Fisher Hot Springs",
-    "lat": 42.297,
-    "lng": -119.778,
+    "lat": 43.2587646,
+    "lng": -119.2474398,
     "temp_f": 100,
     "fee": 0,
     "access_type": "Hike-in",
@@ -738,13 +2221,27 @@
     "state": "OR",
     "description": "Warm pool in the high desert, near the Nevada border.",
     "has_post": false,
-    "slug": "fisher-hot-springs"
+    "slug": "fisher-hot-springs",
+    "elevation_ft": 4042.0,
+    "huc_cd": "17120009",
+    "nwis": {
+      "site_no": "431532119144700",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "51",
     "name": "Blue Mountain Hot Springs",
-    "lat": 44.355,
-    "lng": -118.573,
+    "lat": 43.1500111,
+    "lng": -117.3420056,
     "temp_f": 102,
     "fee": 0,
     "access_type": "Hike-in",
@@ -753,7 +2250,21 @@
     "state": "OR",
     "description": "Natural springs in the Blue Mountains of eastern Oregon.",
     "has_post": false,
-    "slug": "blue-mountain-hot-springs"
+    "slug": "blue-mountain-hot-springs",
+    "elevation_ft": 4563.0,
+    "huc_cd": "17050108",
+    "nwis": {
+      "site_no": "430900117203101",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "52",
@@ -768,14 +2279,15 @@
     "clothing": "",
     "description": "Geothermal area near The Geysers \u2014 extreme heat, not for soaking.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "_provenance": {}
   },
   {
     "id": "53",
     "slug": "susanville-hot-spring",
     "name": "Susanville Hot Spring",
-    "lat": 40.364,
-    "lng": -120.243,
+    "lat": 45.47330556,
+    "lng": -118.1945167,
     "temp_f": 204,
     "fee": null,
     "access_type": "Drive-up",
@@ -783,7 +2295,21 @@
     "clothing": "",
     "description": "Hot springs near Susanville in Lassen County.",
     "has_post": false,
-    "state": "CA"
+    "state": "CA",
+    "elevation_ft": 4968.0,
+    "huc_cd": "17120001",
+    "nwis": {
+      "site_no": "452824118114001",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "54",
@@ -798,14 +2324,15 @@
     "clothing": "",
     "description": "Island pool in Malheur River; free; primitive high desert setting; clothing-optional.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "_provenance": {}
   },
   {
     "id": "55",
     "slug": "lithia-springs-resort",
     "name": "Lithia Springs Resort",
-    "lat": 42.195,
-    "lng": -122.617,
+    "lat": 42.49265,
+    "lng": -119.6336639,
     "temp_f": 102,
     "fee": 0,
     "access_type": "Resort",
@@ -813,7 +2340,21 @@
     "clothing": "Swimsuit required",
     "description": "Luxury resort in Ashland with private mineral soaking tubs, wine garden, spa.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "elevation_ft": 6019.0,
+    "huc_cd": "17120008",
+    "nwis": {
+      "site_no": "422934119380101",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "56",
@@ -828,7 +2369,8 @@
     "clothing": "Clothing optional",
     "description": "Small natural meditation pool near Ukiah; free; 2-mile hike; clothing-optional.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "_provenance": {}
   },
   {
     "id": "57",
@@ -843,14 +2385,15 @@
     "clothing": "Clothing optional",
     "description": "Lakeside pools at Paulina Lake in Newberry Volcanic Monument; $5 vehicle fee; clothing-optional.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "_provenance": {}
   },
   {
     "id": "58",
     "slug": "east-lake-hot-springs",
     "name": "East Lake Hot Springs",
-    "lat": 43.7,
-    "lng": -121.35,
+    "lat": 43.73619444,
+    "lng": -119.63299167,
     "temp_f": 100,
     "fee": null,
     "access_type": "Hike-in",
@@ -858,14 +2401,28 @@
     "clothing": "Clothing optional",
     "description": "Small pool on East Lake shore in Newberry Volcanic Monument; accessible by boat or short hike; clothing-optional.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "elevation_ft": 4838.0,
+    "huc_cd": "17120007",
+    "nwis": {
+      "site_no": "434410119375901",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "59",
     "slug": "grande-hot-springs",
     "name": "Grande Hot Springs",
-    "lat": 45.35,
-    "lng": -117.23,
+    "lat": 44.20627778,
+    "lng": -120.2896389,
     "temp_f": 102,
     "fee": 15,
     "access_type": "Resort",
@@ -873,14 +2430,28 @@
     "clothing": "Swimsuit required",
     "description": "Resort with outdoor pools near Joseph in the Wallowa Mountains; $15 day use; family-friendly.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "elevation_ft": 5541.0,
+    "huc_cd": "16040201",
+    "nwis": {
+      "site_no": "441223120172301",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "60",
     "slug": "summer-lake-hot-springs",
     "name": "Summer Lake Hot Springs",
-    "lat": 42.42,
-    "lng": -120.86,
+    "lat": 45.83258889,
+    "lng": -117.967661,
     "temp_f": 107,
     "fee": 15,
     "access_type": "Resort",
@@ -888,14 +2459,28 @@
     "clothing": "Swimsuit required",
     "description": "Resort with indoor/outdoor pools near Summer Lake; $15 day use; alkaline mineral waters; birdwatching.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "elevation_ft": 2817.0,
+    "huc_cd": "17050203",
+    "nwis": {
+      "site_no": "454957117580401",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "61",
     "slug": "hot-lake-hot-springs",
     "name": "Hot Lake Hot Springs",
-    "lat": 45.23,
-    "lng": -118.2,
+    "lat": 45.5502083,
+    "lng": -118.1266139,
     "temp_f": 110,
     "fee": null,
     "access_type": "Resort",
@@ -903,7 +2488,21 @@
     "clothing": "Swimsuit required",
     "description": "Historic restored 1900s resort near La Grande with indoor pools and spa.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "elevation_ft": 6175.0,
+    "huc_cd": "17120009",
+    "nwis": {
+      "site_no": "453301118073601",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "62",
@@ -918,14 +2517,15 @@
     "clothing": "Swimsuit optional",
     "description": "Small remote resort with pools near Ritter in Grant County; $10 day use.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "_provenance": {}
   },
   {
     "id": "63",
     "slug": "borax-lake-hot-springs",
     "name": "Borax Lake Hot Springs",
-    "lat": 42.13,
-    "lng": -118.69,
+    "lat": 42.3265972,
+    "lng": -118.6039833,
     "temp_f": 212,
     "fee": null,
     "access_type": "Drive-up",
@@ -933,14 +2533,28 @@
     "clothing": "",
     "description": "Small alkaline lake in Alvord Desert \u2014 too hot for soaking, view only; protected area.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "elevation_ft": 5821.0,
+    "huc_cd": "17120007",
+    "nwis": {
+      "site_no": "421936118361401",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "64",
     "slug": "austin-hot-springs",
     "name": "Austin Hot Springs",
-    "lat": 44.55,
-    "lng": -119.65,
+    "lat": 45.01858347,
+    "lng": -122.003802,
     "temp_f": 186,
     "fee": null,
     "access_type": "Drive-up",
@@ -948,6 +2562,20 @@
     "clothing": "",
     "description": "Primitive undeveloped springs near Austin in Grant County; extreme heat, caution advised.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "elevation_ft": 4565.61,
+    "huc_cd": "18010201",
+    "nwis": {
+      "site_no": "450108122000500",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   }
 ]

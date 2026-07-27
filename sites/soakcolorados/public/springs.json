@@ -3,8 +3,8 @@
     "id": "1",
     "slug": "strawberry-hot-springs-colorado",
     "name": "Strawberry Hot Springs",
-    "lat": 40.744,
-    "lng": -106.74,
+    "lat": 38.8047183,
+    "lng": -106.2450211,
     "temp_f": 104,
     "fee": 20,
     "access_type": "Drive-up",
@@ -17,14 +17,28 @@
     "description": "Five natural soaking pools with mountain views near Steamboat Springs. One of Colorado's most popular hot springs.",
     "best_time": "Weekday mornings or after 8pm",
     "insider_tips": "The uppermost pool is hottest. Weeknight visits are much less crowded.",
-    "state": "CO"
+    "state": "CO",
+    "huc_cd": "11020001",
+    "nwis": {
+      "site_no": "384817106144000",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    },
+    "elevation_ft": 5980.0
   },
   {
     "id": "2",
     "slug": "iron-mountain-hot-springs",
     "name": "Iron Mountain Hot Springs",
-    "lat": 39.5552611,
-    "lng": -107.336262,
+    "lat": 43.1500111,
+    "lng": -117.3420056,
     "temp_f": 104,
     "fee": 30,
     "access_type": "Resort",
@@ -37,14 +51,313 @@
     "description": "16 soaking pools along the Colorado River with views of Glenwood Canyon. Family-friendly with a freshwater pool.",
     "best_time": "Weekday mornings",
     "insider_tips": "Riverside pools fill first \u2014 grab one early. Combo tickets with Glenwood Caverns available.",
-    "state": "CO"
+    "state": "CO",
+    "osm": {
+      "osm_id": 5406222022,
+      "osm_name": "Iron Mountain Hot Springs",
+      "osm_url": "https://www.openstreetmap.org/node/5406222022",
+      "match_distance_miles": 0,
+      "tags": {
+        "addr:city": "Glenwood Springs",
+        "addr:housenumber": "281",
+        "addr:postcode": "81601",
+        "addr:street": "Centennial Drive",
+        "amenity": "public_bath",
+        "bath:open_air": "yes",
+        "bath:sand_bath": "no",
+        "bath:type": "hot_spring",
+        "check_date": "2023-05-02",
+        "fee": "yes",
+        "name": "Iron Mountain Hot Springs",
+        "opening_hours": "Mo-Su 09:00-22:00",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+1-970-945-4766",
+        "shower": "yes",
+        "website": "https://www.ironmountainhotsprings.com/"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "residential",
+            "name": "Poplar Way",
+            "surface": "asphalt",
+            "access": "private"
+          },
+          {
+            "type": "residential",
+            "name": "Teakwood Lane",
+            "surface": "asphalt",
+            "access": "private"
+          },
+          {
+            "type": "residential",
+            "name": "West 9th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Donegan Road",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": null,
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "Red Mountain / Jeanne Golay Trail",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Boy Scout",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "East 6th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Sprucewood Lane",
+            "surface": "asphalt",
+            "access": "private"
+          },
+          {
+            "type": "residential",
+            "name": "Ptarmigan Lane",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Princeton Circle",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "West 13th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Pine Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Cleveland Avenue",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Tanager Drive",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Oak Way Avenue",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Columbia Court",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "4th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Cooper Avenue",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Colorado Avenue",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "9th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Maple Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Orchard Drive",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Market Drive",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Latson Court",
+            "surface": "asphalt",
+            "access": "private"
+          },
+          {
+            "type": "residential",
+            "name": "Palmer Avenue",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "10th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "footway",
+            "name": "12th Street Ditch Trail",
+            "surface": "ground",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Garfield Avenue",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Castle Court",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Cowdin Drive",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "2nd Street",
+            "surface": "asphalt",
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "path",
+            "name": "Boy Scout",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "footway",
+            "name": "12th Street Ditch Trail",
+            "surface": "ground",
+            "sac_scale": null
+          }
+        ],
+        "buildings": [],
+        "amenities": [
+          {
+            "type": "leisure:park",
+            "name": "A E Axtell Park"
+          },
+          {
+            "type": "place_of_worship",
+            "name": "First Presbyterian Church"
+          },
+          {
+            "type": "place_of_worship",
+            "name": "Church of Christ"
+          },
+          {
+            "type": "place_of_worship",
+            "name": "Church of Nazarene"
+          },
+          {
+            "type": "school",
+            "name": "Glenwood Springs Elementary School"
+          },
+          {
+            "type": "school",
+            "name": "Bolitho Elementary School"
+          },
+          {
+            "type": "place_of_worship",
+            "name": "First Assembly of God"
+          },
+          {
+            "type": "place_of_worship",
+            "name": "Christian Science Society"
+          },
+          {
+            "type": "library",
+            "name": "Glenwood Springs Garfield County Branch Library"
+          },
+          {
+            "type": "leisure:slipway",
+            "name": null
+          }
+        ]
+      }
+    },
+    "elevation_ft": 5740.0,
+    "huc_cd": "14010001",
+    "nwis": {
+      "site_no": "430900117203101",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "3",
     "slug": "iron-mountain-hot-springs-geology",
     "name": "Glenwood Hot Springs Pool",
-    "lat": 39.5495867,
-    "lng": -107.3227319,
+    "lat": 39.53783889,
+    "lng": -107.3754611,
     "temp_f": 93,
     "fee": 30,
     "access_type": "Resort",
@@ -56,14 +369,313 @@
     "road_condition": "Paved",
     "description": "World's largest mineral hot springs pool with two pools, waterslides, and a spa in Glenwood Springs.",
     "best_time": "Early morning before crowds",
-    "state": "CO"
+    "state": "CO",
+    "osm": {
+      "osm_id": 5406222022,
+      "osm_name": "Iron Mountain Hot Springs",
+      "osm_url": "https://www.openstreetmap.org/node/5406222022",
+      "match_distance_miles": 0.82,
+      "tags": {
+        "addr:city": "Glenwood Springs",
+        "addr:housenumber": "281",
+        "addr:postcode": "81601",
+        "addr:street": "Centennial Drive",
+        "amenity": "public_bath",
+        "bath:open_air": "yes",
+        "bath:sand_bath": "no",
+        "bath:type": "hot_spring",
+        "check_date": "2023-05-02",
+        "fee": "yes",
+        "name": "Iron Mountain Hot Springs",
+        "opening_hours": "Mo-Su 09:00-22:00",
+        "payment:mastercard": "yes",
+        "payment:visa": "yes",
+        "phone": "+1-970-945-4766",
+        "shower": "yes",
+        "website": "https://www.ironmountainhotsprings.com/"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "residential",
+            "name": "Poplar Way",
+            "surface": "asphalt",
+            "access": "private"
+          },
+          {
+            "type": "residential",
+            "name": "Teakwood Lane",
+            "surface": "asphalt",
+            "access": "private"
+          },
+          {
+            "type": "residential",
+            "name": "West 9th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Donegan Road",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": null,
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "Red Mountain / Jeanne Golay Trail",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Boy Scout",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "East 6th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Sprucewood Lane",
+            "surface": "asphalt",
+            "access": "private"
+          },
+          {
+            "type": "residential",
+            "name": "Ptarmigan Lane",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Princeton Circle",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "West 13th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Pine Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Cleveland Avenue",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Tanager Drive",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Oak Way Avenue",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Columbia Court",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "4th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Cooper Avenue",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Colorado Avenue",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "9th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Maple Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Orchard Drive",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Market Drive",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Latson Court",
+            "surface": "asphalt",
+            "access": "private"
+          },
+          {
+            "type": "residential",
+            "name": "Palmer Avenue",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "10th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "footway",
+            "name": "12th Street Ditch Trail",
+            "surface": "ground",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Garfield Avenue",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Castle Court",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Cowdin Drive",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "2nd Street",
+            "surface": "asphalt",
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "path",
+            "name": "Boy Scout",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "footway",
+            "name": "12th Street Ditch Trail",
+            "surface": "ground",
+            "sac_scale": null
+          }
+        ],
+        "buildings": [],
+        "amenities": [
+          {
+            "type": "leisure:park",
+            "name": "A E Axtell Park"
+          },
+          {
+            "type": "place_of_worship",
+            "name": "First Presbyterian Church"
+          },
+          {
+            "type": "place_of_worship",
+            "name": "Church of Christ"
+          },
+          {
+            "type": "place_of_worship",
+            "name": "Church of Nazarene"
+          },
+          {
+            "type": "school",
+            "name": "Glenwood Springs Elementary School"
+          },
+          {
+            "type": "school",
+            "name": "Bolitho Elementary School"
+          },
+          {
+            "type": "place_of_worship",
+            "name": "First Assembly of God"
+          },
+          {
+            "type": "place_of_worship",
+            "name": "Christian Science Society"
+          },
+          {
+            "type": "library",
+            "name": "Glenwood Springs Garfield County Branch Library"
+          },
+          {
+            "type": "leisure:slipway",
+            "name": null
+          }
+        ]
+      }
+    },
+    "elevation_ft": 7381.0,
+    "huc_cd": "14010005",
+    "nwis": {
+      "site_no": "393216107223201",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "4",
     "slug": "wiesbaden-hot-springs-colorado",
     "name": "Wiesbaden Hot Springs",
-    "lat": 38.0208,
-    "lng": -107.6675,
+    "lat": 38.485275,
+    "lng": -105.9119546,
     "temp_f": 112,
     "fee": 25,
     "access_type": "Resort",
@@ -76,14 +688,28 @@
     "description": "Historic hotel in Ouray with underground vapor cave, outdoor soaking pool, and private tubs. Adults only.",
     "insider_tips": "The underground vapor cave is unique \u2014 not found elsewhere in Colorado.",
     "nearby_gems": "Ouray Hot Springs Pool, Box Canyon Falls",
-    "state": "CO"
+    "state": "CO",
+    "huc_cd": "13010005",
+    "nwis": {
+      "site_no": "382907105544100",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "elevation_ft": 6850.0,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": "5",
     "slug": "valley-view-hot-springs-colorado",
     "name": "Valley View Hot Springs",
-    "lat": 38.1923412,
-    "lng": -105.8150849,
+    "lat": 38.63555229,
+    "lng": -106.0719602,
     "temp_f": 96,
     "fee": 20,
     "access_type": "Drive-up",
@@ -96,14 +722,210 @@
     "description": "Peaceful clothing-optional hot springs run by Orient Land Trust. Multiple pools with stunning San Luis Valley views.",
     "best_time": "Weekdays with advance reservation",
     "insider_tips": "Book well in advance \u2014 fills up fast. Camping on site available.",
-    "state": "CO"
+    "state": "CO",
+    "osm": {
+      "osm_id": 8268916666,
+      "osm_name": "Valley View Hot Springs",
+      "osm_url": "https://www.openstreetmap.org/node/8268916666",
+      "match_distance_miles": 0,
+      "tags": {
+        "addr:city": "Moffat",
+        "addr:housenumber": "64393",
+        "addr:postcode": "81143",
+        "addr:street": "County Road GG",
+        "amenity": "public_bath",
+        "bath:open_air": "yes",
+        "bath:type": "hot_spring",
+        "fee": "yes",
+        "name": "Valley View Hot Springs",
+        "nudism": "yes",
+        "operator": "Orient Land Trust",
+        "phone": "+1-719-256-4315",
+        "website": "https://www.olt.org/vvhs"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "unclassified",
+            "name": null,
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Orient Road",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Hot Springs Trail",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": "dirt",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "Hot Springs/Garner Parking Road",
+            "surface": "dirt",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Garner Creek Trail",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Black Canyon Road",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "track",
+            "name": "Orient Road",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "Hot Springs Trail",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "Garner Creek Trail",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Black Canyon Road",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          }
+        ],
+        "buildings": [
+          {
+            "type": "yes",
+            "name": "Welcome Center"
+          },
+          {
+            "type": "cabin",
+            "name": "Aspen Cabin"
+          },
+          {
+            "type": "cabin",
+            "name": "Willow Cabin"
+          },
+          {
+            "type": "yes",
+            "name": "Main Bathroom"
+          },
+          {
+            "type": "yes",
+            "name": "Oak House"
+          }
+        ],
+        "amenities": [
+          {
+            "type": "tourism:camp_pitch",
+            "name": null
+          },
+          {
+            "type": "waste_disposal",
+            "name": null
+          },
+          {
+            "type": "public_bath",
+            "name": "Valley View Hot Springs"
+          },
+          {
+            "type": "toilets",
+            "name": null
+          },
+          {
+            "type": "shower",
+            "name": null
+          },
+          {
+            "type": "tourism:viewpoint",
+            "name": "Bat Cave"
+          },
+          {
+            "type": "bbq",
+            "name": null
+          },
+          {
+            "type": "tourism:information",
+            "name": "Welcome Center"
+          },
+          {
+            "type": "toilets",
+            "name": "Pool Bathroom"
+          },
+          {
+            "type": "leisure:sauna",
+            "name": "Sauna"
+          }
+        ]
+      }
+    },
+    "huc_cd": "13010003",
+    "nwis": {
+      "site_no": "383808106041700",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "elevation_ft": 8850.0,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": "6",
     "slug": "colorados-conundrum-hot-springs",
     "name": "Conundrum Hot Springs",
-    "lat": 39.0122,
-    "lng": -106.8906,
+    "lat": 39.01387964,
+    "lng": -106.8922638,
     "temp_f": 100,
     "fee": 0,
     "access_type": "Hike-in",
@@ -117,14 +939,28 @@
     "best_time": "Late July through September",
     "alerts": "Wilderness permit required May 15\u2013Nov 1",
     "insider_tips": "Camp overnight to enjoy pools in morning solitude. Altitude sickness is a real risk.",
-    "state": "CO"
+    "state": "CO",
+    "huc_cd": "14010004",
+    "nwis": {
+      "site_no": "390050106533001",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "elevation_ft": 11200.0,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": "7",
     "slug": "rainbow-hot-springs",
     "name": "Rainbow Hot Springs",
-    "lat": 37.5094,
-    "lng": -106.9478,
+    "lat": 37.51111769,
+    "lng": -106.9464327,
     "temp_f": 109,
     "fee": 0,
     "access_type": "Hike-in",
@@ -137,14 +973,28 @@
     "description": "Free backcountry hot springs on the West Fork of the San Juan River. 3.5-mile hike each way through beautiful canyon.",
     "best_time": "Spring and fall for lower crowds",
     "insider_tips": "River crossings can be high in spring snowmelt. Multiple pools at different temperatures.",
-    "state": "CO"
+    "state": "CO",
+    "elevation_ft": 6480.0,
+    "huc_cd": "14080104",
+    "nwis": {
+      "site_no": "373040106564501",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "8",
     "slug": "cottonwood-hot-springs",
     "name": "Cottonwood Hot Springs",
-    "lat": 38.8126378,
-    "lng": -106.2223561,
+    "lat": 36.02442815,
+    "lng": -111.9882199,
     "temp_f": 100,
     "fee": 22,
     "access_type": "Resort",
@@ -156,14 +1006,146 @@
     "road_condition": "Paved",
     "description": "Clothing-optional resort near Buena Vista with multiple natural mineral pools and lodging.",
     "insider_tips": "Multiple pools at different temperatures. Weekday afternoons are quiet.",
-    "state": "CO"
+    "state": "CO",
+    "osm": {
+      "osm_id": 2575208354,
+      "osm_name": "Cottonwood Hot Springs",
+      "osm_url": "https://www.openstreetmap.org/node/2575208354",
+      "match_distance_miles": 0,
+      "tags": {
+        "amenity": "public_bath",
+        "bath:type": "hot_spring",
+        "fee": "yes",
+        "name": "Cottonwood Hot Springs",
+        "note": "58C, 136F",
+        "tourism": "camp_site;loding",
+        "website": "https://cottonwood-hot-springs.com/colorado/"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "service",
+            "name": null,
+            "surface": null,
+            "access": "private"
+          },
+          {
+            "type": "residential",
+            "name": null,
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Burnham Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": null,
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Bald Mountain Road",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Colorado Trail (Segment 13)",
+            "surface": "ground",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "track",
+            "name": "Bald Mountain Road",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "Colorado Trail (Segment 13)",
+            "surface": "ground",
+            "sac_scale": "demanding_mountain_hiking"
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          }
+        ],
+        "buildings": [
+          {
+            "type": "yes",
+            "name": "Cottonwood Hot Springs Inn & Spa"
+          }
+        ],
+        "amenities": [
+          {
+            "type": "public_bath",
+            "name": "Cottonwood Hot Springs"
+          },
+          {
+            "type": "tourism:camp_site;loding",
+            "name": "Cottonwood Hot Springs"
+          },
+          {
+            "type": "public_bath",
+            "name": "Charlotte Hot Springs & Botanical Gardens"
+          },
+          {
+            "type": "tourism:hotel",
+            "name": "Cottonwood Hot Springs Inn & Spa"
+          }
+        ]
+      }
+    },
+    "elevation_ft": 8550.0,
+    "huc_cd": "11020001",
+    "nwis": {
+      "site_no": "360128111591200",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "9",
     "slug": "penny-hot-springs-colorado",
     "name": "Penny Hot Springs",
-    "lat": 39.2258,
-    "lng": -107.2244,
+    "lat": 39.97025807,
+    "lng": -107.4058908,
     "temp_f": 110,
     "fee": 0,
     "access_type": "Drive-up",
@@ -177,14 +1159,97 @@
     "best_time": "Late summer through fall",
     "alerts": "High water can submerge pools in spring",
     "insider_tips": "Can get very crowded on summer weekends. Visit early morning or late evening.",
-    "state": "CO"
+    "state": "CO",
+    "osm": {
+      "osm_id": 6708008761,
+      "osm_name": "Penny Hot Springs",
+      "osm_url": "https://www.openstreetmap.org/node/6708008761",
+      "match_distance_miles": 0.09,
+      "tags": {
+        "access": "private",
+        "name": "Penny Hot Springs",
+        "natural": "hot_spring",
+        "note": "56C, 133D"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "residential",
+            "name": "Avalanche Road",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Irwin Drive",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Dorias Way",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          }
+        ],
+        "buildings": [],
+        "amenities": []
+      }
+    },
+    "huc_cd": "14020005",
+    "nwis": {
+      "site_no": "395813107241900",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "elevation_ft": 9420.0,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": "10",
     "slug": "south-canyon-hot-springs",
     "name": "South Canyon Hot Springs",
-    "lat": 39.5537572,
-    "lng": -107.4108185,
+    "lat": 40.49442099,
+    "lng": -106.8506052,
     "temp_f": 110,
     "fee": 0,
     "access_type": "Hike-in",
@@ -197,7 +1262,135 @@
     "description": "Free natural hot springs near Glenwood Springs reached by a short hike along a creek.",
     "best_time": "Weekday mornings",
     "insider_tips": "Look for cars parked near the frontage road west of Glenwood Springs.",
-    "state": "CO"
+    "state": "CO",
+    "osm": {
+      "osm_id": 4406137294,
+      "osm_name": "South Canyon Hot Springs",
+      "osm_url": "https://www.openstreetmap.org/node/4406137294",
+      "match_distance_miles": 0,
+      "tags": {
+        "name": "South Canyon Hot Springs",
+        "natural": "hot_spring"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "City Landfill Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Canyon Creek Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Tramway",
+            "surface": "ground",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Lightning Bug",
+            "surface": "ground",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Alpine Slide Climb",
+            "surface": "ground",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Alpine Slide Downhill",
+            "surface": "ground",
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "Tramway",
+            "surface": "ground",
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "Lightning Bug",
+            "surface": "ground",
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "Alpine Slide Climb",
+            "surface": "ground",
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "Alpine Slide Downhill",
+            "surface": "ground",
+            "sac_scale": null
+          }
+        ],
+        "buildings": [],
+        "amenities": [
+          {
+            "type": "leisure:slipway",
+            "name": null
+          }
+        ]
+      }
+    },
+    "elevation_ft": 5900.0,
+    "huc_cd": "14010005",
+    "nwis": {
+      "site_no": "402940106510001",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "11",
@@ -216,7 +1409,8 @@
     "road_condition": "Paved",
     "description": "Indoor mineral hot springs pool in downtown Salida \u2014 the largest indoor hot springs pool in the US. Affordable and family friendly.",
     "insider_tips": "Private soaking tubs available by reservation. Great after a day of rafting the Arkansas.",
-    "state": "CO"
+    "state": "CO",
+    "_provenance": {}
   },
   {
     "id": "12",
@@ -236,14 +1430,15 @@
     "description": "Three outdoor mineral soaking pools in the San Luis Valley with 360-degree mountain views. Yoga and lodging available.",
     "best_time": "Morning for mountain views, night for stargazing",
     "insider_tips": "Night soaking under the stars is incredible here.",
-    "state": "CO"
+    "state": "CO",
+    "_provenance": {}
   },
   {
     "id": "13",
     "slug": "dunton-hot-springs",
     "name": "Dunton Hot Springs",
-    "lat": 37.7717,
-    "lng": -108.0939,
+    "lat": 39.6333172,
+    "lng": -107.1006049,
     "temp_f": 108,
     "fee": 0,
     "access_type": "Resort",
@@ -255,14 +1450,28 @@
     "road_condition": "Dirt road, 4WD required in winter",
     "description": "Ultra-luxury ghost town resort in the San Juan Mountains with private hot springs. Restored 1800s cabins.",
     "insider_tips": "Overnight stays only \u2014 no day visits. One of the most remote and beautiful settings in Colorado.",
-    "state": "CO"
+    "state": "CO",
+    "elevation_ft": 8850.0,
+    "huc_cd": "14030002",
+    "nwis": {
+      "site_no": "393800107060001",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "14",
     "slug": "avalanche-ranch-hot-springs",
     "name": "Avalanche Ranch Hot Springs",
-    "lat": 39.22,
-    "lng": -107.23,
+    "lat": 40.3971663,
+    "lng": -112.421896,
     "temp_f": 104,
     "fee": 25,
     "access_type": "Resort",
@@ -274,14 +1483,97 @@
     "road_condition": "Paved",
     "description": "Three outdoor mineral pools on a working ranch near Redstone with Crystal River Valley views.",
     "insider_tips": "Cabins and glamping available. Quieter and more relaxed than Glenwood.",
-    "state": "CO"
+    "state": "CO",
+    "osm": {
+      "osm_id": 6708008761,
+      "osm_name": "Penny Hot Springs",
+      "osm_url": "https://www.openstreetmap.org/node/6708008761",
+      "match_distance_miles": 0.58,
+      "tags": {
+        "access": "private",
+        "name": "Penny Hot Springs",
+        "natural": "hot_spring",
+        "note": "56C, 133D"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "residential",
+            "name": "Avalanche Road",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Irwin Drive",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Dorias Way",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          }
+        ],
+        "buildings": [],
+        "amenities": []
+      }
+    },
+    "huc_cd": "14010004",
+    "nwis": {
+      "site_no": "402350112251601",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    },
+    "elevation_ft": 5000.0
   },
   {
     "id": "15",
     "slug": "radium-hot-springs-colorado",
     "name": "Radium Hot Springs",
-    "lat": 39.9598393,
-    "lng": -106.5406479,
+    "lat": 40.0224806,
+    "lng": -107.3533902,
     "temp_f": 105,
     "fee": 0,
     "access_type": "Hike-in",
@@ -294,14 +1586,104 @@
     "description": "Wild backcountry hot springs along the Colorado River near Kremmling. Popular with kayakers.",
     "best_time": "Fall when river levels drop",
     "insider_tips": "Accessible via raft or kayak during high water \u2014 one of the best river hot spring combos in the state.",
-    "state": "CO"
+    "state": "CO",
+    "osm": {
+      "osm_id": 4405868598,
+      "osm_name": "Radium Hot Springs",
+      "osm_url": "https://www.openstreetmap.org/node/4405868598",
+      "match_distance_miles": 0,
+      "tags": {
+        "name": "Radium Hot Springs",
+        "natural": "hot_spring"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Radium Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Leroux Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": null,
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": "unpaved",
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          }
+        ],
+        "buildings": [],
+        "amenities": [
+          {
+            "type": "tourism:camp_site",
+            "name": "Radium Recreation Area"
+          },
+          {
+            "type": "water_point",
+            "name": "Radium Hot Spring"
+          }
+        ]
+      }
+    },
+    "huc_cd": "14080104",
+    "nwis": {
+      "site_no": "400121107211000",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "elevation_ft": 6600.0,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": "16",
     "slug": "cement-creek-hot-springs",
     "name": "Cement Creek Hot Springs",
-    "lat": 38.835,
-    "lng": -106.8261,
+    "lat": 38.8349927,
+    "lng": -106.8267052,
     "temp_f": 77,
     "fee": 0,
     "access_type": "Hike-in",
@@ -314,14 +1696,26 @@
     "description": "Remote free hot springs near Crested Butte requiring a moderate hike through alpine scenery.",
     "best_time": "Late summer",
     "insider_tips": "Often missed by tourists \u2014 a local favorite near Crested Butte.",
-    "state": "CO"
+    "state": "CO",
+    "huc_cd": "14020001",
+    "nwis": {
+      "site_no": "385006106493401",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "17",
     "slug": "chalk-creek-hot-springs",
     "name": "Chalk Creek Hot Springs (Hortense)",
-    "lat": 38.7331,
-    "lng": -106.1739,
+    "lat": 38.73305204,
+    "lng": -106.1744633,
     "temp_f": 120,
     "fee": 0,
     "access_type": "Drive-up",
@@ -334,14 +1728,28 @@
     "description": "Free natural hot springs near Mount Princeton. Very hot at source \u2014 mix with creek water to build your own pools.",
     "alerts": "Water at source can be scalding \u2014 always test before entering",
     "insider_tips": "Bring a shovel to build pools in the creek bank.",
-    "state": "CO"
+    "state": "CO",
+    "huc_cd": "11020001",
+    "nwis": {
+      "site_no": "384359106102600",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "elevation_ft": 8240.0,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": "18",
     "slug": "schofield-hot-springs-colorado",
     "name": "Schofield Hot Springs",
-    "lat": 38.92,
-    "lng": -106.98,
+    "lat": 37.26639465,
+    "lng": -106.9944835,
     "temp_f": 100,
     "fee": 0,
     "access_type": "Hike-in",
@@ -353,14 +1761,28 @@
     "road_condition": "High clearance 4WD required",
     "description": "Backcountry hot springs near Gothic in the Elk Mountains. Remote and spectacular alpine setting.",
     "best_time": "July through September",
-    "state": "CO"
+    "state": "CO",
+    "huc_cd": "14080101",
+    "nwis": {
+      "site_no": "371559106593800",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    },
+    "elevation_ft": 6522.0
   },
   {
     "id": "19",
     "slug": "box-canyon-hot-springs",
     "name": "Box Canyon Hot Springs",
-    "lat": 38.0166,
-    "lng": -107.6724,
+    "lat": 39.0241489,
+    "lng": -108.6242622,
     "temp_f": 106,
     "fee": 12,
     "access_type": "Resort",
@@ -372,14 +1794,28 @@
     "road_condition": "Paved",
     "description": "Rooftop hot tubs at Box Canyon Lodge in Ouray with stunning canyon views.",
     "insider_tips": "Day passes available but book ahead \u2014 fills quickly.",
-    "state": "CO"
+    "state": "CO",
+    "huc_cd": "14020006",
+    "nwis": {
+      "site_no": "390127108372501",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "elevation_ft": 7800.0,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": "20",
     "slug": "antero-hot-springs-colorado",
     "name": "Antero Hot Springs",
-    "lat": 38.72,
-    "lng": -105.97,
+    "lat": 40.47219189,
+    "lng": -107.9450783,
     "temp_f": 85,
     "fee": 0,
     "access_type": "Drive-up",
@@ -390,14 +1826,28 @@
     "cell_coverage": "Minimal",
     "road_condition": "Dirt road",
     "description": "Warm soaking pools on BLM land near South Park. Free and scenic with wide open views.",
-    "state": "CO"
+    "state": "CO",
+    "huc_cd": "13010005",
+    "nwis": {
+      "site_no": "402820107564001",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "elevation_ft": 8640.0,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": "21",
     "slug": "routt-hot-springs-colorado-guide",
     "name": "Routt Hot Springs",
-    "lat": 40.5594,
-    "lng": -106.85,
+    "lat": 40.5596977,
+    "lng": -106.850327,
     "temp_f": 105,
     "fee": 0,
     "access_type": "Drive-up",
@@ -409,7 +1859,21 @@
     "road_condition": "Dirt road",
     "description": "Remote natural hot springs north of Steamboat Springs. Simple pools with a wild, undeveloped feel.",
     "best_time": "Weekdays",
-    "state": "CO"
+    "state": "CO",
+    "huc_cd": "14050006",
+    "nwis": {
+      "site_no": "403335106505900",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "elevation_ft": 6440.0,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": "22",
@@ -428,14 +1892,15 @@
     "road_condition": "Short hike required",
     "description": "Natural hot springs near Steamboat Lake in a remote, forested setting.",
     "best_time": "Fall foliage season",
-    "state": "CO"
+    "state": "CO",
+    "_provenance": {}
   },
   {
     "id": "23",
     "slug": "eldorado-springs-colorado",
     "name": "Eldorado Springs Resort",
-    "lat": 39.9311,
-    "lng": -105.2795,
+    "lat": 39.93276399,
+    "lng": -105.2799904,
     "temp_f": 76,
     "fee": 7,
     "access_type": "Drive-up",
@@ -447,14 +1912,28 @@
     "road_condition": "Paved",
     "description": "Historic spring-fed pool in Eldorado Canyon near Boulder. Cool mineral water \u2014 perfect for summer swimming.",
     "insider_tips": "More cool mineral pool than hot spring. Great for families near Boulder. Bring cash.",
-    "state": "CO"
+    "state": "CO",
+    "huc_cd": "10190005",
+    "nwis": {
+      "site_no": "395558105164601",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "elevation_ft": 6120.0,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": "24",
     "slug": "fish-creek-hot-springs-colorado-guide-to-a-secluded-wilderness-soak-and-scenic-adventure",
     "name": "Fish Creek Hot Springs",
-    "lat": 40.58,
-    "lng": -107.2,
+    "lat": 44.5366611,
+    "lng": -121.5794028,
     "temp_f": 102,
     "fee": 0,
     "access_type": "Hike-in",
@@ -466,14 +1945,28 @@
     "road_condition": "Dirt road to trailhead",
     "description": "Secluded backcountry hot springs in the Flat Tops Wilderness near Steamboat Springs.",
     "best_time": "Late summer",
-    "state": "CO"
+    "state": "CO",
+    "huc_cd": "14050001",
+    "nwis": {
+      "site_no": "443212121344601",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "elevation_ft": 7140.0,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": "25",
     "slug": "paradise-hot-springs-colorado-guide",
     "name": "Paradise Hot Springs",
-    "lat": 37.29,
-    "lng": -106.52,
+    "lat": 39.95942506,
+    "lng": -107.3870015,
     "temp_f": 100,
     "fee": 15,
     "access_type": "Resort",
@@ -485,14 +1978,28 @@
     "road_condition": "Paved",
     "description": "Family-friendly hot springs resort near Pagosa Springs with multiple pools and camping.",
     "insider_tips": "Less crowded than The Springs Resort in Pagosa. Good value for families.",
-    "state": "CO"
+    "state": "CO",
+    "huc_cd": "14030002",
+    "nwis": {
+      "site_no": "395734107231100",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "elevation_ft": 10950.0,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": "26",
     "slug": "poncha-hot-springs-colorado",
     "name": "Poncha Hot Springs",
-    "lat": 38.4969,
-    "lng": -106.0769,
+    "lat": 38.4983308,
+    "lng": -106.076405,
     "temp_f": 108,
     "fee": 20,
     "access_type": "Resort",
@@ -504,14 +2011,28 @@
     "road_condition": "Paved",
     "description": "Clothing-optional resort near Salida with indoor and outdoor soaking pools fed by natural mineral springs.",
     "insider_tips": "Recently renovated. One of the more affordable resort options in central Colorado.",
-    "state": "CO"
+    "state": "CO",
+    "huc_cd": "13010001",
+    "nwis": {
+      "site_no": "382954106043300",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    },
+    "elevation_ft": 6320.0
   },
   {
     "id": "27",
     "slug": "hartsel-hot-springs-colorado-guide",
     "name": "Hartsel Hot Springs",
-    "lat": 39.0168979,
-    "lng": -105.792662,
+    "lat": 40.48264167,
+    "lng": -106.8274722,
     "temp_f": 103,
     "fee": 8,
     "access_type": "Drive-up",
@@ -523,15 +2044,152 @@
     "road_condition": "Paved",
     "description": "Small soaking operation in South Park. Simple and affordable.",
     "alerts": "Operating status changes frequently \u2014 verify before visiting",
-    "state": "CO"
+    "state": "CO",
+    "osm": {
+      "osm_id": 6707752379,
+      "osm_name": "Hartsel Hot Springs",
+      "osm_url": "https://www.openstreetmap.org/node/6707752379",
+      "match_distance_miles": 0,
+      "tags": {
+        "access": "private",
+        "name": "Hartsel Hot Springs",
+        "natural": "hot_spring",
+        "note": "52C, 126F"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "residential",
+            "name": "Elm Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Mariposa Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Siksika Trail",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Mid Land Avenue",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Fernando Trail",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Plomo Road",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "County Road 439",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Valley Drive",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Mimbres Road",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          }
+        ],
+        "buildings": [
+          {
+            "type": "train_station",
+            "name": "Hartsel station"
+          }
+        ],
+        "amenities": [
+          {
+            "type": "grave_yard",
+            "name": "Hartsel Cemetery"
+          },
+          {
+            "type": "post_office",
+            "name": "Harstel, Colorado"
+          },
+          {
+            "type": "fire_station",
+            "name": "Hartsel Fire Protection District"
+          },
+          {
+            "type": "fuel",
+            "name": null
+          },
+          {
+            "type": "bar",
+            "name": "Highline Cafe & Saloon"
+          },
+          {
+            "type": "marketplace",
+            "name": "Country Store of Hartsel"
+          }
+        ]
+      }
+    },
+    "huc_cd": "13010004",
+    "nwis": {
+      "site_no": "402858106493700",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "elevation_ft": 10800.0,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": "28",
     "slug": "rico-hot-springs-colorado-guide",
     "has_post": false,
     "name": "Rico Hot Springs (old)",
-    "lat": 37.6833,
-    "lng": -108.0167,
+    "lat": 46.28149809,
+    "lng": -122.279823,
     "temp_f": 100,
     "fee": 0,
     "access_type": "Hike-in",
@@ -544,14 +2202,340 @@
     "description": "Wild, undeveloped hot springs along the Dolores River in a remote canyon near the old mining town of Rico.",
     "best_time": "Spring and fall",
     "insider_tips": "Rarely crowded. Beautiful canyon setting along the Dolores River.",
-    "state": "CO"
+    "state": "CO",
+    "osm": {
+      "osm_id": 6707642881,
+      "osm_name": "Rico 2",
+      "osm_url": "https://www.openstreetmap.org/node/6707642881",
+      "match_distance_miles": 1.42,
+      "tags": {
+        "access": "private",
+        "name": "Rico 2",
+        "natural": "hot_spring"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "residential",
+            "name": "West Elder Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Aztec Mine Road",
+            "surface": "dirt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North River Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "West Mantz Avenue",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "County Road 54 7/10",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Horse Gulch Road",
+            "surface": "dirt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": null,
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "footway",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North Silver Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "East Soda Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": null,
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Burnett A1 Road",
+            "surface": "dirt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "West Soda Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "South Glasgow Avenue",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Saint Lewis Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "County Road North",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "West Elliot Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Burnett Road",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Argentine Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "West Campbell Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Piedmont Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "East Mantz Avenue",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "South Commercial Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North Hancock Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North Garfield Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Street 3",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "East Campbell Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "Water Tank Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Burnett A Road",
+            "surface": "dirt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North Picker Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "South Picker Street",
+            "surface": "unpaved",
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "track",
+            "name": "Aztec Mine Road",
+            "surface": "dirt",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Horse Gulch Road",
+            "surface": "dirt",
+            "sac_scale": null
+          },
+          {
+            "type": "footway",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": "unpaved",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Burnett A1 Road",
+            "surface": "dirt",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Burnett Road",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Street 3",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Burnett A Road",
+            "surface": "dirt",
+            "sac_scale": null
+          }
+        ],
+        "buildings": [
+          {
+            "type": "hotel",
+            "name": "Rico Hotel"
+          }
+        ],
+        "amenities": [
+          {
+            "type": "place_of_worship",
+            "name": "Rico Community Church"
+          },
+          {
+            "type": "post_office",
+            "name": "Rico Post Office"
+          },
+          {
+            "type": "school",
+            "name": "Rico Grade School"
+          },
+          {
+            "type": "leisure:park",
+            "name": "Louis M Jones Memorial Park"
+          },
+          {
+            "type": "fire_station",
+            "name": "Rico Fire Department"
+          },
+          {
+            "type": "library",
+            "name": "Rico Public Library"
+          },
+          {
+            "type": "townhall",
+            "name": "Rico Town Hall"
+          },
+          {
+            "type": "tourism:information",
+            "name": "National Forest Information"
+          },
+          {
+            "type": "restaurant",
+            "name": "The Prospector"
+          },
+          {
+            "type": "fuel",
+            "name": null
+          }
+        ]
+      }
+    },
+    "huc_cd": "14030002",
+    "nwis": {
+      "site_no": "461654122164300",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    },
+    "elevation_ft": 6050.0
   },
   {
     "id": "37",
     "slug": "rico-hot-springs",
     "name": "Rico Hot Springs",
-    "lat": 37.7003,
-    "lng": -108.0368,
+    "lat": 39.8716393,
+    "lng": -108.2917538,
     "temp_f": 104,
     "fee": null,
     "access_type": "Drive-up",
@@ -565,14 +2549,328 @@
     "best_time": "September\u2013October (fall color + cool air)",
     "alerts": "Private property \u2014 permission required before visiting. Caretaker on site May\u2013October.",
     "insider_tips": "Contact ricohotsprings.com well in advance. Slippery slope to pools \u2014 wear grip footwear. No cell signal on site.",
-    "state": "CO"
+    "state": "CO",
+    "osm": {
+      "osm_id": 6707642882,
+      "osm_name": "Rico 1",
+      "osm_url": "https://www.openstreetmap.org/node/6707642882",
+      "match_distance_miles": 0.33,
+      "tags": {
+        "access": "private",
+        "name": "Rico 1",
+        "natural": "hot_spring"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "residential",
+            "name": "West Elder Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Aztec Mine Road",
+            "surface": "dirt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North River Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "West Mantz Avenue",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "County Road 54 7/10",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Horse Gulch Road",
+            "surface": "dirt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": null,
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "footway",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North Silver Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "East Soda Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": null,
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Burnett A1 Road",
+            "surface": "dirt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "West Soda Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "South Glasgow Avenue",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Saint Lewis Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "County Road North",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "West Elliot Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Burnett Road",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Argentine Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "West Campbell Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Piedmont Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "East Mantz Avenue",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "South Commercial Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North Hancock Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North Garfield Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "East Campbell Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "Water Tank Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Burnett A Road",
+            "surface": "dirt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North Picker Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "South Picker Street",
+            "surface": "unpaved",
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "track",
+            "name": "Aztec Mine Road",
+            "surface": "dirt",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Horse Gulch Road",
+            "surface": "dirt",
+            "sac_scale": null
+          },
+          {
+            "type": "footway",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": "unpaved",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Burnett A1 Road",
+            "surface": "dirt",
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Burnett Road",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Burnett A Road",
+            "surface": "dirt",
+            "sac_scale": null
+          }
+        ],
+        "buildings": [
+          {
+            "type": "hotel",
+            "name": "Rico Hotel"
+          }
+        ],
+        "amenities": [
+          {
+            "type": "place_of_worship",
+            "name": "Rico Community Church"
+          },
+          {
+            "type": "post_office",
+            "name": "Rico Post Office"
+          },
+          {
+            "type": "school",
+            "name": "Rico Grade School"
+          },
+          {
+            "type": "leisure:park",
+            "name": "Louis M Jones Memorial Park"
+          },
+          {
+            "type": "fire_station",
+            "name": "Rico Fire Department"
+          },
+          {
+            "type": "library",
+            "name": "Rico Public Library"
+          },
+          {
+            "type": "townhall",
+            "name": "Rico Town Hall"
+          },
+          {
+            "type": "tourism:information",
+            "name": "National Forest Information"
+          },
+          {
+            "type": "restaurant",
+            "name": "The Prospector"
+          },
+          {
+            "type": "fuel",
+            "name": null
+          }
+        ]
+      }
+    },
+    "elevation_ft": 8840.0,
+    "huc_cd": "14030002",
+    "nwis": {
+      "site_no": "395218108172800",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "29",
     "slug": "hot-springs-near-buena-vista",
     "name": "Mount Princeton Hot Springs",
-    "lat": 38.7328,
-    "lng": -106.1611,
+    "lat": 38.7333298,
+    "lng": -106.1672409,
     "temp_f": 132,
     "fee": 28,
     "access_type": "Resort",
@@ -584,14 +2882,28 @@
     "road_condition": "Paved",
     "description": "Popular resort near Buena Vista with multiple outdoor pools fed by naturally superheated springs.",
     "insider_tips": "Free riverside pools along Chalk Creek Rd are just upstream \u2014 arrive early.",
-    "state": "CO"
+    "state": "CO",
+    "elevation_ft": 8150.0,
+    "huc_cd": "11020001",
+    "nwis": {
+      "site_no": "384400106100000",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "30",
     "slug": "hot-springs-near-denver",
     "name": "Indian Hot Springs",
-    "lat": 39.7389,
-    "lng": -105.5119,
+    "lat": 40.03275155,
+    "lng": -108.5603758,
     "temp_f": 98,
     "fee": 15,
     "access_type": "Drive-up",
@@ -604,14 +2916,470 @@
     "description": "Historic mineral springs just 45 minutes west of Denver off I-70. Underground caves and outdoor pools.",
     "best_time": "Weekday evenings",
     "insider_tips": "One of the closest hot springs to Denver. The underground cave pools are a unique experience.",
-    "state": "CO"
+    "state": "CO",
+    "osm": {
+      "osm_id": 9588812190,
+      "osm_name": "Indian Hot Springs",
+      "osm_url": "https://www.openstreetmap.org/node/9588812190",
+      "match_distance_miles": 0.04,
+      "tags": {
+        "addr:city": "Idaho Springs",
+        "addr:housenumber": "302",
+        "addr:postcode": "80452",
+        "addr:state": "CO",
+        "addr:street": "Soda Creek Road",
+        "amenity": "public_bath",
+        "bath:open_air": "no",
+        "bath:type": "hot_spring",
+        "check_date": "2026-06-25",
+        "fee": "yes",
+        "name": "Indian Hot Springs",
+        "tourism": "hotel"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "residential",
+            "name": "Van Eden Road",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Steve Canyon Road",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "22nd Avenue",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": "paved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": null,
+            "surface": "dirt",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "Ottak Road",
+            "surface": null,
+            "access": "private"
+          },
+          {
+            "type": "residential",
+            "name": "Spruce Lane",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "20th Avenue",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Riverside Drive",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Gilson Avenue",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Divide View Drive",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "14th Avenue",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "11th Avenue",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "17th Avenue",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "1st Avenue",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Illinois Street",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Pine Slope Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Freeland Drive",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "25th Avenue",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "4th Avenue",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Placer Street",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "7th Avenue",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "Center Alley",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Two Brothers Road",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "High Street",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Edwards Street",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Miner Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "19th Avenue",
+            "surface": "paved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "South Spring Gulch Road",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Hidden Wilderness Road",
+            "surface": "rock",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "10th Avenue",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "16th Avenue",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "27th Avenue",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Idaho Street",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "24th Avenue",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Lamertine Place",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "2nd Avenue",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "9th Avenue",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Wall Street",
+            "surface": "paved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "6th Avenue",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "Miner Circle",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Montane Drive",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Virginia Street",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Red Fox Lane",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "Water Street",
+            "surface": null,
+            "access": "private"
+          },
+          {
+            "type": "residential",
+            "name": "Water Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "27th Place",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "23rd Avenue",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "15th Avenue",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "Lane A",
+            "surface": "paved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "12th Avenue",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "Lane B",
+            "surface": "paved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "8th Avenue",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "Lane C",
+            "surface": "paved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "5th Avenue",
+            "surface": null,
+            "access": null
+          }
+        ],
+        "parking": [
+          {
+            "name": null,
+            "capacity": null,
+            "access": null,
+            "fee": null
+          }
+        ],
+        "trails": [
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Hidden Wilderness Road",
+            "surface": "rock",
+            "sac_scale": null
+          }
+        ],
+        "buildings": [
+          {
+            "type": "apartments",
+            "name": "Mitchel White Residences"
+          }
+        ],
+        "amenities": [
+          {
+            "type": "police",
+            "name": "Colorado State Patrol Idaho Springs Post"
+          },
+          {
+            "type": "police",
+            "name": "Idaho Springs Police Department"
+          },
+          {
+            "type": "cafe",
+            "name": "Starbucks"
+          },
+          {
+            "type": "fuel",
+            "name": "Phillips 66"
+          },
+          {
+            "type": "bank",
+            "name": "Evergreen National Bank"
+          },
+          {
+            "type": "tourism:camp_site",
+            "name": "Indian Springs Campsites"
+          },
+          {
+            "type": "fuel",
+            "name": "Maverik"
+          },
+          {
+            "type": "tourism:information",
+            "name": "Government Offices Arapaho National Forest (Closed To Public)"
+          },
+          {
+            "type": "pub",
+            "name": "Vintage Moose Tavern"
+          },
+          {
+            "type": "toilets",
+            "name": null
+          }
+        ]
+      }
+    },
+    "huc_cd": "14080101",
+    "nwis": {
+      "site_no": "400158108333501",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    },
+    "elevation_ft": 5455.0
   },
   {
     "id": "31",
     "slug": "hot-sulphur-springs-resort",
     "name": "Hot Sulphur Springs Resort",
-    "lat": 40.0758,
-    "lng": -106.1119,
+    "lat": 40.1002628,
+    "lng": -106.2644718,
     "temp_f": 110,
     "fee": 22,
     "access_type": "Resort",
@@ -623,14 +3391,339 @@
     "road_condition": "Paved",
     "description": "21 pools of varying temperatures on the Colorado River in Grand County. Historic resort, family-friendly.",
     "insider_tips": "One of the most underrated resorts in Colorado \u2014 rarely as crowded as Glenwood.",
-    "state": "CO"
+    "state": "CO",
+    "osm": {
+      "osm_id": 6707874630,
+      "osm_name": "Hot Sulphur Springs",
+      "osm_url": "https://www.openstreetmap.org/node/6707874630",
+      "match_distance_miles": 0.07,
+      "tags": {
+        "fee": "yes",
+        "name": "Hot Sulphur Springs",
+        "natural": "hot_spring",
+        "note": "44C, 111F",
+        "tourism": "camp_site;loding",
+        "website": "https://www.hotsulphursprings.com/"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Ute Bill Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Hemlock Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "County Road 559",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Railroad Avenue",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "East Sumner Avenue",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Spruce Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Roosevelt Avenue",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Cedar Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Maple Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Ridgeway Avenue",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Moffat Avenue",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Nevava Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Spring Road",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Spring Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Third Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Aspen Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Sumner Avenue",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "First Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "South Pioneer Park Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Sixth Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "East Grand Avenue",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Parshall Divide Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North Pioneer Park Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Ash Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "East Ridgeway Avenue",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Cherry Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Walnut Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "East Moffat Avenue",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "East Roosevelt Avenue",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Poplar Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Fourth Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "East Cedar Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "Colorado Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Fifth Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "East Nevava Street",
+            "surface": "unpaved",
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          }
+        ],
+        "buildings": [
+          {
+            "type": "church",
+            "name": "Jehovah\u2019s Witness Hall"
+          },
+          {
+            "type": "warehouse",
+            "name": "Coca-Cola"
+          },
+          {
+            "type": "yes",
+            "name": "Hot Sulphur Springs Parshall Fire Protection District"
+          },
+          {
+            "type": "industrial",
+            "name": "CDOT"
+          },
+          {
+            "type": "yes",
+            "name": "Grand County Admin. Office"
+          }
+        ],
+        "amenities": [
+          {
+            "type": "leisure:park",
+            "name": "Pioneer Park"
+          },
+          {
+            "type": "tourism:camp_site",
+            "name": "Pioneer Park Campground/Day Use"
+          },
+          {
+            "type": "tourism:museum",
+            "name": "Historical Museum"
+          },
+          {
+            "type": "tourism:attraction",
+            "name": "Hot Sulphur Springs"
+          },
+          {
+            "type": "fuel",
+            "name": null
+          },
+          {
+            "type": "tourism:camp_site;loding",
+            "name": "Hot Sulphur Springs"
+          },
+          {
+            "type": "tourism:camp_pitch",
+            "name": null
+          },
+          {
+            "type": "leisure:picnic_table;firepit",
+            "name": null
+          },
+          {
+            "type": "polling_station",
+            "name": null
+          },
+          {
+            "type": "place_of_worship",
+            "name": "Jehovah\u2019s Witness Hall"
+          }
+        ]
+      }
+    },
+    "huc_cd": "14010001",
+    "nwis": {
+      "site_no": "400601106155000",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "32",
     "slug": "waunita-hot-springs-ranch",
     "name": "Waunita Hot Springs Ranch",
-    "lat": 38.5141613,
-    "lng": -106.5083629,
+    "lat": 38.51721669,
+    "lng": -106.5161409,
     "temp_f": 175,
     "fee": 0,
     "access_type": "Resort",
@@ -642,15 +3735,29 @@
     "road_condition": "Paved",
     "description": "Guest dude ranch near Gunnison with naturally hot spring-fed swimming pool. Incredible mountain setting.",
     "insider_tips": "Pool access for overnight guests only. Source spring is among the hottest in Colorado at 175\u00b0F.",
-    "state": "CO"
+    "state": "CO",
+    "huc_cd": "14020003",
+    "nwis": {
+      "site_no": "383102106305600",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "elevation_ft": 8950.0,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": "33",
     "slug": "cebolla-hot-springs",
     "has_post": false,
     "name": "Cebolla Hot Springs",
-    "lat": 38.2739,
-    "lng": -107.0983,
+    "lat": 38.28777187,
+    "lng": -107.0989397,
     "temp_f": 100,
     "fee": 0,
     "access_type": "Drive-up",
@@ -663,14 +3770,28 @@
     "description": "Free undeveloped BLM hot springs near Lake City on the Lake Fork of the Gunnison River.",
     "best_time": "Spring and fall",
     "insider_tips": "Three pools along the river. Primitive and uncrowded.",
-    "state": "CO"
+    "state": "CO",
+    "huc_cd": "14020002",
+    "nwis": {
+      "site_no": "381716107055400",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "elevation_ft": 8080.0,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": "34",
     "slug": "ouray-hot-springs-pool",
     "name": "Ouray Hot Springs Pool",
-    "lat": 38.0167,
-    "lng": -107.6781,
+    "lat": 38.81332929,
+    "lng": -106.2227982,
     "temp_f": 96,
     "fee": 18,
     "access_type": "Drive-up",
@@ -682,14 +3803,28 @@
     "road_condition": "Paved",
     "description": "Municipal hot springs pool in downtown Ouray \u2014 the 'Switzerland of America.' Stunning mountain views from every lane.",
     "insider_tips": "Great value compared to private resorts. The lazy river is fed by natural hot springs.",
-    "state": "CO"
+    "state": "CO",
+    "elevation_ft": 8145.0,
+    "huc_cd": "14020006",
+    "nwis": {
+      "site_no": "384849106133000",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "35",
     "slug": "pinkerton-hot-springs",
     "name": "Pinkerton Hot Springs",
-    "lat": 37.4472,
-    "lng": -107.8047,
+    "lat": 37.46611108,
+    "lng": -107.8056213,
     "temp_f": 100,
     "fee": 0,
     "access_type": "Hike-in",
@@ -701,14 +3836,147 @@
     "road_condition": "Short hike required",
     "description": "Wild undeveloped hot springs along the Animas River south of Durango. Primitive pools with train views.",
     "insider_tips": "The Durango & Silverton Narrow Gauge Railroad passes nearby \u2014 watch for the steam train.",
-    "state": "CO"
+    "state": "CO",
+    "osm": {
+      "osm_id": 4783203677,
+      "osm_name": "Pinkerton Hot Springs",
+      "osm_url": "https://www.openstreetmap.org/node/4783203677",
+      "match_distance_miles": 0.27,
+      "tags": {
+        "name": "Pinkerton Hot Springs",
+        "natural": "hot_spring",
+        "tourism": "attraction"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": null,
+            "access": "private"
+          },
+          {
+            "type": "residential",
+            "name": "Elk Horn Mountain Road",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Colley Lane",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Celadon Drive",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Irongate Way",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Animas Spring Road",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Whispering Pines Drive",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Pine Acres",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Painter Ranch Trail",
+            "surface": "paved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": null,
+            "surface": "paved",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Mitchell Lakes Road",
+            "surface": null,
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Colley Lane",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Mitchell Lakes Road",
+            "surface": null,
+            "sac_scale": null
+          }
+        ],
+        "buildings": [],
+        "amenities": [
+          {
+            "type": "school",
+            "name": "Colorado Timberline Academy"
+          },
+          {
+            "type": "tourism:attraction",
+            "name": "Pinkerton Hot Springs"
+          }
+        ]
+      }
+    },
+    "huc_cd": "14080104",
+    "nwis": {
+      "site_no": "372758107481800",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "elevation_ft": 6750.0,
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis",
+      "elevation_ft": "nwis"
+    }
   },
   {
     "id": "36",
     "slug": "the-springs-resort-pagosa-springs",
     "name": "Pagosa Hot Springs (The Springs Resort)",
-    "lat": 37.2644127,
-    "lng": -107.0105795,
+    "lat": 39.89191699,
+    "lng": -108.4548155,
     "temp_f": 114,
     "fee": 39,
     "access_type": "Resort",
@@ -721,6 +3989,488 @@
     "description": "Largest natural hot springs in the world by depth. 25 riverside pools at The Springs Resort in Pagosa Springs.",
     "best_time": "Weekday mornings",
     "insider_tips": "The Mother Spring is the deepest known hot spring in the world. Book online for discounts.",
-    "state": "CO"
+    "state": "CO",
+    "osm": {
+      "osm_id": 10905726085,
+      "osm_name": "The Mother Spring",
+      "osm_url": "https://www.openstreetmap.org/node/10905726085",
+      "match_distance_miles": 0,
+      "tags": {
+        "name": "The Mother Spring",
+        "natural": "hot_spring"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "residential",
+            "name": "Frontage Road",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "South 6th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Bryn Mawr Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": null,
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": null,
+            "surface": "asphalt",
+            "access": "yes"
+          },
+          {
+            "type": "service",
+            "name": "South San Juan Alley",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Durango Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Hermosa Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Navajo Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Mesa Drive",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Goldmine Drive",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "San Juan Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North 6th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "San Juan",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "South 9th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "South 5th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "4th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Zuni Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Lannie Court",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "South 10th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Pine Glen Drive",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Rumbaugh Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North Eight Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Loma Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Park Street",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "14th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "Hermosa Alley West",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "South 2nd Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Bryn Mawr",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Spring Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North 2nd Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Mill Creek Ranch Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North 14th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Aspen Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Cemetery Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Apple Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Pierce Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "La Paz Court",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North 3rd Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "6th Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Tierra del Oro Drive",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North 8th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North 4th Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Hill Crest Drive",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "South 7th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Snowball Road",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North 7th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Piedra Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Berwin Street",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "15th Place",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Florida Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Hot Springs Boulevard",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "North 4th",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "Hermosa Alley East",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "15th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "11th Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Juanita Street",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "footway",
+            "name": "San Juan Riverwalk",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "footway",
+            "name": "Centennial Park Bridge",
+            "surface": "wood",
+            "access": null
+          },
+          {
+            "type": "footway",
+            "name": null,
+            "surface": "concrete",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Rosita Street",
+            "surface": "asphalt",
+            "access": null
+          }
+        ],
+        "parking": [
+          {
+            "name": null,
+            "capacity": null,
+            "access": null,
+            "fee": null
+          }
+        ],
+        "trails": [
+          {
+            "type": "track",
+            "name": "Hot Springs Boulevard",
+            "surface": "unpaved",
+            "sac_scale": null
+          },
+          {
+            "type": "footway",
+            "name": "San Juan Riverwalk",
+            "surface": "asphalt",
+            "sac_scale": null
+          },
+          {
+            "type": "footway",
+            "name": "Centennial Park Bridge",
+            "surface": "wood",
+            "sac_scale": null
+          },
+          {
+            "type": "footway",
+            "name": null,
+            "surface": "concrete",
+            "sac_scale": null
+          }
+        ],
+        "buildings": [
+          {
+            "type": "yes",
+            "name": "Pagosa Springs High School"
+          }
+        ],
+        "amenities": [
+          {
+            "type": "restaurant",
+            "name": "Elk Horn Cafe"
+          },
+          {
+            "type": "cafe",
+            "name": "Root House Coffee Shop"
+          },
+          {
+            "type": "fast_food",
+            "name": "Subway"
+          },
+          {
+            "type": "restaurant",
+            "name": "Tequila"
+          },
+          {
+            "type": "post_office",
+            "name": "Pagosa Springs Post Office"
+          },
+          {
+            "type": "place_of_worship",
+            "name": "Community United Methodist Church"
+          },
+          {
+            "type": "parking",
+            "name": null
+          },
+          {
+            "type": "fuel",
+            "name": null
+          },
+          {
+            "type": "tourism:museum",
+            "name": "Pagosa Springs History Museum"
+          },
+          {
+            "type": "ranger_station",
+            "name": "Pagosa Ranger District"
+          }
+        ]
+      }
+    },
+    "elevation_ft": 7105.0,
+    "huc_cd": "14080101",
+    "nwis": {
+      "site_no": "395331108271500",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   }
 ]

@@ -11,14 +11,184 @@
     "season": "Year-round",
     "description": "Natural hot springs near Stevens Pass in the Central Cascades.",
     "has_post": false,
-    "state": "WA"
+    "state": "WA",
+    "osm": {
+      "osm_id": 7788171896,
+      "osm_name": "Scenic Hot Springs",
+      "osm_url": "https://www.openstreetmap.org/node/7788171896",
+      "match_distance_miles": 0.01,
+      "tags": {
+        "access": "private",
+        "amenity": "public_bath",
+        "bath:type": "hot_spring",
+        "description": "Private hot tubs",
+        "drinking_water": "no",
+        "fee": "yes",
+        "intermittent": "no",
+        "name": "Scenic Hot Springs",
+        "natural": "hot_spring",
+        "nudism": "yes",
+        "outdoor": "yes",
+        "reservation": "required",
+        "website": "https://www.scenichotsprings.com/"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 840",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "National Forest Development Road 6095-110",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Forest Road 840",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "Old Cascade Highway",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "Northeast 119th Street",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "National Forest Development Road 6095",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "residential",
+            "name": "876th Avenue Northeast",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Iron Goat Trail",
+            "surface": "asphalt",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Windy Point Cross Over Trail",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Surprise Creek Trail",
+            "surface": "ground",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": "ground",
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "track",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "Forest Road 840",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "Iron Goat Trail",
+            "surface": "asphalt",
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "Windy Point Cross Over Trail",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "Surprise Creek Trail",
+            "surface": "ground",
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": "ground",
+            "sac_scale": "mountain_hiking"
+          }
+        ],
+        "buildings": [],
+        "amenities": [
+          {
+            "type": "bench",
+            "name": null
+          },
+          {
+            "type": "waste_basket",
+            "name": null
+          },
+          {
+            "type": "toilets",
+            "name": null
+          },
+          {
+            "type": "tourism:viewpoint",
+            "name": "Windy Point Viewpoint"
+          },
+          {
+            "type": "public_bath",
+            "name": "Scenic Hot Springs"
+          },
+          {
+            "type": "tourism:information",
+            "name": null
+          }
+        ]
+      }
+    },
+    "_provenance": {}
   },
   {
     "id": "2",
     "slug": "sol-duc-hot-springs",
     "name": "Sol Duc Hot Springs",
-    "lat": 47.9701,
-    "lng": -123.8624,
+    "lat": 47.9686971,
+    "lng": -123.8643653,
     "temp_f": 78,
     "fee": 18,
     "access_type": "Drive-up",
@@ -34,7 +204,313 @@
     "nearby_gems": "Sol Duc Falls (1.6 miles), Appleton Pass trail",
     "last_verified": "2024-01-15",
     "alerts": "No current alerts - all pools open",
-    "state": "WA"
+    "state": "WA",
+    "osm": {
+      "osm_id": 426288080,
+      "osm_name": "Sol Duc Hot Springs",
+      "osm_url": "https://www.openstreetmap.org/node/426288080",
+      "match_distance_miles": 0.12,
+      "tags": {
+        "intermittent": "no",
+        "name": "Sol Duc Hot Springs",
+        "natural": "hot_spring"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "service",
+            "name": "Lover's Lane",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "footway",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": null,
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Mink Lake Trail",
+            "surface": "ground",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "Sol Duc Campground Loop A",
+            "surface": "paved",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "Sol Duc Campground Loop B",
+            "surface": "paved",
+            "access": null
+          },
+          {
+            "type": "footway",
+            "name": "Sol Duc Campground Nature Trail",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "B Loop Trail",
+            "surface": "ground",
+            "access": null
+          },
+          {
+            "type": "footway",
+            "name": "Lover's Lane Trail",
+            "surface": "ground",
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "36",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "39",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "26",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "34",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "35",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "30",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "31",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "29",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "20",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "23",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "25",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "24",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "32",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "21",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "17",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "19",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "18",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "22",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "33",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "37",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "service",
+            "name": "38",
+            "surface": null,
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "footway",
+            "name": null,
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "Mink Lake Trail",
+            "surface": "ground",
+            "sac_scale": null
+          },
+          {
+            "type": "footway",
+            "name": "Sol Duc Campground Nature Trail",
+            "surface": "unpaved",
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "B Loop Trail",
+            "surface": "ground",
+            "sac_scale": null
+          },
+          {
+            "type": "footway",
+            "name": "Lover's Lane Trail",
+            "surface": "ground",
+            "sac_scale": "mountain_hiking"
+          }
+        ],
+        "buildings": [
+          {
+            "type": "yes",
+            "name": "Sol Duc Hot Springs Resort Lodge"
+          },
+          {
+            "type": "yes",
+            "name": "River Suite"
+          },
+          {
+            "type": "yes",
+            "name": "Staff Housing"
+          },
+          {
+            "type": "yes",
+            "name": "Sol Duc Oly House"
+          },
+          {
+            "type": "yes",
+            "name": "Water Treatment Building"
+          }
+        ],
+        "amenities": [
+          {
+            "type": "fountain",
+            "name": null
+          },
+          {
+            "type": "restaurant",
+            "name": "The Springs Restaurant"
+          },
+          {
+            "type": "waste_disposal",
+            "name": null
+          },
+          {
+            "type": "leisure:picnic_table",
+            "name": null
+          },
+          {
+            "type": "sanitary_dump_station",
+            "name": null
+          },
+          {
+            "type": "tourism:camp_pitch",
+            "name": "42"
+          },
+          {
+            "type": "tourism:information",
+            "name": "Registration - Loop B"
+          },
+          {
+            "type": "vending_machine",
+            "name": null
+          },
+          {
+            "type": "waste_basket",
+            "name": null
+          },
+          {
+            "type": "tourism:camp_pitch",
+            "name": null
+          }
+        ]
+      }
+    },
+    "elevation_ft": 1640.0,
+    "huc_cd": "17100101",
+    "nwis": {
+      "site_no": "475808123514706",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "3",
@@ -48,7 +524,8 @@
     "season": "Year-round",
     "description": "Small unincorporated community in King County with natural hot springs.",
     "has_post": false,
-    "state": "WA"
+    "state": "WA",
+    "_provenance": {}
   },
   {
     "id": "4",
@@ -62,7 +539,8 @@
     "season": "Year-round",
     "description": "Natural hot springs in the Mount Baker area of the North Cascades.",
     "has_post": false,
-    "state": "WA"
+    "state": "WA",
+    "_provenance": {}
   },
   {
     "id": "5",
@@ -76,7 +554,54 @@
     "season": "Summer only",
     "description": "Remote hot springs in the Glacier Peak Wilderness, requires a long hike.",
     "has_post": false,
-    "state": "WA"
+    "state": "WA",
+    "osm": {
+      "osm_id": 6601157317,
+      "osm_name": "Gamma Hot Springs",
+      "osm_url": "https://www.openstreetmap.org/node/6601157317",
+      "match_distance_miles": 1.53,
+      "tags": {
+        "description": "Very remote hot spring pool",
+        "intermittent": "no",
+        "name": "Gamma Hot Springs",
+        "natural": "hot_spring",
+        "temperature": "60"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "path",
+            "name": "Gamma Ridge Trail #791",
+            "surface": "ground",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Pacific Crest Trail",
+            "surface": "ground",
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "path",
+            "name": "Gamma Ridge Trail #791",
+            "surface": "ground",
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "Pacific Crest Trail",
+            "surface": "ground",
+            "sac_scale": null
+          }
+        ],
+        "buildings": [],
+        "amenities": []
+      }
+    },
+    "_provenance": {}
   },
   {
     "id": "6",
@@ -93,7 +618,8 @@
     "best_time": "Weekday visits for solitude",
     "insider_tips": "Reservations required via goldmyer.org. The hike is 12 miles round trip.",
     "has_post": false,
-    "state": "WA"
+    "state": "WA",
+    "_provenance": {}
   },
   {
     "id": "7",
@@ -107,14 +633,140 @@
     "season": "Year-round",
     "description": "Natural hot springs near Mount Baker in the Mt. Baker-Snoqualmie National Forest.",
     "has_post": false,
-    "state": "WA"
+    "state": "WA",
+    "osm": {
+      "osm_id": 1931527696,
+      "osm_name": "Baker Hot Springs",
+      "osm_url": "https://www.openstreetmap.org/node/1931527696",
+      "match_distance_miles": 0.26,
+      "tags": {
+        "alt_name": "Morovitz Hot Springs",
+        "amenity": "public_bath",
+        "bath:type": "hot_spring",
+        "name": "Baker Hot Springs",
+        "natural": "hot_spring",
+        "nudism": "yes",
+        "outdoor": "yes"
+      },
+      "nearby": {
+        "access_roads": [
+          {
+            "type": "path",
+            "name": "Forest Road 1144",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "National Forest Development Road 1130",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "National Forest Development Road 030",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "track",
+            "name": "National Forest Development Road 031",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "Swift Creek Trail",
+            "surface": "ground",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": "National Forest Development Road 1144",
+            "surface": null,
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "National Forest Development Road 1144",
+            "surface": "unpaved",
+            "access": null
+          },
+          {
+            "type": "unclassified",
+            "name": "National Forest Development Road 1130",
+            "surface": "gravel",
+            "access": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": "dirt",
+            "access": null
+          }
+        ],
+        "parking": [],
+        "trails": [
+          {
+            "type": "path",
+            "name": "Forest Road 1144",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "National Forest Development Road 1130",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "National Forest Development Road 030",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "track",
+            "name": "National Forest Development Road 031",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "Swift Creek Trail",
+            "surface": "ground",
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": "National Forest Development Road 1144",
+            "surface": null,
+            "sac_scale": null
+          },
+          {
+            "type": "path",
+            "name": null,
+            "surface": "dirt",
+            "sac_scale": null
+          }
+        ],
+        "buildings": [],
+        "amenities": [
+          {
+            "type": "public_bath",
+            "name": "Baker Hot Springs"
+          }
+        ]
+      }
+    },
+    "_provenance": {}
   },
   {
     "id": "8",
     "slug": "olympic-hot-springs",
     "name": "Olympic Hot Springs",
-    "lat": 48.0412,
-    "lng": -123.5902,
+    "lat": 47.9770326,
+    "lng": -123.6865828,
     "temp_f": null,
     "fee": 0,
     "access_type": "Hike-in",
@@ -123,7 +775,21 @@
     "best_time": "Late morning on weekdays",
     "insider_tips": "Water temperature varies with river flow. Check with ranger station for conditions.",
     "has_post": false,
-    "state": "WA"
+    "state": "WA",
+    "elevation_ft": 2000.0,
+    "huc_cd": "17110020",
+    "nwis": {
+      "site_no": "475838123410701",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "9",
@@ -137,7 +803,8 @@
     "season": "Year-round",
     "description": "Natural hot springs along the Wind River in Carson, Gifford Pinchot National Forest.",
     "has_post": false,
-    "state": "WA"
+    "state": "WA",
+    "_provenance": {}
   },
   {
     "id": "10",
@@ -154,7 +821,8 @@
     "description": "Resort hot springs on Orcas Island with ocean views, sauna, and soaking tubs.",
     "best_time": "Off-season weekdays for fewer crowds",
     "has_post": false,
-    "state": "WA"
+    "state": "WA",
+    "_provenance": {}
   },
   {
     "id": "11",
@@ -168,21 +836,36 @@
     "season": "Summer only",
     "description": "Historic hot springs site in Mount Rainier National Park. The springs are mostly cooled but the area has cultural significance.",
     "has_post": false,
-    "state": "WA"
+    "state": "WA",
+    "_provenance": {}
   },
   {
     "id": "12",
     "slug": "skamania-hot-springs",
     "name": "Skamania Hot Springs",
-    "lat": 45.7209,
-    "lng": -121.9274,
+    "lat": 45.72122756,
+    "lng": -121.9273034,
     "temp_f": null,
     "fee": null,
     "access_type": "Hike-in",
     "season": "Year-round",
     "description": "Natural hot springs in Skamania County near the Columbia River Gorge.",
     "has_post": false,
-    "state": "WA"
+    "state": "WA",
+    "elevation_ft": 330.0,
+    "huc_cd": "17070105",
+    "nwis": {
+      "site_no": "454317121553401",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "13",
@@ -197,7 +880,8 @@
     "state": "OR",
     "description": "Historic bathhouse in Mt Hood National Forest, 1.4-mile hike to rustic cedar tubs.",
     "has_post": false,
-    "slug": "bagby-hot-springs"
+    "slug": "bagby-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "14",
@@ -212,7 +896,8 @@
     "state": "OR",
     "description": "Retreat center with natural rock pools along the Breitenbush River.",
     "has_post": false,
-    "slug": "breitenbush-hot-springs"
+    "slug": "breitenbush-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "15",
@@ -227,7 +912,8 @@
     "state": "OR",
     "description": "Deep turquoise pool in old-growth forest, 0.25-mile hike from trailhead.",
     "has_post": false,
-    "slug": "terwilliger-cougar-hot-springs"
+    "slug": "terwilliger-cougar-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "16",
@@ -242,7 +928,8 @@
     "state": "OR",
     "description": "Scenic pools overlooking the Umpqua River, 0.3-mile hike.",
     "has_post": false,
-    "slug": "umpqua-hot-springs"
+    "slug": "umpqua-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "17",
@@ -257,7 +944,8 @@
     "state": "OR",
     "description": "Free roadside springs along the North Fork of the Willamette River.",
     "has_post": false,
-    "slug": "mccredie-hot-springs"
+    "slug": "mccredie-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "18",
@@ -272,7 +960,8 @@
     "state": "OR",
     "description": "Landscaped pools at Belknap Lodge along the McKenzie River.",
     "has_post": false,
-    "slug": "belknap-hot-springs"
+    "slug": "belknap-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "19",
@@ -287,7 +976,8 @@
     "state": "OR",
     "description": "Historic mineral bathhouse and hotel in the Columbia River Gorge.",
     "has_post": false,
-    "slug": "carson-hot-springs-resort"
+    "slug": "carson-hot-springs-resort",
+    "_provenance": {}
   },
   {
     "id": "20",
@@ -302,13 +992,14 @@
     "state": "OR",
     "description": "Three rock pools along a creek in the Columbia Gorge, short hike.",
     "has_post": false,
-    "slug": "saint-martins-hot-springs"
+    "slug": "saint-martins-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "21",
     "name": "Moffett's Hot Springs",
-    "lat": 45.656,
-    "lng": -121.96,
+    "lat": 45.65622805,
+    "lng": -121.958693,
     "temp_f": 100,
     "fee": 0,
     "access_type": "Hike-in",
@@ -317,7 +1008,21 @@
     "state": "OR",
     "description": "Natural pool along the Wind River, hidden forest setting.",
     "has_post": false,
-    "slug": "moffetts-hot-springs"
+    "slug": "moffetts-hot-springs",
+    "elevation_ft": 75.0,
+    "huc_cd": "17080001",
+    "nwis": {
+      "site_no": "453923121572701",
+      "agency_cd": "USGS",
+      "site_type": "SP"
+    },
+    "_provenance": {
+      "lat": "nwis",
+      "lng": "nwis",
+      "elevation_ft": "nwis",
+      "huc_cd": "nwis",
+      "nwis": "nwis"
+    }
   },
   {
     "id": "22",
@@ -332,7 +1037,8 @@
     "state": "OR",
     "description": "Remote springs in the Willamette National Forest along Salt Creek.",
     "has_post": false,
-    "slug": "kitson-hot-springs"
+    "slug": "kitson-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "23",
@@ -347,7 +1053,8 @@
     "state": "OR",
     "description": "Desert springs at the base of Steens Mountain with stunning views.",
     "has_post": false,
-    "slug": "alvord-hot-springs"
+    "slug": "alvord-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "24",
@@ -362,7 +1069,8 @@
     "state": "OR",
     "description": "Geothermal area in the Alvord Desert, pools too hot for soaking in most spots.",
     "has_post": false,
-    "slug": "mickey-hot-springs"
+    "slug": "mickey-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "25",
@@ -377,7 +1085,8 @@
     "state": "OR",
     "description": "Resort with a large outdoor pool and private soaking tubs in Harney County.",
     "has_post": false,
-    "slug": "crystal-crane-hot-springs"
+    "slug": "crystal-crane-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "26",
@@ -392,7 +1101,8 @@
     "state": "OR",
     "description": "Natural rock pool on Hart Mountain National Antelope Refuge.",
     "has_post": false,
-    "slug": "hart-mountain-hot-springs"
+    "slug": "hart-mountain-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "27",
@@ -407,7 +1117,8 @@
     "state": "OR",
     "description": "Riverside pool along the Owyhee River in eastern Oregon canyon country.",
     "has_post": false,
-    "slug": "snively-hot-springs"
+    "slug": "snively-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "28",
@@ -422,7 +1133,8 @@
     "state": "OR",
     "description": "Historic roadside soaking pool along the Snake River in eastern Oregon.",
     "has_post": false,
-    "slug": "givens-hot-springs"
+    "slug": "givens-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "29",
@@ -437,7 +1149,8 @@
     "state": "OR",
     "description": "Small resort with covered soaking pool in eastern Oregon ranching country.",
     "has_post": false,
-    "slug": "mundo-hot-springs"
+    "slug": "mundo-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "30",
@@ -452,7 +1165,8 @@
     "state": "OR",
     "description": "Natural pools near East Lake in the Newberry National Volcanic Monument.",
     "has_post": false,
-    "slug": "paulina-hot-springs"
+    "slug": "paulina-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "31",
@@ -467,7 +1181,8 @@
     "state": "OR",
     "description": "Remote canyon springs at the confluence of three streams in SE Oregon.",
     "has_post": false,
-    "slug": "three-forks-hot-spring"
+    "slug": "three-forks-hot-spring",
+    "_provenance": {}
   },
   {
     "id": "32",
@@ -482,7 +1197,8 @@
     "state": "OR",
     "description": "BLM campground with natural soaking pool in the high desert.",
     "has_post": false,
-    "slug": "willow-creek-hot-springs"
+    "slug": "willow-creek-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "33",
@@ -497,7 +1213,8 @@
     "state": "OR",
     "description": "Small natural pool along the McKenzie River trail.",
     "has_post": false,
-    "slug": "bigelow-hot-spring"
+    "slug": "bigelow-hot-spring",
+    "_provenance": {}
   },
   {
     "id": "34",
@@ -512,7 +1229,8 @@
     "state": "OR",
     "description": "Warm pool in the high desert, near the Nevada border.",
     "has_post": false,
-    "slug": "fisher-hot-springs"
+    "slug": "fisher-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "35",
@@ -527,7 +1245,8 @@
     "state": "OR",
     "description": "Natural springs in the Blue Mountains of eastern Oregon.",
     "has_post": false,
-    "slug": "blue-mountain-hot-springs"
+    "slug": "blue-mountain-hot-springs",
+    "_provenance": {}
   },
   {
     "id": "36",
@@ -542,7 +1261,8 @@
     "clothing": "",
     "description": "Island pool in Malheur River; free; primitive high desert setting; clothing-optional.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "_provenance": {}
   },
   {
     "id": "37",
@@ -557,7 +1277,8 @@
     "clothing": "Swimsuit required",
     "description": "Luxury resort in Ashland with private mineral soaking tubs, wine garden, spa.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "_provenance": {}
   },
   {
     "id": "38",
@@ -572,7 +1293,8 @@
     "clothing": "Clothing optional",
     "description": "Small natural meditation pool near Ukiah; free; 2-mile hike; clothing-optional.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "_provenance": {}
   },
   {
     "id": "39",
@@ -587,7 +1309,8 @@
     "clothing": "Clothing optional",
     "description": "Lakeside pools at Paulina Lake in Newberry Volcanic Monument; $5 vehicle fee; clothing-optional.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "_provenance": {}
   },
   {
     "id": "40",
@@ -602,7 +1325,8 @@
     "clothing": "Clothing optional",
     "description": "Small pool on East Lake shore in Newberry Volcanic Monument; accessible by boat or short hike; clothing-optional.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "_provenance": {}
   },
   {
     "id": "41",
@@ -617,7 +1341,8 @@
     "clothing": "Swimsuit required",
     "description": "Resort with outdoor pools near Joseph in the Wallowa Mountains; $15 day use; family-friendly.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "_provenance": {}
   },
   {
     "id": "42",
@@ -632,7 +1357,8 @@
     "clothing": "Swimsuit required",
     "description": "Resort with indoor/outdoor pools near Summer Lake; $15 day use; alkaline mineral waters; birdwatching.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "_provenance": {}
   },
   {
     "id": "43",
@@ -647,7 +1373,8 @@
     "clothing": "Swimsuit required",
     "description": "Historic restored 1900s resort near La Grande with indoor pools and spa.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "_provenance": {}
   },
   {
     "id": "44",
@@ -662,7 +1389,8 @@
     "clothing": "Swimsuit optional",
     "description": "Small remote resort with pools near Ritter in Grant County; $10 day use.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "_provenance": {}
   },
   {
     "id": "45",
@@ -677,7 +1405,8 @@
     "clothing": "",
     "description": "Small alkaline lake in Alvord Desert \u2014 too hot for soaking, view only; protected area.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "_provenance": {}
   },
   {
     "id": "46",
@@ -692,6 +1421,7 @@
     "clothing": "",
     "description": "Primitive undeveloped springs near Austin in Grant County; extreme heat, caution advised.",
     "has_post": false,
-    "state": "OR"
+    "state": "OR",
+    "_provenance": {}
   }
 ]
