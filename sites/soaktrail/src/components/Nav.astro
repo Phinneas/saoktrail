@@ -25,14 +25,14 @@ const { transparent = false } = Astro.props;
         Soak Trail
       </span>
     </a>
-    <div class="hidden md:flex items-center gap-8">
-      <a href="/#destinations" class={`text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper ${transparent ? 'text-white/90' : 'text-sa-text'}`}>Destinations</a>
-      <a href="/trip-planner" class={`text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper ${transparent ? 'text-white/90' : 'text-sa-text'}`}>Trip Planner</a>
-      <a href="/blog" class={`text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper ${transparent ? 'text-white/90' : 'text-sa-text'}`}>Journal</a>
-      <a href="https://shop.soaktrail.com" target="_blank" rel="noopener noreferrer" class={`text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper ${transparent ? 'text-white/90' : 'text-sa-text'}`}>Shop</a>
-      <a href="/#about" class={`text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper ${transparent ? 'text-white/90' : 'text-sa-text'}`}>About</a>
-      <a href="/#mcp" class={`text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper ${transparent ? 'text-white/90' : 'text-sa-text'}`}>MCP</a>
-      <a href="/#contact" class={`text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper ${transparent ? 'text-white/90' : 'text-sa-text'}`}>Contact</a>
+    <div id="nav-links" class={`hidden md:flex items-center gap-8 ${transparent ? 'text-white/90' : 'text-sa-text'}`}>
+      <a href="/#destinations" class="text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper">Destinations</a>
+      <a href="/trip-planner" class="text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper">Trip Planner</a>
+      <a href="/blog" class="text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper">Journal</a>
+      <a href="https://shop.soaktrail.com" target="_blank" rel="noopener noreferrer" class="text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper">Shop</a>
+      <a href="/#about" class="text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper">About</a>
+      <a href="/#mcp" class="text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper">MCP</a>
+      <a href="/#contact" class="text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper">Contact</a>
     </div>
   </div>
 </nav>
@@ -43,6 +43,7 @@ const { transparent = false } = Astro.props;
   const isTransparent = nav?.dataset.transparent === 'true';
 
   if (nav && isTransparent) {
+    const navLinks = document.getElementById('nav-links');
     window.addEventListener('scroll', () => {
       const scrolled = window.scrollY > 50;
       nav.classList.toggle('bg-sa-cream/95', scrolled);
@@ -54,6 +55,10 @@ const { transparent = false } = Astro.props;
       if (navTitle) {
         navTitle.classList.toggle('text-white', !scrolled);
         navTitle.classList.toggle('text-sa-dark', scrolled);
+      }
+      if (navLinks) {
+        navLinks.classList.toggle('text-white/90', !scrolled);
+        navLinks.classList.toggle('text-sa-text', scrolled);
       }
     }, { passive: true });
   }

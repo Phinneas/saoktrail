@@ -360,6 +360,40 @@ export default {
       return Response.json({ status: 'ok', server: 'soakatlas-mcp', springs: 500, regions: getDatabases(env).map(d => d.region) });
     }
 
+    // REST endpoint: GET /springs — list/search springs (used by shop homepage)
+    if (request.method === 'GET' && new URL(request.url).pathname === '/springs') {
+      const url = new URL(request.url);
+      const q = url.searchParams.get('q')?.trim() ?? '';
+      const region = url.searchParams.get('region')?.trim() ?? '';
+      const limit = Math.min(parseInt(url.searchParams.get('limit') ?? '50', 10), 100);
+
+      let targetDbs = getDatabases(env);
+      if (region) {
+        targetDbs = targetDbs.filter(d => d.region === region);
+        if (targetDbs.length === 0) {
+          return Response.json({ error: `Unknown region: ${region}` }, { status: 400, headers: { 'Access-Control-Allow-Origin': '*' } });
+        }
+      }
+
+      const whereClauses: string[] = [];
+      const params: any[] = [];
+      if (q) { whereClauses.push('name LIKE ?'); params.push(`%${q}%`); }
+
+      const where = whereClauses.length > 0 ? whereClauses.join(' AND ') : '1=1';
+      const sql = `SELECT name, slug, lat, lon, state, region FROM springs WHERE ${where} ORDER BY name LIMIT ?`;
+      params.push(limit);
+
+      const results = await Promise.all(targetDbs.map(async ({ db, region: r }) => {
+        const res = await db.prepare(sql).bind(...params).all();
+        return (res.results as SpringRow[]).map(s => ({
+          name: s.name, slug: s.slug, lat: s.lat, lng: s.lon, state: s.state, region: r,
+        }));
+      }));
+
+      const all = results.flat().sort((a, b) => a.name.localeCompare(b.name)).slice(0, limit);
+      return Response.json({ springs: all, count: all.length }, { headers: { 'Access-Control-Allow-Origin': '*' } });
+    }
+
     // REST endpoint: GET /spring/:slug — used by the shop's PosterStudio
     if (request.method === 'GET' && new URL(request.url).pathname.startsWith('/spring/')) {
       const slug = new URL(request.url).pathname.replace('/spring/', '').trim();

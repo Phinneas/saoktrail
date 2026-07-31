@@ -39,7 +39,7 @@ const jsonLd = {
   <!-- Region Header -->
   <section class="px-4 pt-16 pb-6 md:pt-20">
     <div class="container mx-auto max-w-4xl">
-      <a href="/trip-planner" class="text-sa-copper text-sm hover:underline mb-4 inline-block">&larr; All Regions</a>
+      <a href="/trip-planner" data-astro-reload class="text-sa-copper text-sm hover:underline mb-4 inline-block">&larr; All Regions</a>
       <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-3 font-display">{region.states}</p>
       <h1 class="font-display text-4xl md:text-5xl font-light text-sa-dark leading-tight mb-4">
         {region.name}
@@ -60,7 +60,7 @@ const jsonLd = {
   <section class="px-4 py-6">
     <div class="container mx-auto max-w-6xl">
       <h2 class="font-display text-xl text-sa-dark mb-4">Filter Springs</h2>
-      <TripFinder client:visible initialRegion={region.slug} mcpUrl={MCP_URL} />
+      <TripFinder client:only="react" initialRegion={region.slug} mcpUrl={MCP_URL} />
     </div>
   </section>
 
