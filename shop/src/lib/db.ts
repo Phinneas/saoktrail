@@ -15,6 +15,7 @@ export interface Poster {
   render_status: string;
   r2_key: string | null;
   r2_preview_key: string | null;
+  trail_data: string | null;
   created_at: string;
 }
 
@@ -51,12 +52,13 @@ export async function createPoster(
     size: string;
     title?: string;
     subtitle?: string;
+    trailData?: string | null;
   }
 ): Promise<void> {
   await db
     .prepare(`
-      INSERT INTO posters (id, spring_slug, spring_lat, spring_lng, style, size, title, subtitle)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+      INSERT INTO posters (id, spring_slug, spring_lat, spring_lng, style, size, title, subtitle, trail_data)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `)
     .bind(
       data.id,
@@ -67,6 +69,7 @@ export async function createPoster(
       data.size,
       data.title ?? null,
       data.subtitle ?? null,
+      data.trailData ?? null,
     )
     .run();
 }

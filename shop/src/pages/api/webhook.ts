@@ -73,7 +73,7 @@ async function handleDigitalOrder(
     const poster = await getPoster(env.DB, posterId);
     if (!poster) throw new Error(`Poster not found: ${posterId}`);
 
-    const trailData = await fetchTrailData(env, poster.spring_slug);
+    const trailData = parseTrailData(poster.trail_data);
 
     const renderRes = await fetch(`${env.RENDER_SERVICE_URL}/render`, {
       method: 'POST',
@@ -136,7 +136,7 @@ async function handlePrintOrder(
     const poster = await getPoster(env.DB, posterId);
     if (!poster) throw new Error(`Poster not found: ${posterId}`);
 
-    const trailData = await fetchTrailData(env, poster.spring_slug);
+    const trailData = parseTrailData(poster.trail_data);
 
     // Render and upload print file first
     const renderRes = await fetch(`${env.RENDER_SERVICE_URL}/render`, {
@@ -238,28 +238,25 @@ async function getPoster(db: D1Database, posterId: string) {
     .first<{
       id: string; spring_slug: string; spring_lat: number; spring_lng: number;
       style: string; size: string; title: string | null; subtitle: string | null;
+      trail_data: string | null;
     }>();
   return result;
 }
 
-async function fetchTrailData(env: Env, springSlug: string): Promise<{
+function parseTrailData(trailDataJson: string | null): {
   trails: any | null;
   trailhead: { lat: number; lng: number } | null;
   zoom: number;
-}> {
+} {
+  if (!trailDataJson) return { trails: null, trailhead: null, zoom: 11 };
   try {
-    const res = await fetch(`${env.SOAKATLAS_MCP_URL}/spring/${springSlug}/trails`, {
-      signal: AbortSignal.timeout(20000),
-    });
-    if (!res.ok) return { trails: null, trailhead: null, zoom: 11 };
-    const data = await res.json() as any;
+    const data = JSON.parse(trailDataJson);
     return {
       trails: data.trails ?? null,
       trailhead: data.trailhead ?? null,
       zoom: data.zoom ?? 11,
     };
-  } catch (e) {
-    console.error('Trail fetch failed, rendering without trails:', e);
+  } catch {
     return { trails: null, trailhead: null, zoom: 11 };
   }
 }

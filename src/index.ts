@@ -343,26 +343,37 @@ async function handleTrailsRequest(slug: string, env: Env): Promise<Response> {
 
   const zoom = spring.access_type === 'hike' ? 13 : (spring.access_type === 'dirt' || spring.access_type === '4wd' ? 12 : 11);
 
-  // Check KV cache
+  // Check KV cache (skip if cached result was empty — allows retry)
   const cacheKey = `trails:${slug}`;
   const cached = await env.BLOG_QUEUE.get(cacheKey);
   if (cached) {
     const data = JSON.parse(cached);
-    return Response.json({ ...data, zoom, trailhead: spring.trailhead_lat ? { lat: spring.trailhead_lat, lng: spring.trailhead_lon } : null }, { headers: corsHeaders });
+    if (data.count > 0) {
+      return Response.json({ ...data, zoom, trailhead: spring.trailhead_lat ? { lat: spring.trailhead_lat, lng: spring.trailhead_lon } : null }, { headers: corsHeaders });
+    }
   }
 
   // Query Overpass API for hiking paths within 2km
   const overpassQuery = `[out:json][timeout:15];(way["highway"~"path|footway|track"](around:2000,${spring.lat},${spring.lon}););out geom;`;
   let trails: any[] = [];
+  let opError: string | null = null;
+  const opUrl = 'https://overpass.kumi.systems/api/interpreter';
   try {
-    const opRes = await fetch('https://overpass-api.de/api/interpreter', {
+    const opRes = await fetch(opUrl, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json',
+        'User-Agent': 'SoakTrail/1.0',
+      },
       body: 'data=' + encodeURIComponent(overpassQuery),
     });
     if (opRes.ok) {
-      const opData = await opRes.json() as any;
-      trails = (opData.elements || [])
+      const opText = await opRes.text();
+      let opData: any;
+      try { opData = JSON.parse(opText); } catch { opError = `JSON parse failed, body starts: ${opText.substring(0, 300)}`; }
+      if (opData) {
+        trails = (opData.elements || [])
         .filter((el: any) => el.type === 'way' && el.geometry && el.geometry.length >= 2)
         .map((el: any) => ({
           type: 'Feature',
@@ -375,15 +386,21 @@ async function handleTrailsRequest(slug: string, env: Env): Promise<Response> {
             coordinates: el.geometry.map((g: any) => [g.lon, g.lat]),
           },
         }));
+      }
+    } else {
+      opError = `Overpass returned ${opRes.status}`;
     }
-  } catch (e) {
-    console.error('Overpass fetch failed:', e);
+  } catch (e: any) {
+    opError = e?.message || String(e);
+    console.error('Overpass fetch failed:', opError);
   }
 
   const result = { trails: { type: 'FeatureCollection', features: trails }, count: trails.length };
 
-  // Cache for 30 days
-  await env.BLOG_QUEUE.put(cacheKey, JSON.stringify(result), { expirationTtl: 30 * 24 * 60 * 60 });
+  // Only cache non-empty results (allow retry for empty/error responses)
+  if (trails.length > 0) {
+    await env.BLOG_QUEUE.put(cacheKey, JSON.stringify(result), { expirationTtl: 30 * 24 * 60 * 60 });
+  }
 
   return Response.json(
     { ...result, zoom, trailhead: spring.trailhead_lat ? { lat: spring.trailhead_lat, lng: spring.trailhead_lon } : null },

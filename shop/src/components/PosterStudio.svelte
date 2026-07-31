@@ -22,6 +22,7 @@
   let mapContainer: HTMLDivElement;
   let trailheadMarker: any = null;
   let mapZoom       = 11;
+  let cachedTrails: any = null;  // GeoJSON FeatureCollection for checkout
 
   const styles = [
     { id: 'soaktrail-topo',     label: 'Topo',    bg: '#f5f0e8', water: '#a8d0e6' },
@@ -40,19 +41,35 @@
     const maplibregl = (await import('maplibre-gl')).default;
     await import('maplibre-gl/dist/maplibre-gl.css');
 
-    // Fetch trail data from MCP server
-    let trailData: { trails?: any; trailhead?: { lat: number; lng: number } | null; zoom?: number } = {};
+    // Determine zoom from spring access type
+    mapZoom = (spring as any).access_type === 'hike' ? 13
+      : ((spring as any).access_type === 'dirt' || (spring as any).access_type === '4wd' ? 12 : 11);
+
+    // Fetch trail geometry from Overpass API (client-side, avoids Cloudflare Worker 406)
+    let trailData: { trails?: any; trailhead?: { lat: number; lng: number } | null } = {};
     try {
-      const mcpUrl = spring.slug ? `${import.meta.env.SOAKATLAS_MCP_URL || 'https://soakatlas-mcp.buzzuw2.workers.dev'}/spring/${spring.slug}/trails` : null;
-      if (mcpUrl) {
-        const res = await fetch(mcpUrl);
-        if (res.ok) trailData = await res.json();
+      const opQuery = `[out:json][timeout:15];(way["highway"~"path|footway|track"](around:2000,${spring.lat},${spring.lng}););out geom;`;
+      const opRes = await fetch(`https://overpass-api.de/api/interpreter?data=${encodeURIComponent(opQuery)}`);
+      if (opRes.ok) {
+        const opData = await opRes.json();
+        const features = (opData.elements || [])
+          .filter((el: any) => el.type === 'way' && el.geometry && el.geometry.length >= 2)
+          .map((el: any) => ({
+            type: 'Feature',
+            properties: { name: el.tags?.name || null, highway: el.tags?.highway || 'path' },
+            geometry: { type: 'LineString', coordinates: el.geometry.map((g: any) => [g.lon, g.lat]) },
+          }));
+        trailData.trails = { type: 'FeatureCollection', features };
+        cachedTrails = trailData.trails;
       }
     } catch (e) {
-      console.error('Trail fetch failed:', e);
+      console.error('Overpass trail fetch failed:', e);
     }
 
-    mapZoom = trailData.zoom ?? 11;
+    // Trailhead from spring data (passed from MCP server)
+    if ((spring as any).trailhead_lat && (spring as any).trailhead_lon) {
+      trailData.trailhead = { lat: (spring as any).trailhead_lat, lng: (spring as any).trailhead_lon };
+    }
 
     map = new maplibregl.Map({
       container: mapContainer,
@@ -188,6 +205,9 @@
           orderType,
           title:      title.trim() || spring.name,
           subtitle:   subtitle.trim() || spring.state,
+          zoom:       mapZoom,
+          trailData:  cachedTrails,
+          trailhead:  (spring as any).trailhead_lat ? { lat: (spring as any).trailhead_lat, lng: (spring as any).trailhead_lon } : null,
         }),
       });
       if (!res.ok) {

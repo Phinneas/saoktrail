@@ -20,10 +20,11 @@ export const POST: APIRoute = async ({ request, locals }) => {
     return Response.json({ error: 'Invalid JSON' }, { status: 400 });
   }
 
-  const { springSlug, springLat, springLng, style, size, orderType, title, subtitle } = body as {
+  const { springSlug, springLat, springLng, style, size, orderType, title, subtitle, zoom, trailData, trailhead } = body as {
     springSlug: string; springLat: number; springLng: number;
     style: string; size: string; orderType: 'digital' | 'print';
     title?: string; subtitle?: string;
+    zoom?: number; trailData?: any; trailhead?: { lat: number; lng: number } | null;
   };
 
   // Validate
@@ -46,6 +47,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
 
   // Create poster record first (before Stripe session)
   const posterId = `ps_${nanoid(10)}`;
+  const trailDataJson = trailData ? JSON.stringify({ trails: trailData, zoom: zoom ?? 11, trailhead: trailhead ?? null }) : null;
   await createPoster(env.DB, {
     id: posterId,
     springSlug,
@@ -55,6 +57,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     size,
     title,
     subtitle,
+    trailData: trailDataJson,
   });
 
   // Create Stripe Checkout session
