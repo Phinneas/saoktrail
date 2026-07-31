@@ -20,6 +20,8 @@
   let loading       = false;
   let map: any      = null;
   let mapContainer: HTMLDivElement;
+  let trailheadMarker: any = null;
+  let mapZoom       = 11;
 
   const styles = [
     { id: 'soaktrail-topo',     label: 'Topo',    bg: '#f5f0e8', water: '#a8d0e6' },
@@ -38,15 +40,32 @@
     const maplibregl = (await import('maplibre-gl')).default;
     await import('maplibre-gl/dist/maplibre-gl.css');
 
+    // Fetch trail data from MCP server
+    let trailData: { trails?: any; trailhead?: { lat: number; lng: number } | null; zoom?: number } = {};
+    try {
+      const mcpUrl = spring.slug ? `${import.meta.env.SOAKATLAS_MCP_URL || 'https://soakatlas-mcp.buzzuw2.workers.dev'}/spring/${spring.slug}/trails` : null;
+      if (mcpUrl) {
+        const res = await fetch(mcpUrl);
+        if (res.ok) trailData = await res.json();
+      }
+    } catch (e) {
+      console.error('Trail fetch failed:', e);
+    }
+
+    mapZoom = trailData.zoom ?? 11;
+
     map = new maplibregl.Map({
       container: mapContainer,
       style: styleConfig(selectedStyle),
       center: [spring.lng, spring.lat],
-      zoom: 11,
+      zoom: mapZoom,
       attributionControl: false,
     });
 
-    map.on('load', () => addSpringMarker(maplibregl));
+    map.on('load', () => {
+      addSpringMarker(maplibregl);
+      addTrailOverlay(trailData, maplibregl);
+    });
   });
 
   onDestroy(() => map?.remove());
@@ -91,13 +110,60 @@
       .addTo(map);
   }
 
+  function addTrailOverlay(trailData: { trails?: any; trailhead?: { lat: number; lng: number } | null }, maplibregl: any): void {
+    // Add trail paths as GeoJSON layers
+    if (trailData.trails && trailData.trails.features && trailData.trails.features.length > 0) {
+      const sourceId = 'trails-source';
+      if (map.getSource(sourceId)) return; // already added
+      map.addSource(sourceId, { type: 'geojson', data: trailData.trails });
+      map.addLayer({
+        id: 'trails-outline',
+        type: 'line',
+        source: sourceId,
+        layout: { 'line-cap': 'round', 'line-join': 'round' },
+        paint: { 'line-color': '#ffffff', 'line-width': 4, 'line-opacity': 0.35 },
+      });
+      map.addLayer({
+        id: 'trails-line',
+        type: 'line',
+        source: sourceId,
+        layout: { 'line-cap': 'round', 'line-join': 'round' },
+        paint: { 'line-color': '#e85d04', 'line-width': 2.5, 'line-dasharray': [4, 3] },
+      });
+    }
+
+    // Add trailhead marker
+    if (trailData.trailhead) {
+      if (trailheadMarker) trailheadMarker.remove();
+      const el = document.createElement('div');
+      el.style.cssText = `
+        width:16px; height:16px;
+        background:#e85d04; border:2px solid white;
+        transform:rotate(45deg);
+        box-shadow:0 2px 6px rgba(0,0,0,0.4);
+      `;
+      trailheadMarker = new maplibregl.Marker({ element: el })
+        .setLngLat([trailData.trailhead.lng, trailData.trailhead.lat])
+        .addTo(map);
+    }
+  }
+
   function switchStyle(styleId: string): void {
     selectedStyle = styleId;
     if (!map) return;
+
+    // Save trail source data before style switch (setStyle clears all layers)
+    let trailGeoJson: any = null;
+    const trailSource = map.getSource('trails-source');
+    if (trailSource) trailGeoJson = (trailSource as any)._data;
+
     map.setStyle(styleConfig(styleId));
     map.once('style.load', async () => {
       const ml = (await import('maplibre-gl')).default;
       addSpringMarker(ml);
+      if (trailGeoJson) {
+        addTrailOverlay({ trails: { type: 'FeatureCollection', features: trailGeoJson.features || [] }, trailhead: null }, ml);
+      }
     });
   }
 

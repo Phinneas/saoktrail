@@ -73,6 +73,8 @@ async function handleDigitalOrder(
     const poster = await getPoster(env.DB, posterId);
     if (!poster) throw new Error(`Poster not found: ${posterId}`);
 
+    const trailData = await fetchTrailData(env, poster.spring_slug);
+
     const renderRes = await fetch(`${env.RENDER_SERVICE_URL}/render`, {
       method: 'POST',
       headers: {
@@ -86,6 +88,9 @@ async function handleDigitalOrder(
         size:     poster.size,
         title:    poster.title,
         subtitle: poster.subtitle,
+        zoom:     trailData.zoom,
+        trails:   trailData.trails,
+        trailhead: trailData.trailhead,
       }),
     });
 
@@ -131,6 +136,8 @@ async function handlePrintOrder(
     const poster = await getPoster(env.DB, posterId);
     if (!poster) throw new Error(`Poster not found: ${posterId}`);
 
+    const trailData = await fetchTrailData(env, poster.spring_slug);
+
     // Render and upload print file first
     const renderRes = await fetch(`${env.RENDER_SERVICE_URL}/render`, {
       method: 'POST',
@@ -145,6 +152,9 @@ async function handlePrintOrder(
         size:     poster.size,
         title:    poster.title,
         subtitle: poster.subtitle,
+        zoom:     trailData.zoom,
+        trails:   trailData.trails,
+        trailhead: trailData.trailhead,
       }),
     });
 
@@ -226,8 +236,30 @@ async function getPoster(db: D1Database, posterId: string) {
     .prepare('SELECT * FROM posters WHERE id = ?')
     .bind(posterId)
     .first<{
-      id: string; spring_lat: number; spring_lng: number;
+      id: string; spring_slug: string; spring_lat: number; spring_lng: number;
       style: string; size: string; title: string | null; subtitle: string | null;
     }>();
   return result;
+}
+
+async function fetchTrailData(env: Env, springSlug: string): Promise<{
+  trails: any | null;
+  trailhead: { lat: number; lng: number } | null;
+  zoom: number;
+}> {
+  try {
+    const res = await fetch(`${env.SOAKATLAS_MCP_URL}/spring/${springSlug}/trails`, {
+      signal: AbortSignal.timeout(20000),
+    });
+    if (!res.ok) return { trails: null, trailhead: null, zoom: 11 };
+    const data = await res.json() as any;
+    return {
+      trails: data.trails ?? null,
+      trailhead: data.trailhead ?? null,
+      zoom: data.zoom ?? 11,
+    };
+  } catch (e) {
+    console.error('Trail fetch failed, rendering without trails:', e);
+    return { trails: null, trailhead: null, zoom: 11 };
+  }
 }

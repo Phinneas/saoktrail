@@ -50,6 +50,9 @@ app.post('/render', async (c) => {
     size: string;
     title: string;
     subtitle: string;
+    zoom?: number;
+    trails?: { type: 'FeatureCollection'; features: any[] } | null;
+    trailhead?: { lat: number; lng: number } | null;
   };
 
   try {
@@ -58,7 +61,7 @@ app.post('/render', async (c) => {
     return c.json({ error: 'Invalid JSON' }, 400);
   }
 
-  const { lat, lng, style, size, title, subtitle } = body;
+  const { lat, lng, style, size, title, subtitle, zoom, trails, trailhead } = body;
 
   if (typeof lat !== 'number' || typeof lng !== 'number') {
     return c.json({ error: 'Missing lat/lng' }, 422);
@@ -80,10 +83,11 @@ app.post('/render', async (c) => {
       dims.width,
       mapHeight,
       c.env.THUNDERFOREST_API_KEY,
+      zoom,
     );
 
     // Generate SVG
-    const svg = generateSVG({ lat, lng, style, size, title, subtitle }, tileData);
+    const svg = generateSVG({ lat, lng, style, size, title, subtitle, zoom, trails, trailhead }, tileData);
 
     // Render SVG to PNG
     const fontBuffer = getFontBuffer();

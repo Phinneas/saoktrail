@@ -1,6 +1,18 @@
-// SVG poster generation — tiles grid + spring marker + text footer
+// SVG poster generation — tiles grid + trail overlay + spring marker + text footer
 
 import type { TileFetch } from './tiles';
+import { latLngToGlobalPixel } from './tiles';
+
+interface TrailFeature {
+  type: 'Feature';
+  geometry: { type: 'LineString'; coordinates: [number, number][] };
+  properties: { name?: string | null; highway?: string };
+}
+
+interface Trailhead {
+  lat: number;
+  lng: number;
+}
 
 interface PosterParams {
   lat: number;
@@ -9,6 +21,9 @@ interface PosterParams {
   size: string;
   title: string;
   subtitle: string;
+  zoom?: number;
+  trails?: { type: 'FeatureCollection'; features: TrailFeature[] } | null;
+  trailhead?: Trailhead | null;
 }
 
 const POSTER_DIMS: Record<string, { width: number; height: number }> = {
@@ -30,6 +45,7 @@ export function getPosterDims(size: string): { width: number; height: number } {
 export function generateSVG(params: PosterParams, tileData: TileFetch): string {
   const { width, height } = getPosterDims(params.size);
   const colors = STYLE_COLORS[params.style] ?? STYLE_COLORS['soaktrail-topo'];
+  const zoom = params.zoom ?? 11;
 
   // Footer takes up bottom ~11% of poster
   const footerHeight = Math.round(height * 0.11);
@@ -55,7 +71,61 @@ export function generateSVG(params: PosterParams, tileData: TileFetch): string {
     })
     .join('\n');
 
-  // Clip path so tiles don't overflow poster bounds
+  // Project lat/lng to SVG pixel coordinates
+  const centerPx = latLngToGlobalPixel(params.lat, params.lng, zoom);
+  function project(lat: number, lng: number): { x: number; y: number } {
+    const px = latLngToGlobalPixel(lat, lng, zoom);
+    return {
+      x: mapCenterX + (px.x - centerPx.x),
+      y: mapCenterY + (px.y - centerPx.y),
+    };
+  }
+
+  // Build trail path elements
+  let trailElements = '';
+  if (params.trails && params.trails.features.length > 0) {
+    const trailWidth = Math.round(2.5 * scale);
+    const outlineWidth = Math.round(4 * scale);
+    const dashStr = `${Math.round(12 * scale)},${Math.round(8 * scale)}`;
+
+    const trailPaths = params.trails.features.map((f) => {
+      // Simplify: keep max 100 points
+      const coords = f.geometry.coordinates;
+      const step = Math.max(1, Math.ceil(coords.length / 100));
+      const pts: string[] = [];
+      for (let i = 0; i < coords.length; i += step) {
+        const [lng, lat] = coords[i];
+        const p = project(lat, lng);
+        pts.push(i === 0 ? `M ${p.x.toFixed(1)} ${p.y.toFixed(1)}` : `L ${p.x.toFixed(1)} ${p.y.toFixed(1)}`);
+      }
+      // Always include last point
+      if (step > 1) {
+        const [lng, lat] = coords[coords.length - 1];
+        const p = project(lat, lng);
+        pts.push(`L ${p.x.toFixed(1)} ${p.y.toFixed(1)}`);
+      }
+      return pts.join(' ');
+    }).filter(d => d.length > 0);
+
+    // White outline (for visibility on dark maps) + dashed orange line
+    trailPaths.forEach(d => {
+      trailElements += `  <path d="${d}" fill="none" stroke="white" stroke-width="${outlineWidth}" stroke-opacity="0.35" stroke-linecap="round" stroke-linejoin="round"/>\n`;
+      trailElements += `  <path d="${d}" fill="none" stroke="#e85d04" stroke-width="${trailWidth}" stroke-dasharray="${dashStr}" stroke-linecap="round" stroke-linejoin="round"/>\n`;
+    });
+  }
+
+  // Trailhead marker + connecting line
+  let trailheadElement = '';
+  if (params.trailhead) {
+    const thPx = project(params.trailhead.lat, params.trailhead.lng);
+    const thSize = Math.round(10 * scale);
+    const lineDash = `${Math.round(8 * scale)},${Math.round(6 * scale)}`;
+    // Connecting line from trailhead to spring
+    trailheadElement += `  <line x1="${thPx.x.toFixed(1)}" y1="${thPx.y.toFixed(1)}" x2="${mapCenterX}" y2="${mapCenterY}" stroke="#e85d04" stroke-width="${Math.round(2 * scale)}" stroke-dasharray="${lineDash}" stroke-opacity="0.5"/>\n`;
+    // Trailhead square marker
+    trailheadElement += `  <rect x="${(thPx.x - thSize).toFixed(1)}" y="${(thPx.y - thSize).toFixed(1)}" width="${thSize * 2}" height="${thSize * 2}" fill="#e85d04" stroke="white" stroke-width="${Math.round(3 * scale)}" transform="rotate(45 ${thPx.x.toFixed(1)} ${thPx.y.toFixed(1)})" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.4))"/>\n`;
+  }
+
   // Text elements
   const titleText = escapeXml(params.title);
   const subtitleText = escapeXml(params.subtitle.toUpperCase());
@@ -94,6 +164,8 @@ export function generateSVG(params: PosterParams, tileData: TileFetch): string {
   </defs>
   <g clip-path="url(#mapClip)">
 ${tileElements}
+${trailElements}
+${trailheadElement}
   </g>
   <!-- Spring marker -->
   <circle cx="${mapCenterX}" cy="${mapCenterY}" r="${markerRadius}" fill="${colors.marker}" stroke="white" stroke-width="${markerStroke}" filter="drop-shadow(0 2px 10px rgba(0,0,0,0.45))"/>

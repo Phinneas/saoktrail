@@ -322,6 +322,75 @@ const TOOLS = [
   },
 ];
 
+// ─── Trail geometry fetch for poster rendering ───────────────────────────────
+
+async function handleTrailsRequest(slug: string, env: Env): Promise<Response> {
+  const corsHeaders = { 'Access-Control-Allow-Origin': '*' };
+
+  // Look up spring
+  const dbs = getDatabases(env);
+  let spring: { lat: number; lon: number; access_type: string; trailhead_lat: number | null; trailhead_lon: number | null } | null = null;
+  for (const { db } of dbs) {
+    const row = await db
+      .prepare('SELECT lat, lon, access_type, trailhead_lat, trailhead_lon FROM springs WHERE slug = ? LIMIT 1')
+      .bind(slug)
+      .first();
+    if (row) { spring = row as any; break; }
+  }
+  if (!spring) {
+    return Response.json({ error: 'Spring not found' }, { status: 404, headers: corsHeaders });
+  }
+
+  const zoom = spring.access_type === 'hike' ? 13 : (spring.access_type === 'dirt' || spring.access_type === '4wd' ? 12 : 11);
+
+  // Check KV cache
+  const cacheKey = `trails:${slug}`;
+  const cached = await env.BLOG_QUEUE.get(cacheKey);
+  if (cached) {
+    const data = JSON.parse(cached);
+    return Response.json({ ...data, zoom, trailhead: spring.trailhead_lat ? { lat: spring.trailhead_lat, lng: spring.trailhead_lon } : null }, { headers: corsHeaders });
+  }
+
+  // Query Overpass API for hiking paths within 2km
+  const overpassQuery = `[out:json][timeout:15];(way["highway"~"path|footway|track"](around:2000,${spring.lat},${spring.lon}););out geom;`;
+  let trails: any[] = [];
+  try {
+    const opRes = await fetch('https://overpass-api.de/api/interpreter', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'data=' + encodeURIComponent(overpassQuery),
+    });
+    if (opRes.ok) {
+      const opData = await opRes.json() as any;
+      trails = (opData.elements || [])
+        .filter((el: any) => el.type === 'way' && el.geometry && el.geometry.length >= 2)
+        .map((el: any) => ({
+          type: 'Feature',
+          properties: {
+            name: el.tags?.name || null,
+            highway: el.tags?.highway || 'path',
+          },
+          geometry: {
+            type: 'LineString',
+            coordinates: el.geometry.map((g: any) => [g.lon, g.lat]),
+          },
+        }));
+    }
+  } catch (e) {
+    console.error('Overpass fetch failed:', e);
+  }
+
+  const result = { trails: { type: 'FeatureCollection', features: trails }, count: trails.length };
+
+  // Cache for 30 days
+  await env.BLOG_QUEUE.put(cacheKey, JSON.stringify(result), { expirationTtl: 30 * 24 * 60 * 60 });
+
+  return Response.json(
+    { ...result, zoom, trailhead: spring.trailhead_lat ? { lat: spring.trailhead_lat, lng: spring.trailhead_lon } : null },
+    { headers: corsHeaders },
+  );
+}
+
 function jsonResponse(id: any, result: any) {
   return Response.json({ jsonrpc: '2.0', id, result });
 }
@@ -396,20 +465,31 @@ export default {
 
     // REST endpoint: GET /spring/:slug — used by the shop's PosterStudio
     if (request.method === 'GET' && new URL(request.url).pathname.startsWith('/spring/')) {
-      const slug = new URL(request.url).pathname.replace('/spring/', '').trim();
+      const parts = new URL(request.url).pathname.replace('/spring/', '').trim();
+      // Check for /trails sub-path
+      if (parts.endsWith('/trails')) {
+        return handleTrailsRequest(parts.replace('/trails', ''), env);
+      }
+      const slug = parts;
       if (!slug) return Response.json({ error: 'Missing slug' }, { status: 400 });
       const dbs = getDatabases(env);
       let found: SpringRow | null = null;
       for (const { db } of dbs) {
         const row = await db
-          .prepare('SELECT name, slug, lat, lon, state FROM springs WHERE slug = ? LIMIT 1')
+          .prepare('SELECT name, slug, lat, lon, state, access_type, trailhead_lat, trailhead_lon FROM springs WHERE slug = ? LIMIT 1')
           .bind(slug)
           .first<SpringRow>();
         if (row) { found = row; break; }
       }
       if (!found) return Response.json({ error: 'Spring not found' }, { status: 404, headers: { 'Access-Control-Allow-Origin': '*' } });
+      const zoom = found.access_type === 'hike' ? 13 : (found.access_type === 'dirt' || found.access_type === '4wd' ? 12 : 11);
       return Response.json(
-        { name: found.name, slug: found.slug, lat: found.lat, lng: found.lon, state: found.state },
+        {
+          name: found.name, slug: found.slug, lat: found.lat, lng: found.lon,
+          state: found.state, access_type: found.access_type,
+          trailhead_lat: found.trailhead_lat, trailhead_lon: found.trailhead_lon,
+          zoom,
+        },
         { headers: { 'Access-Control-Allow-Origin': '*' } }
       );
     }

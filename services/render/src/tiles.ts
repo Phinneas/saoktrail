@@ -1,7 +1,7 @@
 // Slippy map tile math + Thunderforest tile fetching
 
 const TILE_SIZE = 512; // @2x tiles
-const ZOOM = 11;
+const DEFAULT_ZOOM = 11;
 
 export interface TileFetch {
   tiles: { x: number; y: number; base64: string }[];
@@ -33,6 +33,15 @@ function latLngToTile(lat: number, lng: number, zoom: number): { tileX: number; 
   return { tileX, tileY, pixelX, pixelY };
 }
 
+// Export projection helper for trail overlay rendering
+export function latLngToGlobalPixel(lat: number, lng: number, zoom: number): { x: number; y: number } {
+  const n = Math.pow(2, zoom);
+  const latRad = (lat * Math.PI) / 180;
+  const x = ((lng + 180) / 360) * n * TILE_SIZE;
+  const y = ((1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2) * n * TILE_SIZE;
+  return { x, y };
+}
+
 const STYLE_MAP: Record<string, string> = {
   'soaktrail-topo': 'outdoors',
   'soaktrail-midnight': 'transport-dark',
@@ -46,9 +55,10 @@ export async function fetchTiles(
   mapWidth: number,
   mapHeight: number,
   apiKey: string,
+  zoom: number = DEFAULT_ZOOM,
 ): Promise<TileFetch> {
   const mapType = STYLE_MAP[style] ?? 'outdoors';
-  const { tileX: centerTileX, tileY: centerTileY, pixelX, pixelY } = latLngToTile(lat, lng, ZOOM);
+  const { tileX: centerTileX, tileY: centerTileY, pixelX, pixelY } = latLngToTile(lat, lng, zoom);
 
   // How many tiles do we need to cover the map area?
   // Center point should be at (mapWidth/2, mapHeight/2) in the final image
@@ -67,7 +77,7 @@ export async function fetchTiles(
   const cols = tilesLeft + 1 + tilesRight;
   const rows = tilesAbove + 1 + tilesBelow;
 
-  const maxTile = Math.pow(2, ZOOM);
+  const maxTile = Math.pow(2, zoom);
 
   // Fetch all tiles in parallel
   const fetchPromises: Promise<{ col: number; row: number; base64: string }>[] = [];
@@ -76,7 +86,7 @@ export async function fetchTiles(
       const tx = ((startTileX + col) % maxTile + maxTile) % maxTile; // wrap around
       const ty = Math.max(0, Math.min(maxTile - 1, startTileY + row));
 
-      const url = `https://tile.thunderforest.com/${mapType}/${ZOOM}/${tx}/${ty}@2x.png?apikey=${apiKey}`;
+      const url = `https://tile.thunderforest.com/${mapType}/${zoom}/${tx}/${ty}@2x.png?apikey=${apiKey}`;
       fetchPromises.push(
         (async () => {
           const res = await fetch(url);
