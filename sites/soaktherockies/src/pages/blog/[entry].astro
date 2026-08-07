@@ -1,25 +1,24 @@
 ---
-import type { BlogEntry } from "@/types";
-import { sortByDate } from "@lib/sortFunctions";
+export const prerender = false;
 import EntryLayout from "@components/blog/EntryLayout.astro";
-import { getEntries } from "@lib/contentParser";
-import { render } from "astro:content";
+import { getMergedBlogEntries, getMergedBlogEntry } from "@lib/mergedBlog";
+import { siteConfig } from "@site/config";
 import similerItems from "@lib/similarItems";
 
-export async function getStaticPaths() {
-  const entries = (await getEntries("blog", sortByDate)) as BlogEntry[];
-  const paths = entries.map((entry) => ({
-    params: {
-      entry: entry.id,
-    },
-    props: { entry, entries },
-  }));
-  return paths;
-}
+const { entry: slug } = Astro.params;
+if (!slug) return Astro.redirect("/blog");
 
-const { entry, entries } = Astro.props;
-const relatedEntries = similerItems(entry, entries, entry.id);
-const { Content, headings } = await render(entry);
+const api = (Astro.locals.runtime as any).env.API as {
+  fetch: (url: string, init?: RequestInit) => Promise<Response>;
+};
+const siteSlug = siteConfig.wollySiteSlug;
+
+const resolved = await getMergedBlogEntry(api, siteSlug, slug);
+if (!resolved) return Astro.redirect("/blog");
+
+const allEntries = await getMergedBlogEntries(api, siteSlug);
+const relatedEntries = similerItems(resolved.entry, allEntries, resolved.entry.id);
+const { entry, Content, headings } = resolved;
 ---
 
 <EntryLayout entry={entry} relatedEntries={relatedEntries} Content={Content} headings={headings} />

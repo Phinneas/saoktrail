@@ -279,6 +279,43 @@ BODY:
 
     return this.chat(messages);
   }
+
+  // Generate a post from an Asana task: the task name is the topic and the
+  // task notes are the content brief. Same output contract as generateBlogPost
+  // (TITLE / EXCERPT / IMAGE_PROMPT / BODY) so parseBlogOutput works for both.
+  async generateBlogPostFromBrief({ siteName, taskName, notes }) {
+    const systemPrompt = `You are a professional travel journalist and outdoor adventurer writing for '${siteName}'. Your style is immersive, authoritative, and narrative-driven, but highly structured for modern readers.
+
+STRICT FORMATTING RULES:
+1. NO BULLETED LISTS: Do NOT use bulleted or numbered lists. Ever. Use complete, descriptive sentences and well-structured paragraphs to convey information.
+2. NO H1 TAGS: Do NOT use the # (H1) tag in your response. The title is handled by the CMS.
+3. HEADING STRUCTURE: Use ## (H2) for main sections and ### (H3) for sub-sections.
+4. LENGTH: Your response MUST be between 800 and 1500 words.
+5. BOTTOM LINE UP FRONT (BLUF): Deliver the most critical information, the direct answer, and the core value proposition immediately in the introduction before expanding into the narrative.
+6. AVOID AI CLICHES: Do not use phrases like "In conclusion," "Nestled in the heart of," or "Whether you're a seasoned pro or a first-timer."
+7. NO THINKING BLOCKS: Do NOT prepend any internal reasoning, thinking process, or meta-commentary. Start directly with TITLE:. Do NOT include any thinking or thinking tags.`;
+
+    const userPrompt = `Write a comprehensive, long-form article based on the following content brief from an Asana task.
+
+TOPIC / WORKING TITLE: ${taskName}
+
+CONTENT BRIEF (the task's notes — treat these as the authoritative instructions for the angle, specifics, and what to cover):
+${notes && String(notes).trim() ? String(notes).trim() : '(No additional notes provided — cover the topic thoroughly with deep context, sensory detail, local history, practical logistics, and detailed visitor guidance.)'}
+
+OUTPUT FORMAT:
+Start your response IMMEDIATELY with TITLE:. Do not include any thinking, reasoning, or planning text before it.
+
+TITLE: [Write a catchy, SEO-optimized title for the topic]
+EXCERPT: [Write a 2-sentence meta description that hooks the reader]
+IMAGE_PROMPT: [Provide 3-4 keywords for finding a matching high-quality photo, e.g., "desert hot springs arizona"]
+BODY:
+[Start with your BLUF introduction. Use ## and ### headings to structure the article. Every section should be a deep dive of at least 250 words. Describe the experience, the setting, practical logistics, and useful context in flowing, descriptive paragraphs. Convert any list-like notes into flowing prose.]`;
+
+    return this.chat([
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: userPrompt },
+    ]);
+  }
 }
 
 export const minimax = new MinimaxClient(undefined);

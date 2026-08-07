@@ -6,5 +6,10 @@
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page"
-  }
+  },
+  // Service binding to the API Worker that serves Asana-generated blog posts
+  // from D1. Avoids the *.workers.dev 1042 subrequest error.
+  "services": [
+    { "binding": "API", "service": "soaktherockies-api" }
+  ]
 }

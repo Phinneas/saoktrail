@@ -3,8 +3,14 @@ main = "src/index.ts"
 compatibility_date = "2026-03-26"
 
 # Required Secrets (set via `wrangler secret put <NAME>`):
-# - GEMINI_API_KEY
+# - GEMINI_API_KEY       (used as the Minimax bearer token by lib/minimax.js)
 # - ADMIN_SECRET
+# - PEXELS_API_KEY       (featured image lookup; optional but recommended)
+# - ASANA_PAT            (Asana Personal Access Token for the auto-poster)
+# - ASANA_PROJECT_DESERTSOAK    (Asana project GID → site slug "desertsoak")
+# - ASANA_PROJECT_SOAKCOLORADO  (Asana project GID → site slug "soakcolorado")
+# - ASANA_PROJECT_SOAKTHEROCKIES(Asana project GID → site slug "soaktherockies")
+# - ASANA_PROJECT_ALASKAHOTSPRINGS(Asana project GID → site slug "alaskahotsprings")
 [vars]
 ENVIRONMENT = "production"
 

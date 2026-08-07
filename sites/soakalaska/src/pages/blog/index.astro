@@ -1,11 +1,17 @@
 ---
+export const prerender = false;
 import CollectionLayout from "@components/blog/CollectionLayout.astro";
-import { getWollyBlogEntries } from "@lib/wolly";
-import type { BlogEntry } from "@/types";
+import { getD1BlogEntries } from "@lib/d1Blog";
+import { taxaFromEntries, taxaMultisetFromEntries } from "@lib/mergedBlog";
+import { siteConfig } from "@site/config";
+
+const api = (Astro.locals.runtime as any).env.API as {
+  fetch: (url: string, init?: RequestInit) => Promise<Response>;
+};
+const siteSlug = siteConfig.wollySiteSlug;
 
 const currentPageIndex = 1;
-
-const entries = await getWollyBlogEntries();
+const entries = await getD1BlogEntries(api, siteSlug);
 
 const entryIndex = {
   id: "-index",
@@ -14,15 +20,14 @@ const entryIndex = {
   body: "",
 };
 
-const allCategories: string[] = [];
-const categories: string[] = [];
-const tags: string[] = [];
+const allCategories = taxaMultisetFromEntries(entries, "categories");
+const categories = taxaFromEntries(entries, "categories");
+const tags = taxaFromEntries(entries, "tags");
 
 const entriesPerPage = 4;
 const indexOfLastEntry = currentPageIndex * entriesPerPage;
 const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
 const currentEntries = entries.slice(indexOfFirstEntry, indexOfLastEntry);
-
 const pageCount: number = Math.ceil(entries.length / entriesPerPage);
 ---
 

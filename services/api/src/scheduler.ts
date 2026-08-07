@@ -1,84 +1,37 @@
 import { D1Database } from '@cloudflare/workers-types';
-import { MinimaxClient, parseBlogOutput, markdownToTipTap } from '../lib/minimax.js';
+import { MinimaxClient, parseBlogOutput } from '../lib/minimax.js';
 import { PexelsClient } from '../lib/pexels.js';
-import BlogQueue from '../../data/blog-content-queue.json';
-
-const WOLLY_API_URL = 'https://wollycms.buzzuw2.workers.dev/api';
+import { listOpenTasks, markTaskComplete } from '../lib/asana.js';
 
 export interface Env {
   DB: D1Database;
   GEMINI_API_KEY: string;
-  WOLLY_CMS_API_KEY: string;
   PEXELS_API_KEY: string;
+  ASANA_PAT?: string;
+  ASANA_PROJECT_DESERTSOAK?: string;
+  ASANA_PROJECT_SOAKCOLORADO?: string;
+  ASANA_PROJECT_SOAKTHEROCKIES?: string;
+  ASANA_PROJECT_ALASKAHOTSPRINGS?: string;
   AI?: any;
-  WOLLYCMS?: any;
 }
 
-// Publish a generated post to WollyCMS so it appears in the CMS dashboard
-// and is served by the Astro frontend via wolly.pages.getBySlug()
-async function publishToWollyCMS(
-  env: Env,
-  slug: string,
-  title: string,
-  body: string,
-  excerpt: string,
-  publishedAt: string,
-  imageUrl: string | null
-): Promise<void> {
-  if (!env.WOLLY_CMS_API_KEY) {
-    console.error('❌ WOLLY_CMS_API_KEY not set — skipping WollyCMS publish');
-    return;
-  }
+interface SiteProject {
+  site: string;
+  siteName: string;
+  projectGid?: string;
+}
 
-  const apiKey = env.WOLLY_CMS_API_KEY;
-  // Use service binding if available (avoids *.workers.dev 1042 error), otherwise fall back to fetch
-  const wollyFetch = env.WOLLYCMS ? (url: string, init?: RequestInit) => env.WOLLYCMS.fetch(url, init) : fetch;
-
-  // Check if page already exists in WollyCMS
-  const listRes = await wollyFetch(`${WOLLY_API_URL}/content/pages?type=blog&limit=100`, {
-    headers: { Authorization: `Bearer ${apiKey}` },
-  });
-  const listData: any = await listRes.json();
-  const existing = listData?.data?.find((p: any) => p.slug === slug);
-  const method = existing ? 'PUT' : 'POST';
-  const url = existing
-    ? `${WOLLY_API_URL}/admin/pages/${existing.id}`
-    : `${WOLLY_API_URL}/admin/pages`;
-
-  const payload = {
-    title,
-    slug,
-    typeId: 2,
-    type: 'blog',
-    status: 'published',
-    published_at: publishedAt,
-    fields: {
-      excerpt,
-      body,
-      featured_image: imageUrl || '',
-      site: 'soaktherockies',
-    },
-  };
-
-  const res = await wollyFetch(url, {
-    method,
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify(payload),
-  });
-
-  if (!res.ok) {
-    const err = await res.text();
-    throw new Error(`WollyCMS ${method} failed for ${slug}: ${err}`);
-  }
-
-  console.log(`📋 Published to WollyCMS: ${slug}`);
+function slugify(s: string): string {
+  return String(s)
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 80);
 }
 
 export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
-  console.log('🗓️ Running weekly blog generator scheduler...');
+  console.log('🗓️ Running Asana-driven blog generator scheduler...');
 
   // Record cron heartbeat so admin endpoints can confirm the trigger is firing
   try {
@@ -98,122 +51,156 @@ export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
     console.error('❌ GEMINI_API_KEY is not defined in environment.');
     return;
   }
-
-  const minimax = new MinimaxClient(env.GEMINI_API_KEY);
-
-  // Find the first topic not yet in D1
-  let targetTopic = null;
-  for (const topic of BlogQueue.topics) {
-    const existing = await env.DB
-      .prepare('SELECT id FROM blog_posts WHERE slug = ?')
-      .bind(topic.slug)
-      .first();
-    if (!existing) {
-      targetTopic = topic;
-      break;
-    }
-  }
-
-  if (!targetTopic) {
-    console.log('✅ All topics in queue have been generated.');
+  if (!env.ASANA_PAT) {
+    console.error('❌ ASANA_PAT is not defined — cannot read Asana tasks.');
     return;
   }
 
-  console.log(`📝 Generating: ${targetTopic.title}`);
+  const sites: SiteProject[] = [
+    { site: 'desertsoak', siteName: 'Desert Soak', projectGid: env.ASANA_PROJECT_DESERTSOAK },
+    { site: 'soakcolorado', siteName: 'Soak Colorado', projectGid: env.ASANA_PROJECT_SOAKCOLORADO },
+    { site: 'soaktherockies', siteName: 'Soak the Rockies', projectGid: env.ASANA_PROJECT_SOAKTHEROCKIES },
+    { site: 'alaskahotsprings', siteName: 'Alaska Hot Springs', projectGid: env.ASANA_PROJECT_ALASKAHOTSPRINGS },
+  ];
 
-  try {
-    const rawOutput = await minimax.generateBlogPost(targetTopic, BlogQueue.settings);
-    const parsed = parseBlogOutput(rawOutput);
-    const postTitle = targetTopic.title;
-    const postExcerpt = parsed.excerpt || targetTopic.excerpt;
-    const postBody = parsed.body;
-    const tags = JSON.stringify(targetTopic.tags);
-    const featuredSprings = JSON.stringify(targetTopic.featured_springs);
-    const author = BlogQueue.settings.author || 'Soak the Rockies Team';
-    const publishedAt = new Date().toISOString();
+  const minimax = new MinimaxClient(env.GEMINI_API_KEY);
 
-    // Fetch featured image from Pexels (or fall back to Workers AI)
-    let imageUrl: string | null = null;
-    let imageCredit = '';
-    const imageQuery = parsed.imagePrompt || targetTopic.keyword || targetTopic.title;
-    try {
-      if (env.PEXELS_API_KEY) {
-        const pexels = new PexelsClient(env.PEXELS_API_KEY);
-        const img = await pexels.getBestImage(imageQuery);
-        if (img) {
-          imageUrl = img.imageUrl;
-          imageCredit = `\n\n${img.creditMarkdown}`;
-          console.log(`🖼️ Pexels image: ${imageUrl}`);
-        }
-      }
-      if (!imageUrl && env.AI) {
-        // Fall back to Workers AI image generation
-        const aiResp = await env.AI.run('@cf/stabilityai/stable-diffusion-xl-base-1.0', {
-          prompt: imageQuery,
-        });
-        if (aiResp && aiResp.image) {
-          // Store in R2 if available, otherwise skip
-          console.log(`🖼️ Workers AI image generated but no R2 bucket configured — skipping`);
-        }
-      }
-    } catch (imgErr: any) {
-      console.error(`⚠️ Image fetch failed: ${imgErr.message}`);
+  for (const siteCfg of sites) {
+    if (!siteCfg.projectGid) {
+      console.log(`⏭️ No Asana project GID configured for ${siteCfg.site}; skipping.`);
+      continue;
     }
 
-    // Prepend image to body if found
-    const finalBody = imageUrl
-      ? `![${imageQuery}](${imageUrl})${imageCredit}\n\n${postBody}`
-      : postBody;
-
-    // 1. Save to D1 (powers REST API and homepage blog preview)
-    await env.DB.prepare(`
-      INSERT INTO blog_posts (title, slug, body, excerpt, tags, featured_springs, published_at, author, image_url)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `).bind(
-      postTitle,
-      targetTopic.slug,
-      finalBody,
-      postExcerpt,
-      tags,
-      featuredSprings,
-      publishedAt,
-      author,
-      imageUrl
-    ).run();
-
-    console.log(`💾 Saved to D1: ${targetTopic.slug}`);
-
-    // 2. Publish to WollyCMS (powers blog index + detail pages)
-    await publishToWollyCMS(
-      env,
-      targetTopic.slug,
-      postTitle,
-      finalBody,
-      postExcerpt,
-      publishedAt,
-      imageUrl
-    );
-
-    console.log(`✨ Done: ${postTitle}`);
-  } catch (error: any) {
-    const errMsg = `${error?.name || 'Error'}: ${error?.message || String(error)}`;
-    const errStack = error?.stack ? `\n\nSTACK:\n${error.stack}` : '';
-    console.error(`❌ Failed to generate post for ${targetTopic.slug}: ${errMsg}${errStack}`);
-    // Insert failed placeholder with the actual error in the body so we can read it from D1
+    let tasks: any[] = [];
     try {
-      await env.DB.prepare(
-        `INSERT OR IGNORE INTO blog_posts (title, slug, body, excerpt, tags, featured_springs, published_at, author)
-         VALUES (?, ?, ?, ?, '[]', '[]', ?, 'system-failed')`
-      ).bind(
-        targetTopic.title,
-        targetTopic.slug,
-        `ERROR: ${errMsg}${errStack}`,
-        targetTopic.excerpt || '',
-        new Date().toISOString()
+      tasks = await listOpenTasks(env.ASANA_PAT, siteCfg.projectGid);
+    } catch (e: any) {
+      console.error(`❌ Asana fetch failed for ${siteCfg.site}: ${e.message}`);
+      continue;
+    }
+    if (tasks.length === 0) {
+      console.log(`✅ No open Asana tasks for ${siteCfg.site}.`);
+      continue;
+    }
+
+    // Pick the first task not already published (dedup by asana_task_gid + status).
+    let target: any = null;
+    for (const t of tasks) {
+      const done = await env.DB
+        .prepare('SELECT id FROM blog_posts WHERE asana_task_gid = ? AND status = ?')
+        .bind(t.gid, 'published')
+        .first();
+      if (!done) {
+        target = t;
+        break;
+      }
+    }
+    if (!target) {
+      console.log(`✅ All open Asana tasks for ${siteCfg.site} already published.`);
+      continue;
+    }
+
+    console.log(`📝 [${siteCfg.site}] Generating from Asana task: ${target.name}`);
+
+    try {
+      const rawOutput = await minimax.generateBlogPostFromBrief({
+        siteName: siteCfg.siteName,
+        taskName: target.name,
+        notes: target.notes,
+      });
+      const parsed = parseBlogOutput(rawOutput);
+      const postTitle = parsed.title || target.name;
+      let slug = slugify(postTitle) || slugify(target.name) || target.gid;
+      // Guarantee slug uniqueness in D1
+      const existingSlug = await env.DB
+        .prepare('SELECT id FROM blog_posts WHERE slug = ?')
+        .bind(slug)
+        .first();
+      if (existingSlug) slug = `${slug}-${String(target.gid).slice(-6)}`;
+
+      const postExcerpt = parsed.excerpt || '';
+      const postBody = parsed.body;
+      const publishedAt = new Date().toISOString();
+
+      // Featured image from Pexels (optional)
+      let imageUrl: string | null = null;
+      let imageCredit = '';
+      const imageQuery = parsed.imagePrompt || target.name;
+      try {
+        if (env.PEXELS_API_KEY) {
+          const pexels = new PexelsClient(env.PEXELS_API_KEY);
+          const img = await pexels.getBestImage(imageQuery);
+          if (img) {
+            imageUrl = img.imageUrl;
+            imageCredit = `\n\n${img.creditMarkdown}`;
+            console.log(`🖼️ Pexels image: ${imageUrl}`);
+          }
+        }
+      } catch (imgErr: any) {
+        console.error(`⚠️ Image fetch failed: ${imgErr.message}`);
+      }
+
+      const finalBody = imageUrl
+        ? `![${imageQuery}](${imageUrl})${imageCredit}\n\n${postBody}`
+        : postBody;
+
+      // Save to D1 — this is the single source of truth the sites read at runtime.
+      await env.DB.prepare(`
+        INSERT INTO blog_posts (title, slug, body, excerpt, tags, featured_springs, published_at, author, image_url, site, asana_task_gid, status)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `).bind(
+        postTitle,
+        slug,
+        finalBody,
+        postExcerpt,
+        '[]',
+        '[]',
+        publishedAt,
+        siteCfg.siteName,
+        imageUrl,
+        siteCfg.site,
+        target.gid,
+        'published'
       ).run();
-      console.log(`⚠️ Marked as failed in D1 (with error details): ${targetTopic.slug}`);
-    } catch (dbErr: any) {
-      console.error(`❌ Also failed to mark ${targetTopic.slug} as failed: ${dbErr.message}`);
+
+      console.log(`💾 [${siteCfg.site}] Saved to D1: ${slug}`);
+
+      // Mark the Asana task complete so it isn't processed again next run.
+      const completed = await markTaskComplete(env.ASANA_PAT, target.gid);
+      if (!completed) {
+        console.warn(`⚠️ Post saved but failed to mark Asana task ${target.gid} complete — dedup will skip it next run.`);
+      } else {
+        console.log(`✅ [${siteCfg.site}] Marked Asana task complete: ${target.gid}`);
+      }
+    } catch (error: any) {
+      const errMsg = `${error?.name || 'Error'}: ${error?.message || String(error)}`;
+      const errStack = error?.stack ? `\n\nSTACK:\n${error.stack}` : '';
+      console.error(`❌ [${siteCfg.site}] Failed for Asana task ${target.gid}: ${errMsg}${errStack}`);
+      // Keep a single inspectable 'system-failed' row per task; do NOT mark the
+      // Asana task complete so it retries on the next cron run.
+      try {
+        await env.DB
+          .prepare('DELETE FROM blog_posts WHERE asana_task_gid = ? AND status = ?')
+          .bind(target.gid, 'system-failed')
+          .run();
+        await env.DB.prepare(
+          `INSERT INTO blog_posts (title, slug, body, excerpt, tags, featured_springs, published_at, author, image_url, site, asana_task_gid, status)
+           VALUES (?, ?, ?, ?, '[]', '[]', ?, 'system-failed', NULL, ?, ?, 'system-failed')`
+        ).bind(
+          target.name,
+          `asana-failed-${target.gid}`,
+          `ERROR: ${errMsg}${errStack}`,
+          '',
+          new Date().toISOString(),
+          siteCfg.site,
+          target.gid
+        ).run();
+        console.log(`⚠️ Recorded system-failed for ${target.gid} (will retry next run).`);
+      } catch (dbErr: any) {
+        console.error(`❌ Also failed to record failure: ${dbErr.message}`);
+      }
     }
   }
+
+  console.log('🗓️ Scheduler run complete.');
 }

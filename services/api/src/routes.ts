@@ -122,14 +122,31 @@ export const createApp = () => {
   app.get('/api/blog', async (c) => {
     const limit = parseInt(c.req.query('limit') || '20');
     const offset = parseInt(c.req.query('offset') || '0');
-
-    const results = await c.env.DB.prepare('SELECT * FROM blog_posts ORDER BY published_at DESC LIMIT ? OFFSET ?').bind(limit, offset).all();
+    const site = c.req.query('site');
+    // Only expose published posts (excludes 'system-failed'). Optional site filter
+    // partitions the shared table across desertsoak / soakcolorado / soaktherockies.
+    let sql = 'SELECT * FROM blog_posts WHERE status = ?';
+    const params: any[] = ['published'];
+    if (site) {
+      sql += ' AND site = ?';
+      params.push(site);
+    }
+    sql += ' ORDER BY published_at DESC LIMIT ? OFFSET ?';
+    params.push(limit, offset);
+    const results = await c.env.DB.prepare(sql).bind(...params).all();
     return c.json({ data: results.results, error: false });
   });
 
   app.get('/api/blog/:slug', async (c) => {
     const slug = c.req.param('slug');
-    const result = await c.env.DB.prepare('SELECT * FROM blog_posts WHERE slug = ?').bind(slug).first();
+    const site = c.req.query('site');
+    let sql = 'SELECT * FROM blog_posts WHERE slug = ? AND status = ?';
+    const params: any[] = [slug, 'published'];
+    if (site) {
+      sql += ' AND site = ?';
+      params.push(site);
+    }
+    const result = await c.env.DB.prepare(sql).bind(...params).first();
     return c.json({ data: result, error: !result });
   });
 

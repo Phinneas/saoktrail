@@ -1,21 +1,17 @@
 ---
-import { getEntries } from "@lib/contentParser";
-import { sortByDate } from "@lib/sortFunctions";
+export const prerender = false;
+import { getMergedBlogEntries } from "@lib/mergedBlog";
 import taxonomyFilter from "@lib/taxonomyFilter";
 import TaxonLayout from "@components/blog/TaxonLayout.astro";
-import type { BlogEntry } from "@/types";
-
-export async function getStaticPaths() {
-  const entries = (await getEntries("blog", sortByDate)) as BlogEntry[];
-  const categories = [...new Set(entries.flatMap((e) => e.data.categories || []))];
-  return categories.map((category) => ({
-    params: { category },
-  }));
-}
+import { siteConfig } from "@site/config";
 
 const { category } = Astro.params;
+if (!category) return Astro.redirect("/blog");
 
-const entries = (await getEntries("blog", sortByDate)) as BlogEntry[];
+const api = (Astro.locals.runtime as any).env.API as {
+  fetch: (url: string, init?: RequestInit) => Promise<Response>;
+};
+const entries = await getMergedBlogEntries(api, siteConfig.wollySiteSlug);
 const filteredEntries = taxonomyFilter(entries, "categories", category);
 ---
 

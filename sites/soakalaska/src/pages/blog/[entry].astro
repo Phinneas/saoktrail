@@ -1,16 +1,22 @@
 ---
 export const prerender = false;
 import EntryLayout from "@components/blog/EntryLayout.astro";
-import { getWollyBlogEntry, getWollyBlogEntries } from "@lib/wolly";
+import { getD1BlogEntries, getD1BlogEntry } from "@lib/d1Blog";
+import { siteConfig } from "@site/config";
 import similerItems from "@lib/similarItems";
 
 const { entry: slug } = Astro.params;
 if (!slug) return Astro.redirect("/blog");
 
-const entry = await getWollyBlogEntry(slug);
+const api = (Astro.locals.runtime as any).env.API as {
+  fetch: (url: string, init?: RequestInit) => Promise<Response>;
+};
+const siteSlug = siteConfig.wollySiteSlug;
+
+const entry = await getD1BlogEntry(api, siteSlug, slug);
 if (!entry) return Astro.redirect("/blog");
 
-const allEntries = await getWollyBlogEntries();
+const allEntries = await getD1BlogEntries(api, siteSlug);
 const relatedEntries = similerItems(entry, allEntries, entry.id);
 ---
 
