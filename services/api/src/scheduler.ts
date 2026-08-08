@@ -119,7 +119,18 @@ export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
       if (existingSlug) slug = `${slug}-${String(target.gid).slice(-6)}`;
 
       const postExcerpt = parsed.excerpt || '';
-      const postBody = parsed.body;
+      // Second pass: humanize the generated body to strip AI-writing patterns.
+      // Non-fatal — fall back to the raw body if the rewrite call fails.
+      let postBody = parsed.body;
+      try {
+        const humanized = await minimax.humanizeBody(parsed.body, siteCfg.siteName);
+        if (humanized && humanized.trim()) {
+          console.log(`✍️ [${siteCfg.site}] Humanized body (${parsed.body.length} -> ${humanized.length} chars).`);
+          postBody = humanized;
+        }
+      } catch (hErr: any) {
+        console.warn(`⚠️ [${siteCfg.site}] Humanize pass failed, using raw body: ${hErr.message}`);
+      }
       const publishedAt = new Date().toISOString();
 
       // Featured image from Pexels (optional)

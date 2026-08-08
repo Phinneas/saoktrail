@@ -1,5 +1,7 @@
 // api/lib/minimax.js - Minimax API client for blog generation
 
+import { HUMANIZER_SYSTEM_PROMPT } from './humanizerPrompt.js';
+
 function stripThinkingBlock(content) {
   const lastTitleIdx = content.lastIndexOf('TITLE:');
   if (lastTitleIdx >= 0) {
@@ -198,7 +200,7 @@ export class MinimaxClient {
     this.model = 'MiniMax-M2.7';
   }
 
-  async chat(messages) {
+  async chat(messages, temperature = 0.7) {
     if (!this.apiKey) {
       throw new Error('MINIMAX_API_KEY not configured');
     }
@@ -212,7 +214,7 @@ export class MinimaxClient {
       body: JSON.stringify({
         model: this.model,
         messages,
-        temperature: 0.7,
+        temperature,
       }),
     });
 
@@ -319,6 +321,26 @@ BODY:
       { role: 'system', content: systemPrompt },
       { role: 'user', content: userPrompt },
     ]);
+  }
+
+  // Second pass: strip AI-writing patterns from the generated body prose
+  // using the Humanizer rules (embedded mode). Only the BODY is sent through
+  // this; TITLE / EXCERPT / IMAGE_PROMPT are untouched. Lower temperature for
+  // a more faithful rewrite. Caller should fall back to the raw body on error.
+  async humanizeBody(body, siteName) {
+    if (!body || !body.trim()) return body;
+    const userPrompt = `Humanize the following blog post body written for '${siteName}'. Apply every applicable pattern from the system rules. Preserve all ## and ### markdown headings and the section structure. Do not invent any facts. Return ONLY the humanized markdown body — no preamble, no audit notes, no commentary.
+
+BODY:
+${body}`;
+
+    return this.chat(
+      [
+        { role: 'system', content: HUMANIZER_SYSTEM_PROMPT },
+        { role: 'user', content: userPrompt },
+      ],
+      0.5
+    );
   }
 }
 
