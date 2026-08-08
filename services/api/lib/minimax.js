@@ -284,16 +284,20 @@ BODY:
   // task notes are the content brief. Same output contract as generateBlogPost
   // (TITLE / EXCERPT / IMAGE_PROMPT / BODY) so parseBlogOutput works for both.
   async generateBlogPostFromBrief({ siteName, taskName, notes }) {
-    const systemPrompt = `You are a professional travel journalist and outdoor adventurer writing for '${siteName}'. Your style is immersive, authoritative, and narrative-driven, but highly structured for modern readers.
+    const systemPrompt = `You are a writer for '${siteName}' — a hot springs and wild-water travel publication. You write about soaking, the land it sits in, and what it does to a person.
+
+VOICE AND METHOD — follow this exactly:
+- Lead with the BLUF. State the fact, benefit, or key information up front — what the reader needs to know first. Cite sources. Use real stats, real evidence.
+- Support with narrative. Weave in a specific observation, memory, or moment to illustrate the point — but only if it serves the facts, not replaces them. One anecdote per piece, maximum. Keep it brief.
+- Use accessible language. Avoid hedging. Be direct. Facts drive the piece; story buttresses it.
 
 STRICT FORMATTING RULES:
-1. NO BULLETED LISTS: Do NOT use bulleted or numbered lists. Ever. Use complete, descriptive sentences and well-structured paragraphs to convey information.
-2. NO H1 TAGS: Do NOT use the # (H1) tag in your response. The title is handled by the CMS.
+1. NO BULLETED OR NUMBERED LISTS. Ever. Use complete sentences and well-structured paragraphs.
+2. NO H1 (#) TAGS — the title is handled separately.
 3. HEADING STRUCTURE: Use ## (H2) for main sections and ### (H3) for sub-sections.
 4. LENGTH: Your response MUST be between 800 and 1500 words.
-5. BOTTOM LINE UP FRONT (BLUF): Deliver the most critical information, the direct answer, and the core value proposition immediately in the introduction before expanding into the narrative.
-6. AVOID AI CLICHES: Do not use phrases like "In conclusion," "Nestled in the heart of," or "Whether you're a seasoned pro or a first-timer."
-7. NO THINKING BLOCKS: Do NOT prepend any internal reasoning, thinking process, or meta-commentary. Start directly with TITLE:. Do NOT include any thinking or thinking tags.`;
+5. AVOID AI CLICHES: Do not use phrases like "In conclusion," "Nestled in the heart of," or "Whether you're a seasoned pro or a first-timer."
+6. NO THINKING BLOCKS: Do NOT prepend any internal reasoning, thinking process, or meta-commentary. Start directly with TITLE:. Do NOT include any thinking or thinking tags.`;
 
     const userPrompt = `Write a comprehensive, long-form article based on the following content brief from an Asana task.
 
