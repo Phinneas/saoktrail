@@ -27,9 +27,9 @@ The fix isn't "pick nicer colors." It's a rendering-architecture change: move to
 | Path | Runtime | Status |
 |---|---|---|
 | `services/render/` (Cloudflare Worker, `soaktrail-render.workers.dev`) | Workers + `resvg-wasm` | **Live** — `shop/wrangler.toml` points `RENDER_SERVICE_URL` here |
-| `render-service/` (Fly.io app `soaktrail-render`, Node + `sharp`) | Fly.io, `min_machines_running=1` (already paid for / kept warm) | **Built but currently unused** — nothing points to it |
+| `render-service/` (Node + `sharp`, ships a `fly.toml`) | Nothing deployed | **Dead code** — `fly.toml` is a config file left in the repo, not a running app. There's no Fly.io account behind it; `DEPLOYMENT.md` confirms the real stack is Cloudflare only (Workers, Pages, D1, R2). Nothing points to this path. |
 
-This matters a lot for the plan below: **you already have a persistent server (Fly.io) provisioned and running, sitting idle.** That's the compute you need for real vector rendering — Cloudflare Workers can't run the native rendering libraries (headless GL, Python/matplotlib, etc.) that produce good cartography, which is *why* the Workers path was forced into the raster-tile-collage hack in the first place.
+**Correction from an earlier draft of this doc:** I'd initially read `render-service/fly.toml` existing in the repo as evidence of a provisioned, paid-for Fly.io box sitting idle. That was wrong — a config file isn't a deployed app, and you don't have a Fly.io account. The actual takeaway stands even so: Cloudflare Workers can't run the native rendering libraries (headless GL, Python/matplotlib, etc.) that produce good cartography — which is *why* the Workers path was forced into the raster-tile-collage hack in the first place — so real vector rendering needs compute you'll have to stand up, not compute you already have. See §4.1a for options that stay inside Cloudflare instead of adding a new vendor.
 
 ### 2.2 The live render pipeline (`services/render/src/{tiles,poster}.ts`)
 
@@ -67,7 +67,7 @@ This is the nicer half of the product and it's client-side only:
 
 ### 2.6 Correcting one assumption in your message
 
-You said you're "as far as I know" on Mapbox, like Maptoposter/Terraink. **The live purchased poster is on Thunderforest raster tiles, not Mapbox.** Mapbox code exists (`render-service/src/render.ts`, the unused Fly.io path) but nothing calls it. Thunderforest doesn't offer vector tiles at all — it's a raster-only provider — so even switching the *live* Worker fully onto Thunderforest properly wouldn't unlock styling control. This is a provider decision as much as an engine decision (see §4.3).
+You said you're "as far as I know" on Mapbox, like Maptoposter/Terraink. **The live purchased poster is on Thunderforest raster tiles, not Mapbox.** Mapbox code exists (`render-service/src/render.ts`, the dead/never-deployed backend) but nothing calls it. Thunderforest doesn't offer vector tiles at all — it's a raster-only provider — so even switching the *live* Worker fully onto Thunderforest properly wouldn't unlock styling control. This is a provider decision as much as an engine decision (see §4.3).
 
 ---
 
@@ -90,13 +90,26 @@ That last point is the piece your architecture is missing, and it's the one to b
 Define your three looks (`soaktrail-topo`, `soaktrail-midnight`, `soaktrail-minimal`) as **MapLibre style JSON you own** — real cartography rules: which layers exist, their colors, road casing widths, label font/size/halo, minzoom for labels, water fill, etc. (`render-service/src/styles/*.json` already has a skeleton of this — it's just not wired to anything live.)
 
 - **Preview** (Studio, browser): MapLibre GL JS loads this exact style over a vector tile source. This already mostly works today for the midnight/minimal styles via OpenFreeMap; extend it to all three and to the trail/marker overlays.
-- **Final render** (Fly.io box, currently idle): a **headless MapLibre renderer** (`mbgl-renderer` or hand-rolled `@maplibre/maplibre-gl-native` + `sharp`) loads the *same* style JSON and the *same* vector tile source, renders at true print pixel dimensions in one pass (no tile grid, no seams), and composites your GeoJSON trail/trailhead/marker/title layers using MapLibre's own GeoJSON-source support (so trail line styling is one more layer in the style, not a separate hand-drawn SVG path).
+- **Final render** (new persistent compute — see §4.1a): a **headless MapLibre renderer** (`mbgl-renderer` or hand-rolled `@maplibre/maplibre-gl-native` + `sharp`) loads the *same* style JSON and the *same* vector tile source, renders at true print pixel dimensions in one pass (no tile grid, no seams), and composites your GeoJSON trail/trailhead/marker/title layers using MapLibre's own GeoJSON-source support (so trail line styling is one more layer in the style, not a separate hand-drawn SVG path).
 
 This single change fixes the biggest complaint for free: **what the customer designs is what gets printed**, because it's the same style and (once §4.5 is fixed) the same camera.
 
+### 4.1a Where does the renderer actually run?
+
+The headless MapLibre renderer needs native libraries (real GL/software rendering) that Cloudflare Workers can't execute — that's a hard constraint, not a preference. You don't currently have compute anywhere else, so this is a real new piece of infrastructure to stand up, not a config flip. Options, roughly in order of "fits what you already have":
+
+| Option | Fit |
+|---|---|
+| **Cloudflare Containers** | Stays on the vendor you already use for everything else (Workers, Pages, D1, R2) — one account, one bill, existing `wrangler`/API auth. Runs arbitrary Docker images, which is what a Node + `mbgl-renderer` box needs. Was in open beta through 2025; worth confirming current GA/pricing status before committing. |
+| **Render.com / Railway** | Simple "push a Dockerfile, get a persistent HTTPS service" PaaS, comparable in spirit to what `render-service/`'s abandoned Fly.io config was going for. New vendor, but minimal ops overhead. |
+| **Fly.io** | Also viable (and there's already a half-written `fly.toml` to start from) — but it's a new account/vendor exactly like the two above, not existing infrastructure. Don't treat the config file as a head start on cost or setup, only as a rough sketch of the deploy shape. |
+| **A small always-on VPS** (Hetzner, DigitalOcean, Lightsail) | Cheapest at low volume, most manual ops (patching, TLS, process supervision) — reasonable if you want full control and don't mind the maintenance. |
+
+Recommendation: try Cloudflare Containers first since it avoids adding a new vendor to the stack; fall back to Render/Railway if Containers can't comfortably run the native rendering deps.
+
 ### 4.2 Why this over the Python/OSMnx/Matplotlib path from the old spec
 
-Both approaches solve "get real map data instead of raster pixels." The Matplotlib path is proven and can look great, but it's a second, disconnected rendering stack from your JS preview — you'd be styling two different renderers (Matplotlib theme JSON vs. MapLibre style) and would drift again over time, just at a slower rate. The MapLibre-native path reuses the exact engine already running in the browser, so there is structurally only one place to make the map look better. Recommend MapLibre-native; keep the old spec as a documented fallback if the native bindings prove painful to run on Fly.io.
+Both approaches solve "get real map data instead of raster pixels." The Matplotlib path is proven and can look great, but it's a second, disconnected rendering stack from your JS preview — you'd be styling two different renderers (Matplotlib theme JSON vs. MapLibre style) and would drift again over time, just at a slower rate. The MapLibre-native path reuses the exact engine already running in the browser, so there is structurally only one place to make the map look better. Recommend MapLibre-native; keep the old spec as a documented fallback if the native bindings prove painful to run wherever you land in §4.1a.
 
 ### 4.3 Vector tile source (you have to pick one — Thunderforest doesn't offer this)
 
@@ -104,7 +117,7 @@ Both approaches solve "get real map data instead of raster pixels." The Matplotl
 |---|---|---|
 | MapTiler Cloud | Paid, usage-based | OpenMapTiles schema, hillshade/contour tiles available, easiest to start |
 | Stadia Maps | Paid, usage-based | Similar to MapTiler, good outdoor styles as a reference |
-| Self-hosted Protomaps (PMTiles) | ~Free (R2/object storage + planetiler build) | You only ever need coverage for ~12 western states — a single regional PMTiles extract is small and can sit in R2, served straight to both the Worker (for preview, if you keep a thin proxy) and the Fly.io renderer. Best unit economics at your scale; more setup work upfront. |
+| Self-hosted Protomaps (PMTiles) | ~Free (R2/object storage + planetiler build) | You only ever need coverage for ~12 western states — a single regional PMTiles extract is small and can sit in R2, served straight to both the Worker (for preview, if you keep a thin proxy) and whichever renderer host you pick in §4.1a. Best unit economics at your scale; more setup work upfront. |
 
 Recommendation: start on MapTiler (fast to integrate, get the pipeline proven), and revisit self-hosted Protomaps once volume justifies owning the tile layer — the geographic footprint is small and static, which is exactly the case self-hosting is good at.
 
@@ -154,11 +167,11 @@ Vector rendering makes this cheap to raise — unlike raster tiles, text and lin
 
 1. **Parity fix first** (§4.5) — cheapest, highest trust win, no architecture change. Do this regardless of anything else.
 2. **Stand up the style JSON** for all three looks against a chosen vector source (§4.3) and get the Studio preview rendering all three as real vector maps (topo currently falls back to raster Thunderforest — bring it in line with midnight/minimal).
-3. **Build the headless renderer on the already-running Fly.io box**, sharing the style JSON from step 2. Cut `RENDER_SERVICE_URL` over once it's producing output at parity with preview.
+3. **Stand up persistent compute** (§4.1a — Cloudflare Containers first choice) and **build the headless renderer there**, sharing the style JSON from step 2. Cut `RENDER_SERVICE_URL` over once it's producing output at parity with preview.
 4. **Raise print resolution** to true 300 DPI (§4.6) and give digital its own size.
 5. **Add hillshade + frame elements** (§4.7) — visual polish pass once the pipeline is real.
 6. **Trail data v2** (§4.4) — GPX/AllTrails ingestion, once the rest of the pipeline can actually do a real track justice.
-7. Retire or repurpose the dead `render-service/` (Fly.io/`sharp`/Mapbox-raster) code — it's not the target architecture, and having two half-built render paths in the repo is itself a source of confusion (I initially had to trace which one was even live).
+7. Delete the dead `render-service/` (`sharp`/Mapbox-raster, never deployed) code, or repurpose its `fly.toml`/Dockerfile shape as a starting point for whichever host you pick in §4.1a — either way, having a plausible-looking but non-functional second backend in the repo is itself a source of confusion (I initially had to trace which one was even live, and initially misread it as running infrastructure).
 
 ---
 
@@ -182,8 +195,8 @@ shop/wrangler.toml                        – RENDER_SERVICE_URL currently point
 services/render/src/{index,tiles,poster}.ts – LIVE render backend: Thunderforest raster tiles + resvg-wasm SVG compositing
 services/render/src/styles/*.json           – (n/a today — style control doesn't exist in this raster pipeline)
 
-render-service/                            – UNUSED Fly.io/Node/sharp backend (Mapbox raster or Thunderforest raster + tile stitching)
-render-service/fly.toml                    – already provisioned, min_machines_running=1, good target for the new headless renderer
+render-service/                            – DEAD CODE, never deployed (Node/sharp, Mapbox or Thunderforest raster + tile stitching)
+render-service/fly.toml                    – a config file only — no Fly.io account/app behind it; at most a rough sketch for §4.1a
 
 soaktrail_spec_v3 (2).md                   – prior unbuilt spec (Python/OSMnx/Matplotlib approach) — useful reference, not the recommended path
 ```
