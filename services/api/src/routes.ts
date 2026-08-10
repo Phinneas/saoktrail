@@ -315,22 +315,21 @@ export const createApp = () => {
   app.post('/api/admin/trigger-scheduler', async (c) => {
     if (!checkAdmin(c)) return c.text('Unauthorized', 401);
     const env = c.env as any;
-    const runPromise = handleScheduledEvent(
+    // Run the scheduler to completion. The HTTP request stays open until the
+    // full run finishes — Cloudflare Workers allow long-running fetch requests
+    // as long as there are pending I/O operations (MiniMax/Pexels/Asana calls
+    // are all I/O, not CPU). Do NOT use waitUntil: it gets cancelled shortly
+    // after the response is sent, killing mid-generation MiniMax calls.
+    await handleScheduledEvent(
       { scheduledTime: new Date().toISOString() },
       env,
       c.executionCtx
     );
-    c.executionCtx.waitUntil(runPromise);
-    let done = false;
-    await Promise.race([
-      runPromise.then(() => { done = true; }).catch(() => { done = true; }),
-      new Promise((r) => setTimeout(r, 25000)),
-    ]);
     const recent = await env.DB.prepare(
       `SELECT id, title, slug, site, status, asana_task_gid, published_at
        FROM blog_posts ORDER BY id DESC LIMIT 12`
     ).all();
-    return c.json({ ok: true, triggered: true, done, recentPosts: recent.results });
+    return c.json({ ok: true, triggered: true, done: true, recentPosts: recent.results });
   });
 
   // Reset all system-failed posts so they retry on next cron run
