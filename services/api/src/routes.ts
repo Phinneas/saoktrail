@@ -8,6 +8,7 @@ import BlogQueue from '../../data/blog-content-queue.json';
 import { MinimaxClient, parseBlogOutput, markdownToTipTap } from '../lib/minimax.js';
 import { PexelsClient } from '../lib/pexels.js';
 import { listOpenTasks } from '../lib/asana.js';
+import { handleScheduledEvent } from './scheduler';
 
 const schema = makeExecutableSchema({ typeDefs, resolvers: fieldResolvers });
 
@@ -304,6 +305,32 @@ export const createApp = () => {
       }
     }
     return c.json({ ok: true, patSet: true, results });
+  });
+
+  // Manual trigger: run the Asana-driven scheduler on demand using the live
+  // secrets already on the Worker, so the full flow (Asana -> MiniMax -> D1)
+  // can be verified without waiting for the cron. The run is registered with
+  // waitUntil so it completes even if this response returns first; we wait up
+  // to 25s inline for a quick result, then return the most recent D1 rows.
+  app.post('/api/admin/trigger-scheduler', async (c) => {
+    if (!checkAdmin(c)) return c.text('Unauthorized', 401);
+    const env = c.env as any;
+    const runPromise = handleScheduledEvent(
+      { scheduledTime: new Date().toISOString() },
+      env,
+      c.executionCtx
+    );
+    c.executionCtx.waitUntil(runPromise);
+    let done = false;
+    await Promise.race([
+      runPromise.then(() => { done = true; }).catch(() => { done = true; }),
+      new Promise((r) => setTimeout(r, 25000)),
+    ]);
+    const recent = await env.DB.prepare(
+      `SELECT id, title, slug, site, status, asana_task_gid, published_at
+       FROM blog_posts ORDER BY id DESC LIMIT 12`
+    ).all();
+    return c.json({ ok: true, triggered: true, done, recentPosts: recent.results });
   });
 
   // Reset all system-failed posts so they retry on next cron run
