@@ -4,7 +4,7 @@ export const siteConfig: SiteConfig = {
   description: "Your guide to hot springs across Idaho, Montana, and Wyoming — natural pools, resort soaks, and hidden wilderness gems.",
   author: "Soak the Rockies", ogImage: "/og-image.png",
   googleSiteVerification: "wqxocztLV8bKLFf1C8ZQBvCssEwGSvte6DY_fK-Qqzw",
-  nav: [{name:"Home",url:"/"},{name:"Directory",url:"/directory"},{name:"Map",url:"/rockies-hot-springs-map"},{name:"Blog",url:"/blog"},{name:"About",url:"/about"}],
+  nav: [{name:"Home",url:"/"},{name:"Directory",url:"/directory"},{name:"Map",url:"/rockies-hot-springs-map"},{name:"Blog",url:"/blog"},{name:"Minerals",url:"https://soaktrail.com/minerals"},{name:"About",url:"/about"}],
   mapUrl: "/rockies-hot-springs-map",
   social: {instagram:"https://www.instagram.com/soaktrail",pinterest:"https://www.pinterest.com/soaktrail"},
   shares: {bluesky:true,threads:true,facebook:true},

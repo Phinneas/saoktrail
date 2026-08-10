@@ -4,7 +4,7 @@ export const siteConfig: SiteConfig = {
   description: "Your guide to Northern California and Southern Oregon's best hot springs near Mount Shasta — natural pools, resort soaks, and wilderness gems.",
   author: "Shasta Hot Springs", ogImage: "/og-image.png",
   googleSiteVerification: "wqxocztLV8bKLFf1C8ZQBvCssEwGSvte6DY_fK-Qqzw",
-  nav: [{name:"Home",url:"/"},{name:"Directory",url:"/directory"},{name:"Map",url:"/map"},{name:"Blog",url:"/blog"},{name:"About",url:"/about"}],
+  nav: [{name:"Home",url:"/"},{name:"Directory",url:"/directory"},{name:"Map",url:"/map"},{name:"Blog",url:"/blog"},{name:"Minerals",url:"https://soaktrail.com/minerals"},{name:"About",url:"/about"}],
   mapUrl: "/map",
   social: {instagram:"https://www.instagram.com/soaktrail",pinterest:"https://www.pinterest.com/soaktrail"},
   shares: {bluesky:true,threads:true,facebook:true},

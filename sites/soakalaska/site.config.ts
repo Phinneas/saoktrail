@@ -4,7 +4,7 @@ export const siteConfig: SiteConfig = {
   description: "Your guide to Alaska's best hot springs — natural pools, resort soaks, and wilderness gems.",
   author: "Alaska Hot Springs", ogImage: "/og-image.png",
   googleSiteVerification: "r7tnL5p-9Q4RBi3fOipiKPg6vvZLg14CW8KIZJx2baw",
-  nav: [{name:"Home",url:"/"},{name:"Directory",url:"/directory"},{name:"Map",url:"/alaska-hot-springs-map"},{name:"Blog",url:"/blog"},{name:"About",url:"/about"}],
+  nav: [{name:"Home",url:"/"},{name:"Directory",url:"/directory"},{name:"Map",url:"/alaska-hot-springs-map"},{name:"Blog",url:"/blog"},{name:"Minerals",url:"https://soaktrail.com/minerals"},{name:"About",url:"/about"}],
   mapUrl: "/alaska-hot-springs-map",
   social: {instagram:"https://www.instagram.com/soaktrail",pinterest:"https://www.pinterest.com/soaktrail"},
   shares: {bluesky:true,threads:true,facebook:true},
