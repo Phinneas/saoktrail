@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { marked } from 'marked';
+import { MINERAL_BY_KEY } from '../../lib/minerals';
+import { fetchMineralRanking } from '../../lib/mineralApi';
+
+export const prerender = false;
+
+const { mineral: key } = Astro.params;
+const mineral = key ? MINERAL_BY_KEY[key] : undefined;
+if (!mineral) {
+  return new Response(null, { status: 404, statusText: 'Not Found' });
+}
+
+const ranking = await fetchMineralRanking(mineral.key, 50);
+const springs = ranking?.springs || [];
+const total = ranking?.count ?? springs.length;
+
+const title = `${mineral.name} in Hot Springs — Soak Trail`;
+const description = `${mineral.whatItIs} ${mineral.tagline} U.S. hot springs ranked by ${mineral.name.toLowerCase()} concentration, with cited, cautious health context.`;
+const canonical = `https://soaktrail.com/minerals/${mineral.key}`;
+
+const breadcrumbSchema = {
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Minerals', item: 'https://soaktrail.com/minerals' },
+    { '@type': 'ListItem', position: 3, name: mineral.name, item: canonical },
+  ],
+};
+
+const articleSchema = {
+  '@type': 'Article',
+  headline: `${mineral.name} in Hot Springs`,
+  description,
+  url: canonical,
+  author: { '@type': 'Organization', name: 'Soak Trail' },
+  publisher: { '@type': 'Organization', name: 'Soak Trail' },
+  about: mineral.tagline,
+};
+
+// Render benefits markdown (inline links) to HTML.
+const benefitsHtml = mineral.benefits.map((p) => marked.parseInline(p));
+const valueUnit = mineral.key === 'ph' ? 'pH' : mineral.unit;
+
+function fmtValue(v: number): string {
+  if (v % 1 === 0) return String(v);
+  return v.toFixed(mineral.key === 'ph' ? 1 : 2);
+}
+---
+
+<BaseLayout title={title} description={description} canonicalUrl={canonical} jsonLd={[breadcrumbSchema, articleSchema]}>
+  <div class="container mx-auto px-4 py-12 max-w-3xl">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Minerals', href: '/minerals' }, { label: mineral.name, href: `/minerals/${mineral.key}` }]} />
+
+    <h1 class="font-display text-4xl font-bold text-sa-dark mt-8 mb-2">{mineral.name}</h1>
+    <p class="text-sa-copper font-display text-lg mb-8">{mineral.tagline}</p>
+
+    <div class="prose prose-lg max-w-none">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-8 mb-3">What it is</h2>
+      <p class="text-sa-dark/80 leading-relaxed">{mineral.whatItIs}</p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-3">In hot springs</h2>
+      <p class="text-sa-dark/80 leading-relaxed">{mineral.inHotSprings}</p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-3">Cited benefits and context</h2>
+      {benefitsHtml.map((html) => (
+        <p class="text-sa-dark/80 leading-relaxed mt-4" set:html={html} />
+      ))}
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-3">Cautions</h2>
+      <p class="text-sa-dark/80 leading-relaxed">{mineral.cautions}</p>
+    </div>
+
+    <section class="mt-12">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-1">
+        Springs ranked by {mineral.rankLabel.toLowerCase()}
+      </h2>
+      <p class="text-sm text-sa-dark/60 mb-4">
+        {total} spring{total === 1 ? '' : 's'} with verified {mineral.name.toLowerCase()} data{springs.length < total ? ` · showing top ${springs.length}` : ''} · source: USGS Water Quality Portal
+      </p>
+
+      {springs.length === 0 ? (
+        <div class="rounded-lg border border-sa-dark/10 bg-white/60 p-6 text-sa-dark/70">
+          No springs with verified {mineral.name.toLowerCase()} data yet. Check back as more USGS water-quality records are matched to springs.
+        </div>
+      ) : (
+        <ol class="divide-y divide-sa-dark/10 rounded-lg border border-sa-dark/10 bg-white/60">
+          {springs.map((s, i) => (
+            <li class="flex items-center justify-between gap-4 px-4 py-3">
+              <div class="flex items-center gap-3 min-w-0">
+                <span class="font-mono text-sm text-sa-dark/40 w-6 text-right">{i + 1}</span>
+                <div class="min-w-0">
+                  <p class="font-display font-bold text-sa-dark truncate">{s.name}</p>
+                  <p class="text-xs text-sa-dark/50 capitalize">
+                    {s.state}{s.temperature_f ? ` · ${s.temperature_f}°F` : ''}{s.development ? ` · ${s.development}` : ''}
+                  </p>
+                </div>
+              </div>
+              <div class="text-right shrink-0">
+                <p class="font-mono font-bold text-sa-copper">
+                  {fmtValue(s.value)} <span class="text-xs font-normal text-sa-dark/50">{valueUnit}</span>
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      )}
+    </section>
+
+    <section class="mt-12">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-3">Sources</h2>
+      <ul class="space-y-2">
+        {mineral.sources.map((src) => (
+          <li>
+            <a href={src.url} target="_blank" rel="noopener noreferrer" class="text-sa-copper hover:underline text-sm">{src.label}</a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <div class="mt-10">
+      <a href="/minerals" class="text-sa-copper hover:underline">← All minerals</a>
+    </div>
+  </div>
+</BaseLayout>

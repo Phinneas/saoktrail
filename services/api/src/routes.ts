@@ -119,6 +119,62 @@ export const createApp = () => {
     return c.json({ data: null, error: true });
   });
 
+  // Mineral metadata for the Soaktrail minerals hub. field maps to the key
+  // inside each spring's chemistry_details JSON blob.
+  const MINERALS = [
+    { key: 'ph', name: 'pH', field: 'ph', unit: 'pH', rankLabel: 'Highest pH (most alkaline)', group: 'property' },
+    { key: 'tds', name: 'Total Dissolved Solids', field: 'tds_mgL', unit: 'mg/L', rankLabel: 'Most mineral-rich (by TDS)', group: 'property' },
+    { key: 'calcium', name: 'Calcium', field: 'calcium_mg_l', unit: 'mg/L', rankLabel: 'Most calcium', group: 'mineral' },
+    { key: 'magnesium', name: 'Magnesium', field: 'magnesium_mg_l', unit: 'mg/L', rankLabel: 'Most magnesium', group: 'mineral' },
+    { key: 'sodium', name: 'Sodium', field: 'sodium_mg_l', unit: 'mg/L', rankLabel: 'Most sodium', group: 'mineral' },
+    { key: 'sulfate', name: 'Sulfate', field: 'sulfate_mg_l', unit: 'mg/L', rankLabel: 'Most sulfate', group: 'mineral' },
+    { key: 'chloride', name: 'Chloride', field: 'chloride_mg_l', unit: 'mg/L', rankLabel: 'Most chloride', group: 'mineral' },
+    { key: 'iron', name: 'Iron', field: 'iron_mg_l', unit: 'mg/L', rankLabel: 'Most iron', group: 'mineral' },
+  ];
+  const MINERAL_BY_KEY = Object.fromEntries(MINERALS.map((m) => [m.key, m]));
+
+  app.get('/api/minerals', (c) => c.json({ data: MINERALS, error: false }));
+
+  // Springs ranked by a mineral's concentration (descending). Reads
+  // chemistry_details JSON per spring, filters to those with a value, sorts.
+  app.get('/api/minerals/:mineral/springs', async (c) => {
+    const mineralKey = c.req.param('mineral');
+    const m = MINERAL_BY_KEY[mineralKey];
+    if (!m) return c.json({ data: null, error: true, message: 'Unknown mineral' }, 404);
+    const limit = Math.min(parseInt(c.req.query('limit') || '50'), 200);
+
+    const rows = await c.env.DB
+      .prepare('SELECT slug, name, state, temperature_f, access_type, development, chemistry_details, chemistry_source, chemistry_sampled_on FROM springs')
+      .all();
+
+    const all = (rows.results || [])
+      .map((s: any) => {
+        let cd = s.chemistry_details;
+        if (typeof cd === 'string') { try { cd = JSON.parse(cd); } catch { cd = {}; } }
+        const raw = cd?.[m.field];
+        if (raw == null || raw === '') return null;
+        const value = parseFloat(raw);
+        if (isNaN(value)) return null;
+        return {
+          slug: s.slug,
+          name: s.name,
+          state: s.state,
+          temperature_f: s.temperature_f,
+          access_type: s.access_type,
+          development: s.development,
+          value,
+          unit: m.unit,
+          chemistry_source: s.chemistry_source,
+          chemistry_sampled_on: s.chemistry_sampled_on,
+        };
+      })
+      .filter(Boolean)
+      .sort((a: any, b: any) => b.value - a.value);
+
+    // count = true total with verified data; springs = top-N slice.
+    return c.json({ data: { mineral: m, count: all.length, springs: all.slice(0, limit) }, error: false });
+  });
+
   app.get('/api/blog', async (c) => {
     const limit = parseInt(c.req.query('limit') || '20');
     const offset = parseInt(c.req.query('offset') || '0');

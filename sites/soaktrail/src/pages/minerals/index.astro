@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { MINERALS } from '../../lib/minerals';
+
+export const prerender = true;
+
+const breadcrumbSchema = {
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Minerals', item: 'https://soaktrail.com/minerals' },
+  ],
+};
+
+const properties = MINERALS.filter((m) => m.group === 'property');
+const minerals = MINERALS.filter((m) => m.group === 'mineral');
+
+const description =
+  'A field guide to the minerals in natural hot springs — pH, TDS, calcium, magnesium, sodium, sulfate, chloride, and iron — with USGS-sourced concentration data and cited, cautious health context.';
+---
+
+<BaseLayout
+  title="Hot Spring Minerals — Soak Trail"
+  description={description}
+  canonicalUrl="https://soaktrail.com/minerals"
+  jsonLd={breadcrumbSchema}
+>
+  <div class="container mx-auto px-4 py-12 max-w-5xl">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Minerals', href: '/minerals' }]} />
+
+    <h1 class="font-display text-4xl font-bold text-sa-dark mt-8 mb-4">Hot Spring Minerals</h1>
+    <p class="text-lg text-sa-dark/80 leading-relaxed max-w-3xl">
+      What is actually in the water you are soaking in. Each profile covers one constituent
+      of hot-spring chemistry, ranks U.S. hot springs by its concentration, and explains
+      the health context with cited sources. Concentrations come from the
+      <a href="https://www.waterqualitydata.us/" target="_blank" rel="noopener noreferrer" class="text-sa-copper hover:underline">USGS Water Quality Portal</a>,
+      matched to each spring's USGS monitoring site.
+    </p>
+
+    <div class="mt-6 rounded-lg border border-sa-copper/30 bg-sa-copper/5 p-4 text-sm text-sa-dark/70 max-w-3xl">
+      <strong class="text-sa-dark">A note on health claims.</strong> Drinking-water guideline
+      values (EPA, WHO) apply to <em>ingestion</em>, not dermal soaking. Balneology research is
+      mixed in quality and balneotherapy is adjunctive, not a treatment for any condition. We
+      keep claims cautious and cite the source for each one.
+    </div>
+
+    <h2 class="font-display text-2xl font-bold text-sa-dark mt-12 mb-4">Water properties</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {properties.map((m) => (
+        <a
+          href={`/minerals/${m.key}`}
+          class="block rounded-lg border border-sa-dark/10 bg-white/60 p-6 hover:border-sa-copper hover:shadow-sm transition"
+        >
+          <h3 class="font-display text-xl font-bold text-sa-dark">{m.name}</h3>
+          <p class="text-sa-copper text-sm font-display mt-1">{m.tagline}</p>
+          <p class="text-sa-dark/70 text-sm mt-3 leading-relaxed">{m.whatItIs}</p>
+          <span class="inline-block mt-4 text-sm text-sa-copper font-medium">View profile &amp; rankings →</span>
+        </a>
+      ))}
+    </div>
+
+    <h2 class="font-display text-2xl font-bold text-sa-dark mt-12 mb-4">Minerals</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {minerals.map((m) => (
+        <a
+          href={`/minerals/${m.key}`}
+          class="block rounded-lg border border-sa-dark/10 bg-white/60 p-6 hover:border-sa-copper hover:shadow-sm transition"
+        >
+          <h3 class="font-display text-xl font-bold text-sa-dark">{m.name}</h3>
+          <p class="text-sa-copper text-sm font-display mt-1">{m.tagline}</p>
+          <p class="text-sa-dark/70 text-sm mt-3 leading-relaxed">{m.whatItIs}</p>
+          <span class="inline-block mt-4 text-sm text-sa-copper font-medium">View profile &amp; rankings →</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
