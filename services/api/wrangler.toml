@@ -3,7 +3,7 @@ main = "src/index.ts"
 compatibility_date = "2026-03-26"
 
 # Required Secrets (set via `wrangler secret put <NAME>`):
-# - GEMINI_API_KEY       (used as the Minimax bearer token by lib/minimax.js)
+# - MINIMAX_API_KEY      (Minimax bearer token for blog generation, used by lib/minimax.js)
 # - ADMIN_SECRET
 # - PEXELS_API_KEY       (featured image lookup; optional but recommended)
 # - ASANA_PAT            (Asana Personal Access Token for the auto-poster)

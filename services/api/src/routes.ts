@@ -7,6 +7,7 @@ import { fieldResolvers, createRootResolver, type Bindings } from './resolvers';
 import BlogQueue from '../../data/blog-content-queue.json';
 import { MinimaxClient, parseBlogOutput, markdownToTipTap } from '../lib/minimax.js';
 import { PexelsClient } from '../lib/pexels.js';
+import { listOpenTasks } from '../lib/asana.js';
 
 const schema = makeExecutableSchema({ typeDefs, resolvers: fieldResolvers });
 
@@ -265,6 +266,44 @@ export const createApp = () => {
       last_cron_run: lastCronRun,
       cron_runs_total: cronRunsTotal,
     });
+  });
+
+  // Diagnostic: test Asana connectivity for all 4 configured projects.
+  // Reports per-project: whether the GID is set, the open-task count, a few
+  // sample task names, or the error (auth/404/etc.) if the fetch failed.
+  app.get('/api/admin/asana-check', async (c) => {
+    if (!checkAdmin(c)) return c.text('Unauthorized', 401);
+    const env = c.env as any;
+    const pat = env.ASANA_PAT;
+    if (!pat) return c.json({ ok: false, error: 'ASANA_PAT not set' }, 400);
+
+    const projects = [
+      { site: 'desertsoak', name: 'Desert Soak', gid: env.ASANA_PROJECT_DESERTSOAK },
+      { site: 'soakcolorado', name: 'Soak Colorado', gid: env.ASANA_PROJECT_SOAKCOLORADO },
+      { site: 'soaktherockies', name: 'Soak the Rockies', gid: env.ASANA_PROJECT_SOAKTHEROCKIES },
+      { site: 'alaskahotsprings', name: 'Alaska Hot Springs', gid: env.ASANA_PROJECT_ALASKAHOTSPRINGS },
+    ];
+
+    const results = [];
+    for (const p of projects) {
+      if (!p.gid) {
+        results.push({ site: p.site, configured: false, taskCount: 0, error: 'No project GID set' });
+        continue;
+      }
+      try {
+        const tasks = await listOpenTasks(pat, p.gid);
+        results.push({
+          site: p.site,
+          configured: true,
+          projectGid: p.gid,
+          taskCount: tasks.length,
+          sampleTasks: tasks.slice(0, 3).map((t: any) => ({ gid: t.gid, name: t.name })),
+        });
+      } catch (e: any) {
+        results.push({ site: p.site, configured: true, projectGid: p.gid, taskCount: 0, error: e.message });
+      }
+    }
+    return c.json({ ok: true, patSet: true, results });
   });
 
   // Reset all system-failed posts so they retry on next cron run

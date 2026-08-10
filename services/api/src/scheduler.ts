@@ -5,7 +5,7 @@ import { listOpenTasks, markTaskComplete } from '../lib/asana.js';
 
 export interface Env {
   DB: D1Database;
-  GEMINI_API_KEY: string;
+  MINIMAX_API_KEY: string;
   PEXELS_API_KEY: string;
   ASANA_PAT?: string;
   ASANA_PROJECT_DESERTSOAK?: string;
@@ -47,8 +47,8 @@ export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
     console.warn(`Heartbeat write failed: ${hbErr.message}`);
   }
 
-  if (!env.GEMINI_API_KEY) {
-    console.error('❌ GEMINI_API_KEY is not defined in environment.');
+  if (!env.MINIMAX_API_KEY) {
+    console.error('❌ MINIMAX_API_KEY is not defined in environment.');
     return;
   }
   if (!env.ASANA_PAT) {
@@ -63,7 +63,7 @@ export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
     { site: 'alaskahotsprings', siteName: 'Alaska Hot Springs', projectGid: env.ASANA_PROJECT_ALASKAHOTSPRINGS },
   ];
 
-  const minimax = new MinimaxClient(env.GEMINI_API_KEY);
+  const minimax = new MinimaxClient(env.MINIMAX_API_KEY);
 
   for (const siteCfg of sites) {
     if (!siteCfg.projectGid) {
