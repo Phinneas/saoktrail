@@ -2,56 +2,36 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import ShareButtons from '../../components/ShareButtons.astro';
-import { wolly } from '../../lib/wolly';
-import { marked } from 'marked';
+import { getBlogPost, renderBody } from '../../lib/d1Blog';
 
 const SITE_SLUG = 'soaktrail';
 
 const { slug } = Astro.params;
 
-let page: any;
-
-try {
-  page = await wolly.pages.getBySlug(slug as string);
-  if (page.fields?.site !== SITE_SLUG) {
-    return new Response(null, { status: 404, statusText: 'Not Found' });
-  }
-} catch {
+const post = await getBlogPost(slug as string, SITE_SLUG);
+if (!post) {
   return new Response(null, { status: 404, statusText: 'Not Found' });
 }
 
-// WollyCMS collapses newlines to double-spaces when saving plain text fields.
-function restoreMarkdown(text: string): string {
-  return text
-    .replace(/  (#{1,6} )/g, '\n\n$1')
-    .replace(/  /g, '\n\n')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim();
-}
+const bodyHtml = post.body ? renderBody(post.body) : null;
+const featuredImage = post.image_url || null;
+const publishedAt = post.published_at;
+const updatedAt = post.updated_at;
+const authorName = post.author || 'Soak Trail';
 
-const rawBody = (typeof page.fields?.body === 'string' && page.fields.body)
-  ? page.fields.body
-  : null;
-
-const bodyHtml = rawBody ? await marked(restoreMarkdown(rawBody)) : null;
-const featuredImage = page.fields?.featured_image || null;
-const publishedAt = page.meta?.published_at || page.meta?.updated_at;
-const updatedAt = page.meta?.updated_at;
-const authorName = page.fields?.author || 'Soak Trail';
-
-const pageDescription = page.fields?.excerpt
-  ? page.fields.excerpt
-  : rawBody
-    ? rawBody.replace(/[#*_`]/g, '').slice(0, 155).trim() + (rawBody.length > 155 ? '...' : '')
-    : `${page.title} — Hot springs guide from Soak Trail.`;
+const pageDescription = post.excerpt
+  ? post.excerpt
+  : post.body
+    ? post.body.replace(/[#*_`]/g, '').slice(0, 155).trim() + (post.body.length > 155 ? '...' : '')
+    : `${post.title} — Hot springs guide from Soak Trail.`;
 
 const jsonLd = [
   {
     '@type': 'BlogPosting',
-    headline: page.title,
+    headline: post.title,
     description: pageDescription,
     url: `https://soaktrail.com/blog/${slug}`,
-    image: page.fields?.featured_image || undefined,
+    image: post.image_url || undefined,
     author: {
       '@type': 'Organization',
       name: authorName,
@@ -77,16 +57,16 @@ const jsonLd = [
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
       { '@type': 'ListItem', position: 2, name: 'Journal', item: 'https://soaktrail.com/blog' },
-      { '@type': 'ListItem', position: 3, name: page.title },
+      { '@type': 'ListItem', position: 3, name: post.title },
     ],
   },
 ];
 ---
 
 <BaseLayout
-  title={`${page.title} — Soak Trail Journal`}
+  title={`${post.title} — Soak Trail Journal`}
   description={pageDescription}
-  ogImage={page.fields?.featured_image}
+  ogImage={post.image_url}
   ogType="article"
   author={authorName}
   publishedAt={publishedAt}
@@ -97,13 +77,13 @@ const jsonLd = [
     <Breadcrumbs items={[
       { label: 'Home', href: '/' },
       { label: 'Journal', href: '/blog' },
-      { label: page.title },
+      { label: post.title },
     ]} />
 
     <article class="h-entry">
       <header class="mb-10">
         <h1 class="font-display text-3xl md:text-5xl font-medium text-sa-dark leading-tight mb-6 p-name">
-          {page.title}
+          {post.title}
         </h1>
         <div class="flex items-center gap-4 text-sm text-sa-text">
           <time class="dt-published" datetime={publishedAt}>
@@ -121,7 +101,7 @@ const jsonLd = [
         <div class="mb-10 aspect-video rounded-xl overflow-hidden">
           <img
             src={featuredImage}
-            alt={page.title}
+            alt={post.title}
             fetchpriority="high"
             class="u-photo w-full h-full object-cover"
           />
@@ -134,11 +114,11 @@ const jsonLd = [
         <p class="text-sa-text">Content coming soon.</p>
       )}
 
-      {page.fields?.featured_springs && page.fields.featured_springs.length > 0 && (
+      {post.featured_springs && post.featured_springs.length > 0 && (
         <div class="mt-12 pt-8 border-t border-sa-divider">
           <h2 class="text-xl font-bold text-sa-dark mb-4">Featured Springs</h2>
           <div class="flex flex-wrap gap-3">
-            {page.fields.featured_springs.map((springSlug: string) => (
+            {post.featured_springs.map((springSlug: string) => (
               <span class="px-4 py-2 bg-sa-cream text-sa-dark text-sm font-medium rounded-lg border border-sa-divider">
                 {springSlug.replace(/-/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase())}
               </span>
@@ -151,7 +131,7 @@ const jsonLd = [
 
       <ShareButtons
         url={`https://soaktrail.com/blog/${slug}`}
-        title={page.title}
+        title={post.title}
         description={pageDescription}
       />
     </article>

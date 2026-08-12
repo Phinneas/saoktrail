@@ -37,7 +37,7 @@ const entryDescription =
 const articleSchema = buildArticleSchema(entry, Astro.url.pathname);
 const faqSchema = htmlBody ? buildFaqSchema(htmlBody) : null;
 
-// Look up author entry; default to soak-colorado for WollyCMS posts without author ref
+// Look up author entry; default to soak-colorado for posts without author ref
 const authorId = entry.data.author?.id || "soak-colorado";
 const authorEntry = authorId ? await getEntry("authors", authorId) : undefined;
 ---

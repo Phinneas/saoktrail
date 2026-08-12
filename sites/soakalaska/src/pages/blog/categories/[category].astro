@@ -1,6 +1,6 @@
 ---
 export const prerender = false;
-import { getD1BlogEntries } from "@lib/d1Blog";
+import { getMergedBlogEntries } from "@lib/mergedBlog";
 import taxonomyFilter from "@lib/taxonomyFilter";
 import TaxonLayout from "@components/blog/TaxonLayout.astro";
 import { siteConfig } from "@site/config";
@@ -11,7 +11,7 @@ if (!category) return Astro.redirect("/blog");
 const api = (Astro.locals.runtime as any).env.API as {
   fetch: (url: string, init?: RequestInit) => Promise<Response>;
 };
-const entries = await getD1BlogEntries(api, siteConfig.wollySiteSlug);
+const entries = await getMergedBlogEntries(api, siteConfig.siteSlug);
 const filteredEntries = taxonomyFilter(entries, "categories", category);
 ---
 

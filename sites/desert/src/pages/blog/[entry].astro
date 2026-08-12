@@ -11,7 +11,7 @@ if (!slug) return Astro.redirect("/blog");
 const api = (Astro.locals.runtime as any).env.API as {
   fetch: (url: string, init?: RequestInit) => Promise<Response>;
 };
-const siteSlug = siteConfig.wollySiteSlug;
+const siteSlug = siteConfig.siteSlug;
 
 const resolved = await getMergedBlogEntry(api, siteSlug, slug);
 if (!resolved) return Astro.redirect("/blog");

@@ -1,23 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { wolly } from '../../lib/wolly';
+import { getBlogPosts } from '../../lib/d1Blog';
 
 const SITE_SLUG = 'soaktrail';
 const PAGE_SIZE = 9;
 
 const page = Math.max(1, Number(Astro.url.searchParams.get('page')) || 1);
 
-const allPosts: any[] = [];
-let offset = 0;
-const limit = 50;
-while (true) {
-  const result = await wolly.pages.list({ type: 'blog', sort: 'published_at:desc', status: 'published', limit, offset });
-  const filtered = result.data.filter((post: any) => post.fields?.site === SITE_SLUG);
-  allPosts.push(...filtered);
-  const total = result.meta?.total || 0;
-  offset += limit;
-  if (offset >= total) break;
-}
+const allPosts = (await getBlogPosts(SITE_SLUG)).filter((p: any) => p.slug !== 'hot-spring-chemistry-guide');
 
 const totalPages = Math.max(1, Math.ceil(allPosts.length / PAGE_SIZE));
 const safePage = Math.min(page, totalPages);
@@ -35,9 +25,9 @@ const jsonLd = {
     '@type': 'BlogPosting',
     headline: post.title,
     url: `https://soaktrail.com/blog/${post.slug}`,
-    datePublished: post.meta?.published_at,
-    dateModified: post.meta?.updated_at,
-    image: post.fields?.featured_image || undefined,
+    datePublished: post.published_at,
+    dateModified: post.updated_at,
+    image: post.image_url || undefined,
   })),
 };
 ---
@@ -80,10 +70,10 @@ const jsonLd = {
         {posts.map((post: any, index: number) => (
           <article class="h-entry group block border border-sa-divider bg-white hover:border-sa-copper transition-colors duration-300 rounded-xl overflow-hidden">
             <a href={`/blog/${post.slug}`} class="block">
-              {post.fields?.featured_image && (
+              {post.image_url && (
                 <div class="aspect-video overflow-hidden">
                   <img
-                    src={post.fields.featured_image}
+                    src={post.image_url}
                     alt={post.title}
                     class="u-photo w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading={index === 0 ? "eager" : "lazy"}
@@ -95,8 +85,8 @@ const jsonLd = {
                 <h2 class="font-display text-xl font-medium text-sa-dark mb-3 group-hover:text-sa-copper transition-colors duration-300 leading-snug p-name">
                   {post.title}
                 </h2>
-                {post.fields?.excerpt && (
-                  <p class="text-sa-text text-sm leading-relaxed line-clamp-3 mb-4 p-summary">{post.fields.excerpt}</p>
+                {post.excerpt && (
+                  <p class="text-sa-text text-sm leading-relaxed line-clamp-3 mb-4 p-summary">{post.excerpt}</p>
                 )}
                 <div class="flex items-center gap-2 text-sa-copper text-sm font-body font-medium">
                   <span>Read more</span>
@@ -104,7 +94,7 @@ const jsonLd = {
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </div>
-                <time class="dt-published hidden" datetime={post.meta?.published_at}>{post.meta?.published_at}</time>
+                <time class="dt-published hidden" datetime={post.published_at}>{post.published_at}</time>
               </div>
             </a>
           </article>

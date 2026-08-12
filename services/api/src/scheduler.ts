@@ -12,6 +12,7 @@ export interface Env {
   ASANA_PROJECT_SOAKCOLORADO?: string;
   ASANA_PROJECT_SOAKTHEROCKIES?: string;
   ASANA_PROJECT_ALASKAHOTSPRINGS?: string;
+  ASANA_PROJECT_SOAKTRAIL?: string;
   AI?: any;
 }
 
@@ -61,6 +62,7 @@ export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
     { site: 'soakcolorado', siteName: 'Soak Colorado', projectGid: env.ASANA_PROJECT_SOAKCOLORADO },
     { site: 'soaktherockies', siteName: 'Soak the Rockies', projectGid: env.ASANA_PROJECT_SOAKTHEROCKIES },
     { site: 'alaskahotsprings', siteName: 'Alaska Hot Springs', projectGid: env.ASANA_PROJECT_ALASKAHOTSPRINGS },
+    { site: 'soaktrail', siteName: 'Soak Trail', projectGid: env.ASANA_PROJECT_SOAKTRAIL },
   ];
 
   const minimax = new MinimaxClient(env.MINIMAX_API_KEY);

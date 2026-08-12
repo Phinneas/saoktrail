@@ -283,6 +283,7 @@ export const createApp = () => {
       { site: 'soakcolorado', name: 'Soak Colorado', gid: env.ASANA_PROJECT_SOAKCOLORADO },
       { site: 'soaktherockies', name: 'Soak the Rockies', gid: env.ASANA_PROJECT_SOAKTHEROCKIES },
       { site: 'alaskahotsprings', name: 'Alaska Hot Springs', gid: env.ASANA_PROJECT_ALASKAHOTSPRINGS },
+      { site: 'soaktrail', name: 'Soak Trail', gid: env.ASANA_PROJECT_SOAKTRAIL },
     ];
 
     const results = [];
@@ -427,156 +428,10 @@ export const createApp = () => {
         imageUrl
       ).run();
 
-      // Also publish to WollyCMS so the Astro frontend can display the post
-      const wollyApiKey = env.WOLLY_CMS_API_KEY;
-      const wollyService = env.WOLLYCMS;
-      if (wollyApiKey) {
-        const WOLLY_API_URL = 'https://wollycms.buzzuw2.workers.dev/api';
-        const wollyFetch = wollyService ? (url: string, init?: RequestInit) => wollyService.fetch(url, init) : fetch;
-        const listRes = await wollyFetch(`${WOLLY_API_URL}/content/pages?type=blog&limit=100`, {
-          headers: { Authorization: `Bearer ${wollyApiKey}` },
-        });
-        const listData: any = await listRes.json();
-        const existing = listData?.data?.find((p: any) => p.slug === (targetTopic as any).slug);
-        const method = existing ? 'PUT' : 'POST';
-        const url = existing
-          ? `${WOLLY_API_URL}/admin/pages/${existing.id}`
-          : `${WOLLY_API_URL}/admin/pages`;
-
-        const wollyPayload = {
-          title: postTitle,
-          slug: (targetTopic as any).slug,
-          typeId: 2,
-          type: 'blog',
-          status: 'published',
-          published_at: publishedAt,
-          fields: {
-            excerpt: postExcerpt,
-            body: finalBody,
-            featured_image: imageUrl || '',
-            site: 'soaktherockies',
-          },
-        };
-
-        const wollyRes = await wollyFetch(url, {
-          method,
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${wollyApiKey}`,
-          },
-          body: JSON.stringify(wollyPayload),
-        });
-
-        if (!wollyRes.ok) {
-          const err = await wollyRes.text();
-          console.error(`WollyCMS publish failed for ${(targetTopic as any).slug}: ${err}`);
-        }
-      }
-
       return c.json({ success: true, message: `Successfully generated and published: ${postTitle}`, slug: (targetTopic as any).slug });
     } catch (error: any) {
       return c.json({ success: false, error: error.message }, 500);
     }
-  });
-
-  // Patch the site field on an existing WollyCMS post without needing D1 data
-  app.post('/api/admin/patch-wolly-site', async (c) => {
-    if (!checkAdmin(c)) return c.text('Unauthorized', 401);
-
-    const { slug } = await c.req.json();
-    if (!slug) return c.json({ error: 'Missing slug' }, 400);
-
-    const wollyApiKey = (c.env as any).WOLLY_CMS_API_KEY;
-    if (!wollyApiKey) return c.json({ error: 'WOLLY_CMS_API_KEY not set' }, 500);
-
-    const WOLLY_API_URL = 'https://wollycms.buzzuw2.workers.dev/api';
-    const wollyService = (c.env as any).WOLLYCMS;
-    const wollyFetch = wollyService ? (url: string, init?: RequestInit) => wollyService.fetch(url, init) : fetch;
-
-    const listRes = await wollyFetch(`${WOLLY_API_URL}/content/pages?type=blog&limit=100`, {
-      headers: { Authorization: `Bearer ${wollyApiKey}` },
-    });
-    const listData: any = await listRes.json();
-    const existing = listData?.data?.find((p: any) => p.slug === slug);
-    if (!existing) return c.json({ error: `No WollyCMS page found for slug: ${slug}` }, 404);
-
-    const payload = {
-      title: existing.title,
-      slug,
-      typeId: existing.typeId || 2,
-      type: 'blog',
-      status: 'published',
-      published_at: existing.published_at || new Date().toISOString(),
-      fields: {
-        ...(existing.fields || {}),
-        site: 'soaktherockies',
-      },
-    };
-
-    const res = await wollyFetch(`${WOLLY_API_URL}/admin/pages/${existing.id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${wollyApiKey}` },
-      body: JSON.stringify(payload),
-    });
-
-    if (!res.ok) {
-      const err = await res.text();
-      return c.json({ error: `WollyCMS PUT failed: ${err}` }, 500);
-    }
-
-    return c.json({ success: true, slug, id: existing.id });
-  });
-
-  app.post('/api/admin/republish-to-wolly', async (c) => {
-    if (!checkAdmin(c)) return c.text('Unauthorized', 401);
-
-    const { slug } = await c.req.json();
-    if (!slug) return c.json({ error: 'Missing slug' }, 400);
-
-    const post = await c.env.DB.prepare('SELECT * FROM blog_posts WHERE slug = ?').bind(slug).first();
-    if (!post) return c.json({ error: `No D1 post found for slug: ${slug}` }, 404);
-
-    const wollyApiKey = (c.env as any).WOLLY_CMS_API_KEY;
-    if (!wollyApiKey) return c.json({ error: 'WOLLY_CMS_API_KEY not set' }, 500);
-
-    const WOLLY_API_URL = 'https://wollycms.buzzuw2.workers.dev/api';
-    const wollyService = (c.env as any).WOLLYCMS;
-    const wollyFetch = wollyService ? (url: string, init?: RequestInit) => wollyService.fetch(url, init) : fetch;
-
-    const listRes = await wollyFetch(`${WOLLY_API_URL}/content/pages?type=blog&limit=100`, {
-      headers: { Authorization: `Bearer ${wollyApiKey}` },
-    });
-    const listData: any = await listRes.json();
-    const existing = listData?.data?.find((p: any) => p.slug === slug);
-    const method = existing ? 'PUT' : 'POST';
-    const url = existing ? `${WOLLY_API_URL}/admin/pages/${existing.id}` : `${WOLLY_API_URL}/admin/pages`;
-
-    const payload = {
-      title: (post as any).title,
-      slug,
-      typeId: 2,
-      type: 'blog',
-      status: 'published',
-      published_at: (post as any).published_at,
-      fields: {
-        excerpt: (post as any).excerpt,
-        body: (post as any).body,
-        site: 'soaktherockies',
-      },
-    };
-
-    const res = await wollyFetch(url, {
-      method,
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${wollyApiKey}` },
-      body: JSON.stringify(payload),
-    });
-
-    if (!res.ok) {
-      const err = await res.text();
-      return c.json({ error: `WollyCMS ${method} failed: ${err}` }, 500);
-    }
-
-    return c.json({ success: true, slug, method });
   });
 
   // Chat endpoint — AI Trip Assistant

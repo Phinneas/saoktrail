@@ -12,7 +12,7 @@ const currentPageIndex = slug && !isNaN(Number(slug)) ? Number(slug) : 1;
 const api = (Astro.locals.runtime as any).env.API as {
   fetch: (url: string, init?: RequestInit) => Promise<Response>;
 };
-const entries = await getMergedBlogEntries(api, siteConfig.wollySiteSlug, sortByDate);
+const entries = await getMergedBlogEntries(api, siteConfig.siteSlug, sortByDate);
 
 let entryIndex: any;
 try {

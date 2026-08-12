@@ -10,7 +10,7 @@ export const siteConfig: SiteConfig = {
   shares: {bluesky:true,threads:true,facebook:true},
   colors: {accent:"#e17426",text:{primary:"#701b15",secondary:"#701b15",light:"#5a1510"},bg:{primary:"#edba97",secondary:"#c8d8d6",tertiary:"#edba97"},border:"#0a4152"},
   fontScale: 1.25, navFontClass: "font-display",
-  wollySiteSlug: "shastahotsprings",
-  sameAs: ["https://www.instagram.com/soakcolorados","https://www.youtube.com/@soakcolorados"],
+  siteSlug: "shastahotsprings",
+  sameAs: ["https://www.instagram.com/soaktrail","https://www.pinterest.com/soaktrail"],
   region: "CA",
 };

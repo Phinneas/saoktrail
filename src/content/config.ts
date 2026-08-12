@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 
 // SoakTrail Trip Planner — content collections
-// Native Astro content collections (Zod frontmatter). No WollyCMS dependency.
+// Native Astro content collections (Zod frontmatter). No CMS dependency.
 // When the parent merges into the monorepo, move these to packages/shared/src/types/.
 
 const regionEnum = z.enum([

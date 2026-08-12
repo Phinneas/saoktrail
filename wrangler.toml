@@ -6,14 +6,6 @@ compatibility_date = "2026-04-22"
 binding = "BLOG_QUEUE"
 id = "e0bbdac3ddc246d881b4def37d4238ff"
 
-# Service binding to WollyCMS Worker
-[[services]]
-binding = "WOLLYCMS"
-service = "wollycms"
-
-[triggers]
-crons = ["0 10 * * 1"]
-
 [[d1_databases]]
 binding = "DB_DESERT"
 database_name = "desertsoak-db"

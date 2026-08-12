@@ -1,17 +1,24 @@
 ---
 export const prerender = false;
 import EntryLayout from "@components/blog/EntryLayout.astro";
-import { getWollyBlogEntry, getWollyBlogEntries } from "@lib/wolly";
+import { getMergedBlogEntries, getMergedBlogEntry } from "@lib/mergedBlog";
+import { siteConfig } from "@site/config";
 import similerItems from "@lib/similarItems";
 
 const { entry: slug } = Astro.params;
 if (!slug) return Astro.redirect("/blog");
 
-const entry = await getWollyBlogEntry(slug);
-if (!entry) return Astro.redirect("/blog");
+const api = (Astro.locals.runtime as any).env.API as {
+  fetch: (url: string, init?: RequestInit) => Promise<Response>;
+};
+const siteSlug = siteConfig.siteSlug;
 
-const allEntries = await getWollyBlogEntries();
-const relatedEntries = similerItems(entry, allEntries, entry.id);
+const resolved = await getMergedBlogEntry(api, siteSlug, slug);
+if (!resolved) return Astro.redirect("/blog");
+
+const allEntries = await getMergedBlogEntries(api, siteSlug);
+const relatedEntries = similerItems(resolved.entry, allEntries, resolved.entry.id);
+const { entry, Content, headings } = resolved;
 ---
 
-<EntryLayout entry={entry} relatedEntries={relatedEntries} />
+<EntryLayout entry={entry} relatedEntries={relatedEntries} Content={Content} headings={headings} />

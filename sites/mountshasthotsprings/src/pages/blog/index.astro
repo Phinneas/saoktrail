@@ -1,28 +1,37 @@
 ---
+export const prerender = false;
 import CollectionLayout from "@components/blog/CollectionLayout.astro";
-import { getWollyBlogEntries } from "@lib/wolly";
-import type { BlogEntry } from "@/types";
+import { sortByDate } from "@lib/sortFunctions";
+import { getMergedBlogEntries, taxaFromEntries, taxaMultisetFromEntries } from "@lib/mergedBlog";
+import { getIndex } from "@lib/contentParser";
+import { siteConfig } from "@site/config";
+
+const api = (Astro.locals.runtime as any).env.API as {
+  fetch: (url: string, init?: RequestInit) => Promise<Response>;
+};
+const siteSlug = siteConfig.siteSlug;
 
 const currentPageIndex = 1;
+const entries = await getMergedBlogEntries(api, siteSlug, sortByDate);
 
-const entries = await getWollyBlogEntries();
+let entryIndex: any;
+try {
+  entryIndex = await getIndex("blog");
+} catch {
+  entryIndex = undefined;
+}
+if (!entryIndex) {
+  entryIndex = { id: "-index", collection: "blog", data: { title: "Blog", description: "Mount Shasta hot springs blog" }, body: "" };
+}
 
-const entryIndex = {
-  id: "-index",
-  collection: "blog",
-  data: { title: "Blog", description: "Mount Shasta hot springs blog" },
-  body: "",
-};
-
-const allCategories: string[] = [];
-const categories: string[] = [];
-const tags: string[] = [];
+const allCategories = taxaMultisetFromEntries(entries, "categories");
+const categories = taxaFromEntries(entries, "categories");
+const tags = taxaFromEntries(entries, "tags");
 
 const entriesPerPage = 4;
 const indexOfLastEntry = currentPageIndex * entriesPerPage;
 const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
 const currentEntries = entries.slice(indexOfFirstEntry, indexOfLastEntry);
-
 const pageCount: number = Math.ceil(entries.length / entriesPerPage);
 ---
 

@@ -26,13 +26,118 @@ const { transparent = false } = Astro.props;
       </span>
     </a>
     <div id="nav-links" class={`hidden md:flex items-center gap-8 ${transparent ? 'text-white/90' : 'text-sa-text'}`}>
-      <a href="/#destinations" class="text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper">Destinations</a>
-      <a href="/trip-planner" class="text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper">Trip Planner</a>
-      <a href="/blog" class="text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper">Journal</a>
+      <!-- Discover dropdown -->
+      <div class="group relative">
+        <button type="button" class="text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper cursor-pointer flex items-center">
+          Discover
+          <svg class="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="absolute top-full left-0 pt-3 w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
+          <div class="absolute top-1.5 left-4 w-3 h-3 bg-white rotate-45 border-l border-t border-slate-100"></div>
+          <div class="relative bg-white rounded-lg shadow-lg border border-slate-100 overflow-hidden">
+            <a href="/#destinations" class="block px-4 py-3 text-sm text-sa-text hover:bg-sa-cream hover:text-sa-copper transition-colors">Destinations</a>
+            <a href="/trip-planner" class="block px-4 py-3 text-sm text-sa-text hover:bg-sa-cream hover:text-sa-copper transition-colors border-t border-slate-100">Trip Planner</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Explore dropdown -->
+      <div class="group relative">
+        <button type="button" class="text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper cursor-pointer flex items-center">
+          Explore
+          <svg class="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="absolute top-full left-0 pt-3 w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
+          <div class="absolute top-1.5 left-4 w-3 h-3 bg-white rotate-45 border-l border-t border-slate-100"></div>
+          <div class="relative bg-white rounded-lg shadow-lg border border-slate-100 overflow-hidden">
+            <a href="/blog" class="block px-4 py-3 text-sm text-sa-text hover:bg-sa-cream hover:text-sa-copper transition-colors">Journal</a>
+            <a href="/minerals" class="block px-4 py-3 text-sm text-sa-text hover:bg-sa-cream hover:text-sa-copper transition-colors border-t border-slate-100">Minerals</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- About dropdown -->
+      <div class="group relative">
+        <button type="button" class="text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper cursor-pointer flex items-center">
+          About
+          <svg class="w-3 h-3 ml-1 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="absolute top-full left-0 pt-3 w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-200 z-50">
+          <div class="absolute top-1.5 left-4 w-3 h-3 bg-white rotate-45 border-l border-t border-slate-100"></div>
+          <div class="relative bg-white rounded-lg shadow-lg border border-slate-100 overflow-hidden">
+            <a href="/#about" class="block px-4 py-3 text-sm text-sa-text hover:bg-sa-cream hover:text-sa-copper transition-colors">About</a>
+            <a href="/#contact" class="block px-4 py-3 text-sm text-sa-text hover:bg-sa-cream hover:text-sa-copper transition-colors border-t border-slate-100">Contact</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Standalone links -->
       <a href="https://shop.soaktrail.com" target="_blank" rel="noopener noreferrer" class="text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper">Shop</a>
-      <a href="/#about" class="text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper">About</a>
       <a href="/#mcp" class="text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper">MCP</a>
-      <a href="/#contact" class="text-sm font-body font-medium tracking-wide uppercase transition-colors duration-300 hover:text-sa-copper">Contact</a>
+    </div>
+
+    <!-- Mobile hamburger button -->
+    <button id="mobile-menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false" class={`md:hidden flex items-center cursor-pointer ${transparent ? 'text-white' : 'text-sa-dark'}`}>
+      <svg id="mobile-menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <svg id="mobile-menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M6 6l12 12M6 18L18 6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu panel -->
+  <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-sa-cream/95 backdrop-blur-md shadow-lg border-t border-sa-copper/10">
+    <div class="px-6 py-4 flex flex-col">
+      <!-- Discover -->
+      <div class="mobile-dropdown border-b border-sa-copper/10">
+        <button type="button" class="mobile-dropdown-trigger w-full flex items-center justify-between py-4 text-sm font-body font-medium tracking-wide uppercase text-sa-text cursor-pointer">
+          <span>Discover</span>
+          <svg class="mobile-dropdown-chevron w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="mobile-dropdown-content hidden pl-4 pb-2">
+          <a href="/#destinations" class="block py-2 text-sm text-sa-text hover:text-sa-copper transition-colors">Destinations</a>
+          <a href="/trip-planner" class="block py-2 text-sm text-sa-text hover:text-sa-copper transition-colors">Trip Planner</a>
+        </div>
+      </div>
+      <!-- Explore -->
+      <div class="mobile-dropdown border-b border-sa-copper/10">
+        <button type="button" class="mobile-dropdown-trigger w-full flex items-center justify-between py-4 text-sm font-body font-medium tracking-wide uppercase text-sa-text cursor-pointer">
+          <span>Explore</span>
+          <svg class="mobile-dropdown-chevron w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="mobile-dropdown-content hidden pl-4 pb-2">
+          <a href="/blog" class="block py-2 text-sm text-sa-text hover:text-sa-copper transition-colors">Journal</a>
+          <a href="/minerals" class="block py-2 text-sm text-sa-text hover:text-sa-copper transition-colors">Minerals</a>
+        </div>
+      </div>
+      <!-- About -->
+      <div class="mobile-dropdown border-b border-sa-copper/10">
+        <button type="button" class="mobile-dropdown-trigger w-full flex items-center justify-between py-4 text-sm font-body font-medium tracking-wide uppercase text-sa-text cursor-pointer">
+          <span>About</span>
+          <svg class="mobile-dropdown-chevron w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="mobile-dropdown-content hidden pl-4 pb-2">
+          <a href="/#about" class="block py-2 text-sm text-sa-text hover:text-sa-copper transition-colors">About</a>
+          <a href="/#contact" class="block py-2 text-sm text-sa-text hover:text-sa-copper transition-colors">Contact</a>
+        </div>
+      </div>
+      <!-- Standalone links -->
+      <a href="https://shop.soaktrail.com" target="_blank" rel="noopener noreferrer" class="block py-4 text-sm font-body font-medium tracking-wide uppercase text-sa-text hover:text-sa-copper transition-colors border-b border-sa-copper/10">Shop</a>
+      <a href="/#mcp" class="block py-4 text-sm font-body font-medium tracking-wide uppercase text-sa-text hover:text-sa-copper transition-colors">MCP</a>
     </div>
   </div>
 </nav>
@@ -42,10 +147,17 @@ const { transparent = false } = Astro.props;
   const navTitle = document.getElementById('nav-title');
   const isTransparent = nav?.dataset.transparent === 'true';
 
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileIconOpen = document.getElementById('mobile-menu-icon-open');
+  const mobileIconClose = document.getElementById('mobile-menu-icon-close');
+
+  // Existing scroll behavior (kept intact) + hamburger color sync + menu-open override
   if (nav && isTransparent) {
     const navLinks = document.getElementById('nav-links');
     window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY > 50;
+      const menuOpen = mobileMenu && !mobileMenu.classList.contains('hidden');
+      const scrolled = window.scrollY > 50 || menuOpen;
       nav.classList.toggle('bg-sa-cream/95', scrolled);
       nav.classList.toggle('backdrop-blur-md', scrolled);
       nav.classList.toggle('shadow-sm', scrolled);
@@ -60,6 +172,87 @@ const { transparent = false } = Astro.props;
         navLinks.classList.toggle('text-white/90', !scrolled);
         navLinks.classList.toggle('text-sa-text', scrolled);
       }
+      // Sync hamburger button color with nav state (only when menu is closed)
+      if (mobileMenuBtn && !menuOpen) {
+        mobileMenuBtn.classList.toggle('text-white', !scrolled);
+        mobileMenuBtn.classList.toggle('text-sa-dark', scrolled);
+      }
     }, { passive: true });
   }
+
+  // Mobile menu open/close
+  if (mobileMenuBtn && mobileMenu) {
+    const setNavSolid = (solid) => {
+      if (!(nav && isTransparent)) return;
+      if (solid) {
+        nav.classList.remove('bg-transparent', 'py-6');
+        nav.classList.add('bg-sa-cream/95', 'backdrop-blur-md', 'shadow-sm', 'py-4');
+        navTitle?.classList.remove('text-white');
+        navTitle?.classList.add('text-sa-dark');
+        mobileMenuBtn.classList.remove('text-white');
+        mobileMenuBtn.classList.add('text-sa-dark');
+      } else {
+        const scrolled = window.scrollY > 50;
+        nav.classList.toggle('bg-transparent', !scrolled);
+        nav.classList.toggle('py-6', !scrolled);
+        nav.classList.toggle('bg-sa-cream/95', scrolled);
+        nav.classList.toggle('backdrop-blur-md', scrolled);
+        nav.classList.toggle('shadow-sm', scrolled);
+        nav.classList.toggle('py-4', scrolled);
+        navTitle?.classList.toggle('text-white', !scrolled);
+        navTitle?.classList.toggle('text-sa-dark', scrolled);
+        mobileMenuBtn.classList.toggle('text-white', !scrolled);
+        mobileMenuBtn.classList.toggle('text-sa-dark', scrolled);
+      }
+    };
+
+    const openMobileMenu = () => {
+      mobileMenu.classList.remove('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', 'true');
+      mobileIconOpen?.classList.add('hidden');
+      mobileIconClose?.classList.remove('hidden');
+      setNavSolid(true);
+    };
+
+    const closeMobileMenu = () => {
+      mobileMenu.classList.add('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      mobileIconOpen?.classList.remove('hidden');
+      mobileIconClose?.classList.add('hidden');
+      setNavSolid(false);
+      // Collapse any expanded mobile dropdowns
+      document.querySelectorAll('.mobile-dropdown-content').forEach((c) => c.classList.add('hidden'));
+      document.querySelectorAll('.mobile-dropdown-chevron').forEach((c) => c.classList.remove('rotate-180'));
+    };
+
+    mobileMenuBtn.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('hidden')) {
+        openMobileMenu();
+      } else {
+        closeMobileMenu();
+      }
+    });
+
+    // Close mobile menu when a link inside it is clicked
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close mobile menu when resizing to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
+        closeMobileMenu();
+      }
+    });
+  }
+
+  // Mobile dropdown expand/collapse
+  document.querySelectorAll('.mobile-dropdown-trigger').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const content = trigger.nextElementSibling;
+      const chevron = trigger.querySelector('.mobile-dropdown-chevron');
+      content?.classList.toggle('hidden');
+      chevron?.classList.toggle('rotate-180');
+    });
+  });
 </script>

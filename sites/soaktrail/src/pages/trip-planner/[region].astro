@@ -15,7 +15,15 @@ if (!region) {
 // Server-rendered spring list (no-JS fallback)
 let springs: SpringResult[] = [];
 try {
-  springs = await getSpringsByRegion(region.slug);
+  const allSprings = await getSpringsByRegion(region.slug);
+  // Filter out non-soakable springs (geothermal fields, geysers, etc.)
+  springs = allSprings.filter((s) => {
+    const desc = (s.description || '').toLowerCase();
+    const access = (s.access_type || '').toLowerCase();
+    if (access === 'not soakable') return false;
+    if (desc.includes('not a soaking') || desc.includes('not soakable') || desc.includes('not recommended for soaking')) return false;
+    return true;
+  });
 } catch {
   springs = [];
 }

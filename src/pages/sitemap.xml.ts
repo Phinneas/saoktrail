@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { wolly } from '../lib/wolly';
+import { getBlogPosts } from '../lib/d1Blog';
 
 const SITE_SLUG = 'soaktrail';
 
@@ -9,23 +9,15 @@ export const GET: APIRoute = async () => {
   const staticPages = [
     '',
     '/blog',
+    '/trip-planner',
+    '/minerals',
+    '/minerals/chemistry-guide',
   ];
 
   let blogPosts: any[] = [];
 
   try {
-    const allPosts: any[] = [];
-    let offset = 0;
-    const limit = 50;
-    while (true) {
-      const result = await wolly.pages.list({ type: 'blog', sort: 'published_at:desc', status: 'published', limit, offset });
-      const filtered = result.data.filter((post: any) => post.fields?.site === SITE_SLUG);
-      allPosts.push(...filtered);
-      const total = result.meta?.total || 0;
-      offset += limit;
-      if (offset >= total) break;
-    }
-    blogPosts = allPosts;
+    blogPosts = (await getBlogPosts(SITE_SLUG)).filter((p: any) => p.slug !== 'hot-spring-chemistry-guide');
   } catch {
     blogPosts = [];
   }
@@ -39,7 +31,7 @@ export const GET: APIRoute = async () => {
     })),
     ...blogPosts.map((post) => ({
       loc: `${siteUrl}/blog/${post.slug}`,
-      lastmod: post.meta?.updated_at || post.meta?.published_at || new Date().toISOString(),
+      lastmod: post.updated_at || post.published_at || new Date().toISOString(),
       changefreq: 'monthly',
       priority: '0.6',
     })),

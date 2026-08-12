@@ -87,7 +87,7 @@ function formatD1Entry(row: any) {
 }
 
 export async function getD1BlogEntries(
-  api: ApiFetcher,
+  api: ApiFetcher | undefined,
   siteSlug: string
 ): Promise<any[]> {
   const json = await apiFetch<any>(

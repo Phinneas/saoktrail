@@ -1,8 +1,9 @@
 ---
 export const prerender = false;
 import CollectionLayout from "@components/blog/CollectionLayout.astro";
-import { getD1BlogEntries } from "@lib/d1Blog";
-import { taxaFromEntries, taxaMultisetFromEntries } from "@lib/mergedBlog";
+import { sortByDate } from "@lib/sortFunctions";
+import { getMergedBlogEntries, taxaFromEntries, taxaMultisetFromEntries } from "@lib/mergedBlog";
+import { getIndex } from "@lib/contentParser";
 import { siteConfig } from "@site/config";
 
 const { slug } = Astro.params;
@@ -11,14 +12,17 @@ const currentPageIndex = slug && !isNaN(Number(slug)) ? Number(slug) : 1;
 const api = (Astro.locals.runtime as any).env.API as {
   fetch: (url: string, init?: RequestInit) => Promise<Response>;
 };
-const entries = await getD1BlogEntries(api, siteConfig.wollySiteSlug);
+const entries = await getMergedBlogEntries(api, siteConfig.siteSlug, sortByDate);
 
-const entryIndex = {
-  id: "-index",
-  collection: "blog",
-  data: { title: "Blog", description: "Alaska hot springs blog" },
-  body: "",
-};
+let entryIndex: any;
+try {
+  entryIndex = await getIndex("blog");
+} catch {
+  entryIndex = undefined;
+}
+if (!entryIndex) {
+  entryIndex = { id: "-index", collection: "blog", data: { title: "Blog", description: "Alaska hot springs blog" }, body: "" };
+}
 
 const allCategories = taxaMultisetFromEntries(entries, "categories");
 const categories = taxaFromEntries(entries, "categories");

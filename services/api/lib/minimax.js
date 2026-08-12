@@ -33,8 +33,8 @@ export function parseBlogOutput(raw) {
   return { title, excerpt, imagePrompt, body };
 }
 
-// Convert markdown to TipTap JSON doc format that WollyCMS uses for rich text blocks.
-// This makes posts editable in WollyCMS's WYSIWYG block editor instead of raw text fields.
+// Convert markdown to TipTap JSON doc format for rich text blocks.
+// This makes posts editable in a WYSIWYG block editor instead of raw text fields.
 export function markdownToTipTap(md) {
   const content = [];
   const lines = md.split('\n');

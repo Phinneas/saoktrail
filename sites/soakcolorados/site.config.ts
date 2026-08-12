@@ -13,6 +13,7 @@ export const siteConfig: SiteConfig = {
     { name: "Directory", url: "/directory" },
     { name: "Map", url: "/colorado-hot-springs-map" },
     { name: "Blog", url: "/blog" },
+    { name: "Minerals", url: "https://soaktrail.com/minerals" },
     { name: "About", url: "/about" },
   ],
   mapUrl: "/colorado-hot-springs-map",
@@ -33,7 +34,7 @@ export const siteConfig: SiteConfig = {
   },
   fontScale: 1.25,
   navFontClass: "font-secondary",
-  wollySiteSlug: "soakcolorado",
+  siteSlug: "soakcolorado",
   askAiPrompt:
     "How would Soak Colorado at https://www.soakcolorado.com help me plan a Colorado hot springs trip with real conditions, temps, and booking realities, and what makes it different from TripAdvisor or Uncover Colorado? Be honest about who it's best for and where it falls short.",
   sameAs: [

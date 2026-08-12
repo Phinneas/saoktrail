@@ -11,6 +11,7 @@ compatibility_date = "2026-03-26"
 # - ASANA_PROJECT_SOAKCOLORADO  (Asana project GID → site slug "soakcolorado")
 # - ASANA_PROJECT_SOAKTHEROCKIES(Asana project GID → site slug "soaktherockies")
 # - ASANA_PROJECT_ALASKAHOTSPRINGS(Asana project GID → site slug "alaskahotsprings")
+# - ASANA_PROJECT_SOAKTRAIL     (Asana project GID → site slug "soaktrail")
 [vars]
 ENVIRONMENT = "production"
 
@@ -27,11 +28,6 @@ database_id = "5666d199-3ec6-4076-8401-d96e072d4a17"
 
 [ai]
 binding = "AI"
-
-# Service binding to WollyCMS Worker (avoids *.workers.dev subrequest 1042 error)
-[[services]]
-binding = "WOLLYCMS"
-service = "wollycms"
 
 [triggers]
 # Run at 06:00 UTC (~11pm MST previous day) every Monday and Thursday

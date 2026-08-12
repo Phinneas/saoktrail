@@ -34,7 +34,7 @@ export const siteConfig: SiteConfig = {
   },
   fontScale: 1.20,
   navFontClass: "font-display",
-  wollySiteSlug: "washingtonhotsprings",
+  siteSlug: "washingtonhotsprings",
   sameAs: [
     "https://www.instagram.com/washingtonhotsprings",
     "https://www.pinterest.com/washingtonhotsprings",

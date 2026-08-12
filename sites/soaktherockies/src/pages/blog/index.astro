@@ -9,7 +9,7 @@ import { siteConfig } from "@site/config";
 const api = (Astro.locals.runtime as any).env.API as {
   fetch: (url: string, init?: RequestInit) => Promise<Response>;
 };
-const siteSlug = siteConfig.wollySiteSlug;
+const siteSlug = siteConfig.siteSlug;
 
 const currentPageIndex = 1;
 const entries = await getMergedBlogEntries(api, siteSlug, sortByDate);

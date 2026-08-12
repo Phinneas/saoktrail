@@ -11,7 +11,7 @@ if (!category) return Astro.redirect("/blog");
 const api = (Astro.locals.runtime as any).env.API as {
   fetch: (url: string, init?: RequestInit) => Promise<Response>;
 };
-const entries = await getMergedBlogEntries(api, siteConfig.wollySiteSlug);
+const entries = await getMergedBlogEntries(api, siteConfig.siteSlug);
 const filteredEntries = taxonomyFilter(entries, "categories", category);
 ---
 

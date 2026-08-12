@@ -77,8 +77,8 @@ export interface SiteConfig {
   fontScale: number;
   /** Font class for nav links: "font-secondary" or "font-display" */
   navFontClass: string;
-  /** WollyCMS site slug for blog content filtering */
-  wollySiteSlug: string;
+  /** Site slug for blog content filtering */
+  siteSlug: string;
   /** Prompt text for the Ask AI section on the homepage (if empty, section is hidden) */
   askAiPrompt?: string;
   /** Schema.org sameAs social profile URLs (for Organization schema) */
