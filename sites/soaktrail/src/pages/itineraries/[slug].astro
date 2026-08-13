@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { getCollection } from 'astro:content';
 import { getRegion } from '../../lib/regions';
 import {
@@ -75,7 +76,7 @@ const jsonLd = {
   <!-- Hero -->
   <section class="px-4 pt-16 pb-6 md:pt-20">
     <div class="container mx-auto max-w-4xl">
-      <a href="/itineraries" class="text-sa-copper text-sm hover:underline mb-4 inline-block">&larr; All Itineraries</a>
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Itineraries', href: '/itineraries' }, { label: data.title }]} />
       <div class="flex flex-wrap gap-2 mb-3">
         <span class="text-xs px-3 py-1 rounded-full bg-sa-cream border border-sa-divider text-sa-text capitalize">{data.region.replace(/_/g, ' ')}</span>
         <span class="text-xs px-3 py-1 rounded-full bg-sa-cream border border-sa-divider text-sa-text capitalize">{data.difficulty}</span>

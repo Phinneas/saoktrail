@@ -1,55 +1,29 @@
 import type { APIRoute } from 'astro';
-import { getBlogPosts } from '../lib/d1Blog';
 
-const SITE_SLUG = 'soaktrail';
+const SITE_URL = 'https://soaktrail.com';
 
 export const GET: APIRoute = async () => {
-  const siteUrl = 'https://soaktrail.com';
+  const now = new Date().toISOString();
 
-  const staticPages = [
-    '',
-    '/blog',
-    '/trip-planner',
-    '/minerals',
-    '/minerals/chemistry-guide',
-  ];
-
-  let blogPosts: any[] = [];
-
-  try {
-    blogPosts = (await getBlogPosts(SITE_SLUG)).filter((p: any) => p.slug !== 'hot-spring-chemistry-guide');
-  } catch {
-    blogPosts = [];
-  }
-
-  const urls = [
-    ...staticPages.map((path) => ({
-      loc: `${siteUrl}${path}`,
-      lastmod: new Date().toISOString(),
-      changefreq: path === '' ? 'daily' : 'weekly',
-      priority: path === '' ? '1.0' : '0.8',
-    })),
-    ...blogPosts.map((post) => ({
-      loc: `${siteUrl}/blog/${post.slug}`,
-      lastmod: post.updated_at || post.published_at || new Date().toISOString(),
-      changefreq: 'monthly',
-      priority: '0.6',
-    })),
+  const sitemaps = [
+    { loc: `${SITE_URL}/sitemap-pages.xml`, lastmod: now },
+    { loc: `${SITE_URL}/sitemap-blog.xml`, lastmod: now },
+    { loc: `${SITE_URL}/sitemap-minerals.xml`, lastmod: now },
+    { loc: `${SITE_URL}/sitemap-regions.xml`, lastmod: now },
+    { loc: `${SITE_URL}/sitemap-itineraries.xml`, lastmod: now },
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemaps
   .map(
-    (url) => `  <url>
-    <loc>${url.loc}</loc>
-    <lastmod>${url.lastmod}</lastmod>
-    <changefreq>${url.changefreq}</changefreq>
-    <priority>${url.priority}</priority>
-  </url>`
+    (s) => `  <sitemap>
+    <loc>${s.loc}</loc>
+    <lastmod>${s.lastmod}</lastmod>
+  </sitemap>`
   )
   .join('\n')}
-</urlset>`;
+</sitemapindex>`;
 
   return new Response(xml, {
     headers: {

@@ -99,7 +99,7 @@ export async function getD1BlogEntries(
 }
 
 export async function getD1BlogEntry(
-  api: ApiFetcher,
+  api: ApiFetcher | undefined,
   siteSlug: string,
   slug: string
 ): Promise<any | null> {

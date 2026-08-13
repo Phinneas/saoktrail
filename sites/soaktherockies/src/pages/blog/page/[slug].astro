@@ -1,18 +1,25 @@
 ---
-export const prerender = false;
 import CollectionLayout from "@components/blog/CollectionLayout.astro";
 import { sortByDate } from "@lib/sortFunctions";
 import { getMergedBlogEntries, taxaFromEntries, taxaMultisetFromEntries } from "@lib/mergedBlog";
 import { getIndex } from "@lib/contentParser";
 import { siteConfig } from "@site/config";
 
+export async function getStaticPaths() {
+  const entries = await getMergedBlogEntries(undefined, siteConfig.siteSlug, sortByDate);
+  const entriesPerPage = 4;
+  const pageCount = Math.ceil(entries.length / entriesPerPage);
+  const paths = [];
+  for (let i = 2; i <= pageCount; i++) {
+    paths.push({ params: { slug: String(i) } });
+  }
+  return paths;
+}
+
 const { slug } = Astro.params;
 const currentPageIndex = slug && !isNaN(Number(slug)) ? Number(slug) : 1;
 
-const api = (Astro.locals.runtime as any).env.API as {
-  fetch: (url: string, init?: RequestInit) => Promise<Response>;
-};
-const entries = await getMergedBlogEntries(api, siteConfig.siteSlug, sortByDate);
+const entries = await getMergedBlogEntries(undefined, siteConfig.siteSlug, sortByDate);
 
 let entryIndex: any;
 try {

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import TripFinder from '../../components/TripFinder.tsx';
 import { REGIONS, getRegion, MCP_URL } from '../../lib/regions';
 import { getSpringsByRegion, parseSpringText, type SpringResult } from '../../lib/mcp';
@@ -47,7 +48,7 @@ const jsonLd = {
   <!-- Region Header -->
   <section class="px-4 pt-16 pb-6 md:pt-20">
     <div class="container mx-auto max-w-4xl">
-      <a href="/trip-planner" data-astro-reload class="text-sa-copper text-sm hover:underline mb-4 inline-block">&larr; All Regions</a>
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Trip Planner', href: '/trip-planner' }, { label: region.name }]} />
       <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-3 font-display">{region.states}</p>
       <h1 class="font-display text-4xl md:text-5xl font-light text-sa-dark leading-tight mb-4">
         {region.name}
@@ -128,6 +129,30 @@ const jsonLd = {
           <p class="text-sa-text text-sm">Itineraries for {region.name} are coming soon. Use the Trip Finder above to discover springs and start planning.</p>
         </div>
       )}
+    </div>
+  </section>
+
+  <!-- Mineral Chemistry Cross-link -->
+  <section class="px-4 py-8">
+    <div class="container mx-auto max-w-4xl">
+      <a
+        href="/minerals"
+        class="block rounded-xl border border-sa-copper/30 bg-gradient-to-br from-sa-copper/10 to-sa-cream p-6 hover:border-sa-copper hover:shadow-sm transition max-w-2xl"
+      >
+        <div class="flex items-start gap-4">
+          <div class="shrink-0 text-sa-copper/40">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 3h6v4h4v14H5V7h4z" />
+              <path d="M9 14h6M9 17h6M9 11h6" />
+            </svg>
+          </div>
+          <div>
+            <h2 class="font-display text-lg font-semibold text-sa-dark">What's in the water?</h2>
+            <p class="text-sm text-sa-dark/70 mt-1">Explore the mineral chemistry of hot springs -- pH, calcium, magnesium, iron, and more -- with USGS-sourced concentration data for springs across the country.</p>
+            <span class="inline-block mt-3 text-sm text-sa-copper font-medium">View mineral profiles &rarr;</span>
+          </div>
+        </div>
+      </a>
     </div>
   </section>
 </BaseLayout>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import TripFinder from '../../components/TripFinder.tsx';
 import { REGIONS } from '../../lib/regions';
 import { getCollection } from 'astro:content';
@@ -21,6 +22,9 @@ const jsonLd = {
 >
   <!-- Hero -->
   <section class="px-4 pt-16 pb-8 md:pt-24 md:pb-12">
+    <div class="container mx-auto max-w-4xl">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Trip Planner' }]} />
+    </div>
     <div class="container mx-auto max-w-4xl text-center">
       <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-4 font-display">Plan Your Trip</p>
       <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-light text-sa-dark leading-tight mb-6">
