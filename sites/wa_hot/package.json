@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "postbuild": "pagefind --site dist || true",
+    "postbuild": "echo _worker.js > dist/.assetsignore && pagefind --site dist || true",
     "format": "prettier -w ./src",
     "typecheck": "astro check"
   },
