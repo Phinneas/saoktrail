@@ -7,7 +7,7 @@ export const siteConfig: SiteConfig = {
     "Your guide to Colorado's best hot springs — natural pools, resort soaks, and hidden wilderness gems.",
   author: "Soak Colorado",
   ogImage: "/og-image.png",
-  googleSiteVerification: "wqxocztLV8bKLFf1C8ZQBvCssEwGSvte6DY_fK-Qqzw",
+  googleSiteVerification: "aWniXi_3VjDN_XlGZmQeJ-5pWvF5ZDkN2VmzfQ1Av4o",
   nav: [
     { name: "Home", url: "/" },
     { name: "Directory", url: "/directory" },

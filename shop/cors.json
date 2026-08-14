@@ -1,0 +1,11 @@
+{
+  "rules": [
+    {
+      "allowed": {
+        "origins": ["https://soaktrail.com", "https://www.soaktrail.com", "https://shop.soaktrail.com"],
+        "methods": ["GET"]
+      },
+      "maxAgeSeconds": 3600
+    }
+  ]
+}

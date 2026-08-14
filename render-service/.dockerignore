@@ -1,0 +1,9 @@
+node_modules
+dist
+.wrangler
+fly.toml
+railway.toml
+wrangler.toml
+worker.ts
+*.log
+.git

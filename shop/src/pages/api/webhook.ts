@@ -103,7 +103,7 @@ async function handleDigitalOrder(
 
     // Upload to R2
     await env.SHOP_ASSETS.put(r2Key, pngBuffer, {
-      httpMetadata: { contentType: 'image/png' },
+      httpMetadata: { contentType: 'image/png', cacheControl: 'no-cache' },
     });
 
     // Create a signed URL (7-day expiry)

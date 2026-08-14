@@ -1,0 +1,21 @@
+name = "soaktrail-render"
+main = "worker.ts"
+compatibility_date = "2025-10-08"
+compatibility_flags = ["nodejs_compat"]
+
+[[containers]]
+max_instances = 5
+class_name = "RenderContainer"
+image = "./Dockerfile"
+
+[[durable_objects.bindings]]
+name = "RENDER_CONTAINER"
+class_name = "RenderContainer"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["RenderContainer"]
+
+# Secrets (set via: wrangler secret put <KEY>)
+# RENDER_SERVICE_SECRET
+# THUNDERFOREST_API_KEY

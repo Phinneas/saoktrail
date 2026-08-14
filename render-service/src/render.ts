@@ -8,15 +8,15 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-export const VALID_SIZES  = ['preview', 'digital', '12x18', '18x24'] as const;
+export const VALID_SIZES  = ['preview', 'digital', '12x18', '18x24', '24x36'] as const;
 export const VALID_STYLES = ['soaktrail-topo', 'soaktrail-midnight', 'soaktrail-minimal'] as const;
 
 const SIZE_MAP: Record<string, { width: number; height: number }> = {
-  // preview: portrait 2:3 ratio, both dims ≤1280 → always uses Mapbox Static API (seamless)
-  preview:  { width: 840,  height: 1260 },
+  preview:  { width: 1200, height: 630  },
   digital:  { width: 1200, height: 1800 },
   '12x18':  { width: 1800, height: 2700 },
-  '18x24':  { width: 2657, height: 3543 },
+  '18x24':  { width: 2700, height: 3600 },
+  '24x36':  { width: 3600, height: 5400 },
 };
 
 const TILE_PX = 512; // @2x Thunderforest tiles are 512×512 px
