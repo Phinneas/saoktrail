@@ -5,19 +5,19 @@ import SchemaScript from "@components/schema/SchemaScript.astro";
 import { buildBreadcrumbSchema, buildPlaceSchema } from "@lib/schema";
 import { mapboxAccessToken } from "@/config/map";
 import SpringMapScript from "@components/SpringMapScript.astro";
-import { getWeather } from "@lib/weather";
-import WeatherCard from "@components/WeatherCard.astro";
 import springsData from "../../../public/springs.json";
 
-export const prerender = false;
+export const prerender = true;
 
-const { slug } = Astro.params;
-
-const spring = springsData.find((s: any) => s.slug === slug);
-
-if (!spring) {
-  return new Response(null, { status: 404, statusText: "Not Found" });
+export function getStaticPaths() {
+  return springsData.map((spring: any) => ({
+    params: { slug: spring.slug },
+    props: { spring },
+  }));
 }
+
+const { spring } = Astro.props;
+const slug = spring.slug;
 
 const pageDescription = spring.description
   ? `${spring.description.slice(0, 155)}${spring.description.length > 155 ? "..." : ""}`
@@ -35,7 +35,6 @@ const relatedSprings = springsData
   .filter((s: any) => s.state === spring.state && s.slug !== slug)
   .slice(0, 4);
 
-const weather = spring.lat && spring.lng ? await getWeather(spring.lat, spring.lng) : null;
 ---
 
 <BaseLayout
@@ -157,8 +156,6 @@ const weather = spring.lat && spring.lng ? await getWeather(spring.lat, spring.l
               </a>
             </div>
           </div>
-
-          {weather && <WeatherCard weather={weather} />}
 
           {spring.cell_coverage && (
             <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
