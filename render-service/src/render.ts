@@ -59,6 +59,14 @@ const MAPBOX_STYLE: Record<string, string> = {
   'soaktrail-minimal':  'mapbox/light-v11',
 };
 
+// CARTO's free, keyless, label-free basemaps — built for overlay/print use.
+// No street names, POI icons, or road shields, unlike the OSM standard fallback.
+const CARTO_STYLE: Record<string, string> = {
+  'soaktrail-topo':     'light_nolabels',
+  'soaktrail-midnight': 'dark_nolabels',
+  'soaktrail-minimal':  'light_nolabels',
+};
+
 function tileUrl(
   styleName: string,
   z: number, x: number, y: number,
@@ -75,7 +83,8 @@ function tileUrl(
   if (thunderforestKey) {
     return `https://tile.thunderforest.com/outdoors/${z}/${x}/${y}@2x.png?apikey=${thunderforestKey}`;
   }
-  return `https://tile.openstreetmap.org/${z}/${x}/${y}.png`;
+  const cartoStyle = CARTO_STYLE[styleName] ?? 'light_nolabels';
+  return `https://a.basemaps.cartocdn.com/${cartoStyle}/${z}/${x}/${y}@2x.png`;
 }
 
 // ─── HTTP fetch ───────────────────────────────────────────────────────────────

@@ -4,6 +4,8 @@ import SeoHead from '../components/SeoHead.astro';
 import Nav from '../components/Nav.astro';
 import { ClientRouter } from 'astro:transitions';
 import { ChatWidget } from '@soaktrail/shared/components/ChatWidget.jsx';
+import AffiliateModal from '@soaktrail/shared/components/AffiliateModal.astro';
+import '../styles/fonts.css';
 
 interface Props {
   title?: string;
@@ -47,7 +49,7 @@ const chatPrompts = [
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600;1,9..144,700&family=National+Park:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600;1,9..144,700&display=swap"
       rel="stylesheet"
     />
     <ClientRouter fallback="swap" />
@@ -79,5 +81,6 @@ const chatPrompts = [
         suggestedPrompts={chatPrompts}
       />
     )}
+    <AffiliateModal />
   </body>
 </html>

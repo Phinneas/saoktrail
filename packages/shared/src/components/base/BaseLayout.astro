@@ -10,6 +10,7 @@ import Background from "@/components/base/Background.astro";
 import { Tooltips } from "astro-tooltips";
 import { siteConfig } from "@site/config";
 import { ChatWidget } from "@components/ChatWidget.jsx";
+import AffiliateModal from "@components/AffiliateModal.astro";
 
 export interface Props {
   title?: string;
@@ -124,5 +125,6 @@ const chatPrompts = [
         suggestedPrompts={chatPrompts}
       />
     )}
+    <AffiliateModal />
   </body>
 </html>

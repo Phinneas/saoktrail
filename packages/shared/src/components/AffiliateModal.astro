@@ -1,0 +1,288 @@
+---
+/**
+ * AffiliateModal.astro — Context-aware affiliate product modal.
+ *
+ * Desktop: exit-intent (mouse leaves top of viewport) → centered modal.
+ * Mobile: scroll-depth (70%) → slide-up bottom sheet.
+ * Frequency: once per 24 hours (localStorage).
+ * Products: shuffled with context-aware weighting from affiliateProducts.ts.
+ *
+ * Self-activates only on allowed URL patterns; stays hidden on excluded pages.
+ * No framework dependency — pure Astro + vanilla JS. Works on all 7 sites.
+ */
+
+import { PRODUCTS, DISCLOSURE } from '../lib/affiliateProducts';
+
+const productsJson = JSON.stringify(PRODUCTS.map(p => ({
+  key: p.key,
+  name: p.name,
+  description: p.description,
+  url: p.url,
+  contextTags: p.contextTags || []
+})));
+---
+
+{PRODUCTS.length > 0 && (
+  <div id="affiliate-modal-root">
+    <script type="application/json" id="affiliate-modal-products-data" set:html={productsJson} />
+    {/* Backdrop */}
+    <div
+      id="affiliate-modal-backdrop"
+      class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm"
+      style="display:none"
+    >
+      {/* Desktop modal */}
+      <div
+        id="affiliate-modal-desktop"
+        class="hidden md:block bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl max-w-2xl w-full p-6 md:p-8 border border-zinc-200 dark:border-zinc-700"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Recommended gear"
+      >
+        <div class="flex items-start justify-between mb-4">
+          <div>
+            <h2 class="text-xl font-bold text-zinc-900 dark:text-white">
+              Planning your soak?
+            </h2>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+              Here's the gear we trust.
+            </p>
+          </div>
+          <button
+            type="button"
+            class="affiliate-modal-close text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors p-1"
+            aria-label="Close"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div id="affiliate-modal-products-desktop" class="grid grid-cols-2 gap-3 mb-4"></div>
+        <p class="text-[11px] text-zinc-400 dark:text-zinc-500">{DISCLOSURE}</p>
+      </div>
+
+      {/* Mobile slide-up sheet */}
+      <div
+        id="affiliate-modal-mobile"
+        class="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-zinc-900 rounded-t-2xl shadow-2xl p-5 pb-8 border-t border-zinc-200 dark:border-zinc-700"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Recommended gear"
+      >
+        <div class="flex items-start justify-between mb-3">
+          <div>
+            <h2 class="text-lg font-bold text-zinc-900 dark:text-white">
+              Planning your soak?
+            </h2>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">
+              Here's the gear we trust.
+            </p>
+          </div>
+          <button
+            type="button"
+            class="affiliate-modal-close text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors p-1"
+            aria-label="Close"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div id="affiliate-modal-products-mobile" class="grid grid-cols-2 gap-2.5 mb-3"></div>
+        <p class="text-[10px] text-zinc-400 dark:text-zinc-500">{DISCLOSURE}</p>
+      </div>
+    </div>
+  </div>
+)}
+
+<script is:inline>
+(function() {
+  var STORAGE_KEY = 'soaktrail_affiliate_modal_shown';
+  var FREQUENCY_MS = 24 * 60 * 60 * 1000;
+  var triggered = false;
+
+  var MODAL_ON_PATTERNS = [
+    /^\/blog$/, /^\/blog\//, /^\/directory$/, /^\/about$/,
+    /^\/minerals/, /^\/trip-planner/, /^\/itineraries/
+  ];
+  var MODAL_OFF_EXACT = { '/': true, '/map': true };
+
+  function shouldShowModal(pathname) {
+    if (MODAL_OFF_EXACT[pathname]) return false;
+    if (/^\/springs\//.test(pathname)) return false;
+    return MODAL_ON_PATTERNS.some(function(p) { return p.test(pathname); });
+  }
+
+  function hasRecentDismissal() {
+    try {
+      var ts = localStorage.getItem(STORAGE_KEY);
+      if (!ts) return false;
+      return Date.now() - parseInt(ts) < FREQUENCY_MS;
+    } catch (e) { return false; }
+  }
+
+  function setDismissed() {
+    try { localStorage.setItem(STORAGE_KEY, Date.now().toString()); } catch (e) {}
+  }
+
+  function isMobile() {
+    return window.innerWidth < 768;
+  }
+
+  function showModal() {
+    if (triggered || hasRecentDismissal()) return;
+
+    var root = document.getElementById('affiliate-modal-root');
+    if (!root || root.style.display === 'none') return;
+
+    // Get products from the embedded data
+    var productsEl = document.getElementById('affiliate-modal-products-data');
+    if (!productsEl) return;
+    var allProducts = JSON.parse(productsEl.textContent || '[]');
+    if (allProducts.length === 0) return;
+
+    // Get context hints
+    var hints = [];
+    var pathname = window.location.pathname;
+
+    var catEl = document.querySelector('[data-affiliate-categories]');
+    if (catEl) {
+      var cats = catEl.getAttribute('data-affiliate-categories');
+      if (cats) cats.split(',').forEach(function(c) { hints.push(c.trim()); });
+    }
+
+    if (pathname.indexOf('/minerals') === 0) { hints.push('hydration', 'sun', 'altitude'); }
+    else if (pathname.indexOf('/trip-planner') === 0) { hints.push('general', 'hydration'); }
+    else if (pathname.indexOf('/directory') === 0) { hints.push('general', 'hiking'); }
+
+    var bodyText = (document.body && document.body.innerText || '').toLowerCase();
+    if (bodyText.indexOf('winter') >= 0 || bodyText.indexOf('snow') >= 0) hints.push('winter', 'cold');
+    if (bodyText.indexOf('desert') >= 0 || bodyText.indexOf('arizona') >= 0) hints.push('desert', 'sun');
+    if (bodyText.indexOf('altitude') >= 0 || bodyText.indexOf('elevation') >= 0) hints.push('altitude');
+    if (bodyText.indexOf('hike') >= 0 || bodyText.indexOf('trail') >= 0) hints.push('hiking', 'remote');
+    if (bodyText.indexOf('camp') >= 0) hints.push('camping');
+
+    // Weighted shuffle
+    var hintSet = {};
+    hints.forEach(function(h) { hintSet[h.toLowerCase()] = true; });
+
+    var pool = [];
+    allProducts.forEach(function(p) {
+      var matches = (p.contextTags || []).some(function(t) { return hintSet[t.toLowerCase()]; });
+      var weight = matches ? 3 : 1;
+      for (var i = 0; i < weight; i++) pool.push(p);
+    });
+
+    // Fisher-Yates shuffle
+    for (var i = pool.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
+    }
+
+    // Deduplicate and pick top 4
+    var seen = {};
+    var picks = [];
+    for (var i = 0; i < pool.length; i++) {
+      if (!seen[pool[i].key]) {
+        seen[pool[i].key] = true;
+        picks.push(pool[i]);
+      }
+      if (picks.length >= 4) break;
+    }
+
+    if (picks.length === 0) return;
+    triggered = true;
+
+    // Render product cards
+    var desktopContainer = document.getElementById('affiliate-modal-products-desktop');
+    var mobileContainer = document.getElementById('affiliate-modal-products-mobile');
+
+    picks.forEach(function(p) {
+      var cardHTML = '<a href="' + p.url + '" target="_blank" rel="sponsored nofollow noopener" ' +
+        'class="block p-4 rounded-lg border border-zinc-200 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500 hover:shadow-md transition-all group">' +
+        '<span class="block font-semibold text-sm text-zinc-900 dark:text-white group-hover:text-blue-600">' + p.name + '</span>' +
+        '<span class="block text-xs text-zinc-500 dark:text-zinc-400 leading-snug mt-1">' + p.description + '</span>' +
+        '<span class="block text-xs font-bold text-blue-600 mt-2">View product \u2192</span></a>';
+
+      var mobileCardHTML = '<a href="' + p.url + '" target="_blank" rel="sponsored nofollow noopener" ' +
+        'class="block p-3 rounded-lg border border-zinc-200 dark:border-zinc-700 active:bg-zinc-50 dark:active:bg-zinc-800 transition-all">' +
+        '<span class="block font-semibold text-xs text-zinc-900 dark:text-white">' + p.name + '</span>' +
+        '<span class="block text-[11px] text-zinc-500 dark:text-zinc-400 leading-snug mt-1">' + p.description + '</span>' +
+        '<span class="block text-[11px] font-bold text-blue-600 mt-1.5">View product \u2192</span></a>';
+
+      if (desktopContainer) desktopContainer.insertAdjacentHTML('beforeend', cardHTML);
+      if (mobileContainer) mobileContainer.insertAdjacentHTML('beforeend', mobileCardHTML);
+    });
+
+    // Show modal
+    var backdrop = document.getElementById('affiliate-modal-backdrop');
+    if (backdrop) backdrop.style.display = 'flex';
+  }
+
+  function closeModal() {
+    var backdrop = document.getElementById('affiliate-modal-backdrop');
+    if (backdrop) backdrop.style.display = 'none';
+    setDismissed();
+  }
+
+  // Initialize
+  function init() {
+    var pathname = window.location.pathname;
+    if (!shouldShowModal(pathname)) return;
+    if (hasRecentDismissal()) return;
+
+    // Close handlers
+    var closeButtons = document.querySelectorAll('.affiliate-modal-close');
+    closeButtons.forEach(function(btn) {
+      btn.addEventListener('click', closeModal);
+    });
+
+    // Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        var backdrop = document.getElementById('affiliate-modal-backdrop');
+        if (backdrop && backdrop.style.display !== 'none') closeModal();
+      }
+    });
+
+    // Backdrop click
+    var backdrop = document.getElementById('affiliate-modal-backdrop');
+    if (backdrop) {
+      backdrop.addEventListener('click', function(e) {
+        if (e.target === backdrop) closeModal();
+      });
+    }
+
+    if (isMobile()) {
+      // Mobile: scroll-depth trigger at 70%
+      var onScroll = function() {
+        if (triggered) return;
+        var scrolled = window.scrollY;
+        var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        if (maxScroll > 0 && scrolled / maxScroll >= 0.7) {
+          showModal();
+          window.removeEventListener('scroll', onScroll);
+        }
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+    } else {
+      // Desktop: exit-intent trigger
+      var onMouseLeave = function(e) {
+        if (triggered) return;
+        if (e.clientY <= 0) {
+          showModal();
+          document.removeEventListener('mouseleave', onMouseLeave);
+        }
+      };
+      document.addEventListener('mouseleave', onMouseLeave);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>

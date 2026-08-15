@@ -1,4 +1,12 @@
 #!/bin/bash
 echo "Running build-all.sh pre-push check..."
-bash build-all.sh
-exit $?
+bash build-all.sh || { echo "❌ Build failed. Push blocked."; exit 1; }
+
+echo "Running Playwright regression tests (regional sites)..."
+npx playwright test --config=playwright.config.ts --project=desktop --reporter=list --grep-invert "build regression" || { echo "❌ Regional site tests failed. Push blocked."; exit 1; }
+
+echo "Running Playwright regression tests (soaktrail.com)..."
+npx playwright test --config=playwright.soaktrail.config.ts --project=desktop --reporter=list || { echo "❌ SoakTrail.com tests failed. Push blocked."; exit 1; }
+
+echo "✅ All checks passed."
+exit 0

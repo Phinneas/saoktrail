@@ -73,6 +73,7 @@ const jsonLd = {
   description={data.description}
   jsonLd={jsonLd}
 >
+  <div data-affiliate-categories={data.affiliate_categories.join(',')}>
   <!-- Hero -->
   <section class="px-4 pt-16 pb-6 md:pt-20">
     <div class="container mx-auto max-w-4xl">
@@ -298,4 +299,5 @@ const jsonLd = {
       </a>
     </div>
   </section>
+  </div>
 </BaseLayout>

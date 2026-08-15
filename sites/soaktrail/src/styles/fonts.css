@@ -1,0 +1,16 @@
+/* National Park — self-hosted */
+@font-face {
+  font-display: swap;
+  font-family: "National Park";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/national-park/NationalPark-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "National Park";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/national-park/NationalPark-Bold.woff2") format("woff2");
+}
