@@ -30,5 +30,6 @@ database_id = "5666d199-3ec6-4076-8401-d96e072d4a17"
 binding = "AI"
 
 [triggers]
-# Run at 06:00 UTC (~11pm MST previous day) every Monday and Thursday
-crons = ["0 6 * * 1,4"]
+# 7 AM UTC (midnight PDT) — autoposter: Asana → MiniMax → D1 → mark Asana done
+# 8 AM UTC (1 AM PDT) — deploy trigger: calls GitHub Actions to rebuild + deploy all sites
+crons = ["0 7 * * 1,4", "0 8 * * 1,4"]
