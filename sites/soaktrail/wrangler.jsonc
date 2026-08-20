@@ -2,6 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "soaktrail",
   "compatibility_date": "2026-08-17",
+  "main": "./dist/_worker.js/index.js",
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page"

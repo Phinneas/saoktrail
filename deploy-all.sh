@@ -19,6 +19,11 @@ for site in $SITES; do
   fi
   echo "✅ $site built"
 
+  # Soaktrail is SSR — exclude _worker.js from static asset upload
+  if [ "$site" = "soaktrail" ]; then
+    echo "_worker.js" > dist/.assetsignore
+  fi
+
   echo "📦 Deploying $site..."
   if ! npx wrangler deploy 2>&1; then
     echo "❌ $site deploy failed"
