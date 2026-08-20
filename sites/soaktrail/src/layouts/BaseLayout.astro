@@ -49,7 +49,7 @@ const chatPrompts = [
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600;1,9..144,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&display=swap"
       rel="stylesheet"
     />
     <ClientRouter fallback="swap" />
@@ -82,5 +82,22 @@ const chatPrompts = [
       />
     )}
     <AffiliateModal />
+
+    <style is:global>
+      body {
+        font-variation-settings: "opsz" 16;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: "National Park", sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+      }
+      button, .btn, a.nav-link, .nav-link, label, .field-label {
+        font-family: "National Park", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    </style>
   </body>
 </html>
