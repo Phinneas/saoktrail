@@ -216,10 +216,16 @@
         }),
       });
       if (!res.ok) {
-        const err = await res.json();
-        throw new Error(err.error ?? 'Checkout failed');
+        let errorMessage = `Checkout failed (HTTP ${res.status})`;
+        try {
+          const err = await res.json();
+          errorMessage = err.error ?? errorMessage;
+        } catch {}
+        throw new Error(errorMessage);
       }
-      const { url } = await res.json();
+      const text = await res.text();
+      if (!text) throw new Error('Checkout returned empty response — check server logs');
+      const { url } = JSON.parse(text);
       window.location.href = url;
     } catch (err) {
       alert(`Something went wrong: ${err instanceof Error ? err.message : String(err)}`);

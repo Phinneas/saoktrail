@@ -13,6 +13,7 @@ const PRICES: Record<string, number> = {
 export const POST: APIRoute = async ({ request, locals }) => {
   const env = locals.runtime.env;
 
+  try {
   let body: Record<string, unknown>;
   try {
     body = await request.json();
@@ -41,6 +42,10 @@ export const POST: APIRoute = async ({ request, locals }) => {
   const amountCents = PRICES[size];
   if (!amountCents) {
     return Response.json({ error: 'No price configured for this size' }, { status: 422 });
+  }
+
+  if (!env.STRIPE_SECRET_KEY) {
+    return Response.json({ error: 'STRIPE_SECRET_KEY is not configured' }, { status: 500 });
   }
 
   const stripe = new Stripe(env.STRIPE_SECRET_KEY);
@@ -105,4 +110,11 @@ export const POST: APIRoute = async ({ request, locals }) => {
   });
 
   return Response.json({ url: session.url });
+  } catch (err) {
+    console.error('Checkout error:', err);
+    return Response.json(
+      { error: err instanceof Error ? err.message : 'Checkout failed' },
+      { status: 500 }
+    );
+  }
 };
