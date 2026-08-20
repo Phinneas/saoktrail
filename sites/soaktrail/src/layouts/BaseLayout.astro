@@ -24,6 +24,7 @@ interface Props {
 const { title, description, ogImage, ogType, canonicalUrl, noIndex, author, publishedAt, updatedAt, jsonLd, transparentNav = false } = Astro.props;
 
 const apiUrl = import.meta.env.PUBLIC_API_URL;
+const isBlogPost = /^\/blog\/[^/]+/.test(Astro.url.pathname);
 const chatPrompts = [
   "What are the best hot springs in the US?",
   "Plan a Colorado hot springs road trip",
@@ -52,6 +53,10 @@ const chatPrompts = [
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&display=swap"
       rel="stylesheet"
     />
+    <!-- Google AdSense — excluded on individual blog posts -->
+    {!isBlogPost && (
+      <script is:inline async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5424097145643842" crossorigin="anonymous"></script>
+    )}
     <ClientRouter fallback="swap" />
   </head>
   <body class="bg-sa-cream text-sa-dark font-body antialiased">

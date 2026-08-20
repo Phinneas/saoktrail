@@ -39,6 +39,7 @@ const {
 } = Astro.props;
 
 const apiUrl = import.meta.env.PUBLIC_API_URL;
+const isBlogPost = /^\/blog\/[^/]+/.test(Astro.url.pathname);
 const chatPrompts = [
   `Plan a 3-day hot springs trip in ${siteConfig.region}`,
   "Which springs are best for winter soaking?",
@@ -101,6 +102,11 @@ const chatPrompts = [
       updatedAt={updatedAt}
       jsonLd={jsonLd}
     />
+
+    <!-- Google AdSense — excluded on individual blog posts -->
+    {!isBlogPost && (
+      <script is:inline async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5424097145643842" crossorigin="anonymous"></script>
+    )}
 
     <slot name="head" />
 
