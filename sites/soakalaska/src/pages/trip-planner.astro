@@ -1,0 +1,262 @@
+---
+import BaseLayout from "@components/base/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Alaska Hot Springs Trip Planner | Alaska Hot Springs"
+  description="Plan your Alaska hot springs adventure with itineraries, interactive maps, and tips for accessing remote geothermal pools by road, boat, and trail."
+>
+
+  <!-- Hero -->
+  <section class="section">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="text-center lg:col-8">
+          <h1 class="mb-6">Alaska Hot Springs Trip Planner</h1>
+          <p class="text-lg text-txt-s dark:text-darkmode-txt-s mb-8 max-w-prose mx-auto">
+            Plan your soak in America's last frontier. From road-accessible resort pools to remote wilderness springs reached by boat or bush plane, Alaska offers a geothermal experience like nowhere else.
+          </p>
+          <div class="row justify-center gap-6">
+            <div class="sm:col-12 md:col-4 text-center">
+              <div class="glass rounded-lg p-6">
+                <div class="text-3xl mb-3">🗺️</div>
+                <h3 class="font-primary font-bold text-lg mb-2 text-txt-p dark:text-darkmode-txt-p">Interactive Map</h3>
+                <p class="text-sm text-txt-s dark:text-darkmode-txt-s">View all Alaska springs, get directions, and see access requirements</p>
+              </div>
+            </div>
+            <div class="sm:col-12 md:col-4 text-center">
+              <div class="glass rounded-lg p-6">
+                <div class="text-3xl mb-3">⏱️</div>
+                <h3 class="font-primary font-bold text-lg mb-2 text-txt-p dark:text-darkmode-txt-p">Drive Time Zones</h3>
+                <p class="text-sm text-txt-s dark:text-darkmode-txt-s">See what's reachable from Anchorage, Fairbanks, or Juneau in 30 min to 3 hours</p>
+              </div>
+            </div>
+            <div class="sm:col-12 md:col-4 text-center">
+              <div class="glass rounded-lg p-6">
+                <div class="text-3xl mb-3">🛂</div>
+                <h3 class="font-primary font-bold text-lg mb-2 text-txt-p dark:text-darkmode-txt-p">Passport Tracking</h3>
+                <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Track visited springs and earn badges</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8">
+            <a
+              href="/alaska-hot-springs-map"
+              class="inline-block bg-accent text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open Full Map & Planner →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Itineraries -->
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <h2 class="text-center mb-8">Featured Itineraries</h2>
+
+          <!-- Itinerary 1: Chena Hot Springs Weekend -->
+          <div class="glass rounded-lg p-8 mb-8">
+            <h3 class="font-primary font-bold text-2xl mb-2 text-txt-p dark:text-darkmode-txt-p">Chena Hot Springs Weekend</h3>
+            <p class="text-txt-s dark:text-darkmode-txt-s mb-6">A 2-day getaway from Fairbanks to Alaska's most accessible developed hot spring resort, open year-round under the aurora.</p>
+
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">1</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Drive to Chena</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Drive 57 miles from Fairbanks on Chena Hot Springs Road. Stop at <a href="/blog" class="text-accent hover:underline">our Alaska springs guides</a> along the way. Check in at Chena Hot Springs Resort.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">2</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Soak & Explore</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Soak in the indoor rock pool and outdoor hot tubs. Visit the Aurora Ice Museum carved from year-round ice. In winter, watch the northern lights from the outdoor soaking pool.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-border dark:border-darkmode-border flex flex-wrap gap-4 text-sm text-txt-s dark:text-darkmode-txt-s">
+              <span><strong>Distance:</strong> ~57 miles from Fairbanks</span>
+              <span><strong>Best Season:</strong> Year-round (aurora viewing Sep–Apr)</span>
+              <span><strong>Difficulty:</strong> Easy — paved road access</span>
+            </div>
+          </div>
+
+          <!-- Itinerary 2: Southeast Alaska Boat-In Springs -->
+          <div class="glass rounded-lg p-8 mb-8">
+            <h3 class="font-primary font-bold text-2xl mb-2 text-txt-p dark:text-darkmode-txt-p">Southeast Alaska Boat-In Springs Expedition</h3>
+            <p class="text-txt-s dark:text-darkmode-txt-s mb-6">A 5-day charter adventure from Sitka visiting remote geothermal pools accessible only by boat or floatplane in the Tongass National Forest.</p>
+
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">1</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Depart Sitka</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Charter a boat or join a tour from Sitka. Cruise through Sitka Sound toward Baranof Island's east coast.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">2</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Baranof Warm Springs</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Soak at Baranof Warm Springs Bay, a series of natural pools and a developed bathhouse with a waterfall view. Anchor overnight.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">3</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Chief Shakes Hot Springs</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Cruise south to Hot Springs Bay on the east coast of Baranof Island. Hike the boardwalk trail to Chief Shakes Hot Springs, a two-pool natural soak in the rainforest.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">4</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Goddard Hot Springs</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Sail to Goddard Hot Springs near Sitka's south coast. Two sheltered cedar bathhouses sit above natural geothermal seeps on a remote shoreline.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">5</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Return to Sitka</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Cruise back to Sitka. Explore the Russian Bishop's House and Alaska Raptor Center before departure.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-border dark:border-darkmode-border flex flex-wrap gap-4 text-sm text-txt-s dark:text-darkmode-txt-s">
+              <span><strong>Access:</strong> Boat or floatplane charter only</span>
+              <span><strong>Best Season:</strong> May through September</span>
+              <span><strong>Difficulty:</strong> Moderate — requires charter booking and weather flexibility</span>
+            </div>
+          </div>
+
+          <!-- Itinerary 3: Interior Alaska Remote Springs -->
+          <div class="glass rounded-lg p-8 mb-8">
+            <h3 class="font-primary font-bold text-2xl mb-2 text-txt-p dark:text-darkmode-txt-p">Interior Alaska Remote Springs Loop</h3>
+            <p class="text-txt-s dark:text-darkmode-txt-s mb-6">A 3-day road trip from Fairbanks into Alaska's interior to visit two historic road-accessible hot springs with gold rush history.</p>
+
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">1</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Fairbanks to Manley</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Drive the Elliott Highway 150 miles northwest to Manley Hot Springs. Soak in the small greenhouse-sheltered pool at Manley Roadhouse, a historic roadhouse from the gold rush era.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">2</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Steese Highway to Circle</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Return to Fairbanks, then take the Steese Highway 160 miles northeast to Circle Hot Springs. The historic resort has a large outdoor pool fed by 140-degree geothermal water.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm">3</span>
+                <div>
+                  <h4 class="font-bold text-txt-p dark:text-darkmode-txt-p mb-1">Return via Chena</h4>
+                  <p class="text-sm text-txt-s dark:text-darkmode-txt-s">Drive back toward Fairbanks and detour to Chena Hot Springs for a final soak before heading home.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-border dark:border-darkmode-border flex flex-wrap gap-4 text-sm text-txt-s dark:text-darkmode-txt-s">
+              <span><strong>Distance:</strong> ~500 miles total</span>
+              <span><strong>Best Season:</strong> Late May through September (highways close in winter)</span>
+              <span><strong>Difficulty:</strong> Moderate — long gravel sections, limited services</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planning Tips -->
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-10">
+          <h2 class="text-center mb-8">Planning Tips</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="glass rounded-lg p-6">
+              <h3 class="font-primary font-bold text-lg mb-3 text-txt-p dark:text-darkmode-txt-p">📅 Seasonal Considerations</h3>
+              <ul class="space-y-2 text-sm text-txt-s dark:text-darkmode-txt-s">
+                <li><strong>Summer (Jun–Aug):</strong> Long daylight hours, most road and boat access open, peak mosquito season</li>
+                <li><strong>Fall (Sep–Oct):</strong> Cooler soaks, aurora viewing begins, fewer tourists, some charter services wind down</li>
+                <li><strong>Winter (Nov–Mar):</strong> Chena Hot Springs open year-round; most interior roads and boat-in springs inaccessible</li>
+                <li><strong>Spring (Apr–May):</strong> Breakup season — roads may be soft or closed, check Alaska DOT 511 before travel</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-lg p-6">
+              <h3 class="font-primary font-bold text-lg mb-3 text-txt-p dark:text-darkmode-txt-p">🎒 What to Bring</h3>
+              <ul class="space-y-2 text-sm text-txt-s dark:text-darkmode-txt-s">
+                <li>Bear spray — brown and black bears are active near most springs</li>
+                <li>Insect repellent and head net — mosquitoes and no-see-ums are intense in summer</li>
+                <li>Warm layers — temperatures can drop 30 degrees in a single day</li>
+                <li>Waterproof dry bag for boat-in springs</li>
+                <li>Extra fuel for remote interior roads — gas stations are far apart</li>
+                <li>Satellite messenger (Garmin inReach) — cell service is absent in most areas</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-lg p-6">
+              <h3 class="font-primary font-bold text-lg mb-3 text-txt-p dark:text-darkmode-txt-p">🚗 Transportation</h3>
+              <ul class="space-y-2 text-sm text-txt-s dark:text-darkmode-txt-s">
+                <li>4WD or AWD recommended for gravel roads (Elliott, Steese, Denali Highways)</li>
+                <li>Check Alaska DOT 511 (511.alaska.gov) for road conditions and closures</li>
+                <li>Southeast springs require boat charter or floatplane — book well in advance</li>
+                <li>Download offline maps — cell service stops within an hour of most cities</li>
+                <li>Rental cars in Alaska often come with limited gravel road coverage</li>
+              </ul>
+            </div>
+
+            <div class="glass rounded-lg p-6">
+              <h3 class="font-primary font-bold text-lg mb-3 text-txt-p dark:text-darkmode-txt-p">🏕️ Accommodation</h3>
+              <ul class="space-y-2 text-sm text-txt-s dark:text-darkmode-txt-s">
+                <li>Chena Hot Springs Resort has lodging, yurts, and camping</li>
+                <li>Manley Roadhouse offers basic rooms and a small bar</li>
+                <li>Southeast springs have no lodging — anchor out or charter day trips</li>
+                <li>Bear-resistant food storage required at all backcountry campsites</li>
+                <li>Book summer lodging in Fairbanks and Anchorage months in advance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section pt-0">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="lg:col-8 text-center">
+          <div class="glass rounded-lg p-8">
+            <h2 class="font-primary font-bold text-2xl mb-4 text-txt-p dark:text-darkmode-txt-p">Ready to Start Planning?</h2>
+            <p class="text-txt-s dark:text-darkmode-txt-s mb-6">Use our interactive map to find Alaska hot springs, check access requirements, and build your custom route.</p>
+            <a
+              href="/alaska-hot-springs-map"
+              class="inline-block bg-accent text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open Trip Planner Map →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

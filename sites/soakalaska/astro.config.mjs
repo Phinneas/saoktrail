@@ -17,9 +17,6 @@ export default defineConfig({
   base: "/",
   trailingSlash: "never",
   prefetch: { prefetchAll: true },
-  redirects: {
-    "/trip-planner": { status: 301, destination: "/" },
-  },
   adapter: cloudflare(),
   integrations: [
     react(),

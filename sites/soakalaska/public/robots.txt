@@ -11,4 +11,4 @@ Disallow: /page/
 Disallow: /*?ref=
 Disallow: /*?spring=
 
-Sitemap: https://www.washingtonhotsprings.com/sitemap-index.xml
+Sitemap: https://www.alaskahotsprings.com/sitemap-index.xml
