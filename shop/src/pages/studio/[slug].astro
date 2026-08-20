@@ -22,6 +22,7 @@ if (!spring) return new Response('Spring not found', { status: 404 });
 
 const cancelled = Astro.url.searchParams.get('cancelled') === 'true';
 const thunderforestKey = env.THUNDERFOREST_API_KEY ?? '';
+const maptilerKey = env.MAPTILER_API_KEY ?? '';
 ---
 
 <!doctype html>
@@ -50,6 +51,7 @@ const thunderforestKey = env.THUNDERFOREST_API_KEY ?? '';
     client:load
     spring={spring}
     thunderforestKey={thunderforestKey}
+    maptilerKey={maptilerKey}
   />
 </body>
 </html>

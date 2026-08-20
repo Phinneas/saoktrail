@@ -10,6 +10,7 @@
     state: string;
   };
   export let thunderforestKey: string = '';
+  export let maptilerKey: string = '';
 
   // ─── State ────────────────────────────────────────────────────────────────
   let selectedStyle = 'soaktrail-topo';
@@ -88,6 +89,10 @@
   onDestroy(() => map?.remove());
 
   function styleConfig(styleName: string): string | object {
+    if (maptilerKey) {
+      const mapId = { 'soaktrail-topo': 'topo', 'soaktrail-midnight': 'dark', 'soaktrail-minimal': 'positron' }[styleName] ?? 'topo';
+      return `https://api.maptiler.com/maps/${mapId}/style.json?key=${maptilerKey}`;
+    }
     if (styleName === 'soaktrail-topo' && thunderforestKey) {
       return {
         version: 8,

@@ -19,3 +19,4 @@ new_sqlite_classes = ["RenderContainer"]
 # Secrets (set via: wrangler secret put <KEY>)
 # RENDER_SERVICE_SECRET
 # THUNDERFOREST_API_KEY
+# MAPTILER_API_KEY

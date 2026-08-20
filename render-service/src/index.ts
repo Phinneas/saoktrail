@@ -8,6 +8,7 @@ const app = new Hono();
 const SECRET = process.env.RENDER_SERVICE_SECRET;
 const THUNDERFOREST_API_KEY = process.env.THUNDERFOREST_API_KEY ?? '';
 const MAPBOX_ACCESS_TOKEN = process.env.MAPBOX_ACCESS_TOKEN ?? '';
+const MAPTILER_API_KEY = process.env.MAPTILER_API_KEY ?? '';
 const PORT = parseInt(process.env.PORT ?? '3000', 10);
 
 // ─── Auth middleware ──────────────────────────────────────────────────────────
@@ -63,6 +64,7 @@ app.post('/render', async (c) => {
       zoom: typeof zoom === 'number' ? zoom : undefined,
       thunderforestKey: THUNDERFOREST_API_KEY,
       mapboxKey: MAPBOX_ACCESS_TOKEN,
+      maptilerKey: MAPTILER_API_KEY,
     });
 
     return new Response(new Uint8Array(png), {

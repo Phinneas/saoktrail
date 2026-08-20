@@ -67,12 +67,25 @@ const CARTO_STYLE: Record<string, string> = {
   'soaktrail-minimal':  'light_nolabels',
 };
 
+// MapTiler vector styles rendered as raster tiles — includes contour lines,
+// hillshade, and geographic labels. Primary source for print-quality output.
+const MAPTILER_STYLE: Record<string, string> = {
+  'soaktrail-topo':     'topo',
+  'soaktrail-midnight': 'dark',
+  'soaktrail-minimal':  'positron',
+};
+
 function tileUrl(
   styleName: string,
   z: number, x: number, y: number,
   thunderforestKey: string,
   mapboxKey: string,
+  maptilerKey: string = '',
 ): string {
+  if (maptilerKey) {
+    const mapId = MAPTILER_STYLE[styleName] ?? 'topo';
+    return `https://api.maptiler.com/maps/${mapId}/256/${z}/${x}/${y}@2x.png?key=${maptilerKey}`;
+  }
   if (mapboxKey) {
     const style = MAPBOX_STYLE[styleName] ?? 'mapbox/outdoors-v12';
     return `https://api.mapbox.com/styles/v1/${style}/tiles/512/${z}/${x}/${y}@2x?access_token=${mapboxKey}`;
@@ -126,6 +139,7 @@ async function renderMap(
   thunderforestKey: string,
   title: string = '',
   mapboxKey: string = '',
+  maptilerKey: string = '',
 ): Promise<Buffer> {
 
   let baseBuf: Buffer;
@@ -164,7 +178,7 @@ async function renderMap(
         const wrappedTX = ((tx % n) + n) % n;
         jobs.push({
           tx, ty,
-          bufP: fetchBuffer(tileUrl(styleName, zoom, wrappedTX, ty, thunderforestKey, mapboxKey)),
+          bufP: fetchBuffer(tileUrl(styleName, zoom, wrappedTX, ty, thunderforestKey, mapboxKey, maptilerKey)),
         });
       }
     }
@@ -352,10 +366,11 @@ export interface RenderParams {
   zoom?: number;
   thunderforestKey?: string;
   mapboxKey?: string;
+  maptilerKey?: string;
 }
 
 export async function renderPoster(params: RenderParams): Promise<Buffer> {
-  const { lat, lng, style, size, title, subtitle, thunderforestKey = '', mapboxKey = '' } = params;
+  const { lat, lng, style, size, title, subtitle, thunderforestKey = '', mapboxKey = '', maptilerKey = '' } = params;
 
   const dims = SIZE_MAP[size];
   if (!dims) throw new Error(`Unknown size: ${size}`);
@@ -364,7 +379,7 @@ export async function renderPoster(params: RenderParams): Promise<Buffer> {
   const panelH = Math.round(dims.height * 0.20);
   const mapH   = dims.height - panelH;
 
-  const mapBuf = await renderMap(lat, lng, zoom, dims.width, mapH, style, thunderforestKey, title ?? '', mapboxKey);
+  const mapBuf = await renderMap(lat, lng, zoom, dims.width, mapH, style, thunderforestKey, title ?? '', mapboxKey, maptilerKey);
 
   return compositePoster(
     mapBuf, dims.width, dims.height,
