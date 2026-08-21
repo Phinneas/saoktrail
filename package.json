@@ -17,7 +17,9 @@
     "dev:wa_hot": "pnpm run dev --filter wa_hot",
     "db:import": "node scripts/import-springs-to-d1.mjs",
     "db:export": "node scripts/export-springs.mjs --all",
-    "db:export:site": "node scripts/export-springs.mjs --site"
+    "db:export:site": "node scripts/export-springs.mjs --site",
+    "previews": "tsx scripts/generate-previews.ts",
+    "previews:regen": "tsx scripts/generate-previews.ts --regenerate"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
