@@ -54,3 +54,25 @@ astro-types.d.ts
 # Temp files
 tmp/
 temp/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Agent / tooling configs and session logs
+.agents/
+.claude/
+.gemini/
+.kiro/
+.playwright-mcp/
+
+# Test artifacts
+test-results/
+sites/desert/shop-*.png
+
+# Generated knowledge graph (regenerated locally by graphify)
+graphify-out/
+
+# Render service scratch / stray lockfile (render-service uses pnpm)
+render-service/.recall/
+render-service/package-lock.json
