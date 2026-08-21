@@ -21,6 +21,7 @@ try {
 if (!spring) return new Response('Spring not found', { status: 404 });
 
 const cancelled = Astro.url.searchParams.get('cancelled') === 'true';
+const r2PublicUrl = env.R2_PUBLIC_URL ?? 'https://r2.soaktrail.com';
 const thunderforestKey = env.THUNDERFOREST_API_KEY ?? '';
 const maptilerKey = env.MAPTILER_API_KEY ?? '';
 ---
@@ -52,6 +53,7 @@ const maptilerKey = env.MAPTILER_API_KEY ?? '';
     spring={spring}
     thunderforestKey={thunderforestKey}
     maptilerKey={maptilerKey}
+    r2PublicUrl={r2PublicUrl}
   />
 </body>
 </html>

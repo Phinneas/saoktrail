@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount, onDestroy } from 'svelte';
+  import { onMount, onDestroy, tick } from 'svelte';
 
   // ─── Props ────────────────────────────────────────────────────────────────
   export let spring: {
@@ -11,6 +11,7 @@
   };
   export let thunderforestKey: string = '';
   export let maptilerKey: string = '';
+  export let r2PublicUrl: string = '';
 
   // ─── State ────────────────────────────────────────────────────────────────
   let selectedStyle = 'soaktrail-topo';
@@ -19,11 +20,21 @@
   let title         = spring.name;
   let subtitle      = spring.state;
   let loading       = false;
-  let map: any      = null;
+  let previewFailed = false;
+
+  // Progressive enhancement: the static R2 preview image is the base (works
+  // with no JS / no WebGL / never errors). We upgrade to an interactive
+  // MapLibre map only when WebGL is actually available; if map init fails we
+  // fall back to the static image so no error state is ever visible.
+  let mapActive = false;
+  let map: any = null;
   let mapContainer: HTMLDivElement;
   let trailheadMarker: any = null;
-  let mapZoom       = 11;
-  let cachedTrails: any = null;  // GeoJSON FeatureCollection for checkout
+  let mapZoom = 11;
+  let cachedTrails: any = null; // GeoJSON FeatureCollection for checkout
+
+  // Pre-rendered 1200×630 static preview PNG from R2 (scripts/generate-previews.ts).
+  const previewSrc = `${r2PublicUrl}/previews/${encodeURIComponent(spring.slug)}.png`;
 
   const styles = [
     { id: 'soaktrail-topo',     label: 'Topo',    bg: '#f5f0e8', water: '#a8d0e6' },
@@ -37,8 +48,18 @@
     { id: '18x24',   label: '18 × 24"',         price: '$35', sub: 'Premium matte, ships in 5–7 days' },
   ];
 
-  // ─── Map setup ────────────────────────────────────────────────────────────
-  onMount(async () => {
+  // ─── WebGL capability check ────────────────────────────────────────────────
+  function hasWebGL(): boolean {
+    try {
+      const c = document.createElement('canvas');
+      return !!(c.getContext('webgl2') || c.getContext('webgl') || (c.getContext('experimental-webgl') as any));
+    } catch {
+      return false;
+    }
+  }
+
+  // ─── Map setup (only runs when WebGL is available) ──────────────────────────
+  async function initMap(): Promise<void> {
     const maplibregl = (await import('maplibre-gl')).default;
     await import('maplibre-gl/dist/maplibre-gl.css');
 
@@ -46,7 +67,7 @@
     mapZoom = (spring as any).access_type === 'hike' ? 13
       : ((spring as any).access_type === 'dirt' || (spring as any).access_type === '4wd' ? 12 : 11);
 
-    // Fetch trail geometry from Overpass API (client-side, avoids Cloudflare Worker 406)
+    // Fetch trail geometry from Overpass API (client-side, avoids Worker 406)
     let trailData: { trails?: any; trailhead?: { lat: number; lng: number } | null } = {};
     try {
       const opQuery = `[out:json][timeout:15];(way["highway"~"path|footway|track"](around:2000,${spring.lat},${spring.lng}););out geom;`;
@@ -84,6 +105,20 @@
       addSpringMarker(maplibregl);
       addTrailOverlay(trailData, maplibregl);
     });
+  }
+
+  onMount(async () => {
+    if (!hasWebGL()) return; // no WebGL → keep the static R2 preview image, no errors
+    mapActive = true;
+    await tick(); // ensure mapContainer is bound in the DOM
+    try {
+      await initMap();
+    } catch (err) {
+      // MapLibre init failed (e.g. driver/blocker): fall back to static image.
+      console.error('Map init failed, falling back to static preview:', err);
+      mapActive = false;
+      map = null;
+    }
   });
 
   onDestroy(() => map?.remove());
@@ -133,10 +168,9 @@
   }
 
   function addTrailOverlay(trailData: { trails?: any; trailhead?: { lat: number; lng: number } | null }, maplibregl: any): void {
-    // Add trail paths as GeoJSON layers
     if (trailData.trails && trailData.trails.features && trailData.trails.features.length > 0) {
       const sourceId = 'trails-source';
-      if (map.getSource(sourceId)) return; // already added
+      if (map.getSource(sourceId)) return;
       map.addSource(sourceId, { type: 'geojson', data: trailData.trails });
       map.addLayer({
         id: 'trails-outline',
@@ -154,7 +188,6 @@
       });
     }
 
-    // Add trailhead marker
     if (trailData.trailhead) {
       if (trailheadMarker) trailheadMarker.remove();
       const el = document.createElement('div');
@@ -174,7 +207,6 @@
     selectedStyle = styleId;
     if (!map) return;
 
-    // Save trail source data before style switch (setStyle clears all layers)
     let trailGeoJson: any = null;
     const trailSource = map.getSource('trails-source');
     if (trailSource) trailGeoJson = (trailSource as any)._data;
@@ -237,17 +269,39 @@
 <!-- ─── Template ─────────────────────────────────────────────────────────── -->
 <div class="studio">
 
-  <!-- Map preview -->
+  <!-- Map / preview panel: static R2 image by default, upgraded to a live
+       MapLibre map when WebGL is available (mapActive). -->
   <div class="map-panel">
-    <div class="map-container" bind:this={mapContainer}></div>
-    <div class="poster-footer">
-      <div class="footer-accent"></div>
-      <p class="footer-title">{title || spring.name}</p>
-      <p class="footer-sub">{subtitle || spring.state}</p>
-      <p class="footer-coords">{spring.lat.toFixed(4)}° N  {Math.abs(spring.lng).toFixed(4)}° W</p>
-      <div class="footer-rule"></div>
-      <p class="footer-brand">SOAKTRAIL.COM</p>
-    </div>
+    {#if mapActive}
+      <div class="map-container" bind:this={mapContainer}></div>
+      <div class="poster-footer">
+        <div class="footer-accent"></div>
+        <p class="footer-title">{title || spring.name}</p>
+        <p class="footer-sub">{subtitle || spring.state}</p>
+        <p class="footer-coords">{spring.lat.toFixed(4)}° N  {Math.abs(spring.lng).toFixed(4)}° W</p>
+        <div class="footer-rule"></div>
+        <p class="footer-brand">SOAKTRAIL.COM</p>
+      </div>
+    {:else if !previewFailed}
+      <img
+        class="preview-img"
+        src={previewSrc}
+        alt={`${spring.name} topographic map poster preview`}
+        loading="eager"
+        on:error={() => (previewFailed = true)}
+      />
+    {:else}
+      <!-- Graceful placeholder (no broken-image icon) shown until the
+           batch preview generator has populated R2 for this spring. -->
+      <div class="preview-placeholder">
+        <div class="ph-accent"></div>
+        <p class="ph-title">{spring.name}</p>
+        <p class="ph-sub">{spring.state}</p>
+        <p class="ph-coords">{spring.lat.toFixed(4)}° N  {Math.abs(spring.lng).toFixed(4)}° W</p>
+        <div class="ph-rule"></div>
+        <p class="ph-brand">SOAKTRAIL.COM</p>
+      </div>
+    {/if}
   </div>
 
   <!-- Controls -->
@@ -341,19 +395,55 @@
     overflow: hidden;
   }
 
-  /* Map panel */
+  /* Map / preview panel */
   .map-panel {
     position: relative;
     background: #111d2b;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
   .map-container {
     flex: 1;
     min-height: 0;
   }
 
-  /* Poster footer preview */
+  /* Static preview image fallback (no WebGL) — fills the whole panel since
+     it already contains the baked-in poster footer. */
+  .preview-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #111d2b;
+  }
+
+  /* Graceful placeholder (mimics the poster layout, not an error state) */
+  .preview-placeholder {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: min(620px, 90%);
+    height: min(320px, 70%);
+    background: #f5f0e8;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 14px 28px 12px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  }
+  .ph-accent { width: 60%; height: 3px; background: #e85d04; border-radius: 2px; }
+  .ph-title  { font-family: 'Outfit', serif; font-size: 22px; font-weight: 700; color: #1a1a1a; margin: 6px 0 0; }
+  .ph-sub    { font-size: 12px; font-weight: 300; color: #6b6357; letter-spacing: 0.18em; text-transform: uppercase; margin: 0; }
+  .ph-coords { font-size: 11px; color: #6b6357; letter-spacing: 0.12em; margin: 2px 0 4px; font-family: monospace; }
+  .ph-rule   { width: 40%; height: 1px; background: rgba(232, 93, 4, 0.3); margin: 2px 0; }
+  .ph-brand  { font-size: 10px; font-weight: 600; color: #e85d04; letter-spacing: 0.3em; margin: 0; }
+
+  /* Poster footer (live, shown only with the interactive map) */
   .poster-footer {
     background: #f5f0e8;
     padding: 14px 28px 12px;
@@ -361,52 +451,14 @@
     flex-direction: column;
     align-items: center;
     gap: 3px;
-    border-top: none;
     flex-shrink: 0;
   }
-  .footer-accent {
-    width: 60%;
-    height: 3px;
-    background: #e85d04;
-    margin-bottom: 6px;
-    border-radius: 2px;
-  }
-  .footer-title {
-    font-family: 'Outfit', serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: #1a1a1a;
-    letter-spacing: 0.02em;
-    margin: 0;
-    text-align: center;
-  }
-  .footer-sub {
-    font-size: 11px;
-    font-weight: 300;
-    color: #6b6357;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin: 0;
-  }
-  .footer-coords {
-    font-size: 10px;
-    color: #6b6357;
-    letter-spacing: 0.12em;
-    margin: 2px 0 4px;
-  }
-  .footer-rule {
-    width: 40%;
-    height: 1px;
-    background: rgba(232, 93, 4, 0.3);
-    margin: 2px 0;
-  }
-  .footer-brand {
-    font-size: 9px;
-    font-weight: 600;
-    color: #e85d04;
-    letter-spacing: 0.3em;
-    margin: 0;
-  }
+  .footer-accent { width: 60%; height: 3px; background: #e85d04; margin-bottom: 6px; border-radius: 2px; }
+  .footer-title  { font-family: 'Outfit', serif; font-size: 18px; font-weight: 700; color: #1a1a1a; letter-spacing: 0.02em; margin: 0; text-align: center; }
+  .footer-sub    { font-size: 11px; font-weight: 300; color: #6b6357; letter-spacing: 0.18em; text-transform: uppercase; margin: 0; }
+  .footer-coords { font-size: 10px; color: #6b6357; letter-spacing: 0.12em; margin: 2px 0 4px; }
+  .footer-rule   { width: 40%; height: 1px; background: rgba(232, 93, 4, 0.3); margin: 2px 0; }
+  .footer-brand  { font-size: 9px; font-weight: 600; color: #e85d04; letter-spacing: 0.3em; margin: 0; }
 
   /* Controls */
   .controls-panel {
@@ -418,145 +470,43 @@
     overflow-y: auto;
   }
   .spring-header { margin-bottom: 28px; }
-  .spring-header h1 {
-    font-size: 22px;
-    font-weight: 600;
-    color: #f0ebe0;
-    line-height: 1.2;
-  }
-  .spring-state {
-    font-size: 13px;
-    color: #64748b;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-top: 4px;
-  }
+  .spring-header h1 { font-size: 22px; font-weight: 600; color: #f0ebe0; line-height: 1.2; }
+  .spring-state { font-size: 13px; color: #64748b; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
 
   .section { margin-bottom: 28px; }
-  .section-label {
-    display: block;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #64748b;
-    margin-bottom: 12px;
-  }
+  .section-label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #64748b; margin-bottom: 12px; }
 
   /* Style grid */
   .style-grid { display: flex; gap: 10px; }
-  .style-btn {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 6px;
-    background: #111d2b;
-    border: 2px solid #1e3a5f;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: border-color 0.15s;
-  }
+  .style-btn { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 10px 6px; background: #111d2b; border: 2px solid #1e3a5f; border-radius: 10px; cursor: pointer; transition: border-color 0.15s; }
   .style-btn.active { border-color: #e85d04; }
-  .style-swatch {
-    width: 48px;
-    height: 36px;
-    border-radius: 6px;
-    overflow: hidden;
-    position: relative;
-    background: var(--bg);
-  }
-  .swatch-water {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 40%;
-    background: var(--water);
-    opacity: 0.7;
-  }
+  .style-swatch { width: 48px; height: 36px; border-radius: 6px; overflow: hidden; position: relative; background: var(--bg); }
+  .swatch-water { position: absolute; bottom: 0; left: 0; right: 0; height: 40%; background: var(--water); opacity: 0.7; }
   .style-name { font-size: 12px; color: #94a3b8; font-weight: 500; }
 
   /* Text inputs */
-  .text-input {
-    width: 100%;
-    background: #111d2b;
-    border: 1px solid #1e3a5f;
-    border-radius: 8px;
-    color: #f0ebe0;
-    font-family: 'Outfit', sans-serif;
-    font-size: 15px;
-    padding: 11px 14px;
-    outline: none;
-    transition: border-color 0.15s;
-  }
+  .text-input { width: 100%; background: #111d2b; border: 1px solid #1e3a5f; border-radius: 8px; color: #f0ebe0; font-family: 'Outfit', sans-serif; font-size: 15px; padding: 11px 14px; outline: none; transition: border-color 0.15s; }
   .text-input:focus { border-color: #e85d04; }
   .text-input::placeholder { color: #334155; }
 
   /* Size list */
   .size-list { display: flex; flex-direction: column; gap: 8px; }
-  .size-btn {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
-    column-gap: 12px;
-    padding: 12px 16px;
-    background: #111d2b;
-    border: 2px solid #1e3a5f;
-    border-radius: 10px;
-    cursor: pointer;
-    text-align: left;
-    transition: border-color 0.15s;
-  }
+  .size-btn { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; column-gap: 12px; padding: 12px 16px; background: #111d2b; border: 2px solid #1e3a5f; border-radius: 10px; cursor: pointer; text-align: left; transition: border-color 0.15s; }
   .size-btn.active { border-color: #e85d04; background: #1a2535; }
   .size-label { font-size: 14px; font-weight: 600; color: #f0ebe0; grid-column: 1; grid-row: 1; }
   .size-sub   { font-size: 11px; color: #64748b; grid-column: 1; grid-row: 2; margin-top: 2px; }
   .size-price { font-size: 16px; font-weight: 600; color: #e85d04; grid-column: 2; grid-row: 1 / 3; align-self: center; }
 
   /* Buy button */
-  .buy-btn {
-    width: 100%;
-    background: #e85d04;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    font-family: 'Outfit', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 16px;
-    cursor: pointer;
-    transition: background 0.15s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 4px;
-  }
+  .buy-btn { width: 100%; background: #e85d04; color: #fff; border: none; border-radius: 10px; font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 600; padding: 16px; cursor: pointer; transition: background 0.15s; display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 4px; }
   .buy-btn:hover:not(:disabled) { background: #c44d03; }
   .buy-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-
-  .spinner {
-    width: 18px; height: 18px;
-    border: 2px solid rgba(255,255,255,0.3);
-    border-top-color: #fff;
-    border-radius: 50%;
-    animation: spin 0.7s linear infinite;
-    flex-shrink: 0;
-  }
+  .spinner { width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; flex-shrink: 0; }
   @keyframes spin { to { transform: rotate(360deg); } }
-
-  .legal {
-    font-size: 11px;
-    color: #334155;
-    text-align: center;
-    margin-top: 16px;
-    line-height: 1.5;
-  }
+  .legal { font-size: 11px; color: #334155; text-align: center; margin-top: 16px; line-height: 1.5; }
 
   @media (max-width: 768px) {
-    .studio {
-      grid-template-columns: 1fr;
-      grid-template-rows: 45vh 1fr;
-    }
+    .studio { grid-template-columns: 1fr; grid-template-rows: 45vh 1fr; }
     .controls-panel { padding: 24px 20px; }
   }
 </style>
