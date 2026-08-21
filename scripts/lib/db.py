@@ -88,6 +88,49 @@ def init_schema(conn: sqlite3.Connection) -> None:
             PRIMARY KEY (spring_slug, image_url)
         );
 
+        -- Generalized, multi-source image gallery (supersedes wiki_images).
+        -- One row per (spring, image) across all providers.
+        CREATE TABLE IF NOT EXISTS spring_images (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            spring_slug TEXT NOT NULL,
+            source TEXT NOT NULL,            -- wikimedia_commons | wikipedia | wikidata | flickr | openverse | google_places | operator
+            image_url TEXT NOT NULL,         -- canonical full-size URL
+            thumb_url TEXT,                  -- smaller preview URL when available
+            license_code TEXT,               -- e.g. 'CC BY 2.0', 'CC0', 'PDM', 'Public domain'
+            license_url TEXT,
+            attribution TEXT,                -- creator / author
+            source_url TEXT,                 -- foreign landing page (Commons/Flickr/Openverse page)
+            provider_image_id TEXT,          -- dedup key: Commons pageid, Flickr photo id, Openverse uuid
+            width INTEGER,
+            height INTEGER,
+            is_primary INTEGER DEFAULT 0,
+            rank INTEGER DEFAULT 0,          -- within-spring ordering for a source
+            captured_at TEXT,
+            last_fetched TEXT DEFAULT (datetime('now'))
+        );
+
+        CREATE INDEX IF NOT EXISTS idx_spring_images_slug ON spring_images(spring_slug);
+        CREATE INDEX IF NOT EXISTS idx_spring_images_slug_primary ON spring_images(spring_slug, is_primary);
+        CREATE UNIQUE INDEX IF NOT EXISTS uq_spring_images_provider_id ON spring_images(source, provider_image_id);
+        CREATE UNIQUE INDEX IF NOT EXISTS uq_spring_images_url ON spring_images(spring_slug, image_url);
+
+        -- One-time backfill of the legacy wiki_images table into spring_images.
+        -- Idempotent via INSERT OR IGNORE on the (spring_slug, image_url) unique index.
+        INSERT OR IGNORE INTO spring_images
+            (spring_slug, source, image_url, license_code, attribution, source_url,
+             is_primary, rank, last_fetched)
+        SELECT
+            spring_slug,
+            COALESCE(image_source, 'wikimedia_commons'),
+            image_url,
+            license_code,
+            attribution,
+            description_url,
+            is_primary,
+            0,
+            last_fetched
+        FROM wiki_images;
+
         -- Track which source provided each field for each spring
         CREATE TABLE IF NOT EXISTS field_provenance (
             spring_slug TEXT NOT NULL,

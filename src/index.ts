@@ -18,6 +18,34 @@ interface DBRegion {
   db: D1Database;
 }
 
+interface SpringImage {
+  source: string;
+  image_url: string;
+  thumb_url: string | null;
+  license_code: string | null;
+  license_url: string | null;
+  attribution: string | null;
+  source_url: string | null;
+  is_primary: number;
+  rank: number;
+}
+
+/** Fetch the multi-source image gallery for a spring from its regional D1. */
+async function getSpringImages(db: D1Database, slug: string): Promise<SpringImage[]> {
+  try {
+    const r = await db.prepare(
+      `SELECT source, image_url, thumb_url, license_code, license_url,
+              attribution, source_url, is_primary, rank
+       FROM spring_images WHERE spring_slug = ?
+       ORDER BY is_primary DESC, rank ASC, id ASC LIMIT 12`
+    ).bind(slug).all();
+    return (r.results as unknown as SpringImage[]) ?? [];
+  } catch {
+    // spring_images table may not exist yet on a regional DB pre-migration.
+    return [];
+  }
+}
+
 interface SpringRow {
   name: string;
   slug: string;
@@ -449,7 +477,7 @@ export default {
       const url = new URL(request.url);
       const q = url.searchParams.get('q')?.trim() ?? '';
       const region = url.searchParams.get('region')?.trim() ?? '';
-      const limit = Math.min(parseInt(url.searchParams.get('limit') ?? '50', 10), 100);
+      const limit = Math.min(parseInt(url.searchParams.get('limit') ?? '50', 10), 2000);
 
       let targetDbs = getDatabases(env);
       if (region) {
@@ -479,31 +507,42 @@ export default {
     }
 
     // REST endpoint: GET /spring/:slug — used by the shop's PosterStudio
+    // Sub-paths: /spring/:slug/trails (trail geometry), /spring/:slug/images (gallery)
     if (request.method === 'GET' && new URL(request.url).pathname.startsWith('/spring/')) {
       const parts = new URL(request.url).pathname.replace('/spring/', '').trim();
       // Check for /trails sub-path
       if (parts.endsWith('/trails')) {
         return handleTrailsRequest(parts.replace('/trails', ''), env);
       }
-      const slug = parts;
+      const isImages = parts.endsWith('/images');
+      const slug = isImages ? parts.replace(/\/images$/, '') : parts;
       if (!slug) return Response.json({ error: 'Missing slug' }, { status: 400 });
       const dbs = getDatabases(env);
       let found: SpringRow | null = null;
+      let foundDb: D1Database | null = null;
       for (const { db } of dbs) {
         const row = await db
           .prepare('SELECT name, slug, lat, lon, state, access_type, trailhead_lat, trailhead_lon FROM springs WHERE slug = ? LIMIT 1')
           .bind(slug)
           .first<SpringRow>();
-        if (row) { found = row; break; }
+        if (row) { found = row; foundDb = db; break; }
       }
-      if (!found) return Response.json({ error: 'Spring not found' }, { status: 404, headers: { 'Access-Control-Allow-Origin': '*' } });
+      if (!found || !foundDb) return Response.json({ error: 'Spring not found' }, { status: 404, headers: { 'Access-Control-Allow-Origin': '*' } });
+
+      const images = await getSpringImages(foundDb, slug);
+
+      // Dedicated gallery endpoint: return just the images array.
+      if (isImages) {
+        return Response.json({ slug, count: images.length, images }, { headers: { 'Access-Control-Allow-Origin': '*' } });
+      }
+
       const zoom = found.access_type === 'hike' ? 13 : (found.access_type === 'dirt' || found.access_type === '4wd' ? 12 : 11);
       return Response.json(
         {
           name: found.name, slug: found.slug, lat: found.lat, lng: found.lon,
           state: found.state, access_type: found.access_type,
           trailhead_lat: found.trailhead_lat, trailhead_lon: found.trailhead_lon,
-          zoom,
+          zoom, images,
         },
         { headers: { 'Access-Control-Allow-Origin': '*' } }
       );
