@@ -60,6 +60,27 @@ curl https://<your-worker>.workers.dev/health
 
 ## 2. Website Deployment (Cloudflare Pages)
 
+> **Important — read before deploying the soaktrail site.**
+> The soaktrail website (`sites/soaktrail/`) is a Cloudflare **Pages** project named
+> **`saoktrail`** (legacy typo — do NOT "fix" it; Pages project names cannot be renamed).
+> It serves `soaktrail.com` and `www.soaktrail.com`. The site is SSR (Astro + Cloudflare
+> adapter); Pages uses `dist/_worker.js/` as the SSR worker automatically, so SSR routes
+> like `/locator` are served.
+>
+> **Do NOT deploy the soaktrail site with `wrangler deploy`** — that targets the `assets`
+> config in `sites/soaktrail/wrangler.jsonc` and creates a stray assets-only Worker
+> (`soaktrail.buzzuw2.workers.dev`) that cannot serve SSR. It is not the production site.
+>
+> Direct deploy (what `deploy-all.sh` now does for the soaktrail entry):
+> ```bash
+> cd sites/soaktrail && npm run build
+> npx wrangler pages deploy dist --project-name=saoktrail --branch=main
+> ```
+> The MapTiler key is read from `sites/soaktrail/.env` (`PUBLIC_MAPTILER_KEY`) at build
+> time and inlined into the SSR bundle. The API worker is separate
+> (`soakatlas-mcp.buzzuw2.workers.dev`); the map fetches `/springs` and
+> `/spring/:slug/images` from it (override via `PUBLIC_API_URL`).
+
 ### Connect Repository
 
 1. Log in to [Cloudflare Dashboard](https://dash.cloudflare.com)

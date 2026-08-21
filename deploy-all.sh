@@ -19,17 +19,25 @@ for site in $SITES; do
   fi
   echo "✅ $site built"
 
-  # Soaktrail is SSR — exclude _worker.js from static asset upload
-  if [ "$site" = "soaktrail" ]; then
-    echo "_worker.js" > dist/.assetsignore
-  fi
-
   echo "📦 Deploying $site..."
-  if ! npx wrangler deploy 2>&1; then
-    echo "❌ $site deploy failed"
-    FAILED=1
+  if [ "$site" = "soaktrail" ]; then
+    # Soaktrail is a Cloudflare Pages project (named "saoktrail" — legacy typo),
+    # NOT a Worker. Pages uses dist/_worker.js as the SSR worker automatically,
+    # so SSR routes like /locator are served. Do NOT use `wrangler deploy` here —
+    # that creates a stray assets-only Worker that can't serve SSR.
+    if ! npx wrangler pages deploy dist --project-name=saoktrail --branch=main 2>&1; then
+      echo "❌ $site deploy failed"
+      FAILED=1
+    else
+      echo "✅ $site deployed"
+    fi
   else
-    echo "✅ $site deployed"
+    if ! npx wrangler deploy 2>&1; then
+      echo "❌ $site deploy failed"
+      FAILED=1
+    else
+      echo "✅ $site deployed"
+    fi
   fi
   cd ../..
   echo ""
