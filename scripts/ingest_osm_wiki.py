@@ -232,6 +232,31 @@ def search_wikipedia(title: str) -> str | None:
 
 # --- Phase 4: Wikimedia Commons ---
 
+def _commons_record_from_info(page: dict, info: dict) -> dict | None:
+    """Build a normalized spring_images record from a Commons imageinfo dict."""
+    ext = info.get("extmetadata", {})
+    license_name = ext.get("LicenseShortName", {}).get("value", "")
+    is_cc = any(x in license_name.upper() for x in ["CC BY", "CC0", "PUBLIC DOMAIN", "PD"])
+    if not is_cc:
+        return None
+
+    url = info.get("url", "")
+    if not url or any(url.endswith(e) for e in [".pdf", ".svg", ".ogv", ".webm", ".gif", ".tif", ".tiff"]):
+        return None
+
+    return {
+        "image_url": url,
+        "thumb_url": info.get("thumburl") or info.get("url"),
+        "license_code": license_name,
+        "license_url": ext.get("LicenseUrl", {}).get("value", ""),
+        "attribution": _clean_html(ext.get("Artist", {}).get("value", "")),
+        "source_url": info.get("descriptionurl", ""),
+        "provider_image_id": str(page.get("pageid")) if page.get("pageid") else None,
+        "width": _safe_int(info.get("width")),
+        "height": _safe_int(info.get("height")),
+    }
+
+
 def search_commons_images(query: str) -> list[dict]:
     """Search Wikimedia Commons for CC-licensed images."""
     data = api_get(COMMONS_API, {
@@ -241,39 +266,136 @@ def search_commons_images(query: str) -> list[dict]:
         "gsrnamespace": "6",
         "prop": "imageinfo",
         "iiprop": "url|extmetadata",
+        "iiurlwidth": 400,
         "iiextmetadatalicense": "1",
         "format": "json",
     })
     if not data:
         return []
 
-    images = []
+    images: list[dict] = []
     pages = data.get("query", {}).get("pages", {})
     for page in pages.values():
         info_list = page.get("imageinfo", [])
         if not info_list:
             continue
-        info = info_list[0]
-        ext = info.get("extmetadata", {})
-
-        license_name = ext.get("LicenseShortName", {}).get("value", "")
-        is_cc = any(x in license_name.upper() for x in ["CC BY", "CC0", "PUBLIC DOMAIN", "PD"])
-        if not is_cc:
-            continue
-
-        url = info.get("url", "")
-        if not url or any(url.endswith(ext) for ext in [".pdf", ".svg", ".ogv", ".webm"]):
-            continue
-
-        images.append({
-            "image_url": url,
-            "image_source": "wikimedia_commons",
-            "license_code": license_name,
-            "attribution": _clean_html(ext.get("Artist", {}).get("value", "")),
-            "description_url": info.get("descriptionurl", ""),
-        })
+        rec = _commons_record_from_info(page, info_list[0])
+        if rec:
+            images.append(rec)
 
     return images[:3]  # top 3 images
+
+
+def resolve_commons_files(filenames: list[str], thumb_width: int = 400) -> list[dict]:
+    """Resolve Commons file titles to image URLs + license metadata (batch)."""
+    if not filenames:
+        return []
+    titles = "|".join(f for f in filenames if f)
+    data = api_get(COMMONS_API, {
+        "action": "query",
+        "titles": titles,
+        "prop": "imageinfo",
+        "iiprop": "url|extmetadata",
+        "iiurlwidth": thumb_width,
+        "iiextmetadatalicense": "1",
+        "format": "json",
+    })
+    if not data:
+        return []
+    images: list[dict] = []
+    for page in data.get("query", {}).get("pages", {}).values():
+        info_list = page.get("imageinfo", [])
+        if not info_list:
+            continue
+        rec = _commons_record_from_info(page, info_list[0])
+        if rec:
+            images.append(rec)
+    return images
+
+
+def fetch_wikipedia_images(title: str) -> tuple[dict | None, list[dict]]:
+    """Return (lead_image, other_images) from a Wikipedia article.
+
+    Lead image comes from prop=pageimages (the editor-chosen thumbnail); the
+    remaining article images come from prop=images resolved via Commons
+    imageinfo. Both ultimately resolve to Commons-hosted CC files.
+    """
+    lead: dict | None = None
+    others: list[dict] = []
+
+    # Lead image (editor-curated) — pageimages returns thumbnail.source + original.source,
+    # but NOT license metadata. We capture the filename and resolve it via Commons
+    # imageinfo so the lead carries a proper license/attribution.
+    data = api_get(WIKI_API, {
+        "action": "query",
+        "titles": title,
+        "prop": "pageimages",
+        "piprop": "thumbnail|name|original",
+        "pithumbsize": 400,
+        "format": "json",
+    })
+    if data:
+        for page in data.get("query", {}).get("pages", {}).values():
+            thumb = page.get("thumbnail")
+            if thumb and thumb.get("source"):
+                lead = {
+                    "image_url": (page.get("original", {}) or {}).get("source") or thumb["source"],
+                    "thumb_url": thumb["source"],
+                    "license_code": "",        # resolved below
+                    "license_url": "",
+                    "attribution": "",
+                    "source_url": "",
+                    "provider_image_id": str(page.get("pageid")) if page.get("pageid") else None,
+                    "width": _safe_int(thumb.get("width")),
+                    "height": _safe_int(thumb.get("height")),
+                }
+                # Resolve the lead's own filename for license/attribution.
+                lead_fn = page.get("pageimage")
+                if lead_fn:
+                    resolved = resolve_commons_files([f"File:{lead_fn}"])
+                    if resolved:
+                        lead.update({k: resolved[0][k] for k in
+                                     ("license_code", "license_url", "attribution",
+                                      "source_url", "image_url", "thumb_url",
+                                      "provider_image_id", "width", "height")
+                                     if resolved[0].get(k)})
+                break
+
+    # Article image list — resolve filenames to Commons URLs + license metadata.
+    data2 = api_get(WIKI_API, {
+        "action": "query",
+        "titles": title,
+        "prop": "images",
+        "imlimit": 8,
+        "format": "json",
+    })
+    filenames: list[str] = []
+    if data2:
+        for page in data2.get("query", {}).get("pages", {}).values():
+            for img in page.get("images", []) or []:
+                fn = img.get("title", "")
+                # Skip non-photographic file types and the lead (resolved separately).
+                if fn and not any(fn.lower().endswith(e) for e in [".pdf", ".svg", ".ogv", ".webm", ".gif", ".tif", ".tiff"]):
+                    filenames.append(fn)
+    resolved = resolve_commons_files(filenames[:6])
+    for rec in resolved:
+        # If the resolved URL equals the lead's full URL, treat as the lead.
+        if lead and rec["image_url"] == lead["image_url"]:
+            if not lead.get("license_code"):
+                lead.update({k: rec[k] for k in ("license_code", "license_url", "attribution", "source_url") if rec.get(k)})
+            continue
+        others.append(rec)
+
+    return lead, others
+
+
+def _safe_int(val) -> int | None:
+    if val is None:
+        return None
+    try:
+        return int(val)
+    except (ValueError, TypeError):
+        return None
 
 
 def _clean_html(html: str) -> str:
@@ -409,6 +531,27 @@ def main():
     # Phase 4: Wikimedia Commons images
     print("\n=== Wikimedia Commons ===")
     img_count = 0
+
+    def insert_spring_image(slug: str, source: str, rec: dict, rank: int = 0, is_primary: int = 0):
+        """Insert (or refresh) one row in spring_images, idempotent."""
+        conn.execute(
+            """INSERT INTO spring_images
+               (spring_slug, source, image_url, thumb_url, license_code, license_url,
+                attribution, source_url, provider_image_id, width, height,
+                is_primary, rank, last_fetched)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+               ON CONFLICT(spring_slug, image_url) DO UPDATE SET
+                 thumb_url=excluded.thumb_url, license_code=excluded.license_code,
+                 license_url=excluded.license_url, attribution=excluded.attribution,
+                 source_url=excluded.source_url, provider_image_id=excluded.provider_image_id,
+                 width=excluded.width, height=excluded.height, rank=excluded.rank,
+                 last_fetched=CURRENT_TIMESTAMP""",
+            (slug, source, rec["image_url"], rec.get("thumb_url"), rec.get("license_code"),
+             rec.get("license_url"), rec.get("attribution"), rec.get("source_url"),
+             rec.get("provider_image_id"), rec.get("width"), rec.get("height"),
+             is_primary, rank),
+        )
+
     for spring in springs:
         slug = spring.get("slug", "")
         name = spring.get("name", "")
@@ -418,22 +561,49 @@ def main():
         query = f"{name} hot spring"
         images = search_commons_images(query)
         for j, img in enumerate(images):
-            conn.execute(
-                """INSERT OR REPLACE INTO wiki_images
-                   (spring_slug, image_url, image_source, license_code,
-                    attribution, description_url, is_primary, last_fetched)
-                   VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)""",
-                (slug, img["image_url"], img["image_source"], img["license_code"],
-                 img["attribution"], img["description_url"], 1 if j == 0 else 0),
-            )
+            insert_spring_image(slug, "wikimedia_commons", img, rank=j, is_primary=1 if j == 0 else 0)
             img_count += 1
         if images:
             print(f"  {name}: {len(images)} CC images")
         time.sleep(DELAY)
 
     conn.commit()
+
+    # Phase 5: Wikipedia page images + Wikidata P18 (for matched springs only)
+    print("\n=== Wikipedia + Wikidata images ===")
+    wiki_img_count = 0
+    if not args.skip_wikidata and wd_matches:
+        for slug, wd in wd_matches.items():
+            wiki_title = wd.get("label") or ""
+            # 5a. Wikipedia lead + article images
+            if wiki_title:
+                lead, others = fetch_wikipedia_images(wiki_title)
+                if lead:
+                    insert_spring_image(slug, "wikipedia", lead, rank=0, is_primary=1)
+                    wiki_img_count += 1
+                for j, rec in enumerate(others[:5]):
+                    insert_spring_image(slug, "wikipedia", rec, rank=j + 1, is_primary=0)
+                    wiki_img_count += 1
+                time.sleep(DELAY)
+            # 5b. Wikidata P18 canonical image (already fetched in Phase 2)
+            wd_img = wd.get("image_url")
+            if wd_img:
+                insert_spring_image(
+                    slug, "wikidata",
+                    {"image_url": wd_img, "thumb_url": wd_img,
+                     "license_code": "", "license_url": "", "attribution": "",
+                     "source_url": "", "provider_image_id": None,
+                     "width": None, "height": None},
+                    rank=0, is_primary=1,
+                )
+                wiki_img_count += 1
+            if lead or others or wd_img:
+                print(f"  {slug}: wikipedia lead={'yes' if lead else 'no'}, "
+                      f"others={len(others)}, wikidata={'yes' if wd_img else 'no'}")
+    conn.commit()
     conn.close()
-    print(f"\nDone: OSM={osm_count}, Wiki={wiki_count if not args.skip_wikidata else 0}, Images={img_count}")
+    print(f"\nDone: OSM={osm_count}, Wiki={wiki_count if not args.skip_wikidata else 0}, "
+          f"Commons images={img_count}, Wiki/Wikidata images={wiki_img_count}")
 
 
 if __name__ == "__main__":
