@@ -7,6 +7,7 @@ export const GET: APIRoute = async () => {
 
   const pages = [
     { path: '', priority: '1.0', changefreq: 'daily' },
+    { path: '/locator', priority: '0.9', changefreq: 'weekly' },
     { path: '/about', priority: '0.7', changefreq: 'monthly' },
     { path: '/blog', priority: '0.8', changefreq: 'weekly' },
     { path: '/trip-planner', priority: '0.8', changefreq: 'weekly' },
