@@ -175,4 +175,53 @@ test.describe('SoakTrail.com — page load regression', () => {
     // If D1 is not available, page still shouldn't crash
     expect(text?.length).toBeGreaterThan(50);
   });
+
+});
+
+test.describe('Locator page (nationwide map explorer)', () => {
+  test('loads without crashing and shows either the map or a clear fallback', async ({ page }) => {
+    // Given the map explorer page
+    const errors: string[] = [];
+    page.on('pageerror', (err) => errors.push(err.message));
+
+    // When it loads
+    await page.goto('/locator', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(1500);
+
+    // Then the heading renders (scoped to page content — astro dev's toolbar overlay
+    // injects its own h1 elements ("Audit", "Settings", etc.) that a bare h1 locator picks up)
+    const h1 = page.getByRole('heading', { level: 1, name: 'Hot Springs Locator' });
+    await expect(h1).toBeVisible();
+
+    // And either the interactive map or the "key not configured" fallback shows —
+    // never a blank/broken page
+    const mapOrFallback = page.locator('.soak-locator-wrap').or(page.getByText('Map disabled'));
+    await expect(mapOrFallback.first()).toBeVisible();
+    expect(errors).toHaveLength(0);
+  });
+
+  test('filters render and can be changed without throwing (when the map key is configured)', async ({ page }) => {
+    // Given the map explorer page
+    await page.goto('/locator', { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(1500);
+
+    const filterBar = page.locator('.soak-locator-filters');
+    if ((await filterBar.count()) === 0) {
+      test.skip(true, 'PUBLIC_MAPTILER_KEY not configured in this environment — filter UI does not render');
+      return;
+    }
+
+    const errors: string[] = [];
+    page.on('pageerror', (err) => errors.push(err.message));
+
+    // When a filter is changed
+    const stateSelect = filterBar.locator('select').first();
+    await stateSelect.selectOption({ index: 1 });
+    await page.waitForTimeout(500);
+
+    // Then the springs count updates and nothing throws
+    const count = page.locator('.soak-locator-count');
+    await expect(count).toBeVisible();
+    expect(errors).toHaveLength(0);
+  });
 });
