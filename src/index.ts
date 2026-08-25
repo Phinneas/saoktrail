@@ -492,13 +492,15 @@ export default {
       if (q) { whereClauses.push('name LIKE ?'); params.push(`%${q}%`); }
 
       const where = whereClauses.length > 0 ? whereClauses.join(' AND ') : '1=1';
-      const sql = `SELECT name, slug, lat, lon, state, region FROM springs WHERE ${where} ORDER BY name LIMIT ?`;
+      const sql = `SELECT name, slug, lat, lon, state, region, temperature_f, access_type, fees, fee_amount_usd, clothing_policy FROM springs WHERE ${where} ORDER BY name LIMIT ?`;
       params.push(limit);
 
       const results = await Promise.all(targetDbs.map(async ({ db, region: r }) => {
         const res = await db.prepare(sql).bind(...params).all();
         return (res.results as SpringRow[]).map(s => ({
           name: s.name, slug: s.slug, lat: s.lat, lng: s.lon, state: s.state, region: r,
+          temperature_f: s.temperature_f, access_type: s.access_type,
+          fees: s.fees, fee_amount_usd: s.fee_amount_usd, clothing_policy: s.clothing_policy,
         }));
       }));
 
