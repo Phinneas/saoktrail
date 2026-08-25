@@ -29,6 +29,11 @@ database_id = "5666d199-3ec6-4076-8401-d96e072d4a17"
 [ai]
 binding = "AI"
 
+# User-submitted condition-report photos (moderated before public).
+[[r2_buckets]]
+binding = "UGC_BUCKET"
+bucket_name = "soaktrail-ugc"
+
 [triggers]
 # 7 AM UTC (midnight PDT) — autoposter: Asana → MiniMax → D1 → mark Asana done
 # 8 AM UTC (1 AM PDT) — deploy trigger: calls GitHub Actions to rebuild + deploy all sites

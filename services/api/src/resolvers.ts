@@ -6,6 +6,8 @@ export type Bindings = {
   WOLLY_CMS_API?: string;
   GEMINI_API_KEY?: string;
   ADMIN_SECRET?: string;
+  UGC_BUCKET?: R2Bucket;
+  TURNSTILE_SECRET_KEY?: string;
 };
 
 // Helper to parse JSON fields

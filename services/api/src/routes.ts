@@ -434,6 +434,157 @@ export const createApp = () => {
     }
   });
 
+  // ---- Condition reports (user-submitted, moderated) ----
+  // In-memory rate limiting for report submissions (5/hour per IP)
+  const reportRateLimits = new Map<string, { count: number; windowStart: number }>();
+
+  // Public: approved reports for a spring
+  app.get('/api/reports', async (c) => {
+    const slug = c.req.query('slug')?.trim();
+    if (!slug) return c.json({ error: 'Missing slug' }, 400);
+    const limit = Math.min(parseInt(c.req.query('limit') || '20', 10), 50);
+    const rows = await c.env.DB
+      .prepare('SELECT id, spring_slug, visitor_name, visit_date, temperature_observed, flow_status, crowd_level, access_status, body, photo_r2_key, created_at FROM condition_reports WHERE spring_slug = ? AND status = ? ORDER BY visit_date DESC, created_at DESC LIMIT ?')
+      .bind(slug, 'approved', limit).all();
+    const reports = (rows.results || []).map((r: any) => ({
+      ...r,
+      photo_url: r.photo_r2_key ? `/api/ugc/${r.photo_r2_key}` : null,
+      photo_r2_key: undefined,
+    }));
+    return c.json({ reports, count: reports.length });
+  });
+
+  // Public: stream an approved report's photo from R2 (pending photos stay private)
+  app.get('/api/ugc/:key', async (c) => {
+    const key = c.req.param('key');
+    const row = await c.env.DB
+      .prepare('SELECT status FROM condition_reports WHERE photo_r2_key = ? LIMIT 1')
+      .bind(key).first();
+    if (!row || row.status !== 'approved') return c.text('Not found', 404);
+    const obj = await c.env.UGC_BUCKET?.get(key);
+    if (!obj) return c.text('Not found', 404);
+    return new Response(obj.body, {
+      headers: {
+        'Content-Type': (obj.httpMetadata as any)?.contentType || 'image/jpeg',
+        'Cache-Control': 'public, max-age=86400',
+      },
+    });
+  });
+
+  // Public: submit a condition report (multipart/form-data with optional photo)
+  app.post('/api/reports', async (c) => {
+    const ip = c.req.header('CF-Connecting-IP') || '127.0.0.1';
+    const now = Date.now();
+    const oneHourMs = 60 * 60 * 1000;
+    const rl = reportRateLimits.get(ip);
+    if (rl) {
+      if (now - rl.windowStart > oneHourMs) reportRateLimits.set(ip, { count: 1, windowStart: now });
+      else if (rl.count >= 5) return c.json({ error: 'Too many submissions — try again later.' }, 429);
+      else rl.count++;
+    } else {
+      reportRateLimits.set(ip, { count: 1, windowStart: now });
+    }
+
+    const form = await c.req.formData();
+    const springSlug = String(form.get('spring_slug') || '').trim();
+    const site = String(form.get('site') || '').trim();
+    const visitorName = String(form.get('visitor_name') || '').trim().slice(0, 80);
+    const visitDate = String(form.get('visit_date') || '').trim();
+    const tempObs = String(form.get('temperature_observed') || '').trim();
+    const flowStatus = String(form.get('flow_status') || 'unknown').trim();
+    const crowdLevel = String(form.get('crowd_level') || 'unknown').trim();
+    const accessStatus = String(form.get('access_status') || 'unknown').trim();
+    const body = String(form.get('body') || '').trim().slice(0, 2000);
+    const turnstileToken = String(form.get('cf-turnstile-response') || '').trim();
+
+    if (!springSlug || !site) return c.json({ error: 'Missing required fields.' }, 400);
+    // Validate slug format (the slug comes from the site's springs.json; we don't
+    // check DB existence because services/api binds a single regional DB while the
+    // sites span all 6 regions — moderation is the real abuse gate).
+    if (!/^[a-z0-9][a-z0-9-]{0,119}$/.test(springSlug)) return c.json({ error: 'Invalid spring slug.' }, 400);
+
+    // Turnstile verification (skipped if no secret configured — dev mode).
+    let turnstileOk = 0;
+    const secretKey = c.env.TURNSTILE_SECRET_KEY;
+    if (secretKey) {
+      if (!turnstileToken) return c.json({ error: 'Spam check failed.' }, 400);
+      const verify = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ secret: secretKey, response: turnstileToken, remoteip: ip }),
+      });
+      const result: any = await verify.json();
+      turnstileOk = result.success ? 1 : 0;
+      if (!result.success) return c.json({ error: 'Spam check failed.' }, 400);
+    } else {
+      turnstileOk = 1; // dev: no secret configured, allow
+    }
+
+    // Optional photo upload to R2.
+    let photoKey: string | null = null;
+    const file = form.get('photo');
+    if (file && typeof file === 'object' && 'arrayBuffer' in file && (file as File).name) {
+      const f = file as File;
+      const ext = (f.name.split('.').pop() || 'jpg').toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 4) || 'jpg';
+      photoKey = `${crypto.randomUUID()}.${ext}`;
+      await c.env.UGC_BUCKET?.put(photoKey, await f.arrayBuffer(), {
+        httpMetadata: { contentType: f.type || 'image/jpeg' },
+      });
+    }
+
+    const out = await c.env.DB.prepare(
+      'INSERT INTO condition_reports (spring_slug, site, visitor_name, visit_date, temperature_observed, flow_status, crowd_level, access_status, body, photo_r2_key, status, submitter_ip, turnstile_ok) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)'
+    ).bind(
+      springSlug, site, visitorName || null, visitDate || null,
+      tempObs ? parseInt(tempObs, 10) : null,
+      flowStatus, crowdLevel, accessStatus, body || null,
+      photoKey, 'pending', ip, turnstileOk
+    ).run();
+
+    return c.json({ ok: true, id: out.meta?.last_row_id, status: 'pending' });
+  });
+
+  // Admin: list reports (optionally filtered by status)
+  app.get('/api/admin/reports', async (c) => {
+    if (!checkAdmin(c)) return c.text('Unauthorized', 401);
+    const status = c.req.query('status') || 'pending';
+    const rows = await c.env.DB
+      .prepare('SELECT id, spring_slug, site, visitor_name, visit_date, temperature_observed, flow_status, crowd_level, access_status, body, photo_r2_key, status, created_at FROM condition_reports WHERE status = ? ORDER BY created_at DESC LIMIT 200')
+      .bind(status).all();
+    const reports = (rows.results || []).map((r: any) => ({
+      ...r,
+      photo_url: r.photo_r2_key ? `/api/admin/ugc/${r.photo_r2_key}` : null,
+    }));
+    return c.json({ reports, count: reports.length });
+  });
+
+  // Admin: stream any photo (pending or approved) for moderation
+  app.get('/api/admin/ugc/:key', async (c) => {
+    if (!checkAdmin(c)) return c.text('Unauthorized', 401);
+    const key = c.req.param('key');
+    const obj = await c.env.UGC_BUCKET?.get(key);
+    if (!obj) return c.text('Not found', 404);
+    return new Response(obj.body, {
+      headers: { 'Content-Type': (obj.httpMetadata as any)?.contentType || 'image/jpeg', 'Cache-Control': 'no-store' },
+    });
+  });
+
+  // Admin: approve a report
+  app.post('/api/admin/reports/:id/approve', async (c) => {
+    if (!checkAdmin(c)) return c.text('Unauthorized', 401);
+    const id = parseInt(c.req.param('id'), 10);
+    await c.env.DB.prepare("UPDATE condition_reports SET status = 'approved', moderated_at = datetime('now') WHERE id = ?").bind(id).run();
+    return c.json({ ok: true, id, status: 'approved' });
+  });
+
+  // Admin: reject a report
+  app.post('/api/admin/reports/:id/reject', async (c) => {
+    if (!checkAdmin(c)) return c.text('Unauthorized', 401);
+    const id = parseInt(c.req.param('id'), 10);
+    await c.env.DB.prepare("UPDATE condition_reports SET status = 'rejected', moderated_at = datetime('now') WHERE id = ?").bind(id).run();
+    return c.json({ ok: true, id, status: 'rejected' });
+  });
+
   // Chat endpoint — AI Trip Assistant
   app.post('/api/chat', async (c) => {
     // In-memory rate limiting (20 req/hour per IP)
