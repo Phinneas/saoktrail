@@ -46,6 +46,40 @@ const breadcrumbSchema = {
 </BaseLayout>
 
 <style is:global>
+  .soak-locator-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  .soak-locator-filters select {
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid #d8d2c6;
+    background: #fff;
+    color: #2a2a2a;
+    font-size: 0.85rem;
+  }
+  .soak-locator-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    color: #3a3a3a;
+    padding: 0.4rem 0.6rem;
+  }
+  .soak-locator-clear {
+    padding: 0.4rem 0.7rem;
+    border-radius: 0.5rem;
+    border: 1px solid #b8722e;
+    background: transparent;
+    color: #b8722e;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  .soak-locator-clear:hover { background: #b8722e; color: #fff; }
+
   .soak-locator-wrap {
     position: relative;
     width: 100%;
