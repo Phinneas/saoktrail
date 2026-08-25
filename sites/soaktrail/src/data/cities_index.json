@@ -1,0 +1,602 @@
+{
+  "phoenix-az": {
+    "city": "Phoenix",
+    "state": "az",
+    "population": 4121103,
+    "count": 5
+  },
+  "seattle-wa": {
+    "city": "Seattle",
+    "state": "wa",
+    "population": 3642006,
+    "count": 2
+  },
+  "denver-co": {
+    "city": "Denver",
+    "state": "co",
+    "population": 2714768,
+    "count": 2
+  },
+  "las-vegas-nv": {
+    "city": "Las Vegas",
+    "state": "nv",
+    "population": 2299189,
+    "count": 6
+  },
+  "portland-or": {
+    "city": "Portland",
+    "state": "or",
+    "population": 2115140,
+    "count": 12
+  },
+  "salt-lake-city-ut": {
+    "city": "Salt Lake City",
+    "state": "ut",
+    "population": 1183003,
+    "count": 4
+  },
+  "tucson-az": {
+    "city": "Tucson",
+    "state": "az",
+    "population": 890860,
+    "count": 2
+  },
+  "albuquerque-nm": {
+    "city": "Albuquerque",
+    "state": "nm",
+    "population": 765360,
+    "count": 2
+  },
+  "provo-ut": {
+    "city": "Provo",
+    "state": "ut",
+    "population": 641732,
+    "count": 4
+  },
+  "ogden-ut": {
+    "city": "Ogden",
+    "state": "ut",
+    "population": 630643,
+    "count": 5
+  },
+  "bakersfield-ca": {
+    "city": "Bakersfield",
+    "state": "ca",
+    "population": 566351,
+    "count": 1
+  },
+  "mesa-az": {
+    "city": "Mesa",
+    "state": "az",
+    "population": 511764,
+    "count": 2
+  },
+  "reno-nv": {
+    "city": "Reno",
+    "state": "nv",
+    "population": 466706,
+    "count": 4
+  },
+  "boise-id": {
+    "city": "Boise",
+    "state": "id",
+    "population": 448305,
+    "count": 41
+  },
+  "aurora-co": {
+    "city": "Aurora",
+    "state": "co",
+    "population": 394432,
+    "count": 2
+  },
+  "oxnard-ca": {
+    "city": "Oxnard",
+    "state": "ca",
+    "population": 369935,
+    "count": 3
+  },
+  "indio-ca": {
+    "city": "Indio",
+    "state": "ca",
+    "population": 366757,
+    "count": 1
+  },
+  "fort-collins-co": {
+    "city": "Fort Collins",
+    "state": "co",
+    "population": 336364,
+    "count": 1
+  },
+  "henderson-nv": {
+    "city": "Henderson",
+    "state": "nv",
+    "population": 332141,
+    "count": 5
+  },
+  "santa-rosa-ca": {
+    "city": "Santa Rosa",
+    "state": "ca",
+    "population": 292251,
+    "count": 3
+  },
+  "gilbert-az": {
+    "city": "Gilbert",
+    "state": "az",
+    "population": 280262,
+    "count": 2
+  },
+  "chandler-az": {
+    "city": "Chandler",
+    "state": "az",
+    "population": 280136,
+    "count": 2
+  },
+  "north-las-vegas-nv": {
+    "city": "North Las Vegas",
+    "state": "nv",
+    "population": 278595,
+    "count": 6
+  },
+  "eugene-or": {
+    "city": "Eugene",
+    "state": "or",
+    "population": 272404,
+    "count": 6
+  },
+  "santa-clarita-ca": {
+    "city": "Santa Clarita",
+    "state": "ca",
+    "population": 270147,
+    "count": 1
+  },
+  "salem-or": {
+    "city": "Salem",
+    "state": "or",
+    "population": 268719,
+    "count": 2
+  },
+  "glendale-az": {
+    "city": "Glendale",
+    "state": "az",
+    "population": 252833,
+    "count": 5
+  },
+  "scottsdale-az": {
+    "city": "Scottsdale",
+    "state": "az",
+    "population": 243821,
+    "count": 3
+  },
+  "enterprise-nv": {
+    "city": "Enterprise",
+    "state": "nv",
+    "population": 240464,
+    "count": 5
+  },
+  "tacoma-wa": {
+    "city": "Tacoma",
+    "state": "wa",
+    "population": 222758,
+    "count": 2
+  },
+  "spring-valley-nv": {
+    "city": "Spring Valley",
+    "state": "nv",
+    "population": 219187,
+    "count": 6
+  },
+  "moreno-valley-ca": {
+    "city": "Moreno Valley",
+    "state": "ca",
+    "population": 211666,
+    "count": 1
+  },
+  "thousand-oaks-ca": {
+    "city": "Thousand Oaks",
+    "state": "ca",
+    "population": 207637,
+    "count": 3
+  },
+  "santa-barbara-ca": {
+    "city": "Santa Barbara",
+    "state": "ca",
+    "population": 202039,
+    "count": 3
+  },
+  "nampa-id": {
+    "city": "Nampa",
+    "state": "id",
+    "population": 201956,
+    "count": 25
+  },
+  "sunrise-manor-nv": {
+    "city": "Sunrise Manor",
+    "state": "nv",
+    "population": 200218,
+    "count": 5
+  },
+  "peoria-az": {
+    "city": "Peoria",
+    "state": "az",
+    "population": 196906,
+    "count": 5
+  },
+  "vancouver-wa": {
+    "city": "Vancouver",
+    "state": "wa",
+    "population": 195300,
+    "count": 8
+  },
+  "tempe-az": {
+    "city": "Tempe",
+    "state": "az",
+    "population": 188065,
+    "count": 3
+  },
+  "paradise-nv": {
+    "city": "Paradise",
+    "state": "nv",
+    "population": 185913,
+    "count": 6
+  },
+  "hemet-ca": {
+    "city": "Hemet",
+    "state": "ca",
+    "population": 185006,
+    "count": 1
+  },
+  "salinas-ca": {
+    "city": "Salinas",
+    "state": "ca",
+    "population": 173715,
+    "count": 1
+  },
+  "medford-or": {
+    "city": "Medford",
+    "state": "or",
+    "population": 170502,
+    "count": 2
+  },
+  "visalia-ca": {
+    "city": "Visalia",
+    "state": "ca",
+    "population": 167944,
+    "count": 1
+  },
+  "marysville-wa": {
+    "city": "Marysville",
+    "state": "wa",
+    "population": 166250,
+    "count": 2
+  },
+  "lakewood-co": {
+    "city": "Lakewood",
+    "state": "co",
+    "population": 156583,
+    "count": 2
+  },
+  "surprise-az": {
+    "city": "Surprise",
+    "state": "az",
+    "population": 154948,
+    "count": 5
+  },
+  "bellevue-wa": {
+    "city": "Bellevue",
+    "state": "wa",
+    "population": 151847,
+    "count": 3
+  },
+  "st-george-ut": {
+    "city": "St. George",
+    "state": "ut",
+    "population": 148405,
+    "count": 4
+  },
+  "santa-maria-ca": {
+    "city": "Santa Maria",
+    "state": "ca",
+    "population": 144941,
+    "count": 1
+  },
+  "thornton-co": {
+    "city": "Thornton",
+    "state": "co",
+    "population": 144187,
+    "count": 2
+  },
+  "greeley-co": {
+    "city": "Greeley",
+    "state": "co",
+    "population": 139842,
+    "count": 1
+  },
+  "las-cruces-nm": {
+    "city": "Las Cruces",
+    "state": "nm",
+    "population": 139530,
+    "count": 1
+  },
+  "west-valley-city-ut": {
+    "city": "West Valley City",
+    "state": "ut",
+    "population": 138437,
+    "count": 4
+  },
+  "kent-wa": {
+    "city": "Kent",
+    "state": "wa",
+    "population": 135603,
+    "count": 3
+  },
+  "bellingham-wa": {
+    "city": "Bellingham",
+    "state": "wa",
+    "population": 135591,
+    "count": 3
+  },
+  "meridian-id": {
+    "city": "Meridian",
+    "state": "id",
+    "population": 130138,
+    "count": 32
+  },
+  "billings-mt": {
+    "city": "Billings",
+    "state": "mt",
+    "population": 129267,
+    "count": 1
+  },
+  "simi-valley-ca": {
+    "city": "Simi Valley",
+    "state": "ca",
+    "population": 127125,
+    "count": 1
+  },
+  "yuba-city-ca": {
+    "city": "Yuba City",
+    "state": "ca",
+    "population": 124653,
+    "count": 1
+  },
+  "seaside-ca": {
+    "city": "Seaside",
+    "state": "ca",
+    "population": 124566,
+    "count": 1
+  },
+  "logan-ut": {
+    "city": "Logan",
+    "state": "ut",
+    "population": 124449,
+    "count": 16
+  },
+  "arvada-co": {
+    "city": "Arvada",
+    "state": "co",
+    "population": 122634,
+    "count": 2
+  },
+  "boulder-co": {
+    "city": "Boulder",
+    "state": "co",
+    "population": 120289,
+    "count": 3
+  },
+  "redding-ca": {
+    "city": "Redding",
+    "state": "ca",
+    "population": 117275,
+    "count": 1
+  },
+  "west-jordan-ut": {
+    "city": "West Jordan",
+    "state": "ut",
+    "population": 116692,
+    "count": 5
+  },
+  "westminster-co": {
+    "city": "Westminster",
+    "state": "co",
+    "population": 115484,
+    "count": 2
+  },
+  "bend-or": {
+    "city": "Bend",
+    "state": "or",
+    "population": 113075,
+    "count": 12
+  },
+  "gresham-or": {
+    "city": "Gresham",
+    "state": "or",
+    "population": 112378,
+    "count": 12
+  },
+  "everett-wa": {
+    "city": "Everett",
+    "state": "wa",
+    "population": 111845,
+    "count": 2
+  },
+  "idaho-falls-id": {
+    "city": "Idaho Falls",
+    "state": "id",
+    "population": 111137,
+    "count": 13
+  },
+  "sparks-nv": {
+    "city": "Sparks",
+    "state": "nv",
+    "population": 110024,
+    "count": 4
+  },
+  "san-buenaventura-ca": {
+    "city": "San Buenaventura",
+    "state": "ca",
+    "population": 109857,
+    "count": 3
+  },
+  "san-tan-valley-az": {
+    "city": "San Tan Valley",
+    "state": "az",
+    "population": 109189,
+    "count": 1
+  },
+  "rio-rancho-nm": {
+    "city": "Rio Rancho",
+    "state": "nm",
+    "population": 108515,
+    "count": 4
+  },
+  "chico-ca": {
+    "city": "Chico",
+    "state": "ca",
+    "population": 108267,
+    "count": 1
+  },
+  "hillsboro-or": {
+    "city": "Hillsboro",
+    "state": "or",
+    "population": 108231,
+    "count": 2
+  },
+  "centennial-co": {
+    "city": "Centennial",
+    "state": "co",
+    "population": 108201,
+    "count": 2
+  },
+  "goodyear-az": {
+    "city": "Goodyear",
+    "state": "az",
+    "population": 107645,
+    "count": 4
+  },
+  "renton-wa": {
+    "city": "Renton",
+    "state": "wa",
+    "population": 105317,
+    "count": 2
+  },
+  "buckeye-az": {
+    "city": "Buckeye",
+    "state": "az",
+    "population": 104923,
+    "count": 5
+  },
+  "longmont-co": {
+    "city": "Longmont",
+    "state": "co",
+    "population": 102512,
+    "count": 2
+  },
+  "highlands-ranch-co": {
+    "city": "Highlands Ranch",
+    "state": "co",
+    "population": 102257,
+    "count": 2
+  },
+  "santa-fe-nm": {
+    "city": "Santa Fe",
+    "state": "nm",
+    "population": 100264,
+    "count": 5
+  },
+  "lafayette-co": {
+    "city": "Lafayette",
+    "state": "co",
+    "population": 99552,
+    "count": 2
+  },
+  "federal-way-wa": {
+    "city": "Federal Way",
+    "state": "wa",
+    "population": 99493,
+    "count": 3
+  },
+  "prescott-valley-az": {
+    "city": "Prescott Valley",
+    "state": "az",
+    "population": 98921,
+    "count": 3
+  },
+  "beaverton-or": {
+    "city": "Beaverton",
+    "state": "or",
+    "population": 97812,
+    "count": 6
+  },
+  "orem-ut": {
+    "city": "Orem",
+    "state": "ut",
+    "population": 97182,
+    "count": 4
+  },
+  "sandy-ut": {
+    "city": "Sandy",
+    "state": "ut",
+    "population": 94291,
+    "count": 5
+  },
+  "kirkland-wa": {
+    "city": "Kirkland",
+    "state": "wa",
+    "population": 92621,
+    "count": 3
+  },
+  "avondale-az": {
+    "city": "Avondale",
+    "state": "az",
+    "population": 92477,
+    "count": 5
+  },
+  "missoula-mt": {
+    "city": "Missoula",
+    "state": "mt",
+    "population": 90522,
+    "count": 3
+  },
+  "auburn-wa": {
+    "city": "Auburn",
+    "state": "wa",
+    "population": 85676,
+    "count": 3
+  },
+  "lehi-ut": {
+    "city": "Lehi",
+    "state": "ut",
+    "population": 85173,
+    "count": 4
+  },
+  "wenatchee-wa": {
+    "city": "Wenatchee",
+    "state": "wa",
+    "population": 85048,
+    "count": 1
+  },
+  "layton-ut": {
+    "city": "Layton",
+    "state": "ut",
+    "population": 83286,
+    "count": 6
+  },
+  "south-jordan-ut": {
+    "city": "South Jordan",
+    "state": "ut",
+    "population": 82686,
+    "count": 4
+  },
+  "napa-ca": {
+    "city": "Napa",
+    "state": "ca",
+    "population": 82103,
+    "count": 2
+  },
+  "castle-rock-co": {
+    "city": "Castle Rock",
+    "state": "co",
+    "population": 79123,
+    "count": 2
+  }
+}

@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import nearCityData from '../../data/near_city_pages.json';
+import cityIndex from '../../data/cities_index.json';
+import { stateName, accessLabel } from '../../lib/states';
+
+export const prerender = true;
+
+interface NearbySpring {
+  slug: string;
+  name: string;
+  state: string;
+  region: string | null;
+  distance_mi: number;
+  temperature_f: number | null;
+  access_type: string | null;
+  site_url: string | null;
+}
+
+interface CityPage {
+  city: string;
+  state: string;
+  lat: number;
+  lng: number;
+  population: number;
+  slug: string;
+  count: number;
+  springs: NearbySpring[];
+}
+
+export async function getStaticPaths() {
+  return Object.keys(nearCityData).map((slug) => ({
+    params: { city: slug },
+    props: { data: nearCityData[slug] as CityPage },
+  }));
+}
+
+const { data } = Astro.props as { data: CityPage };
+const stateFull = stateName(data.state);
+const canonical = `https://soaktrail.com/near/${data.slug}`;
+const title = `Hot Springs Near ${data.city}, ${stateFull} (${data.count} Within 50 Miles)`;
+const description = `${data.count} hot springs within 50 miles of ${data.city}, ${stateFull}, sorted by driving distance — with temperatures, access notes, and links to plan your soak.`;
+
+const breadcrumbSchema = {
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Near Cities', item: 'https://soaktrail.com/near' },
+    { '@type': 'ListItem', position: 3, name: `${data.city}, ${stateFull}`, item: canonical },
+  ],
+};
+
+const itemListSchema = {
+  '@type': 'ItemList',
+  name: `Hot springs near ${data.city}, ${stateFull}`,
+  numberOfItems: data.count,
+  itemListElement: data.springs.map((s, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: s.name,
+    url: s.site_url || canonical,
+  })),
+};
+
+// Internal linking mesh: up to 8 other cities in the same state, by population.
+const sameStateCities = (Object.entries(cityIndex) as [string, { city: string; state: string; population: number; count: number }][])
+  .filter(([, c]) => c.state === data.state && c.city !== data.city)
+  .sort((a, b) => b[1].population - a[1].population)
+  .slice(0, 8);
+
+const cityQuery = encodeURIComponent(`${data.city}, ${stateFull}`);
+---
+
+<BaseLayout title={title} description={description} canonicalUrl={canonical} jsonLd={[breadcrumbSchema, itemListSchema]}>
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Near Cities', href: '/near' }, { label: `${data.city}, ${stateFull}` }]} />
+
+    <h1 class="font-display text-4xl font-bold text-sa-dark mt-8 mb-3">Hot Springs Near {data.city}, {stateFull}</h1>
+    <p class="text-lg text-sa-dark/80 leading-relaxed max-w-2xl">
+      {data.count} hot spring{data.count === 1 ? '' : 's'} within 50 miles of {data.city},
+      sorted by distance from the city center. Each listing links to its full guide on the
+      regional site — temperatures, access, and what to expect.
+    </p>
+
+    <section class="mt-10">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-4">
+        {data.count} spring{data.count === 1 ? '' : 's'} within 50 miles
+      </h2>
+      <ol class="divide-y divide-sa-dark/10 rounded-lg border border-sa-dark/10 bg-white/60">
+        {data.springs.map((s, i) => (
+          <li class="flex items-center justify-between gap-4 px-4 py-4">
+            <div class="flex items-center gap-3 min-w-0">
+              <span class="font-mono text-sm text-sa-dark/40 w-6 text-right shrink-0">{i + 1}</span>
+              <div class="min-w-0">
+                <p class="font-display font-bold text-sa-dark truncate">
+                  {s.site_url ? (
+                    <a href={s.site_url} target="_blank" rel="noopener noreferrer" class="hover:text-sa-copper">{s.name}</a>
+                  ) : s.name}
+                </p>
+                <p class="text-xs text-sa-dark/50 capitalize mt-0.5">
+                  {stateName(s.state)}
+                  {s.temperature_f ? ` · ${s.temperature_f}°F` : ''}
+                  {accessLabel(s.access_type) ? ` · ${accessLabel(s.access_type)}` : ''}
+                </p>
+              </div>
+            </div>
+            <div class="text-right shrink-0">
+              <p class="font-mono font-bold text-sa-copper">{s.distance_mi} <span class="text-xs font-normal text-sa-dark/50">mi</span></p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="mt-12">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-3">Plan your trip</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <a href="/locator" class="block rounded-lg border border-sa-dark/10 bg-white/60 p-5 hover:border-sa-copper hover:shadow-sm transition">
+          <h3 class="font-display text-lg font-bold text-sa-dark">Open the locator map</h3>
+          <p class="text-sm text-sa-dark/70 mt-1">See every hot spring on an interactive map and filter by access, temperature, and fees.</p>
+        </a>
+        <a href="/trip-planner" class="block rounded-lg border border-sa-dark/10 bg-white/60 p-5 hover:border-sa-copper hover:shadow-sm transition">
+          <h3 class="font-display text-lg font-bold text-sa-dark">Build an itinerary</h3>
+          <p class="text-sm text-sa-dark/70 mt-1">Turn these springs into a road-trip route with camping and lodging along the way.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="mt-12">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-3">Where to stay near {data.city}</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <a href={`https://www.booking.com/searchresults.html?ss=${cityQuery}`} target="_blank" rel="sponsored noopener" class="block rounded-lg border border-sa-dark/10 bg-white/60 p-5 hover:border-sa-copper transition">
+          <h3 class="font-display text-base font-bold text-sa-dark">Hotels &amp; lodges</h3>
+          <p class="text-sm text-sa-dark/70 mt-1">Compare hotels and vacation rentals in {data.city} on Booking.com.</p>
+        </a>
+        <a href={`https://www.hipcamp.com/en-US/search?lat=${data.lat}&lng=${data.lng}&radius=50`} target="_blank" rel="sponsored noopener" class="block rounded-lg border border-sa-dark/10 bg-white/60 p-5 hover:border-sa-copper transition">
+          <h3 class="font-display text-base font-bold text-sa-dark">Camping &amp; cabins</h3>
+          <p class="text-sm text-sa-dark/70 mt-1">Tent sites, cabins, and glamping within 50 miles on Hipcamp.</p>
+        </a>
+        <a href={`https://www.vrbo.com/search?destination=${cityQuery}`} target="_blank" rel="sponsored noopener" class="block rounded-lg border border-sa-dark/10 bg-white/60 p-5 hover:border-sa-copper transition">
+          <h3 class="font-display text-base font-bold text-sa-dark">Vacation rentals</h3>
+          <p class="text-sm text-sa-dark/70 mt-1">Whole-home rentals near {data.city} on Vrbo for groups and longer stays.</p>
+        </a>
+      </div>
+    </section>
+
+    {sameStateCities.length > 0 && (
+      <section class="mt-12">
+        <h2 class="font-display text-2xl font-bold text-sa-dark mb-4">Other cities in {stateFull}</h2>
+        <div class="flex flex-wrap gap-2">
+          {sameStateCities.map(([slug, c]) => (
+            <a href={`/near/${slug}`} class="inline-block rounded-full border border-sa-dark/10 bg-white/60 px-4 py-2 text-sm text-sa-dark hover:border-sa-copper hover:text-sa-copper transition">
+              {c.city} <span class="text-sa-dark/40">· {c.count}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <div class="mt-10">
+      <a href="/near" class="text-sa-copper hover:underline">← All near-city guides</a>
+    </div>
+  </div>
+</BaseLayout>

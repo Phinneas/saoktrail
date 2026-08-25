@@ -9,6 +9,7 @@ export const GET: APIRoute = async () => {
     { loc: `${SITE_URL}/sitemap-pages.xml`, lastmod: now },
     { loc: `${SITE_URL}/sitemap-blog.xml`, lastmod: now },
     { loc: `${SITE_URL}/sitemap-minerals.xml`, lastmod: now },
+    { loc: `${SITE_URL}/sitemap-near.xml`, lastmod: now },
     { loc: `${SITE_URL}/sitemap-regions.xml`, lastmod: now },
     { loc: `${SITE_URL}/sitemap-itineraries.xml`, lastmod: now },
   ];

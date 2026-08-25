@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import cityIndex from '../../data/cities_index.json';
+import { stateName } from '../../lib/states';
+
+export const prerender = true;
+
+interface IndexEntry {
+  city: string;
+  state: string;
+  population: number;
+  count: number;
+}
+
+const entries = Object.entries(cityIndex) as [string, IndexEntry][];
+
+// Group by state, sort states alphabetically by full name, cities by population desc.
+const byState: Record<string, [string, IndexEntry][]> = {};
+for (const [slug, c] of entries) {
+  (byState[c.state] ??= []).push([slug, c]);
+}
+const stateGroups = Object.entries(byState)
+  .map(([state, cities]) => ({
+    state,
+    name: stateName(state),
+    cities: cities.sort((a, b) => b[1].population - a[1].population),
+  total: cities.length,
+  springs: cities.reduce((n, [, c]) => n + c.count, 0),
+  topPop: cities[0]?.[1].population ?? 0,
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const totalCities = entries.length;
+const totalSprings = entries.reduce((n, [, c]) => n + c.count, 0);
+
+const description = `Browse ${totalCities.toLocaleString()} city guides to hot springs across ${stateGroups.length} states — every US city with a hot spring within 50 miles, with distances, temperatures, and where to stay.`;
+
+const breadcrumbSchema = {
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Near Cities', item: 'https://soaktrail.com/near' },
+  ],
+};
+---
+
+<BaseLayout title="Hot Springs Near You — City Guides | Soak Trail" description={description} canonicalUrl="https://soaktrail.com/near" jsonLd={breadcrumbSchema}>
+  <div class="container mx-auto px-4 py-12 max-w-5xl">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Near Cities' }]} />
+
+    <h1 class="font-display text-4xl font-bold text-sa-dark mt-8 mb-3">Hot Springs Near {totalCities.toLocaleString()} Cities</h1>
+    <p class="text-lg text-sa-dark/80 leading-relaxed max-w-3xl">
+      Every U.S. city with a documented hot spring within 50 miles. Pick your city to see
+      nearby springs sorted by distance, with temperatures, access notes, lodging, and a
+      link to plan a trip.
+    </p>
+
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl">
+      <div class="rounded-lg border border-sa-dark/10 bg-white/60 p-5 text-center">
+        <p class="font-display text-3xl font-bold text-sa-copper">{totalCities.toLocaleString()}</p>
+        <p class="text-sm text-sa-dark/60 mt-1">city guides</p>
+      </div>
+      <div class="rounded-lg border border-sa-dark/10 bg-white/60 p-5 text-center">
+        <p class="font-display text-3xl font-bold text-sa-copper">{stateGroups.length}</p>
+        <p class="text-sm text-sa-dark/60 mt-1">states covered</p>
+      </div>
+      <div class="rounded-lg border border-sa-dark/10 bg-white/60 p-5 text-center">
+        <p class="font-display text-3xl font-bold text-sa-copper">{totalSprings.toLocaleString()}</p>
+        <p class="text-sm text-sa-dark/60 mt-1">spring listings</p>
+      </div>
+    </div>
+
+    <div class="mt-12 space-y-10">
+      {stateGroups.map((g) => (
+        <section>
+          <div class="flex items-baseline justify-between mb-4 border-b border-sa-dark/10 pb-2">
+            <h2 class="font-display text-2xl font-bold text-sa-dark">{g.name}</h2>
+            <p class="text-sm text-sa-dark/50">{g.total} cities · {g.springs} spring listings</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {g.cities.map(([slug, c]) => (
+              <a href={`/near/${slug}`} class="inline-block rounded-full border border-sa-dark/10 bg-white/60 px-4 py-2 text-sm text-sa-dark hover:border-sa-copper hover:text-sa-copper transition">
+                {c.city} <span class="text-sa-dark/40">· {c.count}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

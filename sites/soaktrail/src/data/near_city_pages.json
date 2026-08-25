@@ -1,0 +1,5592 @@
+{
+  "phoenix-az": {
+    "city": "Phoenix",
+    "state": "az",
+    "state_name": "AZ",
+    "lat": 33.5722,
+    "lng": -112.0892,
+    "population": 4121103,
+    "slug": "phoenix-az",
+    "count": 5,
+    "springs": [
+      {
+        "slug": "castle-hot-springs",
+        "name": "Castle Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 30.7,
+        "temperature_f": 120,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "sheep-bridge-hot-springs",
+        "name": "Sheep Bridge Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 37.1,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "buckhorn-hot-mineral-wells",
+        "name": "Buckhorn Hot Mineral Wells",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 37.2,
+        "temperature_f": 110,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "hassayampa-hot-springs",
+        "name": "Hassayampa Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 45.9,
+        "temperature_f": 105,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "el-dorado-hot-springs",
+        "name": "El Dorado Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 49.5,
+        "temperature_f": 105,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "seattle-wa": {
+    "city": "Seattle",
+    "state": "wa",
+    "state_name": "WA",
+    "lat": 47.6211,
+    "lng": -122.3244,
+    "population": 3642006,
+    "slug": "seattle-wa",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "goldmyer-hot-springs",
+        "name": "Goldmyer Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 41.2,
+        "temperature_f": 109,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "hot-springs-washington-town",
+        "name": "Hot Springs (Town)",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 46.4,
+        "temperature_f": null,
+        "access_type": "drive-up",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "denver-co": {
+    "city": "Denver",
+    "state": "co",
+    "state_name": "CO",
+    "lat": 39.762,
+    "lng": -104.8758,
+    "population": 2714768,
+    "slug": "denver-co",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "eldorado-springs-colorado",
+        "name": "Eldorado Springs Resort",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 24.4,
+        "temperature_f": 76,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "indian-hot-springs-colorado",
+        "name": "Indian Hot Springs",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 33.8,
+        "temperature_f": 98,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  },
+  "las-vegas-nv": {
+    "city": "Las Vegas",
+    "state": "nv",
+    "state_name": "NV",
+    "lat": 36.2333,
+    "lng": -115.2654,
+    "population": 2299189,
+    "slug": "las-vegas-nv",
+    "count": 6,
+    "springs": [
+      {
+        "slug": "gold-strike-hot-springs-nv",
+        "name": "Gold Strike Hot Springs (NV)",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 32.3,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "arizona-ringbolt-hot-springs",
+        "name": "Arizona (Ringbolt) Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 35.5,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "pahrump-hot-springs",
+        "name": "Pahrump Hot Springs",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 38.2,
+        "temperature_f": 110,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "palm-pool-waterfall-hot-springs",
+        "name": "Palm Pool Waterfall Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 38.6,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "warm-springs-natural-area",
+        "name": "Warm Springs Natural Area",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 42.1,
+        "temperature_f": 100,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "blue-point-spring",
+        "name": "Blue Point Spring",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 47.3,
+        "temperature_f": 90,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "portland-or": {
+    "city": "Portland",
+    "state": "or",
+    "state_name": "OR",
+    "lat": 45.5371,
+    "lng": -122.65,
+    "population": 2115140,
+    "slug": "portland-or",
+    "count": 12,
+    "springs": [
+      {
+        "slug": "moffetts-hot-springs",
+        "name": "Moffett's Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 34.4,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "moffetts-hot-springs",
+        "name": "Moffett's Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 34.4,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "wind-river-hot-springs",
+        "name": "Wind River Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 37.0,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "skamania-hot-springs",
+        "name": "Skamania Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 37.2,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "carson-hot-springs-resort",
+        "name": "Carson Hot Springs Resort",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 43.2,
+        "temperature_f": 104,
+        "access_type": "drive-up",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "carson-hot-springs-resort",
+        "name": "Carson Hot Springs Resort",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 43.2,
+        "temperature_f": 104,
+        "access_type": "drive-up",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "saint-martins-hot-springs",
+        "name": "Saint Martin's Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 43.3,
+        "temperature_f": 106,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "saint-martins-hot-springs",
+        "name": "Saint Martin's Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 43.3,
+        "temperature_f": 106,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "austin-hot-springs",
+        "name": "Austin Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 47.4,
+        "temperature_f": 186,
+        "access_type": "drive-up",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "austin-hot-springs",
+        "name": "Austin Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 47.4,
+        "temperature_f": 186,
+        "access_type": "drive-up",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "bagby-hot-springs",
+        "name": "Bagby Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 47.6,
+        "temperature_f": 136,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "bagby-hot-springs",
+        "name": "Bagby Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 47.6,
+        "temperature_f": 136,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "salt-lake-city-ut": {
+    "city": "Salt Lake City",
+    "state": "ut",
+    "state_name": "UT",
+    "lat": 40.7776,
+    "lng": -111.9311,
+    "population": 1183003,
+    "slug": "salt-lake-city-ut",
+    "count": 4,
+    "springs": [
+      {
+        "slug": "mountain-point-hot-springs",
+        "name": "Mountain Point Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 15.8,
+        "temperature_f": 95,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "inlet-park-hot-springs",
+        "name": "Inlet Park Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 29.5,
+        "temperature_f": 109,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "homestead-crater",
+        "name": "Homestead Crater",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 33.4,
+        "temperature_f": 96,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "ogden-canyon-hot-springs",
+        "name": "Ogden Canyon Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 35.0,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "tucson-az": {
+    "city": "Tucson",
+    "state": "az",
+    "state_name": "AZ",
+    "lat": 32.1541,
+    "lng": -110.8787,
+    "population": 890860,
+    "slug": "tucson-az",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "mount-lemmon-hot-springs",
+        "name": "Mount Lemmon Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 19.3,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "agua-caliente-springs",
+        "name": "Agua Caliente Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 32.0,
+        "temperature_f": 90,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "albuquerque-nm": {
+    "city": "Albuquerque",
+    "state": "nm",
+    "state_name": "NM",
+    "lat": 35.1054,
+    "lng": -106.6465,
+    "population": 765360,
+    "slug": "albuquerque-nm",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "soda-dam-hot-springs-nm",
+        "name": "Soda Dam Hot Springs",
+        "state": "nm",
+        "region": "colorado",
+        "distance_mi": 47.6,
+        "temperature_f": 117,
+        "access_type": "hike",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "mccauley-hot-springs-nm",
+        "name": "McCauley Hot Springs",
+        "state": "nm",
+        "region": "colorado",
+        "distance_mi": 49.4,
+        "temperature_f": 99,
+        "access_type": "hike",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  },
+  "provo-ut": {
+    "city": "Provo",
+    "state": "ut",
+    "state_name": "UT",
+    "lat": 40.2457,
+    "lng": -111.6457,
+    "population": 641732,
+    "slug": "provo-ut",
+    "count": 4,
+    "springs": [
+      {
+        "slug": "inlet-park-hot-springs",
+        "name": "Inlet Park Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 17.1,
+        "temperature_f": 109,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "fifth-water-hot-springs",
+        "name": "Fifth Water Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 18.5,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "homestead-crater",
+        "name": "Homestead Crater",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 21.5,
+        "temperature_f": 96,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "mountain-point-hot-springs",
+        "name": "Mountain Point Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 26.4,
+        "temperature_f": 95,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "ogden-ut": {
+    "city": "Ogden",
+    "state": "ut",
+    "state_name": "UT",
+    "lat": 41.2279,
+    "lng": -111.9682,
+    "population": 630643,
+    "slug": "ogden-ut",
+    "count": 5,
+    "springs": [
+      {
+        "slug": "ogden-canyon-hot-springs",
+        "name": "Ogden Canyon Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 10.7,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "belmont-hot-springs-rv-park",
+        "name": "Belmont Hot Springs RV Park",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 24.2,
+        "temperature_f": 104,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "stinking-springs",
+        "name": "Stinking Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 32.2,
+        "temperature_f": 100,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "crystal-hot-springs",
+        "name": "Crystal Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 33.1,
+        "temperature_f": 134,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "mountain-point-hot-springs",
+        "name": "Mountain Point Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 46.8,
+        "temperature_f": 95,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "bakersfield-ca": {
+    "city": "Bakersfield",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 35.3529,
+    "lng": -119.0359,
+    "population": 566351,
+    "slug": "bakersfield-ca",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "california-hot-springs",
+        "name": "California Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 41.9,
+        "temperature_f": 122,
+        "access_type": "drive-up",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "mesa-az": {
+    "city": "Mesa",
+    "state": "az",
+    "state_name": "AZ",
+    "lat": 33.4015,
+    "lng": -111.7178,
+    "population": 511764,
+    "slug": "mesa-az",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "sheep-bridge-hot-springs",
+        "name": "Sheep Bridge Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 41.4,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "superior-hot-springs",
+        "name": "Superior Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 43.6,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "reno-nv": {
+    "city": "Reno",
+    "state": "nv",
+    "state_name": "NV",
+    "lat": 39.5497,
+    "lng": -119.8483,
+    "population": 466706,
+    "slug": "reno-nv",
+    "count": 4,
+    "springs": [
+      {
+        "slug": "steamboat-hot-springs",
+        "name": "Steamboat Hot Springs",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 13.3,
+        "temperature_f": 150,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "sierra-hot-springs",
+        "name": "Sierra Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 26.7,
+        "temperature_f": 104,
+        "access_type": "resort",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "carson-hot-springs-resort",
+        "name": "Carson Hot Springs Resort",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 27.2,
+        "temperature_f": 100,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "david-walleys-resort",
+        "name": "David Walley's Resort",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 37.3,
+        "temperature_f": 104,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "boise-id": {
+    "city": "Boise",
+    "state": "id",
+    "state_name": "ID",
+    "lat": 43.6005,
+    "lng": -116.2308,
+    "population": 448305,
+    "slug": "boise-id",
+    "count": 41,
+    "springs": [
+      {
+        "slug": "terteling-hot-springs",
+        "name": "Terteling Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 5.4,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "mores-creek-hot-spring",
+        "name": "Mores Creek Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 12.2,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "highland-land-co-warm-spring",
+        "name": "Highland Land Co Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 17.9,
+        "temperature_f": 85,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "warm-springs",
+        "name": "Warm Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 23.6,
+        "temperature_f": 85,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "roystone-hot-springs",
+        "name": "Roystone Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 25.2,
+        "temperature_f": 105,
+        "access_type": "dirt",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "sweet-warm-spring",
+        "name": "Sweet Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 26.1,
+        "temperature_f": 90,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "givens-hot-springs",
+        "name": "Givens Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 27.1,
+        "temperature_f": 100,
+        "access_type": "drive-up",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "givens-hot-springs",
+        "name": "Givens Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 27.1,
+        "temperature_f": 100,
+        "access_type": "drive-up",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "twin-springs",
+        "name": "Twin Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 27.2,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "sheep-creek-bridge-hot-spring",
+        "name": "Sheep Creek Bridge Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 29.4,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "thomas-flats-warm-spring",
+        "name": "Thomas Flats Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 30.8,
+        "temperature_f": 85,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "smith-cabin-hot-spring",
+        "name": "Smith Cabin Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 31.8,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "loftus-hot-spring",
+        "name": "Loftus Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 32.5,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "vaughn-hot-spring",
+        "name": "Vaughn Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 33.7,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "basset-hot-spring",
+        "name": "Basset Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 34.4,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "ninemeier-hot-springs",
+        "name": "Ninemeier Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 34.7,
+        "temperature_f": 105,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "ninemeyer-hot-springs",
+        "name": "Ninemeyer Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 34.7,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "deer-hot-springs",
+        "name": "Deer Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 35.1,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "hot-spring-campground",
+        "name": "Hot Spring Campground",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 35.2,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "donlay-ranch-hot-spring",
+        "name": "Donlay Ranch Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 36.0,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "corder-hot-spring",
+        "name": "Corder Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 36.3,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "dan-hodges-hot-spring",
+        "name": "Dan Hodges Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 37.0,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "danskin-creek-hot-spring",
+        "name": "Danskin Creek Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 37.8,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "brown-creek-hot-spring",
+        "name": "Brown Creek Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 39.2,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "warm-springs-creek-hot-springs",
+        "name": "Warm Springs Creek Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 40.0,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "dutch-frank-hot-spring",
+        "name": "Dutch Frank Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 41.9,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "pine-flat-hot-springs",
+        "name": "Pine Flat Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 41.9,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "juntura-hot-springs",
+        "name": "Juntura Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 42.2,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "juntura-hot-springs",
+        "name": "Juntura Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 42.2,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "granite-creek-hot-spring",
+        "name": "Granite Creek Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 43.7,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "haven-lodge-hot-spring",
+        "name": "Haven Lodge Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 47.2,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "hot-springs",
+        "name": "Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 47.2,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "hot-springs-hailey",
+        "name": "Hot Springs (Hailey)",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 47.2,
+        "temperature_f": 105,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "kirkham-hot-springs",
+        "name": "Kirkham Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 47.3,
+        "temperature_f": 102,
+        "access_type": "dirt",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "bridge-hot-springs",
+        "name": "Bridge Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 47.4,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "weatherby-hot-spring",
+        "name": "Weatherby Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 47.7,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "rocky-canyon-hot-springs",
+        "name": "Rocky Canyon Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 48.2,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "paradise-hot-springs",
+        "name": "Paradise Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 48.4,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "cove-creek-hot-spring",
+        "name": "Cove Creek Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 48.5,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "snively-hot-springs",
+        "name": "Snively Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 49.4,
+        "temperature_f": 105,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "snively-hot-springs",
+        "name": "Snively Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 49.4,
+        "temperature_f": 105,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "aurora-co": {
+    "city": "Aurora",
+    "state": "co",
+    "state_name": "CO",
+    "lat": 39.7083,
+    "lng": -104.7237,
+    "population": 394432,
+    "slug": "aurora-co",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "eldorado-springs-colorado",
+        "name": "Eldorado Springs Resort",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 33.3,
+        "temperature_f": 76,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "indian-hot-springs-colorado",
+        "name": "Indian Hot Springs",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 41.9,
+        "temperature_f": 98,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  },
+  "oxnard-ca": {
+    "city": "Oxnard",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 34.1964,
+    "lng": -119.1815,
+    "population": 369935,
+    "slug": "oxnard-ca",
+    "count": 3,
+    "springs": [
+      {
+        "slug": "stingleys-hot-springs",
+        "name": "Stingleys Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 22.7,
+        "temperature_f": 123,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "big-caliente-hot-springs",
+        "name": "Big Caliente Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 32.2,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "little-caliente-hot-springs",
+        "name": "Little Caliente Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 34.5,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "indio-ca": {
+    "city": "Indio",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 33.7346,
+    "lng": -116.2346,
+    "population": 366757,
+    "slug": "indio-ca",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "desert-hot-springs",
+        "name": "Desert Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 27.7,
+        "temperature_f": null,
+        "access_type": "drive-up",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "fort-collins-co": {
+    "city": "Fort Collins",
+    "state": "co",
+    "state_name": "CO",
+    "lat": 40.5477,
+    "lng": -105.0656,
+    "population": 336364,
+    "slug": "fort-collins-co",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "eldorado-springs-colorado",
+        "name": "Eldorado Springs Resort",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 44.1,
+        "temperature_f": 76,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  },
+  "henderson-nv": {
+    "city": "Henderson",
+    "state": "nv",
+    "state_name": "NV",
+    "lat": 36.0133,
+    "lng": -115.0381,
+    "population": 332141,
+    "slug": "henderson-nv",
+    "count": 5,
+    "springs": [
+      {
+        "slug": "gold-strike-hot-springs-nv",
+        "name": "Gold Strike Hot Springs (NV)",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 14.6,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "arizona-ringbolt-hot-springs",
+        "name": "Arizona (Ringbolt) Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 17.8,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "palm-pool-waterfall-hot-springs",
+        "name": "Palm Pool Waterfall Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 21.8,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "blue-point-spring",
+        "name": "Blue Point Spring",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 36.2,
+        "temperature_f": 90,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "warm-springs-natural-area",
+        "name": "Warm Springs Natural Area",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 46.4,
+        "temperature_f": 100,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "santa-rosa-ca": {
+    "city": "Santa Rosa",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 38.4458,
+    "lng": -122.7067,
+    "population": 292251,
+    "slug": "santa-rosa-ca",
+    "count": 3,
+    "springs": [
+      {
+        "slug": "little-geysers",
+        "name": "Little Geysers",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 22.3,
+        "temperature_f": 210,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "the-geysers",
+        "name": "The Geysers",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 25.2,
+        "temperature_f": 214,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "wilbur-hot-springs",
+        "name": "Wilbur Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 43.7,
+        "temperature_f": 105,
+        "access_type": "resort",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "gilbert-az": {
+    "city": "Gilbert",
+    "state": "az",
+    "state_name": "AZ",
+    "lat": 33.31,
+    "lng": -111.7463,
+    "population": 280262,
+    "slug": "gilbert-az",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "superior-hot-springs",
+        "name": "Superior Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 41.8,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "sheep-bridge-hot-springs",
+        "name": "Sheep Bridge Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 47.7,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "chandler-az": {
+    "city": "Chandler",
+    "state": "az",
+    "state_name": "AZ",
+    "lat": 33.2825,
+    "lng": -111.8514,
+    "population": 280136,
+    "slug": "chandler-az",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "superior-hot-springs",
+        "name": "Superior Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 46.6,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "buckhorn-hot-mineral-wells",
+        "name": "Buckhorn Hot Mineral Wells",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 49.7,
+        "temperature_f": 110,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "north-las-vegas-nv": {
+    "city": "North Las Vegas",
+    "state": "nv",
+    "state_name": "NV",
+    "lat": 36.2883,
+    "lng": -115.0888,
+    "population": 278595,
+    "slug": "north-las-vegas-nv",
+    "count": 6,
+    "springs": [
+      {
+        "slug": "gold-strike-hot-springs-nv",
+        "name": "Gold Strike Hot Springs (NV)",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 27.4,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "arizona-ringbolt-hot-springs",
+        "name": "Arizona (Ringbolt) Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 30.4,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "warm-springs-natural-area",
+        "name": "Warm Springs Natural Area",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 32.3,
+        "temperature_f": 100,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "palm-pool-waterfall-hot-springs",
+        "name": "Palm Pool Waterfall Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 32.5,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "blue-point-spring",
+        "name": "Blue Point Spring",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 38.2,
+        "temperature_f": 90,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "pahrump-hot-springs",
+        "name": "Pahrump Hot Springs",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 48.4,
+        "temperature_f": 110,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "eugene-or": {
+    "city": "Eugene",
+    "state": "or",
+    "state_name": "OR",
+    "lat": 44.0564,
+    "lng": -123.1174,
+    "population": 272404,
+    "slug": "eugene-or",
+    "count": 6,
+    "springs": [
+      {
+        "slug": "terwilliger-cougar-hot-springs",
+        "name": "Terwilliger (Cougar) Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 43.6,
+        "temperature_f": 104,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "terwilliger-cougar-hot-springs",
+        "name": "Terwilliger (Cougar) Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 43.6,
+        "temperature_f": 104,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "kitson-hot-springs",
+        "name": "Kitson Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 44.8,
+        "temperature_f": 90,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "kitson-hot-springs",
+        "name": "Kitson Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 44.8,
+        "temperature_f": 90,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "mccredie-hot-springs",
+        "name": "McCredie Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 47.9,
+        "temperature_f": 115,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "mccredie-hot-springs",
+        "name": "McCredie Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 47.9,
+        "temperature_f": 115,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "santa-clarita-ca": {
+    "city": "Santa Clarita",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 34.4175,
+    "lng": -118.4964,
+    "population": 270147,
+    "slug": "santa-clarita-ca",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "stingleys-hot-springs",
+        "name": "Stingleys Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 48.4,
+        "temperature_f": 123,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "salem-or": {
+    "city": "Salem",
+    "state": "or",
+    "state_name": "OR",
+    "lat": 44.9233,
+    "lng": -123.0244,
+    "population": 268719,
+    "slug": "salem-or",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "bagby-hot-springs",
+        "name": "Bagby Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 41.6,
+        "temperature_f": 136,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "bagby-hot-springs",
+        "name": "Bagby Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 41.6,
+        "temperature_f": 136,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "glendale-az": {
+    "city": "Glendale",
+    "state": "az",
+    "state_name": "AZ",
+    "lat": 33.5791,
+    "lng": -112.2311,
+    "population": 252833,
+    "slug": "glendale-az",
+    "count": 5,
+    "springs": [
+      {
+        "slug": "castle-hot-springs",
+        "name": "Castle Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 26.8,
+        "temperature_f": 120,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "buckhorn-hot-mineral-wells",
+        "name": "Buckhorn Hot Mineral Wells",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 29.7,
+        "temperature_f": 110,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "hassayampa-hot-springs",
+        "name": "Hassayampa Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 39.4,
+        "temperature_f": 105,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "el-dorado-hot-springs",
+        "name": "El Dorado Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 41.5,
+        "temperature_f": 105,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "sheep-bridge-hot-springs",
+        "name": "Sheep Bridge Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 42.1,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "scottsdale-az": {
+    "city": "Scottsdale",
+    "state": "az",
+    "state_name": "AZ",
+    "lat": 33.6872,
+    "lng": -111.8651,
+    "population": 243821,
+    "slug": "scottsdale-az",
+    "count": 3,
+    "springs": [
+      {
+        "slug": "sheep-bridge-hot-springs",
+        "name": "Sheep Bridge Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 23.6,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "castle-hot-springs",
+        "name": "Castle Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 34.2,
+        "temperature_f": 120,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "verde-hot-springs",
+        "name": "Verde Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 47.0,
+        "temperature_f": 104,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "enterprise-nv": {
+    "city": "Enterprise",
+    "state": "nv",
+    "state_name": "NV",
+    "lat": 36.0091,
+    "lng": -115.2278,
+    "population": 240464,
+    "slug": "enterprise-nv",
+    "count": 5,
+    "springs": [
+      {
+        "slug": "gold-strike-hot-springs-nv",
+        "name": "Gold Strike Hot Springs (NV)",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 25.1,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "arizona-ringbolt-hot-springs",
+        "name": "Arizona (Ringbolt) Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 28.3,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "palm-pool-waterfall-hot-springs",
+        "name": "Palm Pool Waterfall Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 32.4,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "pahrump-hot-springs",
+        "name": "Pahrump Hot Springs",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 42.4,
+        "temperature_f": 110,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "blue-point-spring",
+        "name": "Blue Point Spring",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 46.5,
+        "temperature_f": 90,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "tacoma-wa": {
+    "city": "Tacoma",
+    "state": "wa",
+    "state_name": "WA",
+    "lat": 47.2431,
+    "lng": -122.4531,
+    "population": 222758,
+    "slug": "tacoma-wa",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "hot-springs-washington-town",
+        "name": "Hot Springs (Town)",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 42.6,
+        "temperature_f": null,
+        "access_type": "drive-up",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "ohanapecosh-hot-springs",
+        "name": "Ohanapecosh Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 49.6,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "spring-valley-nv": {
+    "city": "Spring Valley",
+    "state": "nv",
+    "state_name": "NV",
+    "lat": 36.0952,
+    "lng": -115.2636,
+    "population": 219187,
+    "slug": "spring-valley-nv",
+    "count": 6,
+    "springs": [
+      {
+        "slug": "gold-strike-hot-springs-nv",
+        "name": "Gold Strike Hot Springs (NV)",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 28.2,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "arizona-ringbolt-hot-springs",
+        "name": "Arizona (Ringbolt) Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 31.5,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "palm-pool-waterfall-hot-springs",
+        "name": "Palm Pool Waterfall Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 35.2,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "pahrump-hot-springs",
+        "name": "Pahrump Hot Springs",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 39.0,
+        "temperature_f": 110,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "blue-point-spring",
+        "name": "Blue Point Spring",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 47.4,
+        "temperature_f": 90,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "warm-springs-natural-area",
+        "name": "Warm Springs Natural Area",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 48.7,
+        "temperature_f": 100,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "moreno-valley-ca": {
+    "city": "Moreno Valley",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 33.9244,
+    "lng": -117.2045,
+    "population": 211666,
+    "slug": "moreno-valley-ca",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "desert-hot-springs",
+        "name": "Desert Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 48.9,
+        "temperature_f": null,
+        "access_type": "drive-up",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "thousand-oaks-ca": {
+    "city": "Thousand Oaks",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 34.1914,
+    "lng": -118.8756,
+    "population": 207637,
+    "slug": "thousand-oaks-ca",
+    "count": 3,
+    "springs": [
+      {
+        "slug": "stingleys-hot-springs",
+        "name": "Stingleys Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 34.0,
+        "temperature_f": 123,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "big-caliente-hot-springs",
+        "name": "Big Caliente Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 46.1,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "little-caliente-hot-springs",
+        "name": "Little Caliente Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 48.8,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "santa-barbara-ca": {
+    "city": "Santa Barbara",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 34.4285,
+    "lng": -119.7202,
+    "population": 202039,
+    "slug": "santa-barbara-ca",
+    "count": 3,
+    "springs": [
+      {
+        "slug": "little-caliente-hot-springs",
+        "name": "Little Caliente Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 9.6,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "big-caliente-hot-springs",
+        "name": "Big Caliente Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 11.7,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "stingleys-hot-springs",
+        "name": "Stingleys Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 22.1,
+        "temperature_f": 123,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "nampa-id": {
+    "city": "Nampa",
+    "state": "id",
+    "state_name": "ID",
+    "lat": 43.5844,
+    "lng": -116.5638,
+    "population": 201956,
+    "slug": "nampa-id",
+    "count": 25,
+    "springs": [
+      {
+        "slug": "givens-hot-springs",
+        "name": "Givens Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 13.7,
+        "temperature_f": 100,
+        "access_type": "drive-up",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "givens-hot-springs",
+        "name": "Givens Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 13.7,
+        "temperature_f": 100,
+        "access_type": "drive-up",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "terteling-hot-springs",
+        "name": "Terteling Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 18.9,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "highland-land-co-warm-spring",
+        "name": "Highland Land Co Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 19.0,
+        "temperature_f": 85,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "juntura-hot-springs",
+        "name": "Juntura Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 26.9,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "juntura-hot-springs",
+        "name": "Juntura Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 26.9,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "roystone-hot-springs",
+        "name": "Roystone Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 27.6,
+        "temperature_f": 105,
+        "access_type": "dirt",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "mores-creek-hot-spring",
+        "name": "Mores Creek Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 28.8,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "sweet-warm-spring",
+        "name": "Sweet Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 29.3,
+        "temperature_f": 90,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "thomas-flats-warm-spring",
+        "name": "Thomas Flats Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 31.5,
+        "temperature_f": 85,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "snively-hot-springs",
+        "name": "Snively Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 33.5,
+        "temperature_f": 105,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "snively-hot-springs",
+        "name": "Snively Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 33.5,
+        "temperature_f": 105,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "warm-springs",
+        "name": "Warm Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 38.5,
+        "temperature_f": 85,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "deer-hot-springs",
+        "name": "Deer Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 43.4,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "twin-springs",
+        "name": "Twin Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 43.8,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "cove-creek-hot-spring",
+        "name": "Cove Creek Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 43.9,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "sheep-creek-bridge-hot-spring",
+        "name": "Sheep Creek Bridge Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 45.9,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "hot-spring-campground",
+        "name": "Hot Spring Campground",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 46.1,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "donlay-ranch-hot-spring",
+        "name": "Donlay Ranch Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 47.7,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "corder-hot-spring",
+        "name": "Corder Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 48.0,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "smith-cabin-hot-spring",
+        "name": "Smith Cabin Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 48.3,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "warm-springs-creek-hot-springs",
+        "name": "Warm Springs Creek Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 48.6,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "dan-hodges-hot-spring",
+        "name": "Dan Hodges Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 48.8,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "loftus-hot-spring",
+        "name": "Loftus Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 48.9,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "danskin-creek-hot-spring",
+        "name": "Danskin Creek Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 49.6,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      }
+    ]
+  },
+  "sunrise-manor-nv": {
+    "city": "Sunrise Manor",
+    "state": "nv",
+    "state_name": "NV",
+    "lat": 36.1783,
+    "lng": -115.0487,
+    "population": 200218,
+    "slug": "sunrise-manor-nv",
+    "count": 5,
+    "springs": [
+      {
+        "slug": "gold-strike-hot-springs-nv",
+        "name": "Gold Strike Hot Springs (NV)",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 20.3,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "arizona-ringbolt-hot-springs",
+        "name": "Arizona (Ringbolt) Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 23.5,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "palm-pool-waterfall-hot-springs",
+        "name": "Palm Pool Waterfall Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 26.1,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "blue-point-spring",
+        "name": "Blue Point Spring",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 35.1,
+        "temperature_f": 90,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "warm-springs-natural-area",
+        "name": "Warm Springs Natural Area",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 36.8,
+        "temperature_f": 100,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "peoria-az": {
+    "city": "Peoria",
+    "state": "az",
+    "state_name": "AZ",
+    "lat": 33.7843,
+    "lng": -112.2989,
+    "population": 196906,
+    "slug": "peoria-az",
+    "count": 5,
+    "springs": [
+      {
+        "slug": "castle-hot-springs",
+        "name": "Castle Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 12.2,
+        "temperature_f": 120,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "hassayampa-hot-springs",
+        "name": "Hassayampa Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 27.9,
+        "temperature_f": 105,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "buckhorn-hot-mineral-wells",
+        "name": "Buckhorn Hot Mineral Wells",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 35.2,
+        "temperature_f": 110,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "sheep-bridge-hot-springs",
+        "name": "Sheep Bridge Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 37.4,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "el-dorado-hot-springs",
+        "name": "El Dorado Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 42.8,
+        "temperature_f": 105,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "vancouver-wa": {
+    "city": "Vancouver",
+    "state": "wa",
+    "state_name": "WA",
+    "lat": 45.6366,
+    "lng": -122.5967,
+    "population": 195300,
+    "slug": "vancouver-wa",
+    "count": 8,
+    "springs": [
+      {
+        "slug": "moffetts-hot-springs",
+        "name": "Moffett's Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 30.8,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "moffetts-hot-springs",
+        "name": "Moffett's Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 30.8,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "skamania-hot-springs",
+        "name": "Skamania Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 32.8,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "wind-river-hot-springs",
+        "name": "Wind River Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 32.9,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "carson-hot-springs-resort",
+        "name": "Carson Hot Springs Resort",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 39.1,
+        "temperature_f": 104,
+        "access_type": "drive-up",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "carson-hot-springs-resort",
+        "name": "Carson Hot Springs Resort",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 39.1,
+        "temperature_f": 104,
+        "access_type": "drive-up",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "saint-martins-hot-springs",
+        "name": "Saint Martin's Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 39.1,
+        "temperature_f": 106,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "saint-martins-hot-springs",
+        "name": "Saint Martin's Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 39.1,
+        "temperature_f": 106,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "tempe-az": {
+    "city": "Tempe",
+    "state": "az",
+    "state_name": "AZ",
+    "lat": 33.3881,
+    "lng": -111.9319,
+    "population": 188065,
+    "slug": "tempe-az",
+    "count": 3,
+    "springs": [
+      {
+        "slug": "buckhorn-hot-mineral-wells",
+        "name": "Buckhorn Hot Mineral Wells",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 44.3,
+        "temperature_f": 110,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "sheep-bridge-hot-springs",
+        "name": "Sheep Bridge Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 44.3,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "castle-hot-springs",
+        "name": "Castle Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 46.3,
+        "temperature_f": 120,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "paradise-nv": {
+    "city": "Paradise",
+    "state": "nv",
+    "state_name": "NV",
+    "lat": 36.0872,
+    "lng": -115.1355,
+    "population": 185913,
+    "slug": "paradise-nv",
+    "count": 6,
+    "springs": [
+      {
+        "slug": "gold-strike-hot-springs-nv",
+        "name": "Gold Strike Hot Springs (NV)",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 21.2,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "arizona-ringbolt-hot-springs",
+        "name": "Arizona (Ringbolt) Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 24.5,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "palm-pool-waterfall-hot-springs",
+        "name": "Palm Pool Waterfall Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 28.1,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "blue-point-spring",
+        "name": "Blue Point Spring",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 40.3,
+        "temperature_f": 90,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "warm-springs-natural-area",
+        "name": "Warm Springs Natural Area",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 44.7,
+        "temperature_f": 100,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "pahrump-hot-springs",
+        "name": "Pahrump Hot Springs",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 46.1,
+        "temperature_f": 110,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "hemet-ca": {
+    "city": "Hemet",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 33.7341,
+    "lng": -116.9969,
+    "population": 185006,
+    "slug": "hemet-ca",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "desert-hot-springs",
+        "name": "Desert Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 44.0,
+        "temperature_f": null,
+        "access_type": "drive-up",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "salinas-ca": {
+    "city": "Salinas",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 36.6883,
+    "lng": -121.6317,
+    "population": 173715,
+    "slug": "salinas-ca",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "slates-hot-springs",
+        "name": "Slates Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 39.1,
+        "temperature_f": 122,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "medford-or": {
+    "city": "Medford",
+    "state": "or",
+    "state_name": "OR",
+    "lat": 42.3372,
+    "lng": -122.854,
+    "population": 170502,
+    "slug": "medford-or",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "lithia-springs-resort",
+        "name": "Lithia Springs Resort",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 15.6,
+        "temperature_f": 102,
+        "access_type": "resort",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "lithia-springs-resort",
+        "name": "Lithia Springs Resort",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 15.6,
+        "temperature_f": 102,
+        "access_type": "resort",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "visalia-ca": {
+    "city": "Visalia",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 36.3276,
+    "lng": -119.3269,
+    "population": 167944,
+    "slug": "visalia-ca",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "california-hot-springs",
+        "name": "California Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 47.9,
+        "temperature_f": 122,
+        "access_type": "drive-up",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "marysville-wa": {
+    "city": "Marysville",
+    "state": "wa",
+    "state_name": "WA",
+    "lat": 48.0809,
+    "lng": -122.1561,
+    "population": 166250,
+    "slug": "marysville-wa",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "doe-bay-hot-springs",
+        "name": "Doe Bay Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 39.6,
+        "temperature_f": 102,
+        "access_type": "resort",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "gamma-hot-springs",
+        "name": "Gamma Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 49.9,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "lakewood-co": {
+    "city": "Lakewood",
+    "state": "co",
+    "state_name": "CO",
+    "lat": 39.6977,
+    "lng": -105.1172,
+    "population": 156583,
+    "slug": "lakewood-co",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "eldorado-springs-colorado",
+        "name": "Eldorado Springs Resort",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 18.3,
+        "temperature_f": 76,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "indian-hot-springs-colorado",
+        "name": "Indian Hot Springs",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 21.2,
+        "temperature_f": 98,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  },
+  "surprise-az": {
+    "city": "Surprise",
+    "state": "az",
+    "state_name": "AZ",
+    "lat": 33.6815,
+    "lng": -112.4515,
+    "population": 154948,
+    "slug": "surprise-az",
+    "count": 5,
+    "springs": [
+      {
+        "slug": "castle-hot-springs",
+        "name": "Castle Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 19.1,
+        "temperature_f": 120,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "buckhorn-hot-mineral-wells",
+        "name": "Buckhorn Hot Mineral Wells",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 24.1,
+        "temperature_f": 110,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "hassayampa-hot-springs",
+        "name": "Hassayampa Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 25.6,
+        "temperature_f": 105,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "el-dorado-hot-springs",
+        "name": "El Dorado Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 31.7,
+        "temperature_f": 105,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "sheep-bridge-hot-springs",
+        "name": "Sheep Bridge Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 48.4,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "bellevue-wa": {
+    "city": "Bellevue",
+    "state": "wa",
+    "state_name": "WA",
+    "lat": 47.5951,
+    "lng": -122.1535,
+    "population": 151847,
+    "slug": "bellevue-wa",
+    "count": 3,
+    "springs": [
+      {
+        "slug": "goldmyer-hot-springs",
+        "name": "Goldmyer Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 33.0,
+        "temperature_f": 109,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "hot-springs-washington-town",
+        "name": "Hot Springs (Town)",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 39.2,
+        "temperature_f": null,
+        "access_type": "drive-up",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "scenic-hot-springs",
+        "name": "Scenic Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 47.9,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "st-george-ut": {
+    "city": "St. George",
+    "state": "ut",
+    "state_name": "UT",
+    "lat": 37.0758,
+    "lng": -113.5752,
+    "population": 148405,
+    "slug": "st-george-ut",
+    "count": 4,
+    "springs": [
+      {
+        "slug": "pah-tempe-hot-springs",
+        "name": "Pah Tempe Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 15.3,
+        "temperature_f": 105,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "zion-canyon-hot-springs",
+        "name": "Zion Canyon Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 17.1,
+        "temperature_f": 104,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "veyo-pool",
+        "name": "Veyo Pool",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 26.2,
+        "temperature_f": 110,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "alkali-hot-springs",
+        "name": "Alkali Hot Springs",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 36.0,
+        "temperature_f": 107,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "santa-maria-ca": {
+    "city": "Santa Maria",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 34.9333,
+    "lng": -120.4431,
+    "population": 144941,
+    "slug": "santa-maria-ca",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "franklin-hot-springs",
+        "name": "Franklin Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 46.6,
+        "temperature_f": null,
+        "access_type": "drive-up",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "thornton-co": {
+    "city": "Thornton",
+    "state": "co",
+    "state_name": "CO",
+    "lat": 39.9197,
+    "lng": -104.9438,
+    "population": 144187,
+    "slug": "thornton-co",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "eldorado-springs-colorado",
+        "name": "Eldorado Springs Resort",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 17.8,
+        "temperature_f": 76,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "indian-hot-springs-colorado",
+        "name": "Indian Hot Springs",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 32.6,
+        "temperature_f": 98,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  },
+  "greeley-co": {
+    "city": "Greeley",
+    "state": "co",
+    "state_name": "CO",
+    "lat": 40.4152,
+    "lng": -104.7706,
+    "population": 139842,
+    "slug": "greeley-co",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "eldorado-springs-colorado",
+        "name": "Eldorado Springs Resort",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 42.9,
+        "temperature_f": 76,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  },
+  "las-cruces-nm": {
+    "city": "Las Cruces",
+    "state": "nm",
+    "state_name": "NM",
+    "lat": 32.3265,
+    "lng": -106.7893,
+    "population": 139530,
+    "slug": "las-cruces-nm",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "radium-springs-nm",
+        "name": "Radium Springs",
+        "state": "nm",
+        "region": "colorado",
+        "distance_mi": 14.5,
+        "temperature_f": 127,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  },
+  "west-valley-city-ut": {
+    "city": "West Valley City",
+    "state": "ut",
+    "state_name": "UT",
+    "lat": 40.6886,
+    "lng": -112.0123,
+    "population": 138437,
+    "slug": "west-valley-city-ut",
+    "count": 4,
+    "springs": [
+      {
+        "slug": "mountain-point-hot-springs",
+        "name": "Mountain Point Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 10.1,
+        "temperature_f": 95,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "inlet-park-hot-springs",
+        "name": "Inlet Park Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 23.7,
+        "temperature_f": 109,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "homestead-crater",
+        "name": "Homestead Crater",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 34.2,
+        "temperature_f": 96,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "ogden-canyon-hot-springs",
+        "name": "Ogden Canyon Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 42.1,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "kent-wa": {
+    "city": "Kent",
+    "state": "wa",
+    "state_name": "WA",
+    "lat": 47.3887,
+    "lng": -122.2128,
+    "population": 135603,
+    "slug": "kent-wa",
+    "count": 3,
+    "springs": [
+      {
+        "slug": "hot-springs-washington-town",
+        "name": "Hot Springs (Town)",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 33.7,
+        "temperature_f": null,
+        "access_type": "drive-up",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "goldmyer-hot-springs",
+        "name": "Goldmyer Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 36.5,
+        "temperature_f": 109,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "ohanapecosh-hot-springs",
+        "name": "Ohanapecosh Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 47.7,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "bellingham-wa": {
+    "city": "Bellingham",
+    "state": "wa",
+    "state_name": "WA",
+    "lat": 48.7548,
+    "lng": -122.469,
+    "population": 135591,
+    "slug": "bellingham-wa",
+    "count": 3,
+    "springs": [
+      {
+        "slug": "doe-bay-hot-springs",
+        "name": "Doe Bay Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 24.9,
+        "temperature_f": 102,
+        "access_type": "resort",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "mount-baker-hot-springs",
+        "name": "Mount Baker Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 35.9,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "baker-hot-springs",
+        "name": "Baker Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 36.4,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "meridian-id": {
+    "city": "Meridian",
+    "state": "id",
+    "state_name": "ID",
+    "lat": 43.6116,
+    "lng": -116.3977,
+    "population": 130138,
+    "slug": "meridian-id",
+    "count": 32,
+    "springs": [
+      {
+        "slug": "terteling-hot-springs",
+        "name": "Terteling Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 10.5,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "highland-land-co-warm-spring",
+        "name": "Highland Land Co Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 15.2,
+        "temperature_f": 85,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "givens-hot-springs",
+        "name": "Givens Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 20.6,
+        "temperature_f": 100,
+        "access_type": "drive-up",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "givens-hot-springs",
+        "name": "Givens Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 20.6,
+        "temperature_f": 100,
+        "access_type": "drive-up",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "mores-creek-hot-spring",
+        "name": "Mores Creek Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 20.6,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "roystone-hot-springs",
+        "name": "Roystone Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 23.8,
+        "temperature_f": 105,
+        "access_type": "dirt",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "sweet-warm-spring",
+        "name": "Sweet Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 25.2,
+        "temperature_f": 90,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "warm-springs",
+        "name": "Warm Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 30.2,
+        "temperature_f": 85,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "thomas-flats-warm-spring",
+        "name": "Thomas Flats Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 31.3,
+        "temperature_f": 85,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "juntura-hot-springs",
+        "name": "Juntura Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 34.0,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "juntura-hot-springs",
+        "name": "Juntura Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 34.0,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "twin-springs",
+        "name": "Twin Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 35.3,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "deer-hot-springs",
+        "name": "Deer Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 37.4,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "sheep-creek-bridge-hot-spring",
+        "name": "Sheep Creek Bridge Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 37.4,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "hot-spring-campground",
+        "name": "Hot Spring Campground",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 39.1,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "smith-cabin-hot-spring",
+        "name": "Smith Cabin Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 39.7,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "donlay-ranch-hot-spring",
+        "name": "Donlay Ranch Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 40.4,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "loftus-hot-spring",
+        "name": "Loftus Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 40.4,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "corder-hot-spring",
+        "name": "Corder Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 40.8,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "snively-hot-springs",
+        "name": "Snively Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 41.1,
+        "temperature_f": 105,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "snively-hot-springs",
+        "name": "Snively Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 41.1,
+        "temperature_f": 105,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "dan-hodges-hot-spring",
+        "name": "Dan Hodges Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 41.5,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "vaughn-hot-spring",
+        "name": "Vaughn Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 41.6,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "danskin-creek-hot-spring",
+        "name": "Danskin Creek Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 42.3,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "basset-hot-spring",
+        "name": "Basset Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 42.4,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "ninemeier-hot-springs",
+        "name": "Ninemeier Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 42.5,
+        "temperature_f": 105,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "ninemeyer-hot-springs",
+        "name": "Ninemeyer Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 42.5,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "warm-springs-creek-hot-springs",
+        "name": "Warm Springs Creek Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 42.6,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "cove-creek-hot-spring",
+        "name": "Cove Creek Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 44.2,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "brown-creek-hot-spring",
+        "name": "Brown Creek Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 47.0,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "pine-flat-hot-springs",
+        "name": "Pine Flat Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 47.2,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "dutch-frank-hot-spring",
+        "name": "Dutch Frank Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 49.7,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      }
+    ]
+  },
+  "billings-mt": {
+    "city": "Billings",
+    "state": "mt",
+    "state_name": "MT",
+    "lat": 45.7891,
+    "lng": -108.5526,
+    "population": 129267,
+    "slug": "billings-mt",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "rock-creek-hot-springs",
+        "name": "Rock Creek Hot Springs",
+        "state": "mt",
+        "region": "rockies",
+        "distance_mi": 48.9,
+        "temperature_f": 112,
+        "access_type": "4wd",
+        "site_url": "https://www.soaktherockies.com"
+      }
+    ]
+  },
+  "simi-valley-ca": {
+    "city": "Simi Valley",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 34.2663,
+    "lng": -118.749,
+    "population": 127125,
+    "slug": "simi-valley-ca",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "stingleys-hot-springs",
+        "name": "Stingleys Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 37.4,
+        "temperature_f": 123,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "yuba-city-ca": {
+    "city": "Yuba City",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 39.1357,
+    "lng": -121.6383,
+    "population": 124653,
+    "slug": "yuba-city-ca",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "wilbur-hot-springs",
+        "name": "Wilbur Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 42.4,
+        "temperature_f": 105,
+        "access_type": "resort",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "seaside-ca": {
+    "city": "Seaside",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 36.6224,
+    "lng": -121.8199,
+    "population": 124566,
+    "slug": "seaside-ca",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "slates-hot-springs",
+        "name": "Slates Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 35.9,
+        "temperature_f": 122,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "logan-ut": {
+    "city": "Logan",
+    "state": "ut",
+    "state_name": "UT",
+    "lat": 41.7399,
+    "lng": -111.8422,
+    "population": 124449,
+    "slug": "logan-ut",
+    "count": 16,
+    "springs": [
+      {
+        "slug": "crystal-hot-springs",
+        "name": "Crystal Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 12.6,
+        "temperature_f": 134,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "stinking-springs",
+        "name": "Stinking Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 20.9,
+        "temperature_f": 100,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "squaw-hot-springs",
+        "name": "Squaw Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 26.6,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "battle-creek-hot-springs",
+        "name": "Battle Creek Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 27.5,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "wayland-hot-springs",
+        "name": "Wayland Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 27.5,
+        "temperature_f": 112,
+        "access_type": "4wd",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "prices-warm-spring",
+        "name": "Prices Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 27.9,
+        "temperature_f": 85,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "woodruff-hot-spring",
+        "name": "Woodruff Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 30.1,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "ogden-canyon-hot-springs",
+        "name": "Ogden Canyon Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 32.7,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "belmont-hot-springs-rv-park",
+        "name": "Belmont Hot Springs RV Park",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 33.9,
+        "temperature_f": 104,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "malad-warm-spring",
+        "name": "Malad Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 36.2,
+        "temperature_f": 90,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "pleasantview-warm-springs",
+        "name": "Pleasantview Warm Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 38.8,
+        "temperature_f": 85,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "bear-lake-hot-springs",
+        "name": "Bear Lake Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 39.4,
+        "temperature_f": 102,
+        "access_type": "paved",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "maple-grove-hot-springs",
+        "name": "Maple Grove Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 39.9,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "cleveland-hot-springs",
+        "name": "Cleveland Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 41.5,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "treasureton-hot-springs",
+        "name": "Treasureton Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 41.7,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "downata-hot-springs",
+        "name": "Downata Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 46.5,
+        "temperature_f": 102,
+        "access_type": "paved",
+        "site_url": "https://www.soaktherockies.com"
+      }
+    ]
+  },
+  "arvada-co": {
+    "city": "Arvada",
+    "state": "co",
+    "state_name": "CO",
+    "lat": 39.832,
+    "lng": -105.151,
+    "population": 122634,
+    "slug": "arvada-co",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "eldorado-springs-colorado",
+        "name": "Eldorado Springs Resort",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 9.7,
+        "temperature_f": 76,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "indian-hot-springs-colorado",
+        "name": "Indian Hot Springs",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 20.2,
+        "temperature_f": 98,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  },
+  "boulder-co": {
+    "city": "Boulder",
+    "state": "co",
+    "state_name": "CO",
+    "lat": 40.0248,
+    "lng": -105.2524,
+    "population": 120289,
+    "slug": "boulder-co",
+    "count": 3,
+    "springs": [
+      {
+        "slug": "eldorado-springs-colorado",
+        "name": "Eldorado Springs Resort",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 6.6,
+        "temperature_f": 76,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "indian-hot-springs-colorado",
+        "name": "Indian Hot Springs",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 24.1,
+        "temperature_f": 98,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "hot-sulphur-springs-resort",
+        "name": "Hot Sulphur Springs Resort",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 45.6,
+        "temperature_f": 110,
+        "access_type": "resort",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  },
+  "redding-ca": {
+    "city": "Redding",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 40.5698,
+    "lng": -122.365,
+    "population": 117275,
+    "slug": "redding-ca",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "morgan-hot-spring",
+        "name": "Morgan Hot Spring",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 46.6,
+        "temperature_f": 205,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "west-jordan-ut": {
+    "city": "West Jordan",
+    "state": "ut",
+    "state_name": "UT",
+    "lat": 40.6024,
+    "lng": -112.0008,
+    "population": 116692,
+    "slug": "west-jordan-ut",
+    "count": 5,
+    "springs": [
+      {
+        "slug": "mountain-point-hot-springs",
+        "name": "Mountain Point Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 4.5,
+        "temperature_f": 95,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "inlet-park-hot-springs",
+        "name": "Inlet Park Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 17.7,
+        "temperature_f": 109,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "homestead-crater",
+        "name": "Homestead Crater",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 31.8,
+        "temperature_f": 96,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "ogden-canyon-hot-springs",
+        "name": "Ogden Canyon Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 47.7,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "fifth-water-hot-springs",
+        "name": "Fifth Water Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 49.3,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "westminster-co": {
+    "city": "Westminster",
+    "state": "co",
+    "state_name": "CO",
+    "lat": 39.8837,
+    "lng": -105.0624,
+    "population": 115484,
+    "slug": "westminster-co",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "eldorado-springs-colorado",
+        "name": "Eldorado Springs Resort",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 12.0,
+        "temperature_f": 76,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "indian-hot-springs-colorado",
+        "name": "Indian Hot Springs",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 25.9,
+        "temperature_f": 98,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  },
+  "bend-or": {
+    "city": "Bend",
+    "state": "or",
+    "state_name": "OR",
+    "lat": 44.0563,
+    "lng": -121.3095,
+    "population": 113075,
+    "slug": "bend-or",
+    "count": 12,
+    "springs": [
+      {
+        "slug": "paulina-hot-springs",
+        "name": "Paulina Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 22.8,
+        "temperature_f": 95,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "paulina-hot-springs",
+        "name": "Paulina Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 22.8,
+        "temperature_f": 95,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "paulina-lake-hot-springs",
+        "name": "Paulina Lake Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 23.9,
+        "temperature_f": 105,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "paulina-lake-hot-springs",
+        "name": "Paulina Lake Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 23.9,
+        "temperature_f": 105,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "east-lake-hot-springs",
+        "name": "East Lake Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 24.7,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "east-lake-hot-springs",
+        "name": "East Lake Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 24.7,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "belknap-hot-springs",
+        "name": "Belknap Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 38.2,
+        "temperature_f": 130,
+        "access_type": "drive-up",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "belknap-hot-springs",
+        "name": "Belknap Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 38.2,
+        "temperature_f": 130,
+        "access_type": "drive-up",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "bigelow-hot-spring",
+        "name": "Bigelow Hot Spring",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 39.2,
+        "temperature_f": 96,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "bigelow-hot-spring",
+        "name": "Bigelow Hot Spring",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 39.2,
+        "temperature_f": 96,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "terwilliger-cougar-hot-springs",
+        "name": "Terwilliger (Cougar) Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 46.2,
+        "temperature_f": 104,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "terwilliger-cougar-hot-springs",
+        "name": "Terwilliger (Cougar) Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 46.2,
+        "temperature_f": 104,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "gresham-or": {
+    "city": "Gresham",
+    "state": "or",
+    "state_name": "OR",
+    "lat": 45.5021,
+    "lng": -122.4413,
+    "population": 112378,
+    "slug": "gresham-or",
+    "count": 12,
+    "springs": [
+      {
+        "slug": "moffetts-hot-springs",
+        "name": "Moffett's Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 25.6,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "moffetts-hot-springs",
+        "name": "Moffett's Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 25.6,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "wind-river-hot-springs",
+        "name": "Wind River Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 28.7,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "skamania-hot-springs",
+        "name": "Skamania Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 29.1,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "carson-hot-springs-resort",
+        "name": "Carson Hot Springs Resort",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 34.8,
+        "temperature_f": 104,
+        "access_type": "drive-up",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "carson-hot-springs-resort",
+        "name": "Carson Hot Springs Resort",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 34.8,
+        "temperature_f": 104,
+        "access_type": "drive-up",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "saint-martins-hot-springs",
+        "name": "Saint Martin's Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 34.8,
+        "temperature_f": 106,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "saint-martins-hot-springs",
+        "name": "Saint Martin's Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 34.8,
+        "temperature_f": 106,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "austin-hot-springs",
+        "name": "Austin Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 39.3,
+        "temperature_f": 186,
+        "access_type": "drive-up",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "austin-hot-springs",
+        "name": "Austin Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 39.3,
+        "temperature_f": 186,
+        "access_type": "drive-up",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "bagby-hot-springs",
+        "name": "Bagby Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 41.3,
+        "temperature_f": 136,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "bagby-hot-springs",
+        "name": "Bagby Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 41.3,
+        "temperature_f": 136,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "everett-wa": {
+    "city": "Everett",
+    "state": "wa",
+    "state_name": "WA",
+    "lat": 47.9525,
+    "lng": -122.1669,
+    "population": 111845,
+    "slug": "everett-wa",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "goldmyer-hot-springs",
+        "name": "Goldmyer Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 44.7,
+        "temperature_f": 109,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "doe-bay-hot-springs",
+        "name": "Doe Bay Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 45.7,
+        "temperature_f": 102,
+        "access_type": "resort",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "idaho-falls-id": {
+    "city": "Idaho Falls",
+    "state": "id",
+    "state_name": "ID",
+    "lat": 43.4871,
+    "lng": -112.0362,
+    "population": 111137,
+    "slug": "idaho-falls-id",
+    "count": 13,
+    "springs": [
+      {
+        "slug": "elkhorn-warm-spring",
+        "name": "Elkhorn Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 20.0,
+        "temperature_f": 90,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "heise-hot-springs",
+        "name": "Heise Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 20.6,
+        "temperature_f": 102,
+        "access_type": "paved",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "yandell-springs",
+        "name": "Yandell Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 26.6,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "alkali-flats-warm-spring",
+        "name": "Alkali Flats Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 31.1,
+        "temperature_f": 85,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "brockman-creek-hot-spring",
+        "name": "Brockman Creek Hot Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 33.3,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "pincock-green-canyon-hot-springs",
+        "name": "Pincock (Green Canyon) Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 36.7,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "blackfoot-river-warm-spring",
+        "name": "Blackfoot River Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 37.6,
+        "temperature_f": 90,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "tadpole-warm-spring",
+        "name": "Tadpole Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 42.3,
+        "temperature_f": 85,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "taylor-springs",
+        "name": "Taylor Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 43.2,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "blackfoot-reservoir-warm-spring",
+        "name": "Blackfoot Reservoir Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 44.6,
+        "temperature_f": 90,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "henry-warm-spring",
+        "name": "Henry Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 46.6,
+        "temperature_f": 85,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "portneuf-river-warm-spring",
+        "name": "Portneuf River Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 48.9,
+        "temperature_f": 90,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "alpine-warm-spring",
+        "name": "Alpine Warm Spring",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 49.9,
+        "temperature_f": 85,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      }
+    ]
+  },
+  "sparks-nv": {
+    "city": "Sparks",
+    "state": "nv",
+    "state_name": "NV",
+    "lat": 39.5736,
+    "lng": -119.7161,
+    "population": 110024,
+    "slug": "sparks-nv",
+    "count": 4,
+    "springs": [
+      {
+        "slug": "steamboat-hot-springs",
+        "name": "Steamboat Hot Springs",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 14.3,
+        "temperature_f": 150,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "carson-hot-springs-resort",
+        "name": "Carson Hot Springs Resort",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 28.7,
+        "temperature_f": 100,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "sierra-hot-springs",
+        "name": "Sierra Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 33.7,
+        "temperature_f": 104,
+        "access_type": "resort",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "david-walleys-resort",
+        "name": "David Walley's Resort",
+        "state": "nv",
+        "region": "desert",
+        "distance_mi": 39.6,
+        "temperature_f": 104,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "san-buenaventura-ca": {
+    "city": "San Buenaventura",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 34.2741,
+    "lng": -119.2314,
+    "population": 109857,
+    "slug": "san-buenaventura-ca",
+    "count": 3,
+    "springs": [
+      {
+        "slug": "stingleys-hot-springs",
+        "name": "Stingleys Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 16.7,
+        "temperature_f": 123,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "big-caliente-hot-springs",
+        "name": "Big Caliente Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 26.4,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "little-caliente-hot-springs",
+        "name": "Little Caliente Hot Springs",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 28.8,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "san-tan-valley-az": {
+    "city": "San Tan Valley",
+    "state": "az",
+    "state_name": "AZ",
+    "lat": 33.1786,
+    "lng": -111.5629,
+    "population": 109189,
+    "slug": "san-tan-valley-az",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "superior-hot-springs",
+        "name": "Superior Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 28.5,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "rio-rancho-nm": {
+    "city": "Rio Rancho",
+    "state": "nm",
+    "state_name": "NM",
+    "lat": 35.2873,
+    "lng": -106.6982,
+    "population": 108515,
+    "slug": "rio-rancho-nm",
+    "count": 4,
+    "springs": [
+      {
+        "slug": "soda-dam-hot-springs-nm",
+        "name": "Soda Dam Hot Springs",
+        "state": "nm",
+        "region": "colorado",
+        "distance_mi": 34.9,
+        "temperature_f": 117,
+        "access_type": "hike",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "mccauley-hot-springs-nm",
+        "name": "McCauley Hot Springs",
+        "state": "nm",
+        "region": "colorado",
+        "distance_mi": 37.0,
+        "temperature_f": 99,
+        "access_type": "hike",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "spence-hot-springs-nm",
+        "name": "Spence Hot Springs",
+        "state": "nm",
+        "region": "colorado",
+        "distance_mi": 39.0,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "san-antonio-hot-spring-nm",
+        "name": "San Antonio Hot Spring",
+        "state": "nm",
+        "region": "colorado",
+        "distance_mi": 45.1,
+        "temperature_f": 129,
+        "access_type": "hike",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  },
+  "chico-ca": {
+    "city": "Chico",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 39.7578,
+    "lng": -121.8161,
+    "population": 108267,
+    "slug": "chico-ca",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "morgan-hot-spring",
+        "name": "Morgan Hot Spring",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 46.0,
+        "temperature_f": 205,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "hillsboro-or": {
+    "city": "Hillsboro",
+    "state": "or",
+    "state_name": "OR",
+    "lat": 45.5273,
+    "lng": -122.936,
+    "population": 108231,
+    "slug": "hillsboro-or",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "moffetts-hot-springs",
+        "name": "Moffett's Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 48.0,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "moffetts-hot-springs",
+        "name": "Moffett's Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 48.0,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "centennial-co": {
+    "city": "Centennial",
+    "state": "co",
+    "state_name": "CO",
+    "lat": 39.5926,
+    "lng": -104.8673,
+    "population": 108201,
+    "slug": "centennial-co",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "eldorado-springs-colorado",
+        "name": "Eldorado Springs Resort",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 32.0,
+        "temperature_f": 76,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "indian-hot-springs-colorado",
+        "name": "Indian Hot Springs",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 35.7,
+        "temperature_f": 98,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  },
+  "goodyear-az": {
+    "city": "Goodyear",
+    "state": "az",
+    "state_name": "AZ",
+    "lat": 33.2614,
+    "lng": -112.3622,
+    "population": 107645,
+    "slug": "goodyear-az",
+    "count": 4,
+    "springs": [
+      {
+        "slug": "buckhorn-hot-mineral-wells",
+        "name": "Buckhorn Hot Mineral Wells",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 21.7,
+        "temperature_f": 110,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "el-dorado-hot-springs",
+        "name": "El Dorado Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 36.3,
+        "temperature_f": 105,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "gila-hot-springs",
+        "name": "Gila Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 42.7,
+        "temperature_f": 110,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "castle-hot-springs",
+        "name": "Castle Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 47.6,
+        "temperature_f": 120,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "renton-wa": {
+    "city": "Renton",
+    "state": "wa",
+    "state_name": "WA",
+    "lat": 47.4784,
+    "lng": -122.1918,
+    "population": 105317,
+    "slug": "renton-wa",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "goldmyer-hot-springs",
+        "name": "Goldmyer Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 34.5,
+        "temperature_f": 109,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "hot-springs-washington-town",
+        "name": "Hot Springs (Town)",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 35.6,
+        "temperature_f": null,
+        "access_type": "drive-up",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "buckeye-az": {
+    "city": "Buckeye",
+    "state": "az",
+    "state_name": "AZ",
+    "lat": 33.4314,
+    "lng": -112.6429,
+    "population": 104923,
+    "slug": "buckeye-az",
+    "count": 5,
+    "springs": [
+      {
+        "slug": "buckhorn-hot-mineral-wells",
+        "name": "Buckhorn Hot Mineral Wells",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 3.9,
+        "temperature_f": 110,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "el-dorado-hot-springs",
+        "name": "El Dorado Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 17.3,
+        "temperature_f": 105,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "hassayampa-hot-springs",
+        "name": "Hassayampa Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 37.5,
+        "temperature_f": 105,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "castle-hot-springs",
+        "name": "Castle Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 39.1,
+        "temperature_f": 120,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "gila-hot-springs",
+        "name": "Gila Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 39.1,
+        "temperature_f": 110,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "longmont-co": {
+    "city": "Longmont",
+    "state": "co",
+    "state_name": "CO",
+    "lat": 40.1686,
+    "lng": -105.1005,
+    "population": 102512,
+    "slug": "longmont-co",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "eldorado-springs-colorado",
+        "name": "Eldorado Springs Resort",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 18.9,
+        "temperature_f": 76,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "indian-hot-springs-colorado",
+        "name": "Indian Hot Springs",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 36.8,
+        "temperature_f": 98,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  },
+  "highlands-ranch-co": {
+    "city": "Highlands Ranch",
+    "state": "co",
+    "state_name": "CO",
+    "lat": 39.5419,
+    "lng": -104.9708,
+    "population": 102257,
+    "slug": "highlands-ranch-co",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "eldorado-springs-colorado",
+        "name": "Eldorado Springs Resort",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 31.5,
+        "temperature_f": 76,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "indian-hot-springs-colorado",
+        "name": "Indian Hot Springs",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 31.8,
+        "temperature_f": 98,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  },
+  "santa-fe-nm": {
+    "city": "Santa Fe",
+    "state": "nm",
+    "state_name": "NM",
+    "lat": 35.6619,
+    "lng": -105.9819,
+    "population": 100264,
+    "slug": "santa-fe-nm",
+    "count": 5,
+    "springs": [
+      {
+        "slug": "mccauley-hot-springs-nm",
+        "name": "McCauley Hot Springs",
+        "state": "nm",
+        "region": "colorado",
+        "distance_mi": 37.8,
+        "temperature_f": 99,
+        "access_type": "hike",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "spence-hot-springs-nm",
+        "name": "Spence Hot Springs",
+        "state": "nm",
+        "region": "colorado",
+        "distance_mi": 38.5,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "montezuma-hot-springs-nm",
+        "name": "Montezuma Hot Springs",
+        "state": "nm",
+        "region": "colorado",
+        "distance_mi": 38.8,
+        "temperature_f": 138,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "soda-dam-hot-springs-nm",
+        "name": "Soda Dam Hot Springs",
+        "state": "nm",
+        "region": "colorado",
+        "distance_mi": 40.5,
+        "temperature_f": 117,
+        "access_type": "hike",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "san-antonio-hot-spring-nm",
+        "name": "San Antonio Hot Spring",
+        "state": "nm",
+        "region": "colorado",
+        "distance_mi": 41.8,
+        "temperature_f": 129,
+        "access_type": "hike",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  },
+  "lafayette-co": {
+    "city": "Lafayette",
+    "state": "co",
+    "state_name": "CO",
+    "lat": 39.9946,
+    "lng": -105.0998,
+    "population": 99552,
+    "slug": "lafayette-co",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "eldorado-springs-colorado",
+        "name": "Eldorado Springs Resort",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 10.5,
+        "temperature_f": 76,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "indian-hot-springs-colorado",
+        "name": "Indian Hot Springs",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 28.1,
+        "temperature_f": 98,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  },
+  "federal-way-wa": {
+    "city": "Federal Way",
+    "state": "wa",
+    "state_name": "WA",
+    "lat": 47.3091,
+    "lng": -122.3358,
+    "population": 99493,
+    "slug": "federal-way-wa",
+    "count": 3,
+    "springs": [
+      {
+        "slug": "hot-springs-washington-town",
+        "name": "Hot Springs (Town)",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 37.7,
+        "temperature_f": null,
+        "access_type": "drive-up",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "goldmyer-hot-springs",
+        "name": "Goldmyer Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 43.7,
+        "temperature_f": 109,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "ohanapecosh-hot-springs",
+        "name": "Ohanapecosh Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 47.8,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "prescott-valley-az": {
+    "city": "Prescott Valley",
+    "state": "az",
+    "state_name": "AZ",
+    "lat": 34.598,
+    "lng": -112.3185,
+    "population": 98921,
+    "slug": "prescott-valley-az",
+    "count": 3,
+    "springs": [
+      {
+        "slug": "verde-hot-springs",
+        "name": "Verde Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 38.5,
+        "temperature_f": 104,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "castle-hot-springs",
+        "name": "Castle Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 44.9,
+        "temperature_f": 120,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "hassayampa-hot-springs",
+        "name": "Hassayampa Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 49.3,
+        "temperature_f": 105,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "beaverton-or": {
+    "city": "Beaverton",
+    "state": "or",
+    "state_name": "OR",
+    "lat": 45.4779,
+    "lng": -122.8168,
+    "population": 97812,
+    "slug": "beaverton-or",
+    "count": 6,
+    "springs": [
+      {
+        "slug": "moffetts-hot-springs",
+        "name": "Moffett's Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 43.2,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "moffetts-hot-springs",
+        "name": "Moffett's Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 43.2,
+        "temperature_f": 100,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "wind-river-hot-springs",
+        "name": "Wind River Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 46.0,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "skamania-hot-springs",
+        "name": "Skamania Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 46.2,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "bagby-hot-springs",
+        "name": "Bagby Hot Springs",
+        "state": "or",
+        "region": "shasta",
+        "distance_mi": 48.8,
+        "temperature_f": 136,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "bagby-hot-springs",
+        "name": "Bagby Hot Springs",
+        "state": "or",
+        "region": "washington",
+        "distance_mi": 48.8,
+        "temperature_f": 136,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "orem-ut": {
+    "city": "Orem",
+    "state": "ut",
+    "state_name": "UT",
+    "lat": 40.2981,
+    "lng": -111.6994,
+    "population": 97182,
+    "slug": "orem-ut",
+    "count": 4,
+    "springs": [
+      {
+        "slug": "inlet-park-hot-springs",
+        "name": "Inlet Park Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 13.2,
+        "temperature_f": 109,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "homestead-crater",
+        "name": "Homestead Crater",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 20.7,
+        "temperature_f": 96,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "mountain-point-hot-springs",
+        "name": "Mountain Point Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 21.8,
+        "temperature_f": 95,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "fifth-water-hot-springs",
+        "name": "Fifth Water Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 23.0,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "sandy-ut": {
+    "city": "Sandy",
+    "state": "ut",
+    "state_name": "UT",
+    "lat": 40.5709,
+    "lng": -111.8506,
+    "population": 94291,
+    "slug": "sandy-ut",
+    "count": 5,
+    "springs": [
+      {
+        "slug": "mountain-point-hot-springs",
+        "name": "Mountain Point Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 5.4,
+        "temperature_f": 95,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "inlet-park-hot-springs",
+        "name": "Inlet Park Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 16.0,
+        "temperature_f": 109,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "homestead-crater",
+        "name": "Homestead Crater",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 23.6,
+        "temperature_f": 96,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "fifth-water-hot-springs",
+        "name": "Fifth Water Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 43.4,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "ogden-canyon-hot-springs",
+        "name": "Ogden Canyon Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 48.5,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "kirkland-wa": {
+    "city": "Kirkland",
+    "state": "wa",
+    "state_name": "WA",
+    "lat": 47.697,
+    "lng": -122.2057,
+    "population": 92621,
+    "slug": "kirkland-wa",
+    "count": 3,
+    "springs": [
+      {
+        "slug": "goldmyer-hot-springs",
+        "name": "Goldmyer Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 37.1,
+        "temperature_f": 109,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "hot-springs-washington-town",
+        "name": "Hot Springs (Town)",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 45.9,
+        "temperature_f": null,
+        "access_type": "drive-up",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "scenic-hot-springs",
+        "name": "Scenic Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 49.6,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "avondale-az": {
+    "city": "Avondale",
+    "state": "az",
+    "state_name": "AZ",
+    "lat": 33.3873,
+    "lng": -112.3235,
+    "population": 92477,
+    "slug": "avondale-az",
+    "count": 5,
+    "springs": [
+      {
+        "slug": "buckhorn-hot-mineral-wells",
+        "name": "Buckhorn Hot Mineral Wells",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 21.7,
+        "temperature_f": 110,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "el-dorado-hot-springs",
+        "name": "El Dorado Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 36.0,
+        "temperature_f": 105,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "castle-hot-springs",
+        "name": "Castle Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 39.0,
+        "temperature_f": 120,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "hassayampa-hot-springs",
+        "name": "Hassayampa Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 46.6,
+        "temperature_f": 105,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "gila-hot-springs",
+        "name": "Gila Hot Springs",
+        "state": "az",
+        "region": "desert",
+        "distance_mi": 49.4,
+        "temperature_f": 110,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "missoula-mt": {
+    "city": "Missoula",
+    "state": "mt",
+    "state_name": "MT",
+    "lat": 46.8751,
+    "lng": -114.0214,
+    "population": 90522,
+    "slug": "missoula-mt",
+    "count": 3,
+    "springs": [
+      {
+        "slug": "biltmore-hot-springs",
+        "name": "Biltmore Hot Springs",
+        "state": "mt",
+        "region": "rockies",
+        "distance_mi": 1.5,
+        "temperature_f": 100,
+        "access_type": "resort",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "lolo-hot-springs",
+        "name": "Lolo Hot Springs",
+        "state": "mt",
+        "region": "rockies",
+        "distance_mi": 30.8,
+        "temperature_f": 102,
+        "access_type": "resort",
+        "site_url": "https://www.soaktherockies.com"
+      },
+      {
+        "slug": "jerry-johnson-hot-springs",
+        "name": "Jerry Johnson Hot Springs",
+        "state": "id",
+        "region": "rockies",
+        "distance_mi": 49.4,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.soaktherockies.com"
+      }
+    ]
+  },
+  "auburn-wa": {
+    "city": "Auburn",
+    "state": "wa",
+    "state_name": "WA",
+    "lat": 47.3039,
+    "lng": -122.2108,
+    "population": 85676,
+    "slug": "auburn-wa",
+    "count": 3,
+    "springs": [
+      {
+        "slug": "hot-springs-washington-town",
+        "name": "Hot Springs (Town)",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 31.9,
+        "temperature_f": null,
+        "access_type": "drive-up",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "goldmyer-hot-springs",
+        "name": "Goldmyer Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 38.3,
+        "temperature_f": 109,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      },
+      {
+        "slug": "ohanapecosh-hot-springs",
+        "name": "Ohanapecosh Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 43.3,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "lehi-ut": {
+    "city": "Lehi",
+    "state": "ut",
+    "state_name": "UT",
+    "lat": 40.4136,
+    "lng": -111.8725,
+    "population": 85173,
+    "slug": "lehi-ut",
+    "count": 4,
+    "springs": [
+      {
+        "slug": "inlet-park-hot-springs",
+        "name": "Inlet Park Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 5.7,
+        "temperature_f": 109,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "mountain-point-hot-springs",
+        "name": "Mountain Point Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 10.3,
+        "temperature_f": 95,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "homestead-crater",
+        "name": "Homestead Crater",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 25.0,
+        "temperature_f": 96,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "fifth-water-hot-springs",
+        "name": "Fifth Water Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 34.7,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "wenatchee-wa": {
+    "city": "Wenatchee",
+    "state": "wa",
+    "state_name": "WA",
+    "lat": 47.436,
+    "lng": -120.3295,
+    "population": 85048,
+    "slug": "wenatchee-wa",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "scenic-hot-springs",
+        "name": "Scenic Hot Springs",
+        "state": "wa",
+        "region": "washington",
+        "distance_mi": 42.1,
+        "temperature_f": null,
+        "access_type": "hike",
+        "site_url": "https://www.washingtonhotsprings.com"
+      }
+    ]
+  },
+  "layton-ut": {
+    "city": "Layton",
+    "state": "ut",
+    "state_name": "UT",
+    "lat": 41.077,
+    "lng": -111.962,
+    "population": 83286,
+    "slug": "layton-ut",
+    "count": 6,
+    "springs": [
+      {
+        "slug": "ogden-canyon-hot-springs",
+        "name": "Ogden Canyon Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 16.7,
+        "temperature_f": 110,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "belmont-hot-springs-rv-park",
+        "name": "Belmont Hot Springs RV Park",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 31.6,
+        "temperature_f": 104,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "mountain-point-hot-springs",
+        "name": "Mountain Point Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 36.4,
+        "temperature_f": 95,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "stinking-springs",
+        "name": "Stinking Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 42.0,
+        "temperature_f": 100,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "crystal-hot-springs",
+        "name": "Crystal Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 43.5,
+        "temperature_f": 134,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "homestead-crater",
+        "name": "Homestead Crater",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 49.2,
+        "temperature_f": 96,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "south-jordan-ut": {
+    "city": "South Jordan",
+    "state": "ut",
+    "state_name": "UT",
+    "lat": 40.557,
+    "lng": -111.9784,
+    "population": 82686,
+    "slug": "south-jordan-ut",
+    "count": 4,
+    "springs": [
+      {
+        "slug": "mountain-point-hot-springs",
+        "name": "Mountain Point Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 1.6,
+        "temperature_f": 95,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "inlet-park-hot-springs",
+        "name": "Inlet Park Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 14.4,
+        "temperature_f": 109,
+        "access_type": "drive-up",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "homestead-crater",
+        "name": "Homestead Crater",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 30.1,
+        "temperature_f": 96,
+        "access_type": "resort",
+        "site_url": "https://www.desertsoak.com"
+      },
+      {
+        "slug": "fifth-water-hot-springs",
+        "name": "Fifth Water Hot Springs",
+        "state": "ut",
+        "region": "desert",
+        "distance_mi": 46.0,
+        "temperature_f": 102,
+        "access_type": "hike",
+        "site_url": "https://www.desertsoak.com"
+      }
+    ]
+  },
+  "napa-ca": {
+    "city": "Napa",
+    "state": "ca",
+    "state_name": "CA",
+    "lat": 38.2975,
+    "lng": -122.301,
+    "population": 82103,
+    "slug": "napa-ca",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "little-geysers",
+        "name": "Little Geysers",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 40.4,
+        "temperature_f": 210,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      },
+      {
+        "slug": "the-geysers",
+        "name": "The Geysers",
+        "state": "ca",
+        "region": "shasta",
+        "distance_mi": 44.4,
+        "temperature_f": 214,
+        "access_type": "hike",
+        "site_url": "https://www.shastahotsprings.com"
+      }
+    ]
+  },
+  "castle-rock-co": {
+    "city": "Castle Rock",
+    "state": "co",
+    "state_name": "CO",
+    "lat": 39.3763,
+    "lng": -104.8535,
+    "population": 79123,
+    "slug": "castle-rock-co",
+    "count": 2,
+    "springs": [
+      {
+        "slug": "indian-hot-springs-colorado",
+        "name": "Indian Hot Springs",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 43.1,
+        "temperature_f": 98,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      },
+      {
+        "slug": "eldorado-springs-colorado",
+        "name": "Eldorado Springs Resort",
+        "state": "co",
+        "region": "colorado",
+        "distance_mi": 44.5,
+        "temperature_f": 76,
+        "access_type": "drive-up",
+        "site_url": "https://www.soakcolorado.com"
+      }
+    ]
+  }
+}
