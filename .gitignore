@@ -76,3 +76,6 @@ graphify-out/
 # Render service scratch / stray lockfile (render-service uses pnpm)
 render-service/.recall/
 render-service/package-lock.json
+
+# Agent recall scratch (root)
+.recall/
