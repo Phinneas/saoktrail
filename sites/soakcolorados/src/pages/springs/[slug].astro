@@ -5,6 +5,7 @@ import SchemaScript from "@components/schema/SchemaScript.astro";
 import { buildBreadcrumbSchema, buildPlaceSchema } from "@lib/schema";
 import { mapboxAccessToken } from "@/config/map";
 import SpringMapScript from "@components/SpringMapScript.astro";
+import ConditionReports from "@components/ConditionReports.tsx";
 import springsData from "../../../public/springs.json";
 import campgroundsData from "../../../public/campgrounds.json";
 import nearCitiesData from "../../../public/near_cities.json";
@@ -39,6 +40,9 @@ const relatedSprings = springsData
 
 const campgrounds = (campgroundsData as any)[slug] || [];
 const nearCities = (nearCitiesData as any)[slug] || [];
+
+const apiUrl = import.meta.env.PUBLIC_API_URL;
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <BaseLayout
@@ -233,6 +237,18 @@ const nearCities = (nearCitiesData as any)[slug] || [];
         <div id="spring-map" class="h-[400px] rounded-lg overflow-hidden" data-lat={spring.lat} data-lng={spring.lng} data-name={spring.name} data-token={mapboxAccessToken}>
         </div>
       </div>
+
+      {apiUrl && (
+        <div class="intersect:animate-fadeUp opacity-0">
+          <ConditionReports
+            client:only="react"
+            springSlug={slug}
+            apiUrl={apiUrl}
+            turnstileSiteKey={turnstileSiteKey}
+            site="soakcolorado"
+          />
+        </div>
+      )}
 
       {relatedSprings.length > 0 && (
         <div class="intersect:animate-fadeUp opacity-0">
