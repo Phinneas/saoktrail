@@ -1,0 +1,8 @@
+Reason,Source,Validation,Pages
+Not found (404),Website,Not Started,35
+Page with redirect,Website,Not Started,19
+Alternate page with proper canonical tag,Website,Not Started,17
+Duplicate without user-selected canonical,Website,Not Started,4
+Excluded by ‘noindex’ tag,Website,Not Started,2
+Crawled - currently not indexed,Google systems,Not Started,32
+Discovered - currently not indexed,Google systems,Passed,68

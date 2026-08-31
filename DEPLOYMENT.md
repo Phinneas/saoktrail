@@ -76,10 +76,13 @@ curl https://<your-worker>.workers.dev/health
 > cd sites/soaktrail && npm run build
 > npx wrangler pages deploy dist --project-name=saoktrail --branch=main
 > ```
-> The MapTiler key is read from `sites/soaktrail/.env` (`PUBLIC_MAPTILER_KEY`) at build
-> time and inlined into the SSR bundle. The API worker is separate
-> (`soakatlas-mcp.buzzuw2.workers.dev`); the map fetches `/springs` and
-> `/spring/:slug/images` from it (override via `PUBLIC_API_URL`).
+> The MapTiler key is read at **runtime** from the Pages secret `PUBLIC_MAPTILER_KEY`
+> (set on the `saoktrail` project), with `sites/soaktrail/.env` as a build-time fallback.
+> This is required because CI builds (`.github/workflows/deploy-sites.yml`) don't have
+> `.env`, so a build-time-only key produces a "Map disabled" locator page. Do NOT set a
+> `PUBLIC_API_URL` Pages secret/var — it would override the correct default. The API
+> worker is separate (`soakatlas-mcp.buzzuw2.workers.dev`); the map fetches `/springs`
+> and `/spring/:slug/images` from it (override via build-time `PUBLIC_API_URL`).
 
 ### Connect Repository
 

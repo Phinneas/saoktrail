@@ -23,6 +23,8 @@ export default defineConfig({
   redirects: {
     "/coming-soon": { status: 301, destination: "/" },
     "/tag/news": { status: 301, destination: "/colorado-hot-springs-map" },
+    "/springs/rico-hot-springs-colorado-guide": { status: 301, destination: "/springs/rico-hot-springs" },
+    "/springs/iron-mountain-hot-springs-geology": { status: 301, destination: "/springs/glenwood-hot-springs-pool" },
     ...ghostRedirects,
   },
   adapter: cloudflare(),
@@ -34,7 +36,8 @@ export default defineConfig({
         !page.includes("/search") &&
         !page.includes("/authors") &&
         !page.includes("/blog/tags") &&
-        !page.includes("/blog/categories"),
+        !page.includes("/blog/categories") &&
+        !page.includes("/blog/page/"),
     }),
     tailwind({ config: { applyBaseStyles: false } }),
     AutoImport({

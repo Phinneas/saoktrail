@@ -4,6 +4,7 @@ import BlogCard from "@components/blog/Card.astro";
 import Pagination from "@components/common/Pagination.astro";
 import PageHeader from "@components/common/PageHeader.astro";
 import BlogSidebar from "@components/blog/Sidebar.astro";
+import { siteConfig } from "@site/config";
 import type { BlogEntry } from "@/types";
 
 interface Props {
@@ -27,9 +28,13 @@ const {
   pageCount,
   noindex,
 } = Astro.props;
+
+// Pagination pages (page 2+) should canonical to the blog index to
+// consolidate ranking signals and avoid duplicate-content flags in GSC.
+const canonical = noindex ? `${siteConfig.url}/blog` : undefined;
 ---
 
-<BaseLayout title={entryIndex.data.title} description={entryIndex.data.description} noindex={noindex}>
+<BaseLayout title={entryIndex.data.title} description={entryIndex.data.description} noindex={noindex} canonical={canonical}>
   <PageHeader title={entryIndex.data.title} />
   <section class="section">
     <div class="flex container">

@@ -10,4 +10,4 @@ Disallow: /blog/page/
 Disallow: /*?ref=
 Disallow: /*?spring=
 
-Sitemap: https://www.soakcolorado.com/sitemap-index.xml
+Sitemap: https://www.desertsoak.com/sitemap-index.xml

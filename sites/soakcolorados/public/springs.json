@@ -9,7 +9,7 @@
     "fee": 20,
     "access_type": "Drive-up",
     "season": "Year-round",
-    "hours": "Sun\u2013Thu 10am\u201310:30pm, Fri\u2013Sat 10am\u201311pm",
+    "hours": "Sun–Thu 10am–10:30pm, Fri–Sat 10am–11pm",
     "clothing": "Clothing optional after dark",
     "parking": "Limited lot, arrive early on weekends",
     "cell_coverage": "Minimal",
@@ -43,14 +43,14 @@
     "fee": 30,
     "access_type": "Resort",
     "season": "Year-round",
-    "hours": "9am\u201310pm daily",
+    "hours": "9am–10pm daily",
     "clothing": "Required",
     "parking": "Paid parking nearby",
     "cell_coverage": "Good",
     "road_condition": "Paved",
     "description": "16 soaking pools along the Colorado River with views of Glenwood Canyon. Family-friendly with a freshwater pool.",
     "best_time": "Weekday mornings",
-    "insider_tips": "Riverside pools fill first \u2014 grab one early. Combo tickets with Glenwood Caverns available.",
+    "insider_tips": "Riverside pools fill first — grab one early. Combo tickets with Glenwood Caverns available.",
     "state": "CO",
     "osm": {
       "osm_id": 5406222022,
@@ -354,7 +354,7 @@
   },
   {
     "id": "3",
-    "slug": "iron-mountain-hot-springs-geology",
+    "slug": "glenwood-hot-springs-pool",
     "name": "Glenwood Hot Springs Pool",
     "lat": 39.53783889,
     "lng": -107.3754611,
@@ -362,7 +362,7 @@
     "fee": 30,
     "access_type": "Resort",
     "season": "Year-round",
-    "hours": "7:30am\u201310pm daily",
+    "hours": "7:30am–10pm daily",
     "clothing": "Required",
     "parking": "Free lot",
     "cell_coverage": "Good",
@@ -680,13 +680,13 @@
     "fee": 25,
     "access_type": "Resort",
     "season": "Year-round",
-    "hours": "8am\u20139pm daily",
+    "hours": "8am–9pm daily",
     "clothing": "Clothing optional in vapor cave",
     "parking": "Free on site",
     "cell_coverage": "Limited",
     "road_condition": "Paved",
     "description": "Historic hotel in Ouray with underground vapor cave, outdoor soaking pool, and private tubs. Adults only.",
-    "insider_tips": "The underground vapor cave is unique \u2014 not found elsewhere in Colorado.",
+    "insider_tips": "The underground vapor cave is unique — not found elsewhere in Colorado.",
     "nearby_gems": "Ouray Hot Springs Pool, Box Canyon Falls",
     "state": "CO",
     "huc_cd": "13010005",
@@ -714,14 +714,14 @@
     "fee": 20,
     "access_type": "Drive-up",
     "season": "Year-round",
-    "hours": "8am\u201310pm, reservations required",
+    "hours": "8am–10pm, reservations required",
     "clothing": "Clothing optional",
     "parking": "Small lot, reservations required",
     "cell_coverage": "None",
     "road_condition": "Dirt road last 2 miles",
     "description": "Peaceful clothing-optional hot springs run by Orient Land Trust. Multiple pools with stunning San Luis Valley views.",
     "best_time": "Weekdays with advance reservation",
-    "insider_tips": "Book well in advance \u2014 fills up fast. Camping on site available.",
+    "insider_tips": "Book well in advance — fills up fast. Camping on site available.",
     "state": "CO",
     "osm": {
       "osm_id": 8268916666,
@@ -932,12 +932,12 @@
     "season": "Summer/Fall",
     "hours": "Dawn to dusk",
     "clothing": "Clothing optional",
-    "parking": "Conundrum TH, permit required May 15\u2013Nov 1",
+    "parking": "Conundrum TH, permit required May 15–Nov 1",
     "cell_coverage": "None",
     "road_condition": "Dirt road to trailhead",
     "description": "Remote 17-mile round-trip hike to natural hot springs at 11,200 ft near Aspen. Worth every step.",
     "best_time": "Late July through September",
-    "alerts": "Wilderness permit required May 15\u2013Nov 1",
+    "alerts": "Wilderness permit required May 15–Nov 1",
     "insider_tips": "Camp overnight to enjoy pools in morning solitude. Altitude sickness is a real risk.",
     "state": "CO",
     "huc_cd": "14010004",
@@ -999,7 +999,7 @@
     "fee": 22,
     "access_type": "Resort",
     "season": "Year-round",
-    "hours": "8am\u201310pm daily",
+    "hours": "8am–10pm daily",
     "clothing": "Clothing optional",
     "parking": "Free on site",
     "cell_coverage": "Limited",
@@ -1155,7 +1155,7 @@
     "parking": "Roadside pullout on Hwy 133",
     "cell_coverage": "Minimal",
     "road_condition": "Paved",
-    "description": "Free roadside hot spring on the Crystal River near Carbondale. Natural pools depend on river level \u2014 best in summer and fall.",
+    "description": "Free roadside hot spring on the Crystal River near Carbondale. Natural pools depend on river level — best in summer and fall.",
     "best_time": "Late summer through fall",
     "alerts": "High water can submerge pools in spring",
     "insider_tips": "Can get very crowded on summer weekends. Visit early morning or late evening.",
@@ -1402,12 +1402,12 @@
     "fee": 9,
     "access_type": "Drive-up",
     "season": "Year-round",
-    "hours": "Mon\u2013Fri 6am\u20139pm, Sat\u2013Sun 8am\u20138pm",
+    "hours": "Mon–Fri 6am–9pm, Sat–Sun 8am–8pm",
     "clothing": "Required",
     "parking": "Free lot",
     "cell_coverage": "Good",
     "road_condition": "Paved",
-    "description": "Indoor mineral hot springs pool in downtown Salida \u2014 the largest indoor hot springs pool in the US. Affordable and family friendly.",
+    "description": "Indoor mineral hot springs pool in downtown Salida — the largest indoor hot springs pool in the US. Affordable and family friendly.",
     "insider_tips": "Private soaking tubs available by reservation. Great after a day of rafting the Arkansas.",
     "state": "CO",
     "_provenance": {}
@@ -1422,7 +1422,7 @@
     "fee": 20,
     "access_type": "Resort",
     "season": "Year-round",
-    "hours": "8am\u201310pm daily",
+    "hours": "8am–10pm daily",
     "clothing": "Clothing optional",
     "parking": "Free on site",
     "cell_coverage": "Limited",
@@ -1449,7 +1449,7 @@
     "cell_coverage": "None",
     "road_condition": "Dirt road, 4WD required in winter",
     "description": "Ultra-luxury ghost town resort in the San Juan Mountains with private hot springs. Restored 1800s cabins.",
-    "insider_tips": "Overnight stays only \u2014 no day visits. One of the most remote and beautiful settings in Colorado.",
+    "insider_tips": "Overnight stays only — no day visits. One of the most remote and beautiful settings in Colorado.",
     "state": "CO",
     "elevation_ft": 8850.0,
     "huc_cd": "14030002",
@@ -1476,7 +1476,7 @@
     "fee": 25,
     "access_type": "Resort",
     "season": "Year-round",
-    "hours": "8am\u20139pm daily",
+    "hours": "8am–9pm daily",
     "clothing": "Required",
     "parking": "Free on site",
     "cell_coverage": "Minimal",
@@ -1585,7 +1585,7 @@
     "road_condition": "Short walk from road",
     "description": "Wild backcountry hot springs along the Colorado River near Kremmling. Popular with kayakers.",
     "best_time": "Fall when river levels drop",
-    "insider_tips": "Accessible via raft or kayak during high water \u2014 one of the best river hot spring combos in the state.",
+    "insider_tips": "Accessible via raft or kayak during high water — one of the best river hot spring combos in the state.",
     "state": "CO",
     "osm": {
       "osm_id": 4405868598,
@@ -1695,7 +1695,7 @@
     "road_condition": "Dirt road to trailhead",
     "description": "Remote free hot springs near Crested Butte requiring a moderate hike through alpine scenery.",
     "best_time": "Late summer",
-    "insider_tips": "Often missed by tourists \u2014 a local favorite near Crested Butte.",
+    "insider_tips": "Often missed by tourists — a local favorite near Crested Butte.",
     "state": "CO",
     "huc_cd": "14020001",
     "nwis": {
@@ -1725,8 +1725,8 @@
     "parking": "Chalk Creek Rd pullout near Nathrop",
     "cell_coverage": "None",
     "road_condition": "Short walk from road",
-    "description": "Free natural hot springs near Mount Princeton. Very hot at source \u2014 mix with creek water to build your own pools.",
-    "alerts": "Water at source can be scalding \u2014 always test before entering",
+    "description": "Free natural hot springs near Mount Princeton. Very hot at source — mix with creek water to build your own pools.",
+    "alerts": "Water at source can be scalding — always test before entering",
     "insider_tips": "Bring a shovel to build pools in the creek bank.",
     "state": "CO",
     "huc_cd": "11020001",
@@ -1787,13 +1787,13 @@
     "fee": 12,
     "access_type": "Resort",
     "season": "Year-round",
-    "hours": "8am\u201310pm daily",
+    "hours": "8am–10pm daily",
     "clothing": "Required",
     "parking": "Free near Box Canyon Lodge",
     "cell_coverage": "Good",
     "road_condition": "Paved",
     "description": "Rooftop hot tubs at Box Canyon Lodge in Ouray with stunning canyon views.",
-    "insider_tips": "Day passes available but book ahead \u2014 fills quickly.",
+    "insider_tips": "Day passes available but book ahead — fills quickly.",
     "state": "CO",
     "huc_cd": "14020006",
     "nwis": {
@@ -1904,13 +1904,13 @@
     "temp_f": 76,
     "fee": 7,
     "access_type": "Drive-up",
-    "season": "Memorial Day\u2013Labor Day",
-    "hours": "10am\u20136pm (seasonal)",
+    "season": "Memorial Day–Labor Day",
+    "hours": "10am–6pm (seasonal)",
     "clothing": "Required",
     "parking": "Paid lot",
     "cell_coverage": "Good",
     "road_condition": "Paved",
-    "description": "Historic spring-fed pool in Eldorado Canyon near Boulder. Cool mineral water \u2014 perfect for summer swimming.",
+    "description": "Historic spring-fed pool in Eldorado Canyon near Boulder. Cool mineral water — perfect for summer swimming.",
     "insider_tips": "More cool mineral pool than hot spring. Great for families near Boulder. Bring cash.",
     "state": "CO",
     "huc_cd": "10190005",
@@ -1971,7 +1971,7 @@
     "fee": 15,
     "access_type": "Resort",
     "season": "Year-round",
-    "hours": "8am\u20139pm daily",
+    "hours": "8am–9pm daily",
     "clothing": "Required",
     "parking": "Free on site",
     "cell_coverage": "Minimal",
@@ -2004,7 +2004,7 @@
     "fee": 20,
     "access_type": "Resort",
     "season": "Year-round",
-    "hours": "10am\u20139pm daily",
+    "hours": "10am–9pm daily",
     "clothing": "Clothing optional",
     "parking": "Free on site",
     "cell_coverage": "Limited",
@@ -2037,13 +2037,13 @@
     "fee": 8,
     "access_type": "Drive-up",
     "season": "Seasonal",
-    "hours": "Varies \u2014 call ahead",
+    "hours": "Varies — call ahead",
     "clothing": "Required",
     "parking": "On site",
     "cell_coverage": "Minimal",
     "road_condition": "Paved",
     "description": "Small soaking operation in South Park. Simple and affordable.",
-    "alerts": "Operating status changes frequently \u2014 verify before visiting",
+    "alerts": "Operating status changes frequently — verify before visiting",
     "state": "CO",
     "osm": {
       "osm_id": 6707752379,
@@ -2184,353 +2184,6 @@
     }
   },
   {
-    "id": "28",
-    "slug": "rico-hot-springs-colorado-guide",
-    "has_post": false,
-    "name": "Rico Hot Springs (old)",
-    "lat": 46.28149809,
-    "lng": -122.279823,
-    "temp_f": 100,
-    "fee": 0,
-    "access_type": "Hike-in",
-    "season": "Year-round",
-    "hours": "Dawn to dusk",
-    "clothing": "Clothing optional",
-    "parking": "Along Dolores River near Rico",
-    "cell_coverage": "None",
-    "road_condition": "Dirt road",
-    "description": "Wild, undeveloped hot springs along the Dolores River in a remote canyon near the old mining town of Rico.",
-    "best_time": "Spring and fall",
-    "insider_tips": "Rarely crowded. Beautiful canyon setting along the Dolores River.",
-    "state": "CO",
-    "osm": {
-      "osm_id": 6707642881,
-      "osm_name": "Rico 2",
-      "osm_url": "https://www.openstreetmap.org/node/6707642881",
-      "match_distance_miles": 1.42,
-      "tags": {
-        "access": "private",
-        "name": "Rico 2",
-        "natural": "hot_spring"
-      },
-      "nearby": {
-        "access_roads": [
-          {
-            "type": "residential",
-            "name": "West Elder Street",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "track",
-            "name": "Aztec Mine Road",
-            "surface": "dirt",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "North River Street",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "West Mantz Avenue",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "County Road 54 7/10",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "track",
-            "name": "Horse Gulch Road",
-            "surface": "dirt",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": null,
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "service",
-            "name": null,
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "footway",
-            "name": null,
-            "surface": null,
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "North Silver Street",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "East Soda Street",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "unclassified",
-            "name": null,
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "track",
-            "name": null,
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "track",
-            "name": "Burnett A1 Road",
-            "surface": "dirt",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "West Soda Street",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "South Glasgow Avenue",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "Saint Lewis Road",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "County Road North",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "West Elliot Street",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "track",
-            "name": "Burnett Road",
-            "surface": null,
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "Argentine Street",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "West Campbell Street",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "Piedmont Street",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "East Mantz Avenue",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "South Commercial Street",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "North Hancock Street",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "North Garfield Street",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "track",
-            "name": "Street 3",
-            "surface": null,
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "East Campbell Street",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "service",
-            "name": "Water Tank Road",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "track",
-            "name": "Burnett A Road",
-            "surface": "dirt",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "North Picker Street",
-            "surface": "unpaved",
-            "access": null
-          },
-          {
-            "type": "residential",
-            "name": "South Picker Street",
-            "surface": "unpaved",
-            "access": null
-          }
-        ],
-        "parking": [],
-        "trails": [
-          {
-            "type": "track",
-            "name": "Aztec Mine Road",
-            "surface": "dirt",
-            "sac_scale": null
-          },
-          {
-            "type": "track",
-            "name": "Horse Gulch Road",
-            "surface": "dirt",
-            "sac_scale": null
-          },
-          {
-            "type": "footway",
-            "name": null,
-            "surface": null,
-            "sac_scale": null
-          },
-          {
-            "type": "track",
-            "name": null,
-            "surface": "unpaved",
-            "sac_scale": null
-          },
-          {
-            "type": "track",
-            "name": "Burnett A1 Road",
-            "surface": "dirt",
-            "sac_scale": null
-          },
-          {
-            "type": "track",
-            "name": "Burnett Road",
-            "surface": null,
-            "sac_scale": null
-          },
-          {
-            "type": "track",
-            "name": "Street 3",
-            "surface": null,
-            "sac_scale": null
-          },
-          {
-            "type": "track",
-            "name": "Burnett A Road",
-            "surface": "dirt",
-            "sac_scale": null
-          }
-        ],
-        "buildings": [
-          {
-            "type": "hotel",
-            "name": "Rico Hotel"
-          }
-        ],
-        "amenities": [
-          {
-            "type": "place_of_worship",
-            "name": "Rico Community Church"
-          },
-          {
-            "type": "post_office",
-            "name": "Rico Post Office"
-          },
-          {
-            "type": "school",
-            "name": "Rico Grade School"
-          },
-          {
-            "type": "leisure:park",
-            "name": "Louis M Jones Memorial Park"
-          },
-          {
-            "type": "fire_station",
-            "name": "Rico Fire Department"
-          },
-          {
-            "type": "library",
-            "name": "Rico Public Library"
-          },
-          {
-            "type": "townhall",
-            "name": "Rico Town Hall"
-          },
-          {
-            "type": "tourism:information",
-            "name": "National Forest Information"
-          },
-          {
-            "type": "restaurant",
-            "name": "The Prospector"
-          },
-          {
-            "type": "fuel",
-            "name": null
-          }
-        ]
-      }
-    },
-    "huc_cd": "14030002",
-    "nwis": {
-      "site_no": "461654122164300",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
-    "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis",
-      "elevation_ft": "nwis"
-    },
-    "elevation_ft": 6050.0
-  },
-  {
     "id": "37",
     "slug": "rico-hot-springs",
     "name": "Rico Hot Springs",
@@ -2539,16 +2192,16 @@
     "temp_f": 104,
     "fee": null,
     "access_type": "Drive-up",
-    "season": "Late May\u2013October",
+    "season": "Late May–October",
     "hours": "By permission only",
     "clothing": "Unknown",
     "parking": "Small pullout off Hwy 145",
     "cell_coverage": "None",
     "road_condition": "Paved (Hwy 145), short gravel to pools",
-    "description": "Private property on the Dolores River near Rico \u2014 two iron-mineral pools at 100\u2013108\u00b0F on one of Colorado's highest geothermal heat-flow zones. Permission required from ricohotsprings.com.",
-    "best_time": "September\u2013October (fall color + cool air)",
-    "alerts": "Private property \u2014 permission required before visiting. Caretaker on site May\u2013October.",
-    "insider_tips": "Contact ricohotsprings.com well in advance. Slippery slope to pools \u2014 wear grip footwear. No cell signal on site.",
+    "description": "Private property on the Dolores River near Rico — two iron-mineral pools at 100–108°F on one of Colorado's highest geothermal heat-flow zones. Permission required from ricohotsprings.com.",
+    "best_time": "September–October (fall color + cool air)",
+    "alerts": "Private property — permission required before visiting. Caretaker on site May–October.",
+    "insider_tips": "Contact ricohotsprings.com well in advance. Slippery slope to pools — wear grip footwear. No cell signal on site.",
     "state": "CO",
     "osm": {
       "osm_id": 6707642882,
@@ -2875,13 +2528,13 @@
     "fee": 28,
     "access_type": "Resort",
     "season": "Year-round",
-    "hours": "9am\u20139pm daily",
+    "hours": "9am–9pm daily",
     "clothing": "Required",
     "parking": "Free lot",
     "cell_coverage": "Limited",
     "road_condition": "Paved",
     "description": "Popular resort near Buena Vista with multiple outdoor pools fed by naturally superheated springs.",
-    "insider_tips": "Free riverside pools along Chalk Creek Rd are just upstream \u2014 arrive early.",
+    "insider_tips": "Free riverside pools along Chalk Creek Rd are just upstream — arrive early.",
     "state": "CO",
     "elevation_ft": 8150.0,
     "huc_cd": "11020001",
@@ -2908,7 +2561,7 @@
     "fee": 15,
     "access_type": "Drive-up",
     "season": "Year-round",
-    "hours": "10am\u20138pm daily",
+    "hours": "10am–8pm daily",
     "clothing": "Required",
     "parking": "Free on site",
     "cell_coverage": "Good",
@@ -3384,13 +3037,13 @@
     "fee": 22,
     "access_type": "Resort",
     "season": "Year-round",
-    "hours": "8am\u201310pm daily",
+    "hours": "8am–10pm daily",
     "clothing": "Required",
     "parking": "Free on site",
     "cell_coverage": "Limited",
     "road_condition": "Paved",
     "description": "21 pools of varying temperatures on the Colorado River in Grand County. Historic resort, family-friendly.",
-    "insider_tips": "One of the most underrated resorts in Colorado \u2014 rarely as crowded as Glenwood.",
+    "insider_tips": "One of the most underrated resorts in Colorado — rarely as crowded as Glenwood.",
     "state": "CO",
     "osm": {
       "osm_id": 6707874630,
@@ -3642,7 +3295,7 @@
         "buildings": [
           {
             "type": "church",
-            "name": "Jehovah\u2019s Witness Hall"
+            "name": "Jehovah’s Witness Hall"
           },
           {
             "type": "warehouse",
@@ -3700,7 +3353,7 @@
           },
           {
             "type": "place_of_worship",
-            "name": "Jehovah\u2019s Witness Hall"
+            "name": "Jehovah’s Witness Hall"
           }
         ]
       }
@@ -3734,7 +3387,7 @@
     "cell_coverage": "None",
     "road_condition": "Paved",
     "description": "Guest dude ranch near Gunnison with naturally hot spring-fed swimming pool. Incredible mountain setting.",
-    "insider_tips": "Pool access for overnight guests only. Source spring is among the hottest in Colorado at 175\u00b0F.",
+    "insider_tips": "Pool access for overnight guests only. Source spring is among the hottest in Colorado at 175°F.",
     "state": "CO",
     "huc_cd": "14020003",
     "nwis": {
@@ -3796,12 +3449,12 @@
     "fee": 18,
     "access_type": "Drive-up",
     "season": "Year-round",
-    "hours": "10am\u20139pm daily",
+    "hours": "10am–9pm daily",
     "clothing": "Required",
     "parking": "Free lot",
     "cell_coverage": "Good",
     "road_condition": "Paved",
-    "description": "Municipal hot springs pool in downtown Ouray \u2014 the 'Switzerland of America.' Stunning mountain views from every lane.",
+    "description": "Municipal hot springs pool in downtown Ouray — the 'Switzerland of America.' Stunning mountain views from every lane.",
     "insider_tips": "Great value compared to private resorts. The lazy river is fed by natural hot springs.",
     "state": "CO",
     "elevation_ft": 8145.0,
@@ -3835,7 +3488,7 @@
     "cell_coverage": "None",
     "road_condition": "Short hike required",
     "description": "Wild undeveloped hot springs along the Animas River south of Durango. Primitive pools with train views.",
-    "insider_tips": "The Durango & Silverton Narrow Gauge Railroad passes nearby \u2014 watch for the steam train.",
+    "insider_tips": "The Durango & Silverton Narrow Gauge Railroad passes nearby — watch for the steam train.",
     "state": "CO",
     "osm": {
       "osm_id": 4783203677,
@@ -3981,7 +3634,7 @@
     "fee": 39,
     "access_type": "Resort",
     "season": "Year-round",
-    "hours": "7am\u2013midnight daily",
+    "hours": "7am–midnight daily",
     "clothing": "Required",
     "parking": "Free lot",
     "cell_coverage": "Good",

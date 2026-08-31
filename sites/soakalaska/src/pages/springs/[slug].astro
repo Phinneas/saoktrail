@@ -5,6 +5,7 @@ import SchemaScript from "@components/schema/SchemaScript.astro";
 import { buildBreadcrumbSchema, buildPlaceSchema } from "@lib/schema";
 import { mapboxAccessToken } from "@/config/map";
 import SpringMapScript from "@components/SpringMapScript.astro";
+import ConditionReports from "@components/ConditionReports.tsx";
 import springsData from "../../../public/springs.json";
 
 export const prerender = true;
@@ -31,6 +32,9 @@ const breadcrumbSchema = buildBreadcrumbSchema([
 
 const placeSchema = buildPlaceSchema(spring);
 
+const apiUrl = import.meta.env.PUBLIC_API_URL;
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+
 // Find related springs (same state, excluding current)
 const relatedSprings = springsData
   .filter((s: any) => s.state === spring.state && s.slug !== slug)
@@ -51,7 +55,46 @@ const relatedSprings = springsData
     <div class="container">
       <Breadcrumbs />
 
-      <h1 class="h1 mb-6 intersect:animate-fadeUp opacity-0">{spring.name}</h1>
+      <h1 class="h1 mb-6 intersect:animate-fadeUp opacity-0">
+        {spring.name}
+        {spring.status && spring.status !== 'open' && (
+          <span class:list={[
+            'ml-3 inline-block align-middle rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider',
+            spring.status === 'destroyed' && 'bg-red-100 text-red-700',
+            spring.status === 'closed' && 'bg-red-100 text-red-700',
+            spring.status === 'seasonal' && 'bg-amber-100 text-amber-700',
+          ]}>
+            {spring.status}
+          </span>
+        )}
+      </h1>
+
+      {spring.status === 'destroyed' && (
+        <div class="mb-6 rounded-lg border-2 border-red-300 bg-red-50 p-4 dark:border-red-800 dark:bg-red-950">
+          <p class="font-bold text-red-700 dark:text-red-400">Warning: Site Condemned</p>
+          <p class="text-sm text-red-600 dark:text-red-500 mt-1">
+            This site has been officially condemned. Do not enter or stay in any buildings. The soaking pool may still be accessible but enter at your own risk. No services are available.
+          </p>
+        </div>
+      )}
+
+      {spring.status === 'closed' && (
+        <div class="mb-6 rounded-lg border-2 border-amber-300 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-950">
+          <p class="font-bold text-amber-700 dark:text-amber-400">Temporarily Closed</p>
+          <p class="text-sm text-amber-600 dark:text-amber-500 mt-1">
+            This site is currently closed. Check back for updates or report conditions if you have recent information.
+          </p>
+        </div>
+      )}
+
+      {spring.is_soakable === 0 && spring.status !== 'destroyed' && (
+        <div class="mb-6 rounded-lg border-2 border-orange-300 bg-orange-50 p-4 dark:border-orange-800 dark:bg-orange-950">
+          <p class="font-bold text-orange-700 dark:text-orange-400">Not Safe for Soaking</p>
+          <p class="text-sm text-orange-600 dark:text-orange-500 mt-1">
+            The water at this spring is dangerously hot and not suitable for soaking without significant cooling. Exercise extreme caution.
+          </p>
+        </div>
+      )}
 
       {spring.image_url && (
         <div class="mb-6 rounded-lg overflow-hidden intersect:animate-fadeUp opacity-0">
@@ -114,6 +157,24 @@ const relatedSprings = springsData
                 <div>
                   <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider text-xs">Clothing</span>
                   <p class="capitalize text-txt-p dark:text-darkmode-txt-p">{spring.clothing}</p>
+                </div>
+              )}
+              {spring.soaking_temp_f && (
+                <div>
+                  <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider text-xs">Soaking Temp</span>
+                  <p class="font-mono text-lg font-bold text-txt-p dark:text-darkmode-txt-p">{spring.soaking_temp_f}°F</p>
+                </div>
+              )}
+              {spring.road_type && (
+                <div>
+                  <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider text-xs">Road Type</span>
+                  <p class="capitalize text-txt-p dark:text-darkmode-txt-p">{spring.road_type}</p>
+                </div>
+              )}
+              {spring.last_verified && (
+                <div>
+                  <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider text-xs">Last Verified</span>
+                  <p class="text-txt-p dark:text-darkmode-txt-p">{new Date(spring.last_verified + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</p>
                 </div>
               )}
             </div>
@@ -285,6 +346,18 @@ const relatedSprings = springsData
         <div id="spring-map" class="h-[400px] rounded-lg overflow-hidden" data-lat={spring.lat} data-lng={spring.lng} data-name={spring.name} data-token={mapboxAccessToken}>
         </div>
       </div>
+
+      {apiUrl && (
+        <div class="intersect:animate-fadeUp opacity-0 mb-12">
+          <ConditionReports
+            client:only="react"
+            springSlug={slug}
+            apiUrl={apiUrl}
+            turnstileSiteKey={turnstileSiteKey}
+            site="alaskahotsprings"
+          />
+        </div>
+      )}
 
       <!-- Related springs -->
       {relatedSprings.length > 0 && (

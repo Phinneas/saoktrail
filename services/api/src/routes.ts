@@ -283,6 +283,7 @@ export const createApp = () => {
       { site: 'soakcolorado', name: 'Soak Colorado', gid: env.ASANA_PROJECT_SOAKCOLORADO },
       { site: 'soaktherockies', name: 'Soak the Rockies', gid: env.ASANA_PROJECT_SOAKTHEROCKIES },
       { site: 'alaskahotsprings', name: 'Alaska Hot Springs', gid: env.ASANA_PROJECT_ALASKAHOTSPRINGS },
+      { site: 'shastahotsprings', name: 'Shasta Hot Springs', gid: env.ASANA_PROJECT_SHASTAHOTSPRINGS },
       { site: 'soaktrail', name: 'Soak Trail', gid: env.ASANA_PROJECT_SOAKTRAIL },
     ];
 

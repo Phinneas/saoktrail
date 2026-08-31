@@ -20,7 +20,7 @@
     "has_post": false,
     "elevation_ft": 1214,
     "wikipedia_url": "https://en.wikipedia.org/wiki/Chena_Hot_Springs%2C_Alaska",
-    "wikipedia_summary": "Chena Hot Springs is an unincorporated community and hot spring resort in the Fairbanks North Star Borough, Alaska, United States, 56.5 miles (90.9 km) northeast of Fairbanks near the Chena River State Recreation Area. The resort makes use of the first low-temperature binary geothermal power plant built in Alaska, and is working on several alternative energy projects, including production and use of hydrogen and vegetable oil for fuel. The resort is conducting collaborative experiments in greenhouse production of vegetables with the University of Alaska Fairbanks Agricultural and Forestry Experiment Station.",
+    "wikipedia_summary": "Chena Hot Springs is an unincorporated community and hot spring resort in the Fairbanks North Star Borough, Alaska, United States, 56.5 miles (90.9\u00a0km) northeast of Fairbanks near the Chena River State Recreation Area. The resort makes use of the first low-temperature binary geothermal power plant built in Alaska, and is working on several alternative energy projects, including production and use of hydrogen and vegetable oil for fuel. The resort is conducting collaborative experiments in greenhouse production of vegetables with the University of Alaska Fairbanks Agricultural and Forestry Experiment Station.",
     "usgs": {
       "site_no": "15490000",
       "site_name": "MONUMENT C AT CHENA HOT SPRINGS AK",
@@ -65,7 +65,13 @@
         }
       ],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=15490000"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 1,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": "2026-08-08"
   },
   {
     "id": "2",
@@ -87,7 +93,7 @@
     "has_post": false,
     "elevation_ft": 482,
     "wikipedia_url": "https://en.wikipedia.org/wiki/Alyeska_Resort",
-    "wikipedia_summary": "Alyeska Resort is a ski resort in the Girdwood area of Anchorage, Alaska, approximately 30 miles (48 km) from downtown Anchorage. Mount Alyeska is part of the Chugach mountain range and the Alyeska Resort is the largest ski area in the state. It includes the mountaintop Mt. Alyeska Roundhouse, which is listed on the National Register of Historic Places.",
+    "wikipedia_summary": "Alyeska Resort is a ski resort in the Girdwood area of Anchorage, Alaska, approximately 30 miles (48\u00a0km) from downtown Anchorage. Mount Alyeska is part of the Chugach mountain range and the Alyeska Resort is the largest ski area in the state. It includes the mountaintop Mt. Alyeska Roundhouse, which is listed on the National Register of Historic Places.",
     "usgs": {
       "site_no": "605750149062401",
       "site_name": "SA01000216BAAA1  011",
@@ -96,7 +102,13 @@
       "site_elevation_ft": 280,
       "water_quality": [],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=605750149062401"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 1,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": "2026-08-08"
   },
   {
     "id": "3",
@@ -116,7 +128,7 @@
     "has_post": false,
     "elevation_ft": 16,
     "wikipedia_url": "https://en.wikipedia.org/wiki/Pilgrim_Hot_Springs",
-    "wikipedia_summary": "Pilgrim Hot Springs is a ghost town in the interior of the Seward Peninsula of northwestern Arctic Alaska. Also known as Kruzgamepa, Kruzgamepa Springs and Unaatuq. It is located on the southeast bank of the Kruzgamepa River, about 8 miles (13 km) south of milepost 65 of the Kougarok Road, on the traditional lands of the Kauweramiut, also known as the People of Kauwerak, also known as people of the Village of Mary's Igloo and their descendants.",
+    "wikipedia_summary": "Pilgrim Hot Springs is a ghost town in the interior of the Seward Peninsula of northwestern Arctic Alaska. Also known as Kruzgamepa, Kruzgamepa Springs and Unaatuq. It is located on the southeast bank of the Kruzgamepa River, about 8 miles (13\u00a0km) south of milepost 65 of the Kougarok Road, on the traditional lands of the Kauweramiut, also known as the People of Kauwerak, also known as people of the Village of Mary's Igloo and their descendants.",
     "usgs": {
       "site_no": "650535164551001",
       "site_name": "KC00403136DDDA1S",
@@ -147,7 +159,13 @@
         }
       ],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=650535164551001"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 1,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": "2026-08-08"
   },
   {
     "id": "4",
@@ -211,7 +229,13 @@
         }
       ],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=662603150380700"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 0,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": null
   },
   {
     "id": "5",
@@ -231,7 +255,7 @@
     "has_post": false,
     "elevation_ft": 184,
     "wikipedia_url": "https://en.wikipedia.org/wiki/Baranof_Warm_Springs%2C_Alaska",
-    "wikipedia_summary": "Baranof Warm Springs is a small, primarily seasonally-occupied community located in the city and borough of Sitka, Alaska, on the eastern side of Baranof Island, from which it likely derives its name, in the Alexander Archipelago. It is occasionally referred to simply as Baranof. Baranof Warm Springs is located at 57°05′22″N 134°49′59″W.",
+    "wikipedia_summary": "Baranof Warm Springs is a small, primarily seasonally-occupied community located in the city and borough of Sitka, Alaska, on the eastern side of Baranof Island, from which it likely derives its name, in the Alexander Archipelago. It is occasionally referred to simply as Baranof. Baranof Warm Springs is located at 57\u00b005\u203222\u2033N 134\u00b049\u203259\u2033W.",
     "usgs": {
       "site_no": "570520134502501",
       "site_name": "CD05506624ADCB1S",
@@ -276,7 +300,13 @@
         }
       ],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=570520134502501"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 0,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": null
   },
   {
     "id": "6",
@@ -341,7 +371,13 @@
         }
       ],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=15107920"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 0,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": null
   },
   {
     "id": "7",
@@ -402,7 +438,13 @@
         }
       ],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=555600131340000"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 0,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": null
   },
   {
     "id": "8",
@@ -451,7 +493,13 @@
         }
       ],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=651255149593001"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 0,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": null
   },
   {
     "id": "9",
@@ -514,7 +562,13 @@
         }
       ],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=564327132022701"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 0,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": null
   },
   {
     "id": "10",
@@ -568,7 +622,13 @@
         }
       ],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=650735153344500"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 0,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": null
   },
   {
     "id": "11",
@@ -596,7 +656,13 @@
       "site_elevation_ft": null,
       "water_quality": [],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=90229000017"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 1,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": "2026-08-08"
   },
   {
     "id": "12",
@@ -659,7 +725,13 @@
         }
       ],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=655111164414701"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 0,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": null
   },
   {
     "id": "13",
@@ -789,7 +861,13 @@
           }
         ]
       }
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 0,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": null
   },
   {
     "id": "14",
@@ -852,7 +930,13 @@
         }
       ],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=652857144381801"
-    }
+    },
+    "is_soakable": 0,
+    "is_confirmed": 1,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "destroyed",
+    "last_verified": "2026-08-08"
   },
   {
     "id": "15",
@@ -877,7 +961,13 @@
       "site_elevation_ft": 1324,
       "water_quality": [],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=662432150331201"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 0,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": null
   },
   {
     "id": "16",
@@ -926,7 +1016,13 @@
         }
       ],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=574825136202501"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 1,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": "2026-08-08"
   },
   {
     "id": "17",
@@ -989,7 +1085,13 @@
         }
       ],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=565005135222001"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 1,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": "2026-08-08"
   },
   {
     "id": "18",
@@ -1050,7 +1152,13 @@
         }
       ],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=15081800"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 0,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": null
   },
   {
     "id": "19",
@@ -1077,7 +1185,13 @@
       "site_elevation_ft": null,
       "water_quality": [],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=90213000008"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 0,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": null
   },
   {
     "id": "20",
@@ -1138,6 +1252,12 @@
         }
       ],
       "usgs_url": "https://waterdata.usgs.gov/nwis/inventory?site_no=673909149431800"
-    }
+    },
+    "is_soakable": 1,
+    "is_confirmed": 0,
+    "soaking_temp_f": null,
+    "road_type": null,
+    "status": "open",
+    "last_verified": null
   }
 ]

@@ -11,6 +11,7 @@ compatibility_date = "2026-03-26"
 # - ASANA_PROJECT_SOAKCOLORADO  (Asana project GID → site slug "soakcolorado")
 # - ASANA_PROJECT_SOAKTHEROCKIES(Asana project GID → site slug "soaktherockies")
 # - ASANA_PROJECT_ALASKAHOTSPRINGS(Asana project GID → site slug "alaskahotsprings")
+# - ASANA_PROJECT_SHASTAHOTSPRINGS(Asana project GID → site slug "shastahotsprings")
 # - ASANA_PROJECT_SOAKTRAIL     (Asana project GID → site slug "soaktrail")
 [vars]
 ENVIRONMENT = "production"

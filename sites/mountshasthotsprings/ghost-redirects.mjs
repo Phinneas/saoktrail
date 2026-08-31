@@ -39,4 +39,20 @@ export const ghostRedirects = {
   "/travertine-hot-springs": { status: 301, destination: "/blog/travertine-hot-springs" },
   "/what-type-of-volcano-is-mount-shasta": { status: 301, destination: "/blog/what-type-of-volcano-is-mount-shasta" },
   "/wilbur-hot-springs": { status: 301, destination: "/blog/wilbur-hot-springs" },
+
+  // Ghost tag/author/pagination URL patterns → Astro equivalents
+  "/tag/hot-springs": { status: 301, destination: "/blog/tags/hot-springs" },
+  "/author/soak-shasta": { status: 301, destination: "/authors/soak-shasta" },
+  "/page/2": { status: 301, destination: "/blog/page/2" },
+  "/page/3": { status: 301, destination: "/blog/page/3" },
+  "/page/4": { status: 301, destination: "/blog/page/4" },
+  "/page/5": { status: 301, destination: "/blog/page/5" },
+  "/page/6": { status: 301, destination: "/blog/page/6" },
+  "/page/7": { status: 301, destination: "/blog/page/7" },
+  "/page/8": { status: 301, destination: "/blog/page/8" },
+  "/page/9": { status: 301, destination: "/blog/page/9" },
+  "/page/10": { status: 301, destination: "/blog/page/10" },
+
+  // Common misspelling of the geologu slug
+  "/mount-shasta-hot-springs-geology": { status: 301, destination: "/blog/mount-shasta-hot-springs-geologu" },
 };

@@ -239,7 +239,23 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
       </div>
 
       {apiUrl && (
-        <div class="intersect:animate-fadeUp opacity-0">
+        <div class="glass p-6 mb-6 text-center intersect:animate-fadeUp opacity-0">
+          <h2 class="h3 mb-2">Have You Visited {spring.name}?</h2>
+          <p class="text-txt-s dark:text-darkmode-txt-s mb-4">
+            Share your experience, current conditions, or photos with the community.
+            Submissions are moderated before they appear publicly.
+          </p>
+          <a
+            href="#condition-reports"
+            class="inline-block py-3 px-6 bg-accent text-white rounded font-display font-bold hover:opacity-90 transition-opacity"
+          >
+            Share Your Experience
+          </a>
+        </div>
+      )}
+
+      {apiUrl && (
+        <div id="condition-reports" class="intersect:animate-fadeUp opacity-0">
           <ConditionReports
             client:only="react"
             springSlug={slug}

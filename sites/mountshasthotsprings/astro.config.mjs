@@ -30,7 +30,8 @@ export default defineConfig({
         !page.includes("/search") &&
         !page.includes("/authors") &&
         !page.includes("/blog/tags") &&
-        !page.includes("/blog/categories"),
+        !page.includes("/blog/categories") &&
+        !page.includes("/blog/page/"),
     }),
     tailwind({ config: { applyBaseStyles: false } }),
     AutoImport({

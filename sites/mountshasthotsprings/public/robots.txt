@@ -2,5 +2,7 @@ User-agent: *
 Allow: /
 
 Disallow: /api/*
+Disallow: /*?ref=
+Disallow: /*?spring=
 
-Sitemap: https://www.janedoe.com/sitemap-index.xml
+Sitemap: https://www.shastahotsprings.com/sitemap-index.xml

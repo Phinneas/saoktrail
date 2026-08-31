@@ -2,7 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LocatorMap from '../components/LocatorMap.jsx';
 
-const maptilerKey = import.meta.env.PUBLIC_MAPTILER_KEY;
+// Prefer runtime env (Cloudflare Pages vars/secrets) so the map works even when the
+// site was built without .env present (e.g. CI builds); fall back to build-time env.
+const runtimeEnv = ((Astro.locals as any).runtime?.env ?? {}) as Record<string, string | undefined>;
+const maptilerKey = runtimeEnv.PUBLIC_MAPTILER_KEY || import.meta.env.PUBLIC_MAPTILER_KEY;
 const apiUrl = import.meta.env.PUBLIC_API_URL;
 
 const breadcrumbSchema = {
@@ -38,7 +41,8 @@ const breadcrumbSchema = {
       ) : (
         <div class="rounded-lg border border-slate-200 bg-white p-8 text-center text-sa-dark/70">
           Map disabled: <code>PUBLIC_MAPTILER_KEY</code> is not configured. Add it to
-          <code> sites/soaktrail/.dev.vars</code> (local) or as a Wrangler var (production).
+          <code> sites/soaktrail/.dev.vars</code> (local) or as a Pages env var on the
+          <code>saoktrail</code> project (production).
         </div>
       )}
     </div>

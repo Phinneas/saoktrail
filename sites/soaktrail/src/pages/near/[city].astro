@@ -42,6 +42,19 @@ const canonical = `https://soaktrail.com/near/${data.slug}`;
 const title = `Hot Springs Near ${data.city}, ${stateFull} (${data.count} Within 50 Miles)`;
 const description = `${data.count} hot springs within 50 miles of ${data.city}, ${stateFull}, sorted by driving distance — with temperatures, access notes, and links to plan your soak.`;
 
+// Deep link to the spring's guide page on its regional site ({site}/springs/{slug}),
+// matching the URL pattern used by the child sites and trip-planner pages.
+const springUrl = (s: NearbySpring) => (s.site_url ? `${s.site_url}/springs/${s.slug}` : null);
+
+// Primary region for this city's springs (most common region in the list) —
+// used to deep-link "Build an itinerary" to the region-specific trip planner.
+const regionCounts = new Map<string, number>();
+for (const s of data.springs) {
+  if (s.region) regionCounts.set(s.region, (regionCounts.get(s.region) ?? 0) + 1);
+}
+const primaryRegion = [...regionCounts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
+const tripPlannerUrl = primaryRegion ? `/trip-planner/${primaryRegion}` : '/trip-planner';
+
 const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [
@@ -59,7 +72,7 @@ const itemListSchema = {
     '@type': 'ListItem',
     position: i + 1,
     name: s.name,
-    url: s.site_url || canonical,
+    url: springUrl(s) || canonical,
   })),
 };
 
@@ -94,8 +107,8 @@ const cityQuery = encodeURIComponent(`${data.city}, ${stateFull}`);
               <span class="font-mono text-sm text-sa-dark/40 w-6 text-right shrink-0">{i + 1}</span>
               <div class="min-w-0">
                 <p class="font-display font-bold text-sa-dark truncate">
-                  {s.site_url ? (
-                    <a href={s.site_url} target="_blank" rel="noopener noreferrer" class="hover:text-sa-copper">{s.name}</a>
+                  {springUrl(s) ? (
+                    <a href={springUrl(s)!} target="_blank" rel="noopener noreferrer" class="hover:text-sa-copper">{s.name}</a>
                   ) : s.name}
                 </p>
                 <p class="text-xs text-sa-dark/50 capitalize mt-0.5">
@@ -120,7 +133,7 @@ const cityQuery = encodeURIComponent(`${data.city}, ${stateFull}`);
           <h3 class="font-display text-lg font-bold text-sa-dark">Open the locator map</h3>
           <p class="text-sm text-sa-dark/70 mt-1">See every hot spring on an interactive map and filter by access, temperature, and fees.</p>
         </a>
-        <a href="/trip-planner" class="block rounded-lg border border-sa-dark/10 bg-white/60 p-5 hover:border-sa-copper hover:shadow-sm transition">
+        <a href={tripPlannerUrl} class="block rounded-lg border border-sa-dark/10 bg-white/60 p-5 hover:border-sa-copper hover:shadow-sm transition">
           <h3 class="font-display text-lg font-bold text-sa-dark">Build an itinerary</h3>
           <p class="text-sm text-sa-dark/70 mt-1">Turn these springs into a road-trip route with camping and lodging along the way.</p>
         </a>

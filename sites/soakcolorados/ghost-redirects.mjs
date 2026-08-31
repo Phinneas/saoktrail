@@ -45,4 +45,20 @@ export const ghostRedirects = {
   "/valley-view-hot-springs-colorado": { status: 301, destination: "/blog/valley-view-hot-springs-colorado" },
   "/waunita-hot-springs-ranch": { status: 301, destination: "/blog/waunita-hot-springs-ranch" },
   "/wiesbaden-hot-springs-colorado": { status: 301, destination: "/blog/wiesbaden-hot-springs-colorado" },
+
+  // Ghost tag/author/pagination URL patterns → Astro equivalents
+  "/tag/hot-springs": { status: 301, destination: "/blog/tags/hot-springs" },
+  "/tag/colorado": { status: 301, destination: "/blog/tags/colorado" },
+  "/author/soak-colorado": { status: 301, destination: "/authors/soak-colorado" },
+  "/page/2": { status: 301, destination: "/blog/page/2" },
+  "/page/3": { status: 301, destination: "/blog/page/3" },
+  "/page/4": { status: 301, destination: "/blog/page/4" },
+  "/page/5": { status: 301, destination: "/blog/page/5" },
+  "/page/6": { status: 301, destination: "/blog/page/6" },
+  "/page/7": { status: 301, destination: "/blog/page/7" },
+  "/page/8": { status: 301, destination: "/blog/page/8" },
+  "/page/9": { status: 301, destination: "/blog/page/9" },
+  "/page/10": { status: 301, destination: "/blog/page/10" },
+  "/page/11": { status: 301, destination: "/blog/page/11" },
+  "/page/12": { status: 301, destination: "/blog/page/12" },
 };

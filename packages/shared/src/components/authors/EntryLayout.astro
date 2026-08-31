@@ -18,7 +18,7 @@ const { title, social, description, image, imageAlt } = entry.data;
 const { Content } = await render(entry);
 ---
 
-<BaseLayout title={title} description={description} image={image?.src}>
+<BaseLayout title={title} description={description} image={image?.src} noindex>
   <Breadcrumbs className="mt-4 container" />
 
   <section class="section-sm pb-0">
