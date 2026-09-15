@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import RoutePlanner from '../../components/RoutePlanner.tsx';
+
+// Prefer runtime env (Cloudflare Pages vars/secrets) so this works even when
+// the site was built without .env present (e.g. CI builds) — same pattern as
+// locator.astro.
+const runtimeEnv = ((Astro.locals as any).runtime?.env ?? {}) as Record<string, string | undefined>;
+const maptilerKey = runtimeEnv.PUBLIC_MAPTILER_KEY || import.meta.env.PUBLIC_MAPTILER_KEY;
+const mapboxToken = runtimeEnv.PUBLIC_MAPBOX_ACCESS_TOKEN || import.meta.env.PUBLIC_MAPBOX_ACCESS_TOKEN;
+const apiUrl = import.meta.env.PUBLIC_API_URL;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Trip Planner', item: 'https://soaktrail.com/trip-planner' },
+    { '@type': 'ListItem', position: 3, name: 'Route', item: 'https://soaktrail.com/trip-planner/route' },
+  ],
+};
+---
+
+<BaseLayout
+  title="Hot Springs Along Your Route — Soak Trail"
+  description="Enter a start and destination and find hot springs within a chosen distance of the driving route."
+  canonicalUrl="https://soaktrail.com/trip-planner/route"
+  jsonLd={breadcrumbSchema}
+>
+  <section class="px-4 pt-16 pb-8 md:pt-24 md:pb-12">
+    <div class="container mx-auto max-w-4xl">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Trip Planner', href: '/trip-planner' }, { label: 'Route' }]} />
+    </div>
+    <div class="container mx-auto max-w-4xl text-center">
+      <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-4 font-display">Road Trip</p>
+      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-light text-sa-dark leading-tight mb-6">
+        Hot Springs <span class="italic">Along Your Route</span>
+      </h1>
+      <p class="text-sa-text text-lg leading-relaxed max-w-2xl mx-auto">
+        Tell us where you're driving and we'll find the hot springs along the way — no detour too small to be worth knowing about.
+      </p>
+    </div>
+  </section>
+
+  <section class="px-4 pb-16">
+    <div class="container mx-auto max-w-6xl">
+      {mapboxToken ? (
+        <RoutePlanner client:only="react" maptilerKey={maptilerKey} mapboxToken={mapboxToken} apiUrl={apiUrl} />
+      ) : (
+        <div class="rounded-lg border border-slate-200 bg-white p-8 text-center text-sa-dark/70">
+          Route planning is disabled: <code>PUBLIC_MAPBOX_ACCESS_TOKEN</code> is not configured. Add it to
+          <code> sites/soaktrail/.dev.vars</code> (local) or as a Pages secret on the
+          <code>saoktrail</code> project (production).
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
