@@ -2,6 +2,8 @@
 // Exposes 5 regional hot springs databases via MCP Streamable HTTP transport
 // Zero runtime dependencies — JSON-RPC 2.0 implemented directly
 
+import { parseRoutePoints, sampleRoute, nearestRoutePoint, routeBoundingBox } from './routeGeometry';
+
 export interface Env {
   DB_DESERT: D1Database;
   DB_ROCKIES: D1Database;
@@ -268,7 +270,8 @@ async function getHotSpringsByRegion(args: any, env: Env): Promise<string> {
 const TOOLS = [
   {
     name: 'find_hotsprings_near_location',
-    description: 'Find hot springs sorted by distance from a geographic point. Uses bounding box pre-filter then Haversine distance calculation for accuracy.',
+    title: 'Find Hot Springs Near a Location',
+    description: 'Find hot springs sorted by distance from a geographic point. Uses bounding box pre-filter then Haversine distance calculation for accuracy. Returns name, location, temperature, access type, and driving distance for each spring.',
     inputSchema: {
       type: 'object' as const,
       properties: {
@@ -286,7 +289,8 @@ const TOOLS = [
   },
   {
     name: 'find_hotsprings_within_bounds',
-    description: 'Find hot springs within a geographic bounding box (for map viewport queries).',
+    title: 'Find Hot Springs Within Map Bounds',
+    description: 'Find hot springs within a geographic bounding box (for map viewport queries). Returns the springs inside the box with location, temperature, and access type.',
     inputSchema: {
       type: 'object' as const,
       properties: {
@@ -301,7 +305,8 @@ const TOOLS = [
   },
   {
     name: 'search_hotsprings',
-    description: 'Search and filter hot springs by characteristics. The primary discovery tool for natural-language queries about hot springs.',
+    title: 'Search Hot Springs',
+    description: 'Search and filter hot springs by characteristics. The primary discovery tool for natural-language queries about hot springs. Returns matching springs with temperature, access, development, and fee details.',
     inputSchema: {
       type: 'object' as const,
       properties: {
@@ -325,7 +330,8 @@ const TOOLS = [
   },
   {
     name: 'get_hotspring_details',
-    description: 'Get full details for a specific hot spring by its slug identifier.',
+    title: 'Get Hot Spring Details',
+    description: "Get full details for a specific hot spring by its slug identifier. Returns everything known about the spring: location, temperature, access, fees, policies, seasonality, and description.",
     inputSchema: {
       type: 'object' as const,
       properties: {
@@ -336,7 +342,8 @@ const TOOLS = [
   },
   {
     name: 'get_hotsprings_by_region',
-    description: 'Get all hot springs in a specific region. Returns a directory listing for a regional site.',
+    title: 'List Hot Springs by Region',
+    description: 'Get all hot springs in a specific region. Returns a directory listing for a regional site. Use when the user asks about a named region rather than a point or map area.',
     inputSchema: {
       type: 'object' as const,
       properties: {
@@ -434,6 +441,58 @@ async function handleTrailsRequest(slug: string, env: Env): Promise<Response> {
   );
 }
 
+// GET /stats — aggregate per-region counts + last-verified timestamp.
+// Public, aggregate-only (no per-spring rows, no internal IDs) so it is safe to
+// cite in marketing copy and machine-readable for AI assistants/crawlers.
+async function handleStats(env: Env): Promise<Response> {
+  const dbs = getDatabases(env);
+
+  const regionData = await Promise.all(dbs.map(async ({ region, db }) => {
+    let count = 0;
+    let states: string[] = [];
+    let lastVerified: string | null = null;
+
+    try {
+      const r = await db
+        .prepare(`SELECT state, COUNT(*) AS n FROM springs GROUP BY state`)
+        .all();
+      const rows = r.results as Array<{ state: string | null; n: number }>;
+      count = rows.reduce((sum, x) => sum + (x.n ?? 0), 0);
+      states = [...new Set(rows.map(x => (x.state ?? '').toUpperCase()).filter(Boolean))].sort();
+    } catch {
+      // springs table missing or query failed — report region as empty.
+    }
+
+    try {
+      const t = await db
+        .prepare(`SELECT MAX(NULLIF(last_verified, '')) AS lv, MAX(updated_at) AS ua FROM springs`)
+        .first() as { lv: string | null; ua: string | null } | null;
+      if (t) lastVerified = t.lv || t.ua || null;
+    } catch {
+      // last_verified / updated_at columns may not exist yet on this DB — leave null.
+    }
+
+    return { region, count, states, lastVerified };
+  }));
+
+  const total = regionData.reduce((sum, r) => sum + r.count, 0);
+  const last_verified = regionData
+    .map(r => r.lastVerified)
+    .filter((v): v is string => Boolean(v))
+    .reduce((max, v) => (v > max ? v : max), '') || null;
+
+  const regions: Record<string, { count: number; states: string[]; status?: string }> = {};
+  for (const r of regionData) {
+    regions[r.region] = { count: r.count, states: r.states };
+    if (r.count === 0) regions[r.region].status = 'seeding';
+  }
+
+  return Response.json(
+    { total_springs: total, last_verified, regions },
+    { headers: { 'Access-Control-Allow-Origin': '*' } },
+  );
+}
+
 function jsonResponse(id: any, result: any) {
   return Response.json({ jsonrpc: '2.0', id, result });
 }
@@ -470,6 +529,64 @@ export default {
     // Health check
     if (request.method === 'GET' && (new URL(request.url).pathname === '/' || new URL(request.url).pathname === '/health')) {
       return Response.json({ status: 'ok', server: 'soakatlas-mcp', springs: 500, regions: getDatabases(env).map(d => d.region) });
+    }
+
+    // Public aggregate stats (live per-region counts + last-verified timestamp)
+    if (request.method === 'GET' && new URL(request.url).pathname === '/stats') {
+      return handleStats(env);
+    }
+
+    // REST endpoint: GET /springs-near-route — springs within a corridor of a
+    // driving route. `points` is the route polyline as "lon,lat;lon,lat;...",
+    // e.g. the `coordinates` array from a Mapbox Directions response geometry.
+    if (request.method === 'GET' && new URL(request.url).pathname === '/springs-near-route') {
+      const url = new URL(request.url);
+      const corsHeaders = { 'Access-Control-Allow-Origin': '*' };
+      const rawPoints = url.searchParams.get('points') ?? '';
+      const corridorMiles = Math.min(Math.max(Number(url.searchParams.get('corridor_miles')) || 10, 1), 50);
+      const limit = Math.min(parseInt(url.searchParams.get('limit') ?? '100', 10), 200);
+
+      let route;
+      try {
+        route = sampleRoute(parseRoutePoints(rawPoints), 50);
+      } catch (err: any) {
+        return Response.json({ error: err.message }, { status: 400, headers: corsHeaders });
+      }
+      if (route.length < 2) {
+        return Response.json({ error: 'Provide at least 2 route points (points=lon,lat;lon,lat;...).' }, { status: 400, headers: corsHeaders });
+      }
+
+      const bbox = routeBoundingBox(route, corridorMiles);
+      const sql = `SELECT ${BASE_COLS} FROM springs WHERE lat BETWEEN ? AND ? AND lon BETWEEN ? AND ?`;
+      const params = [bbox.swLat, bbox.neLat, bbox.swLon, bbox.neLon];
+
+      const dbs = getDatabases(env);
+      const results = await Promise.all(dbs.map(async ({ db, region }) => {
+        const r = await db.prepare(sql).bind(...params).all();
+        return (r.results as SpringRow[]).map((s) => ({ spring: s, region }));
+      }));
+
+      const candidates = results
+        .flat()
+        .map(({ spring: s, region }) => {
+          const { distanceMiles, index } = nearestRoutePoint(s.lat, s.lon, route);
+          return { s, region, distanceMiles, index };
+        })
+        .filter((c) => c.distanceMiles <= corridorMiles);
+
+      candidates.sort((a, b) => a.index - b.index || a.distanceMiles - b.distanceMiles);
+      const top = candidates.slice(0, limit);
+
+      const springs = top.map(({ s, region, distanceMiles }) => ({
+        name: s.name, slug: s.slug, lat: s.lat, lng: s.lon, state: s.state, region,
+        temperature_f: s.temperature_f, access_type: s.access_type,
+        distance_miles: Math.round(distanceMiles * 10) / 10,
+      }));
+
+      return Response.json(
+        { springs, count: springs.length, corridor_miles: corridorMiles },
+        { headers: corsHeaders }
+      );
     }
 
     // REST endpoint: GET /springs — list/search springs (used by shop homepage)
