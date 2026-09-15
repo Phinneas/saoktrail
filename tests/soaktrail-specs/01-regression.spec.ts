@@ -14,6 +14,7 @@ test.describe('SoakTrail.com — page load regression', () => {
     { path: '/minerals', name: 'minerals hub' },
     { path: '/minerals/chemistry-guide', name: 'chemistry guide' },
     { path: '/trip-planner', name: 'trip planner' },
+    { path: '/trip-planner/route', name: 'route planner' },
     { path: '/itineraries', name: 'itineraries listing' },
   ];
 

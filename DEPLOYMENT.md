@@ -83,6 +83,11 @@ curl https://<your-worker>.workers.dev/health
 > `PUBLIC_API_URL` Pages secret/var — it would override the correct default. The API
 > worker is separate (`soakatlas-mcp.buzzuw2.workers.dev`); the map fetches `/springs`
 > and `/spring/:slug/images` from it (override via build-time `PUBLIC_API_URL`).
+>
+> The `/trip-planner/route` page needs a second runtime secret, `PUBLIC_MAPBOX_ACCESS_TOKEN`
+> (also set on the `saoktrail` project), used only for `fetch()` calls to Mapbox's
+> Geocoding and Directions REST APIs — no `mapbox-gl-js` is bundled. Without it the page
+> renders a "Route planning is disabled" message instead of the planner.
 
 ### Connect Repository
 
