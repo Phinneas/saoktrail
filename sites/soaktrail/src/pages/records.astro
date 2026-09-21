@@ -7,10 +7,21 @@ export const prerender = true;
 
 const canonical = 'https://soaktrail.com/records';
 const title = 'Hot Springs Records & Superlatives — Hottest, Highest & Most Remote in the American West | Soak Trail';
-const description =
-  'The hottest, highest, most remote, and most mineral-rich natural hot springs in the American West — ranked by temperature, elevation, and access from Soak Trail\'s database of 686 mapped springs.';
 
-// --- Data pulled from springs.json across all 6 regional sites (686 springs) ---
+// Fetch live stats from the API at build time
+let totalSprings = 515;
+try {
+  const statsRes = await fetch('https://soakatlas-mcp.buzzuw2.workers.dev/stats');
+  if (statsRes.ok) {
+    const stats = await statsRes.json();
+    totalSprings = stats.total_springs || totalSprings;
+  }
+} catch { /* use default */ }
+
+const description =
+  `The hottest, highest, most remote, and most mineral-rich natural hot springs in the American West — ranked by temperature, elevation, and access from Soak Trail's database of ${totalSprings} mapped springs.`;
+
+// --- Data pulled from springs.json across all 6 regional sites ---
 
 const hottestSprings = [
   { name: 'The Geysers', temp: 214, state: 'California', url: 'https://www.shastahotsprings.com/springs/the-geysers' },
@@ -82,11 +93,11 @@ const faqs = [
   },
   {
     q: 'How many hot springs in the American West are free to visit?',
-    a: 'Of the 686 springs in our database, 633 have no recorded fee. Most natural hot springs on public land (National Forest, BLM) are free, though some require a Forest Service day-use pass. Developed resorts and privately operated pools charge admission.',
+    a: `Of the ${totalSprings} springs in our database, 633 have no recorded fee. Most natural hot springs on public land (National Forest, BLM) are free, though some require a Forest Service day-use pass. Developed resorts and privately operated pools charge admission.`,
   },
   {
     q: 'Are hot springs open year-round?',
-    a: '409 of the 686 springs in our database are listed as year-round. However, seasonal road closures can limit access to many mountain springs during winter. Oregon has the highest percentage of year-round springs (100%), followed by Alaska (90%) and California (83%).',
+    a: `409 of the ${totalSprings} springs in our database are listed as year-round. However, seasonal road closures can limit access to many mountain springs during winter. Oregon has the highest percentage of year-round springs (100%), followed by Alaska (90%) and California (83%).`,
   },
   {
     q: 'Do I need a 4WD vehicle to reach hot springs?',
@@ -122,11 +133,11 @@ const itemListSchema = {
 const datasetSchema = {
   '@type': 'Dataset',
   name: 'Soak Trail Hot Springs Database — American West',
-  description: 'A database of 686 natural hot springs across 8 western US states with temperature, elevation, access type, and seasonal data.',
+  description: `A database of ${totalSprings} natural hot springs across 8 western US states with temperature, elevation, access type, and seasonal data.`,
   url: canonical,
   keywords: ['hot springs', 'thermal springs', 'geothermal', 'American West', 'natural springs'],
   variableMeasured: [
-    { '@type': 'PropertyValue', name: 'Total springs mapped', value: 686 },
+    { '@type': 'PropertyValue', name: 'Total springs mapped', value: totalSprings },
     { '@type': 'PropertyValue', name: 'Springs with temperature data', value: 651 },
     { '@type': 'PropertyValue', name: 'Springs with elevation data', value: 281 },
     { '@type': 'PropertyValue', name: 'Soakable springs (95–110°F)', value: 465 },
@@ -165,7 +176,7 @@ const breadcrumbSchema = {
         <span class="italic block mt-2">&amp; Superlatives</span>
       </h1>
       <p class="text-lg text-sa-dark/70 max-w-2xl mx-auto leading-relaxed">
-        <strong class="text-sa-dark">Soak Trail's database covers 686 natural hot springs across 8 western US states</strong> — 465 soakable (95–110°F), 409 year-round, sourced from USGS and OpenStreetMap. The records below rank the hottest, highest, and most remote springs in the American West.
+        <strong class="text-sa-dark">Soak Trail's database covers {totalSprings} natural hot springs across 8 western US states</strong> — 465 soakable (95–110°F), 409 year-round, sourced from USGS and OpenStreetMap. The records below rank the hottest, highest, and most remote springs in the American West.
       </p>
       <p class="text-sm text-sa-dark/40 mt-3">
         Data from USGS, OpenStreetMap, and NOAA thermal springs records. Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
@@ -176,7 +187,7 @@ const breadcrumbSchema = {
     <!-- Key Stats -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
       {[
-        { number: '686', label: 'Springs Mapped' },
+        { number: String(totalSprings), label: 'Springs Mapped' },
         { number: '465', label: 'Soakable (95–110°F)' },
         { number: '8', label: 'States Covered' },
         { number: '409', label: 'Year-Round Access' },
@@ -271,7 +282,7 @@ const breadcrumbSchema = {
         <span class="italic"> Distribution</span>
       </h2>
       <p class="text-sa-dark/60 mb-6 max-w-2xl">
-        Of 686 mapped springs, 651 have recorded water temperatures.
+        Of {totalSprings} mapped springs, 651 have recorded water temperatures.
         Nearly 72% fall in the soakable range of 95–110°F.
       </p>
       <div class="space-y-3">
@@ -281,7 +292,7 @@ const breadcrumbSchema = {
             <div class="flex-1 bg-sa-dark/5 rounded-full h-8 overflow-hidden">
               <div
                 class={`${b.color} h-full rounded-full flex items-center justify-end pr-3 transition-all duration-500`}
-                style={`width: ${Math.max((b.count / 686) * 100, 8)}%`}
+                style={`width: ${Math.max((b.count / totalSprings) * 100, 8)}%`}
               >
                 <span class="text-white text-xs font-mono font-bold">{b.count}</span>
               </div>
@@ -360,7 +371,7 @@ const breadcrumbSchema = {
         <div class="border border-sa-dark/10 rounded-xl bg-white/60 p-6">
           <h3 class="font-display font-bold text-sa-dark mb-2">Free to Visit</h3>
           <p class="text-sa-dark/70 text-sm leading-relaxed">
-            <span class="font-mono font-bold text-sa-copper text-lg">633</span> of 686 springs (92%) have no recorded fee.
+            <span class="font-mono font-bold text-sa-copper text-lg">633</span> of {totalSprings} springs (92%) have no recorded fee.
             Most natural hot springs on National Forest and BLM land are free, though some require a day-use pass ($5–$10).
           </p>
         </div>
@@ -393,7 +404,7 @@ const breadcrumbSchema = {
     <section class="mb-16 border border-sa-dark/10 rounded-xl bg-white/60 p-6">
       <h2 class="font-display text-xl font-bold text-sa-dark mb-3">Data Sources</h2>
       <p class="text-sa-dark/60 text-sm leading-relaxed mb-4">
-        This page is based on Soak Trail's database of 686 natural hot springs across the American West.
+        This page is based on Soak Trail's database of {totalSprings} natural hot springs across the American West.
         Spring data is sourced from the following public datasets and verified against field reports where available.
       </p>
       <ul class="space-y-2 text-sm text-sa-dark/60">

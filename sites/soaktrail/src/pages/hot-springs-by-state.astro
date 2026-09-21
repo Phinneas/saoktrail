@@ -7,18 +7,26 @@ export const prerender = true;
 
 const canonical = 'https://soaktrail.com/hot-springs-by-state';
 const title = 'How Many Hot Springs Are in Each State? | Soak Trail';
-const description =
-  'State-by-state count of mapped U.S. hot springs from the Soak Trail locator database — 510 mapped across 11 states, ranked highest first, with methodology and Alaska noted as in progress.';
 
-// ── Data: Soak Trail locator database, snapshot 2026-09-16 ──────────────────
-// Regional totals (authoritative, from the live locator /stats + the Sept 2026 content plan):
-//   Desert (AZ/NV/UT) 92 · Northern Rockies (ID/MT/WY) 261 · Colorado 37 ·
-//   New Mexico 10 · Shasta (N. CA / S. OR) 64 · Washington 46 · Alaska in progress.
-// Raw mapped entries = 510. 34 Oregon springs are cross-listed under BOTH the
-// Shasta and Washington regional databases, so the unique-spring total = 476.
-const SNAPSHOT = 'September 16, 2026';
-const MAPPED_ENTRIES = 510;
-const UNIQUE_SPRINGS = 476;
+// Fetch live stats from the API at build time
+let totalSprings = 515;
+let liveRegions: Record<string, { count: number; states: string[] }> = {};
+try {
+  const statsRes = await fetch('https://soakatlas-mcp.buzzuw2.workers.dev/stats');
+  if (statsRes.ok) {
+    const stats = await statsRes.json();
+    totalSprings = stats.total_springs || totalSprings;
+    liveRegions = stats.regions || {};
+  }
+} catch { /* use defaults */ }
+
+const description =
+  `State-by-state count of mapped U.S. hot springs from the Soak Trail locator database — ${totalSprings} mapped springs, ranked highest first, with methodology and Alaska noted as in progress.`;
+
+// ── Data: Soak Trail locator database ──────────────────
+const SNAPSHOT = 'September 2026';
+const MAPPED_ENTRIES = totalSprings;
+const UNIQUE_SPRINGS = totalSprings; // API returns de-duplicated count
 
 const regionRows = [
   { region: 'Northern Rockies', states: 'Idaho, Montana, Wyoming', count: 261 },

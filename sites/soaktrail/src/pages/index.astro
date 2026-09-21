@@ -8,6 +8,25 @@ const runtimeEnv = ((Astro.locals as any).runtime?.env ?? {}) as Record<string, 
 const maptilerKey = runtimeEnv.PUBLIC_MAPTILER_KEY || import.meta.env.PUBLIC_MAPTILER_KEY;
 const apiUrl = import.meta.env.PUBLIC_API_URL;
 
+// Fetch live stats from the API at build time
+let totalSprings = 515;
+let regionCount = 6;
+let stateCount = 11;
+try {
+  const statsRes = await fetch('https://soakatlas-mcp.buzzuw2.workers.dev/stats');
+  if (statsRes.ok) {
+    const stats = await statsRes.json();
+    totalSprings = stats.total_springs || totalSprings;
+    regionCount = Object.keys(stats.regions || {}).length || regionCount;
+    // Count unique states across regions
+    const states = new Set<string>();
+    for (const r of Object.values(stats.regions || {}) as any[]) {
+      for (const s of (r.states || [])) states.add(s);
+    }
+    stateCount = states.size || stateCount;
+  }
+} catch { /* use defaults */ }
+
 const regions = [
   {
     title: 'Washington Hot Springs',
@@ -84,7 +103,7 @@ const faqs = [
   },
   {
     q: 'Can I use an AI assistant to search hot springs data?',
-    a: 'Yes. Soak Trail provides an MCP (Model Context Protocol) server that AI assistants like Claude, ChatGPT, and other MCP-compatible clients can use to search 500+ hot springs by location, state, temperature, access type, and more.',
+    a: `Yes. Soak Trail provides an MCP (Model Context Protocol) server that AI assistants like Claude, ChatGPT, and other MCP-compatible clients can use to search ${totalSprings}+ hot springs by location, state, temperature, access type, and more.`,
   },
 ];
 
@@ -105,6 +124,7 @@ const jsonLd = [
     '@type': 'WebSite',
     name: 'Soak Trail',
     url: 'https://soaktrail.com',
+    dateModified: new Date().toISOString().slice(0, 10),
     potentialAction: {
       '@type': 'SearchAction',
       target: 'https://soaktrail.com/blog?q={search_term_string}',
@@ -208,10 +228,10 @@ const jsonLd = [
     </div>
   </section>
 
-  <!-- Trip Planner + Journal CTA -->
+  <!-- Trip Planner + Route + Journal CTA -->
   <section class="py-16 md:py-24 px-6">
     <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Trip Planner CTA -->
         <a
           href="/trip-planner"
@@ -220,12 +240,33 @@ const jsonLd = [
           <div class="absolute top-0 right-0 w-48 h-48 bg-sa-copper/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div class="relative z-10">
             <p class="text-sa-copper text-xs tracking-[0.25em] uppercase mb-4 font-display">Plan Your Trip</p>
-            <h2 class="font-display text-2xl md:text-3xl mb-3 leading-snug">Hot Springs Trip Planner</h2>
-            <p class="text-white/60 text-sm leading-relaxed max-w-sm">
-              500+ springs across 6 regions — filter by access, temperature, vehicle requirements, and more. Find the perfect soak for your next adventure.
+            <h2 class="font-display text-2xl mb-3 leading-snug">Trip Planner</h2>
+            <p class="text-white/60 text-sm leading-relaxed">
+              {totalSprings}+ springs — filter by access, temperature, and more.
             </p>
             <div class="mt-6 inline-flex items-center gap-2 text-sa-copper text-sm font-body font-medium">
               <span>Start Planning</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:translate-x-1 transition-transform duration-300">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- Route Planner CTA -->
+        <a
+          href="/trip-planner/route"
+          class="group block p-8 md:p-10 rounded-2xl bg-gradient-to-br from-sa-copper to-sa-copper-hover text-white hover:opacity-95 transition-opacity relative overflow-hidden"
+        >
+          <div class="absolute bottom-0 right-0 w-40 h-40 bg-white/5 rounded-full translate-y-1/2 translate-x-1/2" />
+          <div class="relative z-10">
+            <p class="text-white/70 text-xs tracking-[0.25em] uppercase mb-4 font-display">New</p>
+            <h2 class="font-display text-2xl mb-3 leading-snug">Route Planner</h2>
+            <p class="text-white/80 text-sm leading-relaxed">
+              Enter start + destination — find springs along your drive.
+            </p>
+            <div class="mt-6 inline-flex items-center gap-2 text-white text-sm font-body font-medium">
+              <span>Plan a Route</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:translate-x-1 transition-transform duration-300">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
@@ -241,9 +282,9 @@ const jsonLd = [
           <div class="absolute bottom-0 left-0 w-32 h-32 bg-sa-copper/5 rounded-full translate-y-1/2 -translate-x-1/2" />
           <div class="relative z-10">
             <p class="text-sa-copper text-xs tracking-[0.25em] uppercase mb-4 font-display">The Journal</p>
-            <h2 class="font-display text-2xl md:text-3xl text-sa-dark mb-3 leading-snug">Guides, Science & Stories</h2>
-            <p class="text-sa-text text-sm leading-relaxed max-w-sm">
-              Deep dives into hot spring geology, water chemistry, regional guides, and road trip itineraries from the field.
+            <h2 class="font-display text-2xl text-sa-dark mb-3 leading-snug">Guides & Stories</h2>
+            <p class="text-sa-text text-sm leading-relaxed">
+              Geology, water chemistry, regional guides, and road trip itineraries.
             </p>
             <div class="mt-6 inline-flex items-center gap-2 text-sa-copper text-sm font-body font-medium">
               <span>Read the Journal</span>
@@ -269,7 +310,7 @@ const jsonLd = [
       </h2>
       <div class="space-y-6 text-sa-text text-lg leading-relaxed max-w-3xl mx-auto">
         <p>
-          <strong class="text-sa-dark">Soak Trail maps 686 natural hot springs across 8 western US states</strong> — from roadside pools in Idaho to backcountry springs in Colorado's Elk Mountains. Each listing includes water temperature, access type, seasonal conditions, and distance from the nearest city.
+          <strong class="text-sa-dark">Soak Trail maps {totalSprings}+ natural hot springs across {stateCount} western US states</strong> — from roadside pools in Idaho to backcountry springs in Colorado's Elk Mountains. Each listing includes water temperature, access type, seasonal conditions, and distance from the nearest city.
         </p>
         <p>
           The American West has the highest concentration of thermal springs in the country, driven by the same volcanic and fault-line geology that built the Rockies and the Cascades. These mineral-rich waters — heated deep underground and rising through ancient rock — range from warm creekside soaks to near-boiling geothermal features.
@@ -278,9 +319,9 @@ const jsonLd = [
 
       <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
-          { number: '500+', label: 'Natural Springs Mapped' },
-          { number: '6', label: 'Regional Guides' },
-          { number: '11', label: 'States Covered' },
+          { number: `${totalSprings}+`, label: 'Natural Springs Mapped' },
+          { number: `${regionCount}`, label: 'Regional Guides' },
+          { number: `${stateCount}`, label: 'States Covered' },
         ].map((stat) => (
           <div class="text-center">
             <p class="font-body text-5xl md:text-6xl font-light text-sa-copper mb-2">{stat.number}</p>
@@ -431,7 +472,7 @@ const jsonLd = [
           Soak Trail MCP Server
         </h2>
         <p class="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
-          Query 500+ hot springs across the American West directly from AI assistants like Claude, ChatGPT, and any MCP-compatible client.
+          Query {totalSprings}+ hot springs across the American West directly from AI assistants like Claude, ChatGPT, and any MCP-compatible client.
         </p>
       </div>
 
