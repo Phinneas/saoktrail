@@ -36,6 +36,6 @@ binding = "UGC_BUCKET"
 bucket_name = "soaktrail-ugc"
 
 [triggers]
-# 7 AM UTC (midnight PDT) — autoposter: Asana → MiniMax → D1 → mark Asana done
-# 8 AM UTC (1 AM PDT) — deploy trigger: calls GitHub Actions to rebuild + deploy all sites
-crons = ["0 7 * * 1,4", "0 8 * * 1,4"]
+# Sun + Wed 7 AM UTC (midnight PDT) — autoposter: Asana → MiniMax → D1 → mark Asana done
+# Sun + Wed 8 AM UTC (1 AM PDT) — deploy trigger: calls GitHub Actions to rebuild + deploy all sites
+crons = ["0 7 * * 0,3", "0 8 * * 0,3"]

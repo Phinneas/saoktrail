@@ -1,0 +1,440 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AuthorAttribution from '../../components/AuthorAttribution.astro';
+import stateSpringsData from '../../data/state_springs.json';
+
+export const prerender = true;
+
+const STATE_NAMES: Record<string, string> = {
+  ID: 'Idaho', MT: 'Montana', OR: 'Oregon', CO: 'Colorado',
+  CA: 'California', WY: 'Wyoming', AK: 'Alaska', WA: 'Washington',
+};
+
+const STATE_GUIDES: Record<string, {
+  intro: string;
+  geology: string;
+  regions: { name: string; description: string; count: number }[];
+  tips: string[];
+  safety: string[];
+  seasonal: string;
+}> = {
+  ID: {
+    intro: 'Idaho has more natural hot springs than any other state in the western US, with 420 mapped by Soak Trail. The majority are primitive, backcountry pools accessible only by hike — which means fewer crowds and more solitude than developed resorts. The springs range from 85°F to 145°F, with 324 in the ideal soaking range of 95–110°F.',
+    geology: 'Idaho sits atop the Yellowstone hotspot track and the Basin and Range geological province, where the Earth\'s crust is actively stretching and thinning. This allows magma to sit closer to the surface, heating groundwater that rises through fault lines and fractures. The result is one of the densest concentrations of geothermal features on Earth — second only to Yellowstone itself.',
+    regions: [
+      { name: 'Boise National Forest', description: 'The densest cluster of hot springs in Idaho, with dozens of primitive pools along forest roads and hiking trails northeast of Boise.', count: 45 },
+      { name: 'Salmon River Mountains', description: 'Remote backcountry springs along the Salmon River corridor, many requiring 4WD access or multi-day hikes.', count: 30 },
+      { name: 'Sawtooth Mountains', description: 'High-elevation springs with stunning mountain scenery, including the famous Goldbug Hot Springs trail.', count: 25 },
+      { name: 'Hell\'s Canyon', description: 'Springs along the Snake River corridor, some accessible by boat or steep trail.', count: 15 },
+    ],
+    tips: [
+      'Many Idaho hot springs are on National Forest land and free to visit, but some require a Northwest Forest Pass ($5/day).',
+      'Road conditions change seasonally — check USFS Motor Vehicle Use Maps before driving forest roads.',
+      'Weekday mornings offer the best chance of solitude at popular springs like Goldbug and Sunflower.',
+      'Pack out all trash. Idaho\'s primitive springs have no facilities — you\'re responsible for Leave No Trace.',
+    ],
+    safety: [
+      'Always test water temperature before entering. Some Idaho springs exceed 130°F and can cause burns.',
+      'Hot springs near geothermal features may have unstable ground. Stay on established trails.',
+      'Bring plenty of water — soaking in hot water dehydrates you faster than you\'d expect.',
+      'Cell service is unreliable at most Idaho springs. Download offline maps before you go.',
+    ],
+    seasonal: 'Most Idaho hot springs are accessible year-round, but mountain springs above 7,000 feet may be snowed in from November through May. The best time to visit high-elevation springs is July through September. Lower-elevation springs along the Salmon River and Boise foothills are accessible in all seasons.',
+  },
+  MT: {
+    intro: 'Montana has 70 mapped hot springs, from rustic forest pools to historic bathhouses. The springs range from warm creekside soaks to steaming geothermal pools, with 48 in the ideal soaking range of 95–110°F.',
+    geology: 'Montana\'s hot springs are driven by the same tectonic forces that built the Rocky Mountains. Deep groundwater circulates along fault lines heated by the Earth\'s interior, rising to the surface as thermal springs — particularly along the Continental Divide and in the Gallatin and Madison ranges.',
+    regions: [
+      { name: 'Gallatin Valley', description: 'Springs near Bozeman and Big Sky, including historic Chico Hot Springs.', count: 15 },
+      { name: 'Flathead Valley', description: 'Springs in the northwest, many near Glacier National Park.', count: 12 },
+      { name: 'Deer Lodge Valley', description: 'Springs along the I-90 corridor between Butte and Missoula.', count: 10 },
+    ],
+    tips: [
+      'Montana\'s mountain springs are best visited July through September when roads are clear.',
+      'Some springs are on private land — always check access before visiting.',
+      'Bring bear spray when hiking to backcountry springs in Montana.',
+    ],
+    safety: [
+      'Test water temperature before entering. Montana springs range from warm to near-boiling.',
+      'Wildlife is common near springs — be aware of bears, moose, and mountain lions.',
+      'Cell service is limited in backcountry areas. Tell someone where you\'re going.',
+    ],
+    seasonal: 'Mountain springs above 6,000 feet are typically accessible June through October. Lower-elevation springs near Bozeman and Missoula are year-round. Winter soaking is popular at developed resorts like Chico Hot Springs.',
+  },
+  OR: {
+    intro: 'Oregon has 68 mapped hot springs, concentrated in the Cascades and high desert. All 68 are open year-round, making Oregon one of the best states for consistent hot springs access.',
+    geology: 'Oregon\'s hot springs are concentrated along the Cascade Range, where the Juan de Fuca plate subducts beneath the North American plate. This volcanic arc produces the heat that drives Oregon\'s geothermal features, from the Umpqua Hot Springs in the south to Bagby Hot Springs near Portland.',
+    regions: [
+      { name: 'Southern Oregon Cascades', description: 'The densest cluster, including Umpqua, Toketee, and McCredie springs.', count: 25 },
+      { name: 'Central Oregon', description: 'Springs near Bend and the Deschutes National Forest.', count: 15 },
+      { name: 'Eastern Oregon', description: 'High desert springs in remote terrain, including Alvord Hot Springs.', count: 12 },
+    ],
+    tips: [
+      'Oregon\'s most popular springs (Umpqua, Bagby) can be crowded on weekends. Visit midweek for solitude.',
+      'Some Oregon springs require a Northwest Forest Pass or day-use fee.',
+      'The Alvord Desert springs in eastern Oregon require a high-clearance vehicle.',
+    ],
+    safety: [
+      'Oregon springs range from warm to boiling. Always test before entering.',
+      'Some springs are near active geothermal features — stay on trails.',
+      'Flash flooding is possible at canyon springs during heavy rain.',
+    ],
+    seasonal: 'All 68 Oregon springs are listed as year-round. Mountain springs may have limited road access in winter, but the springs themselves remain accessible to determined hikers.',
+  },
+  CO: {
+    intro: 'Colorado has 36 mapped hot springs, including some of the highest-elevation springs in the country. The state offers a mix of developed resorts and backcountry pools, with 27 in the ideal soaking range.',
+    geology: 'Colorado\'s hot springs are driven by the Rio Grande Rift — a continental rift zone where the Earth\'s crust is pulling apart. This thins the crust and allows magma to heat groundwater along fault lines, creating the thermal features found from Glenwood Springs to the San Luis Valley.',
+    regions: [
+      { name: 'Glenwood Springs', description: 'The iconic Iron Mountain Hot Springs and Glenwood Hot Springs Pool along the Colorado River.', count: 5 },
+      { name: 'San Luis Valley', description: 'Remote springs in the high desert, including Valley View and Joyful Journey.', count: 10 },
+      { name: 'Elk Mountains', description: 'High-altitude backcountry springs near Aspen, including Conundrum at 11,200 feet.', count: 8 },
+    ],
+    tips: [
+      'Colorado\'s high-elevation springs (above 9,000 feet) are best visited July through September.',
+      'Conundrum Hot Springs requires an 8.5-mile hike each way — plan for a full day or overnight.',
+      'Many Colorado springs are clothing-optional, especially in the San Luis Valley.',
+    ],
+    safety: [
+      'Altitude sickness is a risk at Colorado\'s high-elevation springs. Acclimate before hiking.',
+      'Afternoon thunderstorms are common in the mountains July through September. Start hikes early.',
+      'Colorado springs range from 95°F to 150°F+ — always test temperature.',
+    ],
+    seasonal: 'Mountain springs above 9,000 feet are accessible July through September. Lower-elevation resort springs like Glenwood and Mount Princeton are year-round. Winter soaking is popular at developed resorts.',
+  },
+  CA: {
+    intro: 'California has 30 mapped hot springs in the Shasta region (Northern California), ranging from geothermal vents exceeding 200°F to warm creekside pools. The springs are concentrated in the Cascade Range near Mount Shasta.',
+    geology: 'Northern California\'s hot springs are driven by the Cascade volcanic arc, where subduction of the Juan de Fuca plate produces magma that heats groundwater. The Mount Shasta area is one of the most geothermally active regions in the Cascades.',
+    regions: [
+      { name: 'Mount Shasta', description: 'Springs near the iconic volcano, including Castle Lake and McCloud River springs.', count: 12 },
+      { name: 'Trinity Alps', description: 'Remote backcountry springs in the Trinity Alps Wilderness.', count: 8 },
+      { name: 'Lassen Area', description: 'Springs near Lassen Volcanic National Park.', count: 10 },
+    ],
+    tips: [
+      'Some California springs are on private land or tribal territory — always verify access.',
+      'The McCloud River area has several springs with easy access from I-5.',
+      'Wildfire season (August–October) may affect access to some springs.',
+    ],
+    safety: [
+      'California geothermal features can exceed 200°F. Stay on boardwalks near active vents.',
+      'Some springs are in wilderness areas — permits may be required.',
+      'Cell service is limited in most spring areas.',
+    ],
+    seasonal: 'Lower-elevation springs are year-round. Mountain springs are best June through October. Winter access may require snowshoes or skis above 6,000 feet.',
+  },
+  WY: {
+    intro: 'Wyoming has 30 mapped hot springs, many near Yellowstone National Park. The state\'s geothermal activity is driven by the same volcanic system that powers Yellowstone\'s geysers.',
+    geology: 'Wyoming\'s hot springs are driven by the Yellowstone hotspot — a plume of magma rising from deep in the Earth\'s mantle. This produces the highest concentration of geothermal features on the planet, extending beyond Yellowstone\'s borders into surrounding areas.',
+    regions: [
+      { name: 'Yellowstone Area', description: 'Springs near the park boundary, including some accessible outside the park.', count: 10 },
+      { name: 'Wind River Range', description: 'Backcountry springs in the Wind River Mountains.', count: 8 },
+      { name: 'Thermopolis', description: 'The famous Hot Springs State Park with developed soaking pools.', count: 5 },
+    ],
+    tips: [
+      'Yellowstone-area springs may be in grizzly bear country — carry bear spray.',
+      'Hot Springs State Park in Thermopolis offers free soaking in the state bath house.',
+      'Some Wyoming springs are on tribal land — check access with the Eastern Shoshone or Northern Arapaho.',
+    ],
+    safety: [
+      'Wyoming geothermal features can be extremely hot and unstable. Never walk off-trail near thermal areas.',
+      'Grizzly bears are common near springs — store food properly and make noise on trails.',
+      'Winter conditions are extreme in Wyoming. Only experienced backcountry travelers should attempt winter spring visits.',
+    ],
+    seasonal: 'Thermopolis and other low-elevation springs are year-round. Mountain springs are accessible June through October. Yellowstone-area springs may have limited access in winter.',
+  },
+  AK: {
+    intro: 'Alaska has 20 mapped hot springs, many accessible only by bush plane, boat, or multi-day hike. The remote access means most Alaska springs offer true wilderness soaking — no crowds, no facilities, just hot water in wild country.',
+    geology: 'Alaska\'s hot springs are driven by the same subduction zone that produces the state\'s volcanoes and earthquakes. The Pacific plate diving beneath the North American plate generates heat that drives geothermal features along the coast and in the interior.',
+    regions: [
+      { name: 'Interior Alaska', description: 'Springs near Fairbanks, including Chena Hot Springs Resort.', count: 8 },
+      { name: 'Southeast Alaska', description: 'Springs accessible by boat or floatplane along the Inside Passage.', count: 6 },
+      { name: 'Southwest Alaska', description: 'Remote springs along the Alaska Peninsula and Aleutian chain.', count: 6 },
+    ],
+    tips: [
+      'Chena Hot Springs Resort is the only full-service hot spring resort in Alaska — the easiest option for visitors.',
+      'Most Alaska springs require a bush plane or boat. Budget for air charters ($300–$800 per person).',
+      'Summer (June–August) has the best weather and longest days for accessing remote springs.',
+    ],
+    safety: [
+      'Alaska\'s remote springs have no cell service, no facilities, and no rescue services. Be fully self-sufficient.',
+      'Bears are everywhere in Alaska. Carry bear spray, store food in bear canisters, and cook 200 feet from your camp.',
+      'Hypothermia is a real risk — even in summer, Alaska nights can drop below freezing.',
+    ],
+    seasonal: 'Chena Hot Springs is year-round. Remote springs are best accessed June through August. Winter access is possible but requires serious cold-weather gear and experience.',
+  },
+  WA: {
+    intro: 'Washington has 12 mapped hot springs, from rainforest pools on the Olympic Peninsula to Cascade mountain retreats. The springs are smaller in number but varied in character — mossy forest soaks, alpine pools, and developed resorts.',
+    geology: 'Washington\'s hot springs are driven by the Cascade volcanic arc, where the Juan de Fuca plate subducts beneath the North American plate. The heat from this subduction zone produces the geothermal features found from Mount Rainier to the Olympic Peninsula.',
+    regions: [
+      { name: 'Olympic Peninsula', description: 'Rainforest springs in the temperate rainforest, including Olympic Hot Springs.', count: 4 },
+      { name: 'Mount Rainier Area', description: 'Springs near Mount Rainier National Park.', count: 3 },
+      { name: 'North Cascades', description: 'Remote springs in the North Cascades, including Gamma Hot Springs.', count: 3 },
+    ],
+    tips: [
+      'Olympic Hot Springs requires a 2.5-mile hike and is popular — visit midweek.',
+      'Washington\'s rainforest springs are wet year-round. Bring rain gear even in summer.',
+      'Some Washington springs are in National Parks — check NPS regulations before visiting.',
+    ],
+    safety: [
+      'Washington\'s mountain springs may have snow access issues from November through June.',
+      'Rainforest trails can be slippery and muddy. Wear appropriate footwear.',
+      'River crossings may be required at some springs — check conditions before crossing.',
+    ],
+    seasonal: 'Rainforest springs on the Olympic Peninsula are year-round. Mountain springs are best July through September. Winter soaking is possible at lower-elevation springs with road access.',
+  },
+};
+
+type StateData = Record<string, import('./[state].astro').Spring[]>;
+const allStates = stateSpringsData as StateData;
+
+export function getStaticPaths() {
+  return Object.keys(STATE_GUIDES).map((code) => ({
+    params: { state: code.toLowerCase() },
+    props: { code },
+  }));
+}
+
+const { code } = Astro.props as { code: string };
+const springs = allStates[code] || [];
+const stateName = STATE_NAMES[code] || code;
+const guide = STATE_GUIDES[code];
+const canonical = `https://soaktrail.com/guides/hot-springs-in-${code.toLowerCase()}`;
+
+const soakableSprings = springs.filter((s) => s.temp_class === 'soakable');
+const yearRound = springs.filter((s) => s.season.toLowerCase().includes('year'));
+const topSprings = springs.filter((s) => s.temp_class === 'soakable').slice(0, 10);
+
+const title = `The Complete Guide to Hot Springs in ${stateName} — ${springs.length} Springs Mapped | Soak Trail`;
+const description = `${springs.length} natural hot springs in ${stateName}: geology, regions, top springs, access, safety, and seasonal conditions. Data from USGS and OpenStreetMap, researched by Chester Beard.`;
+
+const faqs = [
+  {
+    q: `How many hot springs are in ${stateName}?`,
+    a: `Soak Trail has mapped ${springs.length} natural hot springs in ${stateName}. Of those, ${soakableSprings.length} are in the ideal soaking range of 95–110°F, and ${yearRound.length} are open year-round. The springs range from ${Math.min(...springs.filter(s => s.temp_f).map(s => s.temp_f!))}°F to ${Math.max(...springs.filter(s => s.temp_f).map(s => s.temp_f!))}°F.`,
+  },
+  {
+    q: `Why does ${stateName} have so many hot springs?`,
+    a: guide.geology,
+  },
+  {
+    q: `Are hot springs in ${stateName} free?`,
+    a: `Most natural hot springs in ${stateName} on National Forest and BLM land are free to visit. Some require a day-use pass ($5–$10). Developed resorts charge admission. Each listing on Soak Trail shows the current fee status.`,
+  },
+  {
+    q: `What is the best time to visit hot springs in ${stateName}?`,
+    a: guide.seasonal,
+  },
+  {
+    q: `Is it safe to soak in hot springs in ${stateName}?`,
+    a: `Hot springs in ${stateName} range from warm (85°F) to near-boiling (145°F). Always test water temperature before entering. Springs on public land are generally safe but have no facilities — bring water, pack out trash, and check conditions before you go.`,
+  },
+];
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const howToSchema = {
+  '@type': 'HowTo',
+  name: `How to Visit Hot Springs in ${stateName}`,
+  description: `A step-by-step guide to finding and visiting natural hot springs in ${stateName}`,
+  step: [
+    { '@type': 'HowToStep', name: 'Choose your region', text: `${stateName} has hot springs in multiple regions. ${guide.regions.map(r => r.name).join(', ')} are the main areas.` },
+    { '@type': 'HowToStep', name: 'Check access and conditions', text: `Verify road conditions, seasonal closures, and access type before visiting. Most springs in ${stateName} require a hike.` },
+    { '@type': 'HowToStep', name: 'Prepare your gear', text: 'Bring water, towels, sunscreen, and a trash bag. Most springs have no facilities.' },
+    { '@type': 'HowToStep', name: 'Test the water', text: 'Always test water temperature before entering. Some springs exceed 120°F.' },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
+    { '@type': 'ListItem', position: 2, name: `Hot Springs in ${stateName}`, item: canonical },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={canonical}
+  jsonLd={[breadcrumbSchema, faqSchema, howToSchema]}
+>
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: `${stateName} Hot Springs` },
+    ]} />
+
+    <!-- Header -->
+    <header class="mt-8 mb-12">
+      <h1 class="font-display text-4xl md:text-5xl font-light text-sa-dark leading-tight mb-4">
+        The Complete Guide to
+        <span class="italic block mt-1">Hot Springs in {stateName}</span>
+      </h1>
+      <p class="text-lg text-sa-dark/80 leading-relaxed max-w-3xl">
+        <strong class="text-sa-dark">Soak Trail maps {springs.length} natural hot springs in {stateName}</strong> — {soakableSprings.length} in the ideal soaking range (95–110°F), {yearRound.length} open year-round. This guide covers the geology, regions, top springs, access, safety, and seasonal conditions for visiting.
+      </p>
+      <p class="text-sm text-sa-dark/40 mt-2">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}</p>
+      <AuthorAttribution class="mt-4" />
+    </header>
+
+    <!-- Overview -->
+    <section class="mb-12">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-4">Overview</h2>
+      <p class="text-sa-dark/80 leading-relaxed">{guide.intro}</p>
+    </section>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+      {[
+        { number: String(springs.length), label: 'Total Springs' },
+        { number: String(soakableSprings.length), label: 'Soakable (95–110°F)' },
+        { number: String(yearRound.length), label: 'Year-Round' },
+        { number: String(springs.filter(s => s.access_type.toLowerCase().includes('hike')).length), label: 'Hike-In' },
+      ].map((stat) => (
+        <div class="text-center border border-sa-dark/10 rounded-xl bg-white/60 p-5">
+          <p class="font-body text-3xl font-light text-sa-copper mb-1">{stat.number}</p>
+          <p class="text-sa-dark/50 text-xs tracking-wider uppercase font-body">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Geology -->
+    <section class="mb-12">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-4">Why {stateName} Has So Many Hot Springs</h2>
+      <p class="text-sa-dark/80 leading-relaxed">{guide.geology}</p>
+    </section>
+
+    <!-- Regions -->
+    <section class="mb-12">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-4">Hot Springs Regions in {stateName}</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {guide.regions.map((r) => (
+          <div class="border border-sa-dark/10 rounded-xl bg-white/60 p-5">
+            <div class="flex items-baseline justify-between mb-2">
+              <h3 class="font-display font-bold text-sa-dark">{r.name}</h3>
+              <span class="font-mono text-sm text-sa-copper">{r.count} springs</span>
+            </div>
+            <p class="text-sa-dark/70 text-sm leading-relaxed">{r.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Top Springs -->
+    <section class="mb-12">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-4">Top Hot Springs in {stateName}</h2>
+      <p class="text-sa-dark/60 mb-4 text-sm">Soakable springs (95–110°F), sorted by temperature. Click for full details.</p>
+      <div class="overflow-x-auto border border-sa-dark/10 rounded-xl">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-sa-dark/5 border-b border-sa-dark/10">
+              <th class="py-3 px-3 text-xs uppercase tracking-wider text-sa-dark/50 font-body w-8">#</th>
+              <th class="py-3 px-3 text-xs uppercase tracking-wider text-sa-dark/50 font-body">Spring</th>
+              <th class="py-3 px-3 text-xs uppercase tracking-wider text-sa-dark/50 font-body text-center">Temp</th>
+              <th class="py-3 px-3 text-xs uppercase tracking-wider text-sa-dark/50 font-body">Access</th>
+              <th class="py-3 px-3 text-xs uppercase tracking-wider text-sa-dark/50 font-body">Nearest City</th>
+            </tr>
+          </thead>
+          <tbody>
+            {topSprings.map((s, i) => (
+              <tr class="border-b border-sa-dark/5 hover:bg-sa-copper/5 transition-colors duration-150">
+                <td class="py-2.5 px-3 font-mono text-xs text-sa-dark/40">{i + 1}</td>
+                <td class="py-2.5 px-3">
+                  <a href={`${s.site_url}/springs/${s.slug}`} target="_blank" rel="noopener noreferrer" class="font-display font-medium text-sa-dark hover:text-sa-copper transition-colors">
+                    {s.name}
+                  </a>
+                </td>
+                <td class="py-2.5 px-3 text-center font-mono text-sa-dark">{s.temp_f ? `${s.temp_f}°F` : '—'}</td>
+                <td class="py-2.5 px-3 text-sa-dark/60 capitalize text-xs">{s.access_type}</td>
+                <td class="py-2.5 px-3 text-sa-dark/60 text-xs">{s.nearest_city || '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-sa-dark/40 mt-3">
+        <a href={`/best-hot-springs/${code.toLowerCase()}`} class="text-sa-copper hover:underline">View all {springs.length} springs in {stateName} →</a>
+      </p>
+    </section>
+
+    <!-- Tips -->
+    <section class="mb-12">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-4">Tips for Visiting</h2>
+      <ul class="space-y-3">
+        {guide.tips.map((tip) => (
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-sa-copper mt-2 shrink-0" />
+            <span class="text-sa-dark/80 leading-relaxed">{tip}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- Safety -->
+    <section class="mb-12">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-4">Safety</h2>
+      <ul class="space-y-3">
+        {guide.safety.map((item) => (
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 shrink-0" />
+            <span class="text-sa-dark/80 leading-relaxed">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- Seasonal -->
+    <section class="mb-12">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-4">When to Visit</h2>
+      <p class="text-sa-dark/80 leading-relaxed">{guide.seasonal}</p>
+    </section>
+
+    <!-- Data Source -->
+    <section class="mb-12 border border-sa-dark/10 rounded-xl bg-white/60 p-5">
+      <p class="text-sa-dark/50 text-sm">
+        <strong class="text-sa-dark">Data sources:</strong> USGS National Water Information System,
+        OpenStreetMap (ODbL), NOAA Thermal Springs dataset. Spring data verified against field reports where available.
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mb-16">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-6 text-center">
+        Frequently Asked <span class="italic">Questions</span>
+      </h2>
+      <div class="space-y-4 max-w-3xl mx-auto">
+        {faqs.map((faq) => (
+          <details class="group border border-sa-dark/10 rounded-xl bg-white/60 overflow-hidden">
+            <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none hover:bg-sa-copper/5 transition-colors duration-200">
+              <h3 class="font-display text-base font-medium text-sa-dark pr-4">{faq.q}</h3>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sa-copper shrink-0 group-open:rotate-180 transition-transform duration-200">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </summary>
+            <div class="px-5 pb-4 text-sa-text text-sm leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Cross-links -->
+    <section class="mb-8">
+      <h2 class="font-display text-xl font-bold text-sa-dark mb-4">Explore Other States</h2>
+      <div class="flex flex-wrap gap-2">
+        {Object.keys(STATE_NAMES).filter((c) => c !== code).map((c) => (
+          <a href={`/guides/hot-springs-in-${c.toLowerCase()}`} class="inline-block rounded-full border border-sa-dark/10 bg-white/60 px-4 py-2 text-sm text-sa-dark hover:border-sa-copper hover:text-sa-copper transition">
+            {STATE_NAMES[c]}
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>

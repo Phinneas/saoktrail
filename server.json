@@ -1,0 +1,14 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.soaktrail/soakatlas",
+  "title": "SoakAtlas Hot Springs",
+  "description": "Find 500+ US natural hot springs — locations, temperatures, access, and safety.",
+  "version": "1.0.0",
+  "websiteUrl": "https://soaktrail.com",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://soakatlas-mcp.buzzuw2.workers.dev/mcp"
+    }
+  ]
+}

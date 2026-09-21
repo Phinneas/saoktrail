@@ -7,13 +7,25 @@ const personSchema = {
   '@type': 'Person',
   name: 'Chester Beard',
   url: 'https://soaktrail.com/about',
-  description: 'Independent researcher and field journalist documenting natural hot springs across North America. Has visited and catalogued hundreds of geothermal sites from Alaska to the Desert Southwest.',
-  jobTitle: 'Researcher & Field Journalist',
+  description: 'Conservation photographer and outdoors explorer documenting natural hot springs across the American West. Former Washington State Executive Council member of the Sierra Club and photographer for The Nature Conservancy.',
+  jobTitle: 'Conservation Photographer & Researcher',
   worksFor: {
     '@type': 'Organization',
     name: 'Soak Trail',
     url: 'https://soaktrail.com',
   },
+  affiliation: [
+    {
+      '@type': 'Organization',
+      name: 'Sierra Club',
+      description: 'Washington State Executive Council',
+    },
+    {
+      '@type': 'Organization',
+      name: 'The Nature Conservancy',
+      description: 'Photographer',
+    },
+  ],
   sameAs: [
     'https://www.instagram.com/soaktrail',
     'https://bsky.app/profile/soaktrail.bsky.social',
@@ -33,7 +45,7 @@ const breadcrumbSchema = {
 
 <BaseLayout
   title="About — Soak Trail"
-  description="Meet the researcher behind Soak Trail's hot springs field guides and data."
+  description="Meet Chester Beard — conservation photographer, Sierra Club leader, and the researcher behind Soak Trail's hot springs field guides and data."
   ogType="profile"
   jsonLd={[personSchema, breadcrumbSchema]}
 >
@@ -47,24 +59,30 @@ const breadcrumbSchema = {
     ]} />
 
     <h1 class="font-display text-4xl font-bold text-sa-dark mt-8 mb-2">About Soak Trail</h1>
-    <p class="text-sa-copper font-display text-lg mb-8">Researched & maintained by Chester Beard</p>
+    <p class="text-sa-copper font-display text-lg mb-8">Researched &amp; maintained by Chester Beard</p>
 
     <div class="prose prose-lg max-w-none">
       <p class="text-lg text-sa-dark/80 leading-relaxed">
         Soak Trail is an independent research project documenting natural hot springs
-        across North America. What started as personal trip planning evolved into a
-        systematic effort to catalog, verify, and publish accurate field data for
-        hundreds of geothermal sites — from remote wilderness pools in Alaska to
-        desert oases in the Southwest.
+        across the American West. It grew from years of road trips through the region's
+        back roads and mountain passes — stopping at hot springs along the way and
+        noticing how hard it was to find reliable, current information about where to soak.
       </p>
 
       <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4">The Researcher</h2>
       <p class="text-sa-dark/80 leading-relaxed">
-        Chester Beard is an independent researcher and field journalist who has
-        visited and catalogued hundreds of geothermal sites across the United States.
-        His work combines on-the-ground field visits, USGS water quality data analysis,
-        OpenStreetMap contribution, and historical research to produce the most
-        comprehensive and accurate hot springs database available.
+        Chester Beard is a conservation photographer and outdoors explorer based in the
+        Pacific Northwest. He has worked as a photographer for The Nature Conservancy
+        and served on the Washington State Executive Council of the Sierra Club. That
+        background in conservation and field work shaped Soak Trail's approach: combine
+        public data sources with field verification to produce accurate, accessible guides
+        for natural hot springs.
+      </p>
+      <p class="text-sa-dark/80 leading-relaxed mt-4">
+        Years of road trips through the western US — from Idaho's backcountry to Oregon's
+        Cascades to Colorado's high country — revealed a gap: no single source combined
+        USGS water quality data, OpenStreetMap geographic data, and real access conditions
+        into one place. Soak Trail fills that gap.
       </p>
       <p class="text-sa-dark/80 leading-relaxed mt-4">
         Each spring in the Soak Trail network has been researched using multiple

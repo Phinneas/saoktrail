@@ -14,6 +14,20 @@ export const GET: APIRoute = async () => {
     { path: '/itineraries', priority: '0.7', changefreq: 'weekly' },
     { path: '/minerals', priority: '0.8', changefreq: 'weekly' },
     { path: '/minerals/chemistry-guide', priority: '0.7', changefreq: 'monthly' },
+    { path: '/how-to-find-hot-springs', priority: '0.8', changefreq: 'monthly' },
+    { path: '/hot-springs-by-state', priority: '0.8', changefreq: 'monthly' },
+    { path: '/records', priority: '0.8', changefreq: 'monthly' },
+    { path: '/reports/hot-springs-american-west-2026', priority: '0.9', changefreq: 'monthly' },
+    ...['ak', 'ca', 'co', 'id', 'mt', 'or', 'wa', 'wy'].map((st) => ({
+      path: `/best-hot-springs/${st}`,
+      priority: '0.8',
+      changefreq: 'monthly',
+    })),
+    ...['ak', 'ca', 'co', 'id', 'mt', 'or', 'wa', 'wy'].map((st) => ({
+      path: `/guides/hot-springs-in-${st}`,
+      priority: '0.9',
+      changefreq: 'monthly',
+    })),
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

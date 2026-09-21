@@ -5,6 +5,8 @@ import SchemaScript from "@components/schema/SchemaScript.astro";
 import { buildBreadcrumbSchema, buildPlaceSchema } from "@lib/schema";
 import { mapboxAccessToken } from "@/config/map";
 import SpringMapScript from "@components/SpringMapScript.astro";
+import WeatherCard from "@components/WeatherCard.astro";
+import ConditionReports from "@components/ConditionReports.tsx";
 import springsData from "../../../public/springs.json";
 
 export const prerender = true;
@@ -34,6 +36,9 @@ const placeSchema = buildPlaceSchema(spring);
 const relatedSprings = springsData
   .filter((s: any) => s.state === spring.state && s.slug !== slug)
   .slice(0, 4);
+
+const apiUrl = import.meta.env.PUBLIC_API_URL;
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
 <BaseLayout
@@ -126,6 +131,8 @@ const relatedSprings = springsData
         </div>
 
         <div class="lg:col-span-1">
+          <WeatherCard lat={spring.lat} lng={spring.lng} elevationFt={spring.elevation_ft} />
+
           <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
             <h3 class="h4 mb-4">Quick Links</h3>
             <div class="space-y-3">
@@ -184,6 +191,18 @@ const relatedSprings = springsData
         <div id="spring-map" class="h-[400px] rounded-lg overflow-hidden" data-lat={spring.lat} data-lng={spring.lng} data-name={spring.name} data-token={mapboxAccessToken}>
         </div>
       </div>
+
+      {apiUrl && (
+        <div id="condition-reports" class="intersect:animate-fadeUp opacity-0 mb-12">
+          <ConditionReports
+            client:only="react"
+            springSlug={slug}
+            apiUrl={apiUrl}
+            turnstileSiteKey={turnstileSiteKey}
+            site="soaktherockies"
+          />
+        </div>
+      )}
 
       {relatedSprings.length > 0 && (
         <div class="intersect:animate-fadeUp opacity-0">

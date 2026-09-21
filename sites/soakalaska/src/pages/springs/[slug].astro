@@ -5,6 +5,7 @@ import SchemaScript from "@components/schema/SchemaScript.astro";
 import { buildBreadcrumbSchema, buildPlaceSchema } from "@lib/schema";
 import { mapboxAccessToken } from "@/config/map";
 import SpringMapScript from "@components/SpringMapScript.astro";
+import WeatherCard from "@components/WeatherCard.astro";
 import ConditionReports from "@components/ConditionReports.tsx";
 import springsData from "../../../public/springs.json";
 
@@ -190,6 +191,8 @@ const relatedSprings = springsData
 
         <!-- Sidebar -->
         <div class="lg:col-span-1">
+          <WeatherCard lat={spring.lat} lng={spring.lng} elevationFt={spring.elevation_ft} />
+
           <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
             <h3 class="h4 mb-4">Quick Links</h3>
             <div class="space-y-3">

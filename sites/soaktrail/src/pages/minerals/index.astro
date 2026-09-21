@@ -30,19 +30,26 @@ const description =
     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Minerals', href: '/minerals' }]} />
 
     <h1 class="font-display text-4xl font-bold text-sa-dark mt-8 mb-4">Hot Spring Minerals</h1>
-    <p class="text-lg text-sa-dark/80 leading-relaxed max-w-3xl">
-      What is actually in the water you are soaking in. Each profile covers one constituent
-      of hot-spring chemistry, ranks U.S. hot springs by its concentration, and explains
-      the health context with cited sources. Concentrations come from the
-      <a href="https://www.waterqualitydata.us/" target="_blank" rel="noopener noreferrer" class="text-sa-copper hover:underline">USGS Water Quality Portal</a>,
-      matched to each spring's USGS monitoring site.
+
+    <p class="text-2xl font-display text-sa-dark leading-snug max-w-3xl">
+      8 constituents. 500+ mapped springs. One USGS-sourced dataset.
+    </p>
+
+    <p class="text-lg text-sa-dark/80 leading-relaxed max-w-3xl mt-4">
+      Soak Trail profiles eight constituents of hot-spring water — pH, total dissolved solids,
+      and six core minerals — and ranks U.S. hot springs by each one's measured concentration.
+      A "concentration" is the amount of that constituent dissolved in the water, reported in
+      mg/L (pH is unitless); each ranking lists only springs with a verified USGS water-quality
+      sample matched to that spring.
     </p>
 
     <div class="mt-6 rounded-lg border border-sa-copper/30 bg-sa-copper/5 p-4 text-sm text-sa-dark/70 max-w-3xl">
-      <strong class="text-sa-dark">A note on health claims.</strong> Drinking-water guideline
-      values (EPA, WHO) apply to <em>ingestion</em>, not dermal soaking. Balneology research is
-      mixed in quality and balneotherapy is adjunctive, not a treatment for any condition. We
-      keep claims cautious and cite the source for each one.
+      <strong class="text-sa-dark">Methodology &amp; sources.</strong> Concentrations come from the
+      <a href="https://www.waterqualitydata.us/" target="_blank" rel="noopener noreferrer" class="text-sa-copper hover:underline">USGS Water Quality Portal</a>,
+      matched to each spring's USGS monitoring site. Guideline values (EPA, WHO) are
+      <em>drinking-water</em> standards — they govern ingestion, not dermal soaking — and
+      balneology research is mixed in quality. We keep health claims cautious and cite the source
+      for each one.
     </div>
 
     <a

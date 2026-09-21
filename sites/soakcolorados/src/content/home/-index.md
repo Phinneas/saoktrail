@@ -9,6 +9,8 @@ content: |
   The Rio Grande Rift runs the length of the state, and along its fault lines, groundwater heated by the earth's crust rises to the surface. That geology has created more than 40 soakable springs across Colorado — from backcountry pools reached only by trail in the Elk Mountains to historic bathhouses built during the mining boom of the 1880s.
 
   Some are a short walk from the parking lot. Others require a full day's hike and a night in a tent. All of them carry the same minerals that have drawn people to these mountains for over a century.
+
+  Exploring beyond Colorado? Soak Trail covers the whole country — here's [how to find hot springs](https://soaktrail.com/how-to-find-hot-springs) anywhere in the U.S.
 button:
   label: Explore the Full Map →
   link: /colorado-hot-springs-map

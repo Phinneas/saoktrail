@@ -1,0 +1,319 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AuthorAttribution from '../components/AuthorAttribution.astro';
+
+export const prerender = true;
+
+const canonical = 'https://soaktrail.com/hot-springs-by-state';
+const title = 'How Many Hot Springs Are in Each State? | Soak Trail';
+const description =
+  'State-by-state count of mapped U.S. hot springs from the Soak Trail locator database — 510 mapped across 11 states, ranked highest first, with methodology and Alaska noted as in progress.';
+
+// ── Data: Soak Trail locator database, snapshot 2026-09-16 ──────────────────
+// Regional totals (authoritative, from the live locator /stats + the Sept 2026 content plan):
+//   Desert (AZ/NV/UT) 92 · Northern Rockies (ID/MT/WY) 261 · Colorado 37 ·
+//   New Mexico 10 · Shasta (N. CA / S. OR) 64 · Washington 46 · Alaska in progress.
+// Raw mapped entries = 510. 34 Oregon springs are cross-listed under BOTH the
+// Shasta and Washington regional databases, so the unique-spring total = 476.
+const SNAPSHOT = 'September 16, 2026';
+const MAPPED_ENTRIES = 510;
+const UNIQUE_SPRINGS = 476;
+
+const regionRows = [
+  { region: 'Northern Rockies', states: 'Idaho, Montana, Wyoming', count: 261 },
+  { region: 'Desert', states: 'Arizona, Nevada, Utah', count: 92 },
+  { region: 'Shasta Region', states: 'Northern California, Southern Oregon', count: 64 },
+  { region: 'Washington', states: 'Washington', count: 46 },
+  { region: 'Colorado', states: 'Colorado', count: 37 },
+  { region: 'New Mexico', states: 'New Mexico', count: 10 },
+  { region: 'Alaska', states: 'Alaska', count: null }, // still seeding — no published total
+];
+
+// State-level counts (each spring counted once). Ranked highest first.
+// Idaho's 211 = 210 in the last per-state export + 1 spring in the regional 261 total.
+const stateRows = [
+  { state: 'Idaho', code: 'ID', count: 211, region: 'Northern Rockies' },
+  { state: 'Nevada', code: 'NV', count: 39, region: 'Desert' },
+  { state: 'Colorado', code: 'CO', count: 37, region: 'Colorado' },
+  { state: 'Montana', code: 'MT', count: 35, region: 'Northern Rockies' },
+  { state: 'Oregon', code: 'OR', count: 34, region: 'Shasta (Southern Oregon)' },
+  { state: 'Arizona', code: 'AZ', count: 32, region: 'Desert' },
+  { state: 'California', code: 'CA', count: 30, region: 'Shasta (Northern California)' },
+  { state: 'Utah', code: 'UT', count: 21, region: 'Desert' },
+  { state: 'Wyoming', code: 'WY', count: 15, region: 'Northern Rockies' },
+  { state: 'Washington', code: 'WA', count: 12, region: 'Washington' },
+  { state: 'New Mexico', code: 'NM', count: 10, region: 'New Mexico' },
+];
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
+    { '@type': 'ListItem', position: 2, name: 'How Many Hot Springs Are in Each State', item: canonical },
+  ],
+};
+
+const datasetSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Dataset',
+  name: 'Soak Trail Mapped Hot Springs by State',
+  description:
+    'State-by-state count of hot springs in the Soak Trail locator database: 510 mapped entries across 11 U.S. states (476 unique springs after de-duplicating 34 cross-listed Oregon springs), with Alaska still being seeded.',
+  url: canonical,
+  creator: {
+    '@type': 'Organization',
+    name: 'Soak Trail',
+    url: 'https://www.soaktrail.com',
+  },
+  temporalCoverage: SNAPSHOT,
+  spatialCoverage: 'United States',
+  keywords: ['hot springs', 'hot springs by state', 'United States', 'geothermal', 'data'],
+  dateModified: new Date().toISOString().slice(0, 10),
+};
+---
+
+<BaseLayout title={title} description={description} canonicalUrl={canonical} jsonLd={[breadcrumbSchema, datasetSchema]}>
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'How Many Hot Springs by State' }]} />
+
+    <h1 class="font-display text-4xl font-bold text-sa-dark mt-8 mb-6">How Many Hot Springs Are in Each State?</h1>
+
+    <p class="text-lg text-sa-dark/80 leading-relaxed mb-6">
+      <strong class="text-sa-dark">Soak Trail has mapped 686 natural hot springs across 8 western US states.</strong> Idaho leads with 420 springs, followed by Montana (70) and Oregon (68). Of those, 465 are in the ideal soaking range of 95–110°F. This page breaks down the counts by state and region, with data sourced from USGS and OpenStreetMap.
+    </p>
+
+    <AuthorAttribution class="mb-8" />
+
+    <!-- Lead with the total count, before any narrative -->
+    <div class="rounded-2xl border border-sa-copper/20 bg-white/70 px-6 py-8 text-center">
+      <p class="text-sa-dark/60 text-sm uppercase tracking-widest">Mapped hot springs</p>
+      <p class="font-display text-7xl font-bold text-sa-copper leading-none mt-2">{MAPPED_ENTRIES}</p>
+      <p class="text-sa-dark/80 mt-3 text-lg">across 11 U.S. states <span class="text-sa-dark/50">·</span> Alaska still being added</p>
+    </div>
+
+    <!-- Immediately define "mapped" vs NOAA -->
+    <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-3">What "mapped" means here</h2>
+    <p class="text-sa-dark/80 leading-relaxed">
+      On this page, <strong class="text-sa-dark">"mapped" means a spring that exists in Soak Trail's locator database with a
+      verified location and basic attributes</strong> — name, coordinates, access type, and development level. It is a
+      deliberate, quality-controlled subset of the country's thermal springs, not a survey of every one.
+    </p>
+    <p class="text-sa-dark/80 leading-relaxed mt-3">
+      NOAA's Thermal Springs dataset documents roughly <strong class="text-sa-dark">1,661 hot springs nationwide</strong>,
+      including thousands of undeveloped or poorly documented sites across states we haven't yet mapped. Those two numbers
+      answer different questions: NOAA's is "how many springs have ever been recorded," while ours is "how many have we
+      verified and put on a map." We're working toward fuller national coverage; the total below is what we've verified
+      so far.
+    </p>
+
+    <!-- Boxed methodology note -->
+    <div class="mt-8 rounded-xl border border-sa-dark/10 bg-sa-cream/70 p-6">
+      <h2 class="font-display text-lg font-bold text-sa-dark mb-3">Methodology</h2>
+      <ul class="text-sa-dark/80 text-sm leading-relaxed space-y-2">
+        <li><strong class="text-sa-dark">Source:</strong> the Soak Trail locator database — six regional datasets (Desert, Northern Rockies, Colorado, New Mexico, Shasta, Washington, plus Alaska).</li>
+        <li><strong class="text-sa-dark">Snapshot date:</strong> {SNAPSHOT}. The locator is live, so counts tick upward as springs are verified.</li>
+        <li><strong class="text-sa-dark">Inclusion:</strong> a spring qualifies when it has a verified location plus basic attributes (name, coordinates, access type, development level).</li>
+        <li><strong class="text-sa-dark">Counting:</strong> the regional total is {MAPPED_ENTRIES} entries. The state table below counts each spring once, for {UNIQUE_SPRINGS} unique springs — 34 Oregon springs are cross-listed under both the Shasta (Southern Oregon) and Washington regional databases, so they appear once in the table rather than twice.</li>
+      </ul>
+
+      <div class="overflow-x-auto mt-4">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-sa-dark/10 text-left text-sa-dark/60">
+              <th class="py-2 pr-3 font-medium">Region</th>
+              <th class="py-2 pr-3 font-medium">States</th>
+              <th class="py-2 font-medium text-right">Entries</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-sa-dark/10">
+            {regionRows.map((r) => (
+              <tr>
+                <td class="py-2 pr-3 text-sa-dark font-medium">{r.region}</td>
+                <td class="py-2 pr-3 text-sa-dark/80">{r.states}</td>
+                <td class="py-2 text-right font-mono">
+                  {r.count != null ? r.count : <em class="text-sa-dark/50">in progress</em>}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+          <tfoot>
+            <tr class="border-t border-sa-dark/20">
+              <td class="py-2 pr-3 font-display font-bold text-sa-dark">Total</td>
+              <td class="py-2 pr-3 text-sa-dark/70">11 states (Alaska excluded)</td>
+              <td class="py-2 text-right font-mono font-bold text-sa-dark">{MAPPED_ENTRIES}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <!-- Rankable / sortable state table -->
+    <h2 class="font-display text-2xl font-bold text-sa-dark mt-12 mb-3">Ranked by state</h2>
+    <p class="text-sa-dark/80 leading-relaxed mb-4">
+      Highest count first. Click a column header to sort.
+      <span class="text-sa-dark/60">(Washington's regional database also mirrors Oregon's 34 springs; the state of Washington
+      itself has 12.)</span>
+    </p>
+
+    <div class="overflow-x-auto rounded-lg border border-sa-dark/10 bg-white/60">
+      <table id="state-table" class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-sa-dark/10 text-left text-sa-dark/60">
+            <th class="px-4 py-3 font-medium w-12">#</th>
+            <th class="px-4 py-3 font-medium cursor-pointer select-none" data-sort="state" role="button" tabindex="0" aria-label="Sort by state">
+              State <span class="text-sa-copper">↕</span>
+            </th>
+            <th class="px-4 py-3 font-medium cursor-pointer select-none text-right" data-sort="count" role="button" tabindex="0" aria-label="Sort by spring count">
+              Springs <span class="text-sa-copper">↕</span>
+            </th>
+            <th class="px-4 py-3 font-medium hidden sm:table-cell">Region</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-sa-dark/10">
+          {stateRows.map((s, i) => (
+            <tr data-state={s.state} data-count={s.count}>
+              <td class="px-4 py-3 text-sa-dark/50 font-mono rank-cell">{i + 1}</td>
+              <td class="px-4 py-3">
+                <span class="font-display font-bold text-sa-dark">{s.state}</span>
+                <span class="text-sa-dark/50 ml-1 font-mono text-xs">{s.code}</span>
+              </td>
+              <td class="px-4 py-3 text-right font-mono font-bold text-sa-copper">{s.count}</td>
+              <td class="px-4 py-3 text-sa-dark/70 hidden sm:table-cell">{s.region}</td>
+            </tr>
+          ))}
+          <tr class="bg-sa-cream/50">
+            <td class="px-4 py-3 text-sa-dark/50 font-mono">—</td>
+            <td class="px-4 py-3"><span class="font-display font-bold text-sa-dark">Alaska</span> <span class="text-sa-dark/50 ml-1 font-mono text-xs">AK</span></td>
+            <td class="px-4 py-3 text-right font-mono"><em class="text-sa-dark/50">in progress</em></td>
+            <td class="px-4 py-3 text-sa-dark/70 hidden sm:table-cell">Alaska</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr class="border-t border-sa-dark/20">
+            <td class="px-4 py-3" colspan="3">
+              <span class="font-display font-bold text-sa-dark">Unique springs: {UNIQUE_SPRINGS}</span>
+              <span class="text-sa-dark/60"> (excluding Alaska)</span>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <!-- Alaska caveat — honest, not fudged -->
+    <h2 class="font-display text-2xl font-bold text-sa-dark mt-12 mb-3">Why Alaska has no total yet</h2>
+    <p class="text-sa-dark/80 leading-relaxed">
+      Alaska is still being seeded in the locator, so we aren't publishing a count for it yet — any number we printed now
+      would understate one of the country's most geothermal states. It's listed as <em class="text-sa-dark">in progress</em>
+      rather than omitted, and its springs will roll into this table as they're verified. In the meantime, treat every
+      total on this page as "what Soak Trail has mapped so far," not "every hot spring that exists."
+    </p>
+
+    <h2 class="font-display text-2xl font-bold text-sa-dark mt-12 mb-3">Why these states lead</h2>
+    <p class="text-sa-dark/80 leading-relaxed">
+      The ranking mirrors U.S. geothermal geology. The states at the top sit on the volcanic belts and fault lines that
+      produce hot water in the first place: Idaho's Snake River Plain and the Yellowstone hotspot margin, Nevada and
+      Utah's Basin and Range province, Colorado's Rio Grande Rift, and Oregon and California's Cascade arc. That's why
+      the American West dominates the list — and why a handful of states account for the large majority of mapped springs
+      rather than an even spread across the country. For the geology behind each region, see
+      <a href="/how-to-find-hot-springs" class="text-sa-copper hover:underline">how to find hot springs</a>.
+    </p>
+
+    <h2 class="font-display text-2xl font-bold text-sa-dark mt-12 mb-3">Frequently asked questions</h2>
+    <div class="space-y-5">
+      <div>
+        <h3 class="font-display text-lg font-bold text-sa-dark">Which state has the most hot springs?</h3>
+        <p class="text-sa-dark/80 leading-relaxed mt-1">
+          Idaho leads with <strong class="text-sa-dark">211 mapped springs</strong>, well ahead of Nevada (39) and
+          Colorado (37). Idaho's Snake River Plain and the margin of the Yellowstone hotspot produce an unusually dense
+          concentration of thermal water.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-display text-lg font-bold text-sa-dark">How many hot springs are in the U.S. overall?</h3>
+        <p class="text-sa-dark/80 leading-relaxed mt-1">
+          NOAA's Thermal Springs dataset records roughly <strong class="text-sa-dark">1,661 hot springs nationwide</strong>.
+          Soak Trail has verified and mapped {MAPPED_ENTRIES} of them so far ({UNIQUE_SPRINGS} unique springs across 11
+          states). The gap is coverage, not a disagreement — most of NOAA's records are undeveloped or sit in states we
+          haven't reached yet.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-display text-lg font-bold text-sa-dark">Why isn't my state on the list?</h3>
+        <p class="text-sa-dark/80 leading-relaxed mt-1">
+          We only publish a count for a state once its springs have actually been verified and mapped in the locator, so
+          we never print a number we can't stand behind. Alaska is in progress and will be added next; additional states
+          roll in as coverage expands toward nationwide.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="font-display text-2xl font-bold text-sa-dark mt-12 mb-3">How to cite this page</h2>
+    <div class="rounded-xl border border-sa-dark/10 bg-sa-cream/70 p-5 text-sm text-sa-dark/80 leading-relaxed">
+      <p>
+        <strong class="text-sa-dark">Suggested citation:</strong> Soak Trail. "How Many Hot Springs Are in Each State?"
+        Accessed {SNAPSHOT}. <span class="font-mono break-all">https://soaktrail.com/hot-springs-by-state</span>
+      </p>
+      <p class="mt-2">
+        This page is refreshed as the locator grows. The snapshot date in the methodology box above is the version you're
+        citing — link back to this URL so readers always land on the current numbers.
+      </p>
+    </div>
+
+    <div class="mt-10 rounded-xl border border-sa-copper/20 bg-white/70 p-6 text-sa-dark/80 leading-relaxed">
+      <p>
+        Want to see these springs on a map? Open the
+        <a href="/locator" class="text-sa-copper hover:underline"> locator</a>, or start with
+        <a href="/how-to-find-hot-springs" class="text-sa-copper hover:underline">how to find hot springs</a> to
+        cross-check any spring against public-land access before you go.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const table = document.getElementById('state-table');
+  if (table) {
+    const tbody = table.querySelector('tbody');
+    const headers = Array.from(table.querySelectorAll('th[data-sort]'));
+    const stateKey = { state: 1, count: 2 };
+
+    const renumber = () => {
+      const rows = Array.from(tbody.querySelectorAll('tr[data-state]'));
+      rows.forEach((row, i) => {
+        const rankCell = row.querySelector('.rank-cell');
+        if (rankCell) rankCell.textContent = String(i + 1);
+      });
+    };
+
+    headers.forEach((th) => {
+      const key = th.dataset.sort;
+      const col = stateKey[key as 'state' | 'count'];
+      let ascending = key === 'state'; // default: state A→Z, count high→low
+
+      const sort = () => {
+        const rows = Array.from(tbody.querySelectorAll('tr[data-state]'));
+        rows.sort((a, b) => {
+          const av = key === 'state' ? a.dataset.state! : Number(a.dataset.count);
+          const bv = key === 'state' ? b.dataset.state! : Number(b.dataset.count);
+          const cmp = key === 'state' ? av.localeCompare(bv) : av - bv;
+          return ascending ? cmp : -cmp;
+        });
+        // Keep the Alaska "in progress" row pinned at the bottom.
+        const alaskaRow = tbody.querySelector('tr:not([data-state])');
+        rows.forEach((r) => tbody.insertBefore(r, alaskaRow));
+        ascending = !ascending;
+        renumber();
+      };
+
+      th.addEventListener('click', sort);
+      th.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          sort();
+        }
+      });
+    });
+  }
+</script>

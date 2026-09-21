@@ -50,6 +50,10 @@ content: |
     <a href="/washington-hot-springs-map" class="btn btn-secondary mr-4">Browse by Region →</a>
     <a href="/blog" class="btn btn-secondary">Read the Latest Guide →</a>
   </div>
+
+  ---
+
+  Exploring beyond the Northwest? Soak Trail covers the whole country — here's [how to find hot springs](https://soaktrail.com/how-to-find-hot-springs) anywhere in the U.S.
 button:
   label: Explore the Map
   link: /washington-hot-springs-map

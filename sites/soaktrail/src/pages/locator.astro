@@ -16,13 +16,31 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 2, name: 'Locator', item: 'https://soaktrail.com/locator' },
   ],
 };
+
+// Counts verified against the live locator database, 2026-08-31.
+const datasetSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Dataset',
+  name: 'Soak Trail Natural Hot Springs Locator',
+  description:
+    'A curated database of 515 natural hot springs across 12 U.S. states, with location, access, and seasonal condition data.',
+  url: 'https://www.soaktrail.com/locator',
+  creator: {
+    '@type': 'Organization',
+    name: 'Soak Trail',
+    url: 'https://www.soaktrail.com',
+  },
+  keywords: ['hot springs', 'natural springs', 'geothermal', 'United States'],
+  spatialCoverage: 'United States',
+  dateModified: new Date().toISOString().slice(0, 10),
+};
 ---
 
 <BaseLayout
   title="Hot Springs Locator — Soak Trail"
   description="Explore every hot spring across America on an interactive map. Browse natural thermal pools, developed resorts, and wilderness soaks by location."
   canonicalUrl="https://soaktrail.com/locator"
-  jsonLd={breadcrumbSchema}
+  jsonLd={[breadcrumbSchema, datasetSchema]}
 >
   <section class="px-4 pt-8 pb-4">
     <div class="container mx-auto max-w-7xl">
@@ -30,6 +48,10 @@ const breadcrumbSchema = {
       <p class="text-sa-dark/70 mt-2 max-w-2xl">
         Every documented hot spring across the United States — from remote wilderness
         pools to developed resorts. Click any pin for a photo and a link to its region.
+      </p>
+      <p class="text-sa-dark/70 mt-2 max-w-2xl text-sm">
+        Not sure where to start? Here's
+        <a href="/how-to-find-hot-springs" class="text-sa-copper hover:underline">how to find hot springs</a>.
       </p>
     </div>
   </section>

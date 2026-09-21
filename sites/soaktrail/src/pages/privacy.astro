@@ -1,0 +1,273 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Privacy Policy', item: 'https://soaktrail.com/privacy' },
+  ],
+};
+---
+
+<BaseLayout
+  title="Privacy Policy — Soak Trail"
+  description="How Soak Trail collects, uses, and safeguards your information across soaktrail.com, the Soak Atlas MCP server, and the regional hot springs guide network."
+  jsonLd={[breadcrumbSchema]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <div class="container mx-auto px-4 py-12 max-w-3xl">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Privacy Policy', href: '/privacy' },
+    ]} />
+
+    <h1 class="font-display text-4xl font-bold text-sa-dark mt-8 mb-2">Privacy Policy</h1>
+    <p class="text-sa-copper font-display text-lg mb-8">Last updated: September 11, 2026</p>
+
+    <div class="prose prose-lg max-w-none text-sa-dark/80">
+      <p class="leading-relaxed">
+        Soak Trail ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy
+        explains how we collect, use, disclose, and safeguard your information when you visit
+        www.soaktrail.com (the "Site"), use our Soak Atlas MCP server, or interact with our regional
+        hot springs guide network.
+      </p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="contact">Contact Us</h2>
+      <p class="leading-relaxed">If you have questions about this Privacy Policy or your data, contact:</p>
+      <p class="leading-relaxed">
+        <strong class="text-sa-dark">Chester Beard — Soak Trail</strong><br />
+        Email: <a href="mailto:buzzUW2@gmail.com" class="text-sa-copper hover:underline">buzzUW2@gmail.com</a>
+      </p>
+      <p class="leading-relaxed">We aim to respond within 48 hours.</p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="information-we-collect">Information We Collect</h2>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3">Information You Provide Voluntarily</h3>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li><strong class="text-sa-dark">Condition Reports &amp; Photo Submissions</strong>: When you submit hot spring condition updates or photos through our site or regional partner sites, we collect the content you submit, your display name, and any location metadata you choose to include.</li>
+        <li><strong class="text-sa-dark">Trip Planner Data</strong>: If you save trips or itineraries, we store your selections locally in your browser unless you explicitly share them.</li>
+        <li><strong class="text-sa-dark">Shop Orders</strong>: If you purchase posters or digital products from our shop, we collect your name, shipping address, email address, and payment information through our payment processor.</li>
+      </ul>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3">Information Collected Automatically</h3>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li><strong class="text-sa-dark">Usage Data</strong>: We use Cloudflare Analytics and Google Analytics to collect anonymized data about how visitors interact with our Site, including pages visited, time on site, referral sources, and approximate geographic location (city/region level only).</li>
+        <li><strong class="text-sa-dark">Device Data</strong>: Browser type, operating system, screen resolution, and language preferences.</li>
+        <li><strong class="text-sa-dark">Cookies &amp; Similar Technologies</strong>: We use cookies to remember your preferences, analyze traffic, and serve personalized advertising through Google AdSense and affiliate partners. See our Cookie section below for details.</li>
+        <li><strong class="text-sa-dark">MCP Server Queries</strong>: When you query our Soak Atlas MCP server through an AI assistant, we log the query parameters and response metadata for service improvement and rate limiting. We do not link MCP queries to personal identities.</li>
+      </ul>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3">Information from Third Parties</h3>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li><strong class="text-sa-dark">Open Data Sources</strong>: Our hot spring database incorporates publicly available data from USGS, NOAA, OpenStreetMap, Wikipedia, Recreation.gov, and weather services. This data does not contain personal information.</li>
+        <li><strong class="text-sa-dark">Affiliate Partners</strong>: When you click affiliate links (Amazon Associates, lodging booking sites), those third parties may place tracking cookies and collect data according to their own privacy policies.</li>
+      </ul>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="how-we-use">How We Use Your Information</h2>
+      <p class="leading-relaxed">We use the information we collect to:</p>
+      <ol class="list-decimal pl-6 space-y-2 leading-relaxed">
+        <li><strong class="text-sa-dark">Provide and improve the Site</strong>: Maintain our database of 500+ hot springs, generate spring detail pages, and keep access conditions current.</li>
+        <li><strong class="text-sa-dark">Personalize your experience</strong>: Remember your region preferences and show relevant spring recommendations.</li>
+        <li><strong class="text-sa-dark">Process transactions</strong>: Fulfill poster orders through Stripe and Gelato print-on-demand services.</li>
+        <li><strong class="text-sa-dark">Communicate with you</strong>: Respond to condition reports, send order confirmations, and notify you of significant site updates.</li>
+        <li><strong class="text-sa-dark">Analyze and optimize</strong>: Understand which springs, regions, and content are most useful to visitors.</li>
+        <li><strong class="text-sa-dark">Monetize sustainably</strong>: Display relevant ads through Google AdSense and earn affiliate commissions from gear and booking recommendations.</li>
+        <li><strong class="text-sa-dark">Ensure security and prevent abuse</strong>: Protect against spam submissions and unauthorized API usage.</li>
+      </ol>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="cookies">Cookies and Tracking Technologies</h2>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3">What Are Cookies</h3>
+      <p class="leading-relaxed">Cookies are small text files stored on your device that help websites function and remember your preferences.</p>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3">Types of Cookies We Use</h3>
+      <div class="overflow-x-auto mt-4">
+        <table class="w-full text-sm text-left border-collapse">
+          <thead>
+            <tr class="border-b border-sa-copper/30">
+              <th class="py-2 pr-4 font-semibold text-sa-dark uppercase tracking-wide">Category</th>
+              <th class="py-2 pr-4 font-semibold text-sa-dark uppercase tracking-wide">Purpose</th>
+              <th class="py-2 font-semibold text-sa-dark uppercase tracking-wide">Examples</th>
+            </tr>
+          </thead>
+          <tbody class="text-sa-dark/80">
+            <tr class="border-b border-sa-copper/10">
+              <td class="py-2 pr-4 font-medium text-sa-dark">Essential</td>
+              <td class="py-2 pr-4">Required for core functionality</td>
+              <td class="py-2">Session state, trip planner saves, cookie consent choice</td>
+            </tr>
+            <tr class="border-b border-sa-copper/10">
+              <td class="py-2 pr-4 font-medium text-sa-dark">Analytics</td>
+              <td class="py-2 pr-4">Understand visitor behavior</td>
+              <td class="py-2">Google Analytics, Cloudflare Analytics</td>
+            </tr>
+            <tr class="border-b border-sa-copper/10">
+              <td class="py-2 pr-4 font-medium text-sa-dark">Advertising</td>
+              <td class="py-2 pr-4">Serve relevant ads and measure performance</td>
+              <td class="py-2">Google AdSense, Google Ad Manager, Amazon Associates tracking</td>
+            </tr>
+            <tr class="border-b border-sa-copper/10">
+              <td class="py-2 pr-4 font-medium text-sa-dark">Affiliate</td>
+              <td class="py-2 pr-4">Track commission-eligible clicks</td>
+              <td class="py-2">Amazon Associates, booking site referrals</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4 font-medium text-sa-dark">Functional</td>
+              <td class="py-2 pr-4">Enhance user experience</td>
+              <td class="py-2">Map tile preferences, region selection</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3">Your Cookie Choices</h3>
+      <p class="leading-relaxed">When you first visit Soak Trail, a cookie banner allows you to:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li><strong class="text-sa-dark">Accept All</strong>: Enable all cookies including analytics and advertising.</li>
+        <li><strong class="text-sa-dark">Customize</strong>: Choose which cookie categories to allow.</li>
+        <li><strong class="text-sa-dark">Reject Non-Essential</strong>: Block analytics, advertising, and affiliate cookies while keeping essential functionality.</li>
+      </ul>
+      <p class="leading-relaxed">You can change your preferences at any time by clicking the "Cookie Settings" link in the footer.</p>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3">Third-Party Advertising</h3>
+      <p class="leading-relaxed">
+        We use Google AdSense to display ads. Google and its partners use cookies to serve ads based on
+        your prior visits to Soak Trail and other sites. You can opt out of personalized advertising by
+        visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-sa-copper hover:underline">Google's Ad Settings</a> or
+        <a href="https://www.aboutads.info/choices" target="_blank" rel="noopener noreferrer" class="text-sa-copper hover:underline">About Ads</a>.
+      </p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="how-we-share">How We Share Your Information</h2>
+      <p class="leading-relaxed">We do not sell your personal information. We share data only in the following circumstances:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li><strong class="text-sa-dark">Service Providers</strong>: Stripe (payment processing), Gelato (print fulfillment), Cloudflare (hosting and analytics), Google (analytics and advertising).</li>
+        <li><strong class="text-sa-dark">Legal Compliance</strong>: When required by law, subpoena, or to protect our rights, safety, or property.</li>
+        <li><strong class="text-sa-dark">Business Transfers</strong>: If Soak Trail is acquired or merged, user information may be transferred as part of that transaction.</li>
+        <li><strong class="text-sa-dark">Anonymized/Aggregated Data</strong>: We may share de-identified hot springs visitation trends or regional popularity data with researchers or tourism organizations.</li>
+      </ul>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="data-security">Data Security</h2>
+      <p class="leading-relaxed">We implement reasonable security measures to protect your information:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li>All data transmission uses HTTPS/TLS encryption.</li>
+        <li>Payment data is handled exclusively by PCI-compliant Stripe; we never store full credit card numbers.</li>
+        <li>Our MCP server endpoints are rate-limited and do not expose personally identifiable information.</li>
+        <li>User-submitted photos and condition reports are reviewed before public display to prevent spam or inappropriate content.</li>
+      </ul>
+      <p class="leading-relaxed">No internet transmission is 100% secure. We cannot guarantee absolute security.</p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="data-retention">Data Retention</h2>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li><strong class="text-sa-dark">Analytics Data</strong>: Retained for 26 months (Google Analytics default) then automatically deleted.</li>
+        <li><strong class="text-sa-dark">Condition Reports &amp; Photos</strong>: Retained indefinitely unless you request deletion, as they benefit the hot springs community.</li>
+        <li><strong class="text-sa-dark">Shop Order Data</strong>: Retained for 7 years for tax and accounting purposes, then anonymized.</li>
+        <li><strong class="text-sa-dark">Cookie Preferences</strong>: Retained for 12 months, then the banner will reappear.</li>
+        <li><strong class="text-sa-dark">MCP Query Logs</strong>: Retained for 90 days for service improvement, then deleted.</li>
+      </ul>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="your-privacy-rights">Your Privacy Rights</h2>
+      <p class="leading-relaxed">Depending on your location, you may have the following rights:</p>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3">For All Users</h3>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li><strong class="text-sa-dark">Access</strong>: Request a copy of the personal data we hold about you.</li>
+        <li><strong class="text-sa-dark">Correction</strong>: Request that we correct inaccurate or incomplete data.</li>
+        <li><strong class="text-sa-dark">Deletion</strong>: Request deletion of your personal data, subject to legal retention requirements.</li>
+        <li><strong class="text-sa-dark">Objection</strong>: Object to our use of your data for direct marketing or certain profiling.</li>
+      </ul>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3">For California Residents (CCPA/CPRA)</h3>
+      <p class="leading-relaxed">You have the right to:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li>Know what personal information we collect, use, share, and sell (we do not sell personal information).</li>
+        <li>Request deletion of your personal information.</li>
+        <li>Opt out of the sale of personal information (not applicable, as we do not sell data).</li>
+        <li>Non-discrimination for exercising your privacy rights.</li>
+      </ul>
+      <p class="leading-relaxed">To exercise CCPA rights, email buzzUW2@gmail.com with "CCPA Request" in the subject line.</p>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3">For EU/UK Residents (GDPR)</h3>
+      <p class="leading-relaxed">You have the right to:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li>Access, rectify, or erase your personal data.</li>
+        <li>Restrict or object to processing.</li>
+        <li>Data portability.</li>
+        <li>Withdraw consent at any time (does not affect processing before withdrawal).</li>
+        <li>Lodge a complaint with your supervisory authority.</li>
+      </ul>
+      <p class="leading-relaxed">Our legal basis for processing:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li><strong class="text-sa-dark">Consent</strong>: Analytics, advertising, and affiliate cookies (you choose via cookie banner).</li>
+        <li><strong class="text-sa-dark">Legitimate Interest</strong>: Site security, fraud prevention, and service improvement.</li>
+        <li><strong class="text-sa-dark">Contract</strong>: Processing shop orders you initiate.</li>
+        <li><strong class="text-sa-dark">Legal Obligation</strong>: Tax and accounting record retention.</li>
+      </ul>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3">For Users Outside the US</h3>
+      <p class="leading-relaxed">
+        Your data is hosted on Cloudflare's global network, which may process data in the United States and
+        other countries. By using the Site, you consent to this transfer.
+      </p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="childrens-privacy">Children's Privacy</h2>
+      <p class="leading-relaxed">
+        Soak Trail is not intended for children under 13. We do not knowingly collect personal information
+        from children under 13. If you believe we have inadvertently collected such data, contact us
+        immediately at buzzUW2@gmail.com and we will delete it.
+      </p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="third-party-links">Third-Party Links and Services</h2>
+      <p class="leading-relaxed">Our Site contains links to:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li><strong class="text-sa-dark">Regional partner sites</strong> (washingtonhotsprings.com, soakcolorado.com, etc.)</li>
+        <li><strong class="text-sa-dark">Affiliate retailers</strong> (Amazon Associates, lodging booking sites)</li>
+        <li><strong class="text-sa-dark">Government data sources</strong> (USGS, NOAA, Recreation.gov)</li>
+        <li><strong class="text-sa-dark">Social media platforms</strong> (Instagram, Bluesky, Pinterest)</li>
+      </ul>
+      <p class="leading-relaxed">Each of these has its own privacy policy. We encourage you to review them before providing personal information.</p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="mcp-server">MCP Server and AI Assistants</h2>
+      <p class="leading-relaxed">
+        Our Soak Atlas MCP server allows AI assistants (Claude, ChatGPT, Perplexity, etc.) to query hot
+        spring data. When you use an MCP client to access our data:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li>We do not receive your personal identity or conversation history.</li>
+        <li>We log query parameters (location filters, search terms) for service improvement.</li>
+        <li>AI assistants may cache responses; we do not control their data practices.</li>
+        <li>For AI assistant privacy practices, consult the provider (Anthropic, OpenAI, etc.).</li>
+      </ul>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="changes">Changes to This Privacy Policy</h2>
+      <p class="leading-relaxed">
+        We may update this Privacy Policy periodically. The "Last updated" date at the top will reflect the
+        most recent revision. For material changes, we will:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li>Post a prominent notice on the Site for 30 days.</li>
+        <li>Update the cookie banner to re-collect consent if required by law.</li>
+      </ul>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="compliance">Compliance Statement</h2>
+      <p class="leading-relaxed">Soak Trail complies with:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li><strong class="text-sa-dark">Google AdSense Program Policies</strong> and <strong class="text-sa-dark">Google Publisher Policies</strong> regarding user transparency and cookie consent.</li>
+        <li><strong class="text-sa-dark">California Consumer Privacy Act (CCPA/CPRA)</strong>.</li>
+        <li><strong class="text-sa-dark">General Data Protection Regulation (GDPR)</strong> for EU visitors.</li>
+        <li><strong class="text-sa-dark">Federal Trade Commission (FTC)</strong> guidelines on affiliate disclosures.</li>
+        <li><strong class="text-sa-dark">Children's Online Privacy Protection Act (COPPA)</strong>.</li>
+      </ul>
+
+      <hr class="my-8 border-sa-copper/20" />
+      <p class="italic text-sa-dark/70 leading-relaxed">
+        Soak Trail is published by Chester Beard as an independent research project. Affiliate commissions
+        and advertising revenue support the ongoing field research and database maintenance that makes this
+        resource possible.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

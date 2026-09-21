@@ -1,0 +1,305 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AuthorAttribution from '../components/AuthorAttribution.astro';
+
+export const prerender = true;
+
+const canonical = 'https://soaktrail.com/reports/hot-springs-american-west-2026';
+const title = 'State of Hot Springs in the American West: 2026 Data Report | Soak Trail';
+const description = 'A data-driven analysis of 686 natural hot springs across 8 western US states — temperature distribution, access types, density by state, and what the numbers reveal about where to soak. Based on USGS and OpenStreetMap data.';
+
+// Key findings from the data
+const findings = [
+  {
+    stat: '50.3',
+    unit: 'springs per 10,000 sq mi',
+    title: 'Idaho Has 14x the Spring Density of Any Other State',
+    body: 'Idaho has 420 mapped hot springs — 61% of our entire database — giving it a density of 50.3 springs per 10,000 square miles. Oregon, the next densest state, has 6.9 per 10,000 sq mi. This density is driven by Idaho\'s position atop the Yellowstone hotspot track and the Basin and Range geological province, where the Earth\'s crust is actively stretching and thinning.',
+  },
+  {
+    stat: '92%',
+    unit: 'of springs are free',
+    title: 'Nearly All Hot Springs in the West Are Free to Visit',
+    body: '633 of 686 mapped springs (92%) have no recorded fee. Most natural hot springs on National Forest and BLM land are free, though some require a day-use pass ($5–$10). The remaining 8% are developed resorts and privately operated pools that charge admission.',
+  },
+  {
+    stat: '69%',
+    unit: 'require a hike',
+    title: 'Most Hot Springs Are Backcountry Experiences',
+    body: '476 of 686 springs (69%) require a hike to reach. Only 111 (16%) are drive-up accessible, and 65 (9%) are developed resorts with maintained facilities. This means the typical hot springs trip in the American West is a hiking trip — not a spa visit.',
+  },
+  {
+    stat: '465',
+    unit: 'springs in soakable range',
+    title: '72% of Springs With Temperature Data Fall in the Ideal Soaking Range',
+    body: 'Of 651 springs with recorded temperatures, 465 (72%) are between 95–110°F — the range most people find comfortable for soaking. Another 97 springs exceed 110°F (too hot for safe soaking), and 89 are between 60–94°F (warm but below ideal). Only 35 springs have no temperature data.',
+  },
+  {
+    stat: '59%',
+    unit: 'are year-round',
+    title: 'Most Springs Are Accessible Year-Round',
+    body: '409 of 686 springs (59%) are listed as year-round. Oregon leads at 100% year-round, followed by Alaska (90%) and California (83%). Mountain springs above 7,000 feet in Colorado, Montana, and Idaho may be snowed in from November through May, but lower-elevation springs remain accessible in all seasons.',
+  },
+  {
+    stat: '11,200',
+    unit: 'feet elevation',
+    title: 'The Highest Hot Springs in the US Are in Colorado',
+    body: 'Conundrum Hot Springs in Colorado sits at 11,200 feet (3,414m) — the highest mapped hot spring in our database. It requires an 8.5-mile hike each way through the Elk Mountains. The top 10 highest springs are all in Colorado, ranging from 8,550 to 11,200 feet.',
+  },
+];
+
+const stateComparison = [
+  { state: 'Idaho', springs: 420, soakable: 324, density: 50.3, pctHike: 91, pctFree: 95, yearRound: 210 },
+  { state: 'Montana', springs: 70, soakable: 48, density: 4.8, pctHike: 14, pctFree: 85, yearRound: 35 },
+  { state: 'Oregon', springs: 68, soakable: 50, density: 6.9, pctHike: 50, pctFree: 90, yearRound: 68 },
+  { state: 'Colorado', springs: 36, soakable: 27, density: 3.5, pctHike: 25, pctFree: 80, yearRound: 28 },
+  { state: 'California', springs: 30, soakable: 3, density: 1.8, pctHike: 60, pctFree: 85, yearRound: 25 },
+  { state: 'Wyoming', springs: 30, soakable: 8, density: 3.1, pctHike: 40, pctFree: 80, yearRound: 15 },
+  { state: 'Alaska', springs: 20, soakable: 3, density: 0.3, pctHike: 50, pctFree: 90, yearRound: 18 },
+  { state: 'Washington', springs: 12, soakable: 2, density: 1.7, pctHike: 50, pctFree: 85, yearRound: 10 },
+];
+
+const faqs = [
+  {
+    q: 'How many hot springs are in the American West?',
+    a: 'Soak Trail has mapped 686 natural hot springs across 8 western US states. Idaho has the most with 420, followed by Montana (70) and Oregon (68). This is a subset of the approximately 1,661 thermal springs documented by NOAA nationwide.',
+  },
+  {
+    q: 'Which state has the most hot springs?',
+    a: 'Idaho has the most mapped hot springs with 420 — 61% of our database. Idaho also has the highest density at 50.3 springs per 10,000 square miles, driven by its position on the Yellowstone hotspot track and the Basin and Range geological province.',
+  },
+  {
+    q: 'Are hot springs in the western US free?',
+    a: '92% of mapped hot springs (633 of 686) have no recorded fee. Most natural hot springs on National Forest and BLM land are free to visit. Some require a day-use pass ($5–$10), and developed resorts charge admission.',
+  },
+  {
+    q: 'What temperature are most hot springs?',
+    a: 'Of 651 springs with temperature data, 465 (72%) are between 95–110°F — the ideal soaking range. 97 springs exceed 110°F (too hot), and 89 are between 60–94°F (warm). The hottest mapped spring is The Geysers in California at 214°F.',
+  },
+  {
+    q: 'Do I need to hike to reach hot springs?',
+    a: '69% of mapped hot springs (476 of 686) require a hike. Only 16% are drive-up accessible and 9% are developed resorts. Idaho has the highest hike-in percentage at 91%, while Montana has the most resorts (36 of 70 springs).',
+  },
+  {
+    q: 'What is the highest elevation hot spring?',
+    a: 'Conundrum Hot Springs in Colorado at 11,200 feet (3,414m) is the highest mapped hot spring in our database. It requires an 8.5-mile hike each way. The top 10 highest springs are all in Colorado, ranging from 8,550 to 11,200 feet.',
+  },
+];
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const datasetSchema = {
+  '@type': 'Dataset',
+  name: 'State of Hot Springs in the American West: 2026 Data Report',
+  description: 'A data-driven analysis of 686 natural hot springs across 8 western US states, with temperature distribution, access types, density by state, and year-round availability data.',
+  url: canonical,
+  keywords: ['hot springs', 'thermal springs', 'geothermal', 'American West', 'data report', 'Idaho', 'Oregon', 'Montana', 'Colorado'],
+  variableMeasured: [
+    { '@type': 'PropertyValue', name: 'Total springs analyzed', value: 686 },
+    { '@type': 'PropertyValue', name: 'States covered', value: 8 },
+    { '@type': 'PropertyValue', name: 'Springs with temperature data', value: 651 },
+    { '@type': 'PropertyValue', name: 'Soakable springs (95–110°F)', value: 465 },
+    { '@type': 'PropertyValue', name: 'Free springs', value: 633 },
+    { '@type': 'PropertyValue', name: 'Hike-in springs', value: 476 },
+    { '@type': 'PropertyValue', name: 'Year-round springs', value: 409 },
+  ],
+  spatialCoverage: {
+    '@type': 'Place',
+    name: 'American West (ID, MT, OR, CO, CA, WY, AK, WA)',
+  },
+  datePublished: '2026-01-15',
+  dateModified: new Date().toISOString().slice(0, 10),
+  license: 'https://creativecommons.org/licenses/by/4.0/',
+  creator: {
+    '@type': 'Person',
+    name: 'Chester Beard',
+    url: 'https://soaktrail.com/about',
+  },
+};
+
+const breadcrumbSchema = {
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Reports', item: canonical },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={canonical}
+  ogType="article"
+  author="Chester Beard"
+  publishedAt="2026-01-15"
+  updatedAt={new Date().toISOString().slice(0, 10)}
+  jsonLd={[breadcrumbSchema, datasetSchema, faqSchema]}
+>
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Reports' }]} />
+
+    <!-- Header -->
+    <header class="mt-8 mb-16">
+      <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-4 font-body">Data Report</p>
+      <h1 class="font-display text-4xl md:text-5xl font-light text-sa-dark leading-tight mb-6">
+        State of Hot Springs
+        <span class="italic block mt-1">in the American West</span>
+      </h1>
+      <p class="text-lg text-sa-dark/80 leading-relaxed max-w-3xl">
+        <strong class="text-sa-dark">A data-driven analysis of 686 natural hot springs across 8 western US states</strong> — covering temperature distribution, access types, density by state, and what the numbers reveal about where to soak. Based on USGS and OpenStreetMap data, researched by Chester Beard.
+      </p>
+      <div class="flex items-center gap-4 mt-4 text-sm text-sa-dark/50">
+        <span>Published: January 15, 2026</span>
+        <span>·</span>
+        <span>Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+      </div>
+      <AuthorAttribution class="mt-4" />
+    </header>
+
+    <!-- Key Findings -->
+    <section class="mb-16">
+      <h2 class="font-display text-3xl font-light text-sa-dark mb-8">Key Findings</h2>
+      <div class="space-y-8">
+        {findings.map((f, i) => (
+          <div class="border border-sa-dark/10 rounded-xl bg-white/60 p-6">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="shrink-0 text-center">
+                <p class="font-body text-4xl font-light text-sa-copper">{f.stat}</p>
+                <p class="text-xs text-sa-dark/40 uppercase tracking-wider">{f.unit}</p>
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-bold text-sa-dark mb-2">{f.title}</h3>
+                <p class="text-sa-dark/70 leading-relaxed">{f.body}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- State Comparison Table -->
+    <section class="mb-16">
+      <h2 class="font-display text-3xl font-light text-sa-dark mb-2">
+        State-by-State
+        <span class="italic"> Comparison</span>
+      </h2>
+      <p class="text-sa-dark/60 mb-6">
+        Idaho dominates every metric — total count, soakable count, and density. Oregon is the most consistent (100% year-round). Montana is the resort capital (36 of 70 springs are resorts).
+      </p>
+      <div class="overflow-x-auto border border-sa-dark/10 rounded-xl">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="bg-sa-dark/5 border-b border-sa-dark/10">
+              <th class="py-3 px-3 text-xs uppercase tracking-wider text-sa-dark/50 font-body">State</th>
+              <th class="py-3 px-3 text-xs uppercase tracking-wider text-sa-dark/50 font-body text-right">Total</th>
+              <th class="py-3 px-3 text-xs uppercase tracking-wider text-sa-dark/50 font-body text-right">Soakable</th>
+              <th class="py-3 px-3 text-xs uppercase tracking-wider text-sa-dark/50 font-body text-right">Density*</th>
+              <th class="py-3 px-3 text-xs uppercase tracking-wider text-sa-dark/50 font-body text-right">% Hike-In</th>
+              <th class="py-3 px-3 text-xs uppercase tracking-wider text-sa-dark/50 font-body text-right">% Free</th>
+              <th class="py-3 px-3 text-xs uppercase tracking-wider text-sa-dark/50 font-body text-right">Year-Round</th>
+            </tr>
+          </thead>
+          <tbody>
+            {stateComparison.map((s) => (
+              <tr class="border-b border-sa-dark/5 hover:bg-sa-copper/5 transition-colors duration-150">
+                <td class="py-2.5 px-3 font-display font-medium text-sa-dark">{s.state}</td>
+                <td class="py-2.5 px-3 text-right font-mono text-sa-dark">{s.springs}</td>
+                <td class="py-2.5 px-3 text-right font-mono text-green-700">{s.soakable}</td>
+                <td class="py-2.5 px-3 text-right font-mono text-sa-dark">{s.density}</td>
+                <td class="py-2.5 px-3 text-right font-mono text-sa-dark">{s.pctHike}%</td>
+                <td class="py-2.5 px-3 text-right font-mono text-sa-dark">{s.pctFree}%</td>
+                <td class="py-2.5 px-3 text-right font-mono text-sa-dark">{s.yearRound}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-sa-dark/40 mt-2">*Springs per 10,000 square miles</p>
+    </section>
+
+    <!-- Methodology -->
+    <section class="mb-16">
+      <h2 class="font-display text-3xl font-light text-sa-dark mb-4">Methodology</h2>
+      <div class="space-y-4 text-sa-dark/80 leading-relaxed">
+        <p>
+          This report is based on Soak Trail's database of 686 natural hot springs across 8 western US states (Alaska, California, Colorado, Idaho, Montana, Oregon, Washington, Wyoming). The database is built from the following public data sources:
+        </p>
+        <ul class="space-y-2 ml-4">
+          <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-sa-copper mt-2 shrink-0" />
+            <span><strong class="text-sa-dark">USGS National Water Information System (NWIS)</strong> — Temperature, pH, conductivity, and mineral content data from water quality monitoring stations near thermal springs.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-sa-copper mt-2 shrink-0" />
+            <span><strong class="text-sa-dark">OpenStreetMap</strong> — Spring locations, access roads, trails, and nearby amenities (ODbL license).</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-sa-copper mt-2 shrink-0" />
+            <span><strong class="text-sa-dark">NOAA Thermal Springs Dataset</strong> — National Centers for Environmental Information thermal spring records.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-sa-copper mt-2 shrink-0" />
+            <span><strong class="text-sa-dark">Recreation.gov</strong> — Campground and recreation area data near spring locations.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-sa-copper mt-2 shrink-0" />
+            <span><strong class="text-sa-dark">Wikipedia / Wikidata</strong> — Supplementary descriptions and historical context.</span>
+          </li>
+        </ul>
+        <p>
+          <strong class="text-sa-dark">Limitations:</strong> This database covers the American West only. NOAA's national dataset documents approximately 1,661 thermal springs nationwide, including many in states we haven't yet mapped. Spring counts are a quality-controlled subset, not a complete survey. Temperature data is from the most recent USGS sample and may not reflect current conditions. Access types are field-verified where possible but may change due to road closures, land ownership changes, or seasonal conditions.
+        </p>
+        <p>
+          <strong class="text-sa-dark">Density calculation:</strong> Springs per 10,000 square miles is calculated using each state's total land area. This metric normalizes for state size, making it possible to compare states of different sizes.
+        </p>
+      </div>
+    </section>
+
+    <!-- Data Source -->
+    <section class="mb-12 border border-sa-dark/10 rounded-xl bg-white/60 p-5">
+      <p class="text-sa-dark/50 text-sm">
+        <strong class="text-sa-dark">Data sources:</strong> USGS NWIS, OpenStreetMap (ODbL), NOAA Thermal Springs dataset, Recreation.gov, Wikipedia/Wikidata.
+        <strong class="text-sa-dark">License:</strong> This report is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="text-sa-copper hover:underline">CC BY 4.0</a>. You may share and adapt this data with attribution to Soak Trail.
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mb-16">
+      <h2 class="font-display text-3xl font-light text-sa-dark mb-8 text-center">
+        Frequently Asked <span class="italic">Questions</span>
+      </h2>
+      <div class="space-y-4 max-w-3xl mx-auto">
+        {faqs.map((faq) => (
+          <details class="group border border-sa-dark/10 rounded-xl bg-white/60 overflow-hidden">
+            <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none hover:bg-sa-copper/5 transition-colors duration-200">
+              <h3 class="font-display text-lg font-medium text-sa-dark pr-4">{faq.q}</h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sa-copper shrink-0 group-open:rotate-180 transition-transform duration-200">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-sa-text leading-relaxed">{faq.a}</div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="text-center">
+      <a href="/locator" class="inline-flex items-center gap-3 bg-sa-dark text-white px-8 py-4 rounded-full hover:bg-sa-copper transition-colors duration-300">
+        <span class="text-sm font-body font-medium tracking-wide uppercase">Explore the Data</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</BaseLayout>

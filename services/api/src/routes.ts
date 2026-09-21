@@ -703,21 +703,27 @@ Current date: ${today}${currentSpringContext}`;
     }
   });
 
-  // Create or update a blog post (admin endpoint)
+  // Create or update a blog post (admin endpoint).
+  // `site` routes the post to a specific regional site (e.g. 'soaktrail'),
+  // matching the site filter used by GET /api/blog?site= and the Astro sites'
+  // d1Blog.ts fetch. Without it, the post is invisible to regional blogrolls.
   app.post('/api/blog', async (c) => {
     if (!checkAdmin(c)) return c.text('Unauthorized', 401);
     
     const body = await c.req.json();
-    const { title, slug, content, excerpt, tags, featured_springs, author, published_at } = body;
+    const { title, slug, content, excerpt, tags, featured_springs, author, published_at, site, image_url, status } = body;
 
     if (!title || !slug || !content) {
       return c.json({ error: 'Missing required fields: title, slug, content' }, 400);
     }
 
-    const tagsJson = JSON.stringify(tags || []);
-    const featuredJson = JSON.stringify(featured_springs || []);
+    const tagsJson = JSON.stringify(Array.isArray(tags) ? tags : []);
+    const featuredJson = JSON.stringify(Array.isArray(featured_springs) ? featured_springs : []);
     const publishedAt = published_at || new Date().toISOString();
-    const authorName = author || 'Soak the Rockies Team';
+    const authorName = author || 'Soak Trail Team';
+    const siteSlug = typeof site === 'string' && site.trim() ? site.trim() : null;
+    const imageUrl = typeof image_url === 'string' && image_url.trim() ? image_url.trim() : null;
+    const statusValue = typeof status === 'string' && status.trim() ? status.trim() : 'published';
 
     // Check if exists
     const existing = await c.env.DB.prepare('SELECT id FROM blog_posts WHERE slug = ?').bind(slug).first();
@@ -725,14 +731,14 @@ Current date: ${today}${currentSpringContext}`;
     if (existing) {
       await c.env.DB.prepare(`
         UPDATE blog_posts 
-        SET title = ?, body = ?, excerpt = ?, tags = ?, featured_springs = ?, published_at = ?, author = ?, updated_at = CURRENT_TIMESTAMP
+        SET title = ?, body = ?, excerpt = ?, tags = ?, featured_springs = ?, published_at = ?, author = ?, site = ?, image_url = ?, status = ?, updated_at = CURRENT_TIMESTAMP
         WHERE slug = ?
-      `).bind(title, content, excerpt || '', tagsJson, featuredJson, publishedAt, authorName, slug).run();
+      `).bind(title, content, excerpt || '', tagsJson, featuredJson, publishedAt, authorName, siteSlug, imageUrl, statusValue, slug).run();
     } else {
       await c.env.DB.prepare(`
-        INSERT INTO blog_posts (title, slug, body, excerpt, tags, featured_springs, published_at, author)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-      `).bind(title, slug, content, excerpt || '', tagsJson, featuredJson, publishedAt, authorName).run();
+        INSERT INTO blog_posts (title, slug, body, excerpt, tags, featured_springs, published_at, author, site, image_url, status)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `).bind(title, slug, content, excerpt || '', tagsJson, featuredJson, publishedAt, authorName, siteSlug, imageUrl, statusValue).run();
     }
 
     return c.json({ success: true, slug });

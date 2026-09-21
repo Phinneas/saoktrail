@@ -8,6 +8,8 @@ content: |
   Alaska sits on the Pacific Ring of Fire, and its geothermal activity has created more than 70 known thermal springs across the state — from the Southeast panhandle to the Brooks Range. Many are accessible only by boat, floatplane, or a long winter trail. A handful can be reached by road.
 
   Some are a short drive from Fairbanks. Others require a multi-day expedition. All of them carry the same minerals that have drawn people to these remote waters for centuries.
+
+  Exploring beyond Alaska? Soak Trail covers the whole country — here's [how to find hot springs](https://soaktrail.com/how-to-find-hot-springs) anywhere in the U.S.
 button:
   label: Explore the Full Map →
   link: /alaska-hot-springs-map

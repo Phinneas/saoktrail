@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AuthorAttribution from '../components/AuthorAttribution.astro';
+
+export const prerender = true;
+
+const canonical = 'https://soaktrail.com/how-to-find-hot-springs';
+const title = 'How to Find Hot Springs Near You | Soak Trail';
+const description =
+  "Four real ways to find hot springs in the US — from Soak Trail's live map to official government data — plus how to check if a spring is legal to visit.";
+
+// Region rows verified against the live locator database, 2026-08-31 (515 springs, 12 states).
+const regionRows = [
+  { region: 'Northern Rockies', states: 'Idaho, Montana, Wyoming', count: 260 },
+  { region: 'Desert', states: 'Arizona, Nevada, Utah', count: 92 },
+  { region: 'Shasta Region', states: 'Northern California, Southern Oregon', count: 64 },
+  { region: 'Washington', states: 'Washington', count: 46 },
+  { region: 'Colorado + New Mexico', states: 'Colorado, New Mexico', count: 46 },
+  { region: 'Alaska', states: 'Alaska', count: null }, // coverage in progress
+];
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to Find Hot Springs Near You',
+  step: [
+    {
+      '@type': 'HowToStep',
+      name: 'Use a live map',
+      text: "Use a curated, up-to-date map like Soak Trail's locator, which covers 500+ mapped natural springs across 12 states.",
+    },
+    {
+      '@type': 'HowToStep',
+      name: 'Check official geothermal databases',
+      text: "Cross-reference NOAA's National Centers for Environmental Information Thermal Springs dataset, which documents roughly 1,661 thermal springs in the U.S., including undeveloped ones.",
+    },
+    {
+      '@type': 'HowToStep',
+      name: 'Cross-reference public land maps',
+      text: 'Check BLM public land maps, USFS Motor Vehicle Use Maps, and Recreation.gov to confirm a spring is legally accessible before visiting.',
+    },
+    {
+      '@type': 'HowToStep',
+      name: 'Ask the community',
+      text: 'Check recent posts in communities like r/HotSpringsWest and r/hotsprings for current road, trail, and crowding conditions.',
+    },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Where do you usually find hot springs?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Most U.S. hot springs cluster along the same fault lines and volcanic belts that produce geothermal activity generally — the Cascades, the Rockies, and the Basin and Range province across Nevada, Utah, and eastern California/Oregon.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does my state have natural hot springs?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "It depends entirely on the state's geology — proximity to a fault line or volcanic activity is the deciding factor. Check Soak Trail's locator map or NOAA's Thermal Springs dataset for state-by-state coverage.",
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Are undeveloped hot springs legal to visit?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Usually yes if they\'re on BLM or National Forest land with no posted closure, but always verify current status — some are seasonally closed, tribal land, or require a permit.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is there an app or map specifically for undeveloped hot springs?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: "Yes — Soak Trail's locator map is built for this, alongside NOAA's official Thermal Springs dataset.",
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
+    { '@type': 'ListItem', position: 2, name: 'How to Find Hot Springs', item: canonical },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} canonicalUrl={canonical} jsonLd={[howToSchema, faqSchema, breadcrumbSchema]}>
+  <div class="container mx-auto px-4 py-12 max-w-3xl">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'How to Find Hot Springs' }]} />
+
+    <h1 class="font-display text-4xl font-bold text-sa-dark mt-8 mb-4">How to Find Hot Springs Near You</h1>
+
+    <AuthorAttribution class="mb-6" />
+
+    <p class="text-lg text-sa-dark/80 leading-relaxed">
+      <strong class="text-sa-dark">There are four reliable ways to find natural hot springs in the US</strong> — from curated maps with verified locations to government geothermal databases. Soak Trail maps 686 springs across 8 western states; here's how to find them and verify they're legal to visit.
+    </p>
+
+    <p class="text-sa-dark/80 leading-relaxed mt-4">The four methods:</p>
+
+    <ol class="list-decimal list-inside text-sa-dark/80 leading-relaxed space-y-3 mt-4">
+      <li><strong class="text-sa-dark">Use a curated, live map</strong> — the fastest and most reliable method, since it's already filtered for accuracy and access.</li>
+      <li><strong class="text-sa-dark">Check official geothermal databases</strong> — government datasets that catalog thermal springs whether or not they're set up for visitors.</li>
+      <li><strong class="text-sa-dark">Cross-reference public land maps</strong> — to confirm a spring you've found is actually legal and accessible to reach.</li>
+      <li><strong class="text-sa-dark">Ask the community</strong> — hikers and soakers who've been there recently often know current road, trail, or closure conditions no database tracks.</li>
+    </ol>
+
+    <p class="text-sa-dark/80 leading-relaxed mt-4">Here's how to use each one.</p>
+
+    <h2 id="1-use-a-live-map" class="font-display text-2xl font-bold text-sa-dark mt-12 mb-4 scroll-mt-20">1. Use a live map</h2>
+    <p class="text-sa-dark/80 leading-relaxed">
+      The fastest way to find a hot spring is a map that's already done the legwork of confirming a
+      location is real, roughly locatable, and worth the trip.
+      <a href="/locator" class="text-sa-copper hover:underline">Soak Trail's locator map</a> covers
+      515 mapped natural springs across 12 states in six regions:
+    </p>
+
+    <div class="overflow-x-auto rounded-lg border border-sa-dark/10 bg-white/60 mt-6">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-sa-dark/10 text-left text-sa-dark/60">
+            <th class="px-4 py-3 font-medium">Region</th>
+            <th class="px-4 py-3 font-medium">States</th>
+            <th class="px-4 py-3 font-medium text-right">Springs mapped</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-sa-dark/10">
+          {regionRows.map((r) => (
+            <tr>
+              <td class="px-4 py-3 font-display font-bold text-sa-dark">{r.region}</td>
+              <td class="px-4 py-3 text-sa-dark/80">{r.states}</td>
+              <td class="px-4 py-3 text-right font-mono">
+                {r.count != null ? r.count : <em class="text-sa-dark/50">coverage in progress</em>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-sa-dark/80 leading-relaxed mt-6">
+      If you already know roughly where you're headed,
+      <a href="/near" class="text-sa-copper hover:underline">Near Cities</a> narrows that down to
+      springs within driving distance of a specific town, and
+      <a href="/trip-planner" class="text-sa-copper hover:underline">Trip Planner</a> turns a
+      shortlist into an actual itinerary. For the exact, current number of springs per state, see
+      <a href="/hot-springs-by-state" class="text-sa-copper hover:underline">how many hot springs are in each state</a>.
+    </p>
+
+    <h2 class="font-display text-2xl font-bold text-sa-dark mt-12 mb-4">2. Check the official data</h2>
+    <p class="text-sa-dark/80 leading-relaxed">
+      Beyond curated maps, the U.S. government maintains its own record of thermal springs — most of
+      which were never developed for visitors and won't show up on a typical travel site. NOAA's
+      National Centers for Environmental Information maintains a
+      <strong class="text-sa-dark">Thermal Springs dataset covering roughly 1,661 documented hot springs
+      in the United States</strong> — a mix of visitor-ready and completely undeveloped sites.
+    </p>
+    <p class="text-sa-dark/80 leading-relaxed mt-4">
+      That dataset tells you a spring exists. It doesn't tell you whether you're allowed to go. For
+      that, cross-reference the location against:
+    </p>
+    <ul class="list-disc list-inside text-sa-dark/80 leading-relaxed space-y-3 mt-4">
+      <li><strong class="text-sa-dark">BLM's public land maps</strong> (blm.gov) — most undeveloped Western hot springs sit on Bureau of Land Management ground, where dispersed access is usually allowed but seasonal closures and vehicle restrictions vary by field office.</li>
+      <li><strong class="text-sa-dark">USFS Motor Vehicle Use Maps (MVUMs)</strong> — confirm whether the access road is open to the vehicle you're driving; many hot-spring access roads are seasonal or high-clearance only.</li>
+      <li><strong class="text-sa-dark">Recreation.gov</strong> — for springs inside a National Forest or National Park boundary, check whether a permit or fee applies.</li>
+    </ul>
+    <p class="text-sa-dark/80 leading-relaxed mt-4">
+      A location existing in a database isn't the same as a location being open — always check land
+      status before you go.
+    </p>
+
+    <h2 class="font-display text-2xl font-bold text-sa-dark mt-12 mb-4">3. Ask the community, carefully</h2>
+    <p class="text-sa-dark/80 leading-relaxed">
+      Reddit's
+      <a href="https://www.reddit.com/r/HotSpringsWest/" target="_blank" rel="noopener noreferrer" class="text-sa-copper hover:underline">r/HotSpringsWest</a> and
+      <a href="https://www.reddit.com/r/hotsprings/" target="_blank" rel="noopener noreferrer" class="text-sa-copper hover:underline">r/hotsprings</a>,
+      along with threads on
+      <a href="https://outdoors.stackexchange.com/questions/7840/how-would-i-find-a-hot-spring" target="_blank" rel="noopener noreferrer" class="text-sa-copper hover:underline">outdoors.stackexchange.com</a>,
+      are genuinely useful for two things a static database can't give you: whether a road is
+      currently passable, and whether a spring has gotten too crowded or too damaged to be worth
+      visiting. They're a good second check after a map, not a replacement for one.
+    </p>
+
+    <h2 class="font-display text-2xl font-bold text-sa-dark mt-12 mb-4">FAQ</h2>
+    <div class="space-y-6">
+      <div>
+        <h3 class="font-display text-lg font-bold text-sa-dark">Where do you usually find hot springs?</h3>
+        <p class="text-sa-dark/80 leading-relaxed mt-2">
+          Most U.S. hot springs cluster along the same fault lines and volcanic belts that produce
+          geothermal activity generally — the Cascades, the Rockies, and the Basin and Range province
+          across Nevada, Utah, and eastern California/Oregon. That's why
+          <a href="#1-use-a-live-map" class="text-sa-copper hover:underline">Soak Trail's regional breakdown</a>
+          is weighted toward those states.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-display text-lg font-bold text-sa-dark">Does my state have natural hot springs?</h3>
+        <p class="text-sa-dark/80 leading-relaxed mt-2">
+          It depends entirely on the state's geology — proximity to a fault line or volcanic activity
+          is the deciding factor, not overall size or climate. Check the
+          <a href="/locator" class="text-sa-copper hover:underline">locator map</a> or NOAA's Thermal
+          Springs dataset directly for state-by-state coverage rather than relying on general
+          assumptions.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-display text-lg font-bold text-sa-dark">Are undeveloped hot springs legal to visit?</h3>
+        <p class="text-sa-dark/80 leading-relaxed mt-2">
+          Usually yes if they're on BLM or National Forest land with no posted closure, but always
+          verify current status — some are seasonally closed, tribal land, or require a permit. See
+          the land-status check in the section above.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-display text-lg font-bold text-sa-dark">Is there an app or map specifically for undeveloped hot springs?</h3>
+        <p class="text-sa-dark/80 leading-relaxed mt-2">
+          Yes — that's what
+          <a href="/locator" class="text-sa-copper hover:underline">Soak Trail's locator</a> is built
+          for, alongside NOAA's official (but less visitor-friendly) Thermal Springs dataset.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

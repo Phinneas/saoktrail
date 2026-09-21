@@ -8,6 +8,8 @@ content: |
   The Basin and Range Province stretches across Utah and Nevada, and the Rio Grande Rift cuts through Arizona — along these fault lines, groundwater heated by the earth's crust rises to the surface. That geology has created more than 60 soakable springs across three states — from backcountry pools reached only by trail near Sedona to developed resorts along the Wasatch Front.
 
   Some are a short walk from the parking lot. Others require a full day's hike and a night in a tent. All of them carry the same minerals that have drawn people to these desert waters for centuries.
+
+  Exploring beyond the Southwest? Soak Trail covers the whole country — here's [how to find hot springs](https://soaktrail.com/how-to-find-hot-springs) anywhere in the U.S.
 button:
   label: Explore the Full Map →
   link: /map

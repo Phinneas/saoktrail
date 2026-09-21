@@ -54,10 +54,14 @@ const jsonLd = {
         {region.name}
         <span class="italic"> Hot Springs</span>
       </h1>
-      <p class="text-sa-text text-lg leading-relaxed max-w-2xl">{region.description}</p>
+      <p class="font-display text-xl md:text-2xl text-sa-dark leading-snug">
+        {springs.length} soakable springs mapped in this region.
+      </p>
+      <p class="text-sa-text text-lg leading-relaxed max-w-2xl mt-3">{region.description}</p>
+      <p class="text-sm text-sa-text/70 mt-2">
+        "Mapped" = a spring with known coordinates and access type in Soak Trail's live directory. Results link to detailed guides on {region.childSiteName}.
+      </p>
       <div class="flex gap-4 mt-4 text-sm text-sa-text">
-        <span>{springs.length} springs mapped</span>
-        <span>&middot;</span>
         <a href={region.childSite} target="_blank" rel="noopener noreferrer" class="text-sa-copper hover:underline">
           Visit {region.childSiteName} &rarr;
         </a>

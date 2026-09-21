@@ -1,0 +1,265 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Terms of Service', item: 'https://soaktrail.com/terms' },
+  ],
+};
+---
+
+<BaseLayout
+  title="Terms of Service — Soak Trail"
+  description="The terms that govern your use of soaktrail.com, the regional hot springs guide network, the Soak Atlas MCP server, and related Soak Trail services."
+  jsonLd={[breadcrumbSchema]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <div class="container mx-auto px-4 py-12 max-w-3xl">
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Terms of Service', href: '/terms' },
+    ]} />
+
+    <h1 class="font-display text-4xl font-bold text-sa-dark mt-8 mb-2">Terms of Service</h1>
+    <p class="text-sa-copper font-display text-lg mb-8">Last updated: September 11, 2026</p>
+
+    <div class="prose prose-lg max-w-none text-sa-dark/80">
+      <p class="leading-relaxed">
+        Please read these Terms of Service ("Terms", "Terms of Service") carefully before using
+        www.soaktrail.com (the "Site"), our regional hot springs guide network, our Soak Atlas MCP
+        server, or any related services (collectively, the "Services") operated by Soak Trail ("we",
+        "us", or "our").
+      </p>
+      <p class="leading-relaxed">
+        Your access to and use of the Services is conditioned on your acceptance of and compliance with
+        these Terms. By accessing or using the Services, you agree to be bound by these Terms. If you
+        disagree with any part of the terms, you may not access the Services.
+      </p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="about">About Soak Trail</h2>
+      <p class="leading-relaxed">
+        Soak Trail is an independent research project documenting natural hot springs across North
+        America. The Site is owned and operated by Chester Beard. Contact:
+        <a href="mailto:buzzUW2@gmail.com" class="text-sa-copper hover:underline">buzzUW2@gmail.com</a>.
+      </p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="use-of-the-site">1. Use of the Site</h2>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3" id="permitted-use">Permitted Use</h3>
+      <p class="leading-relaxed">You may use the Site to:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li>Research and plan hot springs trips.</li>
+        <li>Browse our database of 500+ natural springs across 11 states.</li>
+        <li>Submit condition reports and photos to help other soakers (subject to our Content Guidelines below).</li>
+        <li>Query spring data through our Soak Atlas MCP server.</li>
+        <li>Purchase posters and digital products from our shop (if available).</li>
+      </ul>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3" id="prohibited-use">Prohibited Use</h3>
+      <p class="leading-relaxed">You may not:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li>Scrape, crawl, or systematically download spring data in bulk without written permission.</li>
+        <li>Use automated tools to overload our MCP server or API endpoints.</li>
+        <li>Submit false, misleading, or fraudulent condition reports.</li>
+        <li>Upload spam, malware, or inappropriate content.</li>
+        <li>Impersonate another person or misrepresent your affiliation.</li>
+        <li>Use the Site for any illegal purpose.</li>
+        <li>Circumvent our advertising or affiliate tracking mechanisms.</li>
+      </ul>
+      <p class="leading-relaxed">We reserve the right to terminate or suspend access to the Site for violations of these terms.</p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="content">2. Content and Intellectual Property</h2>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3" id="our-content">Our Content</h3>
+      <p class="leading-relaxed">
+        All content on the Site — including spring descriptions, route guides, photography (unless
+        otherwise noted), data visualizations, and written guides — is the property of Soak Trail or its
+        content creators and is protected by copyright, trademark, and other intellectual property laws.
+      </p>
+      <p class="leading-relaxed">You may:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li>View, print, or download content for personal, non-commercial use.</li>
+        <li>Share links to our pages on social media.</li>
+        <li>Quote brief excerpts with proper attribution and a link back to the original page.</li>
+      </ul>
+      <p class="leading-relaxed">You may not:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li>Republish our content in full on another website without written permission.</li>
+        <li>Use our spring data to build a competing hot springs directory without permission.</li>
+        <li>Remove watermarks or attribution from images.</li>
+        <li>Sell or commercially exploit our content without a license.</li>
+      </ul>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3" id="third-party-content">Third-Party Content</h3>
+      <p class="leading-relaxed">
+        Some spring data is sourced from public datasets (USGS, NOAA, OpenStreetMap, Wikipedia) and
+        remains subject to the original licenses. We also embed or link to:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li>Recreation.gov listings</li>
+        <li>Weather forecasts from NOAA and Open-Meteo</li>
+        <li>Map tiles and imagery from third-party providers</li>
+        <li>Affiliate product listings from retailers</li>
+      </ul>
+      <p class="leading-relaxed">Use of third-party content is governed by their respective terms.</p>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3" id="user-submissions">User Submissions</h3>
+      <p class="leading-relaxed">When you submit condition reports, photos, or other content ("User Submissions"):</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li>You retain ownership of your original content.</li>
+        <li>You grant Soak Trail a perpetual, worldwide, royalty-free, non-exclusive license to use, display, modify, and distribute your submission on the Site and our regional partner sites.</li>
+        <li>You represent that you own or have permission to share the content, and that it does not violate anyone's rights.</li>
+        <li>We may edit submissions for clarity, safety, or style.</li>
+        <li>We reserve the right to reject or remove any submission without explanation.</li>
+      </ul>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="affiliate">3. Affiliate Disclosure and Advertising</h2>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3" id="affiliate-links">Affiliate Links</h3>
+      <p class="leading-relaxed">
+        Soak Trail participates in affiliate marketing programs, including Amazon Associates and lodging
+        booking partnerships. When you click an affiliate link and make a purchase, we may earn a
+        commission at no additional cost to you.
+      </p>
+      <p class="leading-relaxed">
+        <strong class="text-sa-dark">Affiliate links are clearly identified</strong> with a disclosure
+        statement near the link or in the article footer. Our editorial content is independently
+        researched; affiliate partnerships do not influence our spring ratings, recommendations, or
+        coverage decisions.
+      </p>
+
+      <h3 class="font-display text-xl font-bold text-sa-dark mt-6 mb-3" id="advertising">Advertising</h3>
+      <p class="leading-relaxed">
+        We display advertisements through Google AdSense and may use other ad networks in the future.
+        Advertisers may use cookies to serve ads based on your browsing history. See our
+        <a href="/privacy" class="text-sa-copper hover:underline">Privacy Policy</a> for cookie controls.
+      </p>
+      <p class="leading-relaxed">We do not endorse the products or services advertised. Ad content is the responsibility of the advertiser.</p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="shop">4. Shop and E-Commerce (If Applicable)</h2>
+      <p class="leading-relaxed">If our shop is active:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li><strong class="text-sa-dark">Payments</strong>: Processed securely through Stripe. We do not store your full credit card details.</li>
+        <li><strong class="text-sa-dark">Fulfillment</strong>: Physical posters are printed and shipped by Gelato on a print-on-demand basis.</li>
+        <li><strong class="text-sa-dark">Shipping</strong>: Delivery times and costs are displayed at checkout and vary by destination.</li>
+        <li><strong class="text-sa-dark">Returns</strong>: Because posters are custom printed on demand, returns are accepted only for defects or damage upon delivery. Contact buzzUW2@gmail.com within 14 days of receipt with photos of the issue.</li>
+        <li><strong class="text-sa-dark">Digital Products</strong>: Digital downloads are delivered via email link. Due to their nature, digital purchases are non-refundable unless the file is corrupted or inaccessible.</li>
+        <li><strong class="text-sa-dark">Tax</strong>: Sales tax is calculated at checkout based on your location and collected by Stripe.</li>
+      </ul>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="safety">5. Hot Springs Safety Disclaimer</h2>
+      <p class="leading-relaxed">
+        <strong class="text-sa-dark">CRITICAL: Natural hot springs can be dangerous. By using this Site, you acknowledge and accept the following:</strong>
+      </p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li><strong class="text-sa-dark">Conditions Change</strong>: Water temperature, flow rate, access roads, and trail conditions change constantly. A spring that was safe last month may be scalding, flooded, or inaccessible today.</li>
+        <li><strong class="text-sa-dark">Verify Before Visiting</strong>: Always check current conditions through local sources, forest service websites, or recent visitor reports before traveling.</li>
+        <li><strong class="text-sa-dark">Physical Risks</strong>: Hot springs can cause severe burns, drowning, hypothermia (in cold weather), and injury from unstable terrain. Some springs contain dangerous levels of minerals or bacteria.</li>
+        <li><strong class="text-sa-dark">Not Medical Advice</strong>: Information about mineral content and health benefits is for educational purposes only and does not constitute medical advice. Consult a physician before soaking, especially if pregnant, have cardiovascular conditions, or are taking medications.</li>
+        <li><strong class="text-sa-dark">Respect Property</strong>: Many springs are on private land, Native American reservations, or require permits. Trespassing is illegal and disrespectful. Always obtain proper permission.</li>
+        <li><strong class="text-sa-dark">Leave No Trace</strong>: Pack out all trash. Do not use soap or shampoo in springs. Respect other soakers' privacy.</li>
+        <li><strong class="text-sa-dark">Assumption of Risk</strong>: You assume full responsibility for your safety when visiting any hot spring listed on this Site. Soak Trail, Chester Beard, and affiliated regional sites are not liable for injuries, losses, or damages resulting from your visit.</li>
+      </ul>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="accuracy">6. Accuracy of Information</h2>
+      <p class="leading-relaxed">We strive for accuracy, but:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li>Hot spring data is compiled from multiple sources (field visits, USGS records, user reports, government databases) and may contain errors or become outdated.</li>
+        <li>Fees, hours, and access policies change without notice.</li>
+        <li>Weather and seasonal closures can render information inaccurate overnight.</li>
+        <li><strong class="text-sa-dark">Always verify critical details</strong> (fees, access, temperature, road conditions) with official sources before visiting.</li>
+      </ul>
+      <p class="leading-relaxed">We welcome corrections at buzzUW2@gmail.com.</p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="third-party-links">7. Third-Party Links</h2>
+      <p class="leading-relaxed">The Site contains links to external websites, including:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li>Regional guide sites (washingtonhotsprings.com, soakcolorado.com, etc.)</li>
+        <li>Government agencies (USGS, Forest Service, BLM)</li>
+        <li>Booking platforms and retailers</li>
+        <li>Social media platforms</li>
+      </ul>
+      <p class="leading-relaxed">We do not control these sites and are not responsible for their content, privacy practices, or terms. Linking does not imply endorsement.</p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="mcp-server">8. Soak Atlas MCP Server</h2>
+      <p class="leading-relaxed">Our MCP (Model Context Protocol) server provides structured hot spring data to AI assistants. By using this service:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li>You agree not to abuse the API through excessive or automated querying.</li>
+        <li>Data is provided "as is" without warranties.</li>
+        <li>We may rate-limit, modify, or discontinue the MCP service at any time.</li>
+        <li>We are not responsible for how AI assistants interpret or represent our data.</li>
+      </ul>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="termination">9. Termination</h2>
+      <p class="leading-relaxed">
+        We may terminate or suspend your access to the Site immediately, without prior notice or
+        liability, for any reason, including breach of these Terms. Provisions that by their nature should
+        survive termination (intellectual property, disclaimers, liability) will survive.
+      </p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="liability">10. Limitation of Liability</h2>
+      <p class="leading-relaxed">To the maximum extent permitted by law:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li>Soak Trail and Chester Beard shall not be liable for any indirect, incidental, special, consequential, or punitive damages.</li>
+        <li>Our total liability for any claim arising from your use of the Site shall not exceed the amount you paid to Soak Trail in the 12 months preceding the claim, or $100, whichever is greater.</li>
+        <li>We are not liable for the actions, content, or data practices of third parties linked from the Site.</li>
+      </ul>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="warranties">11. Disclaimer of Warranties</h2>
+      <p class="leading-relaxed">
+        The Site and all content are provided <strong class="text-sa-dark">"AS IS" and "AS AVAILABLE"</strong>
+        without warranties of any kind, either express or implied, including but not limited to
+        merchantability, fitness for a particular purpose, or non-infringement.
+      </p>
+      <p class="leading-relaxed">We do not warrant that:</p>
+      <ul class="list-disc pl-6 space-y-2 leading-relaxed">
+        <li>The Site will be uninterrupted, timely, secure, or error-free.</li>
+        <li>The results obtained from using the Site will be accurate or reliable.</li>
+        <li>Any errors in the content will be corrected.</li>
+      </ul>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="governing-law">12. Governing Law</h2>
+      <p class="leading-relaxed">
+        These Terms shall be governed by and construed in accordance with the laws of the State of
+        Washington, United States, without regard to its conflict of law provisions.
+      </p>
+      <p class="leading-relaxed">
+        Any dispute arising from these Terms shall first be attempted to be resolved through good-faith
+        negotiation. If unresolved, disputes shall be submitted to binding arbitration in Snohomish
+        County, Washington, under the rules of the American Arbitration Association.
+      </p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="changes">13. Changes to Terms</h2>
+      <p class="leading-relaxed">
+        We reserve the right to modify these Terms at any time. Changes will be effective immediately
+        upon posting to the Site with an updated "Last updated" date. Your continued use of the Site after
+        changes constitutes acceptance of the new Terms. For material changes, we will post a notice on
+        the homepage for 30 days.
+      </p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="severability">14. Severability</h2>
+      <p class="leading-relaxed">
+        If any provision of these Terms is held invalid or unenforceable, the remaining provisions will
+        continue in full force and effect.
+      </p>
+
+      <h2 class="font-display text-2xl font-bold text-sa-dark mt-10 mb-4" id="entire-agreement">15. Entire Agreement</h2>
+      <p class="leading-relaxed">
+        These Terms, together with our
+        <a href="/privacy" class="text-sa-copper hover:underline">Privacy Policy</a>, constitute the
+        entire agreement between you and Soak Trail regarding the Site and supersede any prior agreements.
+      </p>
+
+      <hr class="my-8 border-sa-copper/20" />
+      <p class="italic text-sa-dark/70 leading-relaxed">
+        Soak Trail is published by Chester Beard as an independent research project. Hot springs are
+        sacred and fragile. Soak responsibly.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,68 +1,140 @@
 ---
-import type { WeatherData } from "@lib/weather";
-
+// WeatherCard — self-contained client-side weather widget for a spring page.
+// Fetches current conditions + a 7-day forecast from Open-Meteo (free, no key)
+// using the spring's coordinates, so it stays fresh on statically-generated pages.
 interface Props {
-  weather: WeatherData;
+  lat: number;
+  lng: number;
+  elevationFt?: number | null;
 }
 
-const { weather } = Astro.props;
-const { current, forecast, source } = weather;
-
-const sourceLabel = source === 'noaa' ? 'NOAA' : 'wttr.in';
+const { lat, lng, elevationFt } = Astro.props;
 ---
 
-<div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
+<div
+  class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0"
+  data-weather-card
+  data-lat={lat}
+  data-lng={lng}
+>
   <div class="flex items-center justify-between mb-4">
     <h3 class="h4">Weather</h3>
-    <span class="text-xs text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider">{sourceLabel}</span>
+    <span class="text-xs text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider">Open-Meteo</span>
   </div>
 
-  <div class="flex items-center gap-4 mb-4">
-    {current.icon && (
-      <img src={current.icon} alt={current.shortForecast} class="w-12 h-12" loading="lazy" />
-    )}
+  {elevationFt ? (
+    <p class="text-xs text-txt-light dark:text-darkmode-txt-light -mt-2 mb-3">{Math.round(elevationFt).toLocaleString()} ft elevation</p>
+  ) : null}
+
+  <div class="flex items-center gap-4">
+    <span class="text-4xl leading-none" data-weather-emoji aria-hidden="true">…</span>
     <div>
-      <p class="font-mono text-2xl font-bold text-txt-p dark:text-darkmode-txt-p">
-        {current.temperature}&deg;{current.temperatureUnit}
-      </p>
-      <p class="text-sm text-txt-s dark:text-darkmode-txt-s">{current.shortForecast}</p>
+      <p class="font-mono text-2xl font-bold text-txt-p dark:text-darkmode-txt-p" data-weather-temp>—</p>
+      <p class="text-sm text-txt-s dark:text-darkmode-txt-s" data-weather-desc>Loading…</p>
     </div>
   </div>
 
-  <div class="grid grid-cols-2 gap-2 text-xs text-txt-s dark:text-darkmode-txt-s mb-4">
+  <div class="grid grid-cols-2 gap-2 text-xs text-txt-s dark:text-darkmode-txt-s mt-4">
+    <div>
+      <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider">Feels like</span>
+      <p class="font-mono text-txt-p dark:text-darkmode-txt-p" data-weather-feels>—</p>
+    </div>
     <div>
       <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider">Wind</span>
-      <p class="text-txt-p dark:text-darkmode-txt-p">{current.windSpeed} {current.windDirection}</p>
+      <p class="font-mono text-txt-p dark:text-darkmode-txt-p" data-weather-wind>—</p>
     </div>
-    {current.precipitationChance !== null && (
-      <div>
-        <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider">Precip</span>
-        <p class="text-txt-p dark:text-darkmode-txt-p">{current.precipitationChance}%</p>
-      </div>
-    )}
   </div>
 
-  {forecast.length > 0 && (
-    <div class="border-t border-border dark:border-darkmode-border pt-3">
-      <p class="text-xs text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider mb-2">Forecast</p>
-      <div class="space-y-2">
-        {forecast.map((period) => (
-          <div class="flex items-center justify-between text-sm">
-            <div class="flex items-center gap-2">
-              {period.icon && (
-                <img src={period.icon} alt={period.shortForecast} class="w-7 h-7" loading="lazy" />
-              )}
-              <span class="text-txt-s dark:text-darkmode-txt-s text-xs">{period.name}</span>
-            </div>
-            <div class="text-right">
-              <span class="font-mono font-bold text-txt-p dark:text-darkmode-txt-p">
-                {period.temperature}&deg;
-              </span>
-              <span class="text-xs text-txt-light dark:text-darkmode-txt-light ml-1">{period.shortForecast}</span>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  )}
+  <div class="border-t border-border dark:border-darkmode-border mt-4 pt-3">
+    <p class="text-xs text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider mb-2">7-day forecast</p>
+    <div data-weather-forecast class="space-y-2"></div>
+  </div>
+
+  <p data-weather-error class="hidden text-xs text-red-600 mt-3"></p>
 </div>
+
+<script>
+  import { fetchOpenMeteoWeather } from '../lib/weather';
+
+  const dayLabel = (isoDate) => {
+    const d = new Date(`${isoDate}T12:00:00`);
+    return d.toLocaleDateString(undefined, { weekday: 'short' });
+  };
+
+  async function loadWeather(card) {
+    if (card.dataset.loaded === 'true') return;
+    const lat = parseFloat(card.dataset.lat);
+    const lng = parseFloat(card.dataset.lng);
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
+
+    const setText = (sel, text) => {
+      const el = card.querySelector(sel);
+      if (el) el.textContent = text;
+    };
+
+    try {
+      const data = await fetchOpenMeteoWeather(lat, lng);
+      card.dataset.loaded = 'true';
+      if (!data) throw new Error('unavailable');
+
+      setText('[data-weather-emoji]', data.current.emoji);
+      setText('[data-weather-temp]', `${Math.round(data.current.temperature)}°F`);
+      setText('[data-weather-desc]', data.current.condition);
+      setText('[data-weather-feels]', `${Math.round(data.current.apparentTemperature)}°F`);
+      const wind = data.current.windGusts
+        ? `${Math.round(data.current.windSpeed)} mph · gusts ${Math.round(data.current.windGusts)} mph`
+        : `${Math.round(data.current.windSpeed)} mph`;
+      setText('[data-weather-wind]', wind);
+
+      const list = card.querySelector('[data-weather-forecast]');
+      if (list) {
+        list.innerHTML = '';
+        for (const day of data.forecast) {
+          const row = document.createElement('div');
+          row.className = 'flex items-center justify-between text-sm';
+
+          const left = document.createElement('div');
+          left.className = 'flex items-center gap-2';
+
+          const dayName = document.createElement('span');
+          dayName.className = 'text-txt-s dark:text-darkmode-txt-s text-xs w-9';
+          dayName.textContent = dayLabel(day.date);
+
+          const emoji = document.createElement('span');
+          emoji.textContent = day.emoji;
+          emoji.setAttribute('aria-hidden', 'true');
+
+          const precip = document.createElement('span');
+          precip.className = 'text-txt-light dark:text-darkmode-txt-light text-xs';
+          precip.textContent = day.precipitationChance != null ? `${day.precipitationChance}%` : '';
+
+          left.append(dayName, emoji, precip);
+
+          const right = document.createElement('div');
+          right.className = 'text-right';
+
+          const temps = document.createElement('span');
+          temps.className = 'font-mono font-bold text-txt-p dark:text-darkmode-txt-p';
+          temps.textContent = `${day.high}° / ${day.low}°`;
+
+          right.append(temps);
+          row.append(left, right);
+          list.append(row);
+        }
+      }
+    } catch {
+      const errEl = card.querySelector('[data-weather-error]');
+      if (errEl) {
+        errEl.classList.remove('hidden');
+        errEl.textContent = 'Weather unavailable right now.';
+      }
+    }
+  }
+
+  function init() {
+    document.querySelectorAll('[data-weather-card]').forEach(loadWeather);
+  }
+
+  init();
+  document.addEventListener('astro:page-load', init);
+</script>

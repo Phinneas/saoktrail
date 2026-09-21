@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import AuthorAttribution from '../../components/AuthorAttribution.astro';
 import nearCityData from '../../data/near_city_pages.json';
 import cityIndex from '../../data/cities_index.json';
 import { stateName, accessLabel } from '../../lib/states';
@@ -76,6 +77,57 @@ const itemListSchema = {
   })),
 };
 
+const closestSpring = data.springs[0];
+const hotSprings = data.springs.filter((s) => s.temperature_f && s.temperature_f >= 95);
+
+const cityFaqs = [
+  {
+    q: `How many hot springs are near ${data.city}, ${stateFull}?`,
+    a: `There ${data.count === 1 ? 'is' : 'are'} ${data.count} hot spring${data.count === 1 ? '' : 's'} within 50 miles of ${data.city}, ${stateFull}. ${closestSpring ? `The closest is ${closestSpring.name} at ${closestSpring.distance_mi} miles from the city center.` : ''}`,
+  },
+  {
+    q: `What is the closest hot spring to ${data.city}?`,
+    a: closestSpring
+      ? `The closest hot spring to ${data.city}, ${stateFull} is ${closestSpring.name}, located ${closestSpring.distance_mi} miles away${closestSpring.temperature_f ? ` with water temperatures around ${closestSpring.temperature_f}°F` : ''}${closestSpring.access_type ? `. Access is ${accessLabel(closestSpring.access_type)?.toLowerCase() || closestSpring.access_type}` : ''}.`
+      : `We're still gathering data for springs near ${data.city}. Check back soon.`,
+  },
+  hotSprings.length > 0 ? {
+    q: `Are there hot springs near ${data.city} that are warm enough to soak in?`,
+    a: `Yes — ${hotSprings.length} of the ${data.count} springs near ${data.city} have recorded temperatures of 95°F or above, which is comfortable for soaking. Water temperatures vary by season and weather.`,
+  } : null,
+  {
+    q: `Do I need to hike to reach hot springs near ${data.city}?`,
+    a: `It depends on the spring. ${data.springs.filter((s) => s.access_type === 'roadside').length > 0 ? `${data.springs.filter((s) => s.access_type === 'roadside').length} springs near ${data.city} are roadside with no hiking required.` : ''} ${data.springs.filter((s) => s.access_type === 'hike').length > 0 ? `${data.springs.filter((s) => s.access_type === 'hike').length} require a hike.` : ''} Check each listing for specific access details.`,
+  },
+].filter(Boolean);
+
+const placeSchema = {
+  '@type': 'Place',
+  name: `${data.city}, ${stateFull}`,
+  description: `${data.count} natural hot springs within 50 miles of ${data.city}, ${stateFull}`,
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: data.lat,
+    longitude: data.lng,
+  },
+  containedInPlace: {
+    '@type': 'AdministrativeArea',
+    name: stateFull,
+  },
+};
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: cityFaqs.map((f) => ({
+    '@type': 'Question',
+    name: f!.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f!.a,
+    },
+  })),
+};
+
 // Internal linking mesh: up to 8 other cities in the same state, by population.
 const sameStateCities = (Object.entries(cityIndex) as [string, { city: string; state: string; population: number; count: number }][])
   .filter(([, c]) => c.state === data.state && c.city !== data.city)
@@ -85,16 +137,16 @@ const sameStateCities = (Object.entries(cityIndex) as [string, { city: string; s
 const cityQuery = encodeURIComponent(`${data.city}, ${stateFull}`);
 ---
 
-<BaseLayout title={title} description={description} canonicalUrl={canonical} jsonLd={[breadcrumbSchema, itemListSchema]}>
+<BaseLayout title={title} description={description} canonicalUrl={canonical} jsonLd={[breadcrumbSchema, itemListSchema, placeSchema, faqSchema]}>
   <div class="container mx-auto px-4 py-12 max-w-4xl">
     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Near Cities', href: '/near' }, { label: `${data.city}, ${stateFull}` }]} />
 
     <h1 class="font-display text-4xl font-bold text-sa-dark mt-8 mb-3">Hot Springs Near {data.city}, {stateFull}</h1>
     <p class="text-lg text-sa-dark/80 leading-relaxed max-w-2xl">
-      {data.count} hot spring{data.count === 1 ? '' : 's'} within 50 miles of {data.city},
-      sorted by distance from the city center. Each listing links to its full guide on the
-      regional site — temperatures, access, and what to expect.
+      <strong class="text-sa-dark">{data.count} natural hot spring{data.count === 1 ? '' : 's'} within 50 miles of {data.city}, {stateFull}</strong> — sorted by driving distance from the city center. Each listing links to its full guide with water temperature, access type, and seasonal conditions.
     </p>
+    <p class="text-sm text-sa-dark/40 mt-2">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}</p>
+    <AuthorAttribution class="mt-4" />
 
     <section class="mt-10">
       <h2 class="font-display text-2xl font-bold text-sa-dark mb-4">
@@ -124,6 +176,27 @@ const cityQuery = encodeURIComponent(`${data.city}, ${stateFull}`);
           </li>
         ))}
       </ol>
+    </section>
+
+    <section class="mt-12">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-4">
+        Frequently asked about hot springs near {data.city}
+      </h2>
+      <div class="space-y-4">
+        {cityFaqs.map((faq) => (
+          <details class="group border border-sa-dark/10 rounded-xl bg-white/60 overflow-hidden">
+            <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer list-none hover:bg-sa-copper/5 transition-colors duration-200">
+              <h3 class="font-display text-base font-medium text-sa-dark pr-4">{faq!.q}</h3>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sa-copper shrink-0 group-open:rotate-180 transition-transform duration-200">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </summary>
+            <div class="px-5 pb-4 text-sa-text text-sm leading-relaxed">
+              {faq!.a}
+            </div>
+          </details>
+        ))}
+      </div>
     </section>
 
     <section class="mt-12">

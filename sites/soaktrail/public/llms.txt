@@ -1,0 +1,76 @@
+# Soak Trail
+
+> A field guide to natural hot springs across the American West. 500+ thermal springs mapped across 11 states, with temperature data, water chemistry, access conditions, and trip planning tools.
+
+## What Soak Trail Is
+
+Soak Trail is a hub-and-spoke network of hot springs directories covering the western United States. The main site (soaktrail.com) connects to six regional sites, each with detailed spring listings, maps, and trip planning tools. Data includes water temperature, mineral content, access type (roadside, hike, backcountry), fees, camping availability, and seasonal conditions.
+
+## Coverage
+
+- **500+ natural hot springs** across 11 states
+- **6 regional sites** with dedicated spring directories
+- **Trip planner** with multi-day itineraries and route mapping
+- **Mineral guide** with water chemistry data
+- **"Near me" pages** for 100+ cities with springs sorted by driving distance
+
+## Regional Sites
+
+| Region | Site | States | URL |
+|--------|------|--------|-----|
+| Washington | Washington Hot Springs | WA | https://www.washingtonhotsprings.com |
+| Alaska | Alaska Hot Springs | AK | https://www.alaskahotsprings.com |
+| Shasta | Shasta Hot Springs | Northern CA, Southern OR | https://www.shastahotsprings.com |
+| Colorado | Soak Colorado | CO, NM | https://www.soakcolorado.com |
+| Northern Rockies | Soak the Rockies | ID, MT, WY | https://www.soaktherockies.com |
+| Desert Southwest | Desert Soak | UT, NV, AZ | https://www.desertsoak.com |
+
+## Key Pages
+
+- [Homepage](https://soaktrail.com/) — Overview of all regions and spring types
+- [Hot Springs by State](https://soaktrail.com/hot-springs-by-state) — Browse springs organized by state
+- [How to Find Hot Springs](https://soaktrail.com/how-to-find-hot-springs) — Guide to discovering springs near you
+- [Trip Planner](https://soaktrail.com/trip-planner) — Multi-day route planning with camping and lodging
+- [Itineraries](https://soaktrail.com/itineraries) — Pre-built trip routes with day-by-day plans
+- [Minerals Guide](https://soaktrail.com/minerals) — Water chemistry and mineral benefits
+- [Hot Springs Near Cities](https://soaktrail.com/near) — Springs sorted by distance from 100+ cities
+- [Blog](https://soaktrail.com/blog) — Guides, tips, and hot springs culture
+
+## MCP Server (for AI Agents)
+
+Soak Trail provides a Model Context Protocol (MCP) server that AI assistants can use to search and filter hot springs data programmatically.
+
+**Server URL:** `https://soakatlas-mcp.buzzuw2.workers.dev/mcp`
+
+**Available tools:**
+- `find-nearby` — Find springs near a location (Haversine distance)
+- `search-bounds` — Search within a map bounding box
+- `list-springs` — Filter by state, access type, temperature, dogs, fees
+- `get-spring` — Get details for a specific spring by slug
+- `list-regions` — List all springs in a region
+
+**MCP Configuration:**
+```json
+{
+  "mcpServers": {
+    "soakatlas": {
+      "url": "https://soakatlas-mcp.buzzuw2.workers.dev/mcp"
+    }
+  }
+}
+```
+
+## Data Sources
+
+- USGS Thermal Springs data
+- OpenStreetMap (ODbL)
+- Wikipedia / Wikidata
+- Recreation.gov
+- SimpleMaps (CC BY 4.0)
+
+## Contact
+
+- Website: https://soaktrail.com
+- Instagram: https://www.instagram.com/soaktrail
+- Pinterest: https://www.pinterest.com/soaktrail
+- Bluesky: https://bsky.app/profile/soaktrail.bsky.social

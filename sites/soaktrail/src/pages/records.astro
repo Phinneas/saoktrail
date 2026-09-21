@@ -1,0 +1,456 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AuthorAttribution from '../components/AuthorAttribution.astro';
+
+export const prerender = true;
+
+const canonical = 'https://soaktrail.com/records';
+const title = 'Hot Springs Records & Superlatives — Hottest, Highest & Most Remote in the American West | Soak Trail';
+const description =
+  'The hottest, highest, most remote, and most mineral-rich natural hot springs in the American West — ranked by temperature, elevation, and access from Soak Trail\'s database of 686 mapped springs.';
+
+// --- Data pulled from springs.json across all 6 regional sites (686 springs) ---
+
+const hottestSprings = [
+  { name: 'The Geysers', temp: 214, state: 'California', url: 'https://www.shastahotsprings.com/springs/the-geysers' },
+  { name: 'Borax Lake Hot Springs', temp: 212, state: 'Oregon', url: 'https://www.shastahotsprings.com/springs/borax-lake-hot-springs' },
+  { name: 'Little Geysers', temp: 210, state: 'California', url: 'https://www.shastahotsprings.com/springs/little-geysers' },
+  { name: 'Surprise Valley Hot Springs', temp: 208, state: 'California', url: 'https://www.shastahotsprings.com/springs/hot-springs-surprise-valley' },
+  { name: 'Lake City Hot Springs', temp: 207, state: 'California', url: 'https://www.shastahotsprings.com/springs/lake-city-hot-springs' },
+  { name: 'Coso Hot Springs', temp: 207, state: 'California', url: 'https://www.shastahotsprings.com/springs/coso-hot-springs' },
+  { name: 'Devils Kitchen', temp: 207, state: 'California', url: 'https://www.shastahotsprings.com/springs/devils-kitchen' },
+  { name: 'Terminal Geyser', temp: 205, state: 'California', url: 'https://www.shastahotsprings.com/springs/terminal-geyser' },
+  { name: 'Wendel Hot Springs', temp: 205, state: 'California', url: 'https://www.shastahotsprings.com/springs/wendel-hot-springs' },
+  { name: 'Morgan Hot Spring', temp: 205, state: 'California', url: 'https://www.shastahotsprings.com/springs/morgan-hot-spring' },
+];
+
+const highestSprings = [
+  { name: 'Conundrum Hot Springs', elev: 11200, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/colorados-conundrum-hot-springs' },
+  { name: 'Paradise Hot Springs', elev: 10950, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/paradise-hot-springs-colorado-guide' },
+  { name: 'Hartsel Hot Springs', elev: 10800, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/hartsel-hot-springs-colorado-guide' },
+  { name: 'Penny Hot Springs', elev: 9420, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/penny-hot-springs-colorado' },
+  { name: 'Waunita Hot Springs Ranch', elev: 8950, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/waunita-hot-springs-ranch' },
+  { name: 'Valley View Hot Springs', elev: 8850, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/valley-view-hot-springs-colorado' },
+  { name: 'Dunton Hot Springs', elev: 8850, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/dunton-hot-springs' },
+  { name: 'Rico Hot Springs', elev: 8840, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/rico-hot-springs' },
+  { name: 'Antero Hot Springs', elev: 8640, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/antero-hot-springs-colorado' },
+  { name: 'Cottonwood Hot Springs', elev: 8550, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/cottonwood-hot-springs' },
+];
+
+const soakableByState = [
+  { state: 'Idaho', code: 'ID', soakable: 324, total: 420, yearRound: 210 },
+  { state: 'Oregon', code: 'OR', soakable: 50, total: 68, yearRound: 68 },
+  { state: 'Montana', code: 'MT', soakable: 48, total: 70, yearRound: 35 },
+  { state: 'Colorado', code: 'CO', soakable: 27, total: 36, yearRound: 28 },
+  { state: 'Wyoming', code: 'WY', soakable: 8, total: 30, yearRound: 15 },
+  { state: 'Alaska', code: 'AK', soakable: 3, total: 20, yearRound: 18 },
+  { state: 'California', code: 'CA', soakable: 3, total: 30, yearRound: 25 },
+  { state: 'Washington', code: 'WA', soakable: 2, total: 12, yearRound: 10 },
+];
+
+const accessBreakdown = [
+  { type: 'Hike-in', count: 476, pct: 69 },
+  { type: 'Drive-up / roadside', count: 111, pct: 16 },
+  { type: 'Resort', count: 65, pct: 9 },
+  { type: 'Dirt road', count: 14, pct: 2 },
+  { type: '4WD required', count: 8, pct: 1 },
+  { type: 'Boat-in / bush plane', count: 8, pct: 1 },
+  { type: 'Other / restricted', count: 4, pct: 1 },
+];
+
+const temperatureBuckets = [
+  { range: '95–110°F (soakable)', count: 465, color: 'bg-green-500' },
+  { range: '111–150°F (very hot)', count: 52, color: 'bg-orange-500' },
+  { range: '151°F+ (boiling / geysers)', count: 45, color: 'bg-red-500' },
+  { range: '60–94°F (warm)', count: 89, color: 'bg-blue-400' },
+  { range: 'Temperature unknown', count: 35, color: 'bg-gray-400' },
+];
+
+const faqs = [
+  {
+    q: 'What is the hottest hot spring in the American West?',
+    a: 'The hottest mapped hot spring in our database is The Geysers in Northern California at 214°F (101°C). This is a geothermal steam vent field, not a soakable pool. The hottest soakable springs typically range from 104–110°F and are found throughout Idaho, Oregon, and Northern California.',
+  },
+  {
+    q: 'What is the highest elevation hot spring in the US?',
+    a: 'Conundrum Hot Springs in Colorado sits at 11,200 feet (3,414 m) in the Elk Mountains near Aspen. It requires an 8.5-mile hike each way and is one of the most popular backcountry soaking destinations in the Rocky Mountains.',
+  },
+  {
+    q: 'Which state has the most hot springs?',
+    a: 'Idaho has the most hot springs in our database with 420 mapped springs, followed by Montana (70) and Oregon (68). Idaho also leads in soakable springs (95–110°F) with 324 — more than all other states in our coverage area combined.',
+  },
+  {
+    q: 'How many hot springs in the American West are free to visit?',
+    a: 'Of the 686 springs in our database, 633 have no recorded fee. Most natural hot springs on public land (National Forest, BLM) are free, though some require a Forest Service day-use pass. Developed resorts and privately operated pools charge admission.',
+  },
+  {
+    q: 'Are hot springs open year-round?',
+    a: '409 of the 686 springs in our database are listed as year-round. However, seasonal road closures can limit access to many mountain springs during winter. Oregon has the highest percentage of year-round springs (100%), followed by Alaska (90%) and California (83%).',
+  },
+  {
+    q: 'Do I need a 4WD vehicle to reach hot springs?',
+    a: 'Most hot springs in our database are hike-in (69%) or drive-up on paved roads (16%). Only 8 springs require 4WD, and 14 require travel on unpaved dirt roads. Resorts (9%) are always accessible by standard vehicle. Check each spring\'s access details before visiting.',
+  },
+];
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.a,
+    },
+  })),
+};
+
+const itemListSchema = {
+  '@type': 'ItemList',
+  name: 'Hottest Hot Springs in the American West',
+  description: 'The 10 hottest mapped natural hot springs ranked by water temperature',
+  numberOfItems: hottestSprings.length,
+  itemListElement: hottestSprings.map((s, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: `${s.name} — ${s.temp}°F`,
+    url: s.url,
+  })),
+};
+
+const datasetSchema = {
+  '@type': 'Dataset',
+  name: 'Soak Trail Hot Springs Database — American West',
+  description: 'A database of 686 natural hot springs across 8 western US states with temperature, elevation, access type, and seasonal data.',
+  url: canonical,
+  keywords: ['hot springs', 'thermal springs', 'geothermal', 'American West', 'natural springs'],
+  variableMeasured: [
+    { '@type': 'PropertyValue', name: 'Total springs mapped', value: 686 },
+    { '@type': 'PropertyValue', name: 'Springs with temperature data', value: 651 },
+    { '@type': 'PropertyValue', name: 'Springs with elevation data', value: 281 },
+    { '@type': 'PropertyValue', name: 'Soakable springs (95–110°F)', value: 465 },
+    { '@type': 'PropertyValue', name: 'Year-round springs', value: 409 },
+  ],
+  spatialCoverage: {
+    '@type': 'Place',
+    name: 'American West (ID, MT, OR, CO, CA, WY, AK, WA)',
+  },
+  license: 'https://creativecommons.org/licenses/by/4.0/',
+};
+
+const breadcrumbSchema = {
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Records & Superlatives', item: canonical },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={canonical}
+  jsonLd={[breadcrumbSchema, itemListSchema, datasetSchema, faqSchema]}
+>
+  <div class="container mx-auto px-4 py-12 max-w-5xl">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Records & Superlatives' }]} />
+
+    <!-- Hero -->
+    <header class="mt-8 mb-16 text-center">
+      <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-4 font-body">By the Numbers</p>
+      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-light text-sa-dark leading-tight mb-6">
+        Hot Springs Records
+        <span class="italic block mt-2">&amp; Superlatives</span>
+      </h1>
+      <p class="text-lg text-sa-dark/70 max-w-2xl mx-auto leading-relaxed">
+        <strong class="text-sa-dark">Soak Trail's database covers 686 natural hot springs across 8 western US states</strong> — 465 soakable (95–110°F), 409 year-round, sourced from USGS and OpenStreetMap. The records below rank the hottest, highest, and most remote springs in the American West.
+      </p>
+      <p class="text-sm text-sa-dark/40 mt-3">
+        Data from USGS, OpenStreetMap, and NOAA thermal springs records. Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
+      </p>
+      <AuthorAttribution class="mt-6" />
+    </header>
+
+    <!-- Key Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+      {[
+        { number: '686', label: 'Springs Mapped' },
+        { number: '465', label: 'Soakable (95–110°F)' },
+        { number: '8', label: 'States Covered' },
+        { number: '409', label: 'Year-Round Access' },
+      ].map((stat) => (
+        <div class="text-center border border-sa-dark/10 rounded-xl bg-white/60 p-6">
+          <p class="font-body text-3xl md:text-4xl font-light text-sa-copper mb-1">{stat.number}</p>
+          <p class="text-sa-dark/50 text-xs tracking-wider uppercase font-body">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Hottest Springs -->
+    <section class="mb-16">
+      <h2 class="font-display text-3xl font-light text-sa-dark mb-2">
+        Hottest Hot Springs
+        <span class="italic"> by Temperature</span>
+      </h2>
+      <p class="text-sa-dark/60 mb-6 max-w-2xl">
+        The hottest thermal features in our database. Most exceed 200°F and are not soakable —
+        they're geysers, fumaroles, and steam vents. The hottest soakable springs (95–110°F) are in Idaho and Oregon.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b-2 border-sa-dark/10">
+              <th class="py-3 px-4 text-xs uppercase tracking-wider text-sa-dark/50 font-body w-12">#</th>
+              <th class="py-3 px-4 text-xs uppercase tracking-wider text-sa-dark/50 font-body">Spring</th>
+              <th class="py-3 px-4 text-xs uppercase tracking-wider text-sa-dark/50 font-body">State</th>
+              <th class="py-3 px-4 text-xs uppercase tracking-wider text-sa-dark/50 font-body text-right">Temperature</th>
+            </tr>
+          </thead>
+          <tbody>
+            {hottestSprings.map((s, i) => (
+              <tr class="border-b border-sa-dark/5 hover:bg-sa-copper/5 transition-colors duration-150">
+                <td class="py-3 px-4 font-mono text-sm text-sa-dark/40">{i + 1}</td>
+                <td class="py-3 px-4">
+                  <a href={s.url} target="_blank" rel="noopener noreferrer" class="font-display font-medium text-sa-dark hover:text-sa-copper transition-colors">
+                    {s.name}
+                  </a>
+                </td>
+                <td class="py-3 px-4 text-sm text-sa-dark/60">{s.state}</td>
+                <td class="py-3 px-4 text-right font-mono font-bold text-sa-copper">{s.temp}°F</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Highest Springs -->
+    <section class="mb-16">
+      <h2 class="font-display text-3xl font-light text-sa-dark mb-2">
+        Highest Elevation
+        <span class="italic"> Hot Springs</span>
+      </h2>
+      <p class="text-sa-dark/60 mb-6 max-w-2xl">
+        All ten of the highest hot springs in our database are in Colorado, where the Rocky Mountains
+        push geothermal features above 10,000 feet. These require hiking and are best visited July–September.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b-2 border-sa-dark/10">
+              <th class="py-3 px-4 text-xs uppercase tracking-wider text-sa-dark/50 font-body w-12">#</th>
+              <th class="py-3 px-4 text-xs uppercase tracking-wider text-sa-dark/50 font-body">Spring</th>
+              <th class="py-3 px-4 text-xs uppercase tracking-wider text-sa-dark/50 font-body">State</th>
+              <th class="py-3 px-4 text-xs uppercase tracking-wider text-sa-dark/50 font-body text-right">Elevation</th>
+            </tr>
+          </thead>
+          <tbody>
+            {highestSprings.map((s, i) => (
+              <tr class="border-b border-sa-dark/5 hover:bg-sa-copper/5 transition-colors duration-150">
+                <td class="py-3 px-4 font-mono text-sm text-sa-dark/40">{i + 1}</td>
+                <td class="py-3 px-4">
+                  <a href={s.url} target="_blank" rel="noopener noreferrer" class="font-display font-medium text-sa-dark hover:text-sa-copper transition-colors">
+                    {s.name}
+                  </a>
+                </td>
+                <td class="py-3 px-4 text-sm text-sa-dark/60">{s.state}</td>
+                <td class="py-3 px-4 text-right font-mono font-bold text-sa-copper">{s.elev.toLocaleString()} ft</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Temperature Distribution -->
+    <section class="mb-16">
+      <h2 class="font-display text-3xl font-light text-sa-dark mb-2">
+        Temperature
+        <span class="italic"> Distribution</span>
+      </h2>
+      <p class="text-sa-dark/60 mb-6 max-w-2xl">
+        Of 686 mapped springs, 651 have recorded water temperatures.
+        Nearly 72% fall in the soakable range of 95–110°F.
+      </p>
+      <div class="space-y-3">
+        {temperatureBuckets.map((b) => (
+          <div class="flex items-center gap-4">
+            <span class="text-sm text-sa-dark/60 w-56 shrink-0 font-body">{b.range}</span>
+            <div class="flex-1 bg-sa-dark/5 rounded-full h-8 overflow-hidden">
+              <div
+                class={`${b.color} h-full rounded-full flex items-center justify-end pr-3 transition-all duration-500`}
+                style={`width: ${Math.max((b.count / 686) * 100, 8)}%`}
+              >
+                <span class="text-white text-xs font-mono font-bold">{b.count}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Springs by State -->
+    <section class="mb-16">
+      <h2 class="font-display text-3xl font-light text-sa-dark mb-2">
+        Springs
+        <span class="italic"> by State</span>
+      </h2>
+      <p class="text-sa-dark/60 mb-6 max-w-2xl">
+        Idaho dominates with 420 mapped springs — 61% of our database. Oregon and Montana round out the top three.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b-2 border-sa-dark/10">
+              <th class="py-3 px-4 text-xs uppercase tracking-wider text-sa-dark/50 font-body">State</th>
+              <th class="py-3 px-4 text-xs uppercase tracking-wider text-sa-dark/50 font-body text-right">Total</th>
+              <th class="py-3 px-4 text-xs uppercase tracking-wider text-sa-dark/50 font-body text-right">Soakable (95–110°F)</th>
+              <th class="py-3 px-4 text-xs uppercase tracking-wider text-sa-dark/50 font-body text-right">Year-Round</th>
+            </tr>
+          </thead>
+          <tbody>
+            {soakableByState.map((s) => (
+              <tr class="border-b border-sa-dark/5 hover:bg-sa-copper/5 transition-colors duration-150">
+                <td class="py-3 px-4 font-display font-medium text-sa-dark">{s.state}</td>
+                <td class="py-3 px-4 text-right font-mono text-sa-dark">{s.total}</td>
+                <td class="py-3 px-4 text-right font-mono text-green-700">{s.soakable}</td>
+                <td class="py-3 px-4 text-right font-mono text-sa-dark/60">{s.yearRound}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Access Types -->
+    <section class="mb-16">
+      <h2 class="font-display text-3xl font-light text-sa-dark mb-2">
+        How to
+        <span class="italic"> Get There</span>
+      </h2>
+      <p class="text-sa-dark/60 mb-6 max-w-2xl">
+        Most hot springs in the American West require a hike to reach. Only 16% are drive-up accessible,
+        and just 9% are developed resorts with maintained facilities.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {accessBreakdown.map((a) => (
+          <div class="border border-sa-dark/10 rounded-xl bg-white/60 p-5">
+            <div class="flex items-baseline justify-between mb-2">
+              <span class="font-display font-medium text-sa-dark">{a.type}</span>
+              <span class="font-mono text-2xl font-light text-sa-copper">{a.count}</span>
+            </div>
+            <div class="w-full bg-sa-dark/5 rounded-full h-2 overflow-hidden">
+              <div class="bg-sa-copper h-full rounded-full" style={`width: ${a.pct}%`} />
+            </div>
+            <p class="text-xs text-sa-dark/40 mt-1 font-body">{a.pct}% of all mapped springs</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Key Facts -->
+    <section class="mb-16">
+      <h2 class="font-display text-3xl font-light text-sa-dark mb-6">
+        Key
+        <span class="italic"> Facts</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="border border-sa-dark/10 rounded-xl bg-white/60 p-6">
+          <h3 class="font-display font-bold text-sa-dark mb-2">Free to Visit</h3>
+          <p class="text-sa-dark/70 text-sm leading-relaxed">
+            <span class="font-mono font-bold text-sa-copper text-lg">633</span> of 686 springs (92%) have no recorded fee.
+            Most natural hot springs on National Forest and BLM land are free, though some require a day-use pass ($5–$10).
+          </p>
+        </div>
+        <div class="border border-sa-dark/10 rounded-xl bg-white/60 p-6">
+          <h3 class="font-display font-bold text-sa-dark mb-2">Year-Round Access</h3>
+          <p class="text-sa-dark/70 text-sm leading-relaxed">
+            <span class="font-mono font-bold text-sa-copper text-lg">409</span> springs (60%) are open year-round.
+            Oregon has the highest percentage at 100%, while mountain springs in Colorado and Montana may close seasonally due to snow.
+          </p>
+        </div>
+        <div class="border border-sa-dark/10 rounded-xl bg-white/60 p-6">
+          <h3 class="font-display font-bold text-sa-dark mb-2">Hottest Soakable Range</h3>
+          <p class="text-sa-dark/70 text-sm leading-relaxed">
+            The ideal soaking temperature is <span class="font-mono font-bold text-sa-copper">95–110°F</span>.
+            465 springs in our database fall in this range. Idaho alone has 324 soakable springs — more than all other states combined.
+          </p>
+        </div>
+        <div class="border border-sa-dark/10 rounded-xl bg-white/60 p-6">
+          <h3 class="font-display font-bold text-sa-dark mb-2">Remote Access</h3>
+          <p class="text-sa-dark/70 text-sm leading-relaxed">
+            <span class="font-mono font-bold text-sa-copper text-lg">476</span> springs (69%) require a hike.
+            8 require 4WD, 7 are boat-in only, and 1 (in Alaska) requires a bush plane. The most remote springs
+            offer the best solitude.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Sources -->
+    <section class="mb-16 border border-sa-dark/10 rounded-xl bg-white/60 p-6">
+      <h2 class="font-display text-xl font-bold text-sa-dark mb-3">Data Sources</h2>
+      <p class="text-sa-dark/60 text-sm leading-relaxed mb-4">
+        This page is based on Soak Trail's database of 686 natural hot springs across the American West.
+        Spring data is sourced from the following public datasets and verified against field reports where available.
+      </p>
+      <ul class="space-y-2 text-sm text-sa-dark/60">
+        <li class="flex items-start gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-sa-copper mt-2 shrink-0" />
+          <span><strong class="text-sa-dark">USGS</strong> — National Water Information System (NWIS) thermal spring records, coordinates, and elevation data</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-sa-copper mt-2 shrink-0" />
+          <span><strong class="text-sa-dark">OpenStreetMap</strong> — Spring locations, access roads, trails, and nearby amenities (ODbL license)</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-sa-copper mt-2 shrink-0" />
+          <span><strong class="text-sa-dark">NOAA</strong> — National Centers for Environmental Information Thermal Springs dataset</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-sa-copper mt-2 shrink-0" />
+          <span><strong class="text-sa-dark">Recreation.gov</strong> — Campground and recreation area data near spring locations</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-sa-copper mt-2 shrink-0" />
+          <span><strong class="text-sa-dark">Wikipedia / Wikidata</strong> — Supplementary descriptions and historical context</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mb-16">
+      <h2 class="font-display text-3xl font-light text-sa-dark mb-8 text-center">
+        Frequently Asked
+        <span class="italic"> Questions</span>
+      </h2>
+      <div class="space-y-4 max-w-3xl mx-auto">
+        {faqs.map((faq) => (
+          <details class="group border border-sa-dark/10 rounded-xl bg-white/60 overflow-hidden">
+            <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none hover:bg-sa-copper/5 transition-colors duration-200">
+              <h3 class="font-display text-lg font-medium text-sa-dark pr-4">{faq.q}</h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sa-copper shrink-0 group-open:rotate-180 transition-transform duration-200">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-sa-text leading-relaxed">
+              {faq.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="text-center">
+      <a href="/locator" class="inline-flex items-center gap-3 bg-sa-dark text-white px-8 py-4 rounded-full hover:bg-sa-copper transition-colors duration-300">
+        <span class="text-sm font-body font-medium tracking-wide uppercase">Explore the Full Map</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</BaseLayout>

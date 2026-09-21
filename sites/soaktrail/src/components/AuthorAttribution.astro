@@ -1,0 +1,25 @@
+---
+export interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<div class={`flex items-center gap-3 py-3 border-t border-b border-sa-dark/10 ${className}`}>
+  <div class="w-9 h-9 rounded-full bg-sa-copper/10 flex items-center justify-center shrink-0">
+    <span class="text-sa-copper font-display font-bold text-sm">CB</span>
+  </div>
+  <div>
+    <p class="text-sm text-sa-dark">
+      Researched &amp; maintained by{' '}
+      <a href="/about" class="font-display font-bold text-sa-dark hover:text-sa-copper transition-colors">
+        Chester Beard
+      </a>
+      <span class="text-sa-dark/40"> · Conservation Photographer · Sierra Club, The Nature Conservancy</span>
+    </p>
+    <p class="text-xs text-sa-dark/40">
+      Data from USGS, OpenStreetMap, NOAA · <a href="/about#disclosure" class="hover:text-sa-copper transition-colors">Disclosure</a>
+    </p>
+  </div>
+</div>

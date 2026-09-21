@@ -8,6 +8,8 @@ content: |
   The Rockies stretch from Idaho through Montana and into Wyoming, and along their fault lines, groundwater heated by the earth's crust rises to the surface. That geology has created more than 250 soakable springs across the region — from backcountry pools reached only by trail in the Frank Church River of No Return Wilderness to historic bathhouses built during the mining boom of the 1880s in Montana.
 
   Some are a short walk from the parking lot. Others require a full day's hike and a night in a tent. All of them carry the same minerals that have drawn people to these mountains for over a century.
+
+  Exploring beyond the Rockies? Soak Trail covers the whole country — here's [how to find hot springs](https://soaktrail.com/how-to-find-hot-springs) anywhere in the U.S.
 button:
   label: Explore the Full Map →
   link: /rockies-hot-springs-map
