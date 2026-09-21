@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Methodology', item: 'https://soaktrail.com/methodology' },
+  ],
+};
+
+const jsonLd = [
+  breadcrumbSchema,
+  {
+    '@type': 'WebPage',
+    name: 'Soak Trail Data Methodology',
+    url: 'https://soaktrail.com/methodology',
+    description: 'How Soak Trail collects, verifies, and presents hot springs data across the American West.',
+  },
+];
+---
+
+<BaseLayout
+  title="Data Methodology — Soak Trail"
+  description="How Soak Trail collects, verifies, and presents hot springs data — sources, verification process, and data quality standards."
+  jsonLd={jsonLd}
+>
+  <div class="container mx-auto px-4 py-12 max-w-3xl">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Methodology' }]} />
+
+    <h1 class="font-display text-4xl font-bold text-sa-dark mt-8 mb-4">Data Methodology</h1>
+    <p class="text-lg text-sa-dark/80 leading-relaxed max-w-2xl">
+      Soak Trail maps natural hot springs across the American West. Here's how we collect, verify, and present that data.
+    </p>
+
+    <div class="prose prose-lg prose-stone max-w-none mt-10 space-y-10">
+      <!-- Data sources -->
+      <section>
+        <h2 class="font-display text-2xl font-bold text-sa-dark">Data Sources</h2>
+        <p>Our spring database draws from several primary sources:</p>
+        <ul>
+          <li><strong>USGS Water Quality Portal</strong> — temperature, pH, mineral concentration, and discharge data from government-monitored sites.</li>
+          <li><strong>OpenStreetMap</strong> — geographic coordinates, access types, and infrastructure data.</li>
+          <li><strong>Forest Service and BLM records</strong> — land access status, seasonal closures, and fee information.</li>
+          <li><strong>Field visits and photographer reports</strong> — first-hand observations from Soak Trail contributors.</li>
+          <li><strong>Community submissions</strong> — corrections and additions from users, moderated and verified before publication.</li>
+        </ul>
+      </section>
+
+      <!-- What we map -->
+      <section>
+        <h2 class="font-display text-2xl font-bold text-sa-dark">What We Map</h2>
+        <p>Each spring in our database may include:</p>
+        <ul>
+          <li>Geographic coordinates (latitude/longitude)</li>
+          <li>Water temperature (°F)</li>
+          <li>Access type (paved, dirt road, 4WD, hike-in, resort, boat)</li>
+          <li>Development level (primitive, developed, resort)</li>
+          <li>Fee status and amount</li>
+          <li>Clothing policy</li>
+          <li>Dog policy</li>
+          <li>Seasonal availability</li>
+          <li>Nearest town and driving distance</li>
+          <li>Water chemistry (where USGS samples exist)</li>
+        </ul>
+        <p>
+          Not every spring has complete data. We indicate what's verified, what's estimated, and what's unknown.
+        </p>
+      </section>
+
+      <!-- Verification -->
+      <section>
+        <h2 class="font-display text-2xl font-bold text-sa-dark">Verification Process</h2>
+        <p>We use a tiered verification system:</p>
+        <ul>
+          <li><strong>Source-verified</strong> — data confirmed by USGS records, government databases, or published research.</li>
+          <li><strong>Field-verified</strong> — confirmed by a Soak Trail contributor's on-site visit with documentation.</li>
+          <li><strong>Community-reported</strong> — submitted by users, reviewed by our team, pending independent verification.</li>
+          <li><strong>Unverified</strong> — imported from public datasets (OSM, GNIS) without additional confirmation.</li>
+        </ul>
+        <p>
+          Each spring page shows its verification status and last-updated date. We encourage users to
+          <a href="/contact" class="text-sa-copper hover:underline">report corrections</a>.
+        </p>
+      </section>
+
+      <!-- Temperature -->
+      <section>
+        <h2 class="font-display text-2xl font-bold text-sa-dark">Temperature Data</h2>
+        <p>
+          Water temperatures come from USGS monitoring data, published surveys, or field measurements.
+          Temperatures are point-in-time readings — natural springs fluctuate seasonally and after seismic events.
+          A spring listed at 102°F may read 96°F in early spring or 108°F after a dry summer.
+        </p>
+        <p>
+          We classify springs into temperature bands:
+        </p>
+        <ul>
+          <li><strong>Soakable (95–110°F)</strong> — comfortable for most people.</li>
+          <li><strong>Warm (80–94°F)</strong> — pleasant but not hot.</li>
+          <li><strong>Very hot (111–150°F)</strong> — requires caution; cool before entering.</li>
+          <li><strong>Boiling / geyser (151°F+)</strong> — not safe for soaking.</li>
+        </ul>
+      </section>
+
+      <!-- Chemistry -->
+      <section>
+        <h2 class="font-display text-2xl font-bold text-sa-dark">Water Chemistry</h2>
+        <p>
+          Where USGS water-quality samples exist, we report mineral concentrations (calcium, magnesium,
+          sodium, sulfate, chloride, iron), pH, and total dissolved solids.
+        </p>
+        <p>
+          Health-related language on mineral pages is intentionally cautious. Drinking-water standards
+          (EPA, WHO) govern ingestion, not dermal soaking. Balneology research is mixed in quality.
+          We cite sources and avoid unverified therapeutic claims.
+        </p>
+      </section>
+
+      <!-- What we don't do -->
+      <section>
+        <h2 class="font-display text-2xl font-bold text-sa-dark">What We Don't Do</h2>
+        <ul>
+          <li>We don't inflate counts with duplicate or low-quality records.</li>
+          <li>We don't claim a spring is "open" without evidence.</li>
+          <li>We don't make medical or therapeutic claims about soaking.</li>
+          <li>We don't sell placement or rankings.</li>
+        </ul>
+      </section>
+
+      <!-- Geothermal data -->
+      <section>
+        <h2 class="font-display text-2xl font-bold text-sa-dark">Geothermal Heat-Flow Data</h2>
+        <p>
+          Our interactive map includes a modeled geothermal heat-flow overlay from the
+          <a href="https://gdr.openei.org/submissions/1592" target="_blank" rel="noopener noreferrer" class="text-sa-copper hover:underline">Stanford Thermal Earth Model</a>
+          (Aljubran &amp; Horne, 2024), used under
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="text-sa-copper hover:underline">Creative Commons Attribution 4.0</a>.
+        </p>
+        <p>
+          Heat-flow values (measured in mW/m²) describe regional subsurface heat movement — they do
+          <strong>not</strong> indicate spring-water temperature, safety, accessibility, or whether a
+          spring is currently flowing.
+        </p>
+      </section>
+
+      <!-- Corrections -->
+      <section>
+        <h2 class="font-display text-2xl font-bold text-sa-dark">Corrections and Contributions</h2>
+        <p>
+          Found an error? Know of a spring we're missing? Have updated access information?
+          We welcome contributions from the soaking community.
+        </p>
+        <ul>
+          <li>Email <a href="mailto:corrections@soaktrail.com" class="text-sa-copper hover:underline">corrections@soaktrail.com</a> for data fixes.</li>
+          <li>Email <a href="mailto:suggest@soaktrail.com" class="text-sa-copper hover:underline">suggest@soaktrail.com</a> to add a spring.</li>
+          <li>All submissions are reviewed before publication.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

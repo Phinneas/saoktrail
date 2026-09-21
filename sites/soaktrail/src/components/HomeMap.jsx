@@ -49,6 +49,7 @@ export default function HomeMap({ maptilerKey, apiUrl }) {
   const [region, setRegion] = useState('lower48');
   const [loading, setLoading] = useState(true);
   const [statusText, setStatusText] = useState('Loading map…');
+  const [heatflowOn, setHeatflowOn] = useState(false);
 
   const filteredSprings = useMemo(() => {
     if (activeFilters.size === 0) return allSprings;
@@ -82,6 +83,14 @@ export default function HomeMap({ maptilerKey, apiUrl }) {
     });
   }
 
+  function toggleHeatflow() {
+    const map = mapRef.current;
+    if (!map || !map.getLayer('heatflow-layer')) return;
+    const next = !heatflowOn;
+    setHeatflowOn(next);
+    map.setPaintProperty('heatflow-layer', 'raster-opacity', next ? 0.55 : 0);
+  }
+
   useEffect(() => {
     if (!maptilerKey || !containerRef.current) return;
     if (mapRef.current) return;
@@ -98,6 +107,21 @@ export default function HomeMap({ maptilerKey, apiUrl }) {
     });
     mapRef.current = map;
     map.addControl(new NavigationControl(), 'top-right');
+
+    // Add geothermal heat-flow overlay (Stanford Thermal Earth Model, CC BY 4.0)
+    map.on('load', () => {
+      map.addSource('heatflow', {
+        type: 'image',
+        url: '/heatflow-overlay.png',
+        coordinates: [[-126.0, 50.0], [-66.0, 50.0], [-66.0, 24.0], [-126.0, 24.0]],
+      });
+      map.addLayer({
+        id: 'heatflow-layer',
+        type: 'raster',
+        source: 'heatflow',
+        paint: { 'raster-opacity': 0 },
+      });
+    });
 
     const base = apiUrl || 'https://soakatlas-mcp.buzzuw2.workers.dev';
 
@@ -176,7 +200,7 @@ export default function HomeMap({ maptilerKey, apiUrl }) {
 
   return (
     <div className="home-map-container">
-      {/* Region tabs */}
+      {/* Region tabs + heat-flow toggle */}
       <div className="home-map-regions">
         {[
           ['lower48', 'Lower 48'],
@@ -212,6 +236,16 @@ export default function HomeMap({ maptilerKey, apiUrl }) {
             <circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3" /><circle cx="12" cy="12" r="7" />
           </svg>
           Near me
+        </button>
+        <button
+          type="button"
+          className={`home-map-region-btn ${heatflowOn ? 'is-active' : ''}`}
+          onClick={toggleHeatflow}
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="14" height="14">
+            <path d="M12 2c0 4-4 8-4 14 0 2.2 1.8 4 4 4s4-1.8 4-4c0-6-4-10-4-14z" />
+          </svg>
+          Heat flow
         </button>
       </div>
 

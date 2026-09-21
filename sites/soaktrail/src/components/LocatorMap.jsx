@@ -65,6 +65,7 @@ export default function LocatorMap({ maptilerKey, apiUrl }) {
   const [allSprings, setAllSprings] = useState([]);
   const [status, setStatus] = useState('Loading map…');
   const [filters, setFilters] = useState(DEFAULT_FILTERS);
+  const [heatflowOn, setHeatflowOn] = useState(false);
 
   const availableStates = useMemo(
     () => Array.from(new Set(allSprings.map((s) => s.state).filter(Boolean))).sort(),
@@ -92,6 +93,21 @@ export default function LocatorMap({ maptilerKey, apiUrl }) {
     });
     mapRef.current = map;
     map.addControl(new NavigationControl(), 'top-right');
+
+    // Add geothermal heat-flow overlay (Stanford Thermal Earth Model, CC BY 4.0)
+    map.on('load', () => {
+      map.addSource('heatflow', {
+        type: 'image',
+        url: '/heatflow-overlay.png',
+        coordinates: [[-126.0, 50.0], [-66.0, 50.0], [-66.0, 24.0], [-126.0, 24.0]],
+      });
+      map.addLayer({
+        id: 'heatflow-layer',
+        type: 'raster',
+        source: 'heatflow',
+        paint: { 'raster-opacity': 0 },
+      });
+    });
 
     const base = apiUrl || 'https://soakatlas-mcp.buzzuw2.workers.dev';
 
@@ -214,6 +230,16 @@ export default function LocatorMap({ maptilerKey, apiUrl }) {
         <label className="soak-locator-checkbox">
           <input type="checkbox" checked={filters.clothingOptional} onChange={(e) => setFilter('clothingOptional', e.target.checked)} />
           Clothing-optional
+        </label>
+        <label className="soak-locator-checkbox">
+          <input type="checkbox" checked={heatflowOn} onChange={(e) => {
+            const next = e.target.checked;
+            setHeatflowOn(next);
+            if (mapRef.current && mapRef.current.getLayer('heatflow-layer')) {
+              mapRef.current.setPaintProperty('heatflow-layer', 'raster-opacity', next ? 0.55 : 0);
+            }
+          }} />
+          Heat flow
         </label>
         {filtersActive && (
           <button type="button" className="soak-locator-clear" onClick={() => setFilters(DEFAULT_FILTERS)}>
