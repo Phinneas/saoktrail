@@ -26,7 +26,10 @@ test.describe('SoakTrail.com — page load regression', () => {
           const text = msg.text();
           if (!text.includes('favicon') && !text.includes('404') &&
               !text.includes('net::ERR') && !text.includes('is not a function') &&
-              !text.includes('TypeError')) {
+              !text.includes('TypeError') &&
+              // Benign: Google News SWG publisher.js iframes news.google.com, whose
+              // report-only CSP (frame-ancestors 'self') Chrome logs as an error
+              !text.includes('report-only Content Security Policy')) {
             errors.push(text);
           }
         }
