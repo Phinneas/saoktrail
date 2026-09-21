@@ -188,7 +188,11 @@ type StateData = Record<string, import('./[state].astro').Spring[]>;
 const allStates = stateSpringsData as StateData;
 
 export function getStaticPaths() {
-  return Object.keys(STATE_GUIDES).map((code) => ({
+  const guides = {
+    ID: true, MT: true, OR: true, CO: true,
+    CA: true, WY: true, AK: true, WA: true,
+  };
+  return Object.keys(guides).map((code) => ({
     params: { state: code.toLowerCase() },
     props: { code },
   }));

@@ -2,6 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AskAI from '../components/AskAI.astro';
 import AuthorAttribution from '../components/AuthorAttribution.astro';
+import HomeMap from '../components/HomeMap.jsx';
+
+const runtimeEnv = ((Astro.locals as any).runtime?.env ?? {}) as Record<string, string | undefined>;
+const maptilerKey = runtimeEnv.PUBLIC_MAPTILER_KEY || import.meta.env.PUBLIC_MAPTILER_KEY;
+const apiUrl = import.meta.env.PUBLIC_API_URL;
 
 const regions = [
   {
@@ -162,6 +167,93 @@ const jsonLd = [
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" opacity="0.6">
         <path d="M12 5v14M5 12l7 7 7-7" />
       </svg>
+    </div>
+  </section>
+
+  <!-- Interactive Map Section -->
+  <section id="map" class="py-16 md:py-24 px-6 bg-sa-dark">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-4 font-display">
+          Explore the Map
+        </p>
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-light text-white leading-tight mb-4">
+          Where the Earth
+          <span class="italic"> Runs Hot</span>
+        </h2>
+        <p class="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
+          Every documented hot spring across the United States. Filter by temperature, access type, and more. Click any pin for details and a link to its region guide.
+        </p>
+      </div>
+
+      {maptilerKey ? (
+        <HomeMap client:only="react" maptilerKey={maptilerKey} apiUrl={apiUrl} />
+      ) : (
+        <div class="rounded-xl border border-white/10 bg-white/5 p-8 text-center text-white/50 max-w-2xl mx-auto">
+          Map requires a MapTiler key. Visit the <a href="/locator" class="text-sa-copper hover:underline">Locator page</a> or check back soon.
+        </div>
+      )}
+
+      <div class="mt-8 text-center">
+        <a
+          href="/locator"
+          class="inline-flex items-center gap-3 border border-white/30 text-white px-6 py-3 rounded-full hover:bg-white/10 hover:border-white/50 transition-all duration-300 group"
+        >
+          <span class="text-sm font-body font-medium tracking-wide uppercase">Full Locator Map</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:translate-x-1 transition-transform duration-300">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trip Planner + Journal CTA -->
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Trip Planner CTA -->
+        <a
+          href="/trip-planner"
+          class="group block p-8 md:p-10 rounded-2xl bg-sa-dark text-white hover:opacity-95 transition-opacity relative overflow-hidden"
+        >
+          <div class="absolute top-0 right-0 w-48 h-48 bg-sa-copper/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+          <div class="relative z-10">
+            <p class="text-sa-copper text-xs tracking-[0.25em] uppercase mb-4 font-display">Plan Your Trip</p>
+            <h2 class="font-display text-2xl md:text-3xl mb-3 leading-snug">Hot Springs Trip Planner</h2>
+            <p class="text-white/60 text-sm leading-relaxed max-w-sm">
+              500+ springs across 6 regions — filter by access, temperature, vehicle requirements, and more. Find the perfect soak for your next adventure.
+            </p>
+            <div class="mt-6 inline-flex items-center gap-2 text-sa-copper text-sm font-body font-medium">
+              <span>Start Planning</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:translate-x-1 transition-transform duration-300">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+        </a>
+
+        <!-- Journal CTA -->
+        <a
+          href="/blog"
+          class="group block p-8 md:p-10 rounded-2xl bg-gradient-to-br from-sa-copper/10 to-sa-cream border border-sa-divider hover:border-sa-copper transition-colors relative overflow-hidden"
+        >
+          <div class="absolute bottom-0 left-0 w-32 h-32 bg-sa-copper/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+          <div class="relative z-10">
+            <p class="text-sa-copper text-xs tracking-[0.25em] uppercase mb-4 font-display">The Journal</p>
+            <h2 class="font-display text-2xl md:text-3xl text-sa-dark mb-3 leading-snug">Guides, Science & Stories</h2>
+            <p class="text-sa-text text-sm leading-relaxed max-w-sm">
+              Deep dives into hot spring geology, water chemistry, regional guides, and road trip itineraries from the field.
+            </p>
+            <div class="mt-6 inline-flex items-center gap-2 text-sa-copper text-sm font-body font-medium">
+              <span>Read the Journal</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:translate-x-1 transition-transform duration-300">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -503,13 +595,19 @@ const jsonLd = [
             Quick Links
           </h4>
           <ul class="space-y-3">
-            {['Home', 'Destinations', 'About', 'MCP Server'].map((item) => (
+            {[
+              { label: 'Map', href: '#map' },
+              { label: 'Trip Planner', href: '/trip-planner' },
+              { label: 'Journal', href: '/blog' },
+              { label: 'Locator', href: '/locator' },
+              { label: 'About', href: '#about' },
+            ].map((item) => (
               <li>
                 <a
-                  href={item === 'MCP Server' ? '#mcp' : `#${item.toLowerCase()}`}
+                  href={item.href}
                   class="text-white/60 hover:text-sa-copper transition-colors duration-300 text-sm font-display"
                 >
-                  {item}
+                  {item.label}
                 </a>
               </li>
             ))}
@@ -527,3 +625,181 @@ const jsonLd = [
     </div>
   </footer>
 </BaseLayout>
+
+<style is:global>
+  /* HomeMap — geothermal heat map on homepage */
+  .home-map-container {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background: #1a1a1a;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .home-map-regions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .home-map-region-btn {
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: transparent;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: "National Park", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .home-map-region-btn:hover {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+  }
+  .home-map-region-btn.is-active {
+    background: #b87333;
+    color: #fff;
+    border-color: #b87333;
+  }
+  .home-map-near-btn svg { flex-shrink: 0; }
+
+  .home-map-canvas-wrap {
+    position: relative;
+    width: 100%;
+    height: 460px;
+    min-height: 360px;
+  }
+  .home-map-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .home-map-status,
+  .home-map-count {
+    position: absolute;
+    z-index: 10;
+    left: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.8);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+  }
+  .home-map-status { top: 12px; }
+  .home-map-count { bottom: 12px; }
+
+  .home-map-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255,255,255,0.03);
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .home-map-filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    align-items: center;
+  }
+  .home-map-filter-label {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-family: "National Park", sans-serif;
+    margin-right: 0.25rem;
+  }
+  .home-map-chip {
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: transparent;
+    color: rgba(255,255,255,0.55);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .home-map-chip:hover {
+    border-color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.8);
+  }
+  .home-map-chip.is-active {
+    background: #b87333;
+    color: #fff;
+    border-color: #b87333;
+  }
+  .home-map-chip-count {
+    font-size: 0.65rem;
+    opacity: 0.6;
+    margin-left: 0.15rem;
+  }
+
+  /* Map pins */
+  .home-map-pin { width: 16px; height: 16px; }
+  .home-map-pin span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin: 2px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    background: #b87333;
+    border: 2px solid rgba(255,255,255,0.9);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  }
+
+  /* Popups */
+  .maplibregl-popup-content { padding: 0 !important; border-radius: 0.5rem !important; }
+  .home-pop { width: 240px; font-family: inherit; }
+  .home-pop-thumb,
+  .home-pop-thumb-placeholder {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 0.5rem 0.5rem 0 0;
+    background: #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.75rem;
+  }
+  .home-pop-name {
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 8px 10px 0;
+    color: #fff;
+  }
+  .home-pop-meta {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.45);
+    padding: 2px 10px 0;
+  }
+  .home-pop-credit {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.3);
+    padding: 4px 10px 0;
+  }
+  .home-pop-link {
+    display: block;
+    padding: 8px 10px 10px;
+    font-size: 0.8rem;
+    color: #b87333;
+    text-decoration: none;
+  }
+  .home-pop-link:hover { text-decoration: underline; }
+</style>

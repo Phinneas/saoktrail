@@ -60,7 +60,8 @@ type StateData = Record<string, Spring[]>;
 const allStates = stateSpringsData as StateData;
 
 export function getStaticPaths() {
-  return Object.keys(allStates).map((code) => ({
+  const data = stateSpringsData as StateData;
+  return Object.keys(data).map((code) => ({
     params: { state: code.toLowerCase() },
     props: { code },
   }));
