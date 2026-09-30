@@ -15,6 +15,8 @@ compatibility_date = "2026-03-26"
 # - ASANA_PROJECT_SOAKTRAIL     (Asana project GID → site slug "soaktrail")
 [vars]
 ENVIRONMENT = "production"
+# Kill switch for the Asana autoposter. Set to "true" to re-enable.
+AUTOPOSTER_ENABLED = "false"
 
 [env.development]
 vars = { ENVIRONMENT = "development" }
@@ -36,6 +38,10 @@ binding = "UGC_BUCKET"
 bucket_name = "soaktrail-ugc"
 
 [triggers]
-# Sun + Wed 7 AM UTC (midnight PDT) — autoposter: Asana → MiniMax → D1 → mark Asana done
-# Sun + Wed 8 AM UTC (1 AM PDT) — deploy trigger: calls GitHub Actions to rebuild + deploy all sites
-crons = ["0 7 * * 0,3", "0 8 * * 0,3"]
+# Autoposter PAUSED 2026-09-30 during the hot springs site merge.
+# An empty list removes the cron triggers on the next deploy.
+# Previous schedule (restore both lines to re-enable, and set AUTOPOSTER_ENABLED = "true"):
+#   crons = ["0 7 * * 0,3", "0 8 * * 0,3"]
+# Note: src/index.ts matches the deploy cron as "0 8 * * 1,4", so the 8 AM run
+# fell through to the autoposter instead of the deploy trigger. Fix before re-enabling.
+crons = []

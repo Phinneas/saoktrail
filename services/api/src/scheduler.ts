@@ -14,6 +14,7 @@ export interface Env {
   ASANA_PROJECT_ALASKAHOTSPRINGS?: string;
   ASANA_PROJECT_SHASTAHOTSPRINGS?: string;
   ASANA_PROJECT_SOAKTRAIL?: string;
+  AUTOPOSTER_ENABLED?: string;
   AI?: any;
 }
 
@@ -33,6 +34,12 @@ function slugify(s: string): string {
 }
 
 export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
+  // Kill switch: the autoposter only runs when explicitly enabled.
+  if (env.AUTOPOSTER_ENABLED !== 'true') {
+    console.log('⏸️ Autoposter disabled (AUTOPOSTER_ENABLED != "true"); skipping run.');
+    return;
+  }
+
   console.log('🗓️ Running Asana-driven blog generator scheduler...');
 
   // Record cron heartbeat so admin endpoints can confirm the trigger is firing
