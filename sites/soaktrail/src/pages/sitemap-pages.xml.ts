@@ -15,6 +15,7 @@ export const GET: APIRoute = async () => {
     { path: '/minerals', priority: '0.8', changefreq: 'weekly' },
     { path: '/minerals/chemistry-guide', priority: '0.7', changefreq: 'monthly' },
     { path: '/how-to-find-hot-springs', priority: '0.8', changefreq: 'monthly' },
+    { path: '/colorado-hot-springs-safety-guide', priority: '0.7', changefreq: 'yearly' },
     { path: '/hot-springs-by-state', priority: '0.8', changefreq: 'monthly' },
     { path: '/records', priority: '0.8', changefreq: 'monthly' },
     { path: '/reports/hot-springs-american-west-2026', priority: '0.9', changefreq: 'monthly' },

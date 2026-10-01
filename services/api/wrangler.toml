@@ -42,6 +42,6 @@ bucket_name = "soaktrail-ugc"
 # An empty list removes the cron triggers on the next deploy.
 # Previous schedule (restore both lines to re-enable, and set AUTOPOSTER_ENABLED = "true"):
 #   crons = ["0 7 * * 0,3", "0 8 * * 0,3"]
-# Note: src/index.ts matches the deploy cron as "0 8 * * 1,4", so the 8 AM run
-# fell through to the autoposter instead of the deploy trigger. Fix before re-enabling.
+# Note: src/index.ts now routes any "0 8 ..." cron to the deploy trigger (fixed
+# 2026-09-30). The deploy trigger needs the GITHUB_PAT secret to call GitHub Actions.
 crons = []

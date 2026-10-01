@@ -8,6 +8,9 @@ set -e
 SITES="desert soakcolorados soaktherockies soakalaska mountshasthotsprings wa_hot soaktrail"
 FAILED=0
 
+# Block the deploy if any site holds another region's springs data.
+node scripts/check-site-regions.mjs
+
 for site in $SITES; do
   echo "=== Building $site ==="
   cd "sites/$site"

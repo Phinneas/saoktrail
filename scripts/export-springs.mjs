@@ -15,6 +15,7 @@
 import { writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { findOutOfRegion } from './site-regions.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -56,6 +57,11 @@ async function exportSite(siteName) {
     }
     const data = await res.json();
     const springs = data.data || data;
+    const problems = findOutOfRegion(siteName, springs);
+    if (problems.length) {
+      console.error(`  REFUSED: API returned wrong-region springs for ${siteName} (${problems.join(', ')}) — keeping existing springs.json`);
+      return;
+    }
     const outPath = resolve(ROOT, `sites/${siteName}/public/springs.json`);
     writeFileSync(outPath, JSON.stringify(springs, null, 2) + '\n', 'utf-8');
     console.log(`  ${springs.length} springs → ${outPath}`);
