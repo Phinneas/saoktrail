@@ -52,4 +52,10 @@ if [ $FAILED -eq 1 ]; then
 fi
 
 echo "✅ All sites built and deployed successfully."
+
+# Confirm the LIVE sites are serving the right region's springs.
+echo ""
+echo "=== Checking live sites ==="
+sleep 20
+node scripts/check-site-regions.mjs --live
 exit 0

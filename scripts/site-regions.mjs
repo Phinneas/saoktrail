@@ -14,10 +14,21 @@ export const SITE_STATES = {
   wa_hot: ['WA', 'OR'],
 };
 
+// Live URL of each site, used by the post-deploy check.
+export const SITE_URLS = {
+  desert: 'https://www.desertsoak.com',
+  soaktherockies: 'https://www.soaktherockies.com',
+  soakcolorados: 'https://www.soakcolorado.com',
+  soakalaska: 'https://www.alaskahotsprings.com',
+  mountshasthotsprings: 'https://www.shastahotsprings.com',
+  wa_hot: 'https://www.washingtonhotsprings.com',
+};
+
 // Returns a list of problems, empty when every spring is in an allowed state.
 export function findOutOfRegion(site, springs) {
   const allowed = SITE_STATES[site];
   if (!allowed) return [];
+  if (!Array.isArray(springs) || springs.length === 0) return ['no springs found'];
   const bad = {};
   for (const s of springs) {
     const st = String(s.state || '').toUpperCase();

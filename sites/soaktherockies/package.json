@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node ../../scripts/check-site-regions.mjs --site=soaktherockies && astro build",
     "postbuild": "echo _worker.js > dist/.assetsignore && pagefind --site dist || true",
     "format": "prettier -w ./src",
     "typecheck": "astro check"
