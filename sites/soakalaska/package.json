@@ -18,7 +18,7 @@
     "@astrojs/sitemap": "^3.5.0",
     "@astrojs/tailwind": "^6.0.2",
     "@radix-ui/react-scroll-area": "^1.1.0",
-    "@soaktrail/shared": "*",
+    "@soaktrail/shared": "workspace:*",
     "astro": "5.18.0",
     "astro-auto-import": "^0.4.2",
     "astro-tooltips": "^0.6.2",

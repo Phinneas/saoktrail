@@ -28,12 +28,30 @@ importers:
 
   packages/shared:
     dependencies:
+      '@radix-ui/react-scroll-area':
+        specifier: ^1.1.0
+        version: 1.2.15(@types/react-dom@18.2.7)(@types/react@18.2.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       astro:
         specifier: 5.18.0
         version: 5.18.0(@types/node@24.13.3)(jiti@1.21.7)(lightningcss@1.33.0)(rollup@4.62.2)(sass@1.101.3)(tsx@4.23.12)(typescript@7.0.2)(yaml@2.9.0)
+      astro-tooltips:
+        specifier: ^0.6.2
+        version: 0.6.2
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      date-fns:
+        specifier: ^2.30.0
+        version: 2.30.0
+      date-fns-tz:
+        specifier: ^2.0.0
+        version: 2.0.1(date-fns@2.30.0)
+      fuse.js:
+        specifier: ^6.6.2
+        version: 6.6.2
+      github-slugger:
+        specifier: ^2.0.0
+        version: 2.0.0
       marked:
         specifier: ^18.0.7
         version: 18.0.7
@@ -46,9 +64,15 @@ importers:
       react-icons:
         specifier: ^5.5.0
         version: 5.7.0(react@18.3.1)
+      react-lite-youtube-embed:
+        specifier: ^2.3.52
+        version: 2.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       solid-js:
         specifier: ^1.9.14
         version: 1.9.14
+      tailwind-merge:
+        specifier: ^2.5.2
+        version: 2.6.1
 
   services/api:
     dependencies:
@@ -176,7 +200,7 @@ importers:
         specifier: ^1.1.0
         version: 1.2.15(@types/react-dom@18.2.7)(@types/react@18.2.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@soaktrail/shared':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/shared
       astro:
         specifier: 5.18.0
@@ -330,7 +354,7 @@ importers:
         specifier: ^1.1.0
         version: 1.2.15(@types/react-dom@18.2.7)(@types/react@18.2.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@soaktrail/shared':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/shared
       astro:
         specifier: 5.18.0
@@ -484,7 +508,7 @@ importers:
         specifier: ^1.1.0
         version: 1.2.15(@types/react-dom@18.2.7)(@types/react@18.2.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@soaktrail/shared':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/shared
       astro:
         specifier: 5.18.0
@@ -638,7 +662,7 @@ importers:
         specifier: ^1.1.0
         version: 1.2.15(@types/react-dom@18.2.7)(@types/react@18.2.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@soaktrail/shared':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/shared
       astro:
         specifier: 5.18.0
@@ -792,7 +816,7 @@ importers:
         specifier: ^1.1.0
         version: 1.2.15(@types/react-dom@18.2.7)(@types/react@18.2.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@soaktrail/shared':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/shared
       astro:
         specifier: 5.18.0
@@ -995,7 +1019,7 @@ importers:
         specifier: ^1.1.0
         version: 1.2.15(@types/react-dom@18.2.7)(@types/react@18.2.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@soaktrail/shared':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../../packages/shared
       astro:
         specifier: 5.18.0
@@ -4505,6 +4529,7 @@ packages:
   eslint@9.39.5:
     resolution: {integrity: sha512-DgZS62aPLXKlnxILS/AYCoRvHaZeXceIzlXPkkGGzJWSow1aEk0lbTlxUSlyjC8jcaKxAdOnTDz+o1JFSBsyjw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'

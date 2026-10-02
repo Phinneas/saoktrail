@@ -12,12 +12,20 @@
     "./styles/*": "./src/styles/*"
   },
   "dependencies": {
+    "@radix-ui/react-scroll-area": "^1.1.0",
     "astro": "5.18.0",
+    "astro-tooltips": "^0.6.2",
     "clsx": "^2.1.1",
+    "date-fns": "^2.30.0",
+    "date-fns-tz": "^2.0.0",
+    "fuse.js": "^6.6.2",
+    "github-slugger": "^2.0.0",
     "marked": "^18.0.7",
-    "react-icons": "^5.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "solid-js": "^1.9.14"
+    "react-icons": "^5.5.0",
+    "react-lite-youtube-embed": "^2.3.52",
+    "solid-js": "^1.9.14",
+    "tailwind-merge": "^2.5.2"
   }
 }
