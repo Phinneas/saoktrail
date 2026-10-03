@@ -1,14 +1,14 @@
 ---
 // Moved from soakcolorado.com/colorado-hot-springs-safety-guide (2026-09-30).
-// soakcolorado.com 301s the old URL here.
+// soakcolorado.com 301s the old URL here; renamed to hot-springs-safety-guide.
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import AuthorAttribution from '../components/AuthorAttribution.astro';
 
 export const prerender = true;
 
-const canonical = 'https://soaktrail.com/colorado-hot-springs-safety-guide';
-const title = 'Colorado Hot Springs Safety Guide | Soak Trail';
+const canonical = 'https://soaktrail.com/hot-springs-safety-guide';
+const title = 'Hot Springs Safety Guide | Soak Trail';
 const description =
   "How to soak safely in Colorado's hot springs: water temperature limits, bacteria risks, flash flood awareness, altitude, hydration, winter conditions, and Leave No Trace.";
 
@@ -64,16 +64,16 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
-    { '@type': 'ListItem', position: 2, name: 'Colorado Hot Springs Safety Guide', item: canonical },
+    { '@type': 'ListItem', position: 2, name: 'Hot Springs Safety Guide', item: canonical },
   ],
 };
 ---
 
 <BaseLayout title={title} description={description} canonicalUrl={canonical} jsonLd={[faqSchema, breadcrumbSchema]}>
   <div class="container mx-auto px-4 py-12 max-w-3xl">
-    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Colorado Hot Springs Safety Guide' }]} />
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Hot Springs Safety Guide' }]} />
 
-    <h1 class="font-display text-4xl font-bold text-sa-dark mt-8 mb-4">Colorado Hot Springs Safety Guide</h1>
+    <h1 class="font-display text-4xl font-bold text-sa-dark mt-8 mb-4">Hot Springs Safety Guide</h1>
 
     <AuthorAttribution class="mb-6" />
 
