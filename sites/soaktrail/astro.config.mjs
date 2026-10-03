@@ -15,12 +15,6 @@ export default defineConfig({
   integrations: [tailwind(), react(), mdx()],
   site: 'https://soaktrail.com',
   trailingSlash: 'never',
-  redirects: {
-    '/colorado-hot-springs-safety-guide': {
-      status: 301,
-      destination: '/hot-springs-safety-guide',
-    },
-  },
   build: {
     inlineStylesheets: 'auto',
   },
