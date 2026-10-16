@@ -5,6 +5,7 @@ import AuthorAttribution from '../../components/AuthorAttribution.astro';
 import nearCityData from '../../data/near_city_pages.json';
 import cityIndex from '../../data/cities_index.json';
 import { stateName, accessLabel } from '../../lib/states';
+import { getRegion } from '../../lib/regions';
 
 export const prerender = true;
 
@@ -55,6 +56,8 @@ for (const s of data.springs) {
 }
 const primaryRegion = [...regionCounts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0];
 const tripPlannerUrl = primaryRegion ? `/trip-planner/${primaryRegion}` : '/trip-planner';
+const regionMeta = getRegion(primaryRegion ?? '');
+const regionalNearUrl = regionMeta ? `${regionMeta.childSite}/near/${data.slug}` : null;
 
 const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
@@ -210,6 +213,12 @@ const cityQuery = encodeURIComponent(`${data.city}, ${stateFull}`);
           <h3 class="font-display text-lg font-bold text-sa-dark">Build an itinerary</h3>
           <p class="text-sm text-sa-dark/70 mt-1">Turn these springs into a road-trip route with camping and lodging along the way.</p>
         </a>
+        {regionalNearUrl && (
+          <a href={regionalNearUrl} class="block rounded-lg border border-sa-dark/10 bg-white/60 p-5 hover:border-sa-copper hover:shadow-sm transition">
+            <h3 class="font-display text-lg font-bold text-sa-dark">Explore the full {regionMeta?.name} guide</h3>
+            <p class="text-sm text-sa-dark/70 mt-1">See {data.city} springs on {regionMeta?.childSiteName} with maps, photos, and local tips.</p>
+          </a>
+        )}
       </div>
     </section>
 

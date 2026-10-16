@@ -5,7 +5,7 @@ import { listOpenTasks, markTaskComplete } from '../lib/asana.js';
 
 export interface Env {
   DB: D1Database;
-  MINIMAX_API_KEY: string;
+  GLM_API_KEY: string;
   PEXELS_API_KEY: string;
   ASANA_PAT?: string;
   ASANA_PROJECT_DESERTSOAK?: string;
@@ -56,8 +56,8 @@ export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
     console.warn(`Heartbeat write failed: ${hbErr.message}`);
   }
 
-  if (!env.MINIMAX_API_KEY) {
-    console.error('❌ MINIMAX_API_KEY is not defined in environment.');
+  if (!env.GLM_API_KEY) {
+    console.error('❌ GLM_API_KEY is not defined in environment.');
     return;
   }
   if (!env.ASANA_PAT) {
@@ -74,7 +74,7 @@ export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
     { site: 'soaktrail', siteName: 'Soak Trail', projectGid: env.ASANA_PROJECT_SOAKTRAIL },
   ];
 
-  const minimax = new MinimaxClient(env.MINIMAX_API_KEY);
+  const minimax = new MinimaxClient(env.GLM_API_KEY);
 
   for (const siteCfg of sites) {
     if (!siteCfg.projectGid) {

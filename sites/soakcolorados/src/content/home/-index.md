@@ -6,11 +6,11 @@ content: |
   Here, the water comes up through ancient granite and volcanic rock, carrying minerals that have been brewing for millennia. You can soak at 10,000 feet with snow falling on your shoulders, or float in a 107°F pool while elk move through the valley below. Some pools require a 4WD and a willingness to hike. Others come with a spa menu and a robe. We cover both — because the best soak is the one that fits your adventure.
 
 
-  The Rio Grande Rift runs the length of the state, and along its fault lines, groundwater heated by the earth's crust rises to the surface. That geology has created more than 40 soakable springs across Colorado — from backcountry pools reached only by trail in the Elk Mountains to historic bathhouses built during the mining boom of the 1880s.
+  The Rio Grande Rift runs the length of the state, and along its fault lines, groundwater heated by the earth's crust rises to the surface. That geology has created more than 35 springs across Colorado — from backcountry pools reached only by trail in the Elk Mountains to historic bathhouses built during the mining boom of the 1880s.
 
   Some are a short walk from the parking lot. Others require a full day's hike and a night in a tent. All of them carry the same minerals that have drawn people to these mountains for over a century.
 
-  Exploring beyond Colorado? Soak Trail covers the whole country — here's [how to find hot springs](https://soaktrail.com/how-to-find-hot-springs) anywhere in the U.S.
+  Exploring beyond Colorado? Soak Trail covers the western United States — here's [how to find hot springs](https://soaktrail.com/how-to-find-hot-springs) across the West
 button:
   label: Explore the Full Map →
   link: /colorado-hot-springs-map
@@ -23,7 +23,7 @@ proofItems:
   - "**Clothing-Optional** — Soak under open sky at Valley View and Joyful Journey in the San Luis Valley."
 proofButton:
   label: Browse by Region →
-  link: /blog
+  link: /directory
 tripHeading: Plan a Weekend, Not Just a Stop
 tripSubtext: "Our trip planner turns individual springs into full itineraries. Here's one we mapped last month:"
 tripExample:
@@ -35,9 +35,9 @@ tripExample:
     description: "Return north via Iron Mountain Hot Springs in Glenwood Springs for a final soak along the Colorado River."
 tripButton:
   label: Customize this route in the Trip Planner →
-  link: /colorado-hot-springs-map
+  link: /trip-planner
 coverageHeading: Coverage
-coverageText: "40+ springs across Colorado. Updated weekly with seasonal access conditions, road closures, and new trip routes. Start with the spring closest to you."
+coverageText: "36 springs across Colorado. Updated regularly with seasonal access conditions, road closures, and new trip routes. Start with the spring closest to you."
 coverageButton:
   label: Read the Latest Guide →
   link: /blog

@@ -1,0 +1,3488 @@
+{
+  "phoenix-az": {
+    "city": "Phoenix",
+    "state": "az",
+    "region": "desert",
+    "population": 4121103,
+    "count": 5
+  },
+  "las-vegas-nv": {
+    "city": "Las Vegas",
+    "state": "nv",
+    "region": "desert",
+    "population": 2299189,
+    "count": 6
+  },
+  "salt-lake-city-ut": {
+    "city": "Salt Lake City",
+    "state": "ut",
+    "region": "desert",
+    "population": 1183003,
+    "count": 4
+  },
+  "tucson-az": {
+    "city": "Tucson",
+    "state": "az",
+    "region": "desert",
+    "population": 890860,
+    "count": 2
+  },
+  "provo-ut": {
+    "city": "Provo",
+    "state": "ut",
+    "region": "desert",
+    "population": 641732,
+    "count": 4
+  },
+  "ogden-ut": {
+    "city": "Ogden",
+    "state": "ut",
+    "region": "desert",
+    "population": 630643,
+    "count": 5
+  },
+  "mesa-az": {
+    "city": "Mesa",
+    "state": "az",
+    "region": "desert",
+    "population": 511764,
+    "count": 2
+  },
+  "reno-nv": {
+    "city": "Reno",
+    "state": "nv",
+    "region": "desert",
+    "population": 466706,
+    "count": 3
+  },
+  "henderson-nv": {
+    "city": "Henderson",
+    "state": "nv",
+    "region": "desert",
+    "population": 332141,
+    "count": 5
+  },
+  "gilbert-az": {
+    "city": "Gilbert",
+    "state": "az",
+    "region": "desert",
+    "population": 280262,
+    "count": 2
+  },
+  "chandler-az": {
+    "city": "Chandler",
+    "state": "az",
+    "region": "desert",
+    "population": 280136,
+    "count": 2
+  },
+  "north-las-vegas-nv": {
+    "city": "North Las Vegas",
+    "state": "nv",
+    "region": "desert",
+    "population": 278595,
+    "count": 6
+  },
+  "glendale-az": {
+    "city": "Glendale",
+    "state": "az",
+    "region": "desert",
+    "population": 252833,
+    "count": 5
+  },
+  "scottsdale-az": {
+    "city": "Scottsdale",
+    "state": "az",
+    "region": "desert",
+    "population": 243821,
+    "count": 3
+  },
+  "enterprise-nv": {
+    "city": "Enterprise",
+    "state": "nv",
+    "region": "desert",
+    "population": 240464,
+    "count": 5
+  },
+  "spring-valley-nv": {
+    "city": "Spring Valley",
+    "state": "nv",
+    "region": "desert",
+    "population": 219187,
+    "count": 6
+  },
+  "sunrise-manor-nv": {
+    "city": "Sunrise Manor",
+    "state": "nv",
+    "region": "desert",
+    "population": 200218,
+    "count": 5
+  },
+  "peoria-az": {
+    "city": "Peoria",
+    "state": "az",
+    "region": "desert",
+    "population": 196906,
+    "count": 5
+  },
+  "tempe-az": {
+    "city": "Tempe",
+    "state": "az",
+    "region": "desert",
+    "population": 188065,
+    "count": 3
+  },
+  "paradise-nv": {
+    "city": "Paradise",
+    "state": "nv",
+    "region": "desert",
+    "population": 185913,
+    "count": 6
+  },
+  "surprise-az": {
+    "city": "Surprise",
+    "state": "az",
+    "region": "desert",
+    "population": 154948,
+    "count": 5
+  },
+  "st-george-ut": {
+    "city": "St. George",
+    "state": "ut",
+    "region": "desert",
+    "population": 148405,
+    "count": 4
+  },
+  "west-valley-city-ut": {
+    "city": "West Valley City",
+    "state": "ut",
+    "region": "desert",
+    "population": 138437,
+    "count": 4
+  },
+  "logan-ut": {
+    "city": "Logan",
+    "state": "ut",
+    "region": "desert",
+    "population": 124449,
+    "count": 4
+  },
+  "west-jordan-ut": {
+    "city": "West Jordan",
+    "state": "ut",
+    "region": "desert",
+    "population": 116692,
+    "count": 5
+  },
+  "sparks-nv": {
+    "city": "Sparks",
+    "state": "nv",
+    "region": "desert",
+    "population": 110024,
+    "count": 3
+  },
+  "san-tan-valley-az": {
+    "city": "San Tan Valley",
+    "state": "az",
+    "region": "desert",
+    "population": 109189,
+    "count": 1
+  },
+  "goodyear-az": {
+    "city": "Goodyear",
+    "state": "az",
+    "region": "desert",
+    "population": 107645,
+    "count": 4
+  },
+  "buckeye-az": {
+    "city": "Buckeye",
+    "state": "az",
+    "region": "desert",
+    "population": 104923,
+    "count": 5
+  },
+  "prescott-valley-az": {
+    "city": "Prescott Valley",
+    "state": "az",
+    "region": "desert",
+    "population": 98921,
+    "count": 3
+  },
+  "orem-ut": {
+    "city": "Orem",
+    "state": "ut",
+    "region": "desert",
+    "population": 97182,
+    "count": 4
+  },
+  "sandy-ut": {
+    "city": "Sandy",
+    "state": "ut",
+    "region": "desert",
+    "population": 94291,
+    "count": 5
+  },
+  "avondale-az": {
+    "city": "Avondale",
+    "state": "az",
+    "region": "desert",
+    "population": 92477,
+    "count": 5
+  },
+  "lehi-ut": {
+    "city": "Lehi",
+    "state": "ut",
+    "region": "desert",
+    "population": 85173,
+    "count": 4
+  },
+  "layton-ut": {
+    "city": "Layton",
+    "state": "ut",
+    "region": "desert",
+    "population": 83286,
+    "count": 6
+  },
+  "south-jordan-ut": {
+    "city": "South Jordan",
+    "state": "ut",
+    "region": "desert",
+    "population": 82686,
+    "count": 4
+  },
+  "maricopa-az": {
+    "city": "Maricopa",
+    "state": "az",
+    "region": "desert",
+    "population": 72459,
+    "count": 1
+  },
+  "casas-adobes-az": {
+    "city": "Casas Adobes",
+    "state": "az",
+    "region": "desert",
+    "population": 72059,
+    "count": 3
+  },
+  "queen-creek-az": {
+    "city": "Queen Creek",
+    "state": "az",
+    "region": "desert",
+    "population": 71867,
+    "count": 1
+  },
+  "millcreek-ut": {
+    "city": "Millcreek",
+    "state": "ut",
+    "region": "desert",
+    "population": 63648,
+    "count": 4
+  },
+  "casa-grande-az": {
+    "city": "Casa Grande",
+    "state": "az",
+    "region": "desert",
+    "population": 60905,
+    "count": 1
+  },
+  "herriman-ut": {
+    "city": "Herriman",
+    "state": "ut",
+    "region": "desert",
+    "population": 59346,
+    "count": 4
+  },
+  "taylorsville-ut": {
+    "city": "Taylorsville",
+    "state": "ut",
+    "region": "desert",
+    "population": 58678,
+    "count": 4
+  },
+  "carson-city-nv": {
+    "city": "Carson City",
+    "state": "nv",
+    "region": "desert",
+    "population": 58384,
+    "count": 3
+  },
+  "lake-havasu-city-az": {
+    "city": "Lake Havasu City",
+    "state": "az",
+    "region": "desert",
+    "population": 58359,
+    "count": 1
+  },
+  "marana-az": {
+    "city": "Marana",
+    "state": "az",
+    "region": "desert",
+    "population": 56938,
+    "count": 2
+  },
+  "eagle-mountain-ut": {
+    "city": "Eagle Mountain",
+    "state": "ut",
+    "region": "desert",
+    "population": 53290,
+    "count": 4
+  },
+  "catalina-foothills-az": {
+    "city": "Catalina Foothills",
+    "state": "az",
+    "region": "desert",
+    "population": 52593,
+    "count": 2
+  },
+  "draper-ut": {
+    "city": "Draper",
+    "state": "ut",
+    "region": "desert",
+    "population": 50278,
+    "count": 4
+  },
+  "murray-ut": {
+    "city": "Murray",
+    "state": "ut",
+    "region": "desert",
+    "population": 50188,
+    "count": 5
+  },
+  "saratoga-springs-ut": {
+    "city": "Saratoga Springs",
+    "state": "ut",
+    "region": "desert",
+    "population": 48425,
+    "count": 4
+  },
+  "oro-valley-az": {
+    "city": "Oro Valley",
+    "state": "az",
+    "region": "desert",
+    "population": 48162,
+    "count": 2
+  },
+  "prescott-az": {
+    "city": "Prescott",
+    "state": "az",
+    "region": "desert",
+    "population": 47400,
+    "count": 3
+  },
+  "pahrump-nv": {
+    "city": "Pahrump",
+    "state": "nv",
+    "region": "desert",
+    "population": 47347,
+    "count": 1
+  },
+  "whitney-nv": {
+    "city": "Whitney",
+    "state": "nv",
+    "region": "desert",
+    "population": 47221,
+    "count": 5
+  },
+  "riverton-ut": {
+    "city": "Riverton",
+    "state": "ut",
+    "region": "desert",
+    "population": 45457,
+    "count": 4
+  },
+  "sierra-vista-az": {
+    "city": "Sierra Vista",
+    "state": "az",
+    "region": "desert",
+    "population": 45155,
+    "count": 2
+  },
+  "bountiful-ut": {
+    "city": "Bountiful",
+    "state": "ut",
+    "region": "desert",
+    "population": 45023,
+    "count": 5
+  },
+  "spanish-fork-ut": {
+    "city": "Spanish Fork",
+    "state": "ut",
+    "region": "desert",
+    "population": 44946,
+    "count": 4
+  },
+  "apache-junction-az": {
+    "city": "Apache Junction",
+    "state": "az",
+    "region": "desert",
+    "population": 41058,
+    "count": 2
+  },
+  "roy-ut": {
+    "city": "Roy",
+    "state": "ut",
+    "region": "desert",
+    "population": 38993,
+    "count": 5
+  },
+  "cedar-city-ut": {
+    "city": "Cedar City",
+    "state": "ut",
+    "region": "desert",
+    "population": 38524,
+    "count": 2
+  },
+  "tooele-ut": {
+    "city": "Tooele",
+    "state": "ut",
+    "region": "desert",
+    "population": 38405,
+    "count": 4
+  },
+  "pleasant-grove-ut": {
+    "city": "Pleasant Grove",
+    "state": "ut",
+    "region": "desert",
+    "population": 37852,
+    "count": 4
+  },
+  "kearns-ut": {
+    "city": "Kearns",
+    "state": "ut",
+    "region": "desert",
+    "population": 37696,
+    "count": 4
+  },
+  "sun-city-az": {
+    "city": "Sun City",
+    "state": "az",
+    "region": "desert",
+    "population": 37486,
+    "count": 5
+  },
+  "american-fork-ut": {
+    "city": "American Fork",
+    "state": "ut",
+    "region": "desert",
+    "population": 37109,
+    "count": 4
+  },
+  "winchester-nv": {
+    "city": "Winchester",
+    "state": "nv",
+    "region": "desert",
+    "population": 37081,
+    "count": 6
+  },
+  "el-mirage-az": {
+    "city": "El Mirage",
+    "state": "az",
+    "region": "desert",
+    "population": 36088,
+    "count": 5
+  },
+  "midvale-ut": {
+    "city": "Midvale",
+    "state": "ut",
+    "region": "desert",
+    "population": 35989,
+    "count": 5
+  },
+  "sahuarita-az": {
+    "city": "Sahuarita",
+    "state": "az",
+    "region": "desert",
+    "population": 35862,
+    "count": 2
+  },
+  "springville-ut": {
+    "city": "Springville",
+    "state": "ut",
+    "region": "desert",
+    "population": 35849,
+    "count": 4
+  },
+  "syracuse-ut": {
+    "city": "Syracuse",
+    "state": "ut",
+    "region": "desert",
+    "population": 35488,
+    "count": 6
+  },
+  "kingman-az": {
+    "city": "Kingman",
+    "state": "az",
+    "region": "desert",
+    "population": 34375,
+    "count": 1
+  },
+  "clearfield-ut": {
+    "city": "Clearfield",
+    "state": "ut",
+    "region": "desert",
+    "population": 33523,
+    "count": 5
+  },
+  "kaysville-ut": {
+    "city": "Kaysville",
+    "state": "ut",
+    "region": "desert",
+    "population": 33053,
+    "count": 7
+  },
+  "cottonwood-heights-ut": {
+    "city": "Cottonwood Heights",
+    "state": "ut",
+    "region": "desert",
+    "population": 32828,
+    "count": 5
+  },
+  "washington-ut": {
+    "city": "Washington",
+    "state": "ut",
+    "region": "desert",
+    "population": 32348,
+    "count": 4
+  },
+  "summerlin-south-nv": {
+    "city": "Summerlin South",
+    "state": "nv",
+    "region": "desert",
+    "population": 31354,
+    "count": 5
+  },
+  "holladay-ut": {
+    "city": "Holladay",
+    "state": "ut",
+    "region": "desert",
+    "population": 31099,
+    "count": 5
+  },
+  "magna-ut": {
+    "city": "Magna",
+    "state": "ut",
+    "region": "desert",
+    "population": 30031,
+    "count": 6
+  },
+  "drexel-heights-az": {
+    "city": "Drexel Heights",
+    "state": "az",
+    "region": "desert",
+    "population": 27675,
+    "count": 2
+  },
+  "sun-city-west-az": {
+    "city": "Sun City West",
+    "state": "az",
+    "region": "desert",
+    "population": 27425,
+    "count": 5
+  },
+  "south-salt-lake-ut": {
+    "city": "South Salt Lake",
+    "state": "ut",
+    "region": "desert",
+    "population": 26352,
+    "count": 4
+  },
+  "florence-az": {
+    "city": "Florence",
+    "state": "az",
+    "region": "desert",
+    "population": 25570,
+    "count": 1
+  },
+  "farmington-ut": {
+    "city": "Farmington",
+    "state": "ut",
+    "region": "desert",
+    "population": 25389,
+    "count": 6
+  },
+  "fernley-nv": {
+    "city": "Fernley",
+    "state": "nv",
+    "region": "desert",
+    "population": 24225,
+    "count": 2
+  },
+  "fountain-hills-az": {
+    "city": "Fountain Hills",
+    "state": "az",
+    "region": "desert",
+    "population": 23789,
+    "count": 2
+  },
+  "clinton-ut": {
+    "city": "Clinton",
+    "state": "ut",
+    "region": "desert",
+    "population": 23612,
+    "count": 5
+  },
+  "north-salt-lake-ut": {
+    "city": "North Salt Lake",
+    "state": "ut",
+    "region": "desert",
+    "population": 23474,
+    "count": 5
+  },
+  "payson-ut": {
+    "city": "Payson",
+    "state": "ut",
+    "region": "desert",
+    "population": 23039,
+    "count": 4
+  },
+  "hurricane-ut": {
+    "city": "Hurricane",
+    "state": "ut",
+    "region": "desert",
+    "population": 22771,
+    "count": 4
+  },
+  "anthem-az": {
+    "city": "Anthem",
+    "state": "az",
+    "region": "desert",
+    "population": 22584,
+    "count": 5
+  },
+  "sun-valley-nv": {
+    "city": "Sun Valley",
+    "state": "nv",
+    "region": "desert",
+    "population": 22228,
+    "count": 3
+  },
+  "green-valley-az": {
+    "city": "Green Valley",
+    "state": "az",
+    "region": "desert",
+    "population": 22114,
+    "count": 2
+  },
+  "mesquite-nv": {
+    "city": "Mesquite",
+    "state": "nv",
+    "region": "desert",
+    "population": 22059,
+    "count": 6
+  },
+  "rio-rico-az": {
+    "city": "Rio Rico",
+    "state": "az",
+    "region": "desert",
+    "population": 22017,
+    "count": 1
+  },
+  "north-ogden-ut": {
+    "city": "North Ogden",
+    "state": "ut",
+    "region": "desert",
+    "population": 21947,
+    "count": 4
+  },
+  "west-haven-ut": {
+    "city": "West Haven",
+    "state": "ut",
+    "region": "desert",
+    "population": 21563,
+    "count": 5
+  },
+  "south-lake-tahoe-ca": {
+    "city": "South Lake Tahoe",
+    "state": "ca",
+    "region": "desert",
+    "population": 21269,
+    "count": 3
+  },
+  "elko-nv": {
+    "city": "Elko",
+    "state": "nv",
+    "region": "desert",
+    "population": 20696,
+    "count": 2
+  },
+  "highland-ut": {
+    "city": "Highland",
+    "state": "ut",
+    "region": "desert",
+    "population": 20119,
+    "count": 4
+  },
+  "brigham-city-ut": {
+    "city": "Brigham City",
+    "state": "ut",
+    "region": "desert",
+    "population": 19992,
+    "count": 4
+  },
+  "nogales-az": {
+    "city": "Nogales",
+    "state": "az",
+    "region": "desert",
+    "population": 19841,
+    "count": 1
+  },
+  "bluffdale-ut": {
+    "city": "Bluffdale",
+    "state": "ut",
+    "region": "desert",
+    "population": 18797,
+    "count": 4
+  },
+  "new-river-az": {
+    "city": "New River",
+    "state": "az",
+    "region": "desert",
+    "population": 18240,
+    "count": 5
+  },
+  "heber-ut": {
+    "city": "Heber",
+    "state": "ut",
+    "region": "desert",
+    "population": 18015,
+    "count": 4
+  },
+  "spanish-springs-nv": {
+    "city": "Spanish Springs",
+    "state": "nv",
+    "region": "desert",
+    "population": 17980,
+    "count": 3
+  },
+  "south-ogden-ut": {
+    "city": "South Ogden",
+    "state": "ut",
+    "region": "desert",
+    "population": 17650,
+    "count": 5
+  },
+  "eloy-az": {
+    "city": "Eloy",
+    "state": "az",
+    "region": "desert",
+    "population": 17433,
+    "count": 1
+  },
+  "blythe-ca": {
+    "city": "Blythe",
+    "state": "ca",
+    "region": "desert",
+    "population": 17396,
+    "count": 1
+  },
+  "truckee-ca": {
+    "city": "Truckee",
+    "state": "ca",
+    "region": "desert",
+    "population": 17066,
+    "count": 3
+  },
+  "centerville-ut": {
+    "city": "Centerville",
+    "state": "ut",
+    "region": "desert",
+    "population": 16679,
+    "count": 5
+  },
+  "coolidge-az": {
+    "city": "Coolidge",
+    "state": "az",
+    "region": "desert",
+    "population": 16636,
+    "count": 1
+  },
+  "payson-az": {
+    "city": "Payson",
+    "state": "az",
+    "region": "desert",
+    "population": 16622,
+    "count": 2
+  },
+  "flowing-wells-az": {
+    "city": "Flowing Wells",
+    "state": "az",
+    "region": "desert",
+    "population": 16559,
+    "count": 2
+  },
+  "santaquin-ut": {
+    "city": "Santaquin",
+    "state": "ut",
+    "region": "desert",
+    "population": 16436,
+    "count": 4
+  },
+  "vail-az": {
+    "city": "Vail",
+    "state": "az",
+    "region": "desert",
+    "population": 16315,
+    "count": 3
+  },
+  "douglas-az": {
+    "city": "Douglas",
+    "state": "az",
+    "region": "desert",
+    "population": 15981,
+    "count": 1
+  },
+  "tanque-verde-az": {
+    "city": "Tanque Verde",
+    "state": "az",
+    "region": "desert",
+    "population": 15866,
+    "count": 2
+  },
+  "dayton-nv": {
+    "city": "Dayton",
+    "state": "nv",
+    "region": "desert",
+    "population": 15781,
+    "count": 3
+  },
+  "boulder-city-nv": {
+    "city": "Boulder City",
+    "state": "nv",
+    "region": "desert",
+    "population": 14919,
+    "count": 4
+  },
+  "spring-creek-nv": {
+    "city": "Spring Creek",
+    "state": "nv",
+    "region": "desert",
+    "population": 14739,
+    "count": 2
+  },
+  "valencia-west-az": {
+    "city": "Valencia West",
+    "state": "az",
+    "region": "desert",
+    "population": 14728,
+    "count": 2
+  },
+  "vineyard-ut": {
+    "city": "Vineyard",
+    "state": "ut",
+    "region": "desert",
+    "population": 14446,
+    "count": 4
+  },
+  "smithfield-ut": {
+    "city": "Smithfield",
+    "state": "ut",
+    "region": "desert",
+    "population": 14408,
+    "count": 4
+  },
+  "grantsville-ut": {
+    "city": "Grantsville",
+    "state": "ut",
+    "region": "desert",
+    "population": 14341,
+    "count": 3
+  },
+  "sierra-vista-southeast-az": {
+    "city": "Sierra Vista Southeast",
+    "state": "az",
+    "region": "desert",
+    "population": 14330,
+    "count": 2
+  },
+  "new-kingman-butler-az": {
+    "city": "New Kingman-Butler",
+    "state": "az",
+    "region": "desert",
+    "population": 13993,
+    "count": 1
+  },
+  "sun-lakes-az": {
+    "city": "Sun Lakes",
+    "state": "az",
+    "region": "desert",
+    "population": 13924,
+    "count": 2
+  },
+  "chino-valley-az": {
+    "city": "Chino Valley",
+    "state": "az",
+    "region": "desert",
+    "population": 13602,
+    "count": 1
+  },
+  "mapleton-ut": {
+    "city": "Mapleton",
+    "state": "ut",
+    "region": "desert",
+    "population": 13114,
+    "count": 4
+  },
+  "gold-canyon-az": {
+    "city": "Gold Canyon",
+    "state": "az",
+    "region": "desert",
+    "population": 13107,
+    "count": 2
+  },
+  "saddlebrooke-az": {
+    "city": "Saddlebrooke",
+    "state": "az",
+    "region": "desert",
+    "population": 13085,
+    "count": 3
+  },
+  "paradise-valley-az": {
+    "city": "Paradise Valley",
+    "state": "az",
+    "region": "desert",
+    "population": 12611,
+    "count": 3
+  },
+  "cottonwood-az": {
+    "city": "Cottonwood",
+    "state": "az",
+    "region": "desert",
+    "population": 12580,
+    "count": 1
+  },
+  "camp-verde-az": {
+    "city": "Camp Verde",
+    "state": "az",
+    "region": "desert",
+    "population": 12521,
+    "count": 2
+  },
+  "tucson-estates-az": {
+    "city": "Tucson Estates",
+    "state": "az",
+    "region": "desert",
+    "population": 12136,
+    "count": 2
+  },
+  "gardnerville-ranchos-nv": {
+    "city": "Gardnerville Ranchos",
+    "state": "nv",
+    "region": "desert",
+    "population": 12114,
+    "count": 3
+  },
+  "verde-village-az": {
+    "city": "Verde Village",
+    "state": "az",
+    "region": "desert",
+    "population": 11930,
+    "count": 1
+  },
+  "west-point-ut": {
+    "city": "West Point",
+    "state": "ut",
+    "region": "desert",
+    "population": 11929,
+    "count": 6
+  },
+  "evanston-wy": {
+    "city": "Evanston",
+    "state": "wy",
+    "region": "desert",
+    "population": 11800,
+    "count": 1
+  },
+  "lindon-ut": {
+    "city": "Lindon",
+    "state": "ut",
+    "region": "desert",
+    "population": 11765,
+    "count": 4
+  },
+  "woods-cross-ut": {
+    "city": "Woods Cross",
+    "state": "ut",
+    "region": "desert",
+    "population": 11531,
+    "count": 5
+  },
+  "tremonton-ut": {
+    "city": "Tremonton",
+    "state": "ut",
+    "region": "desert",
+    "population": 11477,
+    "count": 5
+  },
+  "north-logan-ut": {
+    "city": "North Logan",
+    "state": "ut",
+    "region": "desert",
+    "population": 11460,
+    "count": 4
+  },
+  "tucson-mountains-az": {
+    "city": "Tucson Mountains",
+    "state": "az",
+    "region": "desert",
+    "population": 11353,
+    "count": 2
+  },
+  "cold-springs-nv": {
+    "city": "Cold Springs",
+    "state": "nv",
+    "region": "desert",
+    "population": 11321,
+    "count": 3
+  },
+  "stansbury-park-ut": {
+    "city": "Stansbury Park",
+    "state": "ut",
+    "region": "desert",
+    "population": 11242,
+    "count": 4
+  },
+  "pleasant-view-ut": {
+    "city": "Pleasant View",
+    "state": "ut",
+    "region": "desert",
+    "population": 11217,
+    "count": 4
+  },
+  "hyrum-ut": {
+    "city": "Hyrum",
+    "state": "ut",
+    "region": "desert",
+    "population": 10401,
+    "count": 4
+  },
+  "alpine-ut": {
+    "city": "Alpine",
+    "state": "ut",
+    "region": "desert",
+    "population": 10392,
+    "count": 4
+  },
+  "salem-ut": {
+    "city": "Salem",
+    "state": "ut",
+    "region": "desert",
+    "population": 10324,
+    "count": 4
+  },
+  "safford-az": {
+    "city": "Safford",
+    "state": "az",
+    "region": "desert",
+    "population": 10239,
+    "count": 7
+  },
+  "ivins-ut": {
+    "city": "Ivins",
+    "state": "ut",
+    "region": "desert",
+    "population": 9998,
+    "count": 4
+  },
+  "cedar-hills-ut": {
+    "city": "Cedar Hills",
+    "state": "ut",
+    "region": "desert",
+    "population": 9950,
+    "count": 4
+  },
+  "sedona-az": {
+    "city": "Sedona",
+    "state": "az",
+    "region": "desert",
+    "population": 9777,
+    "count": 1
+  },
+  "corona-de-tucson-az": {
+    "city": "Corona de Tucson",
+    "state": "az",
+    "region": "desert",
+    "population": 9566,
+    "count": 3
+  },
+  "arizona-city-az": {
+    "city": "Arizona City",
+    "state": "az",
+    "region": "desert",
+    "population": 9543,
+    "count": 1
+  },
+  "picture-rocks-az": {
+    "city": "Picture Rocks",
+    "state": "az",
+    "region": "desert",
+    "population": 9448,
+    "count": 2
+  },
+  "hooper-ut": {
+    "city": "Hooper",
+    "state": "ut",
+    "region": "desert",
+    "population": 9338,
+    "count": 6
+  },
+  "riverdale-ut": {
+    "city": "Riverdale",
+    "state": "ut",
+    "region": "desert",
+    "population": 9279,
+    "count": 5
+  },
+  "incline-village-nv": {
+    "city": "Incline Village",
+    "state": "nv",
+    "region": "desert",
+    "population": 9272,
+    "count": 3
+  },
+  "washington-terrace-ut": {
+    "city": "Washington Terrace",
+    "state": "ut",
+    "region": "desert",
+    "population": 9182,
+    "count": 5
+  },
+  "providence-ut": {
+    "city": "Providence",
+    "state": "ut",
+    "region": "desert",
+    "population": 8947,
+    "count": 4
+  },
+  "summit-park-ut": {
+    "city": "Summit Park",
+    "state": "ut",
+    "region": "desert",
+    "population": 8537,
+    "count": 4
+  },
+  "plain-city-ut": {
+    "city": "Plain City",
+    "state": "ut",
+    "region": "desert",
+    "population": 8396,
+    "count": 4
+  },
+  "park-city-ut": {
+    "city": "Park City",
+    "state": "ut",
+    "region": "desert",
+    "population": 8362,
+    "count": 5
+  },
+  "winnemucca-nv": {
+    "city": "Winnemucca",
+    "state": "nv",
+    "region": "desert",
+    "population": 8361,
+    "count": 3
+  },
+  "price-ut": {
+    "city": "Price",
+    "state": "ut",
+    "region": "desert",
+    "population": 8248,
+    "count": 1
+  },
+  "richfield-ut": {
+    "city": "Richfield",
+    "state": "ut",
+    "region": "desert",
+    "population": 8224,
+    "count": 4
+  },
+  "santa-clara-ut": {
+    "city": "Santa Clara",
+    "state": "ut",
+    "region": "desert",
+    "population": 8152,
+    "count": 4
+  },
+  "enoch-ut": {
+    "city": "Enoch",
+    "state": "ut",
+    "region": "desert",
+    "population": 8144,
+    "count": 2
+  },
+  "south-weber-ut": {
+    "city": "South Weber",
+    "state": "ut",
+    "region": "desert",
+    "population": 8115,
+    "count": 5
+  },
+  "wickenburg-az": {
+    "city": "Wickenburg",
+    "state": "az",
+    "region": "desert",
+    "population": 8059,
+    "count": 4
+  },
+  "tuba-city-az": {
+    "city": "Tuba City",
+    "state": "az",
+    "region": "desert",
+    "population": 7960,
+    "count": 1
+  },
+  "farr-west-ut": {
+    "city": "Farr West",
+    "state": "ut",
+    "region": "desert",
+    "population": 7952,
+    "count": 4
+  },
+  "nibley-ut": {
+    "city": "Nibley",
+    "state": "ut",
+    "region": "desert",
+    "population": 7952,
+    "count": 4
+  },
+  "tolleson-az": {
+    "city": "Tolleson",
+    "state": "az",
+    "region": "desert",
+    "population": 7668,
+    "count": 5
+  },
+  "page-az": {
+    "city": "Page",
+    "state": "az",
+    "region": "desert",
+    "population": 7345,
+    "count": 2
+  },
+  "globe-az": {
+    "city": "Globe",
+    "state": "az",
+    "region": "desert",
+    "population": 7195,
+    "count": 2
+  },
+  "youngtown-az": {
+    "city": "Youngtown",
+    "state": "az",
+    "region": "desert",
+    "population": 7015,
+    "count": 5
+  },
+  "harrisville-ut": {
+    "city": "Harrisville",
+    "state": "ut",
+    "region": "desert",
+    "population": 6935,
+    "count": 4
+  },
+  "litchfield-park-az": {
+    "city": "Litchfield Park",
+    "state": "az",
+    "region": "desert",
+    "population": 6916,
+    "count": 4
+  },
+  "nephi-ut": {
+    "city": "Nephi",
+    "state": "ut",
+    "region": "desert",
+    "population": 6885,
+    "count": 3
+  },
+  "moapa-valley-nv": {
+    "city": "Moapa Valley",
+    "state": "nv",
+    "region": "desert",
+    "population": 6684,
+    "count": 8
+  },
+  "rincon-valley-az": {
+    "city": "Rincon Valley",
+    "state": "az",
+    "region": "desert",
+    "population": 6512,
+    "count": 3
+  },
+  "catalina-az": {
+    "city": "Catalina",
+    "state": "az",
+    "region": "desert",
+    "population": 6489,
+    "count": 2
+  },
+  "johnson-lane-nv": {
+    "city": "Johnson Lane",
+    "state": "nv",
+    "region": "desert",
+    "population": 6467,
+    "count": 3
+  },
+  "village-of-oak-creek-az": {
+    "city": "Village of Oak Creek",
+    "state": "az",
+    "region": "desert",
+    "population": 6356,
+    "count": 1
+  },
+  "williamson-az": {
+    "city": "Williamson",
+    "state": "az",
+    "region": "desert",
+    "population": 6310,
+    "count": 1
+  },
+  "avra-valley-az": {
+    "city": "Avra Valley",
+    "state": "az",
+    "region": "desert",
+    "population": 6277,
+    "count": 2
+  },
+  "pollock-pines-ca": {
+    "city": "Pollock Pines",
+    "state": "ca",
+    "region": "desert",
+    "population": 6212,
+    "count": 1
+  },
+  "midway-ut": {
+    "city": "Midway",
+    "state": "ut",
+    "region": "desert",
+    "population": 6171,
+    "count": 4
+  },
+  "fruit-heights-ut": {
+    "city": "Fruit Heights",
+    "state": "ut",
+    "region": "desert",
+    "population": 6023,
+    "count": 7
+  },
+  "ephraim-ut": {
+    "city": "Ephraim",
+    "state": "ut",
+    "region": "desert",
+    "population": 5949,
+    "count": 1
+  },
+  "snyderville-ut": {
+    "city": "Snyderville",
+    "state": "ut",
+    "region": "desert",
+    "population": 5948,
+    "count": 5
+  },
+  "preston-id": {
+    "city": "Preston",
+    "state": "id",
+    "region": "desert",
+    "population": 5928,
+    "count": 2
+  },
+  "west-bountiful-ut": {
+    "city": "West Bountiful",
+    "state": "ut",
+    "region": "desert",
+    "population": 5915,
+    "count": 5
+  },
+  "perry-ut": {
+    "city": "Perry",
+    "state": "ut",
+    "region": "desert",
+    "population": 5843,
+    "count": 4
+  },
+  "white-city-ut": {
+    "city": "White City",
+    "state": "ut",
+    "region": "desert",
+    "population": 5669,
+    "count": 5
+  },
+  "sunset-ut": {
+    "city": "Sunset",
+    "state": "ut",
+    "region": "desert",
+    "population": 5587,
+    "count": 5
+  },
+  "hyde-park-ut": {
+    "city": "Hyde Park",
+    "state": "ut",
+    "region": "desert",
+    "population": 5540,
+    "count": 4
+  },
+  "indian-hills-nv": {
+    "city": "Indian Hills",
+    "state": "nv",
+    "region": "desert",
+    "population": 5527,
+    "count": 3
+  },
+  "gardnerville-nv": {
+    "city": "Gardnerville",
+    "state": "nv",
+    "region": "desert",
+    "population": 5486,
+    "count": 3
+  },
+  "thatcher-az": {
+    "city": "Thatcher",
+    "state": "az",
+    "region": "desert",
+    "population": 5439,
+    "count": 8
+  },
+  "benson-az": {
+    "city": "Benson",
+    "state": "az",
+    "region": "desert",
+    "population": 5417,
+    "count": 3
+  },
+  "guadalupe-az": {
+    "city": "Guadalupe",
+    "state": "az",
+    "region": "desert",
+    "population": 5272,
+    "count": 3
+  },
+  "three-points-az": {
+    "city": "Three Points",
+    "state": "az",
+    "region": "desert",
+    "population": 5254,
+    "count": 2
+  },
+  "citrus-park-az": {
+    "city": "Citrus Park",
+    "state": "az",
+    "region": "desert",
+    "population": 5115,
+    "count": 4
+  },
+  "cave-creek-az": {
+    "city": "Cave Creek",
+    "state": "az",
+    "region": "desert",
+    "population": 5091,
+    "count": 4
+  },
+  "nellis-afb-nv": {
+    "city": "Nellis AFB",
+    "state": "nv",
+    "region": "desert",
+    "population": 5087,
+    "count": 6
+  },
+  "kanab-ut": {
+    "city": "Kanab",
+    "state": "ut",
+    "region": "desert",
+    "population": 5081,
+    "count": 4
+  },
+  "silver-springs-nv": {
+    "city": "Silver Springs",
+    "state": "nv",
+    "region": "desert",
+    "population": 5060,
+    "count": 3
+  },
+  "bisbee-az": {
+    "city": "Bisbee",
+    "state": "az",
+    "region": "desert",
+    "population": 4977,
+    "count": 1
+  },
+  "san-carlos-az": {
+    "city": "San Carlos",
+    "state": "az",
+    "region": "desert",
+    "population": 4973,
+    "count": 3
+  },
+  "lake-montezuma-az": {
+    "city": "Lake Montezuma",
+    "state": "az",
+    "region": "desert",
+    "population": 4929,
+    "count": 2
+  },
+  "elk-ridge-ut": {
+    "city": "Elk Ridge",
+    "state": "ut",
+    "region": "desert",
+    "population": 4898,
+    "count": 4
+  },
+  "summit-az": {
+    "city": "Summit",
+    "state": "az",
+    "region": "desert",
+    "population": 4896,
+    "count": 2
+  },
+  "paulden-az": {
+    "city": "Paulden",
+    "state": "az",
+    "region": "desert",
+    "population": 4795,
+    "count": 1
+  },
+  "clarkdale-az": {
+    "city": "Clarkdale",
+    "state": "az",
+    "region": "desert",
+    "population": 4758,
+    "count": 1
+  },
+  "south-tucson-az": {
+    "city": "South Tucson",
+    "state": "az",
+    "region": "desert",
+    "population": 4550,
+    "count": 2
+  },
+  "west-wendover-nv": {
+    "city": "West Wendover",
+    "state": "nv",
+    "region": "desert",
+    "population": 4514,
+    "count": 3
+  },
+  "dewey-humboldt-az": {
+    "city": "Dewey-Humboldt",
+    "state": "az",
+    "region": "desert",
+    "population": 4501,
+    "count": 4
+  },
+  "la-verkin-ut": {
+    "city": "La Verkin",
+    "state": "ut",
+    "region": "desert",
+    "population": 4476,
+    "count": 3
+  },
+  "eagar-az": {
+    "city": "Eagar",
+    "state": "az",
+    "region": "desert",
+    "population": 4416,
+    "count": 1
+  },
+  "lemmon-valley-nv": {
+    "city": "Lemmon Valley",
+    "state": "nv",
+    "region": "desert",
+    "population": 4412,
+    "count": 3
+  },
+  "morgan-ut": {
+    "city": "Morgan",
+    "state": "ut",
+    "region": "desert",
+    "population": 4409,
+    "count": 5
+  },
+  "wellsville-ut": {
+    "city": "Wellsville",
+    "state": "ut",
+    "region": "desert",
+    "population": 4157,
+    "count": 4
+  },
+  "east-basin-ut": {
+    "city": "East Basin",
+    "state": "ut",
+    "region": "desert",
+    "population": 4002,
+    "count": 4
+  },
+  "mountain-green-ut": {
+    "city": "Mountain Green",
+    "state": "ut",
+    "region": "desert",
+    "population": 3976,
+    "count": 6
+  },
+  "erda-ut": {
+    "city": "Erda",
+    "state": "ut",
+    "region": "desert",
+    "population": 3881,
+    "count": 4
+  },
+  "clifton-az": {
+    "city": "Clifton",
+    "state": "az",
+    "region": "desert",
+    "population": 3822,
+    "count": 8
+  },
+  "cordes-lakes-az": {
+    "city": "Cordes Lakes",
+    "state": "az",
+    "region": "desert",
+    "population": 3808,
+    "count": 4
+  },
+  "mount-pleasant-ut": {
+    "city": "Mount Pleasant",
+    "state": "ut",
+    "region": "desert",
+    "population": 3805,
+    "count": 1
+  },
+  "minden-nv": {
+    "city": "Minden",
+    "state": "nv",
+    "region": "desert",
+    "population": 3707,
+    "count": 3
+  },
+  "delta-ut": {
+    "city": "Delta",
+    "state": "ut",
+    "region": "desert",
+    "population": 3705,
+    "count": 2
+  },
+  "carefree-az": {
+    "city": "Carefree",
+    "state": "az",
+    "region": "desert",
+    "population": 3683,
+    "count": 4
+  },
+  "beaver-ut": {
+    "city": "Beaver",
+    "state": "ut",
+    "region": "desert",
+    "population": 3681,
+    "count": 4
+  },
+  "cornville-az": {
+    "city": "Cornville",
+    "state": "az",
+    "region": "desert",
+    "population": 3618,
+    "count": 1
+  },
+  "gunnison-ut": {
+    "city": "Gunnison",
+    "state": "ut",
+    "region": "desert",
+    "population": 3562,
+    "count": 4
+  },
+  "battle-mountain-nv": {
+    "city": "Battle Mountain",
+    "state": "nv",
+    "region": "desert",
+    "population": 3518,
+    "count": 2
+  },
+  "san-manuel-az": {
+    "city": "San Manuel",
+    "state": "az",
+    "region": "desert",
+    "population": 3491,
+    "count": 3
+  },
+  "sacaton-az": {
+    "city": "Sacaton",
+    "state": "az",
+    "region": "desert",
+    "population": 3429,
+    "count": 1
+  },
+  "parker-az": {
+    "city": "Parker",
+    "state": "az",
+    "region": "desert",
+    "population": 3388,
+    "count": 1
+  },
+  "washoe-valley-nv": {
+    "city": "Washoe Valley",
+    "state": "nv",
+    "region": "desert",
+    "population": 3315,
+    "count": 3
+  },
+  "red-rock-az": {
+    "city": "Red Rock",
+    "state": "az",
+    "region": "desert",
+    "population": 3277,
+    "count": 2
+  },
+  "willcox-az": {
+    "city": "Willcox",
+    "state": "az",
+    "region": "desert",
+    "population": 3222,
+    "count": 4
+  },
+  "yerington-nv": {
+    "city": "Yerington",
+    "state": "nv",
+    "region": "desert",
+    "population": 3150,
+    "count": 3
+  },
+  "oracle-az": {
+    "city": "Oracle",
+    "state": "az",
+    "region": "desert",
+    "population": 3146,
+    "count": 3
+  },
+  "ajo-az": {
+    "city": "Ajo",
+    "state": "az",
+    "region": "desert",
+    "population": 3107,
+    "count": 1
+  },
+  "richmond-ut": {
+    "city": "Richmond",
+    "state": "ut",
+    "region": "desert",
+    "population": 3000,
+    "count": 4
+  },
+  "pima-az": {
+    "city": "Pima",
+    "state": "az",
+    "region": "desert",
+    "population": 2995,
+    "count": 8
+  },
+  "whetstone-az": {
+    "city": "Whetstone",
+    "state": "az",
+    "region": "desert",
+    "population": 2971,
+    "count": 2
+  },
+  "central-heights-midland-city-az": {
+    "city": "Central Heights-Midland City",
+    "state": "az",
+    "region": "desert",
+    "population": 2909,
+    "count": 2
+  },
+  "swift-trail-junction-az": {
+    "city": "Swift Trail Junction",
+    "state": "az",
+    "region": "desert",
+    "population": 2859,
+    "count": 7
+  },
+  "bagdad-az": {
+    "city": "Bagdad",
+    "state": "az",
+    "region": "desert",
+    "population": 2814,
+    "count": 3
+  },
+  "kings-beach-ca": {
+    "city": "Kings Beach",
+    "state": "ca",
+    "region": "desert",
+    "population": 2736,
+    "count": 3
+  },
+  "colorado-city-az": {
+    "city": "Colorado City",
+    "state": "az",
+    "region": "desert",
+    "population": 2702,
+    "count": 3
+  },
+  "helper-ut": {
+    "city": "Helper",
+    "state": "ut",
+    "region": "desert",
+    "population": 2698,
+    "count": 1
+  },
+  "fillmore-ut": {
+    "city": "Fillmore",
+    "state": "ut",
+    "region": "desert",
+    "population": 2676,
+    "count": 5
+  },
+  "garland-ut": {
+    "city": "Garland",
+    "state": "ut",
+    "region": "desert",
+    "population": 2660,
+    "count": 5
+  },
+  "monroe-ut": {
+    "city": "Monroe",
+    "state": "ut",
+    "region": "desert",
+    "population": 2616,
+    "count": 4
+  },
+  "malad-city-id": {
+    "city": "Malad City",
+    "state": "id",
+    "region": "desert",
+    "population": 2601,
+    "count": 3
+  },
+  "lake-point-ut": {
+    "city": "Lake Point",
+    "state": "ut",
+    "region": "desert",
+    "population": 2563,
+    "count": 5
+  },
+  "salina-ut": {
+    "city": "Salina",
+    "state": "ut",
+    "region": "desert",
+    "population": 2546,
+    "count": 4
+  },
+  "superior-az": {
+    "city": "Superior",
+    "state": "az",
+    "region": "desert",
+    "population": 2535,
+    "count": 2
+  },
+  "star-valley-az": {
+    "city": "Star Valley",
+    "state": "az",
+    "region": "desert",
+    "population": 2525,
+    "count": 2
+  },
+  "portola-ca": {
+    "city": "Portola",
+    "state": "ca",
+    "region": "desert",
+    "population": 2441,
+    "count": 1
+  },
+  "lewiston-ut": {
+    "city": "Lewiston",
+    "state": "ut",
+    "region": "desert",
+    "population": 2408,
+    "count": 4
+  },
+  "valle-vista-az": {
+    "city": "Valle Vista",
+    "state": "az",
+    "region": "desert",
+    "population": 2369,
+    "count": 2
+  },
+  "toquerville-ut": {
+    "city": "Toquerville",
+    "state": "ut",
+    "region": "desert",
+    "population": 2344,
+    "count": 3
+  },
+  "river-heights-ut": {
+    "city": "River Heights",
+    "state": "ut",
+    "region": "desert",
+    "population": 2282,
+    "count": 4
+  },
+  "rio-verde-az": {
+    "city": "Rio Verde",
+    "state": "az",
+    "region": "desert",
+    "population": 2261,
+    "count": 3
+  },
+  "willard-ut": {
+    "city": "Willard",
+    "state": "ut",
+    "region": "desert",
+    "population": 2212,
+    "count": 4
+  },
+  "kingsbury-nv": {
+    "city": "Kingsbury",
+    "state": "nv",
+    "region": "desert",
+    "population": 2209,
+    "count": 3
+  },
+  "black-canyon-city-az": {
+    "city": "Black Canyon City",
+    "state": "az",
+    "region": "desert",
+    "population": 2181,
+    "count": 4
+  },
+  "kearny-az": {
+    "city": "Kearny",
+    "state": "az",
+    "region": "desert",
+    "population": 2109,
+    "count": 3
+  },
+  "kamas-ut": {
+    "city": "Kamas",
+    "state": "ut",
+    "region": "desert",
+    "population": 2096,
+    "count": 4
+  },
+  "carlin-nv": {
+    "city": "Carlin",
+    "state": "nv",
+    "region": "desert",
+    "population": 2088,
+    "count": 1
+  },
+  "camino-ca": {
+    "city": "Camino",
+    "state": "ca",
+    "region": "desert",
+    "population": 2079,
+    "count": 1
+  },
+  "lordsburg-nm": {
+    "city": "Lordsburg",
+    "state": "nm",
+    "region": "desert",
+    "population": 2057,
+    "count": 1
+  },
+  "meyers-ca": {
+    "city": "Meyers",
+    "state": "ca",
+    "region": "desert",
+    "population": 1995,
+    "count": 3
+  },
+  "francis-ut": {
+    "city": "Francis",
+    "state": "ut",
+    "region": "desert",
+    "population": 1989,
+    "count": 4
+  },
+  "marriott-slaterville-ut": {
+    "city": "Marriott-Slaterville",
+    "state": "ut",
+    "region": "desert",
+    "population": 1979,
+    "count": 5
+  },
+  "cienega-springs-az": {
+    "city": "Cienega Springs",
+    "state": "az",
+    "region": "desert",
+    "population": 1958,
+    "count": 2
+  },
+  "blackwater-az": {
+    "city": "Blackwater",
+    "state": "az",
+    "region": "desert",
+    "population": 1958,
+    "count": 1
+  },
+  "enterprise-ut": {
+    "city": "Enterprise",
+    "state": "ut",
+    "region": "desert",
+    "population": 1955,
+    "count": 4
+  },
+  "pirtleville-az": {
+    "city": "Pirtleville",
+    "state": "az",
+    "region": "desert",
+    "population": 1939,
+    "count": 1
+  },
+  "tonopah-nv": {
+    "city": "Tonopah",
+    "state": "nv",
+    "region": "desert",
+    "population": 1910,
+    "count": 3
+  },
+  "stagecoach-nv": {
+    "city": "Stagecoach",
+    "state": "nv",
+    "region": "desert",
+    "population": 1892,
+    "count": 3
+  },
+  "coalville-ut": {
+    "city": "Coalville",
+    "state": "ut",
+    "region": "desert",
+    "population": 1881,
+    "count": 4
+  },
+  "quartzsite-az": {
+    "city": "Quartzsite",
+    "state": "az",
+    "region": "desert",
+    "population": 1877,
+    "count": 1
+  },
+  "genola-ut": {
+    "city": "Genola",
+    "state": "ut",
+    "region": "desert",
+    "population": 1842,
+    "count": 4
+  },
+  "centennial-park-az": {
+    "city": "Centennial Park",
+    "state": "az",
+    "region": "desert",
+    "population": 1839,
+    "count": 3
+  },
+  "smith-valley-nv": {
+    "city": "Smith Valley",
+    "state": "nv",
+    "region": "desert",
+    "population": 1807,
+    "count": 3
+  },
+  "millville-ut": {
+    "city": "Millville",
+    "state": "ut",
+    "region": "desert",
+    "population": 1800,
+    "count": 4
+  },
+  "benson-ut": {
+    "city": "Benson",
+    "state": "ut",
+    "region": "desert",
+    "population": 1776,
+    "count": 4
+  },
+  "mescal-az": {
+    "city": "Mescal",
+    "state": "az",
+    "region": "desert",
+    "population": 1760,
+    "count": 3
+  },
+  "uintah-ut": {
+    "city": "Uintah",
+    "state": "ut",
+    "region": "desert",
+    "population": 1754,
+    "count": 5
+  },
+  "tonto-basin-az": {
+    "city": "Tonto Basin",
+    "state": "az",
+    "region": "desert",
+    "population": 1750,
+    "count": 2
+  },
+  "sandy-valley-nv": {
+    "city": "Sandy Valley",
+    "state": "nv",
+    "region": "desert",
+    "population": 1742,
+    "count": 2
+  },
+  "pine-az": {
+    "city": "Pine",
+    "state": "az",
+    "region": "desert",
+    "population": 1740,
+    "count": 2
+  },
+  "panguitch-ut": {
+    "city": "Panguitch",
+    "state": "ut",
+    "region": "desert",
+    "population": 1701,
+    "count": 1
+  },
+  "casa-blanca-az": {
+    "city": "Casa Blanca",
+    "state": "az",
+    "region": "desert",
+    "population": 1697,
+    "count": 2
+  },
+  "ruhenstroth-nv": {
+    "city": "Ruhenstroth",
+    "state": "nv",
+    "region": "desert",
+    "population": 1682,
+    "count": 3
+  },
+  "mantua-ut": {
+    "city": "Mantua",
+    "state": "ut",
+    "region": "desert",
+    "population": 1677,
+    "count": 4
+  },
+  "mona-ut": {
+    "city": "Mona",
+    "state": "ut",
+    "region": "desert",
+    "population": 1674,
+    "count": 3
+  },
+  "morenci-az": {
+    "city": "Morenci",
+    "state": "az",
+    "region": "desert",
+    "population": 1673,
+    "count": 8
+  },
+  "spring-valley-az": {
+    "city": "Spring Valley",
+    "state": "az",
+    "region": "desert",
+    "population": 1673,
+    "count": 4
+  },
+  "kaibito-az": {
+    "city": "Kaibito",
+    "state": "az",
+    "region": "desert",
+    "population": 1661,
+    "count": 1
+  },
+  "oakley-ut": {
+    "city": "Oakley",
+    "state": "ut",
+    "region": "desert",
+    "population": 1638,
+    "count": 4
+  },
+  "carbonville-ut": {
+    "city": "Carbonville",
+    "state": "ut",
+    "region": "desert",
+    "population": 1636,
+    "count": 1
+  },
+  "beaver-dam-az": {
+    "city": "Beaver Dam",
+    "state": "az",
+    "region": "desert",
+    "population": 1624,
+    "count": 7
+  },
+  "topaz-ranch-estates-nv": {
+    "city": "Topaz Ranch Estates",
+    "state": "nv",
+    "region": "desert",
+    "population": 1621,
+    "count": 3
+  },
+  "huachuca-city-az": {
+    "city": "Huachuca City",
+    "state": "az",
+    "region": "desert",
+    "population": 1614,
+    "count": 2
+  },
+  "grand-canyon-village-az": {
+    "city": "Grand Canyon Village",
+    "state": "az",
+    "region": "desert",
+    "population": 1599,
+    "count": 2
+  },
+  "sunnyside-tahoe-city-ca": {
+    "city": "Sunnyside-Tahoe City",
+    "state": "ca",
+    "region": "desert",
+    "population": 1599,
+    "count": 3
+  },
+  "woodland-hills-ut": {
+    "city": "Woodland Hills",
+    "state": "ut",
+    "region": "desert",
+    "population": 1559,
+    "count": 4
+  },
+  "bylas-az": {
+    "city": "Bylas",
+    "state": "az",
+    "region": "desert",
+    "population": 1551,
+    "count": 7
+  },
+  "milford-ut": {
+    "city": "Milford",
+    "state": "ut",
+    "region": "desert",
+    "population": 1547,
+    "count": 3
+  },
+  "elwood-ut": {
+    "city": "Elwood",
+    "state": "ut",
+    "region": "desert",
+    "population": 1547,
+    "count": 5
+  },
+  "moroni-ut": {
+    "city": "Moroni",
+    "state": "ut",
+    "region": "desert",
+    "population": 1535,
+    "count": 1
+  },
+  "south-willard-ut": {
+    "city": "South Willard",
+    "state": "ut",
+    "region": "desert",
+    "population": 1532,
+    "count": 4
+  },
+  "fountain-green-ut": {
+    "city": "Fountain Green",
+    "state": "ut",
+    "region": "desert",
+    "population": 1521,
+    "count": 1
+  },
+  "meadview-az": {
+    "city": "Meadview",
+    "state": "az",
+    "region": "desert",
+    "population": 1517,
+    "count": 7
+  },
+  "cactus-flats-az": {
+    "city": "Cactus Flats",
+    "state": "az",
+    "region": "desert",
+    "population": 1508,
+    "count": 7
+  },
+  "congress-az": {
+    "city": "Congress",
+    "state": "az",
+    "region": "desert",
+    "population": 1491,
+    "count": 4
+  },
+  "liberty-ut": {
+    "city": "Liberty",
+    "state": "ut",
+    "region": "desert",
+    "population": 1484,
+    "count": 4
+  },
+  "mendon-ut": {
+    "city": "Mendon",
+    "state": "ut",
+    "region": "desert",
+    "population": 1482,
+    "count": 4
+  },
+  "lovelock-nv": {
+    "city": "Lovelock",
+    "state": "nv",
+    "region": "desert",
+    "population": 1481,
+    "count": 4
+  },
+  "dollar-point-ca": {
+    "city": "Dollar Point",
+    "state": "ca",
+    "region": "desert",
+    "population": 1477,
+    "count": 3
+  },
+  "silver-summit-ut": {
+    "city": "Silver Summit",
+    "state": "ut",
+    "region": "desert",
+    "population": 1476,
+    "count": 4
+  },
+  "amargosa-valley-nv": {
+    "city": "Amargosa Valley",
+    "state": "nv",
+    "region": "desert",
+    "population": 1445,
+    "count": 2
+  },
+  "emigration-canyon-ut": {
+    "city": "Emigration Canyon",
+    "state": "ut",
+    "region": "desert",
+    "population": 1433,
+    "count": 4
+  },
+  "jackpot-nv": {
+    "city": "Jackpot",
+    "state": "nv",
+    "region": "desert",
+    "population": 1415,
+    "count": 2
+  },
+  "grizzly-flats-ca": {
+    "city": "Grizzly Flats",
+    "state": "ca",
+    "region": "desert",
+    "population": 1410,
+    "count": 1
+  },
+  "miami-az": {
+    "city": "Miami",
+    "state": "az",
+    "region": "desert",
+    "population": 1405,
+    "count": 2
+  },
+  "kaibab-estates-west-az": {
+    "city": "Kaibab Estates West",
+    "state": "az",
+    "region": "desert",
+    "population": 1403,
+    "count": 1
+  },
+  "scenic-az": {
+    "city": "Scenic",
+    "state": "az",
+    "region": "desert",
+    "population": 1379,
+    "count": 8
+  },
+  "hildale-ut": {
+    "city": "Hildale",
+    "state": "ut",
+    "region": "desert",
+    "population": 1372,
+    "count": 3
+  },
+  "gila-bend-az": {
+    "city": "Gila Bend",
+    "state": "az",
+    "region": "desert",
+    "population": 1363,
+    "count": 3
+  },
+  "wells-nv": {
+    "city": "Wells",
+    "state": "nv",
+    "region": "desert",
+    "population": 1352,
+    "count": 4
+  },
+  "fairview-ut": {
+    "city": "Fairview",
+    "state": "ut",
+    "region": "desert",
+    "population": 1342,
+    "count": 1
+  },
+  "dolan-springs-az": {
+    "city": "Dolan Springs",
+    "state": "az",
+    "region": "desert",
+    "population": 1341,
+    "count": 5
+  },
+  "osino-nv": {
+    "city": "Osino",
+    "state": "nv",
+    "region": "desert",
+    "population": 1341,
+    "count": 3
+  },
+  "wolf-creek-ut": {
+    "city": "Wolf Creek",
+    "state": "ut",
+    "region": "desert",
+    "population": 1339,
+    "count": 4
+  },
+  "lechee-az": {
+    "city": "LeChee",
+    "state": "az",
+    "region": "desert",
+    "population": 1307,
+    "count": 2
+  },
+  "tubac-az": {
+    "city": "Tubac",
+    "state": "az",
+    "region": "desert",
+    "population": 1294,
+    "count": 1
+  },
+  "genoa-nv": {
+    "city": "Genoa",
+    "state": "nv",
+    "region": "desert",
+    "population": 1284,
+    "count": 3
+  },
+  "east-valley-nv": {
+    "city": "East Valley",
+    "state": "nv",
+    "region": "desert",
+    "population": 1283,
+    "count": 3
+  },
+  "west-mountain-ut": {
+    "city": "West Mountain",
+    "state": "ut",
+    "region": "desert",
+    "population": 1282,
+    "count": 4
+  },
+  "honeyville-ut": {
+    "city": "Honeyville",
+    "state": "ut",
+    "region": "desert",
+    "population": 1275,
+    "count": 5
+  },
+  "wendover-ut": {
+    "city": "Wendover",
+    "state": "ut",
+    "region": "desert",
+    "population": 1261,
+    "count": 2
+  },
+  "claypool-az": {
+    "city": "Claypool",
+    "state": "az",
+    "region": "desert",
+    "population": 1259,
+    "count": 2
+  },
+  "hideout-ut": {
+    "city": "Hideout",
+    "state": "ut",
+    "region": "desert",
+    "population": 1253,
+    "count": 5
+  },
+  "centerfield-ut": {
+    "city": "Centerfield",
+    "state": "ut",
+    "region": "desert",
+    "population": 1240,
+    "count": 4
+  },
+  "peach-springs-az": {
+    "city": "Peach Springs",
+    "state": "az",
+    "region": "desert",
+    "population": 1234,
+    "count": 3
+  },
+  "bouse-az": {
+    "city": "Bouse",
+    "state": "az",
+    "region": "desert",
+    "population": 1203,
+    "count": 1
+  },
+  "mammoth-az": {
+    "city": "Mammoth",
+    "state": "az",
+    "region": "desert",
+    "population": 1191,
+    "count": 3
+  },
+  "apple-valley-ut": {
+    "city": "Apple Valley",
+    "state": "ut",
+    "region": "desert",
+    "population": 1181,
+    "count": 4
+  },
+  "indian-springs-nv": {
+    "city": "Indian Springs",
+    "state": "nv",
+    "region": "desert",
+    "population": 1180,
+    "count": 1
+  },
+  "thatcher-ut": {
+    "city": "Thatcher",
+    "state": "ut",
+    "region": "desert",
+    "population": 1170,
+    "count": 5
+  },
+  "spring-glen-ut": {
+    "city": "Spring Glen",
+    "state": "ut",
+    "region": "desert",
+    "population": 1157,
+    "count": 1
+  },
+  "caliente-nv": {
+    "city": "Caliente",
+    "state": "nv",
+    "region": "desert",
+    "population": 1146,
+    "count": 3
+  },
+  "big-river-ca": {
+    "city": "Big River",
+    "state": "ca",
+    "region": "desert",
+    "population": 1140,
+    "count": 1
+  },
+  "golden-valley-nv": {
+    "city": "Golden Valley",
+    "state": "nv",
+    "region": "desert",
+    "population": 1139,
+    "count": 3
+  },
+  "riverside-ut": {
+    "city": "Riverside",
+    "state": "ut",
+    "region": "desert",
+    "population": 1135,
+    "count": 5
+  },
+  "grass-valley-nv": {
+    "city": "Grass Valley",
+    "state": "nv",
+    "region": "desert",
+    "population": 1134,
+    "count": 3
+  },
+  "ak-chin-village-az": {
+    "city": "Ak-Chin Village",
+    "state": "az",
+    "region": "desert",
+    "population": 1132,
+    "count": 1
+  },
+  "lake-shore-ut": {
+    "city": "Lake Shore",
+    "state": "ut",
+    "region": "desert",
+    "population": 1129,
+    "count": 4
+  },
+  "queen-valley-az": {
+    "city": "Queen Valley",
+    "state": "az",
+    "region": "desert",
+    "population": 1118,
+    "count": 2
+  },
+  "wilhoit-az": {
+    "city": "Wilhoit",
+    "state": "az",
+    "region": "desert",
+    "population": 1101,
+    "count": 3
+  },
+  "st-david-az": {
+    "city": "St. David",
+    "state": "az",
+    "region": "desert",
+    "population": 1098,
+    "count": 3
+  },
+  "strawberry-az": {
+    "city": "Strawberry",
+    "state": "az",
+    "region": "desert",
+    "population": 1094,
+    "count": 2
+  },
+  "circle-city-az": {
+    "city": "Circle City",
+    "state": "az",
+    "region": "desert",
+    "population": 1089,
+    "count": 4
+  },
+  "cedar-flat-ca": {
+    "city": "Cedar Flat",
+    "state": "ca",
+    "region": "desert",
+    "population": 1089,
+    "count": 3
+  },
+  "fredonia-az": {
+    "city": "Fredonia",
+    "state": "az",
+    "region": "desert",
+    "population": 1061,
+    "count": 5
+  },
+  "naco-az": {
+    "city": "Naco",
+    "state": "az",
+    "region": "desert",
+    "population": 1060,
+    "count": 1
+  },
+  "copperton-ut": {
+    "city": "Copperton",
+    "state": "ut",
+    "region": "desert",
+    "population": 1060,
+    "count": 4
+  },
+  "rocky-ridge-ut": {
+    "city": "Rocky Ridge",
+    "state": "ut",
+    "region": "desert",
+    "population": 1060,
+    "count": 4
+  },
+  "spring-city-ut": {
+    "city": "Spring City",
+    "state": "ut",
+    "region": "desert",
+    "population": 1057,
+    "count": 1
+  },
+  "mogul-nv": {
+    "city": "Mogul",
+    "state": "nv",
+    "region": "desert",
+    "population": 1050,
+    "count": 3
+  },
+  "tahoe-vista-ca": {
+    "city": "Tahoe Vista",
+    "state": "ca",
+    "region": "desert",
+    "population": 1048,
+    "count": 3
+  },
+  "daniel-ut": {
+    "city": "Daniel",
+    "state": "ut",
+    "region": "desert",
+    "population": 1044,
+    "count": 4
+  },
+  "franklin-id": {
+    "city": "Franklin",
+    "state": "id",
+    "region": "desert",
+    "population": 1034,
+    "count": 3
+  },
+  "pioche-nv": {
+    "city": "Pioche",
+    "state": "nv",
+    "region": "desert",
+    "population": 1031,
+    "count": 1
+  },
+  "tombstone-az": {
+    "city": "Tombstone",
+    "state": "az",
+    "region": "desert",
+    "population": 1026,
+    "count": 1
+  },
+  "mesa-verde-ca": {
+    "city": "Mesa Verde",
+    "state": "ca",
+    "region": "desert",
+    "population": 1016,
+    "count": 1
+  },
+  "panaca-nv": {
+    "city": "Panaca",
+    "state": "nv",
+    "region": "desert",
+    "population": 1015,
+    "count": 2
+  },
+  "verdi-nv": {
+    "city": "Verdi",
+    "state": "nv",
+    "region": "desert",
+    "population": 1012,
+    "count": 3
+  },
+  "henefer-ut": {
+    "city": "Henefer",
+    "state": "ut",
+    "region": "desert",
+    "population": 1005,
+    "count": 3
+  },
+  "peridot-az": {
+    "city": "Peridot",
+    "state": "az",
+    "region": "desert",
+    "population": 999,
+    "count": 3
+  },
+  "blue-ridge-az": {
+    "city": "Blue Ridge",
+    "state": "az",
+    "region": "desert",
+    "population": 992,
+    "count": 1
+  },
+  "duncan-az": {
+    "city": "Duncan",
+    "state": "az",
+    "region": "desert",
+    "population": 969,
+    "count": 7
+  },
+  "west-wood-ut": {
+    "city": "West Wood",
+    "state": "ut",
+    "region": "desert",
+    "population": 962,
+    "count": 1
+  },
+  "moapa-town-nv": {
+    "city": "Moapa Town",
+    "state": "nv",
+    "region": "desert",
+    "population": 958,
+    "count": 6
+  },
+  "aurora-ut": {
+    "city": "Aurora",
+    "state": "ut",
+    "region": "desert",
+    "population": 949,
+    "count": 5
+  },
+  "patagonia-az": {
+    "city": "Patagonia",
+    "state": "az",
+    "region": "desert",
+    "population": 946,
+    "count": 2
+  },
+  "mesa-del-caballo-az": {
+    "city": "Mesa del Caballo",
+    "state": "az",
+    "region": "desert",
+    "population": 944,
+    "count": 2
+  },
+  "granite-ut": {
+    "city": "Granite",
+    "state": "ut",
+    "region": "desert",
+    "population": 908,
+    "count": 5
+  },
+  "stockton-ut": {
+    "city": "Stockton",
+    "state": "ut",
+    "region": "desert",
+    "population": 901,
+    "count": 3
+  },
+  "bluewater-az": {
+    "city": "Bluewater",
+    "state": "az",
+    "region": "desert",
+    "population": 897,
+    "count": 1
+  },
+  "moenkopi-az": {
+    "city": "Moenkopi",
+    "state": "az",
+    "region": "desert",
+    "population": 879,
+    "count": 1
+  },
+  "dammeron-valley-ut": {
+    "city": "Dammeron Valley",
+    "state": "ut",
+    "region": "desert",
+    "population": 877,
+    "count": 4
+  },
+  "minersville-ut": {
+    "city": "Minersville",
+    "state": "ut",
+    "region": "desert",
+    "population": 873,
+    "count": 2
+  },
+  "tahoma-ca": {
+    "city": "Tahoma",
+    "state": "ca",
+    "region": "desert",
+    "population": 873,
+    "count": 3
+  },
+  "bear-river-city-ut": {
+    "city": "Bear River City",
+    "state": "ut",
+    "region": "desert",
+    "population": 867,
+    "count": 5
+  },
+  "benjamin-ut": {
+    "city": "Benjamin",
+    "state": "ut",
+    "region": "desert",
+    "population": 864,
+    "count": 4
+  },
+  "parker-strip-az": {
+    "city": "Parker Strip",
+    "state": "az",
+    "region": "desert",
+    "population": 861,
+    "count": 2
+  },
+  "hinckley-ut": {
+    "city": "Hinckley",
+    "state": "ut",
+    "region": "desert",
+    "population": 855,
+    "count": 2
+  },
+  "oak-city-ut": {
+    "city": "Oak City",
+    "state": "ut",
+    "region": "desert",
+    "population": 854,
+    "count": 2
+  },
+  "levan-ut": {
+    "city": "Levan",
+    "state": "ut",
+    "region": "desert",
+    "population": 853,
+    "count": 2
+  },
+  "eden-ut": {
+    "city": "Eden",
+    "state": "ut",
+    "region": "desert",
+    "population": 840,
+    "count": 4
+  },
+  "goshen-ut": {
+    "city": "Goshen",
+    "state": "ut",
+    "region": "desert",
+    "population": 838,
+    "count": 4
+  },
+  "maricopa-colony-az": {
+    "city": "Maricopa Colony",
+    "state": "az",
+    "region": "desert",
+    "population": 836,
+    "count": 3
+  },
+  "oakley-id": {
+    "city": "Oakley",
+    "state": "id",
+    "region": "desert",
+    "population": 830,
+    "count": 1
+  },
+  "gila-crossing-az": {
+    "city": "Gila Crossing",
+    "state": "az",
+    "region": "desert",
+    "population": 830,
+    "count": 3
+  },
+  "marion-ut": {
+    "city": "Marion",
+    "state": "ut",
+    "region": "desert",
+    "population": 830,
+    "count": 5
+  },
+  "eureka-ut": {
+    "city": "Eureka",
+    "state": "ut",
+    "region": "desert",
+    "population": 828,
+    "count": 4
+  },
+  "bear-river-wy": {
+    "city": "Bear River",
+    "state": "wy",
+    "region": "desert",
+    "population": 827,
+    "count": 1
+  },
+  "round-hill-village-nv": {
+    "city": "Round Hill Village",
+    "state": "nv",
+    "region": "desert",
+    "population": 823,
+    "count": 3
+  },
+  "six-shooter-canyon-az": {
+    "city": "Six Shooter Canyon",
+    "state": "az",
+    "region": "desert",
+    "population": 811,
+    "count": 2
+  },
+  "komatke-az": {
+    "city": "Komatke",
+    "state": "az",
+    "region": "desert",
+    "population": 809,
+    "count": 3
+  },
+  "orderville-ut": {
+    "city": "Orderville",
+    "state": "ut",
+    "region": "desert",
+    "population": 803,
+    "count": 3
+  },
+  "hoytsville-ut": {
+    "city": "Hoytsville",
+    "state": "ut",
+    "region": "desert",
+    "population": 800,
+    "count": 4
+  },
+  "mayer-az": {
+    "city": "Mayer",
+    "state": "az",
+    "region": "desert",
+    "population": 791,
+    "count": 4
+  },
+  "clifton-id": {
+    "city": "Clifton",
+    "state": "id",
+    "region": "desert",
+    "population": 788,
+    "count": 3
+  },
+  "corinne-ut": {
+    "city": "Corinne",
+    "state": "ut",
+    "region": "desert",
+    "population": 783,
+    "count": 5
+  },
+  "brenda-az": {
+    "city": "Brenda",
+    "state": "az",
+    "region": "desert",
+    "population": 780,
+    "count": 1
+  },
+  "doyle-ca": {
+    "city": "Doyle",
+    "state": "ca",
+    "region": "desert",
+    "population": 779,
+    "count": 1
+  },
+  "central-valley-ut": {
+    "city": "Central Valley",
+    "state": "ut",
+    "region": "desert",
+    "population": 767,
+    "count": 4
+  },
+  "redmond-ut": {
+    "city": "Redmond",
+    "state": "ut",
+    "region": "desert",
+    "population": 767,
+    "count": 5
+  },
+  "newton-ut": {
+    "city": "Newton",
+    "state": "ut",
+    "region": "desert",
+    "population": 756,
+    "count": 5
+  },
+  "elsinore-ut": {
+    "city": "Elsinore",
+    "state": "ut",
+    "region": "desert",
+    "population": 750,
+    "count": 4
+  },
+  "loyalton-ca": {
+    "city": "Loyalton",
+    "state": "ca",
+    "region": "desert",
+    "population": 748,
+    "count": 2
+  },
+  "fielding-ut": {
+    "city": "Fielding",
+    "state": "ut",
+    "region": "desert",
+    "population": 746,
+    "count": 5
+  },
+  "peeples-valley-az": {
+    "city": "Peeples Valley",
+    "state": "az",
+    "region": "desert",
+    "population": 746,
+    "count": 3
+  },
+  "alamo-nv": {
+    "city": "Alamo",
+    "state": "nv",
+    "region": "desert",
+    "population": 736,
+    "count": 2
+  },
+  "salome-az": {
+    "city": "Salome",
+    "state": "az",
+    "region": "desert",
+    "population": 730,
+    "count": 2
+  },
+  "delleker-ca": {
+    "city": "Delleker",
+    "state": "ca",
+    "region": "desert",
+    "population": 724,
+    "count": 1
+  },
+  "randolph-ut": {
+    "city": "Randolph",
+    "state": "ut",
+    "region": "desert",
+    "population": 722,
+    "count": 2
+  },
+  "miracle-valley-az": {
+    "city": "Miracle Valley",
+    "state": "az",
+    "region": "desert",
+    "population": 716,
+    "count": 1
+  },
+  "virgin-ut": {
+    "city": "Virgin",
+    "state": "ut",
+    "region": "desert",
+    "population": 715,
+    "count": 3
+  },
+  "wadsworth-nv": {
+    "city": "Wadsworth",
+    "state": "nv",
+    "region": "desert",
+    "population": 705,
+    "count": 2
+  },
+  "annabella-ut": {
+    "city": "Annabella",
+    "state": "ut",
+    "region": "desert",
+    "population": 701,
+    "count": 4
+  },
+  "ehrenberg-az": {
+    "city": "Ehrenberg",
+    "state": "az",
+    "region": "desert",
+    "population": 697,
+    "count": 1
+  },
+  "crescent-valley-nv": {
+    "city": "Crescent Valley",
+    "state": "nv",
+    "region": "desert",
+    "population": 690,
+    "count": 2
+  },
+  "chilcoot-vinton-ca": {
+    "city": "Chilcoot-Vinton",
+    "state": "ca",
+    "region": "desert",
+    "population": 686,
+    "count": 2
+  },
+  "dudleyville-az": {
+    "city": "Dudleyville",
+    "state": "az",
+    "region": "desert",
+    "population": 684,
+    "count": 4
+  },
+  "timber-lakes-ut": {
+    "city": "Timber Lakes",
+    "state": "ut",
+    "region": "desert",
+    "population": 683,
+    "count": 4
+  },
+  "paradise-ut": {
+    "city": "Paradise",
+    "state": "ut",
+    "region": "desert",
+    "population": 679,
+    "count": 4
+  },
+  "glenwood-ut": {
+    "city": "Glenwood",
+    "state": "ut",
+    "region": "desert",
+    "population": 673,
+    "count": 4
+  },
+  "sonoita-az": {
+    "city": "Sonoita",
+    "state": "az",
+    "region": "desert",
+    "population": 663,
+    "count": 2
+  },
+  "central-ut": {
+    "city": "Central",
+    "state": "ut",
+    "region": "desert",
+    "population": 660,
+    "count": 3
+  },
+  "spring-lake-ut": {
+    "city": "Spring Lake",
+    "state": "ut",
+    "region": "desert",
+    "population": 657,
+    "count": 4
+  },
+  "central-az": {
+    "city": "Central",
+    "state": "az",
+    "region": "desert",
+    "population": 657,
+    "count": 8
+  },
+  "owyhee-nv": {
+    "city": "Owyhee",
+    "state": "nv",
+    "region": "desert",
+    "population": 647,
+    "count": 1
+  },
+  "paragonah-ut": {
+    "city": "Paragonah",
+    "state": "ut",
+    "region": "desert",
+    "population": 647,
+    "count": 1
+  },
+  "leeds-ut": {
+    "city": "Leeds",
+    "state": "ut",
+    "region": "desert",
+    "population": 646,
+    "count": 3
+  },
+  "virginia-city-nv": {
+    "city": "Virginia City",
+    "state": "nv",
+    "region": "desert",
+    "population": 644,
+    "count": 3
+  },
+  "arivaca-junction-az": {
+    "city": "Arivaca Junction",
+    "state": "az",
+    "region": "desert",
+    "population": 642,
+    "count": 1
+  },
+  "cactus-forest-az": {
+    "city": "Cactus Forest",
+    "state": "az",
+    "region": "desert",
+    "population": 640,
+    "count": 2
+  },
+  "yarnell-az": {
+    "city": "Yarnell",
+    "state": "az",
+    "region": "desert",
+    "population": 638,
+    "count": 3
+  },
+  "cane-beds-az": {
+    "city": "Cane Beds",
+    "state": "az",
+    "region": "desert",
+    "population": 637,
+    "count": 3
+  },
+  "round-valley-az": {
+    "city": "Round Valley",
+    "state": "az",
+    "region": "desert",
+    "population": 631,
+    "count": 2
+  },
+  "wittmann-az": {
+    "city": "Wittmann",
+    "state": "az",
+    "region": "desert",
+    "population": 631,
+    "count": 5
+  },
+  "woodland-ut": {
+    "city": "Woodland",
+    "state": "ut",
+    "region": "desert",
+    "population": 625,
+    "count": 4
+  },
+  "clarkston-ut": {
+    "city": "Clarkston",
+    "state": "ut",
+    "region": "desert",
+    "population": 623,
+    "count": 5
+  },
+  "sunsites-az": {
+    "city": "Sunsites",
+    "state": "az",
+    "region": "desert",
+    "population": 611,
+    "count": 1
+  },
+  "garden-city-ut": {
+    "city": "Garden City",
+    "state": "ut",
+    "region": "desert",
+    "population": 608,
+    "count": 3
+  },
+  "munds-park-az": {
+    "city": "Munds Park",
+    "state": "az",
+    "region": "desert",
+    "population": 608,
+    "count": 1
+  },
+  "sacaton-flats-village-az": {
+    "city": "Sacaton Flats Village",
+    "state": "az",
+    "region": "desert",
+    "population": 604,
+    "count": 1
+  },
+  "roosevelt-estates-az": {
+    "city": "Roosevelt Estates",
+    "state": "az",
+    "region": "desert",
+    "population": 593,
+    "count": 3
+  },
+  "goodyear-village-az": {
+    "city": "Goodyear Village",
+    "state": "az",
+    "region": "desert",
+    "population": 590,
+    "count": 2
+  },
+  "gisela-az": {
+    "city": "Gisela",
+    "state": "az",
+    "region": "desert",
+    "population": 587,
+    "count": 2
+  },
+  "tropic-ut": {
+    "city": "Tropic",
+    "state": "ut",
+    "region": "desert",
+    "population": 582,
+    "count": 1
+  },
+  "la-paz-valley-az": {
+    "city": "La Paz Valley",
+    "state": "az",
+    "region": "desert",
+    "population": 579,
+    "count": 1
+  },
+  "cedarville-ca": {
+    "city": "Cedarville",
+    "state": "ca",
+    "region": "desert",
+    "population": 575,
+    "count": 1
+  },
+  "weston-id": {
+    "city": "Weston",
+    "state": "id",
+    "region": "desert",
+    "population": 569,
+    "count": 4
+  },
+  "huntsville-ut": {
+    "city": "Huntsville",
+    "state": "ut",
+    "region": "desert",
+    "population": 567,
+    "count": 5
+  },
+  "zephyr-cove-nv": {
+    "city": "Zephyr Cove",
+    "state": "nv",
+    "region": "desert",
+    "population": 562,
+    "count": 3
+  },
+  "joseph-ut": {
+    "city": "Joseph",
+    "state": "ut",
+    "region": "desert",
+    "population": 559,
+    "count": 4
+  },
+  "walnut-creek-az": {
+    "city": "Walnut Creek",
+    "state": "az",
+    "region": "desert",
+    "population": 556,
+    "count": 1
+  },
+  "vicksburg-az": {
+    "city": "Vicksburg",
+    "state": "az",
+    "region": "desert",
+    "population": 555,
+    "count": 1
+  },
+  "seligman-az": {
+    "city": "Seligman",
+    "state": "az",
+    "region": "desert",
+    "population": 549,
+    "count": 1
+  },
+  "fish-springs-nv": {
+    "city": "Fish Springs",
+    "state": "nv",
+    "region": "desert",
+    "population": 528,
+    "count": 3
+  },
+  "icehouse-canyon-az": {
+    "city": "Icehouse Canyon",
+    "state": "az",
+    "region": "desert",
+    "population": 528,
+    "count": 2
+  },
+  "carter-springs-nv": {
+    "city": "Carter Springs",
+    "state": "nv",
+    "region": "desert",
+    "population": 526,
+    "count": 3
+  },
+  "trenton-ut": {
+    "city": "Trenton",
+    "state": "ut",
+    "region": "desert",
+    "population": 526,
+    "count": 5
+  },
+  "walker-ca": {
+    "city": "Walker",
+    "state": "ca",
+    "region": "desert",
+    "population": 524,
+    "count": 2
+  },
+  "cove-ut": {
+    "city": "Cove",
+    "state": "ut",
+    "region": "desert",
+    "population": 521,
+    "count": 4
+  },
+  "nelson-az": {
+    "city": "Nelson",
+    "state": "az",
+    "region": "desert",
+    "population": 519,
+    "count": 2
+  },
+  "amalga-ut": {
+    "city": "Amalga",
+    "state": "ut",
+    "region": "desert",
+    "population": 511,
+    "count": 4
+  },
+  "bitter-springs-az": {
+    "city": "Bitter Springs",
+    "state": "az",
+    "region": "desert",
+    "population": 504,
+    "count": 2
+  },
+  "stateline-nv": {
+    "city": "Stateline",
+    "state": "nv",
+    "region": "desert",
+    "population": 503,
+    "count": 3
+  },
+  "big-water-ut": {
+    "city": "Big Water",
+    "state": "ut",
+    "region": "desert",
+    "population": 502,
+    "count": 2
+  },
+  "dayton-id": {
+    "city": "Dayton",
+    "state": "id",
+    "region": "desert",
+    "population": 500,
+    "count": 3
+  }
+}

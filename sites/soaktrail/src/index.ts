@@ -10,7 +10,7 @@ export interface Env {
   DB_WASHINGTON: D1Database;
   DB_ALASKA: D1Database;
   BLOG_QUEUE: KVNamespace;
-  MINIMAX_API_KEY: string;
+  GLM_API_KEY: string;
 }
 
 interface DBRegion {

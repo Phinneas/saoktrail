@@ -149,6 +149,14 @@ const breadcrumbSchema = {
   ],
 };
 
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: `Best Hot Springs in ${stateName} — Soak Trail`,
+  url: canonical,
+  dateModified: new Date().toISOString().slice(0, 10),
+};
+
 const stateCoords = STATE_COORDS[code];
 const placeSchema = stateCoords ? {
   '@type': 'Place',
@@ -180,7 +188,7 @@ function tempBadge(tempClass: string) {
   title={title}
   description={description}
   canonicalUrl={canonical}
-  jsonLd={[breadcrumbSchema, itemListSchema, placeSchema, faqSchema].filter(Boolean)}
+  jsonLd={[breadcrumbSchema, itemListSchema, placeSchema, faqSchema, webPageSchema].filter(Boolean)}
 >
   <div class="container mx-auto px-4 py-12 max-w-5xl">
     <Breadcrumbs items={[

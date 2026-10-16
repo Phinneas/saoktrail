@@ -1,0 +1,107 @@
+{
+  "fairbanks-ak": {
+    "city": "Fairbanks",
+    "state": "ak",
+    "region": "alaska",
+    "population": 68976,
+    "count": 1
+  },
+  "badger-ak": {
+    "city": "Badger",
+    "state": "ak",
+    "region": "alaska",
+    "population": 18677,
+    "count": 1
+  },
+  "sitka-ak": {
+    "city": "Sitka",
+    "state": "ak",
+    "region": "alaska",
+    "population": 8368,
+    "count": 1
+  },
+  "ketchikan-ak": {
+    "city": "Ketchikan",
+    "state": "ak",
+    "region": "alaska",
+    "population": 8078,
+    "count": 1
+  },
+  "steele-creek-ak": {
+    "city": "Steele Creek",
+    "state": "ak",
+    "region": "alaska",
+    "population": 5928,
+    "count": 1
+  },
+  "farmers-loop-ak": {
+    "city": "Farmers Loop",
+    "state": "ak",
+    "region": "alaska",
+    "population": 4954,
+    "count": 1
+  },
+  "nome-ak": {
+    "city": "Nome",
+    "state": "ak",
+    "region": "alaska",
+    "population": 3653,
+    "count": 1
+  },
+  "eielson-afb-ak": {
+    "city": "Eielson AFB",
+    "state": "ak",
+    "region": "alaska",
+    "population": 3155,
+    "count": 1
+  },
+  "north-pole-ak": {
+    "city": "North Pole",
+    "state": "ak",
+    "region": "alaska",
+    "population": 2370,
+    "count": 1
+  },
+  "wrangell-ak": {
+    "city": "Wrangell",
+    "state": "ak",
+    "region": "alaska",
+    "population": 2088,
+    "count": 1
+  },
+  "salcha-ak": {
+    "city": "Salcha",
+    "state": "ak",
+    "region": "alaska",
+    "population": 829,
+    "count": 1
+  },
+  "pleasant-valley-ak": {
+    "city": "Pleasant Valley",
+    "state": "ak",
+    "region": "alaska",
+    "population": 790,
+    "count": 1
+  },
+  "brevig-mission-ak": {
+    "city": "Brevig Mission",
+    "state": "ak",
+    "region": "alaska",
+    "population": 718,
+    "count": 1
+  },
+  "thorne-bay-ak": {
+    "city": "Thorne Bay",
+    "state": "ak",
+    "region": "alaska",
+    "population": 519,
+    "count": 1
+  },
+  "moose-creek-ak": {
+    "city": "Moose Creek",
+    "state": "ak",
+    "region": "alaska",
+    "population": 507,
+    "count": 1
+  }
+}

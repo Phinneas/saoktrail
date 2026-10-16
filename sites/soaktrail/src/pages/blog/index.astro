@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { getBlogPosts } from '../../lib/d1Blog';
 
 const SITE_SLUG = 'soaktrail';
@@ -24,7 +25,7 @@ const localPosts = [
 try {
   const d1Posts = await getBlogPosts(SITE_SLUG);
   // Exclude the chemistry guide (lives at /minerals/chemistry-guide, not /blog)
-  allPosts.push(...d1Posts.filter((p: any) => p.slug !== 'hot-spring-chemistry-guide'));
+  allPosts.push(...d1Posts.filter((p: any) => !['hot-spring-chemistry-guide', 'the-hot-springs-seo-playbook-how-to-track-your-way-to-page-one'].includes(p.slug)));
 } catch (e) {
   console.error('Blog: D1 API error:', e);
 }
@@ -57,12 +58,20 @@ const jsonLd = {
     image: post.image_url || undefined,
   })),
 };
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Journal — Soak Trail',
+  url: 'https://soaktrail.com/blog',
+  dateModified: new Date().toISOString().slice(0, 10),
+};
 ---
 
 <BaseLayout
   title="Journal — Soak Trail"
   description={pageDescription}
-  jsonLd={jsonLd}
+  jsonLd={[jsonLd, webPageSchema]}
 >
   <main class="max-w-7xl mx-auto px-6 py-16 md:py-24">
     <header class="mb-16 md:mb-20">
@@ -129,4 +138,9 @@ const jsonLd = {
       </nav>
     )}
   </main>
+
+  <!-- Newsletter -->
+  <section class="py-12 px-6">
+    <NewsletterSignup compact />
+  </section>
 </BaseLayout>

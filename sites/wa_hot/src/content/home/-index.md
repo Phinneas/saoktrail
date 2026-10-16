@@ -3,7 +3,7 @@ title: Welcome to Your Guide for Pacific Northwest Hot Springs
 description: Your guide to Washington and Oregon's best hot springs — from natural wilderness pools to luxury resort soaks.
 content: |
 
-  The Cascade Volcanic Arc stretches from British Columbia to Northern California, and along its flanks, groundwater heated by residual magma rises through fault lines to the surface. In Washington and Oregon, that geology has created more than a dozen soakable springs — from wilderness pools hidden deep in the Glacier Peak Wilderness to historic resort baths built by railroad workers in the 1890s.
+  The Cascade Volcanic Arc stretches from British Columbia to Northern California, and along its flanks, groundwater heated by residual magma rises through fault lines to the surface. In Washington and Oregon, that geology has created more than 40 springs — from wilderness pools hidden deep in the Glacier Peak Wilderness to historic resort baths built by railroad workers in the 1890s.
 
   Some are a short walk from the car. Others require a backpack and a weekend. All of them carry the same minerals that have drawn people to these mountains for centuries.
 
@@ -34,13 +34,13 @@ content: |
 
   - **Day 1:** Soak at [Ohanapecosh](https://washingtonhotsprings.com/blog/ohanapecosh-hot-springs) under old-growth canopy inside Mount Rainier National Park.
   - **Day 2:** Drive the White Pass Scenic Byway to [Carson Hot Springs](https://washingtonhotsprings.com/blog/carson-hot-springs-complete-visitor-guide) for a historic stone soak and Columbia River Gorge views.
-  - **Day 3:** Return via [Baker Hot Springs](https://washingtonhotsprings.com/blog/baker-hot-springs-washington-state) for a final alpine soak before heading home.
+  - **Day 3:** Loop back toward the Seattle area — up the I-5 corridor or back over the Cascade crest — before heading home.
 
   ---
 
   ## Coverage
 
-  **15+ springs** across Washington and Oregon. Updated weekly with seasonal access conditions, road closures, and new trip routes.
+  **46 springs** across Washington and Oregon. Updated regularly with seasonal access conditions, road closures, and new trip routes.
 
   ---
 
@@ -53,7 +53,7 @@ content: |
 
   ---
 
-  Exploring beyond the Northwest? Soak Trail covers the whole country — here's [how to find hot springs](https://soaktrail.com/how-to-find-hot-springs) anywhere in the U.S.
+  Exploring beyond the Northwest? Soak Trail covers the western United States — here's [how to find hot springs](https://soaktrail.com/how-to-find-hot-springs) across the West
 button:
   label: Explore the Map
   link: /washington-hot-springs-map

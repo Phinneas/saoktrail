@@ -92,6 +92,10 @@ const datasetSchema = {
       <strong class="text-sa-dark">Soak Trail has mapped 686 natural hot springs across 8 western US states.</strong> Idaho leads with 420 springs, followed by Montana (70) and Oregon (68). Of those, 465 are in the ideal soaking range of 95–110°F. This page breaks down the counts by state and region, with data sourced from USGS and OpenStreetMap.
     </p>
 
+    <p class="text-sm text-sa-dark/50 mb-6">
+      Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+    </p>
+
     <AuthorAttribution class="mb-8" />
 
     <!-- Lead with the total count, before any narrative -->

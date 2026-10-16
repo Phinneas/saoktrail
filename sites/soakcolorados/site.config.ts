@@ -11,8 +11,10 @@ export const siteConfig: SiteConfig = {
   nav: [
     { name: "Home", url: "/" },
     { name: "Directory", url: "/directory" },
+    { name: "Near Me", url: "/near" },
     { name: "Map", url: "/colorado-hot-springs-map" },
     { name: "Blog", url: "/blog" },
+    { name: "Safety Guide", url: "/colorado-hot-springs-safety-guide" },
     { name: "Minerals", url: "https://soaktrail.com/minerals" },
     { name: "About", url: "/about" },
   ],

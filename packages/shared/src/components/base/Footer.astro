@@ -11,7 +11,7 @@ const author = getAuthor();
     <div class="text-center lg:col-6 lg:mb-0 lg:text-left">
       <ul>
         <li class="m-2 inline-block">
-          <a href="/">&copy; {siteConfig.name} 2025</a>
+          <a href="/">&copy; {siteConfig.name} {new Date().getFullYear()}</a>
         </li>
         <li class="m-2 inline-block">
           <a href="/about">About</a>
@@ -27,6 +27,9 @@ const author = getAuthor();
       </p>
       <p class="text-xs text-txt-s dark:text-darkmode-txt-s mt-1">
         Researched &amp; maintained by <a href={author.url} class="underline hover:text-accent">{author.name}</a>
+      </p>
+      <p class="text-xs text-txt-s dark:text-darkmode-txt-s mt-1">
+        Part of the <a href="https://soaktrail.com" target="_blank" rel="noopener noreferrer" class="underline hover:text-accent">Soak Trail</a> network — six regional guides, one project.
       </p>
     </div>
     <div class="text-center lg:col-6 lg:my-0 flex items-center justify-center lg:justify-end">

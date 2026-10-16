@@ -354,11 +354,11 @@ export const createApp = () => {
     if (!checkAdmin(c)) return c.text('Unauthorized', 401);
     
     const env = c.env as any;
-    if (!env.MINIMAX_API_KEY) {
-      return c.json({ error: 'MINIMAX_API_KEY is not defined in environment.' }, 500);
+    if (!env.GLM_API_KEY) {
+      return c.json({ error: 'GLM_API_KEY is not defined in environment.' }, 500);
     }
     
-    const minimax = new MinimaxClient(env.MINIMAX_API_KEY as string);
+    const minimax = new MinimaxClient(env.GLM_API_KEY as string);
     
     let targetTopic = null;
     for (const topic of BlogQueue.topics) {

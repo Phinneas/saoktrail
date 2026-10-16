@@ -1,113 +1,192 @@
 ---
 import BaseLayout from "@components/base/BaseLayout.astro";
 import Breadcrumbs from "@components/common/Breadcrumbs.astro";
-import SchemaScript from "@components/schema/SchemaScript.astro";
-import { buildBreadcrumbSchema } from "@lib/schema";
-import springsData from "../../../public/springs.json";
-import nearCitiesData from "../../../public/near_cities.json";
-import campgroundsData from "../../../public/campgrounds.json";
+import { stateName, accessLabel } from "@lib/states";
+import { siteConfig } from "@site/config";
+import nearCityData from "../../data/near_city_pages.json";
+import cityIndex from "../../data/cities_index.json";
 
-export const prerender = false;
+export const prerender = true;
 
-const { slug } = Astro.params;
-
-// Find the city by slug across all near_cities entries
-let cityInfo: any = null;
-let springsInArea: any[] = [];
-
-for (const [springSlug, cities] of Object.entries(nearCitiesData as any)) {
-  for (const city of cities as any[]) {
-    if (city.slug === slug) {
-      cityInfo = city;
-      break;
-    }
-  }
-  if (cityInfo) break;
+interface NearbySpring {
+  slug: string;
+  name: string;
+  state: string;
+  region: string | null;
+  distance_mi: number;
+  temperature_f: number | null;
+  access_type: string | null;
+  site_url: string | null;
 }
 
-if (!cityInfo) {
-  return new Response(null, { status: 404, statusText: "Not Found" });
+interface CityPage {
+  city: string;
+  state: string;
+  state_name: string;
+  region: string | null;
+  lat: number;
+  lng: number;
+  population: number;
+  slug: string;
+  count: number;
+  springs: NearbySpring[];
 }
 
-// Find all springs near this city (within 50mi)
-for (const spring of springsData as any[]) {
-  for (const [springSlug, cities] of Object.entries(nearCitiesData as any[])) {
-    if (spring.slug === springSlug) {
-      const match = (cities as any[]).find((c: any) => c.slug === slug);
-      if (match) {
-        springsInArea.push({
-          ...spring,
-          distance_to_city: match.distance_mi,
-        });
-      }
-    }
-  }
+export function getStaticPaths() {
+  return Object.keys(nearCityData).map((slug) => ({
+    params: { slug },
+    props: { data: nearCityData[slug] as CityPage },
+  }));
 }
 
-springsInArea.sort((a: any, b: any) => a.distance_to_city - b.distance_to_city);
+const { data } = Astro.props as { data: CityPage };
+const stateFull = stateName(data.state);
+const canonical = `${siteConfig.url}/near/${data.slug}`;
+const title = `Hot Springs Near ${data.city}, ${stateFull} (${data.count} Within 50 Miles)`;
+const description = `${data.count} hot springs within 50 miles of ${data.city}, ${stateFull}, sorted by driving distance — with temperatures, access notes, and links to plan your soak.`;
 
-const pageDescription = `Discover hot springs near ${cityInfo.city}, ${cityInfo.state}. ${springsInArea.length} natural hot springs within driving distance.`;
+const springUrl = (s: NearbySpring) => (s.site_url ? `${s.site_url}/springs/${s.slug}` : null);
 
-const breadcrumbSchema = buildBreadcrumbSchema([
-  { label: "Home", href: "/" },
-  { label: "Directory", href: "/directory" },
-  { label: `Hot Springs Near ${cityInfo.city}`, href: `/near/${slug}` },
-]);
+const itemListSchema = {
+  "@type": "ItemList",
+  name: `Hot springs near ${data.city}, ${stateFull}`,
+  numberOfItems: data.count,
+  itemListElement: data.springs.map((s, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: s.name,
+    url: springUrl(s) || canonical,
+  })),
+};
+
+const placeSchema = {
+  "@type": "Place",
+  name: `${data.city}, ${stateFull}`,
+  description: `${data.count} natural hot springs within 50 miles of ${data.city}, ${stateFull}`,
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: data.lat,
+    longitude: data.lng,
+  },
+  containedInPlace: {
+    "@type": "AdministrativeArea",
+    name: stateFull,
+  },
+};
+
+const closestSpring = data.springs[0];
+const hotSprings = data.springs.filter((s) => s.temperature_f && s.temperature_f >= 95);
+
+const cityFaqs = [
+  {
+    q: `How many hot springs are near ${data.city}, ${stateFull}?`,
+    a: `There ${data.count === 1 ? "is" : "are"} ${data.count} hot spring${data.count === 1 ? "" : "s"} within 50 miles of ${data.city}, ${stateFull}. ${closestSpring ? `The closest is ${closestSpring.name} at ${closestSpring.distance_mi} miles from the city center.` : ""}`,
+  },
+  {
+    q: `What is the closest hot spring to ${data.city}?`,
+    a: closestSpring
+      ? `The closest hot spring to ${data.city}, ${stateFull} is ${closestSpring.name}, located ${closestSpring.distance_mi} miles away${closestSpring.temperature_f ? ` with water temperatures around ${closestSpring.temperature_f}°F` : ""}${closestSpring.access_type ? `. Access is ${accessLabel(closestSpring.access_type)?.toLowerCase() || closestSpring.access_type}` : ""}.`
+      : `We're still gathering data for springs near ${data.city}. Check back soon.`,
+  },
+  hotSprings.length > 0 ? {
+    q: `Are there hot springs near ${data.city} that are warm enough to soak in?`,
+    a: `Yes — ${hotSprings.length} of the ${data.count} springs near ${data.city} have recorded temperatures of 95°F or above, which is comfortable for soaking. Water temperatures vary by season and weather.`,
+  } : null,
+  {
+    q: `Do I need to hike to reach hot springs near ${data.city}?`,
+    a: `It depends on the spring. ${data.springs.filter((s) => s.access_type === "drive-up" || s.access_type === "paved").length > 0 ? `${data.springs.filter((s) => s.access_type === "drive-up" || s.access_type === "paved").length} springs near ${data.city} are roadside with no hiking required.` : ""} ${data.springs.filter((s) => s.access_type === "hike").length > 0 ? `${data.springs.filter((s) => s.access_type === "hike").length} require a hike.` : ""} Check each listing for specific access details.`,
+  },
+].filter(Boolean);
+
+const faqSchema = {
+  "@type": "FAQPage",
+  mainEntity: cityFaqs.map((f) => ({
+    "@type": "Question",
+    name: f!.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: f!.a,
+    },
+  })),
+};
+
+// Internal linking: up to 8 other towns in the same state, by population.
+const sameStateCities = (Object.entries(cityIndex) as [string, { city: string; state: string; population: number; count: number }][])
+  .filter(([, c]) => c.state === data.state && c.city !== data.city)
+  .sort((a, b) => b[1].population - a[1].population)
+  .slice(0, 8);
 ---
 
 <BaseLayout
-  title={`Hot Springs Near ${cityInfo.city}, ${cityInfo.state} — Soak Colorado`}
-  description={pageDescription}
+  title={title}
+  description={description}
+  canonical={canonical}
+  jsonLd={[itemListSchema, placeSchema, faqSchema]}
 >
-  <Fragment slot="head">
-    <SchemaScript schema={breadcrumbSchema} />
-  </Fragment>
-
   <section class="section">
     <div class="container">
       <Breadcrumbs />
 
-      <h1 class="h1 mb-2 intersect:animate-fadeUp opacity-0">
-        Hot Springs Near {cityInfo.city}, {cityInfo.state}
-      </h1>
-      <p class="text-txt-s dark:text-darkmode-txt-s mb-8 intersect:animate-fadeUp opacity-0">
-        {springsInArea.length} natural hot springs within driving distance
-        {cityInfo.population > 0 && ` of ${cityInfo.population.toLocaleString()} people`}
+      <h1 class="h1 mb-2">Hot Springs Near {data.city}, {stateFull}</h1>
+      <p class="text-txt-s dark:text-darkmode-txt-s mb-2">
+        <strong class="text-txt-p dark:text-darkmode-txt-p">{data.count} natural hot spring{data.count === 1 ? "" : "s"} within 50 miles of {data.city}, {stateFull}</strong> — sorted by driving distance from the city center. Each listing links to its full guide with water temperature, access type, and seasonal conditions.
       </p>
+      <p class="text-sm text-txt-light dark:text-darkmode-txt-light mb-8">Last updated: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long" })}</p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {springsInArea.map((spring: any) => (
-          <a
-            href={`/springs/${spring.slug}`}
-            class="glass p-6 hover:scale-[1.02] transition-transform intersect:animate-fadeUp opacity-0"
-          >
-            {spring.image_url && (
-              <img
-                src={spring.image_url}
-                alt={spring.name}
-                class="w-full h-40 object-cover rounded-lg mb-4"
-                loading="lazy"
-              />
-            )}
-            <h2 class="font-display font-bold text-txt-p dark:text-darkmode-txt-p mb-2">{spring.name}</h2>
-            <div class="flex items-center gap-4 text-sm">
-              {spring.temp_f && (
-                <span class="font-mono text-accent">{spring.temp_f}°F</span>
-              )}
-              <span class="text-txt-s dark:text-darkmode-txt-s">{spring.distance_to_city}mi from {cityInfo.city}</span>
+      <h2 class="h2 mb-4">{data.count} spring{data.count === 1 ? "" : "s"} within 50 miles</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {data.springs.map((s) => (
+          <div class="glass p-6">
+            <div class="flex items-start justify-between gap-4 mb-3">
+              <div>
+                <p class="font-display font-bold text-txt-p dark:text-darkmode-txt-p">
+                  {springUrl(s) ? (
+                    <a href={springUrl(s)!} class="hover:text-accent">{s.name}</a>
+                  ) : s.name}
+                </p>
+                <p class="text-xs text-txt-s dark:text-darkmode-txt-s capitalize mt-0.5">
+                  {stateName(s.state)}
+                  {s.temperature_f ? ` · ${s.temperature_f}°F` : ""}
+                  {accessLabel(s.access_type) ? ` · ${accessLabel(s.access_type)}` : ""}
+                </p>
+              </div>
+              <span class="font-mono font-bold text-accent shrink-0">{s.distance_mi} <span class="text-xs font-normal text-txt-s dark:text-darkmode-txt-s">mi</span></span>
             </div>
-            {spring.access_type && (
-              <p class="text-xs text-txt-s dark:text-darkmode-txt-s mt-2 capitalize">{spring.access_type}</p>
-            )}
-          </a>
+          </div>
         ))}
       </div>
 
-      {springsInArea.length === 0 && (
-        <div class="glass p-8 text-center">
-          <p class="text-txt-s dark:text-darkmode-txt-s">No hot springs found near this city.</p>
+      <h2 class="h2 mb-4">Frequently asked about hot springs near {data.city}</h2>
+      <div class="space-y-4 mb-12">
+        {cityFaqs.map((faq) => (
+          <details class="group glass rounded p-5">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+              <span class="font-display font-medium text-txt-p dark:text-darkmode-txt-p pr-4">{faq!.q}</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-accent shrink-0 group-open:rotate-180 transition-transform duration-200"><path d="M6 9l6 6 6-6" /></svg>
+            </summary>
+            <p class="text-txt-s dark:text-darkmode-txt-s text-sm leading-relaxed mt-3">{faq!.a}</p>
+          </details>
+        ))}
+      </div>
+
+      {sameStateCities.length > 0 && (
+        <div class="mb-12">
+          <h2 class="h2 mb-4">Other towns in {stateFull}</h2>
+          <div class="flex flex-wrap gap-2">
+            {sameStateCities.map(([slug, c]) => (
+              <a href={`/near/${slug}`} class="glass rounded-full px-4 py-2 text-sm text-txt-p dark:text-darkmode-txt-p hover:text-accent transition">
+                {c.city} <span class="text-txt-light dark:text-darkmode-txt-light">· {c.count}</span>
+              </a>
+            ))}
+          </div>
         </div>
       )}
+
+      <div class="flex flex-wrap items-center gap-4 mt-4">
+        <a href="/near" class="text-accent hover:underline">← All near-town guides</a>
+        <span class="text-txt-light dark:text-darkmode-txt-light">·</span>
+        <a href={`https://soaktrail.com/near/${data.slug}`} class="text-accent hover:underline">See nationwide hot springs near {data.city} on Soak Trail →</a>
+      </div>
     </div>
   </section>
 </BaseLayout>

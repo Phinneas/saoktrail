@@ -69,6 +69,48 @@ const home = defineCollection({
           link: z.string().optional(),
         })
         .optional(),
+      navCards: z
+        .array(
+          z.object({
+            title: z.string(),
+            description: z.string(),
+            link: z.string(),
+          })
+        )
+        .optional(),
+      proofHeading: z.string().optional(),
+      proofItems: z.array(z.string()).optional(),
+      proofSubtext: z.string().optional(),
+      proofButton: z
+        .object({
+          label: z.string(),
+          link: z.string().optional(),
+        })
+        .optional(),
+      tripHeading: z.string().optional(),
+      tripSubtext: z.string().optional(),
+      tripExample: z
+        .array(
+          z.object({
+            day: z.string(),
+            description: z.string(),
+          })
+        )
+        .optional(),
+      tripButton: z
+        .object({
+          label: z.string(),
+          link: z.string().optional(),
+        })
+        .optional(),
+      coverageHeading: z.string().optional(),
+      coverageText: z.string().optional(),
+      coverageButton: z
+        .object({
+          label: z.string(),
+          link: z.string().optional(),
+        })
+        .optional(),
     }),
 });
 

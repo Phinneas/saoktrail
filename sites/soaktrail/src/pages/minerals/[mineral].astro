@@ -40,6 +40,14 @@ const articleSchema = {
   about: mineral.tagline,
 };
 
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: `${mineral.name} in Hot Springs — Soak Trail`,
+  url: canonical,
+  dateModified: new Date().toISOString().slice(0, 10),
+};
+
 // Render benefits markdown (inline links) to HTML.
 const benefitsHtml = mineral.benefits.map((p) => marked.parseInline(p));
 const valueUnit = mineral.key === 'ph' ? 'pH' : mineral.unit;
@@ -50,7 +58,7 @@ function fmtValue(v: number): string {
 }
 ---
 
-<BaseLayout title={title} description={description} canonicalUrl={canonical} jsonLd={[breadcrumbSchema, articleSchema]}>
+<BaseLayout title={title} description={description} canonicalUrl={canonical} jsonLd={[breadcrumbSchema, articleSchema, webPageSchema]}>
   <div class="container mx-auto px-4 py-12 max-w-3xl">
     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Minerals', href: '/minerals' }, { label: mineral.name, href: `/minerals/${mineral.key}` }]} />
 

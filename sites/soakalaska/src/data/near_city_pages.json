@@ -1,0 +1,347 @@
+{
+  "fairbanks-ak": {
+    "city": "Fairbanks",
+    "state": "ak",
+    "state_name": "AK",
+    "region": "alaska",
+    "lat": 64.8353,
+    "lng": -147.6533,
+    "population": 68976,
+    "slug": "fairbanks-ak",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "chena-hot-springs-ak",
+        "name": "Chena Hot Springs",
+        "state": "ak",
+        "region": "alaska",
+        "distance_mi": 49.1,
+        "temperature_f": 153,
+        "access_type": "drive-up",
+        "site_url": null
+      }
+    ]
+  },
+  "badger-ak": {
+    "city": "Badger",
+    "state": "ak",
+    "state_name": "AK",
+    "region": "alaska",
+    "lat": 64.8006,
+    "lng": -147.3877,
+    "population": 18677,
+    "slug": "badger-ak",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "chena-hot-springs-ak",
+        "name": "Chena Hot Springs",
+        "state": "ak",
+        "region": "alaska",
+        "distance_mi": 42.7,
+        "temperature_f": 153,
+        "access_type": "drive-up",
+        "site_url": null
+      }
+    ]
+  },
+  "sitka-ak": {
+    "city": "Sitka",
+    "state": "ak",
+    "state_name": "AK",
+    "region": "alaska",
+    "lat": 57.2401,
+    "lng": -135.3152,
+    "population": 8368,
+    "slug": "sitka-ak",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "goddard-hot-springs",
+        "name": "Goddard Hot Springs",
+        "state": "ak",
+        "region": "alaska",
+        "distance_mi": 28.0,
+        "temperature_f": 153,
+        "access_type": "boat",
+        "site_url": "https://www.alaskahotsprings.com"
+      }
+    ]
+  },
+  "ketchikan-ak": {
+    "city": "Ketchikan",
+    "state": "ak",
+    "state_name": "AK",
+    "region": "alaska",
+    "lat": 55.3556,
+    "lng": -131.6698,
+    "population": 8078,
+    "slug": "ketchikan-ak",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "bell-island-hot-springs",
+        "name": "Bell Island Hot Springs",
+        "state": "ak",
+        "region": "alaska",
+        "distance_mi": 40.1,
+        "temperature_f": 165,
+        "access_type": "boat",
+        "site_url": "https://www.alaskahotsprings.com"
+      }
+    ]
+  },
+  "steele-creek-ak": {
+    "city": "Steele Creek",
+    "state": "ak",
+    "state_name": "AK",
+    "region": "alaska",
+    "lat": 64.9295,
+    "lng": -147.3955,
+    "population": 5928,
+    "slug": "steele-creek-ak",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "chena-hot-springs-ak",
+        "name": "Chena Hot Springs",
+        "state": "ak",
+        "region": "alaska",
+        "distance_mi": 40.1,
+        "temperature_f": 153,
+        "access_type": "drive-up",
+        "site_url": null
+      }
+    ]
+  },
+  "farmers-loop-ak": {
+    "city": "Farmers Loop",
+    "state": "ak",
+    "state_name": "AK",
+    "region": "alaska",
+    "lat": 64.9061,
+    "lng": -147.6957,
+    "population": 4954,
+    "slug": "farmers-loop-ak",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "chena-hot-springs-ak",
+        "name": "Chena Hot Springs",
+        "state": "ak",
+        "region": "alaska",
+        "distance_mi": 49.0,
+        "temperature_f": 153,
+        "access_type": "drive-up",
+        "site_url": null
+      }
+    ]
+  },
+  "nome-ak": {
+    "city": "Nome",
+    "state": "ak",
+    "state_name": "AK",
+    "region": "alaska",
+    "lat": 64.5213,
+    "lng": -165.4053,
+    "population": 3653,
+    "slug": "nome-ak",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "pilgrim-hot-springs",
+        "name": "Pilgrim Hot Springs",
+        "state": "ak",
+        "region": "alaska",
+        "distance_mi": 42.0,
+        "temperature_f": 178,
+        "access_type": "dirt",
+        "site_url": "https://www.alaskahotsprings.com"
+      }
+    ]
+  },
+  "eielson-afb-ak": {
+    "city": "Eielson AFB",
+    "state": "ak",
+    "state_name": "AK",
+    "region": "alaska",
+    "lat": 64.6741,
+    "lng": -147.0605,
+    "population": 3155,
+    "slug": "eielson-afb-ak",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "chena-hot-springs-ak",
+        "name": "Chena Hot Springs",
+        "state": "ak",
+        "region": "alaska",
+        "distance_mi": 39.4,
+        "temperature_f": 153,
+        "access_type": "drive-up",
+        "site_url": null
+      }
+    ]
+  },
+  "north-pole-ak": {
+    "city": "North Pole",
+    "state": "ak",
+    "state_name": "AK",
+    "region": "alaska",
+    "lat": 64.7529,
+    "lng": -147.3599,
+    "population": 2370,
+    "slug": "north-pole-ak",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "chena-hot-springs-ak",
+        "name": "Chena Hot Springs",
+        "state": "ak",
+        "region": "alaska",
+        "distance_mi": 43.5,
+        "temperature_f": 153,
+        "access_type": "drive-up",
+        "site_url": null
+      }
+    ]
+  },
+  "wrangell-ak": {
+    "city": "Wrangell",
+    "state": "ak",
+    "state_name": "AK",
+    "region": "alaska",
+    "lat": 56.3317,
+    "lng": -132.0223,
+    "population": 2088,
+    "slug": "wrangell-ak",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "bell-island-hot-springs",
+        "name": "Bell Island Hot Springs",
+        "state": "ak",
+        "region": "alaska",
+        "distance_mi": 32.8,
+        "temperature_f": 165,
+        "access_type": "boat",
+        "site_url": "https://www.alaskahotsprings.com"
+      }
+    ]
+  },
+  "salcha-ak": {
+    "city": "Salcha",
+    "state": "ak",
+    "state_name": "AK",
+    "region": "alaska",
+    "lat": 64.5274,
+    "lng": -146.9042,
+    "population": 829,
+    "slug": "salcha-ak",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "chena-hot-springs-ak",
+        "name": "Chena Hot Springs",
+        "state": "ak",
+        "region": "alaska",
+        "distance_mi": 44.1,
+        "temperature_f": 153,
+        "access_type": "drive-up",
+        "site_url": null
+      }
+    ]
+  },
+  "pleasant-valley-ak": {
+    "city": "Pleasant Valley",
+    "state": "ak",
+    "state_name": "AK",
+    "region": "alaska",
+    "lat": 64.8855,
+    "lng": -146.8985,
+    "population": 790,
+    "slug": "pleasant-valley-ak",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "chena-hot-springs-ak",
+        "name": "Chena Hot Springs",
+        "state": "ak",
+        "region": "alaska",
+        "distance_mi": 27.2,
+        "temperature_f": 153,
+        "access_type": "drive-up",
+        "site_url": null
+      }
+    ]
+  },
+  "brevig-mission-ak": {
+    "city": "Brevig Mission",
+    "state": "ak",
+    "state_name": "AK",
+    "region": "alaska",
+    "lat": 65.3413,
+    "lng": -166.4953,
+    "population": 718,
+    "slug": "brevig-mission-ak",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "pilgrim-hot-springs",
+        "name": "Pilgrim Hot Springs",
+        "state": "ak",
+        "region": "alaska",
+        "distance_mi": 48.7,
+        "temperature_f": 178,
+        "access_type": "dirt",
+        "site_url": "https://www.alaskahotsprings.com"
+      }
+    ]
+  },
+  "thorne-bay-ak": {
+    "city": "Thorne Bay",
+    "state": "ak",
+    "state_name": "AK",
+    "region": "alaska",
+    "lat": 55.6652,
+    "lng": -132.5337,
+    "population": 519,
+    "slug": "thorne-bay-ak",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "bell-island-hot-springs",
+        "name": "Bell Island Hot Springs",
+        "state": "ak",
+        "region": "alaska",
+        "distance_mi": 42.1,
+        "temperature_f": 165,
+        "access_type": "boat",
+        "site_url": "https://www.alaskahotsprings.com"
+      }
+    ]
+  },
+  "moose-creek-ak": {
+    "city": "Moose Creek",
+    "state": "ak",
+    "state_name": "AK",
+    "region": "alaska",
+    "lat": 64.714,
+    "lng": -147.1639,
+    "population": 507,
+    "slug": "moose-creek-ak",
+    "count": 1,
+    "springs": [
+      {
+        "slug": "chena-hot-springs-ak",
+        "name": "Chena Hot Springs",
+        "state": "ak",
+        "region": "alaska",
+        "distance_mi": 40.1,
+        "temperature_f": 153,
+        "access_type": "drive-up",
+        "site_url": null
+      }
+    ]
+  }
+}

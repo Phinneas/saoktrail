@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+export const prerender = true;
+
+const canonical = 'https://soaktrail.com/guides/best-roadside-hot-springs';
+const title = 'Best Roadside Hot Springs — Drive-Up Soaks in the American West | Soak Trail';
+
+// Fetch all springs from the API at build time
+let roadsideSprings: any[] = [];
+let totalCount = 0;
+try {
+  const res = await fetch('https://soakatlas-mcp.buzzuw2.workers.dev/springs?limit=2000');
+  if (res.ok) {
+    const data = await res.json();
+    const allSprings = data.springs || [];
+    totalCount = allSprings.length;
+    roadsideSprings = allSprings
+      .filter((s: any) => ['paved', 'drive-up'].includes(s.access_type) && s.lat && s.lng)
+      .sort((a: any, b: any) => {
+        // Prefer soakable temps, then higher temps
+        const aScore = (a.temperature_f >= 95 && a.temperature_f <= 110 ? 1000 : 0) + (a.temperature_f || 0);
+        const bScore = (b.temperature_f >= 95 && b.temperature_f <= 110 ? 1000 : 0) + (b.temperature_f || 0);
+        return bScore - aScore;
+      });
+  }
+} catch { /* use empty array */ }
+
+const description = `The best drive-up and paved-road hot springs in the American West — ${roadsideSprings.length} springs you can reach without a hike, from SoakTrail's database of ${totalCount} mapped springs.`;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://soaktrail.com/guides' },
+    { '@type': 'ListItem', position: 3, name: 'Best Roadside Hot Springs', item: canonical },
+  ],
+};
+
+const REGION_SITES: Record<string, string> = {
+  washington: 'https://www.washingtonhotsprings.com',
+  alaska: 'https://www.alaskahotsprings.com',
+  shasta: 'https://www.shastahotsprings.com',
+  colorado: 'https://www.soakcolorado.com',
+  rockies: 'https://www.soaktherockies.com',
+  desert: 'https://www.desertsoak.com',
+};
+
+const REGION_NAMES: Record<string, string> = {
+  washington: 'Washington',
+  alaska: 'Alaska',
+  shasta: 'Northern CA & Southern OR',
+  colorado: 'Colorado & New Mexico',
+  rockies: 'ID, MT & WY',
+  desert: 'UT, NV & AZ',
+};
+
+function isSoakable(s: any): boolean {
+  return s.temperature_f >= 95 && s.temperature_f <= 110;
+}
+function isTooHot(s: any): boolean {
+  return s.temperature_f > 110;
+}
+function tempColorClass(s: any): string {
+  if (isSoakable(s)) return 'text-green-600';
+  if (isTooHot(s)) return 'text-red-500';
+  return 'text-blue-500';
+}
+
+const soakerable = roadsideSprings.filter((s: any) => s.temperature_f >= 95 && s.temperature_f <= 110);
+const tooHot = roadsideSprings.filter((s: any) => s.temperature_f > 110);
+const warm = roadsideSprings.filter((s: any) => s.temperature_f > 0 && s.temperature_f < 95);
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={canonical}
+  jsonLd={breadcrumbSchema}
+>
+  <main class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Guides', href: '/guides' }, { label: 'Best Roadside Hot Springs' }]} />
+
+    <header class="mb-12">
+      <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-4 font-body">Data Guide</p>
+      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-light text-sa-dark leading-tight mb-6">
+        Best Roadside <span class="italic">Hot Springs</span>
+      </h1>
+      <p class="text-sa-text text-lg leading-relaxed max-w-3xl">
+        No hike required. These springs are accessible by paved road or drive-up access — perfect for road trips, families, or anyone who wants a soak without the backpack.
+      </p>
+      <p class="text-sa-text/60 text-sm mt-4">
+        {roadsideSprings.length} drive-up springs from {totalCount} total · Sorted by soakability then temperature
+      </p>
+    </header>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+      <div class="text-center border border-sa-divider rounded-xl bg-white/60 p-5">
+        <p class="font-body text-3xl font-light text-sa-copper mb-1">{roadsideSprings.length}</p>
+        <p class="text-sa-text text-xs tracking-wider uppercase font-body">Drive-Up Springs</p>
+      </div>
+      <div class="text-center border border-sa-divider rounded-xl bg-white/60 p-5">
+        <p class="font-body text-3xl font-light text-green-600 mb-1">{soakerable.length}</p>
+        <p class="text-sa-text text-xs tracking-wider uppercase font-body">Soakable (95–110°F)</p>
+      </div>
+      <div class="text-center border border-sa-divider rounded-xl bg-white/60 p-5">
+        <p class="font-body text-3xl font-light text-orange-500 mb-1">{tooHot.length}</p>
+        <p class="text-sa-text text-xs tracking-wider uppercase font-body">Very Hot (110°F+)</p>
+      </div>
+    </div>
+
+    {roadsideSprings.length > 0 ? (
+      <div class="space-y-3">
+        {roadsideSprings.map((spring: any, i: number) => {
+          const siteUrl = REGION_SITES[spring.region];
+          return (
+            <div class={`flex items-center gap-4 p-4 rounded-xl border transition-colors ${isSoakable(spring) ? 'bg-green-50/50 border-green-200 hover:border-green-400' : 'bg-white border-sa-divider hover:border-sa-copper'}`}>
+              <span class="font-mono text-sm text-sa-dark/30 w-8 text-right shrink-0">{i + 1}</span>
+              <div class="min-w-0 flex-1">
+                <h3 class="font-display font-bold text-sa-dark truncate">{spring.name}</h3>
+                <p class="text-xs text-sa-text/60 capitalize">
+                  {spring.state} · {REGION_NAMES[spring.region] || spring.region}
+                  {spring.access_type === 'paved' ? ' · Paved road' : ' · Drive-up'}
+                  {spring.fee_amount_usd > 0 ? ` · $${spring.fee_amount_usd}` : ' · Free'}
+                </p>
+              </div>
+              <div class="text-right shrink-0">
+                {spring.temperature_f ? (
+                  <p class={`font-mono font-bold text-lg ${tempColorClass(spring)}`}>
+                    {spring.temperature_f}°F
+                  </p>
+                ) : (
+                  <p class="font-mono text-lg text-sa-text/40">—</p>
+                )}
+                {isSoakable(spring) && <p class="text-xs text-green-600 font-medium">Soakable</p>}
+                {isTooHot(spring) && <p class="text-xs text-red-500">Too hot</p>}
+              </div>
+              {siteUrl && (
+                <a
+                  href={`${siteUrl}/springs/${spring.slug}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-sa-copper hover:text-sa-dark text-xs font-medium shrink-0"
+                >
+                  View →
+                </a>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    ) : (
+      <div class="text-center py-12 text-sa-text">
+        <p>Roadside spring data is being loaded. Check back soon.</p>
+      </div>
+    )}
+
+    <div class="mt-16 pt-8 border-t border-sa-divider">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-4">Planning a Roadside Soak</h2>
+      <div class="space-y-4 text-sa-text text-sm leading-relaxed">
+        <p>
+          Roadside springs are the easiest hot springs to visit — but "easy to reach" doesn't always mean "easy to enjoy." Popular roadside pools can be crowded on weekends, and some have limited parking or seasonal closures.
+        </p>
+        <p>
+          For the best experience, arrive early on weekday mornings, bring your own supplies (towels, water, snacks), and have a backup spring in mind. The <a href="/trip-planner" class="text-sa-copper hover:underline">trip planner</a> can help you find alternatives along your route.
+        </p>
+        <p>
+          Always check current access conditions before driving to a spring. Road closures, fire restrictions, and seasonal rules can change without notice.
+        </p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

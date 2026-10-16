@@ -1,0 +1,203 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+export const prerender = true;
+
+const canonical = 'https://soaktrail.com/data';
+const title = 'Open Data — US Hot Springs Dataset | Soak Trail';
+
+let totalSprings = 515;
+let regionCounts: Record<string, number> = {};
+try {
+  const res = await fetch('https://soakatlas-mcp.buzzuw2.workers.dev/stats');
+  if (res.ok) {
+    const stats = await res.json();
+    totalSprings = stats.total_springs || totalSprings;
+    for (const [region, data] of Object.entries(stats.regions || {})) {
+      regionCounts[region] = (data as any).count || 0;
+    }
+  }
+} catch { /* use defaults */ }
+
+const description = `Download SoakTrail's open dataset of ${totalSprings} natural hot springs across the American West. Free under CC BY 4.0 — temperature, access, elevation, coordinates, and more.`;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Open Data', item: canonical },
+  ],
+};
+
+const datasetSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Dataset',
+  name: 'SoakTrail US Hot Springs Dataset',
+  description: `A curated database of ${totalSprings} natural and developed hot springs across 12 western US states, with temperature, access type, coordinates, elevation, and seasonal data.`,
+  url: canonical,
+  creator: {
+    '@type': 'Organization',
+    name: 'Soak Trail',
+    url: 'https://soaktrail.com',
+  },
+  license: 'https://creativecommons.org/licenses/by/4.0/',
+  isAccessibleForFree: true,
+  dateModified: new Date().toISOString().slice(0, 10),
+  variableMeasured: [
+    { '@type': 'PropertyValue', name: 'Water temperature', unitText: '°F' },
+    { '@type': 'PropertyValue', name: 'Access type' },
+    { '@type': 'PropertyValue', name: 'Coordinates' },
+    { '@type': 'PropertyValue', name: 'Fee amount', unitText: 'USD' },
+  ],
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={canonical}
+  jsonLd={[breadcrumbSchema, datasetSchema]}
+>
+  <main class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Open Data' }]} />
+
+    <header class="mb-12">
+      <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-4 font-body">Open Data</p>
+      <h1 class="font-display text-4xl md:text-5xl font-light text-sa-dark leading-tight mb-6">
+        US Hot Springs
+        <span class="italic"> Dataset</span>
+      </h1>
+      <p class="text-sa-text text-lg leading-relaxed max-w-3xl">
+        Every spring in SoakTrail's database, free to download and reuse. Temperature, access type, coordinates, fees, clothing policy, and regional classification — all under Creative Commons Attribution 4.0.
+      </p>
+    </header>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+      <div class="text-center border border-sa-divider rounded-xl bg-white/60 p-5">
+        <p class="font-body text-3xl font-light text-sa-copper mb-1">{totalSprings}</p>
+        <p class="text-sa-text text-xs tracking-wider uppercase font-body">Total Springs</p>
+      </div>
+      <div class="text-center border border-sa-divider rounded-xl bg-white/60 p-5">
+        <p class="font-body text-3xl font-light text-sa-copper mb-1">12</p>
+        <p class="text-sa-text text-xs tracking-wider uppercase font-body">States</p>
+      </div>
+      <div class="text-center border border-sa-divider rounded-xl bg-white/60 p-5">
+        <p class="font-body text-3xl font-light text-sa-copper mb-1">32</p>
+        <p class="text-sa-text text-xs tracking-wider uppercase font-body">Fields per Record</p>
+      </div>
+      <div class="text-center border border-sa-divider rounded-xl bg-white/60 p-5">
+        <p class="font-body text-3xl font-light text-sa-copper mb-1">CC BY 4.0</p>
+        <p class="text-sa-text text-xs tracking-wider uppercase font-body">License</p>
+      </div>
+    </div>
+
+    <!-- What's included -->
+    <section class="mb-12">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-4">What's in the Dataset</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="rounded-xl border border-sa-divider bg-white/60 p-5">
+          <h3 class="font-display font-bold text-sa-dark mb-2">Spring Records</h3>
+          <ul class="text-sa-text text-sm space-y-1">
+            <li>Name, slug, and alternate names</li>
+            <li>Latitude and longitude</li>
+            <li>State and region</li>
+            <li>Water temperature (°F)</li>
+            <li>Access type (paved, dirt, 4WD, hike, resort, boat)</li>
+            <li>Development level (primitive, developed, resort)</li>
+          </ul>
+        </div>
+        <div class="rounded-xl border border-sa-divider bg-white/60 p-5">
+          <h3 class="font-display font-bold text-sa-dark mb-2">Access &amp; Visiting Info</h3>
+          <ul class="text-sa-text text-sm space-y-1">
+            <li>Fee status and amount</li>
+            <li>Clothing policy</li>
+            <li>Dog policy</li>
+            <li>Cell service availability</li>
+            <li>Seasonal access windows</li>
+            <li>Nearest town and distance</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- By region -->
+    <section class="mb-12">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-4">Coverage by Region</h2>
+      <div class="space-y-2">
+        {Object.entries(regionCounts).map(([region, count]) => (
+          <div class="flex items-center justify-between py-2 border-b border-sa-divider/50">
+            <span class="text-sa-text text-sm capitalize">{region}</span>
+            <span class="font-mono text-sa-copper font-bold">{count}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section class="mb-12">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-4">Download</h2>
+      <div class="rounded-xl border border-sa-divider bg-white/60 p-6">
+        <p class="text-sa-text text-sm leading-relaxed mb-4">
+          The dataset is available via SoakTrail's public API. Query it live or download the full export.
+        </p>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="text-sa-copper font-mono text-sm">GET</span>
+            <code class="text-sa-text text-sm bg-sa-cream/50 px-2 py-1 rounded">/springs?limit=2000</code>
+            <span class="text-sa-text/50 text-xs">All springs as JSON</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-sa-copper font-mono text-sm">GET</span>
+            <code class="text-sa-text text-sm bg-sa-cream/50 px-2 py-1 rounded">/stats</code>
+            <span class="text-sa-text/50 text-xs">Region counts and metadata</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-sa-copper font-mono text-sm">MCP</span>
+            <code class="text-sa-text text-sm bg-sa-cream/50 px-2 py-1 rounded">/mcp</code>
+            <span class="text-sa-text/50 text-xs">AI-readable via Model Context Protocol</span>
+          </div>
+        </div>
+        <div class="mt-4 p-3 rounded-lg bg-black/5 text-white/60 text-xs font-mono">
+          curl "https://soakatlas-mcp.buzzuw2.workers.dev/springs?limit=2000"
+        </div>
+      </div>
+    </section>
+
+    <!-- Data quality -->
+    <section class="mb-12">
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-4">Data Quality</h2>
+      <div class="rounded-xl border border-sa-divider bg-white/60 p-6 text-sa-text text-sm leading-relaxed space-y-3">
+        <p>
+          Not every record is equally complete. We flag data quality tiers openly:
+        </p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><strong class="text-sa-dark">Source-verified</strong> — confirmed by USGS records, government databases, or published research.</li>
+          <li><strong class="text-sa-dark">GNIS-confirmed</strong> — coordinates verified against the USGS Geographic Names Information System.</li>
+          <li><strong class="text-sa-dark">Field-verified</strong> — confirmed by a Soak Trail contributor's on-site visit.</li>
+          <li><strong class="text-sa-dark">Unconfirmed</strong> — imported from public datasets (OSM, GNIS) without additional verification.</li>
+          <li><strong class="text-sa-dark">Flagged</strong> — coordinates conflict with GNIS data or appear to be placeholders. Excluded from rankings.</li>
+        </ul>
+        <p>
+          191 Idaho records were bulk-imported with default temperature and access values. These are included for geographic coverage but excluded from temperature statistics and the composite remoteness ranking.
+        </p>
+      </div>
+    </section>
+
+    <!-- Citation -->
+    <section>
+      <h2 class="font-display text-2xl font-bold text-sa-dark mb-4">Cite This Dataset</h2>
+      <div class="rounded-xl border border-sa-divider bg-white/60 p-6">
+        <p class="text-sa-text text-sm leading-relaxed mb-3">
+          SoakTrail. "US Hot Springs Dataset." soaktrail.com, {new Date().getFullYear()}.
+          Licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="text-sa-copper hover:underline">CC BY 4.0</a>.
+        </p>
+        <p class="text-sa-text/60 text-xs">
+          Data sources: SoakTrail SoakAtlas database, USGS Water Quality Portal, USGS Geographic Names Information System, Stanford Thermal Earth Model (Aljubran &amp; Horne, 2024, CC BY 4.0).
+        </p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

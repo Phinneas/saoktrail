@@ -9,7 +9,7 @@ content: |
 
   Some are a short walk from the parking lot. Others require a full day's hike and a night in a tent. All of them carry the same minerals that have drawn people to these mountains for over a century.
 
-  Exploring beyond the Rockies? Soak Trail covers the whole country — here's [how to find hot springs](https://soaktrail.com/how-to-find-hot-springs) anywhere in the U.S.
+  Exploring beyond the Rockies? Soak Trail covers the western United States — here's [how to find hot springs](https://soaktrail.com/how-to-find-hot-springs) across the West
 button:
   label: Explore the Full Map →
   link: /rockies-hot-springs-map
@@ -22,7 +22,7 @@ proofItems:
   - "**Free & Natural** — Soak under open sky at primitive springs across Idaho and Montana."
 proofButton:
   label: Browse by Region →
-  link: /blog
+  link: /directory
 tripHeading: Plan a Weekend, Not Just a Stop
 tripSubtext: "Our trip planner turns individual springs into full itineraries. Here's one we mapped last month:"
 tripExample:
@@ -31,12 +31,12 @@ tripExample:
   - day: "Day 2"
     description: "Drive south through Ennis to Norris Hot Springs, then continue to Bozeman Hot Springs for an evening soak."
   - day: "Day 3"
-    description: "Head south into Wyoming to Yellowstone Hot Springs near the park's north entrance for a final soak with geothermal views."
+    description: "Head south to Gardiner, Montana, to soak at Yellowstone Hot Springs near the park's north entrance for a final soak with geothermal views."
 tripButton:
   label: Customize this route in the Trip Planner →
-  link: /rockies-hot-springs-map
+  link: /trip-planner
 coverageHeading: Coverage
-coverageText: "250+ springs across Idaho, Montana, and Wyoming. Updated weekly with seasonal access conditions, road closures, and new trip routes. Start with the spring closest to you."
+coverageText: "260 springs across Idaho, Montana, and Wyoming. Updated regularly with seasonal access conditions, road closures, and new trip routes. Start with the spring closest to you."
 coverageButton:
   label: Read the Latest Guide →
   link: /blog

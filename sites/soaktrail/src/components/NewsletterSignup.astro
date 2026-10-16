@@ -1,0 +1,52 @@
+---
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+{compact ? (
+  <div class="flex flex-col sm:flex-row items-center gap-3 max-w-md">
+    <input
+      type="email"
+      placeholder="your@email.com"
+      class="flex-1 w-full px-4 py-3 rounded-lg border border-sa-divider bg-white text-sa-dark text-sm font-display placeholder:text-sa-text/40 focus:outline-none focus:border-sa-copper transition-colors"
+      aria-label="Email address"
+    />
+    <button
+      type="button"
+      class="newsletter-subscribe-btn whitespace-nowrap px-6 py-3 rounded-lg bg-sa-copper text-white text-sm font-display font-medium hover:bg-sa-copper-hover transition-colors cursor-pointer"
+    >
+      Subscribe
+    </button>
+  </div>
+) : (
+  <div class="rounded-2xl border border-sa-divider bg-white/60 p-8 md:p-10 max-w-2xl mx-auto">
+    <div class="text-center mb-6">
+      <p class="text-sa-copper text-xs tracking-[0.25em] uppercase mb-3 font-display">Stay Updated</p>
+      <h3 class="font-display text-2xl font-bold text-sa-dark mb-2">New Springs, New Data</h3>
+      <p class="text-sa-text text-sm leading-relaxed">
+        Get notified when we add new springs, update access conditions, or publish new guides. No spam, no marketing — just hot springs updates.
+      </p>
+    </div>
+    <form class="flex flex-col sm:flex-row items-center gap-3" onsubmit="event.preventDefault(); this.querySelector('.newsletter-subscribe-btn').textContent = 'Subscribed ✓'; this.querySelector('input').disabled = true;">
+      <input
+        type="email"
+        placeholder="your@email.com"
+        required
+        class="flex-1 w-full px-4 py-3 rounded-lg border border-sa-divider bg-white text-sa-dark text-sm font-display placeholder:text-sa-text/40 focus:outline-none focus:border-sa-copper transition-colors"
+        aria-label="Email address"
+      />
+      <button
+        type="submit"
+        class="newsletter-subscribe-btn whitespace-nowrap px-8 py-3 rounded-lg bg-sa-copper text-white text-sm font-display font-medium hover:bg-sa-copper-hover transition-colors cursor-pointer"
+      >
+        Subscribe
+      </button>
+    </form>
+    <p class="text-sa-text/50 text-xs text-center mt-3 font-display">
+      Unsubscribe anytime. We respect your inbox.
+    </p>
+  </div>
+)}

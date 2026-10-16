@@ -1,0 +1,1990 @@
+{
+  "boise-id": {
+    "city": "Boise",
+    "state": "id",
+    "region": "rockies",
+    "population": 448305,
+    "count": 35
+  },
+  "nampa-id": {
+    "city": "Nampa",
+    "state": "id",
+    "region": "rockies",
+    "population": 201956,
+    "count": 19
+  },
+  "meridian-id": {
+    "city": "Meridian",
+    "state": "id",
+    "region": "rockies",
+    "population": 130138,
+    "count": 26
+  },
+  "billings-mt": {
+    "city": "Billings",
+    "state": "mt",
+    "region": "rockies",
+    "population": 129267,
+    "count": 1
+  },
+  "logan-ut": {
+    "city": "Logan",
+    "state": "ut",
+    "region": "rockies",
+    "population": 124449,
+    "count": 12
+  },
+  "idaho-falls-id": {
+    "city": "Idaho Falls",
+    "state": "id",
+    "region": "rockies",
+    "population": 111137,
+    "count": 13
+  },
+  "missoula-mt": {
+    "city": "Missoula",
+    "state": "mt",
+    "region": "rockies",
+    "population": 90522,
+    "count": 3
+  },
+  "pocatello-id": {
+    "city": "Pocatello",
+    "state": "id",
+    "region": "rockies",
+    "population": 72963,
+    "count": 17
+  },
+  "caldwell-id": {
+    "city": "Caldwell",
+    "state": "id",
+    "region": "rockies",
+    "population": 66516,
+    "count": 17
+  },
+  "bozeman-mt": {
+    "city": "Bozeman",
+    "state": "mt",
+    "region": "rockies",
+    "population": 62258,
+    "count": 8
+  },
+  "twin-falls-id": {
+    "city": "Twin Falls",
+    "state": "id",
+    "region": "rockies",
+    "population": 54164,
+    "count": 11
+  },
+  "rexburg-id": {
+    "city": "Rexburg",
+    "state": "id",
+    "region": "rockies",
+    "population": 40543,
+    "count": 7
+  },
+  "butte-mt": {
+    "city": "Butte",
+    "state": "mt",
+    "region": "rockies",
+    "population": 35052,
+    "count": 9
+  },
+  "helena-mt": {
+    "city": "Helena",
+    "state": "mt",
+    "region": "rockies",
+    "population": 33639,
+    "count": 5
+  },
+  "eagle-id": {
+    "city": "Eagle",
+    "state": "id",
+    "region": "rockies",
+    "population": 32855,
+    "count": 33
+  },
+  "kalispell-mt": {
+    "city": "Kalispell",
+    "state": "mt",
+    "region": "rockies",
+    "population": 28504,
+    "count": 1
+  },
+  "kuna-id": {
+    "city": "Kuna",
+    "state": "id",
+    "region": "rockies",
+    "population": 27158,
+    "count": 24
+  },
+  "brigham-city-ut": {
+    "city": "Brigham City",
+    "state": "ut",
+    "region": "rockies",
+    "population": 19992,
+    "count": 7
+  },
+  "ammon-id": {
+    "city": "Ammon",
+    "state": "id",
+    "region": "rockies",
+    "population": 19064,
+    "count": 14
+  },
+  "mountain-home-id": {
+    "city": "Mountain Home",
+    "state": "id",
+    "region": "rockies",
+    "population": 16493,
+    "count": 34
+  },
+  "chubbuck-id": {
+    "city": "Chubbuck",
+    "state": "id",
+    "region": "rockies",
+    "population": 16126,
+    "count": 15
+  },
+  "star-id": {
+    "city": "Star",
+    "state": "id",
+    "region": "rockies",
+    "population": 14745,
+    "count": 28
+  },
+  "smithfield-ut": {
+    "city": "Smithfield",
+    "state": "ut",
+    "region": "rockies",
+    "population": 14408,
+    "count": 14
+  },
+  "jerome-id": {
+    "city": "Jerome",
+    "state": "id",
+    "region": "rockies",
+    "population": 12930,
+    "count": 12
+  },
+  "blackfoot-id": {
+    "city": "Blackfoot",
+    "state": "id",
+    "region": "rockies",
+    "population": 12782,
+    "count": 12
+  },
+  "garden-city-id": {
+    "city": "Garden City",
+    "state": "id",
+    "region": "rockies",
+    "population": 12654,
+    "count": 34
+  },
+  "burley-id": {
+    "city": "Burley",
+    "state": "id",
+    "region": "rockies",
+    "population": 11958,
+    "count": 11
+  },
+  "belgrade-mt": {
+    "city": "Belgrade",
+    "state": "mt",
+    "region": "rockies",
+    "population": 11872,
+    "count": 9
+  },
+  "ontario-or": {
+    "city": "Ontario",
+    "state": "or",
+    "region": "rockies",
+    "population": 11842,
+    "count": 14
+  },
+  "tremonton-ut": {
+    "city": "Tremonton",
+    "state": "ut",
+    "region": "rockies",
+    "population": 11477,
+    "count": 12
+  },
+  "north-logan-ut": {
+    "city": "North Logan",
+    "state": "ut",
+    "region": "rockies",
+    "population": 11460,
+    "count": 12
+  },
+  "pleasant-view-ut": {
+    "city": "Pleasant View",
+    "state": "ut",
+    "region": "rockies",
+    "population": 11217,
+    "count": 1
+  },
+  "riverton-wy": {
+    "city": "Riverton",
+    "state": "wy",
+    "region": "rockies",
+    "population": 10856,
+    "count": 1
+  },
+  "jackson-wy": {
+    "city": "Jackson",
+    "state": "wy",
+    "region": "rockies",
+    "population": 10756,
+    "count": 8
+  },
+  "middleton-id": {
+    "city": "Middleton",
+    "state": "id",
+    "region": "rockies",
+    "population": 10649,
+    "count": 21
+  },
+  "hyrum-ut": {
+    "city": "Hyrum",
+    "state": "ut",
+    "region": "rockies",
+    "population": 10401,
+    "count": 11
+  },
+  "baker-city-or": {
+    "city": "Baker City",
+    "state": "or",
+    "region": "rockies",
+    "population": 10210,
+    "count": 1
+  },
+  "hailey-id": {
+    "city": "Hailey",
+    "state": "id",
+    "region": "rockies",
+    "population": 9665,
+    "count": 34
+  },
+  "evergreen-mt": {
+    "city": "Evergreen",
+    "state": "mt",
+    "region": "rockies",
+    "population": 9611,
+    "count": 1
+  },
+  "anaconda-mt": {
+    "city": "Anaconda",
+    "state": "mt",
+    "region": "rockies",
+    "population": 9597,
+    "count": 8
+  },
+  "havre-mt": {
+    "city": "Havre",
+    "state": "mt",
+    "region": "rockies",
+    "population": 9258,
+    "count": 1
+  },
+  "helena-valley-southeast-mt": {
+    "city": "Helena Valley Southeast",
+    "state": "mt",
+    "region": "rockies",
+    "population": 9108,
+    "count": 4
+  },
+  "providence-ut": {
+    "city": "Providence",
+    "state": "ut",
+    "region": "rockies",
+    "population": 8947,
+    "count": 12
+  },
+  "livingston-mt": {
+    "city": "Livingston",
+    "state": "mt",
+    "region": "rockies",
+    "population": 8780,
+    "count": 7
+  },
+  "payette-id": {
+    "city": "Payette",
+    "state": "id",
+    "region": "rockies",
+    "population": 8536,
+    "count": 14
+  },
+  "emmett-id": {
+    "city": "Emmett",
+    "state": "id",
+    "region": "rockies",
+    "population": 8275,
+    "count": 42
+  },
+  "rawlins-wy": {
+    "city": "Rawlins",
+    "state": "wy",
+    "region": "rockies",
+    "population": 8129,
+    "count": 2
+  },
+  "helena-valley-west-central-mt": {
+    "city": "Helena Valley West Central",
+    "state": "mt",
+    "region": "rockies",
+    "population": 8056,
+    "count": 5
+  },
+  "nibley-ut": {
+    "city": "Nibley",
+    "state": "ut",
+    "region": "rockies",
+    "population": 7952,
+    "count": 11
+  },
+  "laurel-mt": {
+    "city": "Laurel",
+    "state": "mt",
+    "region": "rockies",
+    "population": 7215,
+    "count": 1
+  },
+  "fruitland-id": {
+    "city": "Fruitland",
+    "state": "id",
+    "region": "rockies",
+    "population": 6663,
+    "count": 14
+  },
+  "rupert-id": {
+    "city": "Rupert",
+    "state": "id",
+    "region": "rockies",
+    "population": 6190,
+    "count": 10
+  },
+  "weiser-id": {
+    "city": "Weiser",
+    "state": "id",
+    "region": "rockies",
+    "population": 5935,
+    "count": 18
+  },
+  "preston-id": {
+    "city": "Preston",
+    "state": "id",
+    "region": "rockies",
+    "population": 5928,
+    "count": 18
+  },
+  "perry-ut": {
+    "city": "Perry",
+    "state": "ut",
+    "region": "rockies",
+    "population": 5843,
+    "count": 6
+  },
+  "four-corners-mt": {
+    "city": "Four Corners",
+    "state": "mt",
+    "region": "rockies",
+    "population": 5791,
+    "count": 9
+  },
+  "orchard-homes-mt": {
+    "city": "Orchard Homes",
+    "state": "mt",
+    "region": "rockies",
+    "population": 5588,
+    "count": 4
+  },
+  "bigfork-mt": {
+    "city": "Bigfork",
+    "state": "mt",
+    "region": "rockies",
+    "population": 5565,
+    "count": 1
+  },
+  "hyde-park-ut": {
+    "city": "Hyde Park",
+    "state": "ut",
+    "region": "rockies",
+    "population": 5540,
+    "count": 14
+  },
+  "polson-mt": {
+    "city": "Polson",
+    "state": "mt",
+    "region": "rockies",
+    "population": 5428,
+    "count": 2
+  },
+  "rigby-id": {
+    "city": "Rigby",
+    "state": "id",
+    "region": "rockies",
+    "population": 5404,
+    "count": 10
+  },
+  "helena-valley-northwest-mt": {
+    "city": "Helena Valley Northwest",
+    "state": "mt",
+    "region": "rockies",
+    "population": 5183,
+    "count": 4
+  },
+  "kimberly-id": {
+    "city": "Kimberly",
+    "state": "id",
+    "region": "rockies",
+    "population": 5111,
+    "count": 11
+  },
+  "hamilton-mt": {
+    "city": "Hamilton",
+    "state": "mt",
+    "region": "rockies",
+    "population": 5101,
+    "count": 14
+  },
+  "shelley-id": {
+    "city": "Shelley",
+    "state": "id",
+    "region": "rockies",
+    "population": 5092,
+    "count": 12
+  },
+  "worland-wy": {
+    "city": "Worland",
+    "state": "wy",
+    "region": "rockies",
+    "population": 4794,
+    "count": 1
+  },
+  "american-falls-id": {
+    "city": "American Falls",
+    "state": "id",
+    "region": "rockies",
+    "population": 4712,
+    "count": 12
+  },
+  "buhl-id": {
+    "city": "Buhl",
+    "state": "id",
+    "region": "rockies",
+    "population": 4673,
+    "count": 13
+  },
+  "helena-valley-northeast-mt": {
+    "city": "Helena Valley Northeast",
+    "state": "mt",
+    "region": "rockies",
+    "population": 4659,
+    "count": 4
+  },
+  "lolo-mt": {
+    "city": "Lolo",
+    "state": "mt",
+    "region": "rockies",
+    "population": 4314,
+    "count": 7
+  },
+  "wellsville-ut": {
+    "city": "Wellsville",
+    "state": "ut",
+    "region": "rockies",
+    "population": 4157,
+    "count": 9
+  },
+  "dillon-mt": {
+    "city": "Dillon",
+    "state": "mt",
+    "region": "rockies",
+    "population": 4085,
+    "count": 7
+  },
+  "lincoln-id": {
+    "city": "Lincoln",
+    "state": "id",
+    "region": "rockies",
+    "population": 4002,
+    "count": 13
+  },
+  "mccall-id": {
+    "city": "McCall",
+    "state": "id",
+    "region": "rockies",
+    "population": 3946,
+    "count": 45
+  },
+  "st-anthony-id": {
+    "city": "St. Anthony",
+    "state": "id",
+    "region": "rockies",
+    "population": 3911,
+    "count": 6
+  },
+  "gooding-id": {
+    "city": "Gooding",
+    "state": "id",
+    "region": "rockies",
+    "population": 3778,
+    "count": 25
+  },
+  "heyburn-id": {
+    "city": "Heyburn",
+    "state": "id",
+    "region": "rockies",
+    "population": 3693,
+    "count": 11
+  },
+  "ketchum-id": {
+    "city": "Ketchum",
+    "state": "id",
+    "region": "rockies",
+    "population": 3594,
+    "count": 39
+  },
+  "grangeville-id": {
+    "city": "Grangeville",
+    "state": "id",
+    "region": "rockies",
+    "population": 3515,
+    "count": 5
+  },
+  "hidden-springs-id": {
+    "city": "Hidden Springs",
+    "state": "id",
+    "region": "rockies",
+    "population": 3378,
+    "count": 38
+  },
+  "orofino-id": {
+    "city": "Orofino",
+    "state": "id",
+    "region": "rockies",
+    "population": 3260,
+    "count": 1
+  },
+  "nyssa-or": {
+    "city": "Nyssa",
+    "state": "or",
+    "region": "rockies",
+    "population": 3240,
+    "count": 11
+  },
+  "mountain-home-afb-id": {
+    "city": "Mountain Home AFB",
+    "state": "id",
+    "region": "rockies",
+    "population": 3219,
+    "count": 23
+  },
+  "salmon-id": {
+    "city": "Salmon",
+    "state": "id",
+    "region": "rockies",
+    "population": 3203,
+    "count": 15
+  },
+  "soda-springs-id": {
+    "city": "Soda Springs",
+    "state": "id",
+    "region": "rockies",
+    "population": 3158,
+    "count": 23
+  },
+  "montana-city-mt": {
+    "city": "Montana City",
+    "state": "mt",
+    "region": "rockies",
+    "population": 3092,
+    "count": 5
+  },
+  "homedale-id": {
+    "city": "Homedale",
+    "state": "id",
+    "region": "rockies",
+    "population": 3069,
+    "count": 9
+  },
+  "victor-id": {
+    "city": "Victor",
+    "state": "id",
+    "region": "rockies",
+    "population": 3067,
+    "count": 9
+  },
+  "deer-lodge-mt": {
+    "city": "Deer Lodge",
+    "state": "mt",
+    "region": "rockies",
+    "population": 3021,
+    "count": 7
+  },
+  "richmond-ut": {
+    "city": "Richmond",
+    "state": "ut",
+    "region": "rockies",
+    "population": 3000,
+    "count": 15
+  },
+  "iona-id": {
+    "city": "Iona",
+    "state": "id",
+    "region": "rockies",
+    "population": 2984,
+    "count": 13
+  },
+  "wendell-id": {
+    "city": "Wendell",
+    "state": "id",
+    "region": "rockies",
+    "population": 2981,
+    "count": 17
+  },
+  "kemmerer-wy": {
+    "city": "Kemmerer",
+    "state": "wy",
+    "region": "rockies",
+    "population": 2972,
+    "count": 1
+  },
+  "filer-id": {
+    "city": "Filer",
+    "state": "id",
+    "region": "rockies",
+    "population": 2925,
+    "count": 10
+  },
+  "driggs-id": {
+    "city": "Driggs",
+    "state": "id",
+    "region": "rockies",
+    "population": 2925,
+    "count": 9
+  },
+  "afton-wy": {
+    "city": "Afton",
+    "state": "wy",
+    "region": "rockies",
+    "population": 2908,
+    "count": 12
+  },
+  "thermopolis-wy": {
+    "city": "Thermopolis",
+    "state": "wy",
+    "region": "rockies",
+    "population": 2709,
+    "count": 1
+  },
+  "montpelier-id": {
+    "city": "Montpelier",
+    "state": "id",
+    "region": "rockies",
+    "population": 2694,
+    "count": 16
+  },
+  "garland-ut": {
+    "city": "Garland",
+    "state": "ut",
+    "region": "rockies",
+    "population": 2660,
+    "count": 12
+  },
+  "fort-hall-id": {
+    "city": "Fort Hall",
+    "state": "id",
+    "region": "rockies",
+    "population": 2654,
+    "count": 15
+  },
+  "malad-city-id": {
+    "city": "Malad City",
+    "state": "id",
+    "region": "rockies",
+    "population": 2601,
+    "count": 19
+  },
+  "bellevue-id": {
+    "city": "Bellevue",
+    "state": "id",
+    "region": "rockies",
+    "population": 2588,
+    "count": 29
+  },
+  "aberdeen-id": {
+    "city": "Aberdeen",
+    "state": "id",
+    "region": "rockies",
+    "population": 2564,
+    "count": 10
+  },
+  "big-sky-mt": {
+    "city": "Big Sky",
+    "state": "mt",
+    "region": "rockies",
+    "population": 2445,
+    "count": 12
+  },
+  "lewiston-ut": {
+    "city": "Lewiston",
+    "state": "ut",
+    "region": "rockies",
+    "population": 2408,
+    "count": 16
+  },
+  "lakeside-mt": {
+    "city": "Lakeside",
+    "state": "mt",
+    "region": "rockies",
+    "population": 2386,
+    "count": 1
+  },
+  "vale-or": {
+    "city": "Vale",
+    "state": "or",
+    "region": "rockies",
+    "population": 2348,
+    "count": 9
+  },
+  "manhattan-mt": {
+    "city": "Manhattan",
+    "state": "mt",
+    "region": "rockies",
+    "population": 2288,
+    "count": 10
+  },
+  "river-heights-ut": {
+    "city": "River Heights",
+    "state": "ut",
+    "region": "rockies",
+    "population": 2282,
+    "count": 12
+  },
+  "willard-ut": {
+    "city": "Willard",
+    "state": "ut",
+    "region": "rockies",
+    "population": 2212,
+    "count": 5
+  },
+  "enterprise-or": {
+    "city": "Enterprise",
+    "state": "or",
+    "region": "rockies",
+    "population": 2131,
+    "count": 1
+  },
+  "stevensville-mt": {
+    "city": "Stevensville",
+    "state": "mt",
+    "region": "rockies",
+    "population": 2130,
+    "count": 10
+  },
+  "sugar-city-id": {
+    "city": "Sugar City",
+    "state": "id",
+    "region": "rockies",
+    "population": 2122,
+    "count": 7
+  },
+  "malta-mt": {
+    "city": "Malta",
+    "state": "mt",
+    "region": "rockies",
+    "population": 2100,
+    "count": 1
+  },
+  "east-missoula-mt": {
+    "city": "East Missoula",
+    "state": "mt",
+    "region": "rockies",
+    "population": 2099,
+    "count": 3
+  },
+  "south-park-wy": {
+    "city": "South Park",
+    "state": "wy",
+    "region": "rockies",
+    "population": 2093,
+    "count": 8
+  },
+  "wilder-id": {
+    "city": "Wilder",
+    "state": "id",
+    "region": "rockies",
+    "population": 2074,
+    "count": 10
+  },
+  "pinedale-wy": {
+    "city": "Pinedale",
+    "state": "wy",
+    "region": "rockies",
+    "population": 2048,
+    "count": 1
+  },
+  "star-valley-ranch-wy": {
+    "city": "Star Valley Ranch",
+    "state": "wy",
+    "region": "rockies",
+    "population": 2007,
+    "count": 10
+  },
+  "roundup-mt": {
+    "city": "Roundup",
+    "state": "mt",
+    "region": "rockies",
+    "population": 2003,
+    "count": 1
+  },
+  "columbus-mt": {
+    "city": "Columbus",
+    "state": "mt",
+    "region": "rockies",
+    "population": 2003,
+    "count": 1
+  },
+  "ronan-mt": {
+    "city": "Ronan",
+    "state": "mt",
+    "region": "rockies",
+    "population": 2001,
+    "count": 3
+  },
+  "king-arthur-park-mt": {
+    "city": "King Arthur Park",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1992,
+    "count": 9
+  },
+  "townsend-mt": {
+    "city": "Townsend",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1967,
+    "count": 9
+  },
+  "parma-id": {
+    "city": "Parma",
+    "state": "id",
+    "region": "rockies",
+    "population": 1928,
+    "count": 10
+  },
+  "frenchtown-mt": {
+    "city": "Frenchtown",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1927,
+    "count": 5
+  },
+  "three-forks-mt": {
+    "city": "Three Forks",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1919,
+    "count": 10
+  },
+  "shoshone-id": {
+    "city": "Shoshone",
+    "state": "id",
+    "region": "rockies",
+    "population": 1911,
+    "count": 22
+  },
+  "clancy-mt": {
+    "city": "Clancy",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1874,
+    "count": 7
+  },
+  "millville-ut": {
+    "city": "Millville",
+    "state": "ut",
+    "region": "rockies",
+    "population": 1800,
+    "count": 11
+  },
+  "new-plymouth-id": {
+    "city": "New Plymouth",
+    "state": "id",
+    "region": "rockies",
+    "population": 1794,
+    "count": 22
+  },
+  "benson-ut": {
+    "city": "Benson",
+    "state": "ut",
+    "region": "rockies",
+    "population": 1776,
+    "count": 13
+  },
+  "saratoga-wy": {
+    "city": "Saratoga",
+    "state": "wy",
+    "region": "rockies",
+    "population": 1740,
+    "count": 2
+  },
+  "east-helena-mt": {
+    "city": "East Helena",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1702,
+    "count": 5
+  },
+  "mantua-ut": {
+    "city": "Mantua",
+    "state": "ut",
+    "region": "rockies",
+    "population": 1677,
+    "count": 6
+  },
+  "wheatland-mt": {
+    "city": "Wheatland",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1661,
+    "count": 11
+  },
+  "pablo-mt": {
+    "city": "Pablo",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1632,
+    "count": 2
+  },
+  "osburn-id": {
+    "city": "Osburn",
+    "state": "id",
+    "region": "rockies",
+    "population": 1620,
+    "count": 1
+  },
+  "big-timber-mt": {
+    "city": "Big Timber",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1611,
+    "count": 3
+  },
+  "ucon-id": {
+    "city": "Ucon",
+    "state": "id",
+    "region": "rockies",
+    "population": 1606,
+    "count": 12
+  },
+  "paul-id": {
+    "city": "Paul",
+    "state": "id",
+    "region": "rockies",
+    "population": 1586,
+    "count": 11
+  },
+  "tyhee-id": {
+    "city": "Tyhee",
+    "state": "id",
+    "region": "rockies",
+    "population": 1568,
+    "count": 15
+  },
+  "bonner-west-riverside-mt": {
+    "city": "Bonner-West Riverside",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1563,
+    "count": 3
+  },
+  "elwood-ut": {
+    "city": "Elwood",
+    "state": "ut",
+    "region": "rockies",
+    "population": 1547,
+    "count": 10
+  },
+  "moose-wilson-road-wy": {
+    "city": "Moose Wilson Road",
+    "state": "wy",
+    "region": "rockies",
+    "population": 1535,
+    "count": 9
+  },
+  "south-willard-ut": {
+    "city": "South Willard",
+    "state": "ut",
+    "region": "rockies",
+    "population": 1532,
+    "count": 2
+  },
+  "thompson-falls-mt": {
+    "city": "Thompson Falls",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1500,
+    "count": 2
+  },
+  "seeley-lake-mt": {
+    "city": "Seeley Lake",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1496,
+    "count": 1
+  },
+  "mendon-ut": {
+    "city": "Mendon",
+    "state": "ut",
+    "region": "rockies",
+    "population": 1482,
+    "count": 13
+  },
+  "greenleaf-id": {
+    "city": "Greenleaf",
+    "state": "id",
+    "region": "rockies",
+    "population": 1482,
+    "count": 12
+  },
+  "west-yellowstone-mt": {
+    "city": "West Yellowstone",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1474,
+    "count": 12
+  },
+  "sun-valley-id": {
+    "city": "Sun Valley",
+    "state": "id",
+    "region": "rockies",
+    "population": 1460,
+    "count": 39
+  },
+  "glenns-ferry-id": {
+    "city": "Glenns Ferry",
+    "state": "id",
+    "region": "rockies",
+    "population": 1438,
+    "count": 27
+  },
+  "groveland-id": {
+    "city": "Groveland",
+    "state": "id",
+    "region": "rockies",
+    "population": 1422,
+    "count": 12
+  },
+  "ashton-id": {
+    "city": "Ashton",
+    "state": "id",
+    "region": "rockies",
+    "population": 1417,
+    "count": 10
+  },
+  "helena-west-side-mt": {
+    "city": "Helena West Side",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1417,
+    "count": 5
+  },
+  "jackpot-nv": {
+    "city": "Jackpot",
+    "state": "nv",
+    "region": "rockies",
+    "population": 1415,
+    "count": 5
+  },
+  "chinook-mt": {
+    "city": "Chinook",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1353,
+    "count": 1
+  },
+  "grace-id": {
+    "city": "Grace",
+    "state": "id",
+    "region": "rockies",
+    "population": 1349,
+    "count": 25
+  },
+  "moreland-id": {
+    "city": "Moreland",
+    "state": "id",
+    "region": "rockies",
+    "population": 1326,
+    "count": 12
+  },
+  "hoback-wy": {
+    "city": "Hoback",
+    "state": "wy",
+    "region": "rockies",
+    "population": 1316,
+    "count": 7
+  },
+  "marsing-id": {
+    "city": "Marsing",
+    "state": "id",
+    "region": "rockies",
+    "population": 1306,
+    "count": 7
+  },
+  "rafter-j-ranch-wy": {
+    "city": "Rafter J Ranch",
+    "state": "wy",
+    "region": "rockies",
+    "population": 1293,
+    "count": 8
+  },
+  "boulder-mt": {
+    "city": "Boulder",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1284,
+    "count": 8
+  },
+  "somers-mt": {
+    "city": "Somers",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1280,
+    "count": 1
+  },
+  "hagerman-id": {
+    "city": "Hagerman",
+    "state": "id",
+    "region": "rockies",
+    "population": 1276,
+    "count": 22
+  },
+  "honeyville-ut": {
+    "city": "Honeyville",
+    "state": "ut",
+    "region": "rockies",
+    "population": 1275,
+    "count": 7
+  },
+  "arapahoe-wy": {
+    "city": "Arapahoe",
+    "state": "wy",
+    "region": "rockies",
+    "population": 1240,
+    "count": 1
+  },
+  "corvallis-mt": {
+    "city": "Corvallis",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1227,
+    "count": 13
+  },
+  "fort-belknap-agency-mt": {
+    "city": "Fort Belknap Agency",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1227,
+    "count": 2
+  },
+  "hansen-id": {
+    "city": "Hansen",
+    "state": "id",
+    "region": "rockies",
+    "population": 1225,
+    "count": 13
+  },
+  "alpine-wy": {
+    "city": "Alpine",
+    "state": "wy",
+    "region": "rockies",
+    "population": 1222,
+    "count": 13
+  },
+  "robie-creek-id": {
+    "city": "Robie Creek",
+    "state": "id",
+    "region": "rockies",
+    "population": 1213,
+    "count": 44
+  },
+  "carey-id": {
+    "city": "Carey",
+    "state": "id",
+    "region": "rockies",
+    "population": 1196,
+    "count": 19
+  },
+  "plains-mt": {
+    "city": "Plains",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1195,
+    "count": 2
+  },
+  "thatcher-ut": {
+    "city": "Thatcher",
+    "state": "ut",
+    "region": "rockies",
+    "population": 1170,
+    "count": 8
+  },
+  "churchill-mt": {
+    "city": "Churchill",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1167,
+    "count": 9
+  },
+  "whitehall-mt": {
+    "city": "Whitehall",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1156,
+    "count": 13
+  },
+  "riverside-ut": {
+    "city": "Riverside",
+    "state": "ut",
+    "region": "rockies",
+    "population": 1135,
+    "count": 13
+  },
+  "cottonwood-id": {
+    "city": "Cottonwood",
+    "state": "id",
+    "region": "rockies",
+    "population": 1131,
+    "count": 2
+  },
+  "pray-mt": {
+    "city": "Pray",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1129,
+    "count": 9
+  },
+  "cascade-id": {
+    "city": "Cascade",
+    "state": "id",
+    "region": "rockies",
+    "population": 1118,
+    "count": 64
+  },
+  "wilson-wy": {
+    "city": "Wilson",
+    "state": "wy",
+    "region": "rockies",
+    "population": 1113,
+    "count": 8
+  },
+  "kamiah-id": {
+    "city": "Kamiah",
+    "state": "id",
+    "region": "rockies",
+    "population": 1084,
+    "count": 2
+  },
+  "ririe-id": {
+    "city": "Ririe",
+    "state": "id",
+    "region": "rockies",
+    "population": 1079,
+    "count": 11
+  },
+  "harlowton-mt": {
+    "city": "Harlowton",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1058,
+    "count": 2
+  },
+  "wye-mt": {
+    "city": "Wye",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1055,
+    "count": 3
+  },
+  "joseph-or": {
+    "city": "Joseph",
+    "state": "or",
+    "region": "rockies",
+    "population": 1054,
+    "count": 2
+  },
+  "clinton-mt": {
+    "city": "Clinton",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1040,
+    "count": 3
+  },
+  "marion-mt": {
+    "city": "Marion",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1037,
+    "count": 1
+  },
+  "franklin-id": {
+    "city": "Franklin",
+    "state": "id",
+    "region": "rockies",
+    "population": 1034,
+    "count": 17
+  },
+  "wallace-id": {
+    "city": "Wallace",
+    "state": "id",
+    "region": "rockies",
+    "population": 1027,
+    "count": 1
+  },
+  "hays-mt": {
+    "city": "Hays",
+    "state": "mt",
+    "region": "rockies",
+    "population": 1009,
+    "count": 1
+  },
+  "hazelton-id": {
+    "city": "Hazelton",
+    "state": "id",
+    "region": "rockies",
+    "population": 977,
+    "count": 11
+  },
+  "st-ignatius-mt": {
+    "city": "St. Ignatius",
+    "state": "mt",
+    "region": "rockies",
+    "population": 977,
+    "count": 3
+  },
+  "white-sulphur-springs-mt": {
+    "city": "White Sulphur Springs",
+    "state": "mt",
+    "region": "rockies",
+    "population": 957,
+    "count": 2
+  },
+  "ponderosa-pines-mt": {
+    "city": "Ponderosa Pines",
+    "state": "mt",
+    "region": "rockies",
+    "population": 950,
+    "count": 9
+  },
+  "inkom-id": {
+    "city": "Inkom",
+    "state": "id",
+    "region": "rockies",
+    "population": 936,
+    "count": 24
+  },
+  "gallatin-gateway-mt": {
+    "city": "Gallatin Gateway",
+    "state": "mt",
+    "region": "rockies",
+    "population": 933,
+    "count": 11
+  },
+  "grover-wy": {
+    "city": "Grover",
+    "state": "wy",
+    "region": "rockies",
+    "population": 929,
+    "count": 9
+  },
+  "absarokee-mt": {
+    "city": "Absarokee",
+    "state": "mt",
+    "region": "rockies",
+    "population": 926,
+    "count": 1
+  },
+  "florence-mt": {
+    "city": "Florence",
+    "state": "mt",
+    "region": "rockies",
+    "population": 923,
+    "count": 7
+  },
+  "mccammon-id": {
+    "city": "McCammon",
+    "state": "id",
+    "region": "rockies",
+    "population": 909,
+    "count": 26
+  },
+  "lincoln-mt": {
+    "city": "Lincoln",
+    "state": "mt",
+    "region": "rockies",
+    "population": 908,
+    "count": 3
+  },
+  "superior-mt": {
+    "city": "Superior",
+    "state": "mt",
+    "region": "rockies",
+    "population": 896,
+    "count": 4
+  },
+  "mullan-id": {
+    "city": "Mullan",
+    "state": "id",
+    "region": "rockies",
+    "population": 890,
+    "count": 1
+  },
+  "havre-north-mt": {
+    "city": "Havre North",
+    "state": "mt",
+    "region": "rockies",
+    "population": 890,
+    "count": 1
+  },
+  "teton-id": {
+    "city": "Teton",
+    "state": "id",
+    "region": "rockies",
+    "population": 877,
+    "count": 7
+  },
+  "menan-id": {
+    "city": "Menan",
+    "state": "id",
+    "region": "rockies",
+    "population": 876,
+    "count": 9
+  },
+  "council-id": {
+    "city": "Council",
+    "state": "id",
+    "region": "rockies",
+    "population": 871,
+    "count": 43
+  },
+  "sheridan-mt": {
+    "city": "Sheridan",
+    "state": "mt",
+    "region": "rockies",
+    "population": 869,
+    "count": 8
+  },
+  "bear-river-city-ut": {
+    "city": "Bear River City",
+    "state": "ut",
+    "region": "rockies",
+    "population": 867,
+    "count": 7
+  },
+  "victor-mt": {
+    "city": "Victor",
+    "state": "mt",
+    "region": "rockies",
+    "population": 867,
+    "count": 11
+  },
+  "riverside-id": {
+    "city": "Riverside",
+    "state": "id",
+    "region": "rockies",
+    "population": 867,
+    "count": 12
+  },
+  "helena-flats-mt": {
+    "city": "Helena Flats",
+    "state": "mt",
+    "region": "rockies",
+    "population": 857,
+    "count": 1
+  },
+  "challis-id": {
+    "city": "Challis",
+    "state": "id",
+    "region": "rockies",
+    "population": 854,
+    "count": 36
+  },
+  "arco-id": {
+    "city": "Arco",
+    "state": "id",
+    "region": "rockies",
+    "population": 850,
+    "count": 5
+  },
+  "woods-bay-mt": {
+    "city": "Woods Bay",
+    "state": "mt",
+    "region": "rockies",
+    "population": 835,
+    "count": 1
+  },
+  "pinesdale-mt": {
+    "city": "Pinesdale",
+    "state": "mt",
+    "region": "rockies",
+    "population": 833,
+    "count": 15
+  },
+  "oakley-id": {
+    "city": "Oakley",
+    "state": "id",
+    "region": "rockies",
+    "population": 830,
+    "count": 9
+  },
+  "harlem-mt": {
+    "city": "Harlem",
+    "state": "mt",
+    "region": "rockies",
+    "population": 822,
+    "count": 1
+  },
+  "arlee-mt": {
+    "city": "Arlee",
+    "state": "mt",
+    "region": "rockies",
+    "population": 812,
+    "count": 4
+  },
+  "downey-id": {
+    "city": "Downey",
+    "state": "id",
+    "region": "rockies",
+    "population": 803,
+    "count": 26
+  },
+  "dubois-wy": {
+    "city": "Dubois",
+    "state": "wy",
+    "region": "rockies",
+    "population": 801,
+    "count": 1
+  },
+  "hanna-wy": {
+    "city": "Hanna",
+    "state": "wy",
+    "region": "rockies",
+    "population": 789,
+    "count": 2
+  },
+  "clifton-id": {
+    "city": "Clifton",
+    "state": "id",
+    "region": "rockies",
+    "population": 788,
+    "count": 18
+  },
+  "corinne-ut": {
+    "city": "Corinne",
+    "state": "ut",
+    "region": "rockies",
+    "population": 783,
+    "count": 7
+  },
+  "ennis-mt": {
+    "city": "Ennis",
+    "state": "mt",
+    "region": "rockies",
+    "population": 777,
+    "count": 9
+  },
+  "park-city-mt": {
+    "city": "Park City",
+    "state": "mt",
+    "region": "rockies",
+    "population": 764,
+    "count": 1
+  },
+  "horseshoe-bend-id": {
+    "city": "Horseshoe Bend",
+    "state": "id",
+    "region": "rockies",
+    "population": 758,
+    "count": 45
+  },
+  "newton-ut": {
+    "city": "Newton",
+    "state": "ut",
+    "region": "rockies",
+    "population": 756,
+    "count": 13
+  },
+  "philipsburg-mt": {
+    "city": "Philipsburg",
+    "state": "mt",
+    "region": "rockies",
+    "population": 754,
+    "count": 5
+  },
+  "fielding-ut": {
+    "city": "Fielding",
+    "state": "ut",
+    "region": "rockies",
+    "population": 746,
+    "count": 13
+  },
+  "spokane-creek-mt": {
+    "city": "Spokane Creek",
+    "state": "mt",
+    "region": "rockies",
+    "population": 740,
+    "count": 4
+  },
+  "huntington-or": {
+    "city": "Huntington",
+    "state": "or",
+    "region": "rockies",
+    "population": 739,
+    "count": 7
+  },
+  "georgetown-id": {
+    "city": "Georgetown",
+    "state": "id",
+    "region": "rockies",
+    "population": 739,
+    "count": 17
+  },
+  "teton-village-wy": {
+    "city": "Teton Village",
+    "state": "wy",
+    "region": "rockies",
+    "population": 739,
+    "count": 9
+  },
+  "walkerville-mt": {
+    "city": "Walkerville",
+    "state": "mt",
+    "region": "rockies",
+    "population": 733,
+    "count": 10
+  },
+  "thayne-wy": {
+    "city": "Thayne",
+    "state": "wy",
+    "region": "rockies",
+    "population": 732,
+    "count": 10
+  },
+  "smoot-wy": {
+    "city": "Smoot",
+    "state": "wy",
+    "region": "rockies",
+    "population": 723,
+    "count": 11
+  },
+  "randolph-ut": {
+    "city": "Randolph",
+    "state": "ut",
+    "region": "rockies",
+    "population": 722,
+    "count": 2
+  },
+  "batavia-mt": {
+    "city": "Batavia",
+    "state": "mt",
+    "region": "rockies",
+    "population": 690,
+    "count": 1
+  },
+  "kooskia-id": {
+    "city": "Kooskia",
+    "state": "id",
+    "region": "rockies",
+    "population": 687,
+    "count": 5
+  },
+  "carlton-mt": {
+    "city": "Carlton",
+    "state": "mt",
+    "region": "rockies",
+    "population": 682,
+    "count": 7
+  },
+  "paradise-ut": {
+    "city": "Paradise",
+    "state": "ut",
+    "region": "rockies",
+    "population": 679,
+    "count": 8
+  },
+  "shoshoni-wy": {
+    "city": "Shoshoni",
+    "state": "wy",
+    "region": "rockies",
+    "population": 677,
+    "count": 1
+  },
+  "diamondville-wy": {
+    "city": "Diamondville",
+    "state": "wy",
+    "region": "rockies",
+    "population": 665,
+    "count": 1
+  },
+  "silverton-id": {
+    "city": "Silverton",
+    "state": "id",
+    "region": "rockies",
+    "population": 652,
+    "count": 1
+  },
+  "owyhee-nv": {
+    "city": "Owyhee",
+    "state": "nv",
+    "region": "rockies",
+    "population": 647,
+    "count": 1
+  },
+  "gardiner-mt": {
+    "city": "Gardiner",
+    "state": "mt",
+    "region": "rockies",
+    "population": 647,
+    "count": 14
+  },
+  "clarkston-ut": {
+    "city": "Clarkston",
+    "state": "ut",
+    "region": "rockies",
+    "population": 623,
+    "count": 15
+  },
+  "south-hills-mt": {
+    "city": "South Hills",
+    "state": "mt",
+    "region": "rockies",
+    "population": 620,
+    "count": 5
+  },
+  "melba-id": {
+    "city": "Melba",
+    "state": "id",
+    "region": "rockies",
+    "population": 617,
+    "count": 9
+  },
+  "meeteetse-wy": {
+    "city": "Meeteetse",
+    "state": "wy",
+    "region": "rockies",
+    "population": 612,
+    "count": 1
+  },
+  "roberts-id": {
+    "city": "Roberts",
+    "state": "id",
+    "region": "rockies",
+    "population": 609,
+    "count": 9
+  },
+  "garden-city-ut": {
+    "city": "Garden City",
+    "state": "ut",
+    "region": "rockies",
+    "population": 608,
+    "count": 12
+  },
+  "parker-id": {
+    "city": "Parker",
+    "state": "id",
+    "region": "rockies",
+    "population": 607,
+    "count": 6
+  },
+  "mackay-id": {
+    "city": "Mackay",
+    "state": "id",
+    "region": "rockies",
+    "population": 602,
+    "count": 16
+  },
+  "riverbend-mt": {
+    "city": "Riverbend",
+    "state": "mt",
+    "region": "rockies",
+    "population": 592,
+    "count": 7
+  },
+  "avimor-id": {
+    "city": "Avimor",
+    "state": "id",
+    "region": "rockies",
+    "population": 586,
+    "count": 41
+  },
+  "richfield-id": {
+    "city": "Richfield",
+    "state": "id",
+    "region": "rockies",
+    "population": 586,
+    "count": 21
+  },
+  "dubois-id": {
+    "city": "Dubois",
+    "state": "id",
+    "region": "rockies",
+    "population": 585,
+    "count": 6
+  },
+  "idaho-city-id": {
+    "city": "Idaho City",
+    "state": "id",
+    "region": "rockies",
+    "population": 581,
+    "count": 52
+  },
+  "the-silos-mt": {
+    "city": "The Silos",
+    "state": "mt",
+    "region": "rockies",
+    "population": 579,
+    "count": 8
+  },
+  "alberton-mt": {
+    "city": "Alberton",
+    "state": "mt",
+    "region": "rockies",
+    "population": 573,
+    "count": 7
+  },
+  "notus-id": {
+    "city": "Notus",
+    "state": "id",
+    "region": "rockies",
+    "population": 573,
+    "count": 14
+  },
+  "cascade-mt": {
+    "city": "Cascade",
+    "state": "mt",
+    "region": "rockies",
+    "population": 572,
+    "count": 1
+  },
+  "weston-id": {
+    "city": "Weston",
+    "state": "id",
+    "region": "rockies",
+    "population": 569,
+    "count": 17
+  },
+  "basalt-id": {
+    "city": "Basalt",
+    "state": "id",
+    "region": "rockies",
+    "population": 569,
+    "count": 12
+  },
+  "lucerne-wy": {
+    "city": "Lucerne",
+    "state": "wy",
+    "region": "rockies",
+    "population": 567,
+    "count": 1
+  },
+  "paris-id": {
+    "city": "Paris",
+    "state": "id",
+    "region": "rockies",
+    "population": 562,
+    "count": 19
+  },
+  "arbon-valley-id": {
+    "city": "Arbon Valley",
+    "state": "id",
+    "region": "rockies",
+    "population": 562,
+    "count": 11
+  },
+  "hot-springs-mt": {
+    "city": "Hot Springs",
+    "state": "mt",
+    "region": "rockies",
+    "population": 557,
+    "count": 2
+  },
+  "turah-mt": {
+    "city": "Turah",
+    "state": "mt",
+    "region": "rockies",
+    "population": 543,
+    "count": 3
+  },
+  "lindisfarne-mt": {
+    "city": "Lindisfarne",
+    "state": "mt",
+    "region": "rockies",
+    "population": 533,
+    "count": 1
+  },
+  "jefferson-city-mt": {
+    "city": "Jefferson City",
+    "state": "mt",
+    "region": "rockies",
+    "population": 533,
+    "count": 7
+  },
+  "darby-mt": {
+    "city": "Darby",
+    "state": "mt",
+    "region": "rockies",
+    "population": 527,
+    "count": 13
+  },
+  "trenton-ut": {
+    "city": "Trenton",
+    "state": "ut",
+    "region": "rockies",
+    "population": 526,
+    "count": 15
+  },
+  "newdale-id": {
+    "city": "Newdale",
+    "state": "id",
+    "region": "rockies",
+    "population": 525,
+    "count": 8
+  },
+  "nezperce-id": {
+    "city": "Nezperce",
+    "state": "id",
+    "region": "rockies",
+    "population": 522,
+    "count": 1
+  },
+  "cove-ut": {
+    "city": "Cove",
+    "state": "ut",
+    "region": "rockies",
+    "population": 521,
+    "count": 17
+  },
+  "centennial-wy": {
+    "city": "Centennial",
+    "state": "wy",
+    "region": "rockies",
+    "population": 521,
+    "count": 2
+  },
+  "amalga-ut": {
+    "city": "Amalga",
+    "state": "ut",
+    "region": "rockies",
+    "population": 511,
+    "count": 14
+  },
+  "dayton-id": {
+    "city": "Dayton",
+    "state": "id",
+    "region": "rockies",
+    "population": 500,
+    "count": 18
+  }
+}

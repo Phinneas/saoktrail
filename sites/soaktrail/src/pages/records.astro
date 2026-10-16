@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import AuthorAttribution from '../components/AuthorAttribution.astro';
+import ContributeForm from '../components/ContributeForm.astro';
 
 export const prerender = true;
 
@@ -10,72 +11,103 @@ const title = 'Hot Springs Records & Superlatives — Hottest, Highest & Most Re
 
 // Fetch live stats from the API at build time
 let totalSprings = 515;
+let allSprings: any[] = [];
 try {
-  const statsRes = await fetch('https://soakatlas-mcp.buzzuw2.workers.dev/stats');
+  const [statsRes, springsRes] = await Promise.all([
+    fetch('https://soakatlas-mcp.buzzuw2.workers.dev/stats'),
+    fetch('https://soakatlas-mcp.buzzuw2.workers.dev/springs?limit=2000'),
+  ]);
   if (statsRes.ok) {
     const stats = await statsRes.json();
     totalSprings = stats.total_springs || totalSprings;
   }
-} catch { /* use default */ }
+  if (springsRes.ok) {
+    const data = await springsRes.json();
+    allSprings = (data.springs || []).filter((s: any) => s.lat && s.lng);
+  }
+} catch { /* use defaults */ }
+
+// Derive rankings from live data
+const springsWithTemp = allSprings.filter((s: any) => s.temperature_f != null);
+const springsWithElev = allSprings.filter((s: any) => s.lat && s.lng);
+
+// Hottest (above 120°F, these are source temps, not soakable)
+const hottestSprings = springsWithTemp
+  .filter((s: any) => s.temperature_f > 120)
+  .sort((a: any, b: any) => b.temperature_f - a.temperature_f)
+  .slice(0, 25)
+  .map((s: any) => ({
+    name: s.name, temp: s.temperature_f, state: s.state,
+    url: `https://soaktrail.com/locator`,
+  }));
+
+// Soakable (95-110°F)
+const soakableSprings = springsWithTemp
+  .filter((s: any) => s.temperature_f >= 95 && s.temperature_f <= 110)
+  .sort((a: any, b: any) => b.temperature_f - a.temperature_f)
+  .slice(0, 25)
+  .map((s: any) => ({
+    name: s.name, temp: s.temperature_f, state: s.state,
+    url: `https://soaktrail.com/locator`,
+  }));
+
+// Soakable by state
+const soakableByState: Record<string, { state: string; code: string; soakable: number; total: number; yearRound: number }> = {};
+for (const s of springsWithTemp) {
+  const st = s.state?.toUpperCase();
+  if (!st) continue;
+  if (!soakableByState[st]) soakableByState[st] = { state: st, code: st, soakable: 0, total: 0, yearRound: 0 };
+  soakableByState[st].total++;
+  if (s.temperature_f >= 95 && s.temperature_f <= 110) soakableByState[st].soakable++;
+}
+const soakableByStateArr = Object.values(soakableByState)
+  .sort((a: any, b: any) => b.soakable - a.soakable)
+  .slice(0, 10);
+
+// Access breakdown
+const accessCounts: Record<string, number> = {};
+for (const s of allSprings) {
+  const at = s.access_type || 'unknown';
+  accessCounts[at] = (accessCounts[at] || 0) + 1;
+}
+const accessBreakdown = Object.entries(accessCounts)
+  .map(([type, count]) => ({ type, count, pct: Math.round((count / allSprings.length) * 100) }))
+  .sort((a: any, b: any) => b.count - a.count);
+
+// Temperature buckets
+const tempBuckets = [
+  { range: '95–110°F (soakable)', min: 95, max: 110, color: 'bg-green-500' },
+  { range: '111–150°F (very hot)', min: 111, max: 150, color: 'bg-orange-500' },
+  { range: '151°F+ (boiling / geysers)', min: 151, max: 9999, color: 'bg-red-500' },
+  { range: '60–94°F (warm)', min: 60, max: 94, color: 'bg-blue-400' },
+  { range: 'Temperature unknown', min: 0, max: 0, color: 'bg-gray-400' },
+];
+const temperatureBuckets = tempBuckets.map((b) => ({
+  ...b,
+  count: b.min === 0
+    ? allSprings.filter((s: any) => !s.temperature_f).length
+    : springsWithTemp.filter((s: any) => s.temperature_f >= b.min && s.temperature_f <= b.max).length,
+}));
 
 const description =
   `The hottest, highest, most remote, and most mineral-rich natural hot springs in the American West — ranked by temperature, elevation, and access from Soak Trail's database of ${totalSprings} mapped springs.`;
 
-// --- Data pulled from springs.json across all 6 regional sites ---
+// --- Rankings derived from live API data above ---
 
-const hottestSprings = [
-  { name: 'The Geysers', temp: 214, state: 'California', url: 'https://www.shastahotsprings.com/springs/the-geysers' },
-  { name: 'Borax Lake Hot Springs', temp: 212, state: 'Oregon', url: 'https://www.shastahotsprings.com/springs/borax-lake-hot-springs' },
-  { name: 'Little Geysers', temp: 210, state: 'California', url: 'https://www.shastahotsprings.com/springs/little-geysers' },
-  { name: 'Surprise Valley Hot Springs', temp: 208, state: 'California', url: 'https://www.shastahotsprings.com/springs/hot-springs-surprise-valley' },
-  { name: 'Lake City Hot Springs', temp: 207, state: 'California', url: 'https://www.shastahotsprings.com/springs/lake-city-hot-springs' },
-  { name: 'Coso Hot Springs', temp: 207, state: 'California', url: 'https://www.shastahotsprings.com/springs/coso-hot-springs' },
-  { name: 'Devils Kitchen', temp: 207, state: 'California', url: 'https://www.shastahotsprings.com/springs/devils-kitchen' },
-  { name: 'Terminal Geyser', temp: 205, state: 'California', url: 'https://www.shastahotsprings.com/springs/terminal-geyser' },
-  { name: 'Wendel Hot Springs', temp: 205, state: 'California', url: 'https://www.shastahotsprings.com/springs/wendel-hot-springs' },
-  { name: 'Morgan Hot Spring', temp: 205, state: 'California', url: 'https://www.shastahotsprings.com/springs/morgan-hot-spring' },
-];
-
+// Highest springs: elevation data not available via REST API, sourced from
+// Stanford Thermal Earth Model dataset and USGS 3DEP elevation service.
+// See: https://gdr.openei.org/submissions/1592
 const highestSprings = [
-  { name: 'Conundrum Hot Springs', elev: 11200, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/colorados-conundrum-hot-springs' },
-  { name: 'Paradise Hot Springs', elev: 10950, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/paradise-hot-springs-colorado-guide' },
-  { name: 'Hartsel Hot Springs', elev: 10800, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/hartsel-hot-springs-colorado-guide' },
-  { name: 'Penny Hot Springs', elev: 9420, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/penny-hot-springs-colorado' },
-  { name: 'Waunita Hot Springs Ranch', elev: 8950, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/waunita-hot-springs-ranch' },
-  { name: 'Valley View Hot Springs', elev: 8850, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/valley-view-hot-springs-colorado' },
-  { name: 'Dunton Hot Springs', elev: 8850, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/dunton-hot-springs' },
-  { name: 'Rico Hot Springs', elev: 8840, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/rico-hot-springs' },
-  { name: 'Antero Hot Springs', elev: 8640, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/antero-hot-springs-colorado' },
-  { name: 'Cottonwood Hot Springs', elev: 8550, state: 'Colorado', url: 'https://www.soakcolorado.com/springs/cottonwood-hot-springs' },
-];
-
-const soakableByState = [
-  { state: 'Idaho', code: 'ID', soakable: 324, total: 420, yearRound: 210 },
-  { state: 'Oregon', code: 'OR', soakable: 50, total: 68, yearRound: 68 },
-  { state: 'Montana', code: 'MT', soakable: 48, total: 70, yearRound: 35 },
-  { state: 'Colorado', code: 'CO', soakable: 27, total: 36, yearRound: 28 },
-  { state: 'Wyoming', code: 'WY', soakable: 8, total: 30, yearRound: 15 },
-  { state: 'Alaska', code: 'AK', soakable: 3, total: 20, yearRound: 18 },
-  { state: 'California', code: 'CA', soakable: 3, total: 30, yearRound: 25 },
-  { state: 'Washington', code: 'WA', soakable: 2, total: 12, yearRound: 10 },
-];
-
-const accessBreakdown = [
-  { type: 'Hike-in', count: 476, pct: 69 },
-  { type: 'Drive-up / roadside', count: 111, pct: 16 },
-  { type: 'Resort', count: 65, pct: 9 },
-  { type: 'Dirt road', count: 14, pct: 2 },
-  { type: '4WD required', count: 8, pct: 1 },
-  { type: 'Boat-in / bush plane', count: 8, pct: 1 },
-  { type: 'Other / restricted', count: 4, pct: 1 },
-];
-
-const temperatureBuckets = [
-  { range: '95–110°F (soakable)', count: 465, color: 'bg-green-500' },
-  { range: '111–150°F (very hot)', count: 52, color: 'bg-orange-500' },
-  { range: '151°F+ (boiling / geysers)', count: 45, color: 'bg-red-500' },
-  { range: '60–94°F (warm)', count: 89, color: 'bg-blue-400' },
-  { range: 'Temperature unknown', count: 35, color: 'bg-gray-400' },
+  { name: 'Conundrum Hot Springs', elev: 11232, state: 'Colorado', url: 'https://soaktrail.com/locator' },
+  { name: 'Rico Hot Springs', elev: 9384, state: 'Colorado', url: 'https://soaktrail.com/locator' },
+  { name: 'Cement Creek Hot Springs', elev: 9252, state: 'Colorado', url: 'https://soaktrail.com/locator' },
+  { name: 'Rainbow Hot Springs', elev: 9049, state: 'Colorado', url: 'https://soaktrail.com/locator' },
+  { name: 'Hartsel Hot Springs', elev: 8958, state: 'Colorado', url: 'https://soaktrail.com/locator' },
+  { name: 'Waunita Hot Springs Ranch', elev: 8952, state: 'Colorado', url: 'https://soaktrail.com/locator' },
+  { name: 'Dunton Hot Springs', elev: 8887, state: 'Colorado', url: 'https://soaktrail.com/locator' },
+  { name: 'Valley View Hot Springs', elev: 8645, state: 'Colorado', url: 'https://soaktrail.com/locator' },
+  { name: 'San Antonio Hot Spring', elev: 8369, state: 'New Mexico', url: 'https://soaktrail.com/locator' },
+  { name: 'Chalk Creek Hot Springs', elev: 8301, state: 'Colorado', url: 'https://soaktrail.com/locator' },
 ];
 
 const faqs = [
@@ -157,13 +189,21 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 2, name: 'Records & Superlatives', item: canonical },
   ],
 };
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Hot Springs Records & Superlatives — Soak Trail',
+  url: canonical,
+  dateModified: new Date().toISOString().slice(0, 10),
+};
 ---
 
 <BaseLayout
   title={title}
   description={description}
   canonicalUrl={canonical}
-  jsonLd={[breadcrumbSchema, itemListSchema, datasetSchema, faqSchema]}
+  jsonLd={[breadcrumbSchema, itemListSchema, datasetSchema, faqSchema, webPageSchema]}
 >
   <div class="container mx-auto px-4 py-12 max-w-5xl">
     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Records & Superlatives' }]} />
@@ -322,7 +362,7 @@ const breadcrumbSchema = {
             </tr>
           </thead>
           <tbody>
-            {soakableByState.map((s) => (
+            {soakableByStateArr.map((s) => (
               <tr class="border-b border-sa-dark/5 hover:bg-sa-copper/5 transition-colors duration-150">
                 <td class="py-3 px-4 font-display font-medium text-sa-dark">{s.state}</td>
                 <td class="py-3 px-4 text-right font-mono text-sa-dark">{s.total}</td>
@@ -455,7 +495,7 @@ const breadcrumbSchema = {
     </section>
 
     <!-- CTA -->
-    <div class="text-center space-y-4">
+    <div class="text-center space-y-4 mb-16">
       <a href="/locator" class="inline-flex items-center gap-3 bg-sa-dark text-white px-8 py-4 rounded-full hover:bg-sa-copper transition-colors duration-300">
         <span class="text-sm font-body font-medium tracking-wide uppercase">Explore the Full Map</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -467,5 +507,8 @@ const breadcrumbSchema = {
         <a href="mailto:suggest@soaktrail.com?subject=Missing%20spring%20suggestion" class="text-sa-copper hover:text-sa-dark transition-colors">Suggest a spring</a>
       </div>
     </div>
+
+    <!-- Contribute -->
+    <ContributeForm />
   </div>
 </BaseLayout>

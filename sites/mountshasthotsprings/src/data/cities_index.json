@@ -1,0 +1,4825 @@
+{
+  "portland-or": {
+    "city": "Portland",
+    "state": "or",
+    "region": "shasta",
+    "population": 2115140,
+    "count": 5
+  },
+  "bakersfield-ca": {
+    "city": "Bakersfield",
+    "state": "ca",
+    "region": "shasta",
+    "population": 566351,
+    "count": 1
+  },
+  "reno-nv": {
+    "city": "Reno",
+    "state": "nv",
+    "region": "shasta",
+    "population": 466706,
+    "count": 1
+  },
+  "boise-id": {
+    "city": "Boise",
+    "state": "id",
+    "region": "shasta",
+    "population": 448305,
+    "count": 3
+  },
+  "oxnard-ca": {
+    "city": "Oxnard",
+    "state": "ca",
+    "region": "shasta",
+    "population": 369935,
+    "count": 3
+  },
+  "indio-ca": {
+    "city": "Indio",
+    "state": "ca",
+    "region": "shasta",
+    "population": 366757,
+    "count": 1
+  },
+  "santa-rosa-ca": {
+    "city": "Santa Rosa",
+    "state": "ca",
+    "region": "shasta",
+    "population": 292251,
+    "count": 3
+  },
+  "eugene-or": {
+    "city": "Eugene",
+    "state": "or",
+    "region": "shasta",
+    "population": 272404,
+    "count": 3
+  },
+  "santa-clarita-ca": {
+    "city": "Santa Clarita",
+    "state": "ca",
+    "region": "shasta",
+    "population": 270147,
+    "count": 1
+  },
+  "salem-or": {
+    "city": "Salem",
+    "state": "or",
+    "region": "shasta",
+    "population": 268719,
+    "count": 1
+  },
+  "moreno-valley-ca": {
+    "city": "Moreno Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 211666,
+    "count": 1
+  },
+  "thousand-oaks-ca": {
+    "city": "Thousand Oaks",
+    "state": "ca",
+    "region": "shasta",
+    "population": 207637,
+    "count": 3
+  },
+  "santa-barbara-ca": {
+    "city": "Santa Barbara",
+    "state": "ca",
+    "region": "shasta",
+    "population": 202039,
+    "count": 3
+  },
+  "nampa-id": {
+    "city": "Nampa",
+    "state": "id",
+    "region": "shasta",
+    "population": 201956,
+    "count": 3
+  },
+  "vancouver-wa": {
+    "city": "Vancouver",
+    "state": "wa",
+    "region": "shasta",
+    "population": 195300,
+    "count": 3
+  },
+  "hemet-ca": {
+    "city": "Hemet",
+    "state": "ca",
+    "region": "shasta",
+    "population": 185006,
+    "count": 1
+  },
+  "salinas-ca": {
+    "city": "Salinas",
+    "state": "ca",
+    "region": "shasta",
+    "population": 173715,
+    "count": 1
+  },
+  "medford-or": {
+    "city": "Medford",
+    "state": "or",
+    "region": "shasta",
+    "population": 170502,
+    "count": 1
+  },
+  "visalia-ca": {
+    "city": "Visalia",
+    "state": "ca",
+    "region": "shasta",
+    "population": 167944,
+    "count": 1
+  },
+  "santa-maria-ca": {
+    "city": "Santa Maria",
+    "state": "ca",
+    "region": "shasta",
+    "population": 144941,
+    "count": 1
+  },
+  "meridian-id": {
+    "city": "Meridian",
+    "state": "id",
+    "region": "shasta",
+    "population": 130138,
+    "count": 3
+  },
+  "simi-valley-ca": {
+    "city": "Simi Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 127125,
+    "count": 1
+  },
+  "yuba-city-ca": {
+    "city": "Yuba City",
+    "state": "ca",
+    "region": "shasta",
+    "population": 124653,
+    "count": 1
+  },
+  "seaside-ca": {
+    "city": "Seaside",
+    "state": "ca",
+    "region": "shasta",
+    "population": 124566,
+    "count": 1
+  },
+  "redding-ca": {
+    "city": "Redding",
+    "state": "ca",
+    "region": "shasta",
+    "population": 117275,
+    "count": 1
+  },
+  "bend-or": {
+    "city": "Bend",
+    "state": "or",
+    "region": "shasta",
+    "population": 113075,
+    "count": 6
+  },
+  "gresham-or": {
+    "city": "Gresham",
+    "state": "or",
+    "region": "shasta",
+    "population": 112378,
+    "count": 5
+  },
+  "sparks-nv": {
+    "city": "Sparks",
+    "state": "nv",
+    "region": "shasta",
+    "population": 110024,
+    "count": 1
+  },
+  "san-buenaventura-ca": {
+    "city": "San Buenaventura",
+    "state": "ca",
+    "region": "shasta",
+    "population": 109857,
+    "count": 3
+  },
+  "chico-ca": {
+    "city": "Chico",
+    "state": "ca",
+    "region": "shasta",
+    "population": 108267,
+    "count": 1
+  },
+  "hillsboro-or": {
+    "city": "Hillsboro",
+    "state": "or",
+    "region": "shasta",
+    "population": 108231,
+    "count": 1
+  },
+  "beaverton-or": {
+    "city": "Beaverton",
+    "state": "or",
+    "region": "shasta",
+    "population": 97812,
+    "count": 2
+  },
+  "napa-ca": {
+    "city": "Napa",
+    "state": "ca",
+    "region": "shasta",
+    "population": 82103,
+    "count": 2
+  },
+  "davis-ca": {
+    "city": "Davis",
+    "state": "ca",
+    "region": "shasta",
+    "population": 77858,
+    "count": 1
+  },
+  "camarillo-ca": {
+    "city": "Camarillo",
+    "state": "ca",
+    "region": "shasta",
+    "population": 76945,
+    "count": 3
+  },
+  "redlands-ca": {
+    "city": "Redlands",
+    "state": "ca",
+    "region": "shasta",
+    "population": 73375,
+    "count": 1
+  },
+  "tulare-ca": {
+    "city": "Tulare",
+    "state": "ca",
+    "region": "shasta",
+    "population": 70945,
+    "count": 1
+  },
+  "porterville-ca": {
+    "city": "Porterville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 69819,
+    "count": 1
+  },
+  "el-paso-de-robles-ca": {
+    "city": "El Paso de Robles",
+    "state": "ca",
+    "region": "shasta",
+    "population": 67346,
+    "count": 1
+  },
+  "caldwell-id": {
+    "city": "Caldwell",
+    "state": "id",
+    "region": "shasta",
+    "population": 66516,
+    "count": 3
+  },
+  "albany-or": {
+    "city": "Albany",
+    "state": "or",
+    "region": "shasta",
+    "population": 65601,
+    "count": 1
+  },
+  "woodland-ca": {
+    "city": "Woodland",
+    "state": "ca",
+    "region": "shasta",
+    "population": 61854,
+    "count": 1
+  },
+  "springfield-or": {
+    "city": "Springfield",
+    "state": "or",
+    "region": "shasta",
+    "population": 61499,
+    "count": 5
+  },
+  "petaluma-ca": {
+    "city": "Petaluma",
+    "state": "ca",
+    "region": "shasta",
+    "population": 59247,
+    "count": 2
+  },
+  "carson-city-nv": {
+    "city": "Carson City",
+    "state": "nv",
+    "region": "shasta",
+    "population": 58384,
+    "count": 1
+  },
+  "highland-ca": {
+    "city": "Highland",
+    "state": "ca",
+    "region": "shasta",
+    "population": 56675,
+    "count": 1
+  },
+  "beaumont-ca": {
+    "city": "Beaumont",
+    "state": "ca",
+    "region": "shasta",
+    "population": 56266,
+    "count": 1
+  },
+  "tigard-or": {
+    "city": "Tigard",
+    "state": "or",
+    "region": "shasta",
+    "population": 56011,
+    "count": 3
+  },
+  "san-jacinto-ca": {
+    "city": "San Jacinto",
+    "state": "ca",
+    "region": "shasta",
+    "population": 55180,
+    "count": 1
+  },
+  "yucaipa-ca": {
+    "city": "Yucaipa",
+    "state": "ca",
+    "region": "shasta",
+    "population": 54421,
+    "count": 1
+  },
+  "novato-ca": {
+    "city": "Novato",
+    "state": "ca",
+    "region": "shasta",
+    "population": 52546,
+    "count": 1
+  },
+  "aloha-or": {
+    "city": "Aloha",
+    "state": "or",
+    "region": "shasta",
+    "population": 52389,
+    "count": 1
+  },
+  "cathedral-city-ca": {
+    "city": "Cathedral City",
+    "state": "ca",
+    "region": "shasta",
+    "population": 52267,
+    "count": 1
+  },
+  "palm-desert-ca": {
+    "city": "Palm Desert",
+    "state": "ca",
+    "region": "shasta",
+    "population": 51990,
+    "count": 1
+  },
+  "delano-ca": {
+    "city": "Delano",
+    "state": "ca",
+    "region": "shasta",
+    "population": 51679,
+    "count": 1
+  },
+  "san-luis-obispo-ca": {
+    "city": "San Luis Obispo",
+    "state": "ca",
+    "region": "shasta",
+    "population": 48491,
+    "count": 1
+  },
+  "palm-springs-ca": {
+    "city": "Palm Springs",
+    "state": "ca",
+    "region": "shasta",
+    "population": 45070,
+    "count": 1
+  },
+  "rohnert-park-ca": {
+    "city": "Rohnert Park",
+    "state": "ca",
+    "region": "shasta",
+    "population": 44575,
+    "count": 3
+  },
+  "lompoc-ca": {
+    "city": "Lompoc",
+    "state": "ca",
+    "region": "shasta",
+    "population": 43646,
+    "count": 1
+  },
+  "coachella-ca": {
+    "city": "Coachella",
+    "state": "ca",
+    "region": "shasta",
+    "population": 43307,
+    "count": 1
+  },
+  "lake-oswego-or": {
+    "city": "Lake Oswego",
+    "state": "or",
+    "region": "shasta",
+    "population": 40381,
+    "count": 5
+  },
+  "grants-pass-or": {
+    "city": "Grants Pass",
+    "state": "or",
+    "region": "shasta",
+    "population": 39311,
+    "count": 1
+  },
+  "keizer-or": {
+    "city": "Keizer",
+    "state": "or",
+    "region": "shasta",
+    "population": 39082,
+    "count": 2
+  },
+  "la-quinta-ca": {
+    "city": "La Quinta",
+    "state": "ca",
+    "region": "shasta",
+    "population": 38707,
+    "count": 1
+  },
+  "oregon-city-or": {
+    "city": "Oregon City",
+    "state": "or",
+    "region": "shasta",
+    "population": 37755,
+    "count": 6
+  },
+  "redmond-or": {
+    "city": "Redmond",
+    "state": "or",
+    "region": "shasta",
+    "population": 36092,
+    "count": 5
+  },
+  "moorpark-ca": {
+    "city": "Moorpark",
+    "state": "ca",
+    "region": "shasta",
+    "population": 35854,
+    "count": 3
+  },
+  "oildale-ca": {
+    "city": "Oildale",
+    "state": "ca",
+    "region": "shasta",
+    "population": 34687,
+    "count": 1
+  },
+  "desert-hot-springs-ca": {
+    "city": "Desert Hot Springs",
+    "state": "ca",
+    "region": "shasta",
+    "population": 33200,
+    "count": 1
+  },
+  "bethany-or": {
+    "city": "Bethany",
+    "state": "or",
+    "region": "shasta",
+    "population": 33106,
+    "count": 1
+  },
+  "eagle-id": {
+    "city": "Eagle",
+    "state": "id",
+    "region": "shasta",
+    "population": 32855,
+    "count": 3
+  },
+  "goleta-ca": {
+    "city": "Goleta",
+    "state": "ca",
+    "region": "shasta",
+    "population": 32685,
+    "count": 3
+  },
+  "santa-paula-ca": {
+    "city": "Santa Paula",
+    "state": "ca",
+    "region": "shasta",
+    "population": 31376,
+    "count": 3
+  },
+  "banning-ca": {
+    "city": "Banning",
+    "state": "ca",
+    "region": "shasta",
+    "population": 31093,
+    "count": 1
+  },
+  "atascadero-ca": {
+    "city": "Atascadero",
+    "state": "ca",
+    "region": "shasta",
+    "population": 29712,
+    "count": 1
+  },
+  "monterey-ca": {
+    "city": "Monterey",
+    "state": "ca",
+    "region": "shasta",
+    "population": 29613,
+    "count": 1
+  },
+  "orchards-wa": {
+    "city": "Orchards",
+    "state": "wa",
+    "region": "shasta",
+    "population": 29438,
+    "count": 3
+  },
+  "east-niles-ca": {
+    "city": "East Niles",
+    "state": "ca",
+    "region": "shasta",
+    "population": 28532,
+    "count": 1
+  },
+  "eastern-goleta-valley-ca": {
+    "city": "Eastern Goleta Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 28295,
+    "count": 3
+  },
+  "ridgecrest-ca": {
+    "city": "Ridgecrest",
+    "state": "ca",
+    "region": "shasta",
+    "population": 28225,
+    "count": 2
+  },
+  "woodburn-or": {
+    "city": "Woodburn",
+    "state": "or",
+    "region": "shasta",
+    "population": 27875,
+    "count": 2
+  },
+  "tualatin-or": {
+    "city": "Tualatin",
+    "state": "or",
+    "region": "shasta",
+    "population": 27763,
+    "count": 3
+  },
+  "twentynine-palms-ca": {
+    "city": "Twentynine Palms",
+    "state": "ca",
+    "region": "shasta",
+    "population": 27355,
+    "count": 1
+  },
+  "kuna-id": {
+    "city": "Kuna",
+    "state": "id",
+    "region": "shasta",
+    "population": 27158,
+    "count": 3
+  },
+  "camas-wa": {
+    "city": "Camas",
+    "state": "wa",
+    "region": "shasta",
+    "population": 27007,
+    "count": 5
+  },
+  "wilsonville-or": {
+    "city": "Wilsonville",
+    "state": "or",
+    "region": "shasta",
+    "population": 26974,
+    "count": 3
+  },
+  "west-linn-or": {
+    "city": "West Linn",
+    "state": "or",
+    "region": "shasta",
+    "population": 26935,
+    "count": 5
+  },
+  "happy-valley-or": {
+    "city": "Happy Valley",
+    "state": "or",
+    "region": "shasta",
+    "population": 26738,
+    "count": 5
+  },
+  "wasco-ca": {
+    "city": "Wasco",
+    "state": "ca",
+    "region": "shasta",
+    "population": 26558,
+    "count": 1
+  },
+  "soledad-ca": {
+    "city": "Soledad",
+    "state": "ca",
+    "region": "shasta",
+    "population": 26365,
+    "count": 1
+  },
+  "windsor-ca": {
+    "city": "Windsor",
+    "state": "ca",
+    "region": "shasta",
+    "population": 26081,
+    "count": 3
+  },
+  "newberg-or": {
+    "city": "Newberg",
+    "state": "or",
+    "region": "shasta",
+    "population": 26066,
+    "count": 1
+  },
+  "loma-linda-ca": {
+    "city": "Loma Linda",
+    "state": "ca",
+    "region": "shasta",
+    "population": 25122,
+    "count": 1
+  },
+  "linda-ca": {
+    "city": "Linda",
+    "state": "ca",
+    "region": "shasta",
+    "population": 23871,
+    "count": 1
+  },
+  "roseburg-or": {
+    "city": "Roseburg",
+    "state": "or",
+    "region": "shasta",
+    "population": 23778,
+    "count": 1
+  },
+  "hazel-dell-wa": {
+    "city": "Hazel Dell",
+    "state": "wa",
+    "region": "shasta",
+    "population": 23237,
+    "count": 3
+  },
+  "calabasas-ca": {
+    "city": "Calabasas",
+    "state": "ca",
+    "region": "shasta",
+    "population": 22669,
+    "count": 1
+  },
+  "marina-ca": {
+    "city": "Marina",
+    "state": "ca",
+    "region": "shasta",
+    "population": 22563,
+    "count": 1
+  },
+  "sun-valley-nv": {
+    "city": "Sun Valley",
+    "state": "nv",
+    "region": "shasta",
+    "population": 22228,
+    "count": 1
+  },
+  "klamath-falls-or": {
+    "city": "Klamath Falls",
+    "state": "or",
+    "region": "shasta",
+    "population": 22115,
+    "count": 2
+  },
+  "battle-ground-wa": {
+    "city": "Battle Ground",
+    "state": "wa",
+    "region": "shasta",
+    "population": 21886,
+    "count": 3
+  },
+  "yucca-valley-ca": {
+    "city": "Yucca Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 21770,
+    "count": 1
+  },
+  "american-canyon-ca": {
+    "city": "American Canyon",
+    "state": "ca",
+    "region": "shasta",
+    "population": 21691,
+    "count": 1
+  },
+  "port-hueneme-ca": {
+    "city": "Port Hueneme",
+    "state": "ca",
+    "region": "shasta",
+    "population": 21582,
+    "count": 3
+  },
+  "milwaukie-or": {
+    "city": "Milwaukie",
+    "state": "or",
+    "region": "shasta",
+    "population": 21392,
+    "count": 5
+  },
+  "south-lake-tahoe-ca": {
+    "city": "South Lake Tahoe",
+    "state": "ca",
+    "region": "shasta",
+    "population": 21269,
+    "count": 1
+  },
+  "ashland-or": {
+    "city": "Ashland",
+    "state": "or",
+    "region": "shasta",
+    "population": 21259,
+    "count": 1
+  },
+  "hayesville-or": {
+    "city": "Hayesville",
+    "state": "or",
+    "region": "shasta",
+    "population": 21246,
+    "count": 2
+  },
+  "five-corners-wa": {
+    "city": "Five Corners",
+    "state": "wa",
+    "region": "shasta",
+    "population": 21194,
+    "count": 3
+  },
+  "shafter-ca": {
+    "city": "Shafter",
+    "state": "ca",
+    "region": "shasta",
+    "population": 21193,
+    "count": 1
+  },
+  "stevenson-ranch-ca": {
+    "city": "Stevenson Ranch",
+    "state": "ca",
+    "region": "shasta",
+    "population": 20990,
+    "count": 1
+  },
+  "sherwood-or": {
+    "city": "Sherwood",
+    "state": "or",
+    "region": "shasta",
+    "population": 20307,
+    "count": 3
+  },
+  "east-hemet-ca": {
+    "city": "East Hemet",
+    "state": "ca",
+    "region": "shasta",
+    "population": 20257,
+    "count": 1
+  },
+  "greenfield-ca": {
+    "city": "Greenfield",
+    "state": "ca",
+    "region": "shasta",
+    "population": 20232,
+    "count": 1
+  },
+  "salmon-creek-wa": {
+    "city": "Salmon Creek",
+    "state": "wa",
+    "region": "shasta",
+    "population": 20017,
+    "count": 3
+  },
+  "altamont-or": {
+    "city": "Altamont",
+    "state": "or",
+    "region": "shasta",
+    "population": 19927,
+    "count": 2
+  },
+  "prunedale-ca": {
+    "city": "Prunedale",
+    "state": "ca",
+    "region": "shasta",
+    "population": 19723,
+    "count": 1
+  },
+  "agoura-hills-ca": {
+    "city": "Agoura Hills",
+    "state": "ca",
+    "region": "shasta",
+    "population": 19721,
+    "count": 1
+  },
+  "arvin-ca": {
+    "city": "Arvin",
+    "state": "ca",
+    "region": "shasta",
+    "population": 19539,
+    "count": 1
+  },
+  "cedar-mill-or": {
+    "city": "Cedar Mill",
+    "state": "or",
+    "region": "shasta",
+    "population": 19471,
+    "count": 1
+  },
+  "lebanon-or": {
+    "city": "Lebanon",
+    "state": "or",
+    "region": "shasta",
+    "population": 19344,
+    "count": 5
+  },
+  "central-point-or": {
+    "city": "Central Point",
+    "state": "or",
+    "region": "shasta",
+    "population": 19216,
+    "count": 1
+  },
+  "rosedale-ca": {
+    "city": "Rosedale",
+    "state": "ca",
+    "region": "shasta",
+    "population": 18877,
+    "count": 1
+  },
+  "valle-vista-ca": {
+    "city": "Valle Vista",
+    "state": "ca",
+    "region": "shasta",
+    "population": 18602,
+    "count": 1
+  },
+  "olivehurst-ca": {
+    "city": "Olivehurst",
+    "state": "ca",
+    "region": "shasta",
+    "population": 18444,
+    "count": 1
+  },
+  "arroyo-grande-ca": {
+    "city": "Arroyo Grande",
+    "state": "ca",
+    "region": "shasta",
+    "population": 18372,
+    "count": 1
+  },
+  "canby-or": {
+    "city": "Canby",
+    "state": "or",
+    "region": "shasta",
+    "population": 18134,
+    "count": 4
+  },
+  "castaic-ca": {
+    "city": "Castaic",
+    "state": "ca",
+    "region": "shasta",
+    "population": 17999,
+    "count": 1
+  },
+  "spanish-springs-nv": {
+    "city": "Spanish Springs",
+    "state": "nv",
+    "region": "shasta",
+    "population": 17980,
+    "count": 1
+  },
+  "rancho-mirage-ca": {
+    "city": "Rancho Mirage",
+    "state": "ca",
+    "region": "shasta",
+    "population": 17563,
+    "count": 1
+  },
+  "nipomo-ca": {
+    "city": "Nipomo",
+    "state": "ca",
+    "region": "shasta",
+    "population": 17516,
+    "count": 1
+  },
+  "washougal-wa": {
+    "city": "Washougal",
+    "state": "wa",
+    "region": "shasta",
+    "population": 17490,
+    "count": 5
+  },
+  "coalinga-ca": {
+    "city": "Coalinga",
+    "state": "ca",
+    "region": "shasta",
+    "population": 17203,
+    "count": 1
+  },
+  "truckee-ca": {
+    "city": "Truckee",
+    "state": "ca",
+    "region": "shasta",
+    "population": 17066,
+    "count": 1
+  },
+  "pendleton-or": {
+    "city": "Pendleton",
+    "state": "or",
+    "region": "shasta",
+    "population": 16950,
+    "count": 2
+  },
+  "fillmore-ca": {
+    "city": "Fillmore",
+    "state": "ca",
+    "region": "shasta",
+    "population": 16816,
+    "count": 3
+  },
+  "oak-grove-or": {
+    "city": "Oak Grove",
+    "state": "or",
+    "region": "shasta",
+    "population": 16796,
+    "count": 5
+  },
+  "clearlake-ca": {
+    "city": "Clearlake",
+    "state": "ca",
+    "region": "shasta",
+    "population": 16659,
+    "count": 3
+  },
+  "ukiah-ca": {
+    "city": "Ukiah",
+    "state": "ca",
+    "region": "shasta",
+    "population": 16304,
+    "count": 3
+  },
+  "four-corners-or": {
+    "city": "Four Corners",
+    "state": "or",
+    "region": "shasta",
+    "population": 16275,
+    "count": 3
+  },
+  "troutdale-or": {
+    "city": "Troutdale",
+    "state": "or",
+    "region": "shasta",
+    "population": 15923,
+    "count": 5
+  },
+  "the-dalles-or": {
+    "city": "The Dalles",
+    "state": "or",
+    "region": "shasta",
+    "population": 15917,
+    "count": 3
+  },
+  "dayton-nv": {
+    "city": "Dayton",
+    "state": "nv",
+    "region": "shasta",
+    "population": 15781,
+    "count": 1
+  },
+  "pacific-grove-ca": {
+    "city": "Pacific Grove",
+    "state": "ca",
+    "region": "shasta",
+    "population": 14951,
+    "count": 1
+  },
+  "star-id": {
+    "city": "Star",
+    "state": "id",
+    "region": "shasta",
+    "population": 14745,
+    "count": 3
+  },
+  "red-bluff-ca": {
+    "city": "Red Bluff",
+    "state": "ca",
+    "region": "shasta",
+    "population": 14549,
+    "count": 2
+  },
+  "st-helens-or": {
+    "city": "St. Helens",
+    "state": "or",
+    "region": "shasta",
+    "population": 14258,
+    "count": 3
+  },
+  "mcfarland-ca": {
+    "city": "McFarland",
+    "state": "ca",
+    "region": "shasta",
+    "population": 14222,
+    "count": 1
+  },
+  "susanville-ca": {
+    "city": "Susanville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 14177,
+    "count": 4
+  },
+  "los-osos-ca": {
+    "city": "Los Osos",
+    "state": "ca",
+    "region": "shasta",
+    "population": 14166,
+    "count": 1
+  },
+  "grass-valley-ca": {
+    "city": "Grass Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 14113,
+    "count": 1
+  },
+  "isla-vista-ca": {
+    "city": "Isla Vista",
+    "state": "ca",
+    "region": "shasta",
+    "population": 13920,
+    "count": 3
+  },
+  "oak-park-ca": {
+    "city": "Oak Park",
+    "state": "ca",
+    "region": "shasta",
+    "population": 13757,
+    "count": 1
+  },
+  "avenal-ca": {
+    "city": "Avenal",
+    "state": "ca",
+    "region": "shasta",
+    "population": 13608,
+    "count": 1
+  },
+  "king-city-ca": {
+    "city": "King City",
+    "state": "ca",
+    "region": "shasta",
+    "population": 13604,
+    "count": 1
+  },
+  "ridgefield-wa": {
+    "city": "Ridgefield",
+    "state": "wa",
+    "region": "shasta",
+    "population": 13408,
+    "count": 3
+  },
+  "oatfield-or": {
+    "city": "Oatfield",
+    "state": "or",
+    "region": "shasta",
+    "population": 13294,
+    "count": 5
+  },
+  "lamont-ca": {
+    "city": "Lamont",
+    "state": "ca",
+    "region": "shasta",
+    "population": 13164,
+    "count": 1
+  },
+  "la-grande-or": {
+    "city": "La Grande",
+    "state": "or",
+    "region": "shasta",
+    "population": 13058,
+    "count": 3
+  },
+  "carpinteria-ca": {
+    "city": "Carpinteria",
+    "state": "ca",
+    "region": "shasta",
+    "population": 13036,
+    "count": 3
+  },
+  "sandy-or": {
+    "city": "Sandy",
+    "state": "or",
+    "region": "shasta",
+    "population": 12854,
+    "count": 6
+  },
+  "marysville-ca": {
+    "city": "Marysville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 12726,
+    "count": 1
+  },
+  "garden-city-id": {
+    "city": "Garden City",
+    "state": "id",
+    "region": "shasta",
+    "population": 12654,
+    "count": 3
+  },
+  "lindsay-ca": {
+    "city": "Lindsay",
+    "state": "ca",
+    "region": "shasta",
+    "population": 12643,
+    "count": 1
+  },
+  "grover-beach-ca": {
+    "city": "Grover Beach",
+    "state": "ca",
+    "region": "shasta",
+    "population": 12604,
+    "count": 1
+  },
+  "university-of-california-santa-barbara-ca": {
+    "city": "University of California-Santa Barbara",
+    "state": "ca",
+    "region": "shasta",
+    "population": 12121,
+    "count": 3
+  },
+  "gladstone-or": {
+    "city": "Gladstone",
+    "state": "or",
+    "region": "shasta",
+    "population": 11977,
+    "count": 5
+  },
+  "ontario-or": {
+    "city": "Ontario",
+    "state": "or",
+    "region": "shasta",
+    "population": 11842,
+    "count": 4
+  },
+  "minnehaha-wa": {
+    "city": "Minnehaha",
+    "state": "wa",
+    "region": "shasta",
+    "population": 11482,
+    "count": 3
+  },
+  "prineville-or": {
+    "city": "Prineville",
+    "state": "or",
+    "region": "shasta",
+    "population": 11470,
+    "count": 3
+  },
+  "damascus-or": {
+    "city": "Damascus",
+    "state": "or",
+    "region": "shasta",
+    "population": 11437,
+    "count": 6
+  },
+  "big-bear-city-ca": {
+    "city": "Big Bear City",
+    "state": "ca",
+    "region": "shasta",
+    "population": 11431,
+    "count": 1
+  },
+  "cold-springs-nv": {
+    "city": "Cold Springs",
+    "state": "nv",
+    "region": "shasta",
+    "population": 11321,
+    "count": 3
+  },
+  "anderson-ca": {
+    "city": "Anderson",
+    "state": "ca",
+    "region": "shasta",
+    "population": 11255,
+    "count": 2
+  },
+  "healdsburg-ca": {
+    "city": "Healdsburg",
+    "state": "ca",
+    "region": "shasta",
+    "population": 11243,
+    "count": 3
+  },
+  "oak-hills-or": {
+    "city": "Oak Hills",
+    "state": "or",
+    "region": "shasta",
+    "population": 11131,
+    "count": 1
+  },
+  "east-bakersfield-ca": {
+    "city": "East Bakersfield",
+    "state": "ca",
+    "region": "shasta",
+    "population": 11062,
+    "count": 1
+  },
+  "calimesa-ca": {
+    "city": "Calimesa",
+    "state": "ca",
+    "region": "shasta",
+    "population": 10902,
+    "count": 1
+  },
+  "felida-wa": {
+    "city": "Felida",
+    "state": "wa",
+    "region": "shasta",
+    "population": 10841,
+    "count": 3
+  },
+  "mount-vista-wa": {
+    "city": "Mount Vista",
+    "state": "wa",
+    "region": "shasta",
+    "population": 10764,
+    "count": 3
+  },
+  "white-city-or": {
+    "city": "White City",
+    "state": "or",
+    "region": "shasta",
+    "population": 10750,
+    "count": 1
+  },
+  "fairview-or": {
+    "city": "Fairview",
+    "state": "or",
+    "region": "shasta",
+    "population": 10735,
+    "count": 5
+  },
+  "cottage-grove-or": {
+    "city": "Cottage Grove",
+    "state": "or",
+    "region": "shasta",
+    "population": 10698,
+    "count": 4
+  },
+  "morro-bay-ca": {
+    "city": "Morro Bay",
+    "state": "ca",
+    "region": "shasta",
+    "population": 10692,
+    "count": 1
+  },
+  "sonoma-ca": {
+    "city": "Sonoma",
+    "state": "ca",
+    "region": "shasta",
+    "population": 10670,
+    "count": 2
+  },
+  "middleton-id": {
+    "city": "Middleton",
+    "state": "id",
+    "region": "shasta",
+    "population": 10649,
+    "count": 3
+  },
+  "lake-arrowhead-ca": {
+    "city": "Lake Arrowhead",
+    "state": "ca",
+    "region": "shasta",
+    "population": 10639,
+    "count": 1
+  },
+  "santa-clara-or": {
+    "city": "Santa Clara",
+    "state": "or",
+    "region": "shasta",
+    "population": 10551,
+    "count": 2
+  },
+  "hillcrest-ca": {
+    "city": "Hillcrest",
+    "state": "ca",
+    "region": "shasta",
+    "population": 10511,
+    "count": 1
+  },
+  "silverton-or": {
+    "city": "Silverton",
+    "state": "or",
+    "region": "shasta",
+    "population": 10456,
+    "count": 3
+  },
+  "malibu-ca": {
+    "city": "Malibu",
+    "state": "ca",
+    "region": "shasta",
+    "population": 10421,
+    "count": 1
+  },
+  "farmersville-ca": {
+    "city": "Farmersville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 10397,
+    "count": 1
+  },
+  "shasta-lake-ca": {
+    "city": "Shasta Lake",
+    "state": "ca",
+    "region": "shasta",
+    "population": 10311,
+    "count": 1
+  },
+  "exeter-ca": {
+    "city": "Exeter",
+    "state": "ca",
+    "region": "shasta",
+    "population": 10258,
+    "count": 1
+  },
+  "baker-city-or": {
+    "city": "Baker City",
+    "state": "or",
+    "region": "shasta",
+    "population": 10210,
+    "count": 4
+  },
+  "molalla-or": {
+    "city": "Molalla",
+    "state": "or",
+    "region": "shasta",
+    "population": 10186,
+    "count": 4
+  },
+  "potomac-park-ca": {
+    "city": "Potomac Park",
+    "state": "ca",
+    "region": "shasta",
+    "population": 10138,
+    "count": 1
+  },
+  "sweet-home-or": {
+    "city": "Sweet Home",
+    "state": "or",
+    "region": "shasta",
+    "population": 10078,
+    "count": 5
+  },
+  "bull-mountain-or": {
+    "city": "Bull Mountain",
+    "state": "or",
+    "region": "shasta",
+    "population": 9865,
+    "count": 3
+  },
+  "eagle-point-or": {
+    "city": "Eagle Point",
+    "state": "or",
+    "region": "shasta",
+    "population": 9839,
+    "count": 1
+  },
+  "templeton-ca": {
+    "city": "Templeton",
+    "state": "ca",
+    "region": "shasta",
+    "population": 9580,
+    "count": 1
+  },
+  "mentone-ca": {
+    "city": "Mentone",
+    "state": "ca",
+    "region": "shasta",
+    "population": 9514,
+    "count": 1
+  },
+  "plumas-lake-ca": {
+    "city": "Plumas Lake",
+    "state": "ca",
+    "region": "shasta",
+    "population": 9418,
+    "count": 1
+  },
+  "incline-village-nv": {
+    "city": "Incline Village",
+    "state": "nv",
+    "region": "shasta",
+    "population": 9272,
+    "count": 1
+  },
+  "rockcreek-or": {
+    "city": "Rockcreek",
+    "state": "or",
+    "region": "shasta",
+    "population": 9223,
+    "count": 1
+  },
+  "montecito-ca": {
+    "city": "Montecito",
+    "state": "ca",
+    "region": "shasta",
+    "population": 9031,
+    "count": 3
+  },
+  "cloverdale-ca": {
+    "city": "Cloverdale",
+    "state": "ca",
+    "region": "shasta",
+    "population": 8886,
+    "count": 3
+  },
+  "river-road-or": {
+    "city": "River Road",
+    "state": "or",
+    "region": "shasta",
+    "population": 8862,
+    "count": 3
+  },
+  "larkfield-wikiup-ca": {
+    "city": "Larkfield-Wikiup",
+    "state": "ca",
+    "region": "shasta",
+    "population": 8765,
+    "count": 3
+  },
+  "university-of-california-davis-ca": {
+    "city": "University of California-Davis",
+    "state": "ca",
+    "region": "shasta",
+    "population": 8696,
+    "count": 1
+  },
+  "barberton-wa": {
+    "city": "Barberton",
+    "state": "wa",
+    "region": "shasta",
+    "population": 8668,
+    "count": 3
+  },
+  "sutherlin-or": {
+    "city": "Sutherlin",
+    "state": "or",
+    "region": "shasta",
+    "population": 8599,
+    "count": 1
+  },
+  "guadalupe-ca": {
+    "city": "Guadalupe",
+    "state": "ca",
+    "region": "shasta",
+    "population": 8566,
+    "count": 1
+  },
+  "payette-id": {
+    "city": "Payette",
+    "state": "id",
+    "region": "shasta",
+    "population": 8536,
+    "count": 4
+  },
+  "gonzales-ca": {
+    "city": "Gonzales",
+    "state": "ca",
+    "region": "shasta",
+    "population": 8492,
+    "count": 1
+  },
+  "la-cresta-ca": {
+    "city": "La Cresta",
+    "state": "ca",
+    "region": "shasta",
+    "population": 8389,
+    "count": 1
+  },
+  "cedar-hills-or": {
+    "city": "Cedar Hills",
+    "state": "or",
+    "region": "shasta",
+    "population": 8388,
+    "count": 2
+  },
+  "hood-river-or": {
+    "city": "Hood River",
+    "state": "or",
+    "region": "shasta",
+    "population": 8361,
+    "count": 3
+  },
+  "stayton-or": {
+    "city": "Stayton",
+    "state": "or",
+    "region": "shasta",
+    "population": 8292,
+    "count": 3
+  },
+  "emmett-id": {
+    "city": "Emmett",
+    "state": "id",
+    "region": "shasta",
+    "population": 8275,
+    "count": 4
+  },
+  "scappoose-or": {
+    "city": "Scappoose",
+    "state": "or",
+    "region": "shasta",
+    "population": 8179,
+    "count": 1
+  },
+  "corning-ca": {
+    "city": "Corning",
+    "state": "ca",
+    "region": "shasta",
+    "population": 8155,
+    "count": 1
+  },
+  "pismo-beach-ca": {
+    "city": "Pismo Beach",
+    "state": "ca",
+    "region": "shasta",
+    "population": 8014,
+    "count": 1
+  },
+  "bermuda-dunes-ca": {
+    "city": "Bermuda Dunes",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7971,
+    "count": 1
+  },
+  "jennings-lodge-or": {
+    "city": "Jennings Lodge",
+    "state": "or",
+    "region": "shasta",
+    "population": 7971,
+    "count": 5
+  },
+  "california-polytechnic-state-university-ca": {
+    "city": "California Polytechnic State University",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7915,
+    "count": 1
+  },
+  "yreka-ca": {
+    "city": "Yreka",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7820,
+    "count": 1
+  },
+  "westlake-village-ca": {
+    "city": "Westlake Village",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7743,
+    "count": 1
+  },
+  "thousand-palms-ca": {
+    "city": "Thousand Palms",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7720,
+    "count": 1
+  },
+  "woodlake-ca": {
+    "city": "Woodlake",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7702,
+    "count": 1
+  },
+  "madras-or": {
+    "city": "Madras",
+    "state": "or",
+    "region": "shasta",
+    "population": 7676,
+    "count": 2
+  },
+  "west-haven-sylvan-or": {
+    "city": "West Haven-Sylvan",
+    "state": "or",
+    "region": "shasta",
+    "population": 7674,
+    "count": 4
+  },
+  "homeland-ca": {
+    "city": "Homeland",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7584,
+    "count": 1
+  },
+  "winters-ca": {
+    "city": "Winters",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7583,
+    "count": 3
+  },
+  "ojai-ca": {
+    "city": "Ojai",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7577,
+    "count": 3
+  },
+  "cotati-ca": {
+    "city": "Cotati",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7489,
+    "count": 2
+  },
+  "sebastopol-ca": {
+    "city": "Sebastopol",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7445,
+    "count": 3
+  },
+  "cottonwood-ca": {
+    "city": "Cottonwood",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3107,
+    "count": 1
+  },
+  "paradise-ca": {
+    "city": "Paradise",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7392,
+    "count": 2
+  },
+  "magalia-ca": {
+    "city": "Magalia",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7389,
+    "count": 2
+  },
+  "garnet-ca": {
+    "city": "Garnet",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7382,
+    "count": 1
+  },
+  "alta-sierra-ca": {
+    "city": "Alta Sierra",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7361,
+    "count": 1
+  },
+  "gridley-ca": {
+    "city": "Gridley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7330,
+    "count": 1
+  },
+  "boyes-hot-springs-ca": {
+    "city": "Boyes Hot Springs",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7247,
+    "count": 2
+  },
+  "mammoth-lakes-ca": {
+    "city": "Mammoth Lakes",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7214,
+    "count": 10
+  },
+  "earlimart-ca": {
+    "city": "Earlimart",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7214,
+    "count": 1
+  },
+  "mecca-ca": {
+    "city": "Mecca",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7184,
+    "count": 1
+  },
+  "oceano-ca": {
+    "city": "Oceano",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7128,
+    "count": 1
+  },
+  "taft-ca": {
+    "city": "Taft",
+    "state": "ca",
+    "region": "shasta",
+    "population": 7125,
+    "count": 3
+  },
+  "milton-freewater-or": {
+    "city": "Milton-Freewater",
+    "state": "or",
+    "region": "shasta",
+    "population": 7036,
+    "count": 1
+  },
+  "garden-home-whitford-or": {
+    "city": "Garden Home-Whitford",
+    "state": "or",
+    "region": "shasta",
+    "population": 6979,
+    "count": 5
+  },
+  "lake-shore-wa": {
+    "city": "Lake Shore",
+    "state": "wa",
+    "region": "shasta",
+    "population": 6978,
+    "count": 3
+  },
+  "junction-city-or": {
+    "city": "Junction City",
+    "state": "or",
+    "region": "shasta",
+    "population": 6947,
+    "count": 1
+  },
+  "mira-monte-ca": {
+    "city": "Mira Monte",
+    "state": "ca",
+    "region": "shasta",
+    "population": 6888,
+    "count": 3
+  },
+  "nuevo-ca": {
+    "city": "Nuevo",
+    "state": "ca",
+    "region": "shasta",
+    "population": 6803,
+    "count": 1
+  },
+  "vandenberg-village-ca": {
+    "city": "Vandenberg Village",
+    "state": "ca",
+    "region": "shasta",
+    "population": 6776,
+    "count": 1
+  },
+  "raleigh-hills-or": {
+    "city": "Raleigh Hills",
+    "state": "or",
+    "region": "shasta",
+    "population": 6744,
+    "count": 5
+  },
+  "castroville-ca": {
+    "city": "Castroville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 6720,
+    "count": 1
+  },
+  "cherry-valley-ca": {
+    "city": "Cherry Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 6668,
+    "count": 1
+  },
+  "fruitland-id": {
+    "city": "Fruitland",
+    "state": "id",
+    "region": "shasta",
+    "population": 6663,
+    "count": 4
+  },
+  "west-slope-or": {
+    "city": "West Slope",
+    "state": "or",
+    "region": "shasta",
+    "population": 6582,
+    "count": 5
+  },
+  "desert-palms-ca": {
+    "city": "Desert Palms",
+    "state": "ca",
+    "region": "shasta",
+    "population": 6579,
+    "count": 1
+  },
+  "colusa-ca": {
+    "city": "Colusa",
+    "state": "ca",
+    "region": "shasta",
+    "population": 6505,
+    "count": 2
+  },
+  "woodland-wa": {
+    "city": "Woodland",
+    "state": "wa",
+    "region": "shasta",
+    "population": 6487,
+    "count": 3
+  },
+  "johnson-lane-nv": {
+    "city": "Johnson Lane",
+    "state": "nv",
+    "region": "shasta",
+    "population": 6467,
+    "count": 1
+  },
+  "el-rio-ca": {
+    "city": "El Rio",
+    "state": "ca",
+    "region": "shasta",
+    "population": 6368,
+    "count": 3
+  },
+  "talent-or": {
+    "city": "Talent",
+    "state": "or",
+    "region": "shasta",
+    "population": 6254,
+    "count": 1
+  },
+  "joshua-tree-ca": {
+    "city": "Joshua Tree",
+    "state": "ca",
+    "region": "shasta",
+    "population": 6234,
+    "count": 1
+  },
+  "willows-ca": {
+    "city": "Willows",
+    "state": "ca",
+    "region": "shasta",
+    "population": 6190,
+    "count": 1
+  },
+  "hockinson-wa": {
+    "city": "Hockinson",
+    "state": "wa",
+    "region": "shasta",
+    "population": 6150,
+    "count": 3
+  },
+  "oak-view-ca": {
+    "city": "Oak View",
+    "state": "ca",
+    "region": "shasta",
+    "population": 6141,
+    "count": 3
+  },
+  "oakhurst-ca": {
+    "city": "Oakhurst",
+    "state": "ca",
+    "region": "shasta",
+    "population": 6091,
+    "count": 8
+  },
+  "solvang-ca": {
+    "city": "Solvang",
+    "state": "ca",
+    "region": "shasta",
+    "population": 6034,
+    "count": 3
+  },
+  "cambria-ca": {
+    "city": "Cambria",
+    "state": "ca",
+    "region": "shasta",
+    "population": 5978,
+    "count": 1
+  },
+  "lucerne-valley-ca": {
+    "city": "Lucerne Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 5957,
+    "count": 1
+  },
+  "happy-valley-ca": {
+    "city": "Happy Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 5944,
+    "count": 1
+  },
+  "weiser-id": {
+    "city": "Weiser",
+    "state": "id",
+    "region": "shasta",
+    "population": 5935,
+    "count": 3
+  },
+  "bear-valley-springs-ca": {
+    "city": "Bear Valley Springs",
+    "state": "ca",
+    "region": "shasta",
+    "population": 5912,
+    "count": 1
+  },
+  "hidden-valley-lake-ca": {
+    "city": "Hidden Valley Lake",
+    "state": "ca",
+    "region": "shasta",
+    "population": 5872,
+    "count": 3
+  },
+  "deschutes-river-woods-or": {
+    "city": "Deschutes River Woods",
+    "state": "or",
+    "region": "shasta",
+    "population": 5797,
+    "count": 6
+  },
+  "benton-park-ca": {
+    "city": "Benton Park",
+    "state": "ca",
+    "region": "shasta",
+    "population": 5707,
+    "count": 1
+  },
+  "creswell-or": {
+    "city": "Creswell",
+    "state": "or",
+    "region": "shasta",
+    "population": 5621,
+    "count": 4
+  },
+  "williams-ca": {
+    "city": "Williams",
+    "state": "ca",
+    "region": "shasta",
+    "population": 5585,
+    "count": 3
+  },
+  "indian-hills-nv": {
+    "city": "Indian Hills",
+    "state": "nv",
+    "region": "shasta",
+    "population": 5527,
+    "count": 1
+  },
+  "marlene-village-or": {
+    "city": "Marlene Village",
+    "state": "or",
+    "region": "shasta",
+    "population": 5439,
+    "count": 1
+  },
+  "st-helena-ca": {
+    "city": "St. Helena",
+    "state": "ca",
+    "region": "shasta",
+    "population": 5318,
+    "count": 3
+  },
+  "yosemite-lakes-ca": {
+    "city": "Yosemite Lakes",
+    "state": "ca",
+    "region": "shasta",
+    "population": 5288,
+    "count": 2
+  },
+  "crooked-river-ranch-or": {
+    "city": "Crooked River Ranch",
+    "state": "or",
+    "region": "shasta",
+    "population": 5160,
+    "count": 5
+  },
+  "estacada-or": {
+    "city": "Estacada",
+    "state": "or",
+    "region": "shasta",
+    "population": 5152,
+    "count": 6
+  },
+  "lakeport-ca": {
+    "city": "Lakeport",
+    "state": "ca",
+    "region": "shasta",
+    "population": 5113,
+    "count": 3
+  },
+  "calistoga-ca": {
+    "city": "Calistoga",
+    "state": "ca",
+    "region": "shasta",
+    "population": 5111,
+    "count": 3
+  },
+  "buellton-ca": {
+    "city": "Buellton",
+    "state": "ca",
+    "region": "shasta",
+    "population": 5074,
+    "count": 3
+  },
+  "king-city-or": {
+    "city": "King City",
+    "state": "or",
+    "region": "shasta",
+    "population": 5073,
+    "count": 3
+  },
+  "east-porterville-ca": {
+    "city": "East Porterville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 5066,
+    "count": 1
+  },
+  "big-bear-lake-ca": {
+    "city": "Big Bear Lake",
+    "state": "ca",
+    "region": "shasta",
+    "population": 5041,
+    "count": 1
+  },
+  "running-springs-ca": {
+    "city": "Running Springs",
+    "state": "ca",
+    "region": "shasta",
+    "population": 4917,
+    "count": 1
+  },
+  "greenacres-ca": {
+    "city": "Greenacres",
+    "state": "ca",
+    "region": "shasta",
+    "population": 4906,
+    "count": 1
+  },
+  "beavercreek-or": {
+    "city": "Beavercreek",
+    "state": "or",
+    "region": "shasta",
+    "population": 4894,
+    "count": 6
+  },
+  "indian-wells-ca": {
+    "city": "Indian Wells",
+    "state": "ca",
+    "region": "shasta",
+    "population": 4871,
+    "count": 1
+  },
+  "carmel-valley-village-ca": {
+    "city": "Carmel Valley Village",
+    "state": "ca",
+    "region": "shasta",
+    "population": 4785,
+    "count": 1
+  },
+  "wood-village-or": {
+    "city": "Wood Village",
+    "state": "or",
+    "region": "shasta",
+    "population": 4696,
+    "count": 5
+  },
+  "ivanhoe-ca": {
+    "city": "Ivanhoe",
+    "state": "ca",
+    "region": "shasta",
+    "population": 4629,
+    "count": 1
+  },
+  "roseburg-north-or": {
+    "city": "Roseburg North",
+    "state": "or",
+    "region": "shasta",
+    "population": 4601,
+    "count": 1
+  },
+  "winchester-ca": {
+    "city": "Winchester",
+    "state": "ca",
+    "region": "shasta",
+    "population": 4555,
+    "count": 1
+  },
+  "bella-vista-ca": {
+    "city": "Bella Vista",
+    "state": "ca",
+    "region": "shasta",
+    "population": 4511,
+    "count": 2
+  },
+  "santa-ynez-ca": {
+    "city": "Santa Ynez",
+    "state": "ca",
+    "region": "shasta",
+    "population": 4467,
+    "count": 3
+  },
+  "lemmon-valley-nv": {
+    "city": "Lemmon Valley",
+    "state": "nv",
+    "region": "shasta",
+    "population": 4412,
+    "count": 1
+  },
+  "phoenix-or": {
+    "city": "Phoenix",
+    "state": "or",
+    "region": "shasta",
+    "population": 4390,
+    "count": 1
+  },
+  "venersborg-wa": {
+    "city": "Venersborg",
+    "state": "wa",
+    "region": "shasta",
+    "population": 4262,
+    "count": 3
+  },
+  "aumsville-or": {
+    "city": "Aumsville",
+    "state": "or",
+    "region": "shasta",
+    "population": 4230,
+    "count": 3
+  },
+  "morongo-valley-ca": {
+    "city": "Morongo Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 4209,
+    "count": 1
+  },
+  "ford-city-ca": {
+    "city": "Ford City",
+    "state": "ca",
+    "region": "shasta",
+    "population": 4162,
+    "count": 3
+  },
+  "clearlake-riviera-ca": {
+    "city": "Clearlake Riviera",
+    "state": "ca",
+    "region": "shasta",
+    "population": 4122,
+    "count": 3
+  },
+  "guerneville-ca": {
+    "city": "Guerneville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 4100,
+    "count": 3
+  },
+  "lake-isabella-ca": {
+    "city": "Lake Isabella",
+    "state": "ca",
+    "region": "shasta",
+    "population": 4059,
+    "count": 3
+  },
+  "oasis-ca": {
+    "city": "Oasis",
+    "state": "ca",
+    "region": "shasta",
+    "population": 4051,
+    "count": 1
+  },
+  "kelseyville-ca": {
+    "city": "Kelseyville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 4011,
+    "count": 3
+  },
+  "three-rivers-or": {
+    "city": "Three Rivers",
+    "state": "or",
+    "region": "shasta",
+    "population": 3995,
+    "count": 8
+  },
+  "coarsegold-ca": {
+    "city": "Coarsegold",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3967,
+    "count": 2
+  },
+  "idyllwild-pine-cove-ca": {
+    "city": "Idyllwild-Pine Cove",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3957,
+    "count": 1
+  },
+  "mccall-id": {
+    "city": "McCall",
+    "state": "id",
+    "region": "shasta",
+    "population": 3946,
+    "count": 1
+  },
+  "meiners-oaks-ca": {
+    "city": "Meiners Oaks",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3934,
+    "count": 3
+  },
+  "la-center-wa": {
+    "city": "La Center",
+    "state": "wa",
+    "region": "shasta",
+    "population": 3883,
+    "count": 3
+  },
+  "mission-hills-ca": {
+    "city": "Mission Hills",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3859,
+    "count": 1
+  },
+  "lake-california-ca": {
+    "city": "Lake California",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3808,
+    "count": 2
+  },
+  "sage-ca": {
+    "city": "Sage",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3781,
+    "count": 1
+  },
+  "desert-edge-ca": {
+    "city": "Desert Edge",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3778,
+    "count": 1
+  },
+  "bishop-ca": {
+    "city": "Bishop",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3778,
+    "count": 9
+  },
+  "old-stine-ca": {
+    "city": "Old Stine",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3760,
+    "count": 1
+  },
+  "pixley-ca": {
+    "city": "Pixley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3742,
+    "count": 1
+  },
+  "redwood-or": {
+    "city": "Redwood",
+    "state": "or",
+    "region": "shasta",
+    "population": 3721,
+    "count": 1
+  },
+  "forestville-ca": {
+    "city": "Forestville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3717,
+    "count": 3
+  },
+  "metzger-or": {
+    "city": "Metzger",
+    "state": "or",
+    "region": "shasta",
+    "population": 3714,
+    "count": 3
+  },
+  "esparto-ca": {
+    "city": "Esparto",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3713,
+    "count": 3
+  },
+  "palo-cedro-ca": {
+    "city": "Palo Cedro",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3685,
+    "count": 2
+  },
+  "harrisburg-or": {
+    "city": "Harrisburg",
+    "state": "or",
+    "region": "shasta",
+    "population": 3681,
+    "count": 1
+  },
+  "del-monte-forest-ca": {
+    "city": "Del Monte Forest",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3613,
+    "count": 1
+  },
+  "north-shore-ca": {
+    "city": "North Shore",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3515,
+    "count": 1
+  },
+  "myrtle-creek-or": {
+    "city": "Myrtle Creek",
+    "state": "or",
+    "region": "shasta",
+    "population": 3500,
+    "count": 1
+  },
+  "goldendale-wa": {
+    "city": "Goldendale",
+    "state": "wa",
+    "region": "shasta",
+    "population": 3483,
+    "count": 2
+  },
+  "el-verano-ca": {
+    "city": "El Verano",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3443,
+    "count": 2
+  },
+  "lucerne-ca": {
+    "city": "Lucerne",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3435,
+    "count": 3
+  },
+  "hubbard-or": {
+    "city": "Hubbard",
+    "state": "or",
+    "region": "shasta",
+    "population": 3406,
+    "count": 3
+  },
+  "ridgemark-ca": {
+    "city": "Ridgemark",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3403,
+    "count": 1
+  },
+  "mount-angel-or": {
+    "city": "Mount Angel",
+    "state": "or",
+    "region": "shasta",
+    "population": 3393,
+    "count": 3
+  },
+  "hidden-springs-id": {
+    "city": "Hidden Springs",
+    "state": "id",
+    "region": "shasta",
+    "population": 3378,
+    "count": 3
+  },
+  "millersburg-or": {
+    "city": "Millersburg",
+    "state": "or",
+    "region": "shasta",
+    "population": 3366,
+    "count": 1
+  },
+  "yountville-ca": {
+    "city": "Yountville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3348,
+    "count": 3
+  },
+  "fetters-hot-springs-agua-caliente-ca": {
+    "city": "Fetters Hot Springs-Agua Caliente",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3347,
+    "count": 3
+  },
+  "lake-nacimiento-ca": {
+    "city": "Lake Nacimiento",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3339,
+    "count": 1
+  },
+  "washoe-valley-nv": {
+    "city": "Washoe Valley",
+    "state": "nv",
+    "region": "shasta",
+    "population": 3315,
+    "count": 1
+  },
+  "jefferson-or": {
+    "city": "Jefferson",
+    "state": "or",
+    "region": "shasta",
+    "population": 3301,
+    "count": 1
+  },
+  "val-verde-ca": {
+    "city": "Val Verde",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3291,
+    "count": 1
+  },
+  "lakeview-or": {
+    "city": "Lakeview",
+    "state": "or",
+    "region": "shasta",
+    "population": 3270,
+    "count": 6
+  },
+  "nyssa-or": {
+    "city": "Nyssa",
+    "state": "or",
+    "region": "shasta",
+    "population": 3240,
+    "count": 3
+  },
+  "auberry-ca": {
+    "city": "Auberry",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3240,
+    "count": 2
+  },
+  "mountain-home-afb-id": {
+    "city": "Mountain Home AFB",
+    "state": "id",
+    "region": "shasta",
+    "population": 3219,
+    "count": 1
+  },
+  "dundee-or": {
+    "city": "Dundee",
+    "state": "or",
+    "region": "shasta",
+    "population": 3213,
+    "count": 1
+  },
+  "oakridge-or": {
+    "city": "Oakridge",
+    "state": "or",
+    "region": "shasta",
+    "population": 3184,
+    "count": 6
+  },
+  "nevada-city-ca": {
+    "city": "Nevada City",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3172,
+    "count": 1
+  },
+  "carmel-by-the-sea-ca": {
+    "city": "Carmel-by-the-Sea",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3162,
+    "count": 1
+  },
+  "yerington-nv": {
+    "city": "Yerington",
+    "state": "nv",
+    "region": "shasta",
+    "population": 3150,
+    "count": 1
+  },
+  "arbuckle-ca": {
+    "city": "Arbuckle",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3093,
+    "count": 3
+  },
+  "pepperdine-university-ca": {
+    "city": "Pepperdine University",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3087,
+    "count": 1
+  },
+  "shady-cove-or": {
+    "city": "Shady Cove",
+    "state": "or",
+    "region": "shasta",
+    "population": 3076,
+    "count": 1
+  },
+  "dixon-lane-meadow-creek-ca": {
+    "city": "Dixon Lane-Meadow Creek",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3071,
+    "count": 9
+  },
+  "homedale-id": {
+    "city": "Homedale",
+    "state": "id",
+    "region": "shasta",
+    "population": 3069,
+    "count": 3
+  },
+  "kalama-wa": {
+    "city": "Kalama",
+    "state": "wa",
+    "region": "shasta",
+    "population": 3050,
+    "count": 1
+  },
+  "sisters-or": {
+    "city": "Sisters",
+    "state": "or",
+    "region": "shasta",
+    "population": 3022,
+    "count": 7
+  },
+  "lake-shastina-ca": {
+    "city": "Lake Shastina",
+    "state": "ca",
+    "region": "shasta",
+    "population": 3001,
+    "count": 1
+  },
+  "north-fork-ca": {
+    "city": "North Fork",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2999,
+    "count": 8
+  },
+  "north-lakeport-ca": {
+    "city": "North Lakeport",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2995,
+    "count": 3
+  },
+  "jacksonville-or": {
+    "city": "Jacksonville",
+    "state": "or",
+    "region": "shasta",
+    "population": 2991,
+    "count": 1
+  },
+  "south-taft-ca": {
+    "city": "South Taft",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2939,
+    "count": 3
+  },
+  "angwin-ca": {
+    "city": "Angwin",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2931,
+    "count": 3
+  },
+  "sublimity-or": {
+    "city": "Sublimity",
+    "state": "or",
+    "region": "shasta",
+    "population": 2919,
+    "count": 3
+  },
+  "tipton-ca": {
+    "city": "Tipton",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2851,
+    "count": 1
+  },
+  "pine-mountain-club-ca": {
+    "city": "Pine Mountain Club",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2838,
+    "count": 3
+  },
+  "hawthorne-nv": {
+    "city": "Hawthorne",
+    "state": "nv",
+    "region": "shasta",
+    "population": 2809,
+    "count": 1
+  },
+  "turner-or": {
+    "city": "Turner",
+    "state": "or",
+    "region": "shasta",
+    "population": 2792,
+    "count": 3
+  },
+  "santa-rosa-valley-ca": {
+    "city": "Santa Rosa Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2780,
+    "count": 3
+  },
+  "rexland-acres-ca": {
+    "city": "Rexland Acres",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2760,
+    "count": 1
+  },
+  "kings-beach-ca": {
+    "city": "Kings Beach",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2736,
+    "count": 1
+  },
+  "channel-islands-beach-ca": {
+    "city": "Channel Islands Beach",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2726,
+    "count": 3
+  },
+  "burns-or": {
+    "city": "Burns",
+    "state": "or",
+    "region": "shasta",
+    "population": 2723,
+    "count": 1
+  },
+  "east-quincy-ca": {
+    "city": "East Quincy",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2723,
+    "count": 5
+  },
+  "homestead-valley-ca": {
+    "city": "Homestead Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2689,
+    "count": 1
+  },
+  "weedpatch-ca": {
+    "city": "Weedpatch",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2685,
+    "count": 1
+  },
+  "alturas-ca": {
+    "city": "Alturas",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2681,
+    "count": 3
+  },
+  "frazier-park-ca": {
+    "city": "Frazier Park",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2681,
+    "count": 3
+  },
+  "eagle-crest-or": {
+    "city": "Eagle Crest",
+    "state": "or",
+    "region": "shasta",
+    "population": 2677,
+    "count": 7
+  },
+  "strathmore-ca": {
+    "city": "Strathmore",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2675,
+    "count": 1
+  },
+  "dayton-or": {
+    "city": "Dayton",
+    "state": "or",
+    "region": "shasta",
+    "population": 2675,
+    "count": 1
+  },
+  "casa-conejo-ca": {
+    "city": "Casa Conejo",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2671,
+    "count": 3
+  },
+  "burney-ca": {
+    "city": "Burney",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2668,
+    "count": 2
+  },
+  "juniper-canyon-or": {
+    "city": "Juniper Canyon",
+    "state": "or",
+    "region": "shasta",
+    "population": 2666,
+    "count": 3
+  },
+  "wofford-heights-ca": {
+    "city": "Wofford Heights",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2656,
+    "count": 3
+  },
+  "china-lake-acres-ca": {
+    "city": "China Lake Acres",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2594,
+    "count": 2
+  },
+  "gervais-or": {
+    "city": "Gervais",
+    "state": "or",
+    "region": "shasta",
+    "population": 2581,
+    "count": 2
+  },
+  "nice-ca": {
+    "city": "Nice",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2569,
+    "count": 3
+  },
+  "west-bishop-ca": {
+    "city": "West Bishop",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2551,
+    "count": 9
+  },
+  "white-salmon-wa": {
+    "city": "White Salmon",
+    "state": "wa",
+    "region": "shasta",
+    "population": 2548,
+    "count": 3
+  },
+  "la-pine-or": {
+    "city": "La Pine",
+    "state": "or",
+    "region": "shasta",
+    "population": 2547,
+    "count": 8
+  },
+  "sutter-ca": {
+    "city": "Sutter",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2532,
+    "count": 1
+  },
+  "brush-prairie-wa": {
+    "city": "Brush Prairie",
+    "state": "wa",
+    "region": "shasta",
+    "population": 2526,
+    "count": 3
+  },
+  "weldon-ca": {
+    "city": "Weldon",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2493,
+    "count": 3
+  },
+  "warm-springs-or": {
+    "city": "Warm Springs",
+    "state": "or",
+    "region": "shasta",
+    "population": 2480,
+    "count": 3
+  },
+  "pine-canyon-ca": {
+    "city": "Pine Canyon",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2477,
+    "count": 2
+  },
+  "lewisville-wa": {
+    "city": "Lewisville",
+    "state": "wa",
+    "region": "shasta",
+    "population": 2465,
+    "count": 3
+  },
+  "portola-ca": {
+    "city": "Portola",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2441,
+    "count": 3
+  },
+  "hartley-ca": {
+    "city": "Hartley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2431,
+    "count": 2
+  },
+  "cayucos-ca": {
+    "city": "Cayucos",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2427,
+    "count": 1
+  },
+  "colfax-ca": {
+    "city": "Colfax",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2407,
+    "count": 1
+  },
+  "janesville-ca": {
+    "city": "Janesville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2399,
+    "count": 3
+  },
+  "mission-canyon-ca": {
+    "city": "Mission Canyon",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2357,
+    "count": 3
+  },
+  "vale-or": {
+    "city": "Vale",
+    "state": "or",
+    "region": "shasta",
+    "population": 2348,
+    "count": 3
+  },
+  "vista-santa-rosa-ca": {
+    "city": "Vista Santa Rosa",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2333,
+    "count": 1
+  },
+  "carson-wa": {
+    "city": "Carson",
+    "state": "wa",
+    "region": "shasta",
+    "population": 2318,
+    "count": 3
+  },
+  "biggs-ca": {
+    "city": "Biggs",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2307,
+    "count": 1
+  },
+  "union-or": {
+    "city": "Union",
+    "state": "or",
+    "region": "shasta",
+    "population": 2290,
+    "count": 3
+  },
+  "three-rivers-ca": {
+    "city": "Three Rivers",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2282,
+    "count": 1
+  },
+  "meadow-glade-wa": {
+    "city": "Meadow Glade",
+    "state": "wa",
+    "region": "shasta",
+    "population": 2281,
+    "count": 3
+  },
+  "sky-valley-ca": {
+    "city": "Sky Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2255,
+    "count": 1
+  },
+  "culver-or": {
+    "city": "Culver",
+    "state": "or",
+    "region": "shasta",
+    "population": 2254,
+    "count": 2
+  },
+  "rogue-river-or": {
+    "city": "Rogue River",
+    "state": "or",
+    "region": "shasta",
+    "population": 2238,
+    "count": 1
+  },
+  "callender-ca": {
+    "city": "Callender",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2230,
+    "count": 1
+  },
+  "mulino-or": {
+    "city": "Mulino",
+    "state": "or",
+    "region": "shasta",
+    "population": 2229,
+    "count": 4
+  },
+  "odell-or": {
+    "city": "Odell",
+    "state": "or",
+    "region": "shasta",
+    "population": 2218,
+    "count": 4
+  },
+  "sonoma-state-university-ca": {
+    "city": "Sonoma State University",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2210,
+    "count": 3
+  },
+  "kingsbury-nv": {
+    "city": "Kingsbury",
+    "state": "nv",
+    "region": "shasta",
+    "population": 2209,
+    "count": 1
+  },
+  "clearlake-oaks-ca": {
+    "city": "Clearlake Oaks",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2198,
+    "count": 3
+  },
+  "piru-ca": {
+    "city": "Piru",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2185,
+    "count": 3
+  },
+  "bell-canyon-ca": {
+    "city": "Bell Canyon",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2177,
+    "count": 1
+  },
+  "poplar-cotton-center-ca": {
+    "city": "Poplar-Cotton Center",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2171,
+    "count": 1
+  },
+  "shingletown-ca": {
+    "city": "Shingletown",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2164,
+    "count": 2
+  },
+  "hidden-hills-ca": {
+    "city": "Hidden Hills",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2150,
+    "count": 1
+  },
+  "enterprise-or": {
+    "city": "Enterprise",
+    "state": "or",
+    "region": "shasta",
+    "population": 2131,
+    "count": 2
+  },
+  "penngrove-ca": {
+    "city": "Penngrove",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2119,
+    "count": 2
+  },
+  "patterson-tract-ca": {
+    "city": "Patterson Tract",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2090,
+    "count": 1
+  },
+  "wilder-id": {
+    "city": "Wilder",
+    "state": "id",
+    "region": "shasta",
+    "population": 2074,
+    "count": 3
+  },
+  "lakeview-ca": {
+    "city": "Lakeview",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2062,
+    "count": 1
+  },
+  "woodlands-ca": {
+    "city": "Woodlands",
+    "state": "ca",
+    "region": "shasta",
+    "population": 2061,
+    "count": 1
+  },
+  "fern-prairie-wa": {
+    "city": "Fern Prairie",
+    "state": "wa",
+    "region": "shasta",
+    "population": 2053,
+    "count": 5
+  },
+  "columbia-city-or": {
+    "city": "Columbia City",
+    "state": "or",
+    "region": "shasta",
+    "population": 2006,
+    "count": 1
+  },
+  "yosemite-valley-ca": {
+    "city": "Yosemite Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1991,
+    "count": 10
+  },
+  "durham-or": {
+    "city": "Durham",
+    "state": "or",
+    "region": "shasta",
+    "population": 1983,
+    "count": 3
+  },
+  "richgrove-ca": {
+    "city": "Richgrove",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1960,
+    "count": 1
+  },
+  "parma-id": {
+    "city": "Parma",
+    "state": "id",
+    "region": "shasta",
+    "population": 1928,
+    "count": 3
+  },
+  "mill-city-or": {
+    "city": "Mill City",
+    "state": "or",
+    "region": "shasta",
+    "population": 1920,
+    "count": 6
+  },
+  "forest-ranch-ca": {
+    "city": "Forest Ranch",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1915,
+    "count": 2
+  },
+  "brownsville-or": {
+    "city": "Brownsville",
+    "state": "or",
+    "region": "shasta",
+    "population": 1912,
+    "count": 3
+  },
+  "redwood-valley-ca": {
+    "city": "Redwood Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1898,
+    "count": 3
+  },
+  "anza-ca": {
+    "city": "Anza",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1898,
+    "count": 1
+  },
+  "cabazon-ca": {
+    "city": "Cabazon",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1887,
+    "count": 1
+  },
+  "dunthorpe-or": {
+    "city": "Dunthorpe",
+    "state": "or",
+    "region": "shasta",
+    "population": 1875,
+    "count": 5
+  },
+  "boring-or": {
+    "city": "Boring",
+    "state": "or",
+    "region": "shasta",
+    "population": 1869,
+    "count": 6
+  },
+  "glide-or": {
+    "city": "Glide",
+    "state": "or",
+    "region": "shasta",
+    "population": 1823,
+    "count": 3
+  },
+  "smith-valley-nv": {
+    "city": "Smith Valley",
+    "state": "nv",
+    "region": "shasta",
+    "population": 1807,
+    "count": 1
+  },
+  "graton-ca": {
+    "city": "Graton",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1806,
+    "count": 3
+  },
+  "thermal-ca": {
+    "city": "Thermal",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1800,
+    "count": 1
+  },
+  "new-plymouth-id": {
+    "city": "New Plymouth",
+    "state": "id",
+    "region": "shasta",
+    "population": 1794,
+    "count": 4
+  },
+  "chester-ca": {
+    "city": "Chester",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1759,
+    "count": 2
+  },
+  "allendale-ca": {
+    "city": "Allendale",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1734,
+    "count": 2
+  },
+  "searles-valley-ca": {
+    "city": "Searles Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1713,
+    "count": 2
+  },
+  "bakersfield-country-club-ca": {
+    "city": "Bakersfield Country Club",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1707,
+    "count": 1
+  },
+  "bodfish-ca": {
+    "city": "Bodfish",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1694,
+    "count": 2
+  },
+  "amboy-wa": {
+    "city": "Amboy",
+    "state": "wa",
+    "region": "shasta",
+    "population": 1692,
+    "count": 3
+  },
+  "yacolt-wa": {
+    "city": "Yacolt",
+    "state": "wa",
+    "region": "shasta",
+    "population": 1684,
+    "count": 3
+  },
+  "elkhorn-ca": {
+    "city": "Elkhorn",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1664,
+    "count": 1
+  },
+  "terra-bella-ca": {
+    "city": "Terra Bella",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1659,
+    "count": 1
+  },
+  "duluth-wa": {
+    "city": "Duluth",
+    "state": "wa",
+    "region": "shasta",
+    "population": 1656,
+    "count": 3
+  },
+  "black-point-green-point-ca": {
+    "city": "Black Point-Green Point",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1655,
+    "count": 1
+  },
+  "keno-or": {
+    "city": "Keno",
+    "state": "or",
+    "region": "shasta",
+    "population": 1651,
+    "count": 1
+  },
+  "warren-or": {
+    "city": "Warren",
+    "state": "or",
+    "region": "shasta",
+    "population": 1637,
+    "count": 1
+  },
+  "lake-sherwood-ca": {
+    "city": "Lake Sherwood",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1633,
+    "count": 2
+  },
+  "temelec-ca": {
+    "city": "Temelec",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1628,
+    "count": 2
+  },
+  "coburg-or": {
+    "city": "Coburg",
+    "state": "or",
+    "region": "shasta",
+    "population": 1626,
+    "count": 4
+  },
+  "topaz-ranch-estates-nv": {
+    "city": "Topaz Ranch Estates",
+    "state": "nv",
+    "region": "shasta",
+    "population": 1621,
+    "count": 1
+  },
+  "merlin-or": {
+    "city": "Merlin",
+    "state": "or",
+    "region": "shasta",
+    "population": 1617,
+    "count": 1
+  },
+  "big-pine-ca": {
+    "city": "Big Pine",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1615,
+    "count": 8
+  },
+  "john-day-or": {
+    "city": "John Day",
+    "state": "or",
+    "region": "shasta",
+    "population": 1609,
+    "count": 1
+  },
+  "hines-or": {
+    "city": "Hines",
+    "state": "or",
+    "region": "shasta",
+    "population": 1604,
+    "count": 1
+  },
+  "los-molinos-ca": {
+    "city": "Los Molinos",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1604,
+    "count": 2
+  },
+  "dallesport-wa": {
+    "city": "Dallesport",
+    "state": "wa",
+    "region": "shasta",
+    "population": 1603,
+    "count": 3
+  },
+  "stevenson-wa": {
+    "city": "Stevenson",
+    "state": "wa",
+    "region": "shasta",
+    "population": 1603,
+    "count": 4
+  },
+  "terrebonne-or": {
+    "city": "Terrebonne",
+    "state": "or",
+    "region": "shasta",
+    "population": 1602,
+    "count": 6
+  },
+  "stafford-or": {
+    "city": "Stafford",
+    "state": "or",
+    "region": "shasta",
+    "population": 1600,
+    "count": 5
+  },
+  "sunnyside-tahoe-city-ca": {
+    "city": "Sunnyside-Tahoe City",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1599,
+    "count": 1
+  },
+  "casa-loma-ca": {
+    "city": "Casa Loma",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1587,
+    "count": 1
+  },
+  "middletown-ca": {
+    "city": "Middletown",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1572,
+    "count": 3
+  },
+  "del-rey-oaks-ca": {
+    "city": "Del Rey Oaks",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1570,
+    "count": 1
+  },
+  "monument-hills-ca": {
+    "city": "Monument Hills",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1551,
+    "count": 2
+  },
+  "elgin-or": {
+    "city": "Elgin",
+    "state": "or",
+    "region": "shasta",
+    "population": 1549,
+    "count": 3
+  },
+  "saticoy-ca": {
+    "city": "Saticoy",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1518,
+    "count": 3
+  },
+  "prineville-lake-acres-or": {
+    "city": "Prineville Lake Acres",
+    "state": "or",
+    "region": "shasta",
+    "population": 1497,
+    "count": 3
+  },
+  "halsey-or": {
+    "city": "Halsey",
+    "state": "or",
+    "region": "shasta",
+    "population": 1491,
+    "count": 1
+  },
+  "sunriver-or": {
+    "city": "Sunriver",
+    "state": "or",
+    "region": "shasta",
+    "population": 1488,
+    "count": 8
+  },
+  "foresthill-ca": {
+    "city": "Foresthill",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1483,
+    "count": 1
+  },
+  "greenleaf-id": {
+    "city": "Greenleaf",
+    "state": "id",
+    "region": "shasta",
+    "population": 1482,
+    "count": 3
+  },
+  "montague-ca": {
+    "city": "Montague",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1479,
+    "count": 1
+  },
+  "dollar-point-ca": {
+    "city": "Dollar Point",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1477,
+    "count": 1
+  },
+  "toro-canyon-ca": {
+    "city": "Toro Canyon",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1477,
+    "count": 3
+  },
+  "los-ranchos-ca": {
+    "city": "Los Ranchos",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1467,
+    "count": 1
+  },
+  "woodville-ca": {
+    "city": "Woodville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1460,
+    "count": 1
+  },
+  "ahwahnee-ca": {
+    "city": "Ahwahnee",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1453,
+    "count": 2
+  },
+  "chenoweth-or": {
+    "city": "Chenoweth",
+    "state": "or",
+    "region": "shasta",
+    "population": 1445,
+    "count": 3
+  },
+  "lone-pine-ca": {
+    "city": "Lone Pine",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1439,
+    "count": 2
+  },
+  "fairfax-ca": {
+    "city": "Fairfax",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1423,
+    "count": 1
+  },
+  "eldridge-ca": {
+    "city": "Eldridge",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1379,
+    "count": 3
+  },
+  "cascade-locks-or": {
+    "city": "Cascade Locks",
+    "state": "or",
+    "region": "shasta",
+    "population": 1378,
+    "count": 4
+  },
+  "athena-or": {
+    "city": "Athena",
+    "state": "or",
+    "region": "shasta",
+    "population": 1377,
+    "count": 2
+  },
+  "upper-lake-ca": {
+    "city": "Upper Lake",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1374,
+    "count": 3
+  },
+  "green-valley-ca": {
+    "city": "Green Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1364,
+    "count": 1
+  },
+  "boronda-ca": {
+    "city": "Boronda",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1351,
+    "count": 1
+  },
+  "summerland-ca": {
+    "city": "Summerland",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1348,
+    "count": 3
+  },
+  "inverness-ca": {
+    "city": "Inverness",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1346,
+    "count": 2
+  },
+  "quincy-ca": {
+    "city": "Quincy",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1317,
+    "count": 5
+  },
+  "marsing-id": {
+    "city": "Marsing",
+    "state": "id",
+    "region": "shasta",
+    "population": 1306,
+    "count": 3
+  },
+  "avila-beach-ca": {
+    "city": "Avila Beach",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1303,
+    "count": 1
+  },
+  "new-hope-or": {
+    "city": "New Hope",
+    "state": "or",
+    "region": "shasta",
+    "population": 1296,
+    "count": 1
+  },
+  "taft-heights-ca": {
+    "city": "Taft Heights",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1291,
+    "count": 3
+  },
+  "gold-hill-or": {
+    "city": "Gold Hill",
+    "state": "or",
+    "region": "shasta",
+    "population": 1288,
+    "count": 1
+  },
+  "sea-ranch-ca": {
+    "city": "Sea Ranch",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1287,
+    "count": 2
+  },
+  "genoa-nv": {
+    "city": "Genoa",
+    "state": "nv",
+    "region": "shasta",
+    "population": 1284,
+    "count": 1
+  },
+  "pilot-rock-or": {
+    "city": "Pilot Rock",
+    "state": "or",
+    "region": "shasta",
+    "population": 1283,
+    "count": 2
+  },
+  "heppner-or": {
+    "city": "Heppner",
+    "state": "or",
+    "region": "shasta",
+    "population": 1277,
+    "count": 2
+  },
+  "lake-riverside-ca": {
+    "city": "Lake Riverside",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1262,
+    "count": 1
+  },
+  "maxwell-ca": {
+    "city": "Maxwell",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1245,
+    "count": 3
+  },
+  "santa-susana-ca": {
+    "city": "Santa Susana",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1235,
+    "count": 1
+  },
+  "somis-ca": {
+    "city": "Somis",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1229,
+    "count": 3
+  },
+  "lowell-or": {
+    "city": "Lowell",
+    "state": "or",
+    "region": "shasta",
+    "population": 1228,
+    "count": 6
+  },
+  "occidental-ca": {
+    "city": "Occidental",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1225,
+    "count": 2
+  },
+  "hasley-canyon-ca": {
+    "city": "Hasley Canyon",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1216,
+    "count": 1
+  },
+  "robie-creek-id": {
+    "city": "Robie Creek",
+    "state": "id",
+    "region": "shasta",
+    "population": 1213,
+    "count": 1
+  },
+  "teviston-ca": {
+    "city": "Teviston",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1182,
+    "count": 1
+  },
+  "whitewater-ca": {
+    "city": "Whitewater",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1181,
+    "count": 1
+  },
+  "shandon-ca": {
+    "city": "Shandon",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1169,
+    "count": 1
+  },
+  "los-alamos-ca": {
+    "city": "Los Alamos",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1163,
+    "count": 2
+  },
+  "ruch-or": {
+    "city": "Ruch",
+    "state": "or",
+    "region": "shasta",
+    "population": 1151,
+    "count": 1
+  },
+  "santa-margarita-ca": {
+    "city": "Santa Margarita",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1149,
+    "count": 1
+  },
+  "island-city-or": {
+    "city": "Island City",
+    "state": "or",
+    "region": "shasta",
+    "population": 1145,
+    "count": 3
+  },
+  "golden-valley-nv": {
+    "city": "Golden Valley",
+    "state": "nv",
+    "region": "shasta",
+    "population": 1139,
+    "count": 1
+  },
+  "bodega-bay-ca": {
+    "city": "Bodega Bay",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1139,
+    "count": 2
+  },
+  "lyons-or": {
+    "city": "Lyons",
+    "state": "or",
+    "region": "shasta",
+    "population": 1139,
+    "count": 4
+  },
+  "metolius-or": {
+    "city": "Metolius",
+    "state": "or",
+    "region": "shasta",
+    "population": 1137,
+    "count": 2
+  },
+  "mariposa-ca": {
+    "city": "Mariposa",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1137,
+    "count": 1
+  },
+  "donald-or": {
+    "city": "Donald",
+    "state": "or",
+    "region": "shasta",
+    "population": 1133,
+    "count": 2
+  },
+  "talmage-ca": {
+    "city": "Talmage",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1128,
+    "count": 3
+  },
+  "jones-valley-ca": {
+    "city": "Jones Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1122,
+    "count": 2
+  },
+  "fort-hunter-liggett-ca": {
+    "city": "Fort Hunter Liggett",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1119,
+    "count": 2
+  },
+  "cascade-id": {
+    "city": "Cascade",
+    "state": "id",
+    "region": "shasta",
+    "population": 1118,
+    "count": 1
+  },
+  "indio-hills-ca": {
+    "city": "Indio Hills",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1117,
+    "count": 1
+  },
+  "north-bonneville-wa": {
+    "city": "North Bonneville",
+    "state": "wa",
+    "region": "shasta",
+    "population": 1112,
+    "count": 5
+  },
+  "foots-creek-or": {
+    "city": "Foots Creek",
+    "state": "or",
+    "region": "shasta",
+    "population": 1110,
+    "count": 1
+  },
+  "squirrel-mountain-valley-ca": {
+    "city": "Squirrel Mountain Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1108,
+    "count": 3
+  },
+  "knights-landing-ca": {
+    "city": "Knights Landing",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1099,
+    "count": 1
+  },
+  "cedar-flat-ca": {
+    "city": "Cedar Flat",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1089,
+    "count": 1
+  },
+  "glen-ellen-ca": {
+    "city": "Glen Ellen",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1078,
+    "count": 3
+  },
+  "drain-or": {
+    "city": "Drain",
+    "state": "or",
+    "region": "shasta",
+    "population": 1078,
+    "count": 1
+  },
+  "crowley-lake-ca": {
+    "city": "Crowley Lake",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1069,
+    "count": 9
+  },
+  "westwood-ca": {
+    "city": "Westwood",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1063,
+    "count": 4
+  },
+  "joseph-or": {
+    "city": "Joseph",
+    "state": "or",
+    "region": "shasta",
+    "population": 1054,
+    "count": 2
+  },
+  "mogul-nv": {
+    "city": "Mogul",
+    "state": "nv",
+    "region": "shasta",
+    "population": 1050,
+    "count": 1
+  },
+  "tahoe-vista-ca": {
+    "city": "Tahoe Vista",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1048,
+    "count": 1
+  },
+  "oakland-or": {
+    "city": "Oakland",
+    "state": "or",
+    "region": "shasta",
+    "population": 1048,
+    "count": 2
+  },
+  "johnstonville-ca": {
+    "city": "Johnstonville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1039,
+    "count": 4
+  },
+  "los-olivos-ca": {
+    "city": "Los Olivos",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1038,
+    "count": 3
+  },
+  "aurora-or": {
+    "city": "Aurora",
+    "state": "or",
+    "region": "shasta",
+    "population": 1030,
+    "count": 4
+  },
+  "kenwood-ca": {
+    "city": "Kenwood",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1028,
+    "count": 3
+  },
+  "verdi-nv": {
+    "city": "Verdi",
+    "state": "nv",
+    "region": "shasta",
+    "population": 1012,
+    "count": 1
+  },
+  "kettleman-city-ca": {
+    "city": "Kettleman City",
+    "state": "ca",
+    "region": "shasta",
+    "population": 1002,
+    "count": 1
+  },
+  "maywood-park-or": {
+    "city": "Maywood Park",
+    "state": "or",
+    "region": "shasta",
+    "population": 987,
+    "count": 5
+  },
+  "maricopa-ca": {
+    "city": "Maricopa",
+    "state": "ca",
+    "region": "shasta",
+    "population": 984,
+    "count": 3
+  },
+  "blacklake-ca": {
+    "city": "Blacklake",
+    "state": "ca",
+    "region": "shasta",
+    "population": 983,
+    "count": 1
+  },
+  "hopland-ca": {
+    "city": "Hopland",
+    "state": "ca",
+    "region": "shasta",
+    "population": 983,
+    "count": 3
+  },
+  "yoncalla-or": {
+    "city": "Yoncalla",
+    "state": "or",
+    "region": "shasta",
+    "population": 971,
+    "count": 1
+  },
+  "stebbins-ca": {
+    "city": "Stebbins",
+    "state": "ca",
+    "region": "shasta",
+    "population": 967,
+    "count": 1
+  },
+  "dufur-or": {
+    "city": "Dufur",
+    "state": "or",
+    "region": "shasta",
+    "population": 952,
+    "count": 3
+  },
+  "johnson-park-ca": {
+    "city": "Johnson Park",
+    "state": "ca",
+    "region": "shasta",
+    "population": 943,
+    "count": 2
+  },
+  "south-lebanon-or": {
+    "city": "South Lebanon",
+    "state": "or",
+    "region": "shasta",
+    "population": 939,
+    "count": 5
+  },
+  "millville-ca": {
+    "city": "Millville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 939,
+    "count": 2
+  },
+  "scio-or": {
+    "city": "Scio",
+    "state": "or",
+    "region": "shasta",
+    "population": 930,
+    "count": 3
+  },
+  "tulelake-ca": {
+    "city": "Tulelake",
+    "state": "ca",
+    "region": "shasta",
+    "population": 925,
+    "count": 1
+  },
+  "inyokern-ca": {
+    "city": "Inyokern",
+    "state": "ca",
+    "region": "shasta",
+    "population": 912,
+    "count": 2
+  },
+  "tres-pinos-ca": {
+    "city": "Tres Pinos",
+    "state": "ca",
+    "region": "shasta",
+    "population": 901,
+    "count": 1
+  },
+  "canyon-city-or": {
+    "city": "Canyon City",
+    "state": "or",
+    "region": "shasta",
+    "population": 900,
+    "count": 1
+  },
+  "silverado-resort-ca": {
+    "city": "Silverado Resort",
+    "state": "ca",
+    "region": "shasta",
+    "population": 892,
+    "count": 3
+  },
+  "challenge-brownsville-ca": {
+    "city": "Challenge-Brownsville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 887,
+    "count": 1
+  },
+  "gerber-ca": {
+    "city": "Gerber",
+    "state": "ca",
+    "region": "shasta",
+    "population": 885,
+    "count": 2
+  },
+  "mission-or": {
+    "city": "Mission",
+    "state": "or",
+    "region": "shasta",
+    "population": 878,
+    "count": 2
+  },
+  "monte-rio-ca": {
+    "city": "Monte Rio",
+    "state": "ca",
+    "region": "shasta",
+    "population": 876,
+    "count": 2
+  },
+  "dobbins-ca": {
+    "city": "Dobbins",
+    "state": "ca",
+    "region": "shasta",
+    "population": 875,
+    "count": 1
+  },
+  "tahoma-ca": {
+    "city": "Tahoma",
+    "state": "ca",
+    "region": "shasta",
+    "population": 873,
+    "count": 1
+  },
+  "council-id": {
+    "city": "Council",
+    "state": "id",
+    "region": "shasta",
+    "population": 871,
+    "count": 1
+  },
+  "dorris-ca": {
+    "city": "Dorris",
+    "state": "ca",
+    "region": "shasta",
+    "population": 869,
+    "count": 1
+  },
+  "dexter-or": {
+    "city": "Dexter",
+    "state": "or",
+    "region": "shasta",
+    "population": 865,
+    "count": 6
+  },
+  "proberta-ca": {
+    "city": "Proberta",
+    "state": "ca",
+    "region": "shasta",
+    "population": 865,
+    "count": 2
+  },
+  "ballard-ca": {
+    "city": "Ballard",
+    "state": "ca",
+    "region": "shasta",
+    "population": 863,
+    "count": 3
+  },
+  "alpaugh-ca": {
+    "city": "Alpaugh",
+    "state": "ca",
+    "region": "shasta",
+    "population": 859,
+    "count": 1
+  },
+  "kernville-ca": {
+    "city": "Kernville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 857,
+    "count": 3
+  },
+  "cobb-ca": {
+    "city": "Cobb",
+    "state": "ca",
+    "region": "shasta",
+    "population": 842,
+    "count": 3
+  },
+  "falcon-heights-or": {
+    "city": "Falcon Heights",
+    "state": "or",
+    "region": "shasta",
+    "population": 837,
+    "count": 2
+  },
+  "round-hill-village-nv": {
+    "city": "Round Hill Village",
+    "state": "nv",
+    "region": "shasta",
+    "population": 823,
+    "count": 1
+  },
+  "linnell-camp-ca": {
+    "city": "Linnell Camp",
+    "state": "ca",
+    "region": "shasta",
+    "population": 821,
+    "count": 1
+  },
+  "merrill-or": {
+    "city": "Merrill",
+    "state": "or",
+    "region": "shasta",
+    "population": 819,
+    "count": 1
+  },
+  "chualar-ca": {
+    "city": "Chualar",
+    "state": "ca",
+    "region": "shasta",
+    "population": 812,
+    "count": 1
+  },
+  "madison-ca": {
+    "city": "Madison",
+    "state": "ca",
+    "region": "shasta",
+    "population": 805,
+    "count": 3
+  },
+  "soda-bay-ca": {
+    "city": "Soda Bay",
+    "state": "ca",
+    "region": "shasta",
+    "population": 802,
+    "count": 3
+  },
+  "yolo-ca": {
+    "city": "Yolo",
+    "state": "ca",
+    "region": "shasta",
+    "population": 800,
+    "count": 1
+  },
+  "malin-or": {
+    "city": "Malin",
+    "state": "or",
+    "region": "shasta",
+    "population": 799,
+    "count": 1
+  },
+  "lebec-ca": {
+    "city": "Lebec",
+    "state": "ca",
+    "region": "shasta",
+    "population": 797,
+    "count": 3
+  },
+  "lake-of-the-woods-ca": {
+    "city": "Lake of the Woods",
+    "state": "ca",
+    "region": "shasta",
+    "population": 796,
+    "count": 3
+  },
+  "point-arena-ca": {
+    "city": "Point Arena",
+    "state": "ca",
+    "region": "shasta",
+    "population": 789,
+    "count": 1
+  },
+  "doyle-ca": {
+    "city": "Doyle",
+    "state": "ca",
+    "region": "shasta",
+    "population": 779,
+    "count": 3
+  },
+  "cherry-grove-wa": {
+    "city": "Cherry Grove",
+    "state": "wa",
+    "region": "shasta",
+    "population": 779,
+    "count": 3
+  },
+  "anchor-bay-ca": {
+    "city": "Anchor Bay",
+    "state": "ca",
+    "region": "shasta",
+    "population": 771,
+    "count": 2
+  },
+  "trail-or": {
+    "city": "Trail",
+    "state": "or",
+    "region": "shasta",
+    "population": 769,
+    "count": 2
+  },
+  "tetherow-or": {
+    "city": "Tetherow",
+    "state": "or",
+    "region": "shasta",
+    "population": 765,
+    "count": 6
+  },
+  "petaluma-center-ca": {
+    "city": "Petaluma Center",
+    "state": "ca",
+    "region": "shasta",
+    "population": 763,
+    "count": 2
+  },
+  "williams-or": {
+    "city": "Williams",
+    "state": "or",
+    "region": "shasta",
+    "population": 760,
+    "count": 1
+  },
+  "horseshoe-bend-id": {
+    "city": "Horseshoe Bend",
+    "state": "id",
+    "region": "shasta",
+    "population": 758,
+    "count": 2
+  },
+  "loyalton-ca": {
+    "city": "Loyalton",
+    "state": "ca",
+    "region": "shasta",
+    "population": 748,
+    "count": 3
+  },
+  "mountain-gate-ca": {
+    "city": "Mountain Gate",
+    "state": "ca",
+    "region": "shasta",
+    "population": 742,
+    "count": 1
+  },
+  "huntington-or": {
+    "city": "Huntington",
+    "state": "or",
+    "region": "shasta",
+    "population": 739,
+    "count": 3
+  },
+  "rough-and-ready-ca": {
+    "city": "Rough and Ready",
+    "state": "ca",
+    "region": "shasta",
+    "population": 736,
+    "count": 1
+  },
+  "delleker-ca": {
+    "city": "Delleker",
+    "state": "ca",
+    "region": "shasta",
+    "population": 724,
+    "count": 3
+  },
+  "prospect-or": {
+    "city": "Prospect",
+    "state": "or",
+    "region": "shasta",
+    "population": 723,
+    "count": 2
+  },
+  "deer-park-ca": {
+    "city": "Deer Park",
+    "state": "ca",
+    "region": "shasta",
+    "population": 720,
+    "count": 3
+  },
+  "trout-lake-wa": {
+    "city": "Trout Lake",
+    "state": "wa",
+    "region": "shasta",
+    "population": 720,
+    "count": 3
+  },
+  "smith-corner-ca": {
+    "city": "Smith Corner",
+    "state": "ca",
+    "region": "shasta",
+    "population": 718,
+    "count": 1
+  },
+  "mosier-or": {
+    "city": "Mosier",
+    "state": "or",
+    "region": "shasta",
+    "population": 714,
+    "count": 3
+  },
+  "butte-creek-canyon-ca": {
+    "city": "Butte Creek Canyon",
+    "state": "ca",
+    "region": "shasta",
+    "population": 713,
+    "count": 2
+  },
+  "ducor-ca": {
+    "city": "Ducor",
+    "state": "ca",
+    "region": "shasta",
+    "population": 704,
+    "count": 1
+  },
+  "lacomb-or": {
+    "city": "Lacomb",
+    "state": "or",
+    "region": "shasta",
+    "population": 691,
+    "count": 6
+  },
+  "east-tulare-villa-ca": {
+    "city": "East Tulare Villa",
+    "state": "ca",
+    "region": "shasta",
+    "population": 689,
+    "count": 1
+  },
+  "chilcoot-vinton-ca": {
+    "city": "Chilcoot-Vinton",
+    "state": "ca",
+    "region": "shasta",
+    "population": 686,
+    "count": 3
+  },
+  "geyserville-ca": {
+    "city": "Geyserville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 672,
+    "count": 3
+  },
+  "boonville-ca": {
+    "city": "Boonville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 667,
+    "count": 2
+  },
+  "brooks-or": {
+    "city": "Brooks",
+    "state": "or",
+    "region": "shasta",
+    "population": 664,
+    "count": 2
+  },
+  "tumalo-or": {
+    "city": "Tumalo",
+    "state": "or",
+    "region": "shasta",
+    "population": 662,
+    "count": 6
+  },
+  "rivergrove-or": {
+    "city": "Rivergrove",
+    "state": "or",
+    "region": "shasta",
+    "population": 657,
+    "count": 3
+  },
+  "dustin-acres-ca": {
+    "city": "Dustin Acres",
+    "state": "ca",
+    "region": "shasta",
+    "population": 656,
+    "count": 3
+  },
+  "alta-ca": {
+    "city": "Alta",
+    "state": "ca",
+    "region": "shasta",
+    "population": 656,
+    "count": 1
+  },
+  "bingen-wa": {
+    "city": "Bingen",
+    "state": "wa",
+    "region": "shasta",
+    "population": 652,
+    "count": 3
+  },
+  "cove-or": {
+    "city": "Cove",
+    "state": "or",
+    "region": "shasta",
+    "population": 651,
+    "count": 3
+  },
+  "virginia-city-nv": {
+    "city": "Virginia City",
+    "state": "nv",
+    "region": "shasta",
+    "population": 644,
+    "count": 1
+  },
+  "lower-lake-ca": {
+    "city": "Lower Lake",
+    "state": "ca",
+    "region": "shasta",
+    "population": 635,
+    "count": 3
+  },
+  "wallowa-or": {
+    "city": "Wallowa",
+    "state": "or",
+    "region": "shasta",
+    "population": 633,
+    "count": 2
+  },
+  "bonanza-or": {
+    "city": "Bonanza",
+    "state": "or",
+    "region": "shasta",
+    "population": 632,
+    "count": 1
+  },
+  "manton-ca": {
+    "city": "Manton",
+    "state": "ca",
+    "region": "shasta",
+    "population": 629,
+    "count": 2
+  },
+  "lee-vining-ca": {
+    "city": "Lee Vining",
+    "state": "ca",
+    "region": "shasta",
+    "population": 628,
+    "count": 10
+  },
+  "condon-or": {
+    "city": "Condon",
+    "state": "or",
+    "region": "shasta",
+    "population": 623,
+    "count": 1
+  },
+  "fuller-acres-ca": {
+    "city": "Fuller Acres",
+    "state": "ca",
+    "region": "shasta",
+    "population": 619,
+    "count": 1
+  },
+  "melba-id": {
+    "city": "Melba",
+    "state": "id",
+    "region": "shasta",
+    "population": 617,
+    "count": 3
+  },
+  "prairie-city-or": {
+    "city": "Prairie City",
+    "state": "or",
+    "region": "shasta",
+    "population": 615,
+    "count": 2
+  },
+  "running-y-ranch-or": {
+    "city": "Running Y Ranch",
+    "state": "or",
+    "region": "shasta",
+    "population": 607,
+    "count": 1
+  },
+  "crabtree-or": {
+    "city": "Crabtree",
+    "state": "or",
+    "region": "shasta",
+    "population": 602,
+    "count": 2
+  },
+  "mountain-mesa-ca": {
+    "city": "Mountain Mesa",
+    "state": "ca",
+    "region": "shasta",
+    "population": 600,
+    "count": 3
+  },
+  "oak-run-ca": {
+    "city": "Oak Run",
+    "state": "ca",
+    "region": "shasta",
+    "population": 596,
+    "count": 2
+  },
+  "valley-acres-ca": {
+    "city": "Valley Acres",
+    "state": "ca",
+    "region": "shasta",
+    "population": 595,
+    "count": 3
+  },
+  "bend-ca": {
+    "city": "Bend",
+    "state": "ca",
+    "region": "shasta",
+    "population": 593,
+    "count": 2
+  },
+  "crawfordsville-or": {
+    "city": "Crawfordsville",
+    "state": "or",
+    "region": "shasta",
+    "population": 588,
+    "count": 3
+  },
+  "avimor-id": {
+    "city": "Avimor",
+    "state": "id",
+    "region": "shasta",
+    "population": 586,
+    "count": 3
+  },
+  "green-meadows-or": {
+    "city": "Green Meadows",
+    "state": "or",
+    "region": "shasta",
+    "population": 584,
+    "count": 2
+  },
+  "cedarville-ca": {
+    "city": "Cedarville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 575,
+    "count": 3
+  },
+  "notus-id": {
+    "city": "Notus",
+    "state": "id",
+    "region": "shasta",
+    "population": 573,
+    "count": 3
+  },
+  "cohasset-ca": {
+    "city": "Cohasset",
+    "state": "ca",
+    "region": "shasta",
+    "population": 573,
+    "count": 2
+  },
+  "matheny-ca": {
+    "city": "Matheny",
+    "state": "ca",
+    "region": "shasta",
+    "population": 572,
+    "count": 1
+  },
+  "north-powder-or": {
+    "city": "North Powder",
+    "state": "or",
+    "region": "shasta",
+    "population": 563,
+    "count": 3
+  },
+  "fort-jones-ca": {
+    "city": "Fort Jones",
+    "state": "ca",
+    "region": "shasta",
+    "population": 562,
+    "count": 1
+  },
+  "zephyr-cove-nv": {
+    "city": "Zephyr Cove",
+    "state": "nv",
+    "region": "shasta",
+    "population": 562,
+    "count": 1
+  },
+  "pine-hollow-or": {
+    "city": "Pine Hollow",
+    "state": "or",
+    "region": "shasta",
+    "population": 561,
+    "count": 6
+  },
+  "nipinnawasee-ca": {
+    "city": "Nipinnawasee",
+    "state": "ca",
+    "region": "shasta",
+    "population": 558,
+    "count": 2
+  },
+  "college-city-ca": {
+    "city": "College City",
+    "state": "ca",
+    "region": "shasta",
+    "population": 557,
+    "count": 3
+  },
+  "new-cuyama-ca": {
+    "city": "New Cuyama",
+    "state": "ca",
+    "region": "shasta",
+    "population": 555,
+    "count": 3
+  },
+  "round-valley-ca": {
+    "city": "Round Valley",
+    "state": "ca",
+    "region": "shasta",
+    "population": 548,
+    "count": 9
+  },
+  "plainview-ca": {
+    "city": "Plainview",
+    "state": "ca",
+    "region": "shasta",
+    "population": 545,
+    "count": 1
+  },
+  "happy-camp-ca": {
+    "city": "Happy Camp",
+    "state": "ca",
+    "region": "shasta",
+    "population": 539,
+    "count": 1
+  },
+  "dunnigan-ca": {
+    "city": "Dunnigan",
+    "state": "ca",
+    "region": "shasta",
+    "population": 537,
+    "count": 3
+  },
+  "fossil-or": {
+    "city": "Fossil",
+    "state": "or",
+    "region": "shasta",
+    "population": 535,
+    "count": 1
+  },
+  "carter-springs-nv": {
+    "city": "Carter Springs",
+    "state": "nv",
+    "region": "shasta",
+    "population": 526,
+    "count": 1
+  },
+  "walker-ca": {
+    "city": "Walker",
+    "state": "ca",
+    "region": "shasta",
+    "population": 524,
+    "count": 1
+  },
+  "wilkerson-ca": {
+    "city": "Wilkerson",
+    "state": "ca",
+    "region": "shasta",
+    "population": 518,
+    "count": 9
+  },
+  "point-reyes-station-ca": {
+    "city": "Point Reyes Station",
+    "state": "ca",
+    "region": "shasta",
+    "population": 517,
+    "count": 2
+  },
+  "springville-ca": {
+    "city": "Springville",
+    "state": "ca",
+    "region": "shasta",
+    "population": 514,
+    "count": 1
+  },
+  "oak-glen-ca": {
+    "city": "Oak Glen",
+    "state": "ca",
+    "region": "shasta",
+    "population": 510,
+    "count": 1
+  },
+  "el-portal-ca": {
+    "city": "El Portal",
+    "state": "ca",
+    "region": "shasta",
+    "population": 505,
+    "count": 2
+  },
+  "stateline-nv": {
+    "city": "Stateline",
+    "state": "nv",
+    "region": "shasta",
+    "population": 503,
+    "count": 1
+  },
+  "klickitat-wa": {
+    "city": "Klickitat",
+    "state": "wa",
+    "region": "shasta",
+    "population": 501,
+    "count": 3
+  }
+}

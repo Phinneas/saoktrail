@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import cityIndex from '../../data/cities_index.json';
+import nearCityData from '../../data/near_city_pages.json';
 import { stateName } from '../../lib/states';
 
 export const prerender = true;
@@ -14,6 +15,10 @@ interface IndexEntry {
 }
 
 const entries = Object.entries(cityIndex) as [string, IndexEntry][];
+
+// Compact lat/lng list for client-side "use my location" nearest-city matching.
+const cityCoords = (Object.entries(nearCityData) as [string, { lat: number; lng: number }][])
+  .map(([slug, c]) => ({ slug, lat: c.lat, lng: c.lng }));
 
 // Group by state, sort states alphabetically by full name, cities by population desc.
 const byState: Record<string, [string, IndexEntry][]> = {};
@@ -43,9 +48,17 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 2, name: 'Near Cities', item: 'https://soaktrail.com/near' },
   ],
 };
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Hot Springs Near You — City Guides | Soak Trail',
+  url: 'https://soaktrail.com/near',
+  dateModified: new Date().toISOString().slice(0, 10),
+};
 ---
 
-<BaseLayout title="Hot Springs Near You — City Guides | Soak Trail" description={description} canonicalUrl="https://soaktrail.com/near" jsonLd={breadcrumbSchema}>
+<BaseLayout title="Hot Springs Near You — City Guides | Soak Trail" description={description} canonicalUrl="https://soaktrail.com/near" jsonLd={[breadcrumbSchema, webPageSchema]}>
   <div class="container mx-auto px-4 py-12 max-w-5xl">
     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Near Cities' }]} />
 
@@ -59,6 +72,19 @@ const breadcrumbSchema = {
       Looking for
       <a href="/how-to-find-hot-springs" class="text-sa-copper hover:underline">more ways to find hot springs</a>?
     </p>
+
+    <div id="near-me-card" class="mt-8 rounded-lg border border-sa-copper/30 bg-sa-copper/5 p-5 max-w-3xl">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <p class="font-display font-bold text-sa-dark">Not sure which city to pick?</p>
+          <p class="text-sm text-sa-dark/70 mt-1">Use your current location to find the closest hot springs.</p>
+        </div>
+        <button id="use-location-btn" type="button" class="rounded-full bg-sa-copper px-5 py-2.5 font-display font-bold text-white hover:opacity-90 transition">
+          📍 Use my location
+        </button>
+      </div>
+      <p id="near-me-status" class="text-sm text-sa-dark/60 mt-2" aria-live="polite"></p>
+    </div>
 
     <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl">
       <div class="rounded-lg border border-sa-dark/10 bg-white/60 p-5 text-center">
@@ -94,3 +120,55 @@ const breadcrumbSchema = {
     </div>
   </div>
 </BaseLayout>
+
+<script define:vars={{ cityCoords }}>
+  function haversineMiles(lat1, lng1, lat2, lng2) {
+    const R = 3958.8;
+    const rad = (d) => (d * Math.PI) / 180;
+    const dLat = rad(lat2 - lat1);
+    const dLng = rad(lng2 - lng1);
+    const a = Math.sin(dLat / 2) ** 2 + Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(dLng / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(a));
+  }
+
+  function nearestCity(lat, lng) {
+    let best = null;
+    let bestD = Infinity;
+    for (const c of cityCoords) {
+      const d = haversineMiles(lat, lng, c.lat, c.lng);
+      if (d < bestD) {
+        bestD = d;
+        best = c;
+      }
+    }
+    return best;
+  }
+
+  const btn = document.getElementById('use-location-btn');
+  const status = document.getElementById('near-me-status');
+  if (btn && navigator.geolocation) {
+    btn.addEventListener('click', () => {
+      status.textContent = 'Locating you…';
+      btn.disabled = true;
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const c = nearestCity(pos.coords.latitude, pos.coords.longitude);
+          if (c) {
+            status.textContent = 'Found your nearest town — opening it…';
+            window.location.href = `/near/${c.slug}`;
+          } else {
+            status.textContent = 'Could not find a nearby town.';
+            btn.disabled = false;
+          }
+        },
+        () => {
+          status.textContent = 'Location access denied. Pick a city below, or open the locator map.';
+          btn.disabled = false;
+        },
+        { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 }
+      );
+    });
+  } else {
+    status.textContent = 'Location isn\u2019t available in this browser. Pick a city below instead.';
+  }
+</script>

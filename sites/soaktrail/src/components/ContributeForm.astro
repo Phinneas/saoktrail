@@ -1,0 +1,62 @@
+---
+interface Props {
+  springName?: string;
+  springSlug?: string;
+}
+
+const { springName = '', springSlug = '' } = Astro.props;
+---
+
+<div class="rounded-2xl border border-sa-divider bg-white/60 p-6 md:p-8">
+  <h3 class="font-display text-xl font-bold text-sa-dark mb-2">Help Improve This Data</h3>
+  <p class="text-sa-text text-sm leading-relaxed mb-6">
+    Been here recently? Know something we don't? Submit a correction, access update, or condition report.
+  </p>
+
+  <form
+    id="contribute-form"
+    class="space-y-4"
+    onsubmit="event.preventDefault(); window.location.href = this.action + '?subject=' + encodeURIComponent(this.subject.value) + '&body=' + encodeURIComponent(this.body.value);"
+  >
+    <div>
+      <label class="block text-xs font-display font-medium text-sa-dark/60 uppercase tracking-wider mb-1">Type</label>
+      <select name="subject" class="w-full px-4 py-2.5 rounded-lg border border-sa-divider bg-white text-sa-dark text-sm font-display focus:outline-none focus:border-sa-copper">
+        <option value="Spring correction">Spring correction</option>
+        <option value="Access update">Access update (road, trail, closure)</option>
+        <option value="Temperature update">Temperature update</option>
+        <option value="Missing spring">Missing spring</option>
+        <option value="Photo submission">Photo submission</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    {springName && (
+      <div>
+        <label class="block text-xs font-display font-medium text-sa-dark/60 uppercase tracking-wider mb-1">Spring</label>
+        <input type="text" value={springName} readonly class="w-full px-4 py-2.5 rounded-lg border border-sa-divider bg-sa-cream/50 text-sa-dark text-sm font-display" />
+      </div>
+    )}
+
+    <div>
+      <label class="block text-xs font-display font-medium text-sa-dark/60 uppercase tracking-wider mb-1">Details</label>
+      <textarea
+        name="body"
+        rows="4"
+        placeholder={springName ? `What would you like us to update about ${springName}?` : 'What did you find? Include location, date, and any details.'}
+        class="w-full px-4 py-2.5 rounded-lg border border-sa-divider bg-white text-sa-dark text-sm font-display placeholder:text-sa-text/40 focus:outline-none focus:border-sa-copper resize-none"
+      />
+    </div>
+
+    <div class="flex items-center justify-between gap-4">
+      <button
+        type="submit"
+        class="px-6 py-2.5 rounded-lg bg-sa-copper text-white text-sm font-display font-medium hover:bg-sa-copper-hover transition-colors cursor-pointer"
+      >
+        Send Report
+      </button>
+      <span class="text-sa-text/40 text-xs font-display">or email <a href="mailto:corrections@soaktrail.com" class="text-sa-copper hover:underline">corrections@soaktrail.com</a></span>
+    </div>
+
+    <input type="hidden" name="spring" value={springSlug} />
+  </form>
+</div>

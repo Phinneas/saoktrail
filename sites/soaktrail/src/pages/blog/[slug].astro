@@ -8,6 +8,14 @@ const SITE_SLUG = 'soaktrail';
 
 const { slug } = Astro.params;
 
+// Redirect removed/incorrect slugs to homepage
+const REDIRECT_SLUGS = new Set([
+  'the-hot-springs-seo-playbook-how-to-track-your-way-to-page-one',
+]);
+if (REDIRECT_SLUGS.has(slug as string)) {
+  return Astro.redirect('/', 301);
+}
+
 const post = await getBlogPost(slug as string, SITE_SLUG);
 if (!post) {
   return new Response(null, { status: 404, statusText: 'Not Found' });

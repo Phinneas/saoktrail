@@ -1,4 +1,4 @@
-// api/lib/minimax.js - Minimax API client for blog generation
+// api/lib/minimax.js - GLM-5.3 API client for blog generation
 
 import { HUMANIZER_SYSTEM_PROMPT } from './humanizerPrompt.js';
 
@@ -196,13 +196,13 @@ export async function generateBlogImage(aiBinding, r2Binding, imagePrompt, slug)
 export class MinimaxClient {
   constructor(apiKey, groupId) {
     this.apiKey = apiKey || '';
-    this.baseUrl = 'https://api.minimax.io/v1/text/chatcompletion_v2';
-    this.model = 'MiniMax-M2.7';
+    this.baseUrl = 'https://open.bigmodel.cn/api/paas/v4/chat/completions';
+    this.model = 'GLM-5.3';
   }
 
   async chat(messages, temperature = 0.7) {
     if (!this.apiKey) {
-      throw new Error('MINIMAX_API_KEY not configured');
+      throw new Error('GLM_API_KEY not configured');
     }
 
     const response = await fetch(this.baseUrl, {
@@ -220,14 +220,10 @@ export class MinimaxClient {
 
     if (!response.ok) {
       const error = await response.text();
-      throw new Error(`Minimax API error: ${response.status} - ${error}`);
+      throw new Error(`GLM API error: ${response.status} - ${error}`);
     }
 
     const data = await response.json();
-
-    if (data.base_resp && data.base_resp.status_code !== 0) {
-      throw new Error(`Minimax API error: ${data.base_resp.status_code} - ${data.base_resp.status_msg}`);
-    }
 
     if (data.choices && data.choices[0]) {
       let content = data.choices[0].message?.content || data.choices[0]?.text || '';

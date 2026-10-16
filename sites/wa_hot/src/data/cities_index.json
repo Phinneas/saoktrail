@@ -1,0 +1,3544 @@
+{
+  "seattle-wa": {
+    "city": "Seattle",
+    "state": "wa",
+    "region": "washington",
+    "population": 3642006,
+    "count": 2
+  },
+  "portland-or": {
+    "city": "Portland",
+    "state": "or",
+    "region": "washington",
+    "population": 2115140,
+    "count": 7
+  },
+  "boise-id": {
+    "city": "Boise",
+    "state": "id",
+    "region": "washington",
+    "population": 448305,
+    "count": 3
+  },
+  "eugene-or": {
+    "city": "Eugene",
+    "state": "or",
+    "region": "washington",
+    "population": 272404,
+    "count": 3
+  },
+  "salem-or": {
+    "city": "Salem",
+    "state": "or",
+    "region": "washington",
+    "population": 268719,
+    "count": 1
+  },
+  "tacoma-wa": {
+    "city": "Tacoma",
+    "state": "wa",
+    "region": "washington",
+    "population": 222758,
+    "count": 2
+  },
+  "nampa-id": {
+    "city": "Nampa",
+    "state": "id",
+    "region": "washington",
+    "population": 201956,
+    "count": 3
+  },
+  "vancouver-wa": {
+    "city": "Vancouver",
+    "state": "wa",
+    "region": "washington",
+    "population": 195300,
+    "count": 5
+  },
+  "medford-or": {
+    "city": "Medford",
+    "state": "or",
+    "region": "washington",
+    "population": 170502,
+    "count": 1
+  },
+  "marysville-wa": {
+    "city": "Marysville",
+    "state": "wa",
+    "region": "washington",
+    "population": 166250,
+    "count": 2
+  },
+  "bellevue-wa": {
+    "city": "Bellevue",
+    "state": "wa",
+    "region": "washington",
+    "population": 151847,
+    "count": 3
+  },
+  "kent-wa": {
+    "city": "Kent",
+    "state": "wa",
+    "region": "washington",
+    "population": 135603,
+    "count": 3
+  },
+  "bellingham-wa": {
+    "city": "Bellingham",
+    "state": "wa",
+    "region": "washington",
+    "population": 135591,
+    "count": 3
+  },
+  "meridian-id": {
+    "city": "Meridian",
+    "state": "id",
+    "region": "washington",
+    "population": 130138,
+    "count": 3
+  },
+  "bend-or": {
+    "city": "Bend",
+    "state": "or",
+    "region": "washington",
+    "population": 113075,
+    "count": 6
+  },
+  "gresham-or": {
+    "city": "Gresham",
+    "state": "or",
+    "region": "washington",
+    "population": 112378,
+    "count": 7
+  },
+  "everett-wa": {
+    "city": "Everett",
+    "state": "wa",
+    "region": "washington",
+    "population": 111845,
+    "count": 2
+  },
+  "hillsboro-or": {
+    "city": "Hillsboro",
+    "state": "or",
+    "region": "washington",
+    "population": 108231,
+    "count": 1
+  },
+  "renton-wa": {
+    "city": "Renton",
+    "state": "wa",
+    "region": "washington",
+    "population": 105317,
+    "count": 2
+  },
+  "federal-way-wa": {
+    "city": "Federal Way",
+    "state": "wa",
+    "region": "washington",
+    "population": 99493,
+    "count": 3
+  },
+  "beaverton-or": {
+    "city": "Beaverton",
+    "state": "or",
+    "region": "washington",
+    "population": 97812,
+    "count": 4
+  },
+  "kirkland-wa": {
+    "city": "Kirkland",
+    "state": "wa",
+    "region": "washington",
+    "population": 92621,
+    "count": 3
+  },
+  "auburn-wa": {
+    "city": "Auburn",
+    "state": "wa",
+    "region": "washington",
+    "population": 85676,
+    "count": 3
+  },
+  "wenatchee-wa": {
+    "city": "Wenatchee",
+    "state": "wa",
+    "region": "washington",
+    "population": 85048,
+    "count": 1
+  },
+  "redmond-wa": {
+    "city": "Redmond",
+    "state": "wa",
+    "region": "washington",
+    "population": 77353,
+    "count": 3
+  },
+  "mount-vernon-wa": {
+    "city": "Mount Vernon",
+    "state": "wa",
+    "region": "washington",
+    "population": 69561,
+    "count": 3
+  },
+  "south-hill-wa": {
+    "city": "South Hill",
+    "state": "wa",
+    "region": "washington",
+    "population": 68025,
+    "count": 3
+  },
+  "caldwell-id": {
+    "city": "Caldwell",
+    "state": "id",
+    "region": "washington",
+    "population": 66516,
+    "count": 3
+  },
+  "sammamish-wa": {
+    "city": "Sammamish",
+    "state": "wa",
+    "region": "washington",
+    "population": 66463,
+    "count": 3
+  },
+  "albany-or": {
+    "city": "Albany",
+    "state": "or",
+    "region": "washington",
+    "population": 65601,
+    "count": 1
+  },
+  "lakewood-wa": {
+    "city": "Lakewood",
+    "state": "wa",
+    "region": "washington",
+    "population": 62937,
+    "count": 1
+  },
+  "springfield-or": {
+    "city": "Springfield",
+    "state": "or",
+    "region": "washington",
+    "population": 61499,
+    "count": 5
+  },
+  "shoreline-wa": {
+    "city": "Shoreline",
+    "state": "wa",
+    "region": "washington",
+    "population": 61431,
+    "count": 1
+  },
+  "tigard-or": {
+    "city": "Tigard",
+    "state": "or",
+    "region": "washington",
+    "population": 56011,
+    "count": 5
+  },
+  "aloha-or": {
+    "city": "Aloha",
+    "state": "or",
+    "region": "washington",
+    "population": 52389,
+    "count": 3
+  },
+  "burien-wa": {
+    "city": "Burien",
+    "state": "wa",
+    "region": "washington",
+    "population": 51513,
+    "count": 2
+  },
+  "bothell-wa": {
+    "city": "Bothell",
+    "state": "wa",
+    "region": "washington",
+    "population": 49610,
+    "count": 3
+  },
+  "puyallup-wa": {
+    "city": "Puyallup",
+    "state": "wa",
+    "region": "washington",
+    "population": 42746,
+    "count": 3
+  },
+  "edmonds-wa": {
+    "city": "Edmonds",
+    "state": "wa",
+    "region": "washington",
+    "population": 42735,
+    "count": 2
+  },
+  "lake-oswego-or": {
+    "city": "Lake Oswego",
+    "state": "or",
+    "region": "washington",
+    "population": 40381,
+    "count": 7
+  },
+  "lake-stevens-wa": {
+    "city": "Lake Stevens",
+    "state": "wa",
+    "region": "washington",
+    "population": 40253,
+    "count": 4
+  },
+  "lynnwood-wa": {
+    "city": "Lynnwood",
+    "state": "wa",
+    "region": "washington",
+    "population": 40110,
+    "count": 2
+  },
+  "issaquah-wa": {
+    "city": "Issaquah",
+    "state": "wa",
+    "region": "washington",
+    "population": 39591,
+    "count": 3
+  },
+  "grants-pass-or": {
+    "city": "Grants Pass",
+    "state": "or",
+    "region": "washington",
+    "population": 39311,
+    "count": 1
+  },
+  "keizer-or": {
+    "city": "Keizer",
+    "state": "or",
+    "region": "washington",
+    "population": 39082,
+    "count": 2
+  },
+  "parkland-wa": {
+    "city": "Parkland",
+    "state": "wa",
+    "region": "washington",
+    "population": 38742,
+    "count": 2
+  },
+  "oregon-city-or": {
+    "city": "Oregon City",
+    "state": "or",
+    "region": "washington",
+    "population": 37755,
+    "count": 8
+  },
+  "redmond-or": {
+    "city": "Redmond",
+    "state": "or",
+    "region": "washington",
+    "population": 36092,
+    "count": 5
+  },
+  "graham-wa": {
+    "city": "Graham",
+    "state": "wa",
+    "region": "washington",
+    "population": 35079,
+    "count": 2
+  },
+  "university-place-wa": {
+    "city": "University Place",
+    "state": "wa",
+    "region": "washington",
+    "population": 34911,
+    "count": 1
+  },
+  "spanaway-wa": {
+    "city": "Spanaway",
+    "state": "wa",
+    "region": "washington",
+    "population": 34019,
+    "count": 2
+  },
+  "bethany-or": {
+    "city": "Bethany",
+    "state": "or",
+    "region": "washington",
+    "population": 33106,
+    "count": 3
+  },
+  "eagle-id": {
+    "city": "Eagle",
+    "state": "id",
+    "region": "washington",
+    "population": 32855,
+    "count": 3
+  },
+  "des-moines-wa": {
+    "city": "Des Moines",
+    "state": "wa",
+    "region": "washington",
+    "population": 32823,
+    "count": 2
+  },
+  "seatac-wa": {
+    "city": "SeaTac",
+    "state": "wa",
+    "region": "washington",
+    "population": 32414,
+    "count": 2
+  },
+  "orchards-wa": {
+    "city": "Orchards",
+    "state": "wa",
+    "region": "washington",
+    "population": 29438,
+    "count": 5
+  },
+  "maple-valley-wa": {
+    "city": "Maple Valley",
+    "state": "wa",
+    "region": "washington",
+    "population": 28287,
+    "count": 4
+  },
+  "woodburn-or": {
+    "city": "Woodburn",
+    "state": "or",
+    "region": "washington",
+    "population": 27875,
+    "count": 2
+  },
+  "tualatin-or": {
+    "city": "Tualatin",
+    "state": "or",
+    "region": "washington",
+    "population": 27763,
+    "count": 5
+  },
+  "kuna-id": {
+    "city": "Kuna",
+    "state": "id",
+    "region": "washington",
+    "population": 27158,
+    "count": 3
+  },
+  "camas-wa": {
+    "city": "Camas",
+    "state": "wa",
+    "region": "washington",
+    "population": 27007,
+    "count": 7
+  },
+  "wilsonville-or": {
+    "city": "Wilsonville",
+    "state": "or",
+    "region": "washington",
+    "population": 26974,
+    "count": 5
+  },
+  "west-linn-or": {
+    "city": "West Linn",
+    "state": "or",
+    "region": "washington",
+    "population": 26935,
+    "count": 7
+  },
+  "happy-valley-or": {
+    "city": "Happy Valley",
+    "state": "or",
+    "region": "washington",
+    "population": 26738,
+    "count": 7
+  },
+  "newberg-or": {
+    "city": "Newberg",
+    "state": "or",
+    "region": "washington",
+    "population": 26066,
+    "count": 1
+  },
+  "mill-creek-east-wa": {
+    "city": "Mill Creek East",
+    "state": "wa",
+    "region": "washington",
+    "population": 25453,
+    "count": 2
+  },
+  "frederickson-wa": {
+    "city": "Frederickson",
+    "state": "wa",
+    "region": "washington",
+    "population": 25383,
+    "count": 2
+  },
+  "mercer-island-wa": {
+    "city": "Mercer Island",
+    "state": "wa",
+    "region": "washington",
+    "population": 25307,
+    "count": 2
+  },
+  "oak-harbor-wa": {
+    "city": "Oak Harbor",
+    "state": "wa",
+    "region": "washington",
+    "population": 24362,
+    "count": 2
+  },
+  "roseburg-or": {
+    "city": "Roseburg",
+    "state": "or",
+    "region": "washington",
+    "population": 23778,
+    "count": 1
+  },
+  "kenmore-wa": {
+    "city": "Kenmore",
+    "state": "wa",
+    "region": "washington",
+    "population": 23741,
+    "count": 1
+  },
+  "eastmont-wa": {
+    "city": "Eastmont",
+    "state": "wa",
+    "region": "washington",
+    "population": 23721,
+    "count": 2
+  },
+  "north-lynnwood-wa": {
+    "city": "North Lynnwood",
+    "state": "wa",
+    "region": "washington",
+    "population": 23339,
+    "count": 2
+  },
+  "hazel-dell-wa": {
+    "city": "Hazel Dell",
+    "state": "wa",
+    "region": "washington",
+    "population": 23237,
+    "count": 5
+  },
+  "mountlake-terrace-wa": {
+    "city": "Mountlake Terrace",
+    "state": "wa",
+    "region": "washington",
+    "population": 23104,
+    "count": 1
+  },
+  "union-hill-novelty-hill-wa": {
+    "city": "Union Hill-Novelty Hill",
+    "state": "wa",
+    "region": "washington",
+    "population": 23047,
+    "count": 3
+  },
+  "martha-lake-wa": {
+    "city": "Martha Lake",
+    "state": "wa",
+    "region": "washington",
+    "population": 22634,
+    "count": 2
+  },
+  "cottage-lake-wa": {
+    "city": "Cottage Lake",
+    "state": "wa",
+    "region": "washington",
+    "population": 22518,
+    "count": 3
+  },
+  "silver-firs-wa": {
+    "city": "Silver Firs",
+    "state": "wa",
+    "region": "washington",
+    "population": 22306,
+    "count": 2
+  },
+  "klamath-falls-or": {
+    "city": "Klamath Falls",
+    "state": "or",
+    "region": "washington",
+    "population": 22115,
+    "count": 2
+  },
+  "bonney-lake-wa": {
+    "city": "Bonney Lake",
+    "state": "wa",
+    "region": "washington",
+    "population": 22090,
+    "count": 3
+  },
+  "bothell-west-wa": {
+    "city": "Bothell West",
+    "state": "wa",
+    "region": "washington",
+    "population": 22029,
+    "count": 1
+  },
+  "battle-ground-wa": {
+    "city": "Battle Ground",
+    "state": "wa",
+    "region": "washington",
+    "population": 21886,
+    "count": 5
+  },
+  "tukwila-wa": {
+    "city": "Tukwila",
+    "state": "wa",
+    "region": "washington",
+    "population": 21451,
+    "count": 2
+  },
+  "milwaukie-or": {
+    "city": "Milwaukie",
+    "state": "or",
+    "region": "washington",
+    "population": 21392,
+    "count": 7
+  },
+  "mukilteo-wa": {
+    "city": "Mukilteo",
+    "state": "wa",
+    "region": "washington",
+    "population": 21323,
+    "count": 2
+  },
+  "ashland-or": {
+    "city": "Ashland",
+    "state": "or",
+    "region": "washington",
+    "population": 21259,
+    "count": 1
+  },
+  "hayesville-or": {
+    "city": "Hayesville",
+    "state": "or",
+    "region": "washington",
+    "population": 21246,
+    "count": 2
+  },
+  "covington-wa": {
+    "city": "Covington",
+    "state": "wa",
+    "region": "washington",
+    "population": 21233,
+    "count": 3
+  },
+  "five-corners-wa": {
+    "city": "Five Corners",
+    "state": "wa",
+    "region": "washington",
+    "population": 21194,
+    "count": 5
+  },
+  "arlington-wa": {
+    "city": "Arlington",
+    "state": "wa",
+    "region": "washington",
+    "population": 21095,
+    "count": 3
+  },
+  "mill-creek-wa": {
+    "city": "Mill Creek",
+    "state": "wa",
+    "region": "washington",
+    "population": 20956,
+    "count": 2
+  },
+  "ellensburg-wa": {
+    "city": "Ellensburg",
+    "state": "wa",
+    "region": "washington",
+    "population": 20874,
+    "count": 2
+  },
+  "silverdale-wa": {
+    "city": "Silverdale",
+    "state": "wa",
+    "region": "washington",
+    "population": 20685,
+    "count": 1
+  },
+  "sherwood-or": {
+    "city": "Sherwood",
+    "state": "or",
+    "region": "washington",
+    "population": 20307,
+    "count": 3
+  },
+  "port-angeles-wa": {
+    "city": "Port Angeles",
+    "state": "wa",
+    "region": "washington",
+    "population": 20118,
+    "count": 3
+  },
+  "salmon-creek-wa": {
+    "city": "Salmon Creek",
+    "state": "wa",
+    "region": "washington",
+    "population": 20017,
+    "count": 5
+  },
+  "altamont-or": {
+    "city": "Altamont",
+    "state": "or",
+    "region": "washington",
+    "population": 19927,
+    "count": 2
+  },
+  "monroe-wa": {
+    "city": "Monroe",
+    "state": "wa",
+    "region": "washington",
+    "population": 19755,
+    "count": 4
+  },
+  "cedar-mill-or": {
+    "city": "Cedar Mill",
+    "state": "or",
+    "region": "washington",
+    "population": 19471,
+    "count": 3
+  },
+  "lebanon-or": {
+    "city": "Lebanon",
+    "state": "or",
+    "region": "washington",
+    "population": 19344,
+    "count": 5
+  },
+  "central-point-or": {
+    "city": "Central Point",
+    "state": "or",
+    "region": "washington",
+    "population": 19216,
+    "count": 1
+  },
+  "canby-or": {
+    "city": "Canby",
+    "state": "or",
+    "region": "washington",
+    "population": 18134,
+    "count": 6
+  },
+  "anacortes-wa": {
+    "city": "Anacortes",
+    "state": "wa",
+    "region": "washington",
+    "population": 17966,
+    "count": 3
+  },
+  "fairwood-wa": {
+    "city": "Fairwood",
+    "state": "wa",
+    "region": "washington",
+    "population": 17856,
+    "count": 3
+  },
+  "bryn-mawr-skyway-wa": {
+    "city": "Bryn Mawr-Skyway",
+    "state": "wa",
+    "region": "washington",
+    "population": 17638,
+    "count": 2
+  },
+  "washougal-wa": {
+    "city": "Washougal",
+    "state": "wa",
+    "region": "washington",
+    "population": 17490,
+    "count": 7
+  },
+  "camano-wa": {
+    "city": "Camano",
+    "state": "wa",
+    "region": "washington",
+    "population": 17303,
+    "count": 1
+  },
+  "pendleton-or": {
+    "city": "Pendleton",
+    "state": "or",
+    "region": "washington",
+    "population": 16950,
+    "count": 2
+  },
+  "oak-grove-or": {
+    "city": "Oak Grove",
+    "state": "or",
+    "region": "washington",
+    "population": 16796,
+    "count": 7
+  },
+  "four-corners-or": {
+    "city": "Four Corners",
+    "state": "or",
+    "region": "washington",
+    "population": 16275,
+    "count": 3
+  },
+  "lynden-wa": {
+    "city": "Lynden",
+    "state": "wa",
+    "region": "washington",
+    "population": 16234,
+    "count": 3
+  },
+  "ferndale-wa": {
+    "city": "Ferndale",
+    "state": "wa",
+    "region": "washington",
+    "population": 15999,
+    "count": 3
+  },
+  "lakeland-north-wa": {
+    "city": "Lakeland North",
+    "state": "wa",
+    "region": "washington",
+    "population": 15950,
+    "count": 3
+  },
+  "troutdale-or": {
+    "city": "Troutdale",
+    "state": "or",
+    "region": "washington",
+    "population": 15923,
+    "count": 7
+  },
+  "the-dalles-or": {
+    "city": "The Dalles",
+    "state": "or",
+    "region": "washington",
+    "population": 15917,
+    "count": 5
+  },
+  "lake-stickney-wa": {
+    "city": "Lake Stickney",
+    "state": "wa",
+    "region": "washington",
+    "population": 15890,
+    "count": 2
+  },
+  "fort-lewis-wa": {
+    "city": "Fort Lewis",
+    "state": "wa",
+    "region": "washington",
+    "population": 15167,
+    "count": 1
+  },
+  "white-center-wa": {
+    "city": "White Center",
+    "state": "wa",
+    "region": "washington",
+    "population": 14886,
+    "count": 2
+  },
+  "star-id": {
+    "city": "Star",
+    "state": "id",
+    "region": "washington",
+    "population": 14745,
+    "count": 3
+  },
+  "bothell-east-wa": {
+    "city": "Bothell East",
+    "state": "wa",
+    "region": "washington",
+    "population": 14578,
+    "count": 2
+  },
+  "elk-plain-wa": {
+    "city": "Elk Plain",
+    "state": "wa",
+    "region": "washington",
+    "population": 14276,
+    "count": 2
+  },
+  "st-helens-or": {
+    "city": "St. Helens",
+    "state": "or",
+    "region": "washington",
+    "population": 14258,
+    "count": 5
+  },
+  "east-wenatchee-wa": {
+    "city": "East Wenatchee",
+    "state": "wa",
+    "region": "washington",
+    "population": 14199,
+    "count": 1
+  },
+  "snoqualmie-wa": {
+    "city": "Snoqualmie",
+    "state": "wa",
+    "region": "washington",
+    "population": 13798,
+    "count": 4
+  },
+  "woodinville-wa": {
+    "city": "Woodinville",
+    "state": "wa",
+    "region": "washington",
+    "population": 13438,
+    "count": 3
+  },
+  "ridgefield-wa": {
+    "city": "Ridgefield",
+    "state": "wa",
+    "region": "washington",
+    "population": 13408,
+    "count": 5
+  },
+  "lake-forest-park-wa": {
+    "city": "Lake Forest Park",
+    "state": "wa",
+    "region": "washington",
+    "population": 13335,
+    "count": 1
+  },
+  "oatfield-or": {
+    "city": "Oatfield",
+    "state": "or",
+    "region": "washington",
+    "population": 13294,
+    "count": 7
+  },
+  "lakeland-south-wa": {
+    "city": "Lakeland South",
+    "state": "wa",
+    "region": "washington",
+    "population": 13100,
+    "count": 3
+  },
+  "la-grande-or": {
+    "city": "La Grande",
+    "state": "or",
+    "region": "washington",
+    "population": 13058,
+    "count": 3
+  },
+  "edgewood-wa": {
+    "city": "Edgewood",
+    "state": "wa",
+    "region": "washington",
+    "population": 13032,
+    "count": 3
+  },
+  "newcastle-wa": {
+    "city": "Newcastle",
+    "state": "wa",
+    "region": "washington",
+    "population": 12989,
+    "count": 3
+  },
+  "sandy-or": {
+    "city": "Sandy",
+    "state": "or",
+    "region": "washington",
+    "population": 12854,
+    "count": 8
+  },
+  "sedro-woolley-wa": {
+    "city": "Sedro-Woolley",
+    "state": "wa",
+    "region": "washington",
+    "population": 12831,
+    "count": 3
+  },
+  "enumclaw-wa": {
+    "city": "Enumclaw",
+    "state": "wa",
+    "region": "washington",
+    "population": 12798,
+    "count": 3
+  },
+  "lake-tapps-wa": {
+    "city": "Lake Tapps",
+    "state": "wa",
+    "region": "washington",
+    "population": 12798,
+    "count": 3
+  },
+  "garden-city-id": {
+    "city": "Garden City",
+    "state": "id",
+    "region": "washington",
+    "population": 12654,
+    "count": 3
+  },
+  "east-renton-highlands-wa": {
+    "city": "East Renton Highlands",
+    "state": "wa",
+    "region": "washington",
+    "population": 12582,
+    "count": 4
+  },
+  "poulsbo-wa": {
+    "city": "Poulsbo",
+    "state": "wa",
+    "region": "washington",
+    "population": 12165,
+    "count": 1
+  },
+  "prairie-ridge-wa": {
+    "city": "Prairie Ridge",
+    "state": "wa",
+    "region": "washington",
+    "population": 12074,
+    "count": 3
+  },
+  "gladstone-or": {
+    "city": "Gladstone",
+    "state": "or",
+    "region": "washington",
+    "population": 11977,
+    "count": 7
+  },
+  "ontario-or": {
+    "city": "Ontario",
+    "state": "or",
+    "region": "washington",
+    "population": 11842,
+    "count": 4
+  },
+  "minnehaha-wa": {
+    "city": "Minnehaha",
+    "state": "wa",
+    "region": "washington",
+    "population": 11482,
+    "count": 5
+  },
+  "prineville-or": {
+    "city": "Prineville",
+    "state": "or",
+    "region": "washington",
+    "population": 11470,
+    "count": 3
+  },
+  "damascus-or": {
+    "city": "Damascus",
+    "state": "or",
+    "region": "washington",
+    "population": 11437,
+    "count": 8
+  },
+  "lake-morton-berrydale-wa": {
+    "city": "Lake Morton-Berrydale",
+    "state": "wa",
+    "region": "washington",
+    "population": 11183,
+    "count": 3
+  },
+  "oak-hills-or": {
+    "city": "Oak Hills",
+    "state": "or",
+    "region": "washington",
+    "population": 11131,
+    "count": 3
+  },
+  "fife-wa": {
+    "city": "Fife",
+    "state": "wa",
+    "region": "washington",
+    "population": 10949,
+    "count": 3
+  },
+  "maltby-wa": {
+    "city": "Maltby",
+    "state": "wa",
+    "region": "washington",
+    "population": 10910,
+    "count": 3
+  },
+  "felida-wa": {
+    "city": "Felida",
+    "state": "wa",
+    "region": "washington",
+    "population": 10841,
+    "count": 5
+  },
+  "birch-bay-wa": {
+    "city": "Birch Bay",
+    "state": "wa",
+    "region": "washington",
+    "population": 10837,
+    "count": 2
+  },
+  "mount-vista-wa": {
+    "city": "Mount Vista",
+    "state": "wa",
+    "region": "washington",
+    "population": 10764,
+    "count": 5
+  },
+  "white-city-or": {
+    "city": "White City",
+    "state": "or",
+    "region": "washington",
+    "population": 10750,
+    "count": 1
+  },
+  "fairview-or": {
+    "city": "Fairview",
+    "state": "or",
+    "region": "washington",
+    "population": 10735,
+    "count": 7
+  },
+  "sumner-wa": {
+    "city": "Sumner",
+    "state": "wa",
+    "region": "washington",
+    "population": 10733,
+    "count": 3
+  },
+  "cottage-grove-or": {
+    "city": "Cottage Grove",
+    "state": "or",
+    "region": "washington",
+    "population": 10698,
+    "count": 4
+  },
+  "middleton-id": {
+    "city": "Middleton",
+    "state": "id",
+    "region": "washington",
+    "population": 10649,
+    "count": 3
+  },
+  "santa-clara-or": {
+    "city": "Santa Clara",
+    "state": "or",
+    "region": "washington",
+    "population": 10551,
+    "count": 2
+  },
+  "silverton-or": {
+    "city": "Silverton",
+    "state": "or",
+    "region": "washington",
+    "population": 10456,
+    "count": 3
+  },
+  "port-townsend-wa": {
+    "city": "Port Townsend",
+    "state": "wa",
+    "region": "washington",
+    "population": 10438,
+    "count": 2
+  },
+  "alderwood-manor-wa": {
+    "city": "Alderwood Manor",
+    "state": "wa",
+    "region": "washington",
+    "population": 10266,
+    "count": 1
+  },
+  "picnic-point-wa": {
+    "city": "Picnic Point",
+    "state": "wa",
+    "region": "washington",
+    "population": 10261,
+    "count": 2
+  },
+  "snohomish-wa": {
+    "city": "Snohomish",
+    "state": "wa",
+    "region": "washington",
+    "population": 10239,
+    "count": 4
+  },
+  "baker-city-or": {
+    "city": "Baker City",
+    "state": "or",
+    "region": "washington",
+    "population": 10210,
+    "count": 4
+  },
+  "molalla-or": {
+    "city": "Molalla",
+    "state": "or",
+    "region": "washington",
+    "population": 10186,
+    "count": 5
+  },
+  "sweet-home-or": {
+    "city": "Sweet Home",
+    "state": "or",
+    "region": "washington",
+    "population": 10078,
+    "count": 5
+  },
+  "burlington-wa": {
+    "city": "Burlington",
+    "state": "wa",
+    "region": "washington",
+    "population": 10003,
+    "count": 3
+  },
+  "vashon-wa": {
+    "city": "Vashon",
+    "state": "wa",
+    "region": "washington",
+    "population": 9934,
+    "count": 2
+  },
+  "bull-mountain-or": {
+    "city": "Bull Mountain",
+    "state": "or",
+    "region": "washington",
+    "population": 9865,
+    "count": 5
+  },
+  "eagle-point-or": {
+    "city": "Eagle Point",
+    "state": "or",
+    "region": "washington",
+    "population": 9839,
+    "count": 1
+  },
+  "tehaleh-wa": {
+    "city": "Tehaleh",
+    "state": "wa",
+    "region": "washington",
+    "population": 9561,
+    "count": 3
+  },
+  "rockcreek-or": {
+    "city": "Rockcreek",
+    "state": "or",
+    "region": "washington",
+    "population": 9223,
+    "count": 3
+  },
+  "midland-wa": {
+    "city": "Midland",
+    "state": "wa",
+    "region": "washington",
+    "population": 9050,
+    "count": 2
+  },
+  "orting-wa": {
+    "city": "Orting",
+    "state": "wa",
+    "region": "washington",
+    "population": 8978,
+    "count": 3
+  },
+  "milton-wa": {
+    "city": "Milton",
+    "state": "wa",
+    "region": "washington",
+    "population": 8894,
+    "count": 3
+  },
+  "river-road-or": {
+    "city": "River Road",
+    "state": "or",
+    "region": "washington",
+    "population": 8862,
+    "count": 3
+  },
+  "summit-wa": {
+    "city": "Summit",
+    "state": "wa",
+    "region": "washington",
+    "population": 8791,
+    "count": 3
+  },
+  "barberton-wa": {
+    "city": "Barberton",
+    "state": "wa",
+    "region": "washington",
+    "population": 8668,
+    "count": 5
+  },
+  "sutherlin-or": {
+    "city": "Sutherlin",
+    "state": "or",
+    "region": "washington",
+    "population": 8599,
+    "count": 1
+  },
+  "payette-id": {
+    "city": "Payette",
+    "state": "id",
+    "region": "washington",
+    "population": 8536,
+    "count": 4
+  },
+  "duvall-wa": {
+    "city": "Duvall",
+    "state": "wa",
+    "region": "washington",
+    "population": 8526,
+    "count": 3
+  },
+  "summit-view-wa": {
+    "city": "Summit View",
+    "state": "wa",
+    "region": "washington",
+    "population": 8480,
+    "count": 3
+  },
+  "cedar-hills-or": {
+    "city": "Cedar Hills",
+    "state": "or",
+    "region": "washington",
+    "population": 8388,
+    "count": 4
+  },
+  "stanwood-wa": {
+    "city": "Stanwood",
+    "state": "wa",
+    "region": "washington",
+    "population": 8373,
+    "count": 2
+  },
+  "hood-river-or": {
+    "city": "Hood River",
+    "state": "or",
+    "region": "washington",
+    "population": 8361,
+    "count": 5
+  },
+  "stayton-or": {
+    "city": "Stayton",
+    "state": "or",
+    "region": "washington",
+    "population": 8292,
+    "count": 3
+  },
+  "emmett-id": {
+    "city": "Emmett",
+    "state": "id",
+    "region": "washington",
+    "population": 8275,
+    "count": 4
+  },
+  "scappoose-or": {
+    "city": "Scappoose",
+    "state": "or",
+    "region": "washington",
+    "population": 8179,
+    "count": 3
+  },
+  "sequim-wa": {
+    "city": "Sequim",
+    "state": "wa",
+    "region": "washington",
+    "population": 8161,
+    "count": 3
+  },
+  "jennings-lodge-or": {
+    "city": "Jennings Lodge",
+    "state": "or",
+    "region": "washington",
+    "population": 7971,
+    "count": 7
+  },
+  "north-bend-wa": {
+    "city": "North Bend",
+    "state": "wa",
+    "region": "washington",
+    "population": 7953,
+    "count": 4
+  },
+  "yreka-ca": {
+    "city": "Yreka",
+    "state": "ca",
+    "region": "washington",
+    "population": 7820,
+    "count": 1
+  },
+  "waller-wa": {
+    "city": "Waller",
+    "state": "wa",
+    "region": "washington",
+    "population": 7683,
+    "count": 3
+  },
+  "madras-or": {
+    "city": "Madras",
+    "state": "or",
+    "region": "washington",
+    "population": 7676,
+    "count": 2
+  },
+  "west-haven-sylvan-or": {
+    "city": "West Haven-Sylvan",
+    "state": "or",
+    "region": "washington",
+    "population": 7674,
+    "count": 6
+  },
+  "clover-creek-wa": {
+    "city": "Clover Creek",
+    "state": "wa",
+    "region": "washington",
+    "population": 7345,
+    "count": 2
+  },
+  "fircrest-wa": {
+    "city": "Fircrest",
+    "state": "wa",
+    "region": "washington",
+    "population": 7069,
+    "count": 1
+  },
+  "pacific-wa": {
+    "city": "Pacific",
+    "state": "wa",
+    "region": "washington",
+    "population": 7066,
+    "count": 3
+  },
+  "milton-freewater-or": {
+    "city": "Milton-Freewater",
+    "state": "or",
+    "region": "washington",
+    "population": 7036,
+    "count": 1
+  },
+  "garden-home-whitford-or": {
+    "city": "Garden Home-Whitford",
+    "state": "or",
+    "region": "washington",
+    "population": 6979,
+    "count": 7
+  },
+  "lake-shore-wa": {
+    "city": "Lake Shore",
+    "state": "wa",
+    "region": "washington",
+    "population": 6978,
+    "count": 5
+  },
+  "junction-city-or": {
+    "city": "Junction City",
+    "state": "or",
+    "region": "washington",
+    "population": 6947,
+    "count": 1
+  },
+  "woods-creek-wa": {
+    "city": "Woods Creek",
+    "state": "wa",
+    "region": "washington",
+    "population": 6943,
+    "count": 4
+  },
+  "raleigh-hills-or": {
+    "city": "Raleigh Hills",
+    "state": "or",
+    "region": "washington",
+    "population": 6744,
+    "count": 7
+  },
+  "wollochet-wa": {
+    "city": "Wollochet",
+    "state": "wa",
+    "region": "washington",
+    "population": 6689,
+    "count": 1
+  },
+  "steilacoom-wa": {
+    "city": "Steilacoom",
+    "state": "wa",
+    "region": "washington",
+    "population": 6686,
+    "count": 1
+  },
+  "fruitland-id": {
+    "city": "Fruitland",
+    "state": "id",
+    "region": "washington",
+    "population": 6663,
+    "count": 4
+  },
+  "normandy-park-wa": {
+    "city": "Normandy Park",
+    "state": "wa",
+    "region": "washington",
+    "population": 6659,
+    "count": 2
+  },
+  "west-slope-or": {
+    "city": "West Slope",
+    "state": "or",
+    "region": "washington",
+    "population": 6582,
+    "count": 7
+  },
+  "hobart-wa": {
+    "city": "Hobart",
+    "state": "wa",
+    "region": "washington",
+    "population": 6552,
+    "count": 4
+  },
+  "brier-wa": {
+    "city": "Brier",
+    "state": "wa",
+    "region": "washington",
+    "population": 6545,
+    "count": 1
+  },
+  "woodland-wa": {
+    "city": "Woodland",
+    "state": "wa",
+    "region": "washington",
+    "population": 6487,
+    "count": 5
+  },
+  "north-fort-lewis-wa": {
+    "city": "North Fort Lewis",
+    "state": "wa",
+    "region": "washington",
+    "population": 6337,
+    "count": 1
+  },
+  "talent-or": {
+    "city": "Talent",
+    "state": "or",
+    "region": "washington",
+    "population": 6254,
+    "count": 1
+  },
+  "hockinson-wa": {
+    "city": "Hockinson",
+    "state": "wa",
+    "region": "washington",
+    "population": 6150,
+    "count": 5
+  },
+  "sultan-wa": {
+    "city": "Sultan",
+    "state": "wa",
+    "region": "washington",
+    "population": 6116,
+    "count": 4
+  },
+  "bangor-base-wa": {
+    "city": "Bangor Base",
+    "state": "wa",
+    "region": "washington",
+    "population": 6112,
+    "count": 1
+  },
+  "blaine-wa": {
+    "city": "Blaine",
+    "state": "wa",
+    "region": "washington",
+    "population": 6100,
+    "count": 2
+  },
+  "sudden-valley-wa": {
+    "city": "Sudden Valley",
+    "state": "wa",
+    "region": "washington",
+    "population": 6084,
+    "count": 3
+  },
+  "black-diamond-wa": {
+    "city": "Black Diamond",
+    "state": "wa",
+    "region": "washington",
+    "population": 5961,
+    "count": 4
+  },
+  "weiser-id": {
+    "city": "Weiser",
+    "state": "id",
+    "region": "washington",
+    "population": 5935,
+    "count": 3
+  },
+  "maplewood-wa": {
+    "city": "Maplewood",
+    "state": "wa",
+    "region": "washington",
+    "population": 5803,
+    "count": 1
+  },
+  "deschutes-river-woods-or": {
+    "city": "Deschutes River Woods",
+    "state": "or",
+    "region": "washington",
+    "population": 5797,
+    "count": 6
+  },
+  "creswell-or": {
+    "city": "Creswell",
+    "state": "or",
+    "region": "washington",
+    "population": 5621,
+    "count": 4
+  },
+  "lake-goodwin-wa": {
+    "city": "Lake Goodwin",
+    "state": "wa",
+    "region": "washington",
+    "population": 5536,
+    "count": 1
+  },
+  "marlene-village-or": {
+    "city": "Marlene Village",
+    "state": "or",
+    "region": "washington",
+    "population": 5439,
+    "count": 3
+  },
+  "buckley-wa": {
+    "city": "Buckley",
+    "state": "wa",
+    "region": "washington",
+    "population": 5371,
+    "count": 3
+  },
+  "crooked-river-ranch-or": {
+    "city": "Crooked River Ranch",
+    "state": "or",
+    "region": "washington",
+    "population": 5160,
+    "count": 5
+  },
+  "estacada-or": {
+    "city": "Estacada",
+    "state": "or",
+    "region": "washington",
+    "population": 5152,
+    "count": 8
+  },
+  "king-city-or": {
+    "city": "King City",
+    "state": "or",
+    "region": "washington",
+    "population": 5073,
+    "count": 5
+  },
+  "prairie-heights-wa": {
+    "city": "Prairie Heights",
+    "state": "wa",
+    "region": "washington",
+    "population": 4998,
+    "count": 3
+  },
+  "chain-lake-wa": {
+    "city": "Chain Lake",
+    "state": "wa",
+    "region": "washington",
+    "population": 4950,
+    "count": 3
+  },
+  "beavercreek-or": {
+    "city": "Beavercreek",
+    "state": "or",
+    "region": "washington",
+    "population": 4894,
+    "count": 8
+  },
+  "wood-village-or": {
+    "city": "Wood Village",
+    "state": "or",
+    "region": "washington",
+    "population": 4696,
+    "count": 7
+  },
+  "granite-falls-wa": {
+    "city": "Granite Falls",
+    "state": "wa",
+    "region": "washington",
+    "population": 4659,
+    "count": 5
+  },
+  "roseburg-north-or": {
+    "city": "Roseburg North",
+    "state": "or",
+    "region": "washington",
+    "population": 4601,
+    "count": 1
+  },
+  "boulevard-park-wa": {
+    "city": "Boulevard Park",
+    "state": "wa",
+    "region": "washington",
+    "population": 4575,
+    "count": 2
+  },
+  "larch-way-wa": {
+    "city": "Larch Way",
+    "state": "wa",
+    "region": "washington",
+    "population": 4424,
+    "count": 2
+  },
+  "phoenix-or": {
+    "city": "Phoenix",
+    "state": "or",
+    "region": "washington",
+    "population": 4390,
+    "count": 1
+  },
+  "venersborg-wa": {
+    "city": "Venersborg",
+    "state": "wa",
+    "region": "washington",
+    "population": 4262,
+    "count": 5
+  },
+  "aumsville-or": {
+    "city": "Aumsville",
+    "state": "or",
+    "region": "washington",
+    "population": 4230,
+    "count": 3
+  },
+  "esperance-wa": {
+    "city": "Esperance",
+    "state": "wa",
+    "region": "washington",
+    "population": 4189,
+    "count": 1
+  },
+  "maple-heights-lake-desire-wa": {
+    "city": "Maple Heights-Lake Desire",
+    "state": "wa",
+    "region": "washington",
+    "population": 4113,
+    "count": 4
+  },
+  "three-lakes-wa": {
+    "city": "Three Lakes",
+    "state": "wa",
+    "region": "washington",
+    "population": 4055,
+    "count": 3
+  },
+  "mirrormont-wa": {
+    "city": "Mirrormont",
+    "state": "wa",
+    "region": "washington",
+    "population": 4019,
+    "count": 4
+  },
+  "three-rivers-or": {
+    "city": "Three Rivers",
+    "state": "or",
+    "region": "washington",
+    "population": 3995,
+    "count": 8
+  },
+  "mccall-id": {
+    "city": "McCall",
+    "state": "id",
+    "region": "washington",
+    "population": 3946,
+    "count": 1
+  },
+  "canyon-creek-wa": {
+    "city": "Canyon Creek",
+    "state": "wa",
+    "region": "washington",
+    "population": 3910,
+    "count": 5
+  },
+  "port-hadlock-irondale-wa": {
+    "city": "Port Hadlock-Irondale",
+    "state": "wa",
+    "region": "washington",
+    "population": 3884,
+    "count": 3
+  },
+  "la-center-wa": {
+    "city": "La Center",
+    "state": "wa",
+    "region": "washington",
+    "population": 3883,
+    "count": 5
+  },
+  "ahtanum-wa": {
+    "city": "Ahtanum",
+    "state": "wa",
+    "region": "washington",
+    "population": 3777,
+    "count": 1
+  },
+  "marietta-alderwood-wa": {
+    "city": "Marietta-Alderwood",
+    "state": "wa",
+    "region": "washington",
+    "population": 3754,
+    "count": 3
+  },
+  "redwood-or": {
+    "city": "Redwood",
+    "state": "or",
+    "region": "washington",
+    "population": 3721,
+    "count": 1
+  },
+  "metzger-or": {
+    "city": "Metzger",
+    "state": "or",
+    "region": "washington",
+    "population": 3714,
+    "count": 5
+  },
+  "sunnyslope-wa": {
+    "city": "Sunnyslope",
+    "state": "wa",
+    "region": "washington",
+    "population": 3706,
+    "count": 1
+  },
+  "harrisburg-or": {
+    "city": "Harrisburg",
+    "state": "or",
+    "region": "washington",
+    "population": 3681,
+    "count": 1
+  },
+  "bunk-foss-wa": {
+    "city": "Bunk Foss",
+    "state": "wa",
+    "region": "washington",
+    "population": 3627,
+    "count": 4
+  },
+  "lake-holm-wa": {
+    "city": "Lake Holm",
+    "state": "wa",
+    "region": "washington",
+    "population": 3555,
+    "count": 3
+  },
+  "myrtle-creek-or": {
+    "city": "Myrtle Creek",
+    "state": "or",
+    "region": "washington",
+    "population": 3500,
+    "count": 1
+  },
+  "goldendale-wa": {
+    "city": "Goldendale",
+    "state": "wa",
+    "region": "washington",
+    "population": 3483,
+    "count": 2
+  },
+  "warm-beach-wa": {
+    "city": "Warm Beach",
+    "state": "wa",
+    "region": "washington",
+    "population": 3442,
+    "count": 1
+  },
+  "hubbard-or": {
+    "city": "Hubbard",
+    "state": "or",
+    "region": "washington",
+    "population": 3406,
+    "count": 3
+  },
+  "forks-wa": {
+    "city": "Forks",
+    "state": "wa",
+    "region": "washington",
+    "population": 3400,
+    "count": 2
+  },
+  "mount-angel-or": {
+    "city": "Mount Angel",
+    "state": "or",
+    "region": "washington",
+    "population": 3393,
+    "count": 3
+  },
+  "hansville-wa": {
+    "city": "Hansville",
+    "state": "wa",
+    "region": "washington",
+    "population": 3384,
+    "count": 2
+  },
+  "hidden-springs-id": {
+    "city": "Hidden Springs",
+    "state": "id",
+    "region": "washington",
+    "population": 3378,
+    "count": 3
+  },
+  "millersburg-or": {
+    "city": "Millersburg",
+    "state": "or",
+    "region": "washington",
+    "population": 3366,
+    "count": 1
+  },
+  "chico-wa": {
+    "city": "Chico",
+    "state": "wa",
+    "region": "washington",
+    "population": 3336,
+    "count": 1
+  },
+  "cashmere-wa": {
+    "city": "Cashmere",
+    "state": "wa",
+    "region": "washington",
+    "population": 3304,
+    "count": 2
+  },
+  "jefferson-or": {
+    "city": "Jefferson",
+    "state": "or",
+    "region": "washington",
+    "population": 3301,
+    "count": 1
+  },
+  "lake-cassidy-wa": {
+    "city": "Lake Cassidy",
+    "state": "wa",
+    "region": "washington",
+    "population": 3292,
+    "count": 3
+  },
+  "lakeview-or": {
+    "city": "Lakeview",
+    "state": "or",
+    "region": "washington",
+    "population": 3270,
+    "count": 3
+  },
+  "clearview-wa": {
+    "city": "Clearview",
+    "state": "wa",
+    "region": "washington",
+    "population": 3254,
+    "count": 2
+  },
+  "algona-wa": {
+    "city": "Algona",
+    "state": "wa",
+    "region": "washington",
+    "population": 3247,
+    "count": 3
+  },
+  "nyssa-or": {
+    "city": "Nyssa",
+    "state": "or",
+    "region": "washington",
+    "population": 3240,
+    "count": 3
+  },
+  "mountain-home-afb-id": {
+    "city": "Mountain Home AFB",
+    "state": "id",
+    "region": "washington",
+    "population": 3219,
+    "count": 1
+  },
+  "dundee-or": {
+    "city": "Dundee",
+    "state": "or",
+    "region": "washington",
+    "population": 3213,
+    "count": 1
+  },
+  "high-bridge-wa": {
+    "city": "High Bridge",
+    "state": "wa",
+    "region": "washington",
+    "population": 3196,
+    "count": 3
+  },
+  "oakridge-or": {
+    "city": "Oakridge",
+    "state": "or",
+    "region": "washington",
+    "population": 3184,
+    "count": 6
+  },
+  "port-angeles-east-wa": {
+    "city": "Port Angeles East",
+    "state": "wa",
+    "region": "washington",
+    "population": 3137,
+    "count": 3
+  },
+  "clyde-hill-wa": {
+    "city": "Clyde Hill",
+    "state": "wa",
+    "region": "washington",
+    "population": 3119,
+    "count": 2
+  },
+  "shady-cove-or": {
+    "city": "Shady Cove",
+    "state": "or",
+    "region": "washington",
+    "population": 3076,
+    "count": 1
+  },
+  "homedale-id": {
+    "city": "Homedale",
+    "state": "id",
+    "region": "washington",
+    "population": 3069,
+    "count": 3
+  },
+  "kalama-wa": {
+    "city": "Kalama",
+    "state": "wa",
+    "region": "washington",
+    "population": 3050,
+    "count": 3
+  },
+  "everson-wa": {
+    "city": "Everson",
+    "state": "wa",
+    "region": "washington",
+    "population": 3040,
+    "count": 3
+  },
+  "lochsloy-wa": {
+    "city": "Lochsloy",
+    "state": "wa",
+    "region": "washington",
+    "population": 3029,
+    "count": 4
+  },
+  "sisters-or": {
+    "city": "Sisters",
+    "state": "or",
+    "region": "washington",
+    "population": 3022,
+    "count": 7
+  },
+  "sisco-heights-wa": {
+    "city": "Sisco Heights",
+    "state": "wa",
+    "region": "washington",
+    "population": 3015,
+    "count": 3
+  },
+  "meadowdale-wa": {
+    "city": "Meadowdale",
+    "state": "wa",
+    "region": "washington",
+    "population": 3009,
+    "count": 2
+  },
+  "lake-shastina-ca": {
+    "city": "Lake Shastina",
+    "state": "ca",
+    "region": "washington",
+    "population": 3001,
+    "count": 1
+  },
+  "mcchord-afb-wa": {
+    "city": "McChord AFB",
+    "state": "wa",
+    "region": "washington",
+    "population": 2999,
+    "count": 2
+  },
+  "jacksonville-or": {
+    "city": "Jacksonville",
+    "state": "or",
+    "region": "washington",
+    "population": 2991,
+    "count": 1
+  },
+  "medina-wa": {
+    "city": "Medina",
+    "state": "wa",
+    "region": "washington",
+    "population": 2928,
+    "count": 2
+  },
+  "sublimity-or": {
+    "city": "Sublimity",
+    "state": "or",
+    "region": "washington",
+    "population": 2919,
+    "count": 3
+  },
+  "port-ludlow-wa": {
+    "city": "Port Ludlow",
+    "state": "wa",
+    "region": "washington",
+    "population": 2891,
+    "count": 2
+  },
+  "peaceful-valley-wa": {
+    "city": "Peaceful Valley",
+    "state": "wa",
+    "region": "washington",
+    "population": 2858,
+    "count": 3
+  },
+  "eatonville-wa": {
+    "city": "Eatonville",
+    "state": "wa",
+    "region": "washington",
+    "population": 2850,
+    "count": 2
+  },
+  "gleed-wa": {
+    "city": "Gleed",
+    "state": "wa",
+    "region": "washington",
+    "population": 2844,
+    "count": 1
+  },
+  "turner-or": {
+    "city": "Turner",
+    "state": "or",
+    "region": "washington",
+    "population": 2792,
+    "count": 3
+  },
+  "friday-harbor-wa": {
+    "city": "Friday Harbor",
+    "state": "wa",
+    "region": "washington",
+    "population": 2728,
+    "count": 2
+  },
+  "arlington-heights-wa": {
+    "city": "Arlington Heights",
+    "state": "wa",
+    "region": "washington",
+    "population": 2727,
+    "count": 4
+  },
+  "burns-or": {
+    "city": "Burns",
+    "state": "or",
+    "region": "washington",
+    "population": 2723,
+    "count": 1
+  },
+  "alderton-wa": {
+    "city": "Alderton",
+    "state": "wa",
+    "region": "washington",
+    "population": 2706,
+    "count": 3
+  },
+  "eagle-crest-or": {
+    "city": "Eagle Crest",
+    "state": "or",
+    "region": "washington",
+    "population": 2677,
+    "count": 7
+  },
+  "dayton-or": {
+    "city": "Dayton",
+    "state": "or",
+    "region": "washington",
+    "population": 2675,
+    "count": 1
+  },
+  "juniper-canyon-or": {
+    "city": "Juniper Canyon",
+    "state": "or",
+    "region": "washington",
+    "population": 2666,
+    "count": 3
+  },
+  "bryant-wa": {
+    "city": "Bryant",
+    "state": "wa",
+    "region": "washington",
+    "population": 2648,
+    "count": 3
+  },
+  "gervais-or": {
+    "city": "Gervais",
+    "state": "or",
+    "region": "washington",
+    "population": 2581,
+    "count": 2
+  },
+  "fobes-hill-wa": {
+    "city": "Fobes Hill",
+    "state": "wa",
+    "region": "washington",
+    "population": 2569,
+    "count": 3
+  },
+  "leavenworth-wa": {
+    "city": "Leavenworth",
+    "state": "wa",
+    "region": "washington",
+    "population": 2569,
+    "count": 4
+  },
+  "white-salmon-wa": {
+    "city": "White Salmon",
+    "state": "wa",
+    "region": "washington",
+    "population": 2548,
+    "count": 5
+  },
+  "la-pine-or": {
+    "city": "La Pine",
+    "state": "or",
+    "region": "washington",
+    "population": 2547,
+    "count": 8
+  },
+  "brush-prairie-wa": {
+    "city": "Brush Prairie",
+    "state": "wa",
+    "region": "washington",
+    "population": 2526,
+    "count": 5
+  },
+  "north-yelm-wa": {
+    "city": "North Yelm",
+    "state": "wa",
+    "region": "washington",
+    "population": 2522,
+    "count": 1
+  },
+  "kingston-wa": {
+    "city": "Kingston",
+    "state": "wa",
+    "region": "washington",
+    "population": 2496,
+    "count": 1
+  },
+  "warm-springs-or": {
+    "city": "Warm Springs",
+    "state": "or",
+    "region": "washington",
+    "population": 2480,
+    "count": 3
+  },
+  "shadow-lake-wa": {
+    "city": "Shadow Lake",
+    "state": "wa",
+    "region": "washington",
+    "population": 2465,
+    "count": 4
+  },
+  "lewisville-wa": {
+    "city": "Lewisville",
+    "state": "wa",
+    "region": "washington",
+    "population": 2465,
+    "count": 5
+  },
+  "gold-bar-wa": {
+    "city": "Gold Bar",
+    "state": "wa",
+    "region": "washington",
+    "population": 2390,
+    "count": 4
+  },
+  "carnation-wa": {
+    "city": "Carnation",
+    "state": "wa",
+    "region": "washington",
+    "population": 2366,
+    "count": 3
+  },
+  "vale-or": {
+    "city": "Vale",
+    "state": "or",
+    "region": "washington",
+    "population": 2348,
+    "count": 3
+  },
+  "big-lake-wa": {
+    "city": "Big Lake",
+    "state": "wa",
+    "region": "washington",
+    "population": 2326,
+    "count": 3
+  },
+  "carson-wa": {
+    "city": "Carson",
+    "state": "wa",
+    "region": "washington",
+    "population": 2318,
+    "count": 5
+  },
+  "union-or": {
+    "city": "Union",
+    "state": "or",
+    "region": "washington",
+    "population": 2290,
+    "count": 3
+  },
+  "meadow-glade-wa": {
+    "city": "Meadow Glade",
+    "state": "wa",
+    "region": "washington",
+    "population": 2281,
+    "count": 5
+  },
+  "culver-or": {
+    "city": "Culver",
+    "state": "or",
+    "region": "washington",
+    "population": 2254,
+    "count": 2
+  },
+  "rogue-river-or": {
+    "city": "Rogue River",
+    "state": "or",
+    "region": "washington",
+    "population": 2238,
+    "count": 1
+  },
+  "mulino-or": {
+    "city": "Mulino",
+    "state": "or",
+    "region": "washington",
+    "population": 2229,
+    "count": 6
+  },
+  "odell-or": {
+    "city": "Odell",
+    "state": "or",
+    "region": "washington",
+    "population": 2218,
+    "count": 6
+  },
+  "south-creek-wa": {
+    "city": "South Creek",
+    "state": "wa",
+    "region": "washington",
+    "population": 2191,
+    "count": 2
+  },
+  "enterprise-or": {
+    "city": "Enterprise",
+    "state": "or",
+    "region": "washington",
+    "population": 2131,
+    "count": 2
+  },
+  "wilder-id": {
+    "city": "Wilder",
+    "state": "id",
+    "region": "washington",
+    "population": 2074,
+    "count": 3
+  },
+  "geneva-wa": {
+    "city": "Geneva",
+    "state": "wa",
+    "region": "washington",
+    "population": 2073,
+    "count": 3
+  },
+  "cathcart-wa": {
+    "city": "Cathcart",
+    "state": "wa",
+    "region": "washington",
+    "population": 2064,
+    "count": 2
+  },
+  "fern-prairie-wa": {
+    "city": "Fern Prairie",
+    "state": "wa",
+    "region": "washington",
+    "population": 2053,
+    "count": 7
+  },
+  "whidbey-island-station-wa": {
+    "city": "Whidbey Island Station",
+    "state": "wa",
+    "region": "washington",
+    "population": 2027,
+    "count": 2
+  },
+  "columbia-city-or": {
+    "city": "Columbia City",
+    "state": "or",
+    "region": "washington",
+    "population": 2006,
+    "count": 3
+  },
+  "durham-or": {
+    "city": "Durham",
+    "state": "or",
+    "region": "washington",
+    "population": 1983,
+    "count": 5
+  },
+  "coupeville-wa": {
+    "city": "Coupeville",
+    "state": "wa",
+    "region": "washington",
+    "population": 1980,
+    "count": 2
+  },
+  "parma-id": {
+    "city": "Parma",
+    "state": "id",
+    "region": "washington",
+    "population": 1928,
+    "count": 3
+  },
+  "mill-city-or": {
+    "city": "Mill City",
+    "state": "or",
+    "region": "washington",
+    "population": 1920,
+    "count": 6
+  },
+  "brownsville-or": {
+    "city": "Brownsville",
+    "state": "or",
+    "region": "washington",
+    "population": 1912,
+    "count": 3
+  },
+  "cle-elum-wa": {
+    "city": "Cle Elum",
+    "state": "wa",
+    "region": "washington",
+    "population": 1905,
+    "count": 4
+  },
+  "kayak-point-wa": {
+    "city": "Kayak Point",
+    "state": "wa",
+    "region": "washington",
+    "population": 1883,
+    "count": 1
+  },
+  "dunthorpe-or": {
+    "city": "Dunthorpe",
+    "state": "or",
+    "region": "washington",
+    "population": 1875,
+    "count": 7
+  },
+  "boring-or": {
+    "city": "Boring",
+    "state": "or",
+    "region": "washington",
+    "population": 1869,
+    "count": 8
+  },
+  "glide-or": {
+    "city": "Glide",
+    "state": "or",
+    "region": "washington",
+    "population": 1823,
+    "count": 3
+  },
+  "lofall-wa": {
+    "city": "Lofall",
+    "state": "wa",
+    "region": "washington",
+    "population": 1800,
+    "count": 2
+  },
+  "nooksack-wa": {
+    "city": "Nooksack",
+    "state": "wa",
+    "region": "washington",
+    "population": 1794,
+    "count": 3
+  },
+  "new-plymouth-id": {
+    "city": "New Plymouth",
+    "state": "id",
+    "region": "washington",
+    "population": 1794,
+    "count": 4
+  },
+  "riverbend-wa": {
+    "city": "Riverbend",
+    "state": "wa",
+    "region": "washington",
+    "population": 1748,
+    "count": 4
+  },
+  "amboy-wa": {
+    "city": "Amboy",
+    "state": "wa",
+    "region": "washington",
+    "population": 1692,
+    "count": 5
+  },
+  "yacolt-wa": {
+    "city": "Yacolt",
+    "state": "wa",
+    "region": "washington",
+    "population": 1684,
+    "count": 5
+  },
+  "duluth-wa": {
+    "city": "Duluth",
+    "state": "wa",
+    "region": "washington",
+    "population": 1656,
+    "count": 5
+  },
+  "north-puyallup-wa": {
+    "city": "North Puyallup",
+    "state": "wa",
+    "region": "washington",
+    "population": 1653,
+    "count": 3
+  },
+  "keno-or": {
+    "city": "Keno",
+    "state": "or",
+    "region": "washington",
+    "population": 1651,
+    "count": 1
+  },
+  "warren-or": {
+    "city": "Warren",
+    "state": "or",
+    "region": "washington",
+    "population": 1637,
+    "count": 3
+  },
+  "coburg-or": {
+    "city": "Coburg",
+    "state": "or",
+    "region": "washington",
+    "population": 1626,
+    "count": 4
+  },
+  "fall-city-wa": {
+    "city": "Fall City",
+    "state": "wa",
+    "region": "washington",
+    "population": 1618,
+    "count": 3
+  },
+  "merlin-or": {
+    "city": "Merlin",
+    "state": "or",
+    "region": "washington",
+    "population": 1617,
+    "count": 1
+  },
+  "john-day-or": {
+    "city": "John Day",
+    "state": "or",
+    "region": "washington",
+    "population": 1609,
+    "count": 1
+  },
+  "hines-or": {
+    "city": "Hines",
+    "state": "or",
+    "region": "washington",
+    "population": 1604,
+    "count": 1
+  },
+  "dallesport-wa": {
+    "city": "Dallesport",
+    "state": "wa",
+    "region": "washington",
+    "population": 1603,
+    "count": 5
+  },
+  "stevenson-wa": {
+    "city": "Stevenson",
+    "state": "wa",
+    "region": "washington",
+    "population": 1603,
+    "count": 6
+  },
+  "terrebonne-or": {
+    "city": "Terrebonne",
+    "state": "or",
+    "region": "washington",
+    "population": 1602,
+    "count": 6
+  },
+  "stafford-or": {
+    "city": "Stafford",
+    "state": "or",
+    "region": "washington",
+    "population": 1600,
+    "count": 7
+  },
+  "tieton-wa": {
+    "city": "Tieton",
+    "state": "wa",
+    "region": "washington",
+    "population": 1597,
+    "count": 1
+  },
+  "cavalero-wa": {
+    "city": "Cavalero",
+    "state": "wa",
+    "region": "washington",
+    "population": 1591,
+    "count": 4
+  },
+  "wilderness-rim-wa": {
+    "city": "Wilderness Rim",
+    "state": "wa",
+    "region": "washington",
+    "population": 1560,
+    "count": 4
+  },
+  "lake-marcel-stillwater-wa": {
+    "city": "Lake Marcel-Stillwater",
+    "state": "wa",
+    "region": "washington",
+    "population": 1549,
+    "count": 3
+  },
+  "elgin-or": {
+    "city": "Elgin",
+    "state": "or",
+    "region": "washington",
+    "population": 1549,
+    "count": 3
+  },
+  "freeland-wa": {
+    "city": "Freeland",
+    "state": "wa",
+    "region": "washington",
+    "population": 1548,
+    "count": 2
+  },
+  "sumas-wa": {
+    "city": "Sumas",
+    "state": "wa",
+    "region": "washington",
+    "population": 1512,
+    "count": 3
+  },
+  "prineville-lake-acres-or": {
+    "city": "Prineville Lake Acres",
+    "state": "or",
+    "region": "washington",
+    "population": 1497,
+    "count": 3
+  },
+  "halsey-or": {
+    "city": "Halsey",
+    "state": "or",
+    "region": "washington",
+    "population": 1491,
+    "count": 1
+  },
+  "sunriver-or": {
+    "city": "Sunriver",
+    "state": "or",
+    "region": "washington",
+    "population": 1488,
+    "count": 8
+  },
+  "greenleaf-id": {
+    "city": "Greenleaf",
+    "state": "id",
+    "region": "washington",
+    "population": 1482,
+    "count": 3
+  },
+  "montague-ca": {
+    "city": "Montague",
+    "state": "ca",
+    "region": "washington",
+    "population": 1479,
+    "count": 1
+  },
+  "manson-wa": {
+    "city": "Manson",
+    "state": "wa",
+    "region": "washington",
+    "population": 1462,
+    "count": 2
+  },
+  "monroe-north-wa": {
+    "city": "Monroe North",
+    "state": "wa",
+    "region": "washington",
+    "population": 1456,
+    "count": 3
+  },
+  "fife-heights-wa": {
+    "city": "Fife Heights",
+    "state": "wa",
+    "region": "washington",
+    "population": 1446,
+    "count": 3
+  },
+  "chenoweth-or": {
+    "city": "Chenoweth",
+    "state": "or",
+    "region": "washington",
+    "population": 1445,
+    "count": 5
+  },
+  "clinton-wa": {
+    "city": "Clinton",
+    "state": "wa",
+    "region": "washington",
+    "population": 1419,
+    "count": 1
+  },
+  "darrington-wa": {
+    "city": "Darrington",
+    "state": "wa",
+    "region": "washington",
+    "population": 1412,
+    "count": 4
+  },
+  "cascade-locks-or": {
+    "city": "Cascade Locks",
+    "state": "or",
+    "region": "washington",
+    "population": 1378,
+    "count": 6
+  },
+  "athena-or": {
+    "city": "Athena",
+    "state": "or",
+    "region": "washington",
+    "population": 1377,
+    "count": 2
+  },
+  "sunday-lake-wa": {
+    "city": "Sunday Lake",
+    "state": "wa",
+    "region": "washington",
+    "population": 1375,
+    "count": 3
+  },
+  "mcmillin-wa": {
+    "city": "McMillin",
+    "state": "wa",
+    "region": "washington",
+    "population": 1348,
+    "count": 3
+  },
+  "marsing-id": {
+    "city": "Marsing",
+    "state": "id",
+    "region": "washington",
+    "population": 1306,
+    "count": 3
+  },
+  "new-hope-or": {
+    "city": "New Hope",
+    "state": "or",
+    "region": "washington",
+    "population": 1296,
+    "count": 1
+  },
+  "point-roberts-wa": {
+    "city": "Point Roberts",
+    "state": "wa",
+    "region": "washington",
+    "population": 1288,
+    "count": 1
+  },
+  "gold-hill-or": {
+    "city": "Gold Hill",
+    "state": "or",
+    "region": "washington",
+    "population": 1288,
+    "count": 1
+  },
+  "entiat-wa": {
+    "city": "Entiat",
+    "state": "wa",
+    "region": "washington",
+    "population": 1284,
+    "count": 1
+  },
+  "pilot-rock-or": {
+    "city": "Pilot Rock",
+    "state": "or",
+    "region": "washington",
+    "population": 1283,
+    "count": 2
+  },
+  "heppner-or": {
+    "city": "Heppner",
+    "state": "or",
+    "region": "washington",
+    "population": 1277,
+    "count": 2
+  },
+  "machias-wa": {
+    "city": "Machias",
+    "state": "wa",
+    "region": "washington",
+    "population": 1276,
+    "count": 4
+  },
+  "clear-lake-wa": {
+    "city": "Clear Lake",
+    "state": "wa",
+    "region": "washington",
+    "population": 1271,
+    "count": 2
+  },
+  "crocker-wa": {
+    "city": "Crocker",
+    "state": "wa",
+    "region": "washington",
+    "population": 1254,
+    "count": 3
+  },
+  "woodway-wa": {
+    "city": "Woodway",
+    "state": "wa",
+    "region": "washington",
+    "population": 1251,
+    "count": 1
+  },
+  "waterville-wa": {
+    "city": "Waterville",
+    "state": "wa",
+    "region": "washington",
+    "population": 1250,
+    "count": 1
+  },
+  "ames-lake-wa": {
+    "city": "Ames Lake",
+    "state": "wa",
+    "region": "washington",
+    "population": 1245,
+    "count": 3
+  },
+  "ruston-wa": {
+    "city": "Ruston",
+    "state": "wa",
+    "region": "washington",
+    "population": 1245,
+    "count": 1
+  },
+  "lake-ketchum-wa": {
+    "city": "Lake Ketchum",
+    "state": "wa",
+    "region": "washington",
+    "population": 1235,
+    "count": 3
+  },
+  "carlsborg-wa": {
+    "city": "Carlsborg",
+    "state": "wa",
+    "region": "washington",
+    "population": 1231,
+    "count": 3
+  },
+  "lowell-or": {
+    "city": "Lowell",
+    "state": "or",
+    "region": "washington",
+    "population": 1228,
+    "count": 6
+  },
+  "south-wenatchee-wa": {
+    "city": "South Wenatchee",
+    "state": "wa",
+    "region": "washington",
+    "population": 1226,
+    "count": 1
+  },
+  "robie-creek-id": {
+    "city": "Robie Creek",
+    "state": "id",
+    "region": "washington",
+    "population": 1213,
+    "count": 1
+  },
+  "morton-wa": {
+    "city": "Morton",
+    "state": "wa",
+    "region": "washington",
+    "population": 1206,
+    "count": 1
+  },
+  "yarrow-point-wa": {
+    "city": "Yarrow Point",
+    "state": "wa",
+    "region": "washington",
+    "population": 1198,
+    "count": 2
+  },
+  "twisp-wa": {
+    "city": "Twisp",
+    "state": "wa",
+    "region": "washington",
+    "population": 1179,
+    "count": 1
+  },
+  "marrowstone-wa": {
+    "city": "Marrowstone",
+    "state": "wa",
+    "region": "washington",
+    "population": 1164,
+    "count": 2
+  },
+  "ruch-or": {
+    "city": "Ruch",
+    "state": "or",
+    "region": "washington",
+    "population": 1151,
+    "count": 1
+  },
+  "island-city-or": {
+    "city": "Island City",
+    "state": "or",
+    "region": "washington",
+    "population": 1145,
+    "count": 3
+  },
+  "lyons-or": {
+    "city": "Lyons",
+    "state": "or",
+    "region": "washington",
+    "population": 1139,
+    "count": 4
+  },
+  "metolius-or": {
+    "city": "Metolius",
+    "state": "or",
+    "region": "washington",
+    "population": 1137,
+    "count": 2
+  },
+  "donald-or": {
+    "city": "Donald",
+    "state": "or",
+    "region": "washington",
+    "population": 1133,
+    "count": 2
+  },
+  "cascade-id": {
+    "city": "Cascade",
+    "state": "id",
+    "region": "washington",
+    "population": 1118,
+    "count": 1
+  },
+  "north-bonneville-wa": {
+    "city": "North Bonneville",
+    "state": "wa",
+    "region": "washington",
+    "population": 1112,
+    "count": 7
+  },
+  "foots-creek-or": {
+    "city": "Foots Creek",
+    "state": "or",
+    "region": "washington",
+    "population": 1110,
+    "count": 1
+  },
+  "drain-or": {
+    "city": "Drain",
+    "state": "or",
+    "region": "washington",
+    "population": 1078,
+    "count": 1
+  },
+  "roslyn-wa": {
+    "city": "Roslyn",
+    "state": "wa",
+    "region": "washington",
+    "population": 1076,
+    "count": 4
+  },
+  "naches-wa": {
+    "city": "Naches",
+    "state": "wa",
+    "region": "washington",
+    "population": 1059,
+    "count": 1
+  },
+  "joseph-or": {
+    "city": "Joseph",
+    "state": "or",
+    "region": "washington",
+    "population": 1054,
+    "count": 2
+  },
+  "oakland-or": {
+    "city": "Oakland",
+    "state": "or",
+    "region": "washington",
+    "population": 1048,
+    "count": 2
+  },
+  "langley-wa": {
+    "city": "Langley",
+    "state": "wa",
+    "region": "washington",
+    "population": 1044,
+    "count": 1
+  },
+  "bell-hill-wa": {
+    "city": "Bell Hill",
+    "state": "wa",
+    "region": "washington",
+    "population": 1041,
+    "count": 3
+  },
+  "aurora-or": {
+    "city": "Aurora",
+    "state": "or",
+    "region": "washington",
+    "population": 1030,
+    "count": 4
+  },
+  "maywood-park-or": {
+    "city": "Maywood Park",
+    "state": "or",
+    "region": "washington",
+    "population": 987,
+    "count": 7
+  },
+  "browns-point-wa": {
+    "city": "Browns Point",
+    "state": "wa",
+    "region": "washington",
+    "population": 979,
+    "count": 2
+  },
+  "yoncalla-or": {
+    "city": "Yoncalla",
+    "state": "or",
+    "region": "washington",
+    "population": 971,
+    "count": 1
+  },
+  "neah-bay-wa": {
+    "city": "Neah Bay",
+    "state": "wa",
+    "region": "washington",
+    "population": 955,
+    "count": 1
+  },
+  "dufur-or": {
+    "city": "Dufur",
+    "state": "or",
+    "region": "washington",
+    "population": 952,
+    "count": 5
+  },
+  "south-lebanon-or": {
+    "city": "South Lebanon",
+    "state": "or",
+    "region": "washington",
+    "population": 939,
+    "count": 5
+  },
+  "scio-or": {
+    "city": "Scio",
+    "state": "or",
+    "region": "washington",
+    "population": 930,
+    "count": 3
+  },
+  "tulelake-ca": {
+    "city": "Tulelake",
+    "state": "ca",
+    "region": "washington",
+    "population": 925,
+    "count": 1
+  },
+  "lake-bosworth-wa": {
+    "city": "Lake Bosworth",
+    "state": "wa",
+    "region": "washington",
+    "population": 907,
+    "count": 4
+  },
+  "canyon-city-or": {
+    "city": "Canyon City",
+    "state": "or",
+    "region": "washington",
+    "population": 900,
+    "count": 1
+  },
+  "dash-point-wa": {
+    "city": "Dash Point",
+    "state": "wa",
+    "region": "washington",
+    "population": 889,
+    "count": 2
+  },
+  "mission-or": {
+    "city": "Mission",
+    "state": "or",
+    "region": "washington",
+    "population": 878,
+    "count": 2
+  },
+  "mossyrock-wa": {
+    "city": "Mossyrock",
+    "state": "wa",
+    "region": "washington",
+    "population": 875,
+    "count": 1
+  },
+  "la-conner-wa": {
+    "city": "La Conner",
+    "state": "wa",
+    "region": "washington",
+    "population": 873,
+    "count": 3
+  },
+  "council-id": {
+    "city": "Council",
+    "state": "id",
+    "region": "washington",
+    "population": 871,
+    "count": 1
+  },
+  "dorris-ca": {
+    "city": "Dorris",
+    "state": "ca",
+    "region": "washington",
+    "population": 869,
+    "count": 1
+  },
+  "dexter-or": {
+    "city": "Dexter",
+    "state": "or",
+    "region": "washington",
+    "population": 865,
+    "count": 6
+  },
+  "falcon-heights-or": {
+    "city": "Falcon Heights",
+    "state": "or",
+    "region": "washington",
+    "population": 837,
+    "count": 2
+  },
+  "taholah-wa": {
+    "city": "Taholah",
+    "state": "wa",
+    "region": "washington",
+    "population": 833,
+    "count": 1
+  },
+  "concrete-wa": {
+    "city": "Concrete",
+    "state": "wa",
+    "region": "washington",
+    "population": 833,
+    "count": 4
+  },
+  "riverpoint-wa": {
+    "city": "Riverpoint",
+    "state": "wa",
+    "region": "washington",
+    "population": 831,
+    "count": 4
+  },
+  "merrill-or": {
+    "city": "Merrill",
+    "state": "or",
+    "region": "washington",
+    "population": 819,
+    "count": 1
+  },
+  "lake-roesiger-wa": {
+    "city": "Lake Roesiger",
+    "state": "wa",
+    "region": "washington",
+    "population": 815,
+    "count": 3
+  },
+  "malin-or": {
+    "city": "Malin",
+    "state": "or",
+    "region": "washington",
+    "population": 799,
+    "count": 1
+  },
+  "may-creek-wa": {
+    "city": "May Creek",
+    "state": "wa",
+    "region": "washington",
+    "population": 791,
+    "count": 4
+  },
+  "seabeck-wa": {
+    "city": "Seabeck",
+    "state": "wa",
+    "region": "washington",
+    "population": 787,
+    "count": 1
+  },
+  "cherry-grove-wa": {
+    "city": "Cherry Grove",
+    "state": "wa",
+    "region": "washington",
+    "population": 779,
+    "count": 5
+  },
+  "roche-harbor-wa": {
+    "city": "Roche Harbor",
+    "state": "wa",
+    "region": "washington",
+    "population": 778,
+    "count": 2
+  },
+  "trail-or": {
+    "city": "Trail",
+    "state": "or",
+    "region": "washington",
+    "population": 769,
+    "count": 2
+  },
+  "tetherow-or": {
+    "city": "Tetherow",
+    "state": "or",
+    "region": "washington",
+    "population": 765,
+    "count": 6
+  },
+  "williams-or": {
+    "city": "Williams",
+    "state": "or",
+    "region": "washington",
+    "population": 760,
+    "count": 1
+  },
+  "brinnon-wa": {
+    "city": "Brinnon",
+    "state": "wa",
+    "region": "washington",
+    "population": 758,
+    "count": 2
+  },
+  "horseshoe-bend-id": {
+    "city": "Horseshoe Bend",
+    "state": "id",
+    "region": "washington",
+    "population": 758,
+    "count": 2
+  },
+  "river-road-wa": {
+    "city": "River Road",
+    "state": "wa",
+    "region": "washington",
+    "population": 756,
+    "count": 3
+  },
+  "swede-heaven-wa": {
+    "city": "Swede Heaven",
+    "state": "wa",
+    "region": "washington",
+    "population": 746,
+    "count": 4
+  },
+  "huntington-or": {
+    "city": "Huntington",
+    "state": "or",
+    "region": "washington",
+    "population": 739,
+    "count": 3
+  },
+  "roy-wa": {
+    "city": "Roy",
+    "state": "wa",
+    "region": "washington",
+    "population": 735,
+    "count": 2
+  },
+  "prospect-or": {
+    "city": "Prospect",
+    "state": "or",
+    "region": "washington",
+    "population": 723,
+    "count": 2
+  },
+  "trout-lake-wa": {
+    "city": "Trout Lake",
+    "state": "wa",
+    "region": "washington",
+    "population": 720,
+    "count": 5
+  },
+  "mosier-or": {
+    "city": "Mosier",
+    "state": "or",
+    "region": "washington",
+    "population": 714,
+    "count": 5
+  },
+  "carbonado-wa": {
+    "city": "Carbonado",
+    "state": "wa",
+    "region": "washington",
+    "population": 704,
+    "count": 3
+  },
+  "lacomb-or": {
+    "city": "Lacomb",
+    "state": "or",
+    "region": "washington",
+    "population": 691,
+    "count": 6
+  },
+  "alger-wa": {
+    "city": "Alger",
+    "state": "wa",
+    "region": "washington",
+    "population": 687,
+    "count": 3
+  },
+  "mckenna-wa": {
+    "city": "McKenna",
+    "state": "wa",
+    "region": "washington",
+    "population": 669,
+    "count": 1
+  },
+  "brooks-or": {
+    "city": "Brooks",
+    "state": "or",
+    "region": "washington",
+    "population": 664,
+    "count": 2
+  },
+  "tumalo-or": {
+    "city": "Tumalo",
+    "state": "or",
+    "region": "washington",
+    "population": 662,
+    "count": 6
+  },
+  "rivergrove-or": {
+    "city": "Rivergrove",
+    "state": "or",
+    "region": "washington",
+    "population": 657,
+    "count": 5
+  },
+  "kendall-wa": {
+    "city": "Kendall",
+    "state": "wa",
+    "region": "washington",
+    "population": 657,
+    "count": 3
+  },
+  "bingen-wa": {
+    "city": "Bingen",
+    "state": "wa",
+    "region": "washington",
+    "population": 652,
+    "count": 5
+  },
+  "cove-or": {
+    "city": "Cove",
+    "state": "or",
+    "region": "washington",
+    "population": 651,
+    "count": 3
+  },
+  "easton-wa": {
+    "city": "Easton",
+    "state": "wa",
+    "region": "washington",
+    "population": 647,
+    "count": 4
+  },
+  "wallowa-or": {
+    "city": "Wallowa",
+    "state": "or",
+    "region": "washington",
+    "population": 633,
+    "count": 2
+  },
+  "bonanza-or": {
+    "city": "Bonanza",
+    "state": "or",
+    "region": "washington",
+    "population": 632,
+    "count": 1
+  },
+  "port-gamble-tribal-community-wa": {
+    "city": "Port Gamble Tribal Community",
+    "state": "wa",
+    "region": "washington",
+    "population": 624,
+    "count": 2
+  },
+  "condon-or": {
+    "city": "Condon",
+    "state": "or",
+    "region": "washington",
+    "population": 623,
+    "count": 1
+  },
+  "melba-id": {
+    "city": "Melba",
+    "state": "id",
+    "region": "washington",
+    "population": 617,
+    "count": 3
+  },
+  "prairie-city-or": {
+    "city": "Prairie City",
+    "state": "or",
+    "region": "washington",
+    "population": 615,
+    "count": 2
+  },
+  "running-y-ranch-or": {
+    "city": "Running Y Ranch",
+    "state": "or",
+    "region": "washington",
+    "population": 607,
+    "count": 1
+  },
+  "tampico-wa": {
+    "city": "Tampico",
+    "state": "wa",
+    "region": "washington",
+    "population": 604,
+    "count": 1
+  },
+  "clallam-bay-wa": {
+    "city": "Clallam Bay",
+    "state": "wa",
+    "region": "washington",
+    "population": 602,
+    "count": 2
+  },
+  "crabtree-or": {
+    "city": "Crabtree",
+    "state": "or",
+    "region": "washington",
+    "population": 602,
+    "count": 2
+  },
+  "crawfordsville-or": {
+    "city": "Crawfordsville",
+    "state": "or",
+    "region": "washington",
+    "population": 588,
+    "count": 3
+  },
+  "avimor-id": {
+    "city": "Avimor",
+    "state": "id",
+    "region": "washington",
+    "population": 586,
+    "count": 3
+  },
+  "bow-wa": {
+    "city": "Bow",
+    "state": "wa",
+    "region": "washington",
+    "population": 585,
+    "count": 3
+  },
+  "green-meadows-or": {
+    "city": "Green Meadows",
+    "state": "or",
+    "region": "washington",
+    "population": 584,
+    "count": 2
+  },
+  "south-cle-elum-wa": {
+    "city": "South Cle Elum",
+    "state": "wa",
+    "region": "washington",
+    "population": 579,
+    "count": 4
+  },
+  "notus-id": {
+    "city": "Notus",
+    "state": "id",
+    "region": "washington",
+    "population": 573,
+    "count": 3
+  },
+  "bay-view-wa": {
+    "city": "Bay View",
+    "state": "wa",
+    "region": "washington",
+    "population": 572,
+    "count": 3
+  },
+  "lake-mcmurray-wa": {
+    "city": "Lake McMurray",
+    "state": "wa",
+    "region": "washington",
+    "population": 569,
+    "count": 3
+  },
+  "deming-wa": {
+    "city": "Deming",
+    "state": "wa",
+    "region": "washington",
+    "population": 568,
+    "count": 3
+  },
+  "north-powder-or": {
+    "city": "North Powder",
+    "state": "or",
+    "region": "washington",
+    "population": 563,
+    "count": 3
+  },
+  "fort-jones-ca": {
+    "city": "Fort Jones",
+    "state": "ca",
+    "region": "washington",
+    "population": 562,
+    "count": 1
+  },
+  "pine-hollow-or": {
+    "city": "Pine Hollow",
+    "state": "or",
+    "region": "washington",
+    "population": 561,
+    "count": 8
+  },
+  "startup-wa": {
+    "city": "Startup",
+    "state": "wa",
+    "region": "washington",
+    "population": 555,
+    "count": 4
+  },
+  "wilkeson-wa": {
+    "city": "Wilkeson",
+    "state": "wa",
+    "region": "washington",
+    "population": 552,
+    "count": 3
+  },
+  "happy-camp-ca": {
+    "city": "Happy Camp",
+    "state": "ca",
+    "region": "washington",
+    "population": 539,
+    "count": 1
+  },
+  "fossil-or": {
+    "city": "Fossil",
+    "state": "or",
+    "region": "washington",
+    "population": 535,
+    "count": 1
+  },
+  "klickitat-wa": {
+    "city": "Klickitat",
+    "state": "wa",
+    "region": "washington",
+    "population": 501,
+    "count": 5
+  }
+}

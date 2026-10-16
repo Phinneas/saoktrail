@@ -1,0 +1,2375 @@
+{
+  "denver-co": {
+    "city": "Denver",
+    "state": "co",
+    "region": "colorado",
+    "population": 2714768,
+    "count": 2
+  },
+  "albuquerque-nm": {
+    "city": "Albuquerque",
+    "state": "nm",
+    "region": "colorado",
+    "population": 765360,
+    "count": 2
+  },
+  "aurora-co": {
+    "city": "Aurora",
+    "state": "co",
+    "region": "colorado",
+    "population": 394432,
+    "count": 2
+  },
+  "fort-collins-co": {
+    "city": "Fort Collins",
+    "state": "co",
+    "region": "colorado",
+    "population": 336364,
+    "count": 1
+  },
+  "lakewood-co": {
+    "city": "Lakewood",
+    "state": "co",
+    "region": "colorado",
+    "population": 156583,
+    "count": 2
+  },
+  "thornton-co": {
+    "city": "Thornton",
+    "state": "co",
+    "region": "colorado",
+    "population": 144187,
+    "count": 2
+  },
+  "greeley-co": {
+    "city": "Greeley",
+    "state": "co",
+    "region": "colorado",
+    "population": 139842,
+    "count": 1
+  },
+  "las-cruces-nm": {
+    "city": "Las Cruces",
+    "state": "nm",
+    "region": "colorado",
+    "population": 139530,
+    "count": 1
+  },
+  "arvada-co": {
+    "city": "Arvada",
+    "state": "co",
+    "region": "colorado",
+    "population": 122634,
+    "count": 2
+  },
+  "boulder-co": {
+    "city": "Boulder",
+    "state": "co",
+    "region": "colorado",
+    "population": 120289,
+    "count": 3
+  },
+  "westminster-co": {
+    "city": "Westminster",
+    "state": "co",
+    "region": "colorado",
+    "population": 115484,
+    "count": 2
+  },
+  "rio-rancho-nm": {
+    "city": "Rio Rancho",
+    "state": "nm",
+    "region": "colorado",
+    "population": 108515,
+    "count": 4
+  },
+  "centennial-co": {
+    "city": "Centennial",
+    "state": "co",
+    "region": "colorado",
+    "population": 108201,
+    "count": 2
+  },
+  "longmont-co": {
+    "city": "Longmont",
+    "state": "co",
+    "region": "colorado",
+    "population": 102512,
+    "count": 2
+  },
+  "highlands-ranch-co": {
+    "city": "Highlands Ranch",
+    "state": "co",
+    "region": "colorado",
+    "population": 102257,
+    "count": 2
+  },
+  "santa-fe-nm": {
+    "city": "Santa Fe",
+    "state": "nm",
+    "region": "colorado",
+    "population": 100264,
+    "count": 5
+  },
+  "lafayette-co": {
+    "city": "Lafayette",
+    "state": "co",
+    "region": "colorado",
+    "population": 99552,
+    "count": 2
+  },
+  "castle-rock-co": {
+    "city": "Castle Rock",
+    "state": "co",
+    "region": "colorado",
+    "population": 79123,
+    "count": 2
+  },
+  "loveland-co": {
+    "city": "Loveland",
+    "state": "co",
+    "region": "colorado",
+    "population": 78410,
+    "count": 1
+  },
+  "broomfield-co": {
+    "city": "Broomfield",
+    "state": "co",
+    "region": "colorado",
+    "population": 76304,
+    "count": 2
+  },
+  "commerce-city-co": {
+    "city": "Commerce City",
+    "state": "co",
+    "region": "colorado",
+    "population": 66445,
+    "count": 2
+  },
+  "parker-co": {
+    "city": "Parker",
+    "state": "co",
+    "region": "colorado",
+    "population": 61783,
+    "count": 2
+  },
+  "littleton-co": {
+    "city": "Littleton",
+    "state": "co",
+    "region": "colorado",
+    "population": 44710,
+    "count": 2
+  },
+  "brighton-co": {
+    "city": "Brighton",
+    "state": "co",
+    "region": "colorado",
+    "population": 42059,
+    "count": 2
+  },
+  "northglenn-co": {
+    "city": "Northglenn",
+    "state": "co",
+    "region": "colorado",
+    "population": 38014,
+    "count": 2
+  },
+  "windsor-co": {
+    "city": "Windsor",
+    "state": "co",
+    "region": "colorado",
+    "population": 37914,
+    "count": 1
+  },
+  "englewood-co": {
+    "city": "Englewood",
+    "state": "co",
+    "region": "colorado",
+    "population": 34129,
+    "count": 2
+  },
+  "erie-co": {
+    "city": "Erie",
+    "state": "co",
+    "region": "colorado",
+    "population": 33808,
+    "count": 2
+  },
+  "dakota-ridge-co": {
+    "city": "Dakota Ridge",
+    "state": "co",
+    "region": "colorado",
+    "population": 33753,
+    "count": 2
+  },
+  "ken-caryl-co": {
+    "city": "Ken Caryl",
+    "state": "co",
+    "region": "colorado",
+    "population": 33233,
+    "count": 2
+  },
+  "wheat-ridge-co": {
+    "city": "Wheat Ridge",
+    "state": "co",
+    "region": "colorado",
+    "population": 32070,
+    "count": 2
+  },
+  "columbine-co": {
+    "city": "Columbine",
+    "state": "co",
+    "region": "colorado",
+    "population": 25478,
+    "count": 2
+  },
+  "four-square-mile-co": {
+    "city": "Four Square Mile",
+    "state": "co",
+    "region": "colorado",
+    "population": 23024,
+    "count": 2
+  },
+  "evans-co": {
+    "city": "Evans",
+    "state": "co",
+    "region": "colorado",
+    "population": 22396,
+    "count": 1
+  },
+  "montrose-co": {
+    "city": "Montrose",
+    "state": "co",
+    "region": "colorado",
+    "population": 21044,
+    "count": 5
+  },
+  "louisville-co": {
+    "city": "Louisville",
+    "state": "co",
+    "region": "colorado",
+    "population": 20786,
+    "count": 2
+  },
+  "golden-co": {
+    "city": "Golden",
+    "state": "co",
+    "region": "colorado",
+    "population": 20417,
+    "count": 2
+  },
+  "durango-co": {
+    "city": "Durango",
+    "state": "co",
+    "region": "colorado",
+    "population": 19411,
+    "count": 4
+  },
+  "johnstown-co": {
+    "city": "Johnstown",
+    "state": "co",
+    "region": "colorado",
+    "population": 18883,
+    "count": 1
+  },
+  "sherrelwood-co": {
+    "city": "Sherrelwood",
+    "state": "co",
+    "region": "colorado",
+    "population": 18692,
+    "count": 2
+  },
+  "chaparral-nm": {
+    "city": "Chaparral",
+    "state": "nm",
+    "region": "colorado",
+    "population": 18186,
+    "count": 1
+  },
+  "firestone-co": {
+    "city": "Firestone",
+    "state": "co",
+    "region": "colorado",
+    "population": 18049,
+    "count": 2
+  },
+  "canon-city-co": {
+    "city": "Ca\u00f1on City",
+    "state": "co",
+    "region": "colorado",
+    "population": 17122,
+    "count": 4
+  },
+  "frederick-co": {
+    "city": "Frederick",
+    "state": "co",
+    "region": "colorado",
+    "population": 16651,
+    "count": 2
+  },
+  "welby-co": {
+    "city": "Welby",
+    "state": "co",
+    "region": "colorado",
+    "population": 16197,
+    "count": 2
+  },
+  "greenwood-village-co": {
+    "city": "Greenwood Village",
+    "state": "co",
+    "region": "colorado",
+    "population": 15420,
+    "count": 2
+  },
+  "deming-nm": {
+    "city": "Deming",
+    "state": "nm",
+    "region": "colorado",
+    "population": 15221,
+    "count": 1
+  },
+  "lone-tree-co": {
+    "city": "Lone Tree",
+    "state": "co",
+    "region": "colorado",
+    "population": 14147,
+    "count": 2
+  },
+  "federal-heights-co": {
+    "city": "Federal Heights",
+    "state": "co",
+    "region": "colorado",
+    "population": 14125,
+    "count": 2
+  },
+  "steamboat-springs-co": {
+    "city": "Steamboat Springs",
+    "state": "co",
+    "region": "colorado",
+    "population": 13433,
+    "count": 6
+  },
+  "castle-pines-co": {
+    "city": "Castle Pines",
+    "state": "co",
+    "region": "colorado",
+    "population": 13388,
+    "count": 2
+  },
+  "los-alamos-nm": {
+    "city": "Los Alamos",
+    "state": "nm",
+    "region": "colorado",
+    "population": 13317,
+    "count": 4
+  },
+  "superior-co": {
+    "city": "Superior",
+    "state": "co",
+    "region": "colorado",
+    "population": 13305,
+    "count": 2
+  },
+  "las-vegas-nm": {
+    "city": "Las Vegas",
+    "state": "nm",
+    "region": "colorado",
+    "population": 13000,
+    "count": 1
+  },
+  "berthoud-co": {
+    "city": "Berthoud",
+    "state": "co",
+    "region": "colorado",
+    "population": 12411,
+    "count": 2
+  },
+  "the-pinery-co": {
+    "city": "The Pinery",
+    "state": "co",
+    "region": "colorado",
+    "population": 11871,
+    "count": 2
+  },
+  "berkley-co": {
+    "city": "Berkley",
+    "state": "co",
+    "region": "colorado",
+    "population": 10789,
+    "count": 2
+  },
+  "edwards-co": {
+    "city": "Edwards",
+    "state": "co",
+    "region": "colorado",
+    "population": 10785,
+    "count": 8
+  },
+  "cherry-creek-co": {
+    "city": "Cherry Creek",
+    "state": "co",
+    "region": "colorado",
+    "population": 10721,
+    "count": 2
+  },
+  "rifle-co": {
+    "city": "Rifle",
+    "state": "co",
+    "region": "colorado",
+    "population": 10570,
+    "count": 5
+  },
+  "espanola-nm": {
+    "city": "Espa\u00f1ola",
+    "state": "nm",
+    "region": "colorado",
+    "population": 10473,
+    "count": 6
+  },
+  "north-valley-nm": {
+    "city": "North Valley",
+    "state": "nm",
+    "region": "colorado",
+    "population": 10455,
+    "count": 3
+  },
+  "glenwood-springs-co": {
+    "city": "Glenwood Springs",
+    "state": "co",
+    "region": "colorado",
+    "population": 10241,
+    "count": 7
+  },
+  "severance-co": {
+    "city": "Severance",
+    "state": "co",
+    "region": "colorado",
+    "population": 10130,
+    "count": 1
+  },
+  "gunbarrel-co": {
+    "city": "Gunbarrel",
+    "state": "co",
+    "region": "colorado",
+    "population": 10051,
+    "count": 3
+  },
+  "fairmount-co": {
+    "city": "Fairmount",
+    "state": "co",
+    "region": "colorado",
+    "population": 9902,
+    "count": 2
+  },
+  "alamosa-co": {
+    "city": "Alamosa",
+    "state": "co",
+    "region": "colorado",
+    "population": 9879,
+    "count": 3
+  },
+  "silver-city-nm": {
+    "city": "Silver City",
+    "state": "nm",
+    "region": "colorado",
+    "population": 9536,
+    "count": 3
+  },
+  "bernalillo-nm": {
+    "city": "Bernalillo",
+    "state": "nm",
+    "region": "colorado",
+    "population": 9086,
+    "count": 4
+  },
+  "roxborough-park-co": {
+    "city": "Roxborough Park",
+    "state": "co",
+    "region": "colorado",
+    "population": 9085,
+    "count": 3
+  },
+  "craig-co": {
+    "city": "Craig",
+    "state": "co",
+    "region": "colorado",
+    "population": 8991,
+    "count": 4
+  },
+  "cortez-co": {
+    "city": "Cortez",
+    "state": "co",
+    "region": "colorado",
+    "population": 8976,
+    "count": 3
+  },
+  "timnath-co": {
+    "city": "Timnath",
+    "state": "co",
+    "region": "colorado",
+    "population": 8941,
+    "count": 1
+  },
+  "gypsum-co": {
+    "city": "Gypsum",
+    "state": "co",
+    "region": "colorado",
+    "population": 8941,
+    "count": 8
+  },
+  "stonegate-co": {
+    "city": "Stonegate",
+    "state": "co",
+    "region": "colorado",
+    "population": 8906,
+    "count": 2
+  },
+  "fort-lupton-co": {
+    "city": "Fort Lupton",
+    "state": "co",
+    "region": "colorado",
+    "population": 8897,
+    "count": 2
+  },
+  "milliken-co": {
+    "city": "Milliken",
+    "state": "co",
+    "region": "colorado",
+    "population": 8871,
+    "count": 1
+  },
+  "anthony-nm": {
+    "city": "Anthony",
+    "state": "nm",
+    "region": "colorado",
+    "population": 8767,
+    "count": 1
+  },
+  "lochbuie-co": {
+    "city": "Lochbuie",
+    "state": "co",
+    "region": "colorado",
+    "population": 8609,
+    "count": 2
+  },
+  "evergreen-co": {
+    "city": "Evergreen",
+    "state": "co",
+    "region": "colorado",
+    "population": 8602,
+    "count": 3
+  },
+  "corrales-nm": {
+    "city": "Corrales",
+    "state": "nm",
+    "region": "colorado",
+    "population": 8555,
+    "count": 4
+  },
+  "derby-co": {
+    "city": "Derby",
+    "state": "co",
+    "region": "colorado",
+    "population": 8453,
+    "count": 2
+  },
+  "applewood-co": {
+    "city": "Applewood",
+    "state": "co",
+    "region": "colorado",
+    "population": 8350,
+    "count": 2
+  },
+  "twin-lakes-co": {
+    "city": "Twin Lakes",
+    "state": "co",
+    "region": "colorado",
+    "population": 8030,
+    "count": 2
+  },
+  "woodland-park-co": {
+    "city": "Woodland Park",
+    "state": "co",
+    "region": "colorado",
+    "population": 7949,
+    "count": 1
+  },
+  "eagle-co": {
+    "city": "Eagle",
+    "state": "co",
+    "region": "colorado",
+    "population": 7442,
+    "count": 8
+  },
+  "bloomfield-nm": {
+    "city": "Bloomfield",
+    "state": "nm",
+    "region": "colorado",
+    "population": 7395,
+    "count": 1
+  },
+  "gunnison-co": {
+    "city": "Gunnison",
+    "state": "co",
+    "region": "colorado",
+    "population": 6766,
+    "count": 11
+  },
+  "aspen-co": {
+    "city": "Aspen",
+    "state": "co",
+    "region": "colorado",
+    "population": 6756,
+    "count": 11
+  },
+  "air-force-academy-co": {
+    "city": "Air Force Academy",
+    "state": "co",
+    "region": "colorado",
+    "population": 6727,
+    "count": 1
+  },
+  "carbondale-co": {
+    "city": "Carbondale",
+    "state": "co",
+    "region": "colorado",
+    "population": 6637,
+    "count": 8
+  },
+  "dacono-co": {
+    "city": "Dacono",
+    "state": "co",
+    "region": "colorado",
+    "population": 6530,
+    "count": 2
+  },
+  "taos-nm": {
+    "city": "Taos",
+    "state": "nm",
+    "region": "colorado",
+    "population": 6458,
+    "count": 1
+  },
+  "cherry-hills-village-co": {
+    "city": "Cherry Hills Village",
+    "state": "co",
+    "region": "colorado",
+    "population": 6354,
+    "count": 2
+  },
+  "aztec-nm": {
+    "city": "Aztec",
+    "state": "nm",
+    "region": "colorado",
+    "population": 6150,
+    "count": 1
+  },
+  "santa-teresa-nm": {
+    "city": "Santa Teresa",
+    "state": "nm",
+    "region": "colorado",
+    "population": 6041,
+    "count": 1
+  },
+  "sheridan-co": {
+    "city": "Sheridan",
+    "state": "co",
+    "region": "colorado",
+    "population": 6005,
+    "count": 2
+  },
+  "avon-co": {
+    "city": "Avon",
+    "state": "co",
+    "region": "colorado",
+    "population": 5972,
+    "count": 8
+  },
+  "canutillo-tx": {
+    "city": "Canutillo",
+    "state": "tx",
+    "region": "colorado",
+    "population": 5962,
+    "count": 1
+  },
+  "mead-co": {
+    "city": "Mead",
+    "state": "co",
+    "region": "colorado",
+    "population": 5919,
+    "count": 2
+  },
+  "salida-co": {
+    "city": "Salida",
+    "state": "co",
+    "region": "colorado",
+    "population": 5861,
+    "count": 11
+  },
+  "los-ranchos-de-albuquerque-nm": {
+    "city": "Los Ranchos de Albuquerque",
+    "state": "nm",
+    "region": "colorado",
+    "population": 5857,
+    "count": 3
+  },
+  "estes-park-co": {
+    "city": "Estes Park",
+    "state": "co",
+    "region": "colorado",
+    "population": 5844,
+    "count": 3
+  },
+  "battlement-mesa-co": {
+    "city": "Battlement Mesa",
+    "state": "co",
+    "region": "colorado",
+    "population": 5755,
+    "count": 5
+  },
+  "white-rock-nm": {
+    "city": "White Rock",
+    "state": "nm",
+    "region": "colorado",
+    "population": 5716,
+    "count": 4
+  },
+  "meridian-co": {
+    "city": "Meridian",
+    "state": "co",
+    "region": "colorado",
+    "population": 5634,
+    "count": 2
+  },
+  "eldorado-at-santa-fe-nm": {
+    "city": "Eldorado at Santa Fe",
+    "state": "nm",
+    "region": "colorado",
+    "population": 5619,
+    "count": 5
+  },
+  "shaw-heights-co": {
+    "city": "Shaw Heights",
+    "state": "co",
+    "region": "colorado",
+    "population": 5565,
+    "count": 2
+  },
+  "todd-creek-co": {
+    "city": "Todd Creek",
+    "state": "co",
+    "region": "colorado",
+    "population": 5379,
+    "count": 2
+  },
+  "west-pleasant-view-co": {
+    "city": "West Pleasant View",
+    "state": "co",
+    "region": "colorado",
+    "population": 5051,
+    "count": 2
+  },
+  "breckenridge-co": {
+    "city": "Breckenridge",
+    "state": "co",
+    "region": "colorado",
+    "population": 4959,
+    "count": 5
+  },
+  "edgewater-co": {
+    "city": "Edgewater",
+    "state": "co",
+    "region": "colorado",
+    "population": 4932,
+    "count": 2
+  },
+  "new-castle-co": {
+    "city": "New Castle",
+    "state": "co",
+    "region": "colorado",
+    "population": 4880,
+    "count": 5
+  },
+  "silverthorne-co": {
+    "city": "Silverthorne",
+    "state": "co",
+    "region": "colorado",
+    "population": 4815,
+    "count": 5
+  },
+  "dove-valley-co": {
+    "city": "Dove Valley",
+    "state": "co",
+    "region": "colorado",
+    "population": 4806,
+    "count": 2
+  },
+  "manitou-springs-co": {
+    "city": "Manitou Springs",
+    "state": "co",
+    "region": "colorado",
+    "population": 4735,
+    "count": 1
+  },
+  "vail-co": {
+    "city": "Vail",
+    "state": "co",
+    "region": "colorado",
+    "population": 4613,
+    "count": 3
+  },
+  "paradise-hills-nm": {
+    "city": "Paradise Hills",
+    "state": "nm",
+    "region": "colorado",
+    "population": 4591,
+    "count": 3
+  },
+  "anthony-tx": {
+    "city": "Anthony",
+    "state": "tx",
+    "region": "colorado",
+    "population": 4580,
+    "count": 1
+  },
+  "glendale-co": {
+    "city": "Glendale",
+    "state": "co",
+    "region": "colorado",
+    "population": 4531,
+    "count": 2
+  },
+  "castle-pines-village-co": {
+    "city": "Castle Pines Village",
+    "state": "co",
+    "region": "colorado",
+    "population": 4436,
+    "count": 2
+  },
+  "basalt-co": {
+    "city": "Basalt",
+    "state": "co",
+    "region": "colorado",
+    "population": 4335,
+    "count": 9
+  },
+  "placitas-nm": {
+    "city": "Placitas",
+    "state": "nm",
+    "region": "colorado",
+    "population": 4223,
+    "count": 4
+  },
+  "sterling-ranch-co": {
+    "city": "Sterling Ranch",
+    "state": "co",
+    "region": "colorado",
+    "population": 4213,
+    "count": 2
+  },
+  "monte-vista-co": {
+    "city": "Monte Vista",
+    "state": "co",
+    "region": "colorado",
+    "population": 4141,
+    "count": 4
+  },
+  "penrose-co": {
+    "city": "Penrose",
+    "state": "co",
+    "region": "colorado",
+    "population": 4087,
+    "count": 1
+  },
+  "lincoln-park-co": {
+    "city": "Lincoln Park",
+    "state": "co",
+    "region": "colorado",
+    "population": 3986,
+    "count": 4
+  },
+  "florence-co": {
+    "city": "Florence",
+    "state": "co",
+    "region": "colorado",
+    "population": 3885,
+    "count": 2
+  },
+  "clifton-az": {
+    "city": "Clifton",
+    "state": "az",
+    "region": "colorado",
+    "population": 3822,
+    "count": 1
+  },
+  "genesee-co": {
+    "city": "Genesee",
+    "state": "co",
+    "region": "colorado",
+    "population": 3778,
+    "count": 2
+  },
+  "bennett-co": {
+    "city": "Bennett",
+    "state": "co",
+    "region": "colorado",
+    "population": 3663,
+    "count": 1
+  },
+  "sierra-ridge-co": {
+    "city": "Sierra Ridge",
+    "state": "co",
+    "region": "colorado",
+    "population": 3663,
+    "count": 2
+  },
+  "silt-co": {
+    "city": "Silt",
+    "state": "co",
+    "region": "colorado",
+    "population": 3642,
+    "count": 5
+  },
+  "la-cienega-nm": {
+    "city": "La Cienega",
+    "state": "nm",
+    "region": "colorado",
+    "population": 3543,
+    "count": 5
+  },
+  "westway-tx": {
+    "city": "Westway",
+    "state": "tx",
+    "region": "colorado",
+    "population": 3484,
+    "count": 1
+  },
+  "niwot-co": {
+    "city": "Niwot",
+    "state": "co",
+    "region": "colorado",
+    "population": 3447,
+    "count": 2
+  },
+  "orchard-city-co": {
+    "city": "Orchard City",
+    "state": "co",
+    "region": "colorado",
+    "population": 3221,
+    "count": 2
+  },
+  "dulce-nm": {
+    "city": "Dulce",
+    "state": "nm",
+    "region": "colorado",
+    "population": 3218,
+    "count": 3
+  },
+  "sandia-heights-nm": {
+    "city": "Sandia Heights",
+    "state": "nm",
+    "region": "colorado",
+    "population": 3160,
+    "count": 3
+  },
+  "stepping-stone-co": {
+    "city": "Stepping Stone",
+    "state": "co",
+    "region": "colorado",
+    "population": 3137,
+    "count": 2
+  },
+  "la-salle-co": {
+    "city": "La Salle",
+    "state": "co",
+    "region": "colorado",
+    "population": 3061,
+    "count": 1
+  },
+  "buena-vista-co": {
+    "city": "Buena Vista",
+    "state": "co",
+    "region": "colorado",
+    "population": 3010,
+    "count": 12
+  },
+  "snowmass-village-co": {
+    "city": "Snowmass Village",
+    "state": "co",
+    "region": "colorado",
+    "population": 2972,
+    "count": 9
+  },
+  "el-jebel-co": {
+    "city": "El Jebel",
+    "state": "co",
+    "region": "colorado",
+    "population": 2941,
+    "count": 9
+  },
+  "inverness-co": {
+    "city": "Inverness",
+    "state": "co",
+    "region": "colorado",
+    "population": 2934,
+    "count": 2
+  },
+  "platteville-co": {
+    "city": "Platteville",
+    "state": "co",
+    "region": "colorado",
+    "population": 2928,
+    "count": 2
+  },
+  "bayfield-co": {
+    "city": "Bayfield",
+    "state": "co",
+    "region": "colorado",
+    "population": 2901,
+    "count": 5
+  },
+  "agua-fria-nm": {
+    "city": "Agua Fria",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2898,
+    "count": 5
+  },
+  "vado-nm": {
+    "city": "Vado",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2895,
+    "count": 1
+  },
+  "frisco-co": {
+    "city": "Frisco",
+    "state": "co",
+    "region": "colorado",
+    "population": 2825,
+    "count": 5
+  },
+  "university-park-nm": {
+    "city": "University Park",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2782,
+    "count": 1
+  },
+  "flora-vista-nm": {
+    "city": "Flora Vista",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2770,
+    "count": 1
+  },
+  "meridian-village-co": {
+    "city": "Meridian Village",
+    "state": "co",
+    "region": "colorado",
+    "population": 2699,
+    "count": 2
+  },
+  "la-mesilla-nm": {
+    "city": "La Mesilla",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2697,
+    "count": 6
+  },
+  "acres-green-co": {
+    "city": "Acres Green",
+    "state": "co",
+    "region": "colorado",
+    "population": 2639,
+    "count": 2
+  },
+  "palmer-lake-co": {
+    "city": "Palmer Lake",
+    "state": "co",
+    "region": "colorado",
+    "population": 2623,
+    "count": 1
+  },
+  "leadville-co": {
+    "city": "Leadville",
+    "state": "co",
+    "region": "colorado",
+    "population": 2620,
+    "count": 9
+  },
+  "park-center-co": {
+    "city": "Park Center",
+    "state": "co",
+    "region": "colorado",
+    "population": 2588,
+    "count": 5
+  },
+  "vinton-tx": {
+    "city": "Vinton",
+    "state": "tx",
+    "region": "colorado",
+    "population": 2585,
+    "count": 1
+  },
+  "meeker-co": {
+    "city": "Meeker",
+    "state": "co",
+    "region": "colorado",
+    "population": 2580,
+    "count": 3
+  },
+  "holly-hills-co": {
+    "city": "Holly Hills",
+    "state": "co",
+    "region": "colorado",
+    "population": 2572,
+    "count": 2
+  },
+  "ranchos-de-taos-nm": {
+    "city": "Ranchos de Taos",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2536,
+    "count": 1
+  },
+  "questa-nm": {
+    "city": "Questa",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2466,
+    "count": 1
+  },
+  "cedaredge-co": {
+    "city": "Cedaredge",
+    "state": "co",
+    "region": "colorado",
+    "population": 2398,
+    "count": 2
+  },
+  "chimayo-nm": {
+    "city": "Chimayo",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2390,
+    "count": 6
+  },
+  "santo-domingo-pueblo-nm": {
+    "city": "Santo Domingo Pueblo",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2370,
+    "count": 4
+  },
+  "keenesburg-co": {
+    "city": "Keenesburg",
+    "state": "co",
+    "region": "colorado",
+    "population": 2347,
+    "count": 1
+  },
+  "coal-creek-co": {
+    "city": "Coal Creek",
+    "state": "co",
+    "region": "colorado",
+    "population": 2346,
+    "count": 3
+  },
+  "pojoaque-nm": {
+    "city": "Pojoaque",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2327,
+    "count": 6
+  },
+  "center-point-nm": {
+    "city": "Center Point",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2286,
+    "count": 1
+  },
+  "granby-co": {
+    "city": "Granby",
+    "state": "co",
+    "region": "colorado",
+    "population": 2270,
+    "count": 4
+  },
+  "la-plata-nm": {
+    "city": "La Plata",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2233,
+    "count": 1
+  },
+  "jemez-pueblo-nm": {
+    "city": "Jemez Pueblo",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2199,
+    "count": 4
+  },
+  "mountain-village-co": {
+    "city": "Mountain Village",
+    "state": "co",
+    "region": "colorado",
+    "population": 2185,
+    "count": 7
+  },
+  "telluride-co": {
+    "city": "Telluride",
+    "state": "co",
+    "region": "colorado",
+    "population": 2160,
+    "count": 7
+  },
+  "center-co": {
+    "city": "Center",
+    "state": "co",
+    "region": "colorado",
+    "population": 2120,
+    "count": 4
+  },
+  "las-campanas-nm": {
+    "city": "Las Campanas",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2119,
+    "count": 5
+  },
+  "san-ysidro-nm": {
+    "city": "San Ysidro",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2118,
+    "count": 1
+  },
+  "arroyo-seco-nm": {
+    "city": "Arroyo Seco",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2112,
+    "count": 1
+  },
+  "pagosa-springs-co": {
+    "city": "Pagosa Springs",
+    "state": "co",
+    "region": "colorado",
+    "population": 2090,
+    "count": 4
+  },
+  "lordsburg-nm": {
+    "city": "Lordsburg",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2057,
+    "count": 1
+  },
+  "bayard-nm": {
+    "city": "Bayard",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2057,
+    "count": 3
+  },
+  "hayden-co": {
+    "city": "Hayden",
+    "state": "co",
+    "region": "colorado",
+    "population": 2057,
+    "count": 4
+  },
+  "columbine-valley-co": {
+    "city": "Columbine Valley",
+    "state": "co",
+    "region": "colorado",
+    "population": 2047,
+    "count": 2
+  },
+  "nambe-nm": {
+    "city": "Nambe",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2035,
+    "count": 6
+  },
+  "hudson-co": {
+    "city": "Hudson",
+    "state": "co",
+    "region": "colorado",
+    "population": 2006,
+    "count": 1
+  },
+  "picacho-hills-nm": {
+    "city": "Picacho Hills",
+    "state": "nm",
+    "region": "colorado",
+    "population": 2002,
+    "count": 1
+  },
+  "idaho-springs-co": {
+    "city": "Idaho Springs",
+    "state": "co",
+    "region": "colorado",
+    "population": 1986,
+    "count": 3
+  },
+  "tres-arroyos-nm": {
+    "city": "Tres Arroyos",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1926,
+    "count": 5
+  },
+  "radium-springs-nm": {
+    "city": "Radium Springs",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1908,
+    "count": 1
+  },
+  "lyons-co": {
+    "city": "Lyons",
+    "state": "co",
+    "region": "colorado",
+    "population": 1838,
+    "count": 3
+  },
+  "south-river-nm": {
+    "city": "South River",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1810,
+    "count": 1
+  },
+  "santa-clara-nm": {
+    "city": "Santa Clara",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1809,
+    "count": 3
+  },
+  "kremmling-co": {
+    "city": "Kremmling",
+    "state": "co",
+    "region": "colorado",
+    "population": 1807,
+    "count": 4
+  },
+  "olathe-co": {
+    "city": "Olathe",
+    "state": "co",
+    "region": "colorado",
+    "population": 1793,
+    "count": 3
+  },
+  "laporte-co": {
+    "city": "Laporte",
+    "state": "co",
+    "region": "colorado",
+    "population": 1771,
+    "count": 1
+  },
+  "aristocrat-ranchettes-co": {
+    "city": "Aristocrat Ranchettes",
+    "state": "co",
+    "region": "colorado",
+    "population": 1747,
+    "count": 2
+  },
+  "mesilla-nm": {
+    "city": "Mesilla",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1717,
+    "count": 1
+  },
+  "morenci-az": {
+    "city": "Morenci",
+    "state": "az",
+    "region": "colorado",
+    "population": 1673,
+    "count": 1
+  },
+  "paonia-co": {
+    "city": "Paonia",
+    "state": "co",
+    "region": "colorado",
+    "population": 1661,
+    "count": 9
+  },
+  "nederland-co": {
+    "city": "Nederland",
+    "state": "co",
+    "region": "colorado",
+    "population": 1655,
+    "count": 3
+  },
+  "del-norte-co": {
+    "city": "Del Norte",
+    "state": "co",
+    "region": "colorado",
+    "population": 1653,
+    "count": 5
+  },
+  "dixon-nm": {
+    "city": "Dixon",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1623,
+    "count": 5
+  },
+  "white-sands-nm": {
+    "city": "White Sands",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1609,
+    "count": 1
+  },
+  "hatch-nm": {
+    "city": "Hatch",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1588,
+    "count": 2
+  },
+  "tano-road-nm": {
+    "city": "Tano Road",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1586,
+    "count": 5
+  },
+  "rio-rancho-estates-nm": {
+    "city": "Rio Rancho Estates",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1571,
+    "count": 4
+  },
+  "perry-park-co": {
+    "city": "Perry Park",
+    "state": "co",
+    "region": "colorado",
+    "population": 1570,
+    "count": 3
+  },
+  "la-villita-nm": {
+    "city": "La Villita",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1534,
+    "count": 5
+  },
+  "cuartelez-nm": {
+    "city": "Cuartelez",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1512,
+    "count": 6
+  },
+  "algodones-nm": {
+    "city": "Algodones",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1479,
+    "count": 4
+  },
+  "berino-nm": {
+    "city": "Berino",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1454,
+    "count": 1
+  },
+  "el-rancho-nm": {
+    "city": "El Rancho",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1451,
+    "count": 6
+  },
+  "sandia-knolls-nm": {
+    "city": "Sandia Knolls",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1445,
+    "count": 2
+  },
+  "little-walnut-village-nm": {
+    "city": "Little Walnut Village",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1445,
+    "count": 3
+  },
+  "parachute-co": {
+    "city": "Parachute",
+    "state": "co",
+    "region": "colorado",
+    "population": 1422,
+    "count": 5
+  },
+  "leadville-north-co": {
+    "city": "Leadville North",
+    "state": "co",
+    "region": "colorado",
+    "population": 1417,
+    "count": 11
+  },
+  "cascade-chipita-park-co": {
+    "city": "Cascade-Chipita Park",
+    "state": "co",
+    "region": "colorado",
+    "population": 1412,
+    "count": 1
+  },
+  "blue-river-co": {
+    "city": "Blue River",
+    "state": "co",
+    "region": "colorado",
+    "population": 1410,
+    "count": 8
+  },
+  "fraser-co": {
+    "city": "Fraser",
+    "state": "co",
+    "region": "colorado",
+    "population": 1405,
+    "count": 4
+  },
+  "keeler-farm-nm": {
+    "city": "Keeler Farm",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1376,
+    "count": 1
+  },
+  "dotsero-co": {
+    "city": "Dotsero",
+    "state": "co",
+    "region": "colorado",
+    "population": 1306,
+    "count": 7
+  },
+  "alamosa-east-co": {
+    "city": "Alamosa East",
+    "state": "co",
+    "region": "colorado",
+    "population": 1298,
+    "count": 3
+  },
+  "el-valle-de-arroyo-seco-nm": {
+    "city": "El Valle de Arroyo Seco",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1293,
+    "count": 6
+  },
+  "spencerville-nm": {
+    "city": "Spencerville",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1264,
+    "count": 1
+  },
+  "canoncito-nm": {
+    "city": "Ca\u00f1oncito",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1253,
+    "count": 3
+  },
+  "ignacio-co": {
+    "city": "Ignacio",
+    "state": "co",
+    "region": "colorado",
+    "population": 1250,
+    "count": 4
+  },
+  "arenas-valley-nm": {
+    "city": "Arenas Valley",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1247,
+    "count": 3
+  },
+  "ridgway-co": {
+    "city": "Ridgway",
+    "state": "co",
+    "region": "colorado",
+    "population": 1237,
+    "count": 7
+  },
+  "crested-butte-co": {
+    "city": "Crested Butte",
+    "state": "co",
+    "region": "colorado",
+    "population": 1229,
+    "count": 10
+  },
+  "hotchkiss-co": {
+    "city": "Hotchkiss",
+    "state": "co",
+    "region": "colorado",
+    "population": 1224,
+    "count": 6
+  },
+  "keystone-co": {
+    "city": "Keystone",
+    "state": "co",
+    "region": "colorado",
+    "population": 1216,
+    "count": 5
+  },
+  "pecos-nm": {
+    "city": "Pecos",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1204,
+    "count": 1
+  },
+  "ohkay-owingeh-nm": {
+    "city": "Ohkay Owingeh",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1194,
+    "count": 5
+  },
+  "mancos-co": {
+    "city": "Mancos",
+    "state": "co",
+    "region": "colorado",
+    "population": 1174,
+    "count": 3
+  },
+  "sanford-co": {
+    "city": "Sanford",
+    "state": "co",
+    "region": "colorado",
+    "population": 1142,
+    "count": 2
+  },
+  "los-luceros-nm": {
+    "city": "Los Luceros",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1136,
+    "count": 5
+  },
+  "taos-pueblo-nm": {
+    "city": "Taos Pueblo",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1129,
+    "count": 1
+  },
+  "butterfield-park-nm": {
+    "city": "Butterfield Park",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1119,
+    "count": 1
+  },
+  "san-felipe-pueblo-nm": {
+    "city": "San Felipe Pueblo",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1119,
+    "count": 4
+  },
+  "angel-fire-nm": {
+    "city": "Angel Fire",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1111,
+    "count": 1
+  },
+  "hot-sulphur-springs-co": {
+    "city": "Hot Sulphur Springs",
+    "state": "co",
+    "region": "colorado",
+    "population": 1108,
+    "count": 4
+  },
+  "el-rito-nm": {
+    "city": "El Rito",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1102,
+    "count": 5
+  },
+  "tesuque-nm": {
+    "city": "Tesuque",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1079,
+    "count": 5
+  },
+  "la-union-nm": {
+    "city": "La Union",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1071,
+    "count": 1
+  },
+  "fairplay-co": {
+    "city": "Fairplay",
+    "state": "co",
+    "region": "colorado",
+    "population": 1067,
+    "count": 7
+  },
+  "kersey-co": {
+    "city": "Kersey",
+    "state": "co",
+    "region": "colorado",
+    "population": 1064,
+    "count": 1
+  },
+  "georgetown-co": {
+    "city": "Georgetown",
+    "state": "co",
+    "region": "colorado",
+    "population": 1053,
+    "count": 5
+  },
+  "bow-mar-co": {
+    "city": "Bow Mar",
+    "state": "co",
+    "region": "colorado",
+    "population": 1047,
+    "count": 2
+  },
+  "hurley-nm": {
+    "city": "Hurley",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1044,
+    "count": 3
+  },
+  "santa-ana-pueblo-nm": {
+    "city": "Santa Ana Pueblo",
+    "state": "nm",
+    "region": "colorado",
+    "population": 1026,
+    "count": 4
+  },
+  "gilcrest-co": {
+    "city": "Gilcrest",
+    "state": "co",
+    "region": "colorado",
+    "population": 1026,
+    "count": 1
+  },
+  "aetna-estates-co": {
+    "city": "Aetna Estates",
+    "state": "co",
+    "region": "colorado",
+    "population": 1010,
+    "count": 2
+  },
+  "minturn-co": {
+    "city": "Minturn",
+    "state": "co",
+    "region": "colorado",
+    "population": 993,
+    "count": 7
+  },
+  "indian-hills-co": {
+    "city": "Indian Hills",
+    "state": "co",
+    "region": "colorado",
+    "population": 986,
+    "count": 2
+  },
+  "ouray-co": {
+    "city": "Ouray",
+    "state": "co",
+    "region": "colorado",
+    "population": 985,
+    "count": 7
+  },
+  "duncan-az": {
+    "city": "Duncan",
+    "state": "az",
+    "region": "colorado",
+    "population": 969,
+    "count": 1
+  },
+  "howard-co": {
+    "city": "Howard",
+    "state": "co",
+    "region": "colorado",
+    "population": 966,
+    "count": 10
+  },
+  "poncha-springs-co": {
+    "city": "Poncha Springs",
+    "state": "co",
+    "region": "colorado",
+    "population": 959,
+    "count": 11
+  },
+  "talpa-nm": {
+    "city": "Talpa",
+    "state": "nm",
+    "region": "colorado",
+    "population": 955,
+    "count": 1
+  },
+  "cripple-creek-co": {
+    "city": "Cripple Creek",
+    "state": "co",
+    "region": "colorado",
+    "population": 955,
+    "count": 3
+  },
+  "upper-bear-creek-co": {
+    "city": "Upper Bear Creek",
+    "state": "co",
+    "region": "colorado",
+    "population": 954,
+    "count": 4
+  },
+  "manassa-co": {
+    "city": "Manassa",
+    "state": "co",
+    "region": "colorado",
+    "population": 932,
+    "count": 3
+  },
+  "dolores-co": {
+    "city": "Dolores",
+    "state": "co",
+    "region": "colorado",
+    "population": 918,
+    "count": 3
+  },
+  "salem-nm": {
+    "city": "Salem",
+    "state": "nm",
+    "region": "colorado",
+    "population": 916,
+    "count": 2
+  },
+  "cedar-hill-nm": {
+    "city": "Cedar Hill",
+    "state": "nm",
+    "region": "colorado",
+    "population": 902,
+    "count": 1
+  },
+  "sunlit-hills-nm": {
+    "city": "Sunlit Hills",
+    "state": "nm",
+    "region": "colorado",
+    "population": 899,
+    "count": 5
+  },
+  "dona-ana-nm": {
+    "city": "Do\u00f1a Ana",
+    "state": "nm",
+    "region": "colorado",
+    "population": 868,
+    "count": 1
+  },
+  "chamita-nm": {
+    "city": "Chamita",
+    "state": "nm",
+    "region": "colorado",
+    "population": 867,
+    "count": 5
+  },
+  "silver-cliff-co": {
+    "city": "Silver Cliff",
+    "state": "co",
+    "region": "colorado",
+    "population": 863,
+    "count": 4
+  },
+  "watkins-co": {
+    "city": "Watkins",
+    "state": "co",
+    "region": "colorado",
+    "population": 847,
+    "count": 2
+  },
+  "winter-park-co": {
+    "city": "Winter Park",
+    "state": "co",
+    "region": "colorado",
+    "population": 844,
+    "count": 4
+  },
+  "floyd-hill-co": {
+    "city": "Floyd Hill",
+    "state": "co",
+    "region": "colorado",
+    "population": 841,
+    "count": 3
+  },
+  "dillon-co": {
+    "city": "Dillon",
+    "state": "co",
+    "region": "colorado",
+    "population": 832,
+    "count": 5
+  },
+  "east-pleasant-view-co": {
+    "city": "East Pleasant View",
+    "state": "co",
+    "region": "colorado",
+    "population": 832,
+    "count": 2
+  },
+  "allenspark-co": {
+    "city": "Allenspark",
+    "state": "co",
+    "region": "colorado",
+    "population": 825,
+    "count": 3
+  },
+  "mount-crested-butte-co": {
+    "city": "Mount Crested Butte",
+    "state": "co",
+    "region": "colorado",
+    "population": 823,
+    "count": 12
+  },
+  "tyrone-nm": {
+    "city": "Tyrone",
+    "state": "nm",
+    "region": "colorado",
+    "population": 814,
+    "count": 3
+  },
+  "kittredge-co": {
+    "city": "Kittredge",
+    "state": "co",
+    "region": "colorado",
+    "population": 812,
+    "count": 2
+  },
+  "santa-fe-foothills-nm": {
+    "city": "Santa Fe Foothills",
+    "state": "nm",
+    "region": "colorado",
+    "population": 779,
+    "count": 5
+  },
+  "lazy-acres-co": {
+    "city": "Lazy Acres",
+    "state": "co",
+    "region": "colorado",
+    "population": 778,
+    "count": 3
+  },
+  "la-cueva-nm": {
+    "city": "La Cueva",
+    "state": "nm",
+    "region": "colorado",
+    "population": 778,
+    "count": 1
+  },
+  "san-jose-nm": {
+    "city": "San Jose",
+    "state": "nm",
+    "region": "colorado",
+    "population": 776,
+    "count": 5
+  },
+  "chama-nm": {
+    "city": "Chama",
+    "state": "nm",
+    "region": "colorado",
+    "population": 776,
+    "count": 3
+  },
+  "san-miguel-nm": {
+    "city": "San Miguel",
+    "state": "nm",
+    "region": "colorado",
+    "population": 772,
+    "count": 1
+  },
+  "williamsburg-co": {
+    "city": "Williamsburg",
+    "state": "co",
+    "region": "colorado",
+    "population": 770,
+    "count": 4
+  },
+  "zia-pueblo-nm": {
+    "city": "Zia Pueblo",
+    "state": "nm",
+    "region": "colorado",
+    "population": 770,
+    "count": 4
+  },
+  "hernandez-nm": {
+    "city": "Hernandez",
+    "state": "nm",
+    "region": "colorado",
+    "population": 769,
+    "count": 5
+  },
+  "beulah-valley-co": {
+    "city": "Beulah Valley",
+    "state": "co",
+    "region": "colorado",
+    "population": 751,
+    "count": 1
+  },
+  "paa-ko-nm": {
+    "city": "Paa-Ko",
+    "state": "nm",
+    "region": "colorado",
+    "population": 743,
+    "count": 3
+  },
+  "aspen-park-co": {
+    "city": "Aspen Park",
+    "state": "co",
+    "region": "colorado",
+    "population": 742,
+    "count": 3
+  },
+  "san-ildefonso-pueblo-nm": {
+    "city": "San Ildefonso Pueblo",
+    "state": "nm",
+    "region": "colorado",
+    "population": 737,
+    "count": 6
+  },
+  "santa-clara-pueblo-nm": {
+    "city": "Santa Clara Pueblo",
+    "state": "nm",
+    "region": "colorado",
+    "population": 733,
+    "count": 5
+  },
+  "upper-witter-gulch-co": {
+    "city": "Upper Witter Gulch",
+    "state": "co",
+    "region": "colorado",
+    "population": 731,
+    "count": 4
+  },
+  "valle-vista-nm": {
+    "city": "Valle Vista",
+    "state": "nm",
+    "region": "colorado",
+    "population": 729,
+    "count": 5
+  },
+  "south-fork-co": {
+    "city": "South Fork",
+    "state": "co",
+    "region": "colorado",
+    "population": 724,
+    "count": 5
+  },
+  "la-puebla-nm": {
+    "city": "La Puebla",
+    "state": "nm",
+    "region": "colorado",
+    "population": 715,
+    "count": 6
+  },
+  "cimarron-nm": {
+    "city": "Cimarron",
+    "state": "nm",
+    "region": "colorado",
+    "population": 701,
+    "count": 1
+  },
+  "oak-creek-co": {
+    "city": "Oak Creek",
+    "state": "co",
+    "region": "colorado",
+    "population": 700,
+    "count": 6
+  },
+  "san-pablo-nm": {
+    "city": "San Pablo",
+    "state": "nm",
+    "region": "colorado",
+    "population": 696,
+    "count": 1
+  },
+  "rockvale-co": {
+    "city": "Rockvale",
+    "state": "co",
+    "region": "colorado",
+    "population": 695,
+    "count": 3
+  },
+  "san-antonito-nm": {
+    "city": "San Antonito",
+    "state": "nm",
+    "region": "colorado",
+    "population": 688,
+    "count": 2
+  },
+  "cochiti-nm": {
+    "city": "Cochiti",
+    "state": "nm",
+    "region": "colorado",
+    "population": 680,
+    "count": 4
+  },
+  "mesquite-nm": {
+    "city": "Mesquite",
+    "state": "nm",
+    "region": "colorado",
+    "population": 675,
+    "count": 1
+  },
+  "empire-co": {
+    "city": "Empire",
+    "state": "co",
+    "region": "colorado",
+    "population": 672,
+    "count": 4
+  },
+  "paragon-estates-co": {
+    "city": "Paragon Estates",
+    "state": "co",
+    "region": "colorado",
+    "population": 667,
+    "count": 3
+  },
+  "foxfield-co": {
+    "city": "Foxfield",
+    "state": "co",
+    "region": "colorado",
+    "population": 659,
+    "count": 2
+  },
+  "dove-creek-co": {
+    "city": "Dove Creek",
+    "state": "co",
+    "region": "colorado",
+    "population": 651,
+    "count": 2
+  },
+  "east-pecos-nm": {
+    "city": "East Pecos",
+    "state": "nm",
+    "region": "colorado",
+    "population": 643,
+    "count": 1
+  },
+  "la-hacienda-nm": {
+    "city": "La Hacienda",
+    "state": "nm",
+    "region": "colorado",
+    "population": 640,
+    "count": 1
+  },
+  "silverton-co": {
+    "city": "Silverton",
+    "state": "co",
+    "region": "colorado",
+    "population": 637,
+    "count": 8
+  },
+  "loghill-village-co": {
+    "city": "Loghill Village",
+    "state": "co",
+    "region": "colorado",
+    "population": 618,
+    "count": 6
+  },
+  "fairacres-nm": {
+    "city": "Fairacres",
+    "state": "nm",
+    "region": "colorado",
+    "population": 616,
+    "count": 1
+  },
+  "mountain-view-co": {
+    "city": "Mountain View",
+    "state": "co",
+    "region": "colorado",
+    "population": 609,
+    "count": 2
+  },
+  "ventura-nm": {
+    "city": "Ventura",
+    "state": "nm",
+    "region": "colorado",
+    "population": 603,
+    "count": 2
+  },
+  "nucla-co": {
+    "city": "Nucla",
+    "state": "co",
+    "region": "colorado",
+    "population": 598,
+    "count": 2
+  },
+  "naturita-co": {
+    "city": "Naturita",
+    "state": "co",
+    "region": "colorado",
+    "population": 589,
+    "count": 2
+  },
+  "altona-co": {
+    "city": "Altona",
+    "state": "co",
+    "region": "colorado",
+    "population": 587,
+    "count": 3
+  },
+  "chamberino-nm": {
+    "city": "Chamberino",
+    "state": "nm",
+    "region": "colorado",
+    "population": 580,
+    "count": 1
+  },
+  "saguache-co": {
+    "city": "Saguache",
+    "state": "co",
+    "region": "colorado",
+    "population": 579,
+    "count": 8
+  },
+  "antonito-co": {
+    "city": "Antonito",
+    "state": "co",
+    "region": "colorado",
+    "population": 579,
+    "count": 2
+  },
+  "north-light-plant-nm": {
+    "city": "North Light Plant",
+    "state": "nm",
+    "region": "colorado",
+    "population": 579,
+    "count": 1
+  },
+  "pecan-park-nm": {
+    "city": "Pecan Park",
+    "state": "nm",
+    "region": "colorado",
+    "population": 575,
+    "count": 2
+  },
+  "walden-co": {
+    "city": "Walden",
+    "state": "co",
+    "region": "colorado",
+    "population": 573,
+    "count": 5
+  },
+  "pena-blanca-nm": {
+    "city": "Pe\u00f1a Blanca",
+    "state": "nm",
+    "region": "colorado",
+    "population": 568,
+    "count": 4
+  },
+  "grand-view-estates-co": {
+    "city": "Grand View Estates",
+    "state": "co",
+    "region": "colorado",
+    "population": 567,
+    "count": 2
+  },
+  "lake-city-co": {
+    "city": "Lake City",
+    "state": "co",
+    "region": "colorado",
+    "population": 561,
+    "count": 8
+  },
+  "wagon-mound-nm": {
+    "city": "Wagon Mound",
+    "state": "nm",
+    "region": "colorado",
+    "population": 557,
+    "count": 1
+  },
+  "conejo-nm": {
+    "city": "Conejo",
+    "state": "nm",
+    "region": "colorado",
+    "population": 555,
+    "count": 5
+  },
+  "penasco-nm": {
+    "city": "Pe\u00f1asco",
+    "state": "nm",
+    "region": "colorado",
+    "population": 546,
+    "count": 2
+  },
+  "pine-brook-hill-co": {
+    "city": "Pine Brook Hill",
+    "state": "co",
+    "region": "colorado",
+    "population": 543,
+    "count": 3
+  },
+  "coaldale-co": {
+    "city": "Coaldale",
+    "state": "co",
+    "region": "colorado",
+    "population": 538,
+    "count": 10
+  },
+  "la-madera-nm": {
+    "city": "La Madera",
+    "state": "nm",
+    "region": "colorado",
+    "population": 532,
+    "count": 3
+  },
+  "truchas-nm": {
+    "city": "Truchas",
+    "state": "nm",
+    "region": "colorado",
+    "population": 528,
+    "count": 5
+  },
+  "sunshine-nm": {
+    "city": "Sunshine",
+    "state": "nm",
+    "region": "colorado",
+    "population": 524,
+    "count": 1
+  },
+  "la-jara-co": {
+    "city": "La Jara",
+    "state": "co",
+    "region": "colorado",
+    "population": 522,
+    "count": 2
+  },
+  "mora-nm": {
+    "city": "Mora",
+    "state": "nm",
+    "region": "colorado",
+    "population": 520,
+    "count": 2
+  },
+  "rowe-nm": {
+    "city": "Rowe",
+    "state": "nm",
+    "region": "colorado",
+    "population": 516,
+    "count": 1
+  },
+  "cuyamungue-nm": {
+    "city": "Cuyamungue",
+    "state": "nm",
+    "region": "colorado",
+    "population": 509,
+    "count": 6
+  }
+}

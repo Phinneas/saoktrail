@@ -20,13 +20,21 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 3, name: 'Route', item: 'https://soaktrail.com/trip-planner/route' },
   ],
 };
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Hot Springs Along Your Route — Soak Trail',
+  url: 'https://soaktrail.com/trip-planner/route',
+  dateModified: new Date().toISOString().slice(0, 10),
+};
 ---
 
 <BaseLayout
   title="Hot Springs Along Your Route — Soak Trail"
   description="Enter a start and destination and find hot springs within a chosen distance of the driving route."
   canonicalUrl="https://soaktrail.com/trip-planner/route"
-  jsonLd={breadcrumbSchema}
+  jsonLd={[breadcrumbSchema, webPageSchema]}
 >
   <section class="px-4 pt-16 pb-8 md:pt-24 md:pb-12">
     <div class="container mx-auto max-w-4xl">

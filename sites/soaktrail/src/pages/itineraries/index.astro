@@ -27,12 +27,20 @@ const jsonLd = {
   url: 'https://soaktrail.com/itineraries',
   description: 'Curated hot springs road trip itineraries across the American West.',
 };
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Itineraries — Soak Trail',
+  url: 'https://soaktrail.com/itineraries',
+  dateModified: new Date().toISOString().slice(0, 10),
+};
 ---
 
 <BaseLayout
   title="Itineraries — Soak Trail"
   description="Curated hot springs road trip itineraries across the American West."
-  jsonLd={jsonLd}
+  jsonLd={[jsonLd, webPageSchema]}
 >
   <section class="px-4 pt-16 pb-8 md:pt-24">
     <div class="container mx-auto max-w-4xl">

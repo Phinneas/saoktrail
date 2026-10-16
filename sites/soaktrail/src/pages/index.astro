@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import AskAI from '../components/AskAI.astro';
 import AuthorAttribution from '../components/AuthorAttribution.astro';
 import HomeMap from '../components/HomeMap.jsx';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
 
 const runtimeEnv = ((Astro.locals as any).runtime?.env ?? {}) as Record<string, string | undefined>;
 const maptilerKey = runtimeEnv.PUBLIC_MAPTILER_KEY || import.meta.env.PUBLIC_MAPTILER_KEY;
@@ -202,7 +203,7 @@ const jsonLd = [
           <span class="italic"> Runs Hot</span>
         </h2>
         <p class="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed">
-          Every documented hot spring across the United States. Filter by temperature, access type, and more. Click any pin for details and a link to its region guide.
+          Every documented hot spring across the western United States. Filter by temperature, access type, and more. Click any pin for details and a link to its region guide.
         </p>
       </div>
 
@@ -584,6 +585,11 @@ const jsonLd = [
         </svg>
       </a>
     </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="py-16 md:py-24 px-6">
+    <NewsletterSignup />
   </section>
 
   <!-- Ask AI Section -->

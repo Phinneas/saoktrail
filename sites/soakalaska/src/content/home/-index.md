@@ -5,11 +5,11 @@ content: |
 
   Here, the water comes up through volcanic rock and geothermal fault lines along the Pacific Ring of Fire, carrying minerals that have been brewing for millennia. You can soak at Chena Hot Springs under the northern lights, or float in a natural pool on Baranof Island with nothing but ocean and forest around you. Some springs require a bush plane and a sense of adventure. Others come with a full-service resort and an ice museum. We cover both — because the best soak is the one that fits your Alaskan adventure.
 
-  Alaska sits on the Pacific Ring of Fire, and its geothermal activity has created more than 70 known thermal springs across the state — from the Southeast panhandle to the Brooks Range. Many are accessible only by boat, floatplane, or a long winter trail. A handful can be reached by road.
+  Alaska sits on the Pacific Ring of Fire, and its geothermal activity has created more than 20 known thermal springs across the state — from the Southeast panhandle to the Brooks Range. Many are accessible only by boat, floatplane, or a long winter trail. A handful can be reached by road.
 
   Some are a short drive from Fairbanks. Others require a multi-day expedition. All of them carry the same minerals that have drawn people to these remote waters for centuries.
 
-  Exploring beyond Alaska? Soak Trail covers the whole country — here's [how to find hot springs](https://soaktrail.com/how-to-find-hot-springs) anywhere in the U.S.
+  Exploring beyond Alaska? Soak Trail covers the western United States — here's [how to find hot springs](https://soaktrail.com/how-to-find-hot-springs) across the West
 button:
   label: Explore the Full Map →
   link: /alaska-hot-springs-map
@@ -41,9 +41,9 @@ tripExample:
     description: "Fly to Southeast Alaska for a floatplane trip to Goddard Hot Springs on Baranof Island, cedar bathhouses on the outer coast near Sitka."
 tripButton:
   label: Plan Your Route →
-  link: /alaska-hot-springs-map
+  link: /trip-planner
 coverageHeading: Coverage
-coverageText: "20+ springs across Alaska, from the Southeast panhandle to the Seward Peninsula. Updated regularly with seasonal access conditions, trail reports, and new discoveries."
+coverageText: "20 springs across Alaska, from the Southeast panhandle to the Seward Peninsula. Updated regularly with seasonal access conditions, trail reports, and new discoveries."
 coverageButton:
   label: Read the Latest Guide →
   link: /blog

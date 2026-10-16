@@ -202,6 +202,31 @@ export default function LocatorMap({ maptilerKey, apiUrl }) {
     setFilters((f) => ({ ...f, [key]: value }));
   }
 
+  const userMarkerRef = useRef(null);
+
+  function locateMe() {
+    if (!navigator.geolocation) {
+      setStatus('Geolocation is not available in this browser.');
+      return;
+    }
+    setStatus('Locating you…');
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const map = mapRef.current;
+        if (!map) return;
+        const { latitude, longitude } = pos.coords;
+        map.flyTo({ center: [longitude, latitude], zoom: 9 });
+        if (userMarkerRef.current) userMarkerRef.current.remove();
+        const el = document.createElement('div');
+        el.innerHTML = '<span style="display:block;width:14px;height:14px;border-radius:50%;background:#2563eb;border:3px solid #fff;box-shadow:0 0 0 2px #2563eb;"></span>';
+        userMarkerRef.current = new Marker({ element: el }).setLngLat([longitude, latitude]).addTo(map);
+        setStatus('');
+      },
+      () => setStatus('Location access denied.'),
+      { enableHighAccuracy: true, timeout: 8000, maximumAge: 300000 }
+    );
+  }
+
   const filtersActive = JSON.stringify(filters) !== JSON.stringify(DEFAULT_FILTERS);
 
   return (
@@ -246,6 +271,9 @@ export default function LocatorMap({ maptilerKey, apiUrl }) {
             Clear filters
           </button>
         )}
+        <button type="button" className="soak-locator-clear" onClick={locateMe}>
+          📍 Locate me
+        </button>
       </div>
 
       <div className="soak-locator-wrap">

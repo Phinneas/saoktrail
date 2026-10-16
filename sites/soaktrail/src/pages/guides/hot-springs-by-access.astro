@@ -1,0 +1,171 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+export const prerender = true;
+
+const canonical = 'https://soaktrail.com/guides/hot-springs-by-access';
+const title = 'Hot Springs by Access Difficulty — From Easy Drive-Ups to Backcountry Hikes | Soak Trail';
+
+// Fetch all springs from the API at build time
+let allSprings: any[] = [];
+let totalCount = 0;
+try {
+  const res = await fetch('https://soakatlas-mcp.buzzuw2.workers.dev/springs?limit=2000');
+  if (res.ok) {
+    const data = await res.json();
+    allSprings = (data.springs || []).filter((s: any) => s.access_type);
+    totalCount = (data.springs || []).length;
+  }
+} catch { /* use empty array */ }
+
+// Group by access type
+const ACCESS_ORDER = [
+  { key: 'paved', label: 'Paved Road', icon: '🛣️', description: 'Standard vehicle, paved road all the way' },
+  { key: 'drive-up', label: 'Drive-Up', icon: '🚗', description: 'Unpaved road, standard vehicle usually fine' },
+  { key: 'dirt', label: 'Dirt Road', icon: '🛻', description: 'Unpaved road, may need high clearance' },
+  { key: '4wd', label: '4WD Required', icon: '🏔️', description: 'Rough road, high-clearance 4WD vehicle needed' },
+  { key: 'hike', label: 'Hike-In', icon: '🥾', description: 'Walk or hike from a trailhead or parking area' },
+  { key: 'resort', label: 'Resort / Developed', icon: '🏨', description: 'Developed facility with pools, changing rooms, amenities' },
+  { key: 'boat', label: 'Boat / Float Plane', icon: '⛵', description: 'Accessible only by water or air' },
+];
+
+const grouped: Record<string, any[]> = {};
+for (const spring of allSprings) {
+  const key = spring.access_type || 'unknown';
+  if (!grouped[key]) grouped[key] = [];
+  grouped[key].push(spring);
+}
+
+// Sort each group by temperature (soakable first)
+for (const key of Object.keys(grouped)) {
+  grouped[key].sort((a: any, b: any) => {
+    const aSoakable = a.temperature_f >= 95 && a.temperature_f <= 110 ? 1000 : 0;
+    const bSoakable = b.temperature_f >= 95 && b.temperature_f <= 110 ? 1000 : 0;
+    return (bSoakable + (b.temperature_f || 0)) - (aSoakable + (a.temperature_f || 0));
+  });
+}
+
+const description = `Every hot spring in SoakTrail's database grouped by how hard it is to reach — from easy roadside pools to remote backcountry hikes. ${totalCount} springs across the American West.`;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://soaktrail.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://soaktrail.com/guides' },
+    { '@type': 'ListItem', position: 3, name: 'Hot Springs by Access', item: canonical },
+  ],
+};
+
+const REGION_SITES: Record<string, string> = {
+  washington: 'https://www.washingtonhotsprings.com',
+  alaska: 'https://www.alaskahotsprings.com',
+  shasta: 'https://www.shastahotsprings.com',
+  colorado: 'https://www.soakcolorado.com',
+  rockies: 'https://www.soaktherockies.com',
+  desert: 'https://www.desertsoak.com',
+};
+
+function isSoakable(s: any): boolean {
+  return s.temperature_f >= 95 && s.temperature_f <= 110;
+}
+function tempClass(s: any): string {
+  if (isSoakable(s)) return 'text-green-600';
+  if (s.temperature_f > 110) return 'text-red-500';
+  return 'text-sa-dark';
+}
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl={canonical}
+  jsonLd={breadcrumbSchema}
+>
+  <main class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+    <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Guides', href: '/guides' }, { label: 'By Access Difficulty' }]} />
+
+    <header class="mb-12">
+      <p class="text-sa-copper text-sm tracking-[0.3em] uppercase mb-4 font-body">Data Guide</p>
+      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-light text-sa-dark leading-tight mb-6">
+        Springs by <span class="italic">Access Difficulty</span>
+      </h1>
+      <p class="text-sa-text text-lg leading-relaxed max-w-3xl">
+        Not all hot springs require a backcountry expedition. Some are right off the highway. Others need a 4WD and a sense of adventure. Here's every spring grouped by how hard it is to reach.
+      </p>
+      <p class="text-sa-text/60 text-sm mt-4">
+        {totalCount} springs · Grouped by access type
+      </p>
+    </header>
+
+    <!-- Summary stats -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 mb-12">
+      {ACCESS_ORDER.map((access) => {
+        const count = grouped[access.key]?.length || 0;
+        return (
+          <a
+            href={`#${access.key}`}
+            class="text-center border border-sa-divider rounded-xl bg-white/60 p-4 hover:border-sa-copper transition-colors"
+          >
+            <p class="text-2xl mb-1">{access.icon}</p>
+            <p class="font-body text-2xl font-light text-sa-copper">{count}</p>
+            <p class="text-sa-text text-xs tracking-wider uppercase font-body">{access.label}</p>
+          </a>
+        );
+      })}
+    </div>
+
+    <!-- Grouped lists -->
+    {ACCESS_ORDER.map((access) => {
+      const springs = grouped[access.key] || [];
+      if (springs.length === 0) return null;
+      return (
+        <section id={access.key} class="mb-12">
+          <div class="flex items-baseline gap-3 mb-4">
+            <span class="text-2xl">{access.icon}</span>
+            <div>
+              <h2 class="font-display text-2xl font-bold text-sa-dark">{access.label}</h2>
+              <p class="text-sa-text text-sm">{access.description} · {springs.length} spring{springs.length !== 1 ? 's' : ''}</p>
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            {springs.slice(0, 20).map((spring: any) => {
+              const siteUrl = REGION_SITES[spring.region];
+              return (
+                <div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-white border border-sa-divider hover:border-sa-copper transition-colors">
+                  <div class="min-w-0 flex-1">
+                    <a
+                      href={siteUrl ? `${siteUrl}/springs/${spring.slug}` : '#'}
+                      target={siteUrl ? '_blank' : undefined}
+                      rel={siteUrl ? 'noopener noreferrer' : undefined}
+                      class="font-display font-bold text-sa-dark hover:text-sa-copper transition-colors truncate block"
+                    >
+                      {spring.name}
+                    </a>
+                    <p class="text-xs text-sa-text/60">{spring.state} · {spring.region}</p>
+                  </div>
+                  <div class="text-right shrink-0">
+                    {spring.temperature_f ? (
+                      <span class={`font-mono text-sm font-bold ${tempClass(spring)}`}>
+                        {spring.temperature_f}°F
+                      </span>
+                    ) : (
+                      <span class="font-mono text-sm text-sa-text/40">—</span>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+            {springs.length > 20 && (
+              <p class="text-sa-text/50 text-xs text-center py-2">
+                And {springs.length - 20} more — <a href="/locator" class="text-sa-copper hover:underline">see all on the locator map</a>
+              </p>
+            )}
+          </div>
+        </section>
+      );
+    })}
+  </main>
+</BaseLayout>

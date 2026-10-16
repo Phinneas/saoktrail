@@ -11,6 +11,7 @@ export const siteConfig: SiteConfig = {
   nav: [
     { name: "Home", url: "/" },
     { name: "Directory", url: "/directory" },
+    { name: "Near Me", url: "/near" },
     { name: "Map", url: "/washington-hot-springs-map" },
     { name: "Blog", url: "/blog" },
     { name: "Minerals", url: "https://soaktrail.com/minerals" },

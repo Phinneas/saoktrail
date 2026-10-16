@@ -262,13 +262,21 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 2, name: `Hot Springs in ${stateName}`, item: canonical },
   ],
 };
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: `The Complete Guide to Hot Springs in ${stateName} — Soak Trail`,
+  url: canonical,
+  dateModified: new Date().toISOString().slice(0, 10),
+};
 ---
 
 <BaseLayout
   title={title}
   description={description}
   canonicalUrl={canonical}
-  jsonLd={[breadcrumbSchema, faqSchema, howToSchema]}
+  jsonLd={[breadcrumbSchema, faqSchema, howToSchema, webPageSchema]}
 >
   <div class="container mx-auto px-4 py-12 max-w-4xl">
     <Breadcrumbs items={[

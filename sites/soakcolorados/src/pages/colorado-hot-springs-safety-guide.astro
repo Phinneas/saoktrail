@@ -1,0 +1,317 @@
+---
+import BaseLayout from "@components/base/BaseLayout.astro";
+import Breadcrumbs from "@components/common/Breadcrumbs.astro";
+import { siteConfig } from "@site/config";
+
+const title = "Colorado Hot Springs Safety Guide";
+const description =
+  "How to soak safely in Colorado's hot springs: water temperature limits, bacteria risks, flash flood awareness, altitude, hydration, winter conditions, and Leave No Trace.";
+const canonical = `${siteConfig.url}/colorado-hot-springs-safety-guide`;
+const today = new Date().toISOString();
+
+const articleSchema = {
+  "@type": "Article",
+  headline: title,
+  description,
+  datePublished: today,
+  dateModified: today,
+  author: {
+    "@type": "Person",
+    name: "Chester Beard",
+    url: "https://soaktrail.com/about",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: {
+      "@type": "ImageObject",
+      url: `${siteConfig.url}${siteConfig.ogImage}`,
+    },
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": canonical,
+  },
+};
+
+const faqs = [
+  {
+    q: "How hot do Colorado hot springs actually get?",
+    a: "Source water often emerges between 100°F and 180°F. Developed soaking pools typically run 95–104°F. Never assume a wild pool is comfortable — test it.",
+  },
+  {
+    q: "Are hot springs safe during pregnancy?",
+    a: "Most providers advise avoiding water above ~100°F, particularly in the first trimester. Confirm with your OB/GYN before your trip.",
+  },
+  {
+    q: "When is flash flood season?",
+    a: "July through mid-September, driven by afternoon monsoon storms. Morning soaks are the safer bet in summer.",
+  },
+  {
+    q: "Can kids soak?",
+    a: "Yes — in cooler pools (under 100°F), with sessions capped around 10–15 minutes, constant supervision, and no dunking or head submersion.",
+  },
+  {
+    q: "Is the sulfur smell dangerous?",
+    a: "Not in open-air pools — it's naturally occurring minerals. But avoid extended soaking in enclosed, poorly ventilated grottos.",
+  },
+];
+
+const faqSchema = {
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} jsonLd={[articleSchema, faqSchema]}>
+  <section class="section">
+    <div class="container max-w-4xl">
+      <Breadcrumbs />
+
+      <h1 class="h1 mb-4">{title}</h1>
+
+      <p class="text-txt-s dark:text-darkmode-txt-s leading-relaxed">
+        Colorado offers some of the finest soaking in North America — more than two dozen developed hot spring resorts and dozens of wild, riverside pools scattered across the mountains, many of them steaming even in the middle of a snowstorm. But the same geography that makes them special also creates real risks: <strong class="text-txt-p dark:text-darkmode-txt-p">scalding source water, canyon drainages prone to flash floods, elevations above 8,000 feet, and one of the driest climates in the country.</strong>
+      </p>
+      <p class="text-txt-s dark:text-darkmode-txt-s leading-relaxed mt-4">
+        We built this guide so every visit ends the way it should — relaxed, healthy, and safe. Read it before your first soak, and revisit it whenever you try a new spring.
+      </p>
+
+      <!-- Checklist -->
+      <div class="glass p-6 mt-10">
+        <h2 class="h3 mb-4">Before You Soak: The 60-Second Checklist</h2>
+        <ul class="space-y-2 text-txt-s dark:text-darkmode-txt-s">
+          <li>✅ Check the <strong class="text-txt-p dark:text-darkmode-txt-p">NWS point forecast</strong> for flash flood potential (not just temperature)</li>
+          <li>✅ Confirm <strong class="text-txt-p dark:text-darkmode-txt-p">access, permits, and road conditions</strong> — some springs require reservations; others sit on private land</li>
+          <li>✅ Bring <strong class="text-txt-p dark:text-darkmode-txt-p">more water than you think you need</strong></li>
+          <li>✅ Tell someone <strong class="text-txt-p dark:text-darkmode-txt-p">where you're going and when you'll be back</strong></li>
+          <li>✅ Pack a <strong class="text-txt-p dark:text-darkmode-txt-p">pool thermometer</strong> for wild springs, plus water shoes, a towel or robe, and a small first aid kit</li>
+          <li>✅ Skip the alcohol — or keep it minimal and after soaking</li>
+        </ul>
+      </div>
+
+      <!-- 1. Water temperature -->
+      <h2 class="h2 mt-12 mb-4">1. Water Temperature Safety</h2>
+      <p class="text-txt-s dark:text-darkmode-txt-s leading-relaxed">
+        Colorado's source water often emerges <strong class="text-txt-p dark:text-darkmode-txt-p">well above 120°F — hot enough to scald skin in seconds</strong>. The comfortable soaking temperature you enjoy at a developed pool is usually the result of mixing source water with river or creek water, and that balance can shift.
+      </p>
+
+      <h3 class="h4 mt-6 mb-3">Know the zones:</h3>
+      <div class="overflow-x-auto">
+        <table class="glass w-full text-sm text-txt-s dark:text-darkmode-txt-s">
+          <thead>
+            <tr class="border-b border-border dark:border-darkmode-border">
+              <th class="text-left p-3 font-display text-txt-p dark:text-darkmode-txt-p">Water Temp</th>
+              <th class="text-left p-3 font-display text-txt-p dark:text-darkmode-txt-p">What It Means for You</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-border dark:border-darkmode-border">
+              <td class="p-3">90–99°F (32–37°C)</td>
+              <td class="p-3">Comfortable for extended soaks; fine for most visitors</td>
+            </tr>
+            <tr class="border-b border-border dark:border-darkmode-border">
+              <td class="p-3">100–104°F (38–40°C)</td>
+              <td class="p-3">The classic "soak zone" — limit sessions to <strong class="text-txt-p dark:text-darkmode-txt-p">15–20 minutes</strong></td>
+            </tr>
+            <tr class="border-b border-border dark:border-darkmode-border">
+              <td class="p-3">105–108°F</td>
+              <td class="p-3">Too hot for most people; brief dips only, exit if flushed or dizzy</td>
+            </tr>
+            <tr>
+              <td class="p-3">109°F+</td>
+              <td class="p-3">Scalding territory. <strong class="text-txt-p dark:text-darkmode-txt-p">Never fully immerse</strong> — test with a hand or foot first</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="h4 mt-8 mb-3">Best practices:</h3>
+      <ul class="list-disc pl-5 space-y-2 text-txt-s dark:text-darkmode-txt-s">
+        <li>Test before entering — especially at wild springs, where temperatures fluctuate with runoff, season, and river level</li>
+        <li>Cool down between rounds; take breaks on the bank</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Exit immediately</strong> if you feel dizzy, nauseated, headachy, or notice a racing heartbeat</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Stand up slowly.</strong> Hot water dilates blood vessels, and standing abruptly is a common cause of fainting</li>
+        <li>Skip extreme hot-to-cold plunges if you have any heart condition — sudden cold immersion can trigger dangerous heart rhythms</li>
+      </ul>
+
+      <h3 class="h4 mt-8 mb-3">Who should take extra care:</h3>
+      <ul class="list-disc pl-5 space-y-2 text-txt-s dark:text-darkmode-txt-s">
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Pregnant women:</strong> Most providers recommend avoiding water above ~100°F, especially in the first trimester. Ask your OB before soaking.</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Children:</strong> They thermoregulate less efficiently — use cooler pools and cap soaks at 10–15 minutes with constant supervision.</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Anyone on blood pressure medications, beta blockers, or diuretics:</strong> These impair your body's ability to respond to heat. Consult your physician first.</li>
+      </ul>
+
+      <!-- 2. Bacteria -->
+      <h2 class="h2 mt-12 mb-4">2. Bacteria &amp; Water Quality Risks</h2>
+      <p class="text-txt-s dark:text-darkmode-txt-s leading-relaxed">
+        Untreated geothermal water is warm, often stagnant, and shared — conditions bacteria love. Commercial resorts test and treat their water; <strong class="text-txt-p dark:text-darkmode-txt-p">wild springs are unregulated</strong>, and quality varies with usage, wildlife, and weather.
+      </p>
+
+      <h3 class="h4 mt-6 mb-3">The risks to know:</h3>
+      <ul class="list-disc pl-5 space-y-2 text-txt-s dark:text-darkmode-txt-s">
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Naegleria fowleri:</strong> A rare but nearly always fatal amoeba found in warm freshwater. Infection occurs when water is forced up the nose. <strong class="text-txt-p dark:text-darkmode-txt-p">Keep your head above water, hold your nose or wear nose clips if you dunk, and never stir up sediment in shallow, warm water.</strong></li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Hot tub folliculitis (Pseudomonas):</strong> An itchy rash that appears hours after soaking in poorly maintained water. Shower with soap afterward.</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">E. coli and leptospirosis:</strong> Surface runoff carries animal and human waste into wild pools, especially after rain or at high-traffic springs.</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Algae mats and biofilm:</strong> Thick, slimy growth or a strong sewage-like odor means the water is compromised — don't soak.</li>
+      </ul>
+
+      <h3 class="h4 mt-8 mb-3">Simple protections:</h3>
+      <ul class="list-disc pl-5 space-y-2 text-txt-s dark:text-darkmode-txt-s">
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Never drink spring water</strong>, no matter how pristine it looks</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Don't submerge your head</strong> at any wild spring</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Cover open cuts and wounds</strong>, or skip soaking until healed</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Don't soak if you've had diarrhea in the past two weeks</strong> — parasites like <em>Cryptosporidium</em> survive in untreated water and spread easily</li>
+        <li>Shower with soap and water as soon as possible afterward</li>
+      </ul>
+
+      <p class="text-txt-s dark:text-darkmode-txt-s leading-relaxed mt-6">
+        <strong class="text-txt-p dark:text-darkmode-txt-p">A note on the "rotten egg" smell:</strong> That sulfur odor is naturally occurring dissolved minerals and hydrogen sulfide, and it's harmless at the low levels found in open-air pools. However, avoid long soaks in <strong class="text-txt-p dark:text-darkmode-txt-p">enclosed grottos or caves</strong> with poor ventilation.
+      </p>
+
+      <!-- 3. Flash floods -->
+      <h2 class="h2 mt-12 mb-4">3. Flash Flood Awareness</h2>
+      <p class="text-txt-s dark:text-darkmode-txt-s leading-relaxed">
+        This is the most underestimated danger at Colorado's wild springs. Many of the best free pools sit <strong class="text-txt-p dark:text-darkmode-txt-p">at the bottom of canyon drainages</strong> — precisely where flash floods go.
+      </p>
+
+      <h3 class="h4 mt-6 mb-3">The facts:</h3>
+      <ul class="list-disc pl-5 space-y-2 text-txt-s dark:text-darkmode-txt-s">
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Monsoon season runs roughly July through mid-September</strong>, with thunderstorms firing almost every afternoon</li>
+        <li>Storms <strong class="text-txt-p dark:text-darkmode-txt-p">miles upstream</strong> can send a wall of water down a canyon while your sky is completely blue</li>
+        <li>Water levels can rise <strong class="text-txt-p dark:text-darkmode-txt-p">within minutes</strong>, and canyon walls often offer limited escape routes</li>
+        <li>Snowmelt season (May–June) also brings fast, cold, high water to riverside springs</li>
+      </ul>
+
+      <h3 class="h4 mt-8 mb-3">Warning signs — act immediately if you notice any of them:</h3>
+      <ul class="list-disc pl-5 space-y-2 text-txt-s dark:text-darkmode-txt-s">
+        <li>Water level rising or flow accelerating</li>
+        <li>Water turning murky, brown, or carrying debris</li>
+        <li>A low rumble or roar from upstream</li>
+        <li>Rain, even distant clouds, upstream of your drainage</li>
+      </ul>
+
+      <p class="text-txt-s dark:text-darkmode-txt-s leading-relaxed mt-6">
+        <strong class="text-txt-p dark:text-darkmode-txt-p">If a flood threatens: Climb to high ground first. Abandon your gear — shoes, phones, towels can all be replaced.</strong>
+      </p>
+
+      <h3 class="h4 mt-8 mb-3">How to stay ahead of it:</h3>
+      <ul class="list-disc pl-5 space-y-2 text-txt-s dark:text-darkmode-txt-s">
+        <li>Soak in the <strong class="text-txt-p dark:text-darkmode-txt-p">morning</strong> during monsoon season; storms build through the afternoon</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Never camp in a drainage bottom</strong> near a spring creek</li>
+        <li>If a trail crosses a flooded stream, don't cross — and never drive through water covering a road</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Exit the water at the first sound of thunder.</strong> You're soaking in a metal-conductive pool on exposed terrain</li>
+      </ul>
+
+      <!-- 4. Altitude -->
+      <h2 class="h2 mt-12 mb-4">4. Altitude Considerations</h2>
+      <p class="text-txt-s dark:text-darkmode-txt-s leading-relaxed">
+        Most Colorado springs sit between <strong class="text-txt-p dark:text-darkmode-txt-p">6,000 and 11,200 feet</strong> — Conundrum Hot Springs, reachable only by a 9-mile hike, sits near 11,200 feet. If you're visiting from lower elevation, your body needs time to adjust, and soaking adds a physical demand you might not expect.
+      </p>
+
+      <h3 class="h4 mt-6 mb-3">Why altitude + hot water is a real combination:</h3>
+      <ul class="list-disc pl-5 space-y-2 text-txt-s dark:text-darkmode-txt-s">
+        <li>Hot water dilates your blood vessels and raises your heart rate — the same response your body is already working harder to manage with thinner air</li>
+        <li>Result: dizziness, breathlessness, and fainting can hit <strong class="text-txt-p dark:text-darkmode-txt-p">faster and harder than at sea level</strong></li>
+      </ul>
+
+      <h3 class="h4 mt-8 mb-3">Acute Mountain Sickness (AMS)</h3>
+      <p class="text-txt-s dark:text-darkmode-txt-s leading-relaxed">
+        AMS can develop above 8,000 feet within hours. Watch for:
+      </p>
+      <ul class="list-disc pl-5 space-y-2 text-txt-s dark:text-darkmode-txt-s">
+        <li>Headache</li>
+        <li>Nausea or loss of appetite</li>
+        <li>Unusual fatigue</li>
+        <li>Shortness of breath at rest</li>
+        <li>Poor sleep</li>
+      </ul>
+
+      <h3 class="h4 mt-8 mb-3">How to soak smart at elevation:</h3>
+      <ul class="list-disc pl-5 space-y-2 text-txt-s dark:text-darkmode-txt-s">
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Acclimatize 24–48 hours</strong> before strenuous hiking to remote springs</li>
+        <li>On your first day, keep soaks <strong class="text-txt-p dark:text-darkmode-txt-p">short</strong> — 10 minutes, then reassess</li>
+        <li>Skip alcohol entirely on arrival day</li>
+        <li>If AMS symptoms appear, descend to sleep at a lower elevation; severe or worsening symptoms (confusion, trouble walking) mean <strong class="text-txt-p dark:text-darkmode-txt-p">seek medical care immediately</strong></li>
+      </ul>
+
+      <!-- 5. Hydration -->
+      <h2 class="h2 mt-12 mb-4">5. Hydration in a Dry Climate</h2>
+      <p class="text-txt-s dark:text-darkmode-txt-s leading-relaxed">
+        Colorado hits you with a triple threat: <strong class="text-txt-p dark:text-darkmode-txt-p">dry mountain air, altitude-driven fluid loss through breathing, and sweating you can't feel</strong> because you're submerged in hot water. Dehydration is the most common reason visitors feel awful after a soak — headache, fatigue, and that "hot spring hangover."
+      </p>
+
+      <h3 class="h4 mt-6 mb-3">The plan:</h3>
+      <ul class="list-disc pl-5 space-y-2 text-txt-s dark:text-darkmode-txt-s">
+        <li>Drink <strong class="text-txt-p dark:text-darkmode-txt-p">16–20 oz of water before you soak</strong></li>
+        <li>Keep a <strong class="text-txt-p dark:text-darkmode-txt-p">water bottle at the pool's edge</strong> and sip between rounds</li>
+        <li>Drink again immediately after, and add <strong class="text-txt-p dark:text-darkmode-txt-p">electrolytes</strong> if you've done multiple sessions or hiked in</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Alcohol multiplies every risk on this page</strong> — it dehydrates you, dilates blood vessels further, and impairs the judgment that tells you to get out of the water. Make it a post-soak drink at most, and many resorts prohibit it entirely</li>
+      </ul>
+
+      <p class="text-txt-s dark:text-darkmode-txt-s leading-relaxed mt-6">
+        <strong class="text-txt-p dark:text-darkmode-txt-p">Signs you're already dehydrated:</strong> headache, dark urine, dizziness when standing, dry mouth, unusual fatigue. Stop soaking, rehydrate, and rest in the shade.
+      </p>
+
+      <!-- Winter -->
+      <h2 class="h2 mt-12 mb-4">Winter &amp; Cold-Weather Soaking</h2>
+      <p class="text-txt-s dark:text-darkmode-txt-s leading-relaxed">
+        Soaking in falling snow is a Colorado signature experience — but it demands more preparation:
+      </p>
+      <ul class="list-disc pl-5 space-y-2 text-txt-s dark:text-darkmode-txt-s mt-4">
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Roads and trails are icy.</strong> Check CDOT's COtrip.org for road conditions and pack traction devices for your shoes</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">The moment you exit, you lose heat fast.</strong> Wet hair and a wet swimsuit can approach hypothermia in minutes — keep a dry robe, layers, and a warm vehicle close by</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Daylight is short.</strong> Remote springs like Conundrum cross <strong class="text-txt-p dark:text-darkmode-txt-p">avalanche terrain</strong> in winter — check the Colorado Avalanche Information Center (CAIC) forecast before committing</li>
+      </ul>
+
+      <!-- Etiquette -->
+      <h2 class="h2 mt-12 mb-4">Etiquette &amp; Leave No Trace</h2>
+      <p class="text-txt-s dark:text-darkmode-txt-s leading-relaxed">
+        Being a responsible soaker keeps these places open for everyone:
+      </p>
+      <ul class="list-disc pl-5 space-y-2 text-txt-s dark:text-darkmode-txt-s mt-4">
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Pack out everything you pack in</strong> — including swimsuit wrappers, food scraps, and trash left by others</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">No soap, shampoo, or sunscreen in the pools</strong> — even "natural" products alter water chemistry and harm downstream ecosystems</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">No glass containers</strong> anywhere near the water</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Respect clothing-optional norms</strong> — some springs are traditionally clothing-optional; observe quietly and follow local customs</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Don't alter the pools.</strong> Moving rocks and modifying dams changes temperatures and flow, and has led to closures</li>
+        <li>Keep voices low and share space — popular pools get crowded</li>
+      </ul>
+
+      <!-- Emergency -->
+      <h2 class="h2 mt-12 mb-4">Emergency Planning</h2>
+      <ul class="list-disc pl-5 space-y-2 text-txt-s dark:text-darkmode-txt-s">
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Cell coverage is unreliable or nonexistent</strong> at most remote springs. Carry a satellite messenger or PLB for backcountry trips</li>
+        <li>Dial <strong class="text-txt-p dark:text-darkmode-txt-p">911</strong> and be ready to describe your location: trailhead name, mileage, and GPS coordinates if you have them</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Identify the nearest urgent care or hospital before you go</strong> — this matters most for wild springs far from town</li>
+        <li><strong class="text-txt-p dark:text-darkmode-txt-p">Verify current conditions with official sources:</strong> the local U.S. Forest Service ranger district, the National Weather Service, COtrip.org, and CAIC (winter)</li>
+      </ul>
+
+      <!-- FAQ -->
+      <h2 class="h2 mt-12 mb-4">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        {faqs.map((f) => (
+          <details class="group glass rounded p-5">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none">
+              <span class="font-display font-medium text-txt-p dark:text-darkmode-txt-p pr-4">{f.q}</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-accent shrink-0 group-open:rotate-180 transition-transform duration-200"><path d="M6 9l6 6 6-6" /></svg>
+            </summary>
+            <p class="text-txt-s dark:text-darkmode-txt-s text-sm leading-relaxed mt-3">{f.a}</p>
+          </details>
+        ))}
+      </div>
+
+      <!-- Final word -->
+      <div class="glass p-6 mt-12">
+        <p class="text-txt-s dark:text-darkmode-txt-s leading-relaxed italic">
+          A final word from us: hot springs are one of Colorado's great gifts, and they're safe when treated with respect. This guide is educational and not a substitute for medical advice — if you're pregnant, managing a heart condition, or taking medications that affect heat tolerance, talk to your physician before soaking. Conditions change with weather and seasons; always verify current access, permits, and forecasts with land managers and official sources before you go.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

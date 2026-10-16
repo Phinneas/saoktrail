@@ -10,12 +10,20 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 2, name: 'Terms of Service', item: 'https://soaktrail.com/terms' },
   ],
 };
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Terms of Service — Soak Trail',
+  url: 'https://soaktrail.com/terms',
+  dateModified: new Date().toISOString().slice(0, 10),
+};
 ---
 
 <BaseLayout
   title="Terms of Service — Soak Trail"
   description="The terms that govern your use of soaktrail.com, the regional hot springs guide network, the Soak Atlas MCP server, and related Soak Trail services."
-  jsonLd={[breadcrumbSchema]}
+  jsonLd={[breadcrumbSchema, webPageSchema]}
 >
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 

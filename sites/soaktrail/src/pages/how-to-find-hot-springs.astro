@@ -28,7 +28,7 @@ const howToSchema = {
     {
       '@type': 'HowToStep',
       name: 'Use a live map',
-      text: "Use a curated, up-to-date map like Soak Trail's locator, which covers 500+ mapped natural springs across 12 states.",
+      text: "Use a curated, up-to-date map like Soak Trail's locator, which covers 500+ mapped natural springs across the western United States.",
     },
     {
       '@type': 'HowToStep',
@@ -95,15 +95,27 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 2, name: 'How to Find Hot Springs', item: canonical },
   ],
 };
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'How to Find Hot Springs Near You — Soak Trail',
+  url: canonical,
+  dateModified: new Date().toISOString().slice(0, 10),
+};
 ---
 
-<BaseLayout title={title} description={description} canonicalUrl={canonical} jsonLd={[howToSchema, faqSchema, breadcrumbSchema]}>
+<BaseLayout title={title} description={description} canonicalUrl={canonical} jsonLd={[howToSchema, faqSchema, breadcrumbSchema, webPageSchema]}>
   <div class="container mx-auto px-4 py-12 max-w-3xl">
     <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'How to Find Hot Springs' }]} />
 
     <h1 class="font-display text-4xl font-bold text-sa-dark mt-8 mb-4">How to Find Hot Springs Near You</h1>
 
     <AuthorAttribution class="mb-6" />
+
+    <p class="text-sm text-sa-dark/50 mb-6">
+      Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+    </p>
 
     <p class="text-lg text-sa-dark/80 leading-relaxed">
       <strong class="text-sa-dark">There are four reliable ways to find natural hot springs in the US</strong> — from curated maps with verified locations to government geothermal databases. Soak Trail maps 686 springs across 8 western states; here's how to find them and verify they're legal to visit.
@@ -125,7 +137,7 @@ const breadcrumbSchema = {
       The fastest way to find a hot spring is a map that's already done the legwork of confirming a
       location is real, roughly locatable, and worth the trip.
       <a href="/locator" class="text-sa-copper hover:underline">Soak Trail's locator map</a> covers
-      515 mapped natural springs across 12 states in six regions:
+      515 mapped natural springs across the western United States in six regions:
     </p>
 
     <div class="overflow-x-auto rounded-lg border border-sa-dark/10 bg-white/60 mt-6">
@@ -192,6 +204,33 @@ const breadcrumbSchema = {
       are genuinely useful for two things a static database can't give you: whether a road is
       currently passable, and whether a spring has gotten too crowded or too damaged to be worth
       visiting. They're a good second check after a map, not a replacement for one.
+    </p>
+
+    <h2 id="legality-and-safety" class="font-display text-2xl font-bold text-sa-dark mt-12 mb-4 scroll-mt-20">4. Legality &amp; safety</h2>
+    <p class="text-sa-dark/80 leading-relaxed">
+      Finding a spring is only half the job — before you soak, confirm it's legal to be there and
+      safe to enter.
+    </p>
+
+    <h3 class="font-display text-lg font-bold text-sa-dark mt-6 mb-2">Legality</h3>
+    <ul class="list-disc list-inside text-sa-dark/80 leading-relaxed space-y-2">
+      <li>Confirm the spring sits on public land (BLM, USFS, National Park) — or get the landowner's permission if it's on private property.</li>
+      <li>Respect tribal land and culturally significant sites; many are closed to the public.</li>
+      <li>Check for seasonal closures, fire restrictions, and permit requirements on Recreation.gov and with the local ranger district before you drive out.</li>
+    </ul>
+
+    <h3 class="font-display text-lg font-bold text-sa-dark mt-6 mb-2">Safety</h3>
+    <ul class="list-disc list-inside text-sa-dark/80 leading-relaxed space-y-2">
+      <li>Test the water temperature before entering — undeveloped springs can exceed 120°F and scald. Never jump or dive in.</li>
+      <li>Keep untreated water out of your nose and mouth; warm natural water can harbor organisms that cause serious infection.</li>
+      <li>Watch your footing — geothermal ground can be unstable and rocks are slick with algae.</li>
+      <li>Soak with a partner, carry drinking water, and don't rely on cell service on remote access roads.</li>
+    </ul>
+
+    <p class="text-sa-dark/80 leading-relaxed mt-4">
+      Read the full
+      <a href="/hot-springs-safety-guide" class="text-sa-copper hover:underline">hot springs safety guide</a>
+      before your first trip.
     </p>
 
     <h2 class="font-display text-2xl font-bold text-sa-dark mt-12 mb-4">FAQ</h2>
