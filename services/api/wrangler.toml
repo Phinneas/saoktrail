@@ -16,7 +16,7 @@ compatibility_date = "2026-03-26"
 [vars]
 ENVIRONMENT = "production"
 # Kill switch for the Asana autoposter. Set to "true" to re-enable.
-AUTOPOSTER_ENABLED = "false"
+AUTOPOSTER_ENABLED = "true"
 
 [env.development]
 vars = { ENVIRONMENT = "development" }
@@ -38,10 +38,10 @@ binding = "UGC_BUCKET"
 bucket_name = "soaktrail-ugc"
 
 [triggers]
-# Autoposter PAUSED 2026-09-30 during the hot springs site merge.
+# Autoposter re-enabled 2026-10-15 (was paused 2026-09-30 for the site merge).
 # An empty list removes the cron triggers on the next deploy.
 # Previous schedule (restore both lines to re-enable, and set AUTOPOSTER_ENABLED = "true"):
 #   crons = ["0 7 * * 0,3", "0 8 * * 0,3"]
 # Note: src/index.ts now routes any "0 8 ..." cron to the deploy trigger (fixed
 # 2026-09-30). The deploy trigger needs the GITHUB_PAT secret to call GitHub Actions.
-crons = []
+crons = ["0 7 * * 0,3", "0 8 * * 0,3"]
