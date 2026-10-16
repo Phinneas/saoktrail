@@ -79,3 +79,6 @@ render-service/package-lock.json
 
 # Agent recall scratch (root)
 .recall/
+.pnpm-store/
+data/*.db-shm
+data/*.db-wal
