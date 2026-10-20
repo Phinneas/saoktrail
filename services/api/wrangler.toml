@@ -44,4 +44,4 @@ bucket_name = "soaktrail-ugc"
 #   crons = ["0 7 * * 0,3", "0 8 * * 0,3"]
 # Note: src/index.ts now routes any "0 8 ..." cron to the deploy trigger (fixed
 # 2026-09-30). The deploy trigger needs the GITHUB_PAT secret to call GitHub Actions.
-crons = ["0 7 * * 0,3", "0 8 * * 0,3"]
+crons = ["0 7 * * SUN,WED", "0 8 * * SUN,WED"]
