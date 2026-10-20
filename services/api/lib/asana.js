@@ -3,9 +3,10 @@
 
 const ASANA_API = 'https://app.asana.com/api/1.0';
 
-// Tasks in a section whose name contains the word "Ops" (e.g. "🛠 Ops") are
-// non-article work and are never turned into blog posts.
-const SKIP_SECTION_RE = /\bops\b/i;
+// Only tasks whose name starts with "Article:" are turned into blog posts.
+// Everything else (ops, SEO chores, PDFs, reviews) is ignored by the autoposter.
+// The prefix is stripped before the name is used as the post topic.
+const ARTICLE_PREFIX_RE = /^\s*article\s*:\s*/i;
 
 function authHeaders(pat) {
   return {
@@ -15,7 +16,7 @@ function authHeaders(pat) {
   };
 }
 
-// List all incomplete tasks in a project, paginated. Returns [{ gid, name, notes, dueOn }].
+// List incomplete "Article:" tasks in a project, paginated. Returns [{ gid, name, notes, dueOn }].
 // We fetch all tasks and filter `!completed` client-side (Asana has no `completed=false`
 // filter param; `completed_since` semantics are ambiguous across API versions).
 export async function listOpenTasks(pat, projectGid) {
@@ -27,7 +28,7 @@ export async function listOpenTasks(pat, projectGid) {
   for (let page = 0; page < 50; page++) {
     const params = new URLSearchParams({
       limit: '100',
-      opt_fields: 'name,notes,due_on,completed,memberships.project.gid,memberships.section.name',
+      opt_fields: 'name,notes,due_on,completed',
       opt_pretty: 'false',
     });
     if (offset) params.set('offset', offset);
@@ -42,11 +43,10 @@ export async function listOpenTasks(pat, projectGid) {
     }
     const data = await res.json();
     for (const t of data.data || []) {
-      const section = (t.memberships || []).find((m) => m.project?.gid === projectGid)?.section?.name || '';
-      if (!t.completed && !SKIP_SECTION_RE.test(section)) {
+      if (!t.completed && ARTICLE_PREFIX_RE.test(t.name || '')) {
         tasks.push({
           gid: t.gid,
-          name: t.name,
+          name: t.name.replace(ARTICLE_PREFIX_RE, '').trim(),
           notes: t.notes || '',
           dueOn: t.due_on || null,
         });
