@@ -22,6 +22,9 @@ interface SiteProject {
   site: string;
   siteName: string;
   projectGid?: string;
+  // Posts to generate per cron run (default 1). Each pass re-reads Asana and the
+  // published-post dedup check, so the next pass picks the next unpublished task.
+  perRun?: number;
 }
 
 function slugify(s: string): string {
@@ -65,14 +68,15 @@ export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
     return;
   }
 
-  const sites: SiteProject[] = [
+  const siteList: SiteProject[] = [
     { site: 'desertsoak', siteName: 'Desert Soak', projectGid: env.ASANA_PROJECT_DESERTSOAK },
-    { site: 'soakcolorado', siteName: 'Soak Colorado', projectGid: env.ASANA_PROJECT_SOAKCOLORADO },
+    { site: 'soakcolorado', siteName: 'Soak Colorado', projectGid: env.ASANA_PROJECT_SOAKCOLORADO, perRun: 2 }, // catch-up pace, Oct 2026
     { site: 'soaktherockies', siteName: 'Soak the Rockies', projectGid: env.ASANA_PROJECT_SOAKTHEROCKIES },
     { site: 'alaskahotsprings', siteName: 'Alaska Hot Springs', projectGid: env.ASANA_PROJECT_ALASKAHOTSPRINGS },
     { site: 'shastahotsprings', siteName: 'Shasta Hot Springs', projectGid: env.ASANA_PROJECT_SHASTAHOTSPRINGS },
     { site: 'soaktrail', siteName: 'Soak Trail', projectGid: env.ASANA_PROJECT_SOAKTRAIL },
   ];
+  const sites: SiteProject[] = siteList.flatMap((s) => Array(Math.max(1, s.perRun ?? 1)).fill(s));
 
   const minimax = new MinimaxClient(env.GLM_API_KEY);
 
