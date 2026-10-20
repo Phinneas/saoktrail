@@ -3,6 +3,10 @@
 
 const ASANA_API = 'https://app.asana.com/api/1.0';
 
+// Tasks in a section whose name contains the word "Ops" (e.g. "🛠 Ops") are
+// non-article work and are never turned into blog posts.
+const SKIP_SECTION_RE = /\bops\b/i;
+
 function authHeaders(pat) {
   return {
     Authorization: `Bearer ${pat}`,
@@ -23,7 +27,7 @@ export async function listOpenTasks(pat, projectGid) {
   for (let page = 0; page < 50; page++) {
     const params = new URLSearchParams({
       limit: '100',
-      opt_fields: 'name,notes,due_on,completed',
+      opt_fields: 'name,notes,due_on,completed,memberships.project.gid,memberships.section.name',
       opt_pretty: 'false',
     });
     if (offset) params.set('offset', offset);
@@ -38,7 +42,8 @@ export async function listOpenTasks(pat, projectGid) {
     }
     const data = await res.json();
     for (const t of data.data || []) {
-      if (!t.completed) {
+      const section = (t.memberships || []).find((m) => m.project?.gid === projectGid)?.section?.name || '';
+      if (!t.completed && !SKIP_SECTION_RE.test(section)) {
         tasks.push({
           gid: t.gid,
           name: t.name,
