@@ -193,6 +193,39 @@ export async function generateBlogImage(aiBinding, r2Binding, imagePrompt, slug)
   }
 }
 
+// Read an OpenAI-style SSE stream and join the delta.content pieces.
+// reasoning_content deltas are ignored. Throws if the stream carries an error.
+async function readSseContent(body) {
+  const reader = body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = '';
+  let content = '';
+  const handleLine = (line) => {
+    const trimmed = line.trim();
+    if (!trimmed.startsWith('data:')) return;
+    const payload = trimmed.slice(5).trim();
+    if (!payload || payload === '[DONE]') return;
+    let evt;
+    try { evt = JSON.parse(payload); } catch { return; }
+    if (evt.error) throw new Error(`GLM API error: ${evt.error.message || JSON.stringify(evt.error)}`);
+    const piece = evt.choices?.[0]?.delta?.content;
+    if (piece) content += piece;
+  };
+  for (;;) {
+    const { value, done } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+    let nl;
+    while ((nl = buffer.indexOf('\n')) !== -1) {
+      handleLine(buffer.slice(0, nl));
+      buffer = buffer.slice(nl + 1);
+    }
+  }
+  buffer += decoder.decode();
+  if (buffer) handleLine(buffer);
+  return content;
+}
+
 export class MinimaxClient {
   constructor(apiKey, groupId) {
     this.apiKey = apiKey || '';
@@ -211,16 +244,27 @@ export class MinimaxClient {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${this.apiKey}`,
       },
+      // Stream the response. A non-streamed long post can take over 100s before
+      // the first byte, and the upstream edge kills it with a 524. Streaming
+      // sends bytes as they are generated, so the connection stays open.
       body: JSON.stringify({
         model: this.model,
         messages,
         temperature,
+        stream: true,
       }),
     });
 
     if (!response.ok) {
       const error = await response.text();
       throw new Error(`GLM API error: ${response.status} - ${error}`);
+    }
+
+    const contentType = response.headers.get('content-type') || '';
+    if (contentType.includes('text/event-stream') && response.body) {
+      const content = await readSseContent(response.body);
+      if (!content.trim()) throw new Error('GLM API error: empty streamed response');
+      return stripThinkingBlock(content);
     }
 
     const data = await response.json();
