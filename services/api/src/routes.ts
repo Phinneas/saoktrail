@@ -323,7 +323,7 @@ export const createApp = () => {
     // are all I/O, not CPU). Do NOT use waitUntil: it gets cancelled shortly
     // after the response is sent, killing mid-generation MiniMax calls.
     await handleScheduledEvent(
-      { scheduledTime: new Date().toISOString() },
+      { scheduledTime: new Date().toISOString(), site: c.req.query('site') || undefined },
       env,
       c.executionCtx
     );

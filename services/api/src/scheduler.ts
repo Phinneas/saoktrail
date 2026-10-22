@@ -76,7 +76,32 @@ export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
     { site: 'shastahotsprings', siteName: 'Shasta Hot Springs', projectGid: env.ASANA_PROJECT_SHASTAHOTSPRINGS },
     { site: 'soaktrail', siteName: 'Soak Trail', projectGid: env.ASANA_PROJECT_SOAKTRAIL },
   ];
-  const sites: SiteProject[] = siteList.flatMap((s) => Array(Math.max(1, s.perRun ?? 1)).fill(s));
+  const queue: SiteProject[] = siteList.flatMap((s) => Array(Math.max(1, s.perRun ?? 1)).fill(s));
+
+  // Scheduled runs write ONE post per cron slot so each run stays well under
+  // Cloudflare's ~15 min limit (GLM takes 6-8 min per post). Slots start at
+  // SLOT_START_UTC_HOUR and repeat every SLOT_MINUTES (see crons in wrangler.toml).
+  // Manual runs (admin trigger) can pass event.site to run just that site.
+  const SLOT_START_UTC_HOUR = 9;
+  const SLOT_MINUTES = 20;
+  let sites: SiteProject[] = queue;
+  if (event.site) {
+    sites = queue.filter((s) => s.site === event.site);
+    if (sites.length === 0) {
+      console.log(`⏭️ Unknown site "${event.site}"; nothing to run.`);
+      return;
+    }
+  } else if (event.cron) {
+    const t = new Date(event.scheduledTime || Date.now());
+    const mins = t.getUTCHours() * 60 + t.getUTCMinutes() - SLOT_START_UTC_HOUR * 60;
+    const slot = Math.floor(mins / SLOT_MINUTES);
+    if (slot < 0 || slot >= queue.length) {
+      console.log(`⏭️ Cron slot ${slot} has no site assigned; nothing to run.`);
+      return;
+    }
+    sites = [queue[slot]];
+    console.log(`🕐 Cron slot ${slot}: ${sites[0].site}`);
+  }
 
   const minimax = new MinimaxClient(env.GLM_API_KEY);
 

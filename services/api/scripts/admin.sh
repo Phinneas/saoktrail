@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # One-command admin for the autoposter worker.
 #   ./scripts/admin.sh deploy    deploy the worker (soaktherockies-api)
-#   ./scripts/admin.sh run       run the autoposter now (real posts), wait for results
+#   ./scripts/admin.sh run SITE  write the next post for one site now (real post)
+#                                SITE: desertsoak soakcolorado soaktherockies
+#                                alaskahotsprings shastahotsprings soaktrail
 #   ./scripts/admin.sh check     show which Asana projects are connected
 #   ./scripts/admin.sh status    show blog queue + last cron run
 #   ./scripts/admin.sh new-key   make a fresh admin key and store it on the worker
@@ -26,7 +28,7 @@ case "$cmd" in
   deploy)  npx wrangler deploy --env=""; exit ;;
   new-key) set_key; exit ;;
   run|check|status) [ -s "$KEYFILE" ] || set_key ;;
-  *) sed -n '2,9p' "$SELF" | sed 's/^# \{0,1\}//'; exit ;;
+  *) sed -n '2,11p' "$SELF" | sed 's/^# \{0,1\}//'; exit ;;
 esac
 KEY="$(cat "$KEYFILE")"
 
@@ -39,7 +41,8 @@ call() { # method path
 }
 
 case "$cmd" in
-  run)    echo "Running autoposter. This takes several minutes..."; call POST /api/admin/trigger-scheduler ;;
+  run)    [ -n "${2:-}" ] || { echo "Usage: ./scripts/admin.sh run SITE"; exit 1; }
+          echo "Writing next post for $2. Takes 6-8 minutes per post..."; call POST "/api/admin/trigger-scheduler?site=$2" ;;
   check)  call GET /api/admin/asana-check ;;
   status) call GET /api/admin/blog-queue-status ;;
 esac
