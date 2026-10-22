@@ -82,3 +82,6 @@ render-service/package-lock.json
 .pnpm-store/
 data/*.db-shm
 data/*.db-wal
+
+# Autoposter admin key (scripts/admin.sh)
+services/api/.admin-secret
