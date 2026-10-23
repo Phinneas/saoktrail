@@ -45,5 +45,6 @@ bucket_name = "soaktrail-ugc"
 # Note: src/index.ts routes any "0 12 ..." cron to the deploy trigger (fixed
 # 2026-09-30). The deploy trigger needs the GITHUB_PAT secret to call GitHub Actions.
 # Off-peak window: 1-5 AM Pacific. Kept inside 09:00-12:00 UTC so it stays in the
-# window in both PDT and PST. One post per 20-min slot, then the site deploy.
-crons = ["*/20 9-11 * * SUN,WED", "0 12 * * SUN,WED"]
+# window in both PDT and PST. One post per 20-min slot. The site rebuild is
+# scheduled in GitHub Actions (.github/workflows/deploy-sites.yml) at 12:00 UTC.
+crons = ["*/20 9-11 * * SUN,WED"]
