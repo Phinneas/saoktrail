@@ -27,6 +27,20 @@ interface SiteProject {
   perRun?: number;
 }
 
+// Hard rule: no years in post titles or URL slugs (they go stale every January).
+// Removes "(2026)", "[2026 Data]", "for 2025", "in 2026" and bare years, then tidies.
+export function stripYears(s: string): string {
+  return String(s)
+    .replace(/\s*[\(\[][^\)\]]*\b20[0-4]\d\b[^\)\]]*[\)\]]/g, '')
+    .replace(/\s+(?:for|in|of)\s+20[0-4]\d\b/gi, '')
+    .replace(/\b20[0-4]\d\b/g, '')
+    .replace(/\s{2,}/g, ' ')
+    .replace(/\s+([:,.!?])/g, '$1')
+    .replace(/[\s:,\-–]+$/g, '')
+    .replace(/^[\s:,\-–]+/g, '')
+    .trim();
+}
+
 function slugify(s: string): string {
   return String(s)
     .toLowerCase()
@@ -149,8 +163,8 @@ export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
         notes: target.notes,
       });
       const parsed = parseBlogOutput(rawOutput);
-      const postTitle = parsed.title || target.name;
-      let slug = slugify(postTitle) || slugify(target.name) || target.gid;
+      const postTitle = stripYears(parsed.title || target.name) || stripYears(target.name);
+      let slug = slugify(postTitle) || slugify(stripYears(target.name)) || target.gid;
       // Guarantee slug uniqueness in D1
       const existingSlug = await env.DB
         .prepare('SELECT id FROM blog_posts WHERE slug = ?')

@@ -339,7 +339,8 @@ STRICT FORMATTING RULES:
 3. HEADING STRUCTURE: Use ## (H2) for main sections and ### (H3) for sub-sections.
 4. LENGTH: Your response MUST be between 800 and 1500 words.
 5. AVOID AI CLICHES: Do not use phrases like "In conclusion," "Nestled in the heart of," or "Whether you're a seasoned pro or a first-timer."
-6. NO THINKING BLOCKS: Do NOT prepend any internal reasoning, thinking process, or meta-commentary. Start directly with TITLE:. Do NOT include any thinking or thinking tags.`;
+6. NO YEARS IN THE TITLE: Never put a year (2025, 2026, etc.) in the TITLE. Years make posts look stale the next January. Years are fine in the body when they are facts (history, a rule change date).
+7. NO THINKING BLOCKS: Do NOT prepend any internal reasoning, thinking process, or meta-commentary. Start directly with TITLE:. Do NOT include any thinking or thinking tags.`;
 
     const userPrompt = `Write a comprehensive, long-form article based on the following content brief from an Asana task.
 
