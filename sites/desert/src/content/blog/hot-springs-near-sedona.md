@@ -1,5 +1,5 @@
 ---
-title: "Hot Springs Near Sedona: Your Ultimate Desert Soaking Guide for 2025"
+title: "Hot Springs Near Sedona: Your Ultimate Desert Soaking Guide"
 description: "Discover the restorative power of hot springs near Sedona, where ancient mineral waters meet the stunning red rock landscapes of Arizona's Verde Valley. From hidden desert soaking pools to developed spa retreats, this comprehensive guide reveals everything you need to plan your perfect thermal escape."
 date: 2026-09-01
 author: "desert-soak"

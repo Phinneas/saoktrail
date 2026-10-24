@@ -76,7 +76,7 @@ This is the easiest free soak in Utah. It is about 40 minutes south of Salt Lake
 
 The bottoms are mud, so bring water shoes. Swimsuits are required. No alcohol. The park closes at 10 p.m. Restrooms close for the season from October 15 to April 15.
 
-Read more: [Saratoga Hot Springs guide](/blog/saratoga-hot-springs-utah-the-ultimate-desert-soaking-guide-for-2025)
+Read more: [Saratoga Hot Springs guide](/blog/saratoga-hot-springs-utah-the-ultimate-desert-soaking-guide)
 
 ### Fifth Water Hot Springs, Diamond Fork Canyon
 
