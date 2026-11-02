@@ -3,8 +3,8 @@
     "id": "1",
     "slug": "franklin-hot-springs",
     "name": "Franklin Hot Springs",
-    "lat": 45.17817306,
-    "lng": -121.5736828,
+    "lat": 35.5878,
+    "lng": -120.6421,
     "temp_f": null,
     "fee": null,
     "access_type": "Drive-up",
@@ -12,19 +12,9 @@
     "description": "Hot springs in the Central Coast region of California.",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 5252.0,
-    "huc_cd": "17120009",
-    "nwis": {
-      "site_no": "451042121342100",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
@@ -37,7 +27,7 @@
     "fee": null,
     "access_type": "Not soakable",
     "season": "N/A",
-    "description": "Geothermal field in the Mayacamas Mountains. Not a soaking spring \u2014 the world's largest geothermal steam field used for power generation.",
+    "description": "Geothermal field in the Mayacamas Mountains. Not a soaking spring — the world's largest geothermal steam field used for power generation.",
     "has_post": false,
     "state": "CA",
     "_provenance": {}
@@ -180,8 +170,8 @@
     "id": "6",
     "slug": "wendel-hot-springs",
     "name": "Wendel Hot Springs",
-    "lat": 43.38274444,
-    "lng": -119.1145389,
+    "lat": 40.355,
+    "lng": -120.257,
     "temp_f": 205,
     "fee": null,
     "access_type": "Drive-up",
@@ -189,27 +179,17 @@
     "description": "Natural hot springs in Lassen County near the Nevada border.",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 4791.0,
-    "huc_cd": "17120009",
-    "nwis": {
-      "site_no": "432258119065201",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "7",
     "slug": "morgan-hot-spring",
     "name": "Morgan Hot Spring",
-    "lat": 45.8800694,
-    "lng": -117.9393694,
+    "lat": 40.382,
+    "lng": -121.513,
     "temp_f": 205,
     "fee": null,
     "access_type": "Hike-in",
@@ -217,19 +197,9 @@
     "description": "Geothermal hot spring near Lassen Volcanic National Park.",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 4493.0,
-    "huc_cd": "16040201",
-    "nwis": {
-      "site_no": "455248117562201",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
@@ -251,8 +221,8 @@
     "id": "9",
     "slug": "whitmore-hot-springs",
     "name": "Whitmore Hot Springs",
-    "lat": 43.2396222,
-    "lng": -119.2402083,
+    "lat": 37.6324,
+    "lng": -118.8124,
     "temp_f": null,
     "fee": null,
     "access_type": "Drive-up",
@@ -260,27 +230,17 @@
     "description": "Natural hot springs in the Eastern Sierra near Mammoth Lakes.",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 5242.0,
-    "huc_cd": "17120007",
-    "nwis": {
-      "site_no": "431423119142501",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "10",
     "slug": "hill-top-hot-springs",
     "name": "Hill Top Hot Springs",
-    "lat": 43.54009167,
-    "lng": -119.0816806,
+    "lat": 37.6642,
+    "lng": -118.7883,
     "temp_f": null,
     "fee": 0,
     "access_type": "Hike-in",
@@ -290,27 +250,17 @@
     "best_time": "Sunrise or sunset for best views",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 4151.0,
-    "huc_cd": "17120002",
-    "nwis": {
-      "site_no": "433224119045401",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "11",
     "slug": "willys-hot-spring",
     "name": "Willy's Hot Spring",
-    "lat": 45.79111667,
-    "lng": -118.0476389,
+    "lat": 37.6591,
+    "lng": -118.8425,
     "temp_f": null,
     "fee": 0,
     "access_type": "Hike-in",
@@ -320,27 +270,17 @@
     "best_time": "Weekday mornings",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 5433.0,
-    "huc_cd": "17050109",
-    "nwis": {
-      "site_no": "454728118025201",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "12",
     "slug": "crab-cooker-hot-springs",
     "name": "Crab Cooker Hot Springs",
-    "lat": 42.7984361,
-    "lng": -121.6686472,
+    "lat": 37.6633,
+    "lng": -118.7995,
     "temp_f": null,
     "fee": 0,
     "access_type": "Hike-in",
@@ -349,27 +289,17 @@
     "description": "Natural rock-walled hot spring near Mammoth Lakes in the Eastern Sierra.",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 5517.0,
-    "huc_cd": "17120008",
-    "nwis": {
-      "site_no": "424754121400701",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "13",
     "slug": "shepard-hot-springs",
     "name": "Shepard Hot Springs",
-    "lat": 45.716725,
-    "lng": -118.0950778,
+    "lat": 37.6668,
+    "lng": -118.8025,
     "temp_f": null,
     "fee": 0,
     "access_type": "Hike-in",
@@ -378,27 +308,17 @@
     "description": "Secluded natural hot spring tub near Mammoth Lakes in the Eastern Sierra.",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 5594.0,
-    "huc_cd": "17120009",
-    "nwis": {
-      "site_no": "454300118054201",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "14",
     "slug": "rock-tub-hot-springs",
     "name": "Rock Tub Hot Springs",
-    "lat": 44.45939167,
-    "lng": -117.6396139,
+    "lat": 37.6474,
+    "lng": -118.808,
     "temp_f": null,
     "fee": 0,
     "access_type": "Hike-in",
@@ -406,19 +326,9 @@
     "description": "Small natural hot spring tub near Mammoth Lakes in the Eastern Sierra.",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 4922.0,
-    "huc_cd": "17120003",
-    "nwis": {
-      "site_no": "442734117382301",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
@@ -442,8 +352,8 @@
     "id": "16",
     "slug": "reds-meadow-hot-springs",
     "name": "Red's Meadow Hot Springs",
-    "lat": 45.8100194,
-    "lng": -118.077761,
+    "lat": 37.618,
+    "lng": -119.074,
     "temp_f": null,
     "fee": null,
     "access_type": "Hike-in",
@@ -451,27 +361,17 @@
     "description": "Natural hot springs near Red's Meadow Resort in the Ansel Adams Wilderness.",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 4840.0,
-    "huc_cd": "17070102",
-    "nwis": {
-      "site_no": "454836118044001",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "17",
     "slug": "iva-bell-hot-springs",
     "name": "Iva Bell Hot Springs",
-    "lat": 44.1076361,
-    "lng": -121.4501139,
+    "lat": 37.532,
+    "lng": -119.025,
     "temp_f": null,
     "fee": 0,
     "access_type": "Hike-in",
@@ -479,22 +379,12 @@
     "clothing": "Clothing optional",
     "description": "Remote hot springs in the Ansel Adams Wilderness, accessible via a strenuous hike.",
     "best_time": "Late summer when trail is snow-free",
-    "insider_tips": "Requires a 10+ mile hike. Bring everything you need \u2014 no services.",
+    "insider_tips": "Requires a 10+ mile hike. Bring everything you need — no services.",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 5882.0,
-    "huc_cd": "17120008",
-    "nwis": {
-      "site_no": "440627121270001",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
@@ -519,61 +409,41 @@
     "id": "19",
     "slug": "wilbur-hot-springs",
     "name": "Wilbur Hot Springs",
-    "lat": 45.71885,
-    "lng": -118.1871917,
+    "lat": 39.0365,
+    "lng": -122.4192,
     "temp_f": 105,
     "fee": null,
     "access_type": "Resort",
     "season": "Year-round",
     "clothing": "Required",
-    "description": "Historic resort with naturally flowing mineral springs in Colusa County. Temperature ranges from 98-112\u00b0F.",
+    "description": "Historic resort with naturally flowing mineral springs in Colusa County. Temperature ranges from 98-112°F.",
     "best_time": "Midweek for availability",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 4857.0,
-    "huc_cd": "16040201",
-    "nwis": {
-      "site_no": "454308118111401",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "20",
     "slug": "sierra-hot-springs",
     "name": "Sierra Hot Springs",
-    "lat": 44.2601,
-    "lng": -119.0174694,
+    "lat": 39.575,
+    "lng": -120.3481,
     "temp_f": 104,
     "fee": null,
     "access_type": "Resort",
     "season": "Year-round",
     "clothing": "Clothing optional",
-    "description": "Non-profit retreat center with natural mineral springs in the Sierra Nevada. Temperature ranges from 98-110\u00b0F.",
+    "description": "Non-profit retreat center with natural mineral springs in the Sierra Nevada. Temperature ranges from 98-110°F.",
     "best_time": "Weekday visits for fewer crowds",
-    "insider_tips": "Book in advance \u2014 it's a popular retreat destination.",
+    "insider_tips": "Book in advance — it's a popular retreat destination.",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 5405.0,
-    "huc_cd": "17120009",
-    "nwis": {
-      "site_no": "441536119010301",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
@@ -595,8 +465,8 @@
     "id": "22",
     "slug": "little-caliente-hot-springs",
     "name": "Little Caliente Hot Springs",
-    "lat": 42.11119444,
-    "lng": -117.6993167,
+    "lat": 34.5405,
+    "lng": -119.6196,
     "temp_f": null,
     "fee": null,
     "access_type": "Hike-in",
@@ -604,19 +474,9 @@
     "description": "Smaller hot springs near Big Caliente in the Santa Ynez Mountains.",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 4979.0,
-    "huc_cd": "16040201",
-    "nwis": {
-      "site_no": "420640117415801",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
@@ -638,8 +498,8 @@
     "id": "24",
     "slug": "california-hot-springs",
     "name": "California Hot Springs",
-    "lat": 44.65035,
-    "lng": -117.4186722,
+    "lat": 35.881,
+    "lng": -118.67,
     "temp_f": 122,
     "fee": null,
     "access_type": "Drive-up",
@@ -647,27 +507,17 @@
     "description": "Historic hot springs community in the Sierra Nevada foothills of Tulare County.",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 3678.0,
-    "huc_cd": "17050202",
-    "nwis": {
-      "site_no": "443901117250701",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "25",
     "slug": "slates-hot-springs",
     "name": "Slates Hot Springs",
-    "lat": 44.1418472,
-    "lng": -119.375661,
+    "lat": 36.123,
+    "lng": -121.64,
     "temp_f": 122,
     "fee": null,
     "access_type": "Hike-in",
@@ -675,27 +525,17 @@
     "description": "Coastal hot springs on the Big Sur coastline. Access requires hiking or boat.",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 6120.0,
-    "huc_cd": "17050107",
-    "nwis": {
-      "site_no": "440831119223201",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "26",
     "slug": "desert-hot-springs",
     "name": "Desert Hot Springs",
-    "lat": 45.8367611,
-    "lng": -117.9916278,
+    "lat": 34.1167,
+    "lng": -116.3833,
     "temp_f": null,
     "fee": null,
     "access_type": "Drive-up",
@@ -703,27 +543,17 @@
     "description": "Desert community with multiple spa resorts fed by natural mineral hot springs near Palm Springs.",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 7160.0,
-    "huc_cd": "17120009",
-    "nwis": {
-      "site_no": "455012117593001",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "27",
     "slug": "coso-hot-springs",
     "name": "Coso Hot Springs",
-    "lat": 44.31012778,
-    "lng": -121.63466111,
+    "lat": 36.045,
+    "lng": -117.769,
     "temp_f": 207,
     "fee": null,
     "access_type": "Not accessible",
@@ -731,19 +561,9 @@
     "description": "Geothermal area within the Naval Air Weapons Station China Lake. Not accessible to the public.",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 6562.0,
-    "huc_cd": "17120009",
-    "nwis": {
-      "site_no": "441836121380501",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
@@ -1101,8 +921,8 @@
   {
     "id": "33",
     "name": "McCredie Hot Springs",
-    "lat": 43.50061944,
-    "lng": -118.5275194,
+    "lat": 43.706,
+    "lng": -122.288,
     "temp_f": 115,
     "fee": 0,
     "access_type": "Hike-in",
@@ -1477,26 +1297,16 @@
         ]
       }
     },
-    "elevation_ft": 5315.0,
-    "huc_cd": "16040201",
-    "nwis": {
-      "site_no": "433002118313901",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "34",
     "name": "Belknap Hot Springs",
-    "lat": 44.19421667,
-    "lng": -121.6052139,
+    "lat": 44.137,
+    "lng": -122.072,
     "temp_f": 130,
     "fee": 10,
     "access_type": "Drive-up",
@@ -1591,19 +1401,9 @@
         "amenities": []
       }
     },
-    "elevation_ft": 5063.0,
-    "huc_cd": "17070303",
-    "nwis": {
-      "site_no": "441139121361901",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
@@ -1641,8 +1441,8 @@
   {
     "id": "37",
     "name": "Moffett's Hot Springs",
-    "lat": 42.14066944,
-    "lng": -117.3879389,
+    "lat": 45.656,
+    "lng": -121.96,
     "temp_f": 100,
     "fee": 0,
     "access_type": "Hike-in",
@@ -1652,26 +1452,16 @@
     "description": "Natural pool along the Wind River, hidden forest setting.",
     "has_post": false,
     "slug": "moffetts-hot-springs",
-    "elevation_ft": 6072.0,
-    "huc_cd": "17050107",
-    "nwis": {
-      "site_no": "420826117231701",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "38",
     "name": "Kitson Hot Springs",
-    "lat": 44.4196833,
-    "lng": -120.5092528,
+    "lat": 43.69,
+    "lng": -122.375,
     "temp_f": 90,
     "fee": 0,
     "access_type": "Hike-in",
@@ -1681,26 +1471,16 @@
     "description": "Remote springs in the Willamette National Forest along Salt Creek.",
     "has_post": false,
     "slug": "kitson-hot-springs",
-    "elevation_ft": 4295.0,
-    "huc_cd": "17120003",
-    "nwis": {
-      "site_no": "442511120303301",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "39",
     "name": "Alvord Hot Springs",
-    "lat": 44.7046472,
-    "lng": -117.5022417,
+    "lat": 42.544,
+    "lng": -118.534,
     "temp_f": 130,
     "fee": 0,
     "access_type": "Drive-up",
@@ -1710,26 +1490,16 @@
     "description": "Desert springs at the base of Steens Mountain with stunning views.",
     "has_post": false,
     "slug": "alvord-hot-springs",
-    "elevation_ft": 4848.0,
-    "huc_cd": "17050116",
-    "nwis": {
-      "site_no": "444217117300801",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "40",
     "name": "Mickey Hot Springs",
-    "lat": 44.4697444,
-    "lng": -121.5735417,
+    "lat": 42.679,
+    "lng": -118.348,
     "temp_f": 180,
     "fee": 0,
     "access_type": "Drive-up",
@@ -1739,19 +1509,9 @@
     "description": "Geothermal area in the Alvord Desert, pools too hot for soaking in most spots.",
     "has_post": false,
     "slug": "mickey-hot-springs",
-    "elevation_ft": 6522.0,
-    "huc_cd": "16040201",
-    "nwis": {
-      "site_no": "442811121342501",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
@@ -1831,8 +1591,8 @@
   {
     "id": "44",
     "name": "Givens Hot Springs",
-    "lat": 44.5011694,
-    "lng": -120.6115694,
+    "lat": 43.416,
+    "lng": -116.707,
     "temp_f": 100,
     "fee": 5,
     "access_type": "Drive-up",
@@ -1842,26 +1602,16 @@
     "description": "Historic roadside soaking pool along the Snake River in eastern Oregon.",
     "has_post": false,
     "slug": "givens-hot-springs",
-    "elevation_ft": 5656.0,
-    "huc_cd": "17070305",
-    "nwis": {
-      "site_no": "443004120364201",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "45",
     "name": "Mundo Hot Springs",
-    "lat": 45.6692861,
-    "lng": -118.6194389,
+    "lat": 44.583,
+    "lng": -116.631,
     "temp_f": 104,
     "fee": 8,
     "access_type": "Drive-up",
@@ -1871,26 +1621,16 @@
     "description": "Small resort with covered soaking pool in eastern Oregon ranching country.",
     "has_post": false,
     "slug": "mundo-hot-springs",
-    "elevation_ft": 6879.0,
-    "huc_cd": "17120009",
-    "nwis": {
-      "site_no": "454009118371001",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "46",
     "name": "Paulina Hot Springs",
-    "lat": 44.43110556,
-    "lng": -117.5076528,
+    "lat": 43.73,
+    "lng": -121.247,
     "temp_f": 95,
     "fee": 0,
     "access_type": "Hike-in",
@@ -1900,19 +1640,9 @@
     "description": "Natural pools near East Lake in the Newberry National Volcanic Monument.",
     "has_post": false,
     "slug": "paulina-hot-springs",
-    "huc_cd": "17070302",
-    "nwis": {
-      "site_no": "442552117302801",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
-    "elevation_ft": 3358.0,
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis",
-      "elevation_ft": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
@@ -1947,8 +1677,8 @@
   {
     "id": "48",
     "name": "Willow Creek Hot Springs",
-    "lat": 44.5366611,
-    "lng": -121.5794028,
+    "lat": 42.276,
+    "lng": -118.265,
     "temp_f": 95,
     "fee": 0,
     "access_type": "Drive-up",
@@ -1958,26 +1688,16 @@
     "description": "BLM campground with natural soaking pool in the high desert.",
     "has_post": false,
     "slug": "willow-creek-hot-springs",
-    "elevation_ft": 5528.0,
-    "huc_cd": "16040201",
-    "nwis": {
-      "site_no": "443212121344601",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "49",
     "name": "Bigelow Hot Spring",
-    "lat": 45.74211389,
-    "lng": -118.2344444,
+    "lat": 44.239,
+    "lng": -122.059,
     "temp_f": 96,
     "fee": 0,
     "access_type": "Hike-in",
@@ -2193,26 +1913,16 @@
         "amenities": []
       }
     },
-    "elevation_ft": 6921.0,
-    "huc_cd": "17120009",
-    "nwis": {
-      "site_no": "454432118140401",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "50",
     "name": "Fisher Hot Springs",
-    "lat": 43.2587646,
-    "lng": -119.2474398,
+    "lat": 42.297,
+    "lng": -119.778,
     "temp_f": 100,
     "fee": 0,
     "access_type": "Hike-in",
@@ -2222,26 +1932,16 @@
     "description": "Warm pool in the high desert, near the Nevada border.",
     "has_post": false,
     "slug": "fisher-hot-springs",
-    "elevation_ft": 4042.0,
-    "huc_cd": "17120009",
-    "nwis": {
-      "site_no": "431532119144700",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "51",
     "name": "Blue Mountain Hot Springs",
-    "lat": 43.1500111,
-    "lng": -117.3420056,
+    "lat": 44.355,
+    "lng": -118.573,
     "temp_f": 102,
     "fee": 0,
     "access_type": "Hike-in",
@@ -2251,19 +1951,9 @@
     "description": "Natural springs in the Blue Mountains of eastern Oregon.",
     "has_post": false,
     "slug": "blue-mountain-hot-springs",
-    "elevation_ft": 4563.0,
-    "huc_cd": "17050108",
-    "nwis": {
-      "site_no": "430900117203101",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
@@ -2277,7 +1967,7 @@
     "access_type": "Restricted",
     "season": "Year-round",
     "clothing": "",
-    "description": "Geothermal area near The Geysers \u2014 extreme heat, not for soaking.",
+    "description": "Geothermal area near The Geysers — extreme heat, not for soaking.",
     "has_post": false,
     "state": "CA",
     "_provenance": {}
@@ -2286,8 +1976,8 @@
     "id": "53",
     "slug": "susanville-hot-spring",
     "name": "Susanville Hot Spring",
-    "lat": 45.47330556,
-    "lng": -118.1945167,
+    "lat": 40.364,
+    "lng": -120.243,
     "temp_f": 204,
     "fee": null,
     "access_type": "Drive-up",
@@ -2296,19 +1986,9 @@
     "description": "Hot springs near Susanville in Lassen County.",
     "has_post": false,
     "state": "CA",
-    "elevation_ft": 4968.0,
-    "huc_cd": "17120001",
-    "nwis": {
-      "site_no": "452824118114001",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
@@ -2331,8 +2011,8 @@
     "id": "55",
     "slug": "lithia-springs-resort",
     "name": "Lithia Springs Resort",
-    "lat": 42.49265,
-    "lng": -119.6336639,
+    "lat": 42.195,
+    "lng": -122.617,
     "temp_f": 102,
     "fee": 0,
     "access_type": "Resort",
@@ -2341,19 +2021,9 @@
     "description": "Luxury resort in Ashland with private mineral soaking tubs, wine garden, spa.",
     "has_post": false,
     "state": "OR",
-    "elevation_ft": 6019.0,
-    "huc_cd": "17120008",
-    "nwis": {
-      "site_no": "422934119380101",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
@@ -2392,8 +2062,8 @@
     "id": "58",
     "slug": "east-lake-hot-springs",
     "name": "East Lake Hot Springs",
-    "lat": 43.73619444,
-    "lng": -119.63299167,
+    "lat": 43.7,
+    "lng": -121.35,
     "temp_f": 100,
     "fee": null,
     "access_type": "Hike-in",
@@ -2402,27 +2072,17 @@
     "description": "Small pool on East Lake shore in Newberry Volcanic Monument; accessible by boat or short hike; clothing-optional.",
     "has_post": false,
     "state": "OR",
-    "elevation_ft": 4838.0,
-    "huc_cd": "17120007",
-    "nwis": {
-      "site_no": "434410119375901",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "59",
     "slug": "grande-hot-springs",
     "name": "Grande Hot Springs",
-    "lat": 44.20627778,
-    "lng": -120.2896389,
+    "lat": 45.35,
+    "lng": -117.23,
     "temp_f": 102,
     "fee": 15,
     "access_type": "Resort",
@@ -2431,27 +2091,17 @@
     "description": "Resort with outdoor pools near Joseph in the Wallowa Mountains; $15 day use; family-friendly.",
     "has_post": false,
     "state": "OR",
-    "elevation_ft": 5541.0,
-    "huc_cd": "16040201",
-    "nwis": {
-      "site_no": "441223120172301",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "60",
     "slug": "summer-lake-hot-springs",
     "name": "Summer Lake Hot Springs",
-    "lat": 45.83258889,
-    "lng": -117.967661,
+    "lat": 42.42,
+    "lng": -120.86,
     "temp_f": 107,
     "fee": 15,
     "access_type": "Resort",
@@ -2460,27 +2110,17 @@
     "description": "Resort with indoor/outdoor pools near Summer Lake; $15 day use; alkaline mineral waters; birdwatching.",
     "has_post": false,
     "state": "OR",
-    "elevation_ft": 2817.0,
-    "huc_cd": "17050203",
-    "nwis": {
-      "site_no": "454957117580401",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "61",
     "slug": "hot-lake-hot-springs",
     "name": "Hot Lake Hot Springs",
-    "lat": 45.5502083,
-    "lng": -118.1266139,
+    "lat": 45.23,
+    "lng": -118.2,
     "temp_f": 110,
     "fee": null,
     "access_type": "Resort",
@@ -2489,19 +2129,9 @@
     "description": "Historic restored 1900s resort near La Grande with indoor pools and spa.",
     "has_post": false,
     "state": "OR",
-    "elevation_ft": 6175.0,
-    "huc_cd": "17120009",
-    "nwis": {
-      "site_no": "453301118073601",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
@@ -2524,37 +2154,27 @@
     "id": "63",
     "slug": "borax-lake-hot-springs",
     "name": "Borax Lake Hot Springs",
-    "lat": 42.3265972,
-    "lng": -118.6039833,
+    "lat": 42.13,
+    "lng": -118.69,
     "temp_f": 212,
     "fee": null,
     "access_type": "Drive-up",
     "season": "Year-round",
     "clothing": "",
-    "description": "Small alkaline lake in Alvord Desert \u2014 too hot for soaking, view only; protected area.",
+    "description": "Small alkaline lake in Alvord Desert — too hot for soaking, view only; protected area.",
     "has_post": false,
     "state": "OR",
-    "elevation_ft": 5821.0,
-    "huc_cd": "17120007",
-    "nwis": {
-      "site_no": "421936118361401",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
     }
   },
   {
     "id": "64",
     "slug": "austin-hot-springs",
     "name": "Austin Hot Springs",
-    "lat": 45.01858347,
-    "lng": -122.003802,
+    "lat": 44.55,
+    "lng": -119.65,
     "temp_f": 186,
     "fee": null,
     "access_type": "Drive-up",
@@ -2563,19 +2183,47 @@
     "description": "Primitive undeveloped springs near Austin in Grant County; extreme heat, caution advised.",
     "has_post": false,
     "state": "OR",
-    "elevation_ft": 4565.61,
-    "huc_cd": "18010201",
-    "nwis": {
-      "site_no": "450108122000500",
-      "agency_cd": "USGS",
-      "site_type": "SP"
-    },
     "_provenance": {
-      "lat": "nwis",
-      "lng": "nwis",
-      "elevation_ft": "nwis",
-      "huc_cd": "nwis",
-      "nwis": "nwis"
+      "lat": "legacy (NWIS match rejected: wrong site)",
+      "lng": "legacy (NWIS match rejected: wrong site)"
+    }
+  },
+  {
+    "id": "65",
+    "slug": "hunt-hot-springs",
+    "name": "Hunt Hot Springs",
+    "lat": 41.0335,
+    "lng": -121.9321,
+    "temp_f": 117,
+    "fee": null,
+    "access_type": "Hike-in",
+    "season": "Year-round",
+    "clothing": "Clothing optional",
+    "description": "Rock and concrete pools on Kosk Creek near Big Bend, about 100 to 117°F. Private land with public access. Book through Hipcamp. Short hike from the Kosk Creek bridge.",
+    "has_post": true,
+    "state": "CA",
+    "_provenance": {
+      "lat": "komoot + hotspringslocator (agree within 0.1 mi)",
+      "lng": "komoot + hotspringslocator",
+      "temp_f": "blog post pool readings"
+    }
+  },
+  {
+    "id": "66",
+    "slug": "big-bend-hot-springs",
+    "name": "Big Bend Hot Springs",
+    "lat": 41.0204,
+    "lng": -121.9143,
+    "temp_f": null,
+    "fee": null,
+    "access_type": "Not accessible",
+    "season": "N/A",
+    "description": "Historic geothermal springs on the Pit River in Big Bend. Closed until further notice while Shasta County permits are pending.",
+    "has_post": false,
+    "state": "CA",
+    "_provenance": {
+      "lat": "OSM Hot Springs Road, Big Bend (approximate)",
+      "lng": "OSM Hot Springs Road, Big Bend (approximate)"
     }
   }
 ]
