@@ -2195,17 +2195,18 @@
     "lat": 41.0335,
     "lng": -121.9321,
     "temp_f": 117,
-    "fee": null,
+    "fee": 0,
     "access_type": "Hike-in",
     "season": "Year-round",
     "clothing": "Clothing optional",
-    "description": "Rock and concrete pools on Kosk Creek near Big Bend, about 100 to 117°F. Private land with public access. Book through Hipcamp. Short hike from the Kosk Creek bridge.",
+    "description": "Rock and concrete pools on Kosk Creek near Big Bend, about 100 to 117°F. Private land. The landowner allows free day-use access by foot from the Kosk Creek bridge. No camping at the springs.",
     "has_post": true,
     "state": "CA",
     "_provenance": {
       "lat": "komoot + hotspringslocator (agree within 0.1 mi)",
       "lng": "komoot + hotspringslocator",
-      "temp_f": "blog post pool readings"
+      "temp_f": "blog post pool readings",
+      "fee": "catraveltimes.com, May 2026 (free day use). hotspringslocator Jan 2026 said Hipcamp fee"
     }
   },
   {
