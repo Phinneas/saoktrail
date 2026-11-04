@@ -5,10 +5,12 @@ const ASANA_API = 'https://app.asana.com/api/1.0';
 
 // Only two kinds of task are picked up; everything else (ops, SEO chores, PDFs,
 // reviews) is ignored by the autoposter. The prefix is stripped from the name.
-//   "Article: <topic>"  -> write a new post
-//   "Rewrite: <label>"  -> rewrite an existing post; its URL or slug goes in notes
-const ARTICLE_PREFIX_RE = /^\s*article\s*:\s*/i;
-const REWRITE_PREFIX_RE = /^\s*rewrite\s*:\s*/i;
+//   "Article: <topic>" or "New page: <topic>"  -> write a new post
+//   "Rewrite: <label>" or "Retrofit: <label>"  -> rewrite an existing post; its
+//       /blog/<slug> URL goes in the name or notes
+// An optional tag like "[PRIORITY]" before the colon is allowed and dropped.
+const ARTICLE_PREFIX_RE = /^\s*(?:article|new page)\s*(?:\[[^\]]*\]\s*)?:\s*/i;
+const REWRITE_PREFIX_RE = /^\s*(?:rewrite|retrofit)\s*(?:\[[^\]]*\]\s*)?:\s*/i;
 
 function authHeaders(pat) {
   return {
