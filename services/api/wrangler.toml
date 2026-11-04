@@ -17,6 +17,8 @@ compatibility_date = "2026-03-26"
 ENVIRONMENT = "production"
 # Kill switch for the Asana autoposter. Set to "true" to re-enable.
 AUTOPOSTER_ENABLED = "true"
+# Asana project GIDs are not secret; set here so no `wrangler secret put` is needed.
+ASANA_PROJECT_WASHINGTONHOTSPRINGS = "1218344132693889"
 
 [env.development]
 vars = { ENVIRONMENT = "development" }

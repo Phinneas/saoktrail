@@ -83,6 +83,9 @@ function formatD1Entry(row: any) {
     htmlBody,
     headings: extractHeadings(htmlBody),
     slug: row.slug,
+    // A Rewrite: task's output. Shown in place of the committed MDX post with
+    // the same slug (see mergedBlog).
+    replacesMdx: Number(row.replaces_mdx) === 1,
   };
 }
 

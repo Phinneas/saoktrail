@@ -3,10 +3,12 @@
 
 const ASANA_API = 'https://app.asana.com/api/1.0';
 
-// Only tasks whose name starts with "Article:" are turned into blog posts.
-// Everything else (ops, SEO chores, PDFs, reviews) is ignored by the autoposter.
-// The prefix is stripped before the name is used as the post topic.
+// Only two kinds of task are picked up; everything else (ops, SEO chores, PDFs,
+// reviews) is ignored by the autoposter. The prefix is stripped from the name.
+//   "Article: <topic>"  -> write a new post
+//   "Rewrite: <label>"  -> rewrite an existing post; its URL or slug goes in notes
 const ARTICLE_PREFIX_RE = /^\s*article\s*:\s*/i;
+const REWRITE_PREFIX_RE = /^\s*rewrite\s*:\s*/i;
 
 function authHeaders(pat) {
   return {
@@ -16,7 +18,7 @@ function authHeaders(pat) {
   };
 }
 
-// List incomplete "Article:" tasks in a project, paginated. Returns [{ gid, name, notes, dueOn }].
+// List incomplete "Article:" and "Rewrite:" tasks in a project, paginated. Returns [{ gid, name, notes, dueOn }].
 // We fetch all tasks and filter `!completed` client-side (Asana has no `completed=false`
 // filter param; `completed_since` semantics are ambiguous across API versions).
 export async function listOpenTasks(pat, projectGid) {
@@ -43,10 +45,13 @@ export async function listOpenTasks(pat, projectGid) {
     }
     const data = await res.json();
     for (const t of data.data || []) {
-      if (!t.completed && ARTICLE_PREFIX_RE.test(t.name || '')) {
+      const name = t.name || '';
+      const kind = ARTICLE_PREFIX_RE.test(name) ? 'article' : REWRITE_PREFIX_RE.test(name) ? 'rewrite' : null;
+      if (!t.completed && kind) {
         tasks.push({
           gid: t.gid,
-          name: t.name.replace(ARTICLE_PREFIX_RE, '').trim(),
+          kind,
+          name: name.replace(kind === 'article' ? ARTICLE_PREFIX_RE : REWRITE_PREFIX_RE, '').trim(),
           notes: t.notes || '',
           dueOn: t.due_on || null,
         });

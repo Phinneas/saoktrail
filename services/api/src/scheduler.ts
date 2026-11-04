@@ -13,6 +13,7 @@ export interface Env {
   ASANA_PROJECT_SOAKTHEROCKIES?: string;
   ASANA_PROJECT_ALASKAHOTSPRINGS?: string;
   ASANA_PROJECT_SHASTAHOTSPRINGS?: string;
+  ASANA_PROJECT_WASHINGTONHOTSPRINGS?: string;
   ASANA_PROJECT_SOAKTRAIL?: string;
   AUTOPOSTER_ENABLED?: string;
   AI?: any;
@@ -39,6 +40,45 @@ export function stripYears(s: string): string {
     .replace(/[\s:,\-–]+$/g, '')
     .replace(/^[\s:,\-–]+/g, '')
     .trim();
+}
+
+// Site slug -> folder in the monorepo, for reading a committed MDX post to rewrite.
+const SITE_DIRS: Record<string, string> = {
+  desertsoak: 'desert',
+  soakcolorado: 'soakcolorados',
+  soaktherockies: 'soaktherockies',
+  alaskahotsprings: 'soakalaska',
+  shastahotsprings: 'mountshasthotsprings',
+  soaktrail: 'soaktrail',
+  washingtonhotsprings: 'wa_hot',
+};
+const REPO_RAW = 'https://raw.githubusercontent.com/Phinneas/saoktrail/main';
+
+// The post to rewrite: a /blog/<slug> URL or a bare slug, in the notes or name.
+export function rewriteSlugFrom(...texts: string[]): string | null {
+  for (const t of texts) {
+    const url = String(t || '').match(/\/blog\/([a-z0-9][a-z0-9-]*)/i);
+    if (url) return url[1].toLowerCase();
+  }
+  for (const t of texts) {
+    const bare = String(t || '').match(/^\s*([a-z0-9]+(?:-[a-z0-9]+)+)\s*$/m);
+    if (bare) return bare[1];
+  }
+  return null;
+}
+
+// Split MDX/MD frontmatter. Returns the title, image and date it declares, and
+// the body with frontmatter and import/export lines removed.
+export function splitFrontmatter(src: string) {
+  const m = src.match(/^---\n([\s\S]*?)\n---\n?/);
+  const fm = m ? m[1] : '';
+  const get = (k: string) => {
+    const r = fm.match(new RegExp(`^${k}:\\s*["']?(.*?)["']?\\s*$`, 'm'));
+    return r ? r[1] : '';
+  };
+  const body = (m ? src.slice(m[0].length) : src)
+    .split('\n').filter((l) => !/^\s*(import|export)\s/.test(l)).join('\n').trim();
+  return { title: get('title'), image: get('image'), date: get('date'), body };
 }
 
 function slugify(s: string): string {
@@ -89,6 +129,7 @@ export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
     { site: 'alaskahotsprings', siteName: 'Alaska Hot Springs', projectGid: env.ASANA_PROJECT_ALASKAHOTSPRINGS },
     { site: 'shastahotsprings', siteName: 'Shasta Hot Springs', projectGid: env.ASANA_PROJECT_SHASTAHOTSPRINGS },
     { site: 'soaktrail', siteName: 'Soak Trail', projectGid: env.ASANA_PROJECT_SOAKTRAIL },
+    { site: 'washingtonhotsprings', siteName: 'Washington Hot Springs', projectGid: env.ASANA_PROJECT_WASHINGTONHOTSPRINGS },
   ];
   const queue: SiteProject[] = siteList.flatMap((s) => Array(Math.max(1, s.perRun ?? 1)).fill(s));
 
@@ -157,6 +198,15 @@ export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
     console.log(`📝 [${siteCfg.site}] Generating from Asana task: ${target.name}`);
 
     try {
+      if (target.kind === 'rewrite') {
+        await runRewrite(env, minimax, siteCfg, target);
+        const done = await markTaskComplete(env.ASANA_PAT, target.gid);
+        console.log(done
+          ? `✅ [${siteCfg.site}] Marked rewrite task complete: ${target.gid}`
+          : `⚠️ Rewrite saved but failed to mark Asana task ${target.gid} complete.`);
+        continue;
+      }
+
       const rawOutput = await minimax.generateBlogPostFromBrief({
         siteName: siteCfg.siteName,
         taskName: target.name,
@@ -268,4 +318,93 @@ export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
   }
 
   console.log('🗓️ Scheduler run complete.');
+}
+
+
+// Rewrite an existing post (a "Rewrite:" Asana task). The source is the site's
+// D1 post with that slug, or else its committed MDX file. The result is saved to
+// D1 under the SAME slug; when the source was MDX it is flagged replaces_mdx so
+// the site shows it instead of the file. The URL never changes.
+export async function runRewrite(env: Env, minimax: any, siteCfg: SiteProject, target: any) {
+  const slug = rewriteSlugFrom(target.notes, target.name);
+  if (!slug) throw new Error('Rewrite task has no /blog/<slug> URL or slug in its notes or name');
+
+  const row: any = await env.DB.prepare('SELECT * FROM blog_posts WHERE slug = ?').bind(slug).first();
+  if (row && row.site !== siteCfg.site) {
+    throw new Error(`Slug "${slug}" belongs to ${row.site}, not ${siteCfg.site}`);
+  }
+
+  let originalTitle = '';
+  let originalBody = '';
+  let originalImage: string | null = null;
+  let originalDate: string | null = null;
+  let fromMdx = false;
+
+  const dir = SITE_DIRS[siteCfg.site];
+  if (dir) {
+    for (const ext of ['mdx', 'md']) {
+      const res = await fetch(`${REPO_RAW}/sites/${dir}/src/content/blog/${slug}.${ext}`);
+      if (res.ok) {
+        const fm = splitFrontmatter(await res.text());
+        originalTitle = fm.title || slug;
+        originalBody = fm.body;
+        originalImage = /^https?:\/\//.test(fm.image) ? fm.image : null;
+        originalDate = fm.date || null;
+        fromMdx = true;
+        break;
+      }
+    }
+  }
+  if (!fromMdx && row && row.status === 'published') {
+    originalTitle = row.title;
+    // Drop the leading image + credit the autoposter adds; it is re-added below.
+    originalBody = String(row.body || '').replace(/^!\[[^\]]*\]\([^)]*\)\s*(\n\*?Photo[^\n]*\n)?/, '').trim();
+    originalImage = row.image_url || null;
+    originalDate = row.published_at || null;
+  }
+  if (!originalBody) throw new Error(`Rewrite target not found for ${siteCfg.site}: ${slug}`);
+
+  console.log(`♻️ [${siteCfg.site}] Rewriting ${slug} (${fromMdx ? 'MDX' : 'D1'} source, ${originalBody.length} chars)`);
+  const raw = await minimax.rewritePost({
+    siteName: siteCfg.siteName,
+    originalTitle,
+    originalBody,
+    notes: target.notes,
+  });
+  const parsed = parseBlogOutput(raw);
+  const title = stripYears(parsed.title || originalTitle) || stripYears(originalTitle);
+
+  let body = parsed.body;
+  try {
+    const humanized = await minimax.humanizeBody(parsed.body, siteCfg.siteName);
+    if (humanized && humanized.trim()) body = humanized;
+  } catch (hErr: any) {
+    console.warn(`⚠️ [${siteCfg.site}] Humanize pass failed on rewrite: ${hErr.message}`);
+  }
+
+  let imageUrl = originalImage;
+  let credit = '';
+  if (!imageUrl && env.PEXELS_API_KEY) {
+    try {
+      const img = await new PexelsClient(env.PEXELS_API_KEY).getBestImage(parsed.imagePrompt || title);
+      if (img) { imageUrl = img.imageUrl; credit = `\n\n${img.creditMarkdown}`; }
+    } catch (imgErr: any) {
+      console.error(`⚠️ Image fetch failed: ${imgErr.message}`);
+    }
+  }
+  const finalBody = imageUrl ? `![${title}](${imageUrl})${credit}\n\n${body}` : body;
+  const publishedAt = originalDate ? new Date(originalDate).toISOString() : new Date().toISOString();
+
+  if (row) {
+    await env.DB.prepare(
+      `UPDATE blog_posts SET title = ?, body = ?, excerpt = ?, image_url = ?, asana_task_gid = ?,
+         status = 'published', replaces_mdx = ?, updated_at = datetime('now') WHERE id = ?`
+    ).bind(title, finalBody, parsed.excerpt || '', imageUrl, target.gid, fromMdx ? 1 : Number(row.replaces_mdx) || 0, row.id).run();
+  } else {
+    await env.DB.prepare(
+      `INSERT INTO blog_posts (title, slug, body, excerpt, tags, featured_springs, published_at, author, image_url, site, asana_task_gid, status, replaces_mdx)
+       VALUES (?, ?, ?, ?, '[]', '[]', ?, ?, ?, ?, ?, 'published', ?)`
+    ).bind(title, slug, finalBody, parsed.excerpt || '', publishedAt, siteCfg.siteName, imageUrl, siteCfg.site, target.gid, fromMdx ? 1 : 0).run();
+  }
+  console.log(`💾 [${siteCfg.site}] Rewrite saved: ${slug}`);
 }

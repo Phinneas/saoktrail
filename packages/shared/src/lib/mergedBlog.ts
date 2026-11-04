@@ -35,10 +35,15 @@ export async function getMergedBlogEntries(
     remote = [];
   }
 
+  // Rewrites (replacesMdx) win over the committed MDX post with the same slug.
+  const rewritten = new Set(
+    remote.filter((e: any) => e.replacesMdx).map((e: any) => String(e.slug || e.id))
+  );
   const seen = new Set<string>();
   const merged: any[] = [];
   for (const e of local) {
     const key = String(e.id);
+    if (rewritten.has(key)) continue;
     if (!seen.has(key)) {
       seen.add(key);
       merged.push(e);
@@ -62,6 +67,12 @@ export async function getMergedBlogEntry(
   siteSlug: string,
   slug: string
 ): Promise<{ entry: any; Content: any; headings: any[] } | null> {
+  // A rewrite of this slug in D1 replaces the committed MDX version.
+  const rewrite = await getD1BlogEntry(api, siteSlug, slug);
+  if (rewrite && rewrite.replacesMdx) {
+    return { entry: rewrite, Content: null, headings: rewrite.headings || [] };
+  }
+
   try {
     const local = await getEntry("blog", slug);
     if (local && !(local as any).data?.draft) {
@@ -72,7 +83,7 @@ export async function getMergedBlogEntry(
     // not found locally — try D1
   }
 
-  const remote = await getD1BlogEntry(api, siteSlug, slug);
+  const remote = rewrite;
   if (remote) {
     return { entry: remote, Content: null, headings: remote.headings || [] };
   }

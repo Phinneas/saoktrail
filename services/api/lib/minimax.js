@@ -368,6 +368,42 @@ BODY:
   // using the Humanizer rules (embedded mode). Only the BODY is sent through
   // this; TITLE / EXCERPT / IMAGE_PROMPT are untouched. Lower temperature for
   // a more faithful rewrite. Caller should fall back to the raw body on error.
+  // Rewrite an existing post. Keeps the subject and the facts, improves the
+  // writing and structure, and follows the task's notes as the brief.
+  async rewritePost({ siteName, originalTitle, originalBody, notes }) {
+    const systemPrompt = `You are an editor for '${siteName}', a hot springs travel publication. You rewrite existing posts so they are clearer, more useful and more accurate, while keeping their subject.
+
+RULES:
+1. Keep the same subject and search intent as the original. Keep every concrete fact (names, distances, temperatures, prices, rules) unless the brief says it is wrong. Do not invent new facts, prices or quotes.
+2. Lead with the BLUF: the direct answer in the first paragraph.
+3. NO BULLETED OR NUMBERED LISTS. Use paragraphs. Tables are allowed for comparisons.
+4. NO H1 (#). Use ## and ### headings.
+5. LENGTH: 800 to 1500 words.
+6. NO YEARS IN THE TITLE.
+7. Remove filler, repetition and AI cliches ("nestled", "in conclusion", "whether you're a seasoned").
+8. Start directly with TITLE:. No thinking, reasoning or commentary.`;
+    const userPrompt = `Rewrite this post.
+
+EDITOR'S BRIEF (follow it; it overrides the original where they conflict):
+${notes && String(notes).trim() ? String(notes).trim() : '(none: improve clarity, structure and usefulness, keep all facts)'}
+
+ORIGINAL TITLE: ${originalTitle}
+
+ORIGINAL POST:
+${originalBody}
+
+OUTPUT FORMAT:
+TITLE: [the rewritten title]
+EXCERPT: [2-sentence meta description]
+IMAGE_PROMPT: [3-4 photo keywords]
+BODY:
+[the rewritten post in markdown]`;
+    return this.chat([
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: userPrompt },
+    ]);
+  }
+
   async humanizeBody(body, siteName) {
     if (!body || !body.trim()) return body;
     const userPrompt = `Humanize the following blog post body written for '${siteName}'. Apply every applicable pattern from the system rules. Preserve all ## and ### markdown headings and the section structure. Do not invent any facts. Return ONLY the humanized markdown body — no preamble, no audit notes, no commentary.
