@@ -52,3 +52,8 @@ bucket_name = "soaktrail-ugc"
 # window in both PDT and PST. One post per 20-min slot. The site rebuild is
 # scheduled in GitHub Actions (.github/workflows/deploy-sites.yml) at 12:00 UTC.
 crons = ["*/20 9-11 * * SUN,WED"]
+
+# Direct link to the humanizer for fact-checked rewrites (avoids workers.dev error 1042)
+[[services]]
+binding = "HUMANIZER"
+service = "humanizer-api"

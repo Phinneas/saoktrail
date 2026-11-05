@@ -17,6 +17,8 @@ export interface Env {
   // Rewrites go through the humanizer's fact-checked /v1/retrofit (Exa + Tavily).
   HUMANIZER_URL?: string;
   HUMANIZER_API_KEY?: string;
+  // Service binding to humanizer-api. Worker-to-worker calls over workers.dev are blocked (error 1042).
+  HUMANIZER?: { fetch: typeof fetch };
   ASANA_PROJECT_SOAKTRAIL?: string;
   AUTOPOSTER_ENABLED?: string;
   AI?: any;
@@ -384,7 +386,8 @@ export async function runRewrite(env: Env, minimax: any, siteCfg: SiteProject, t
   if (!env.HUMANIZER_URL || !env.HUMANIZER_API_KEY) {
     throw new Error('HUMANIZER_URL / HUMANIZER_API_KEY not set: rewrites need the fact-checked retrofit');
   }
-  const res = await fetch(`${env.HUMANIZER_URL.replace(/\/$/, '')}/v1/retrofit`, {
+  const call = env.HUMANIZER ? env.HUMANIZER.fetch.bind(env.HUMANIZER) : fetch;
+  const res = await call(`${env.HUMANIZER_URL.replace(/\/$/, '')}/v1/retrofit`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${env.HUMANIZER_API_KEY}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
