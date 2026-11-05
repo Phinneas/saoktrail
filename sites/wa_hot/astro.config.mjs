@@ -22,6 +22,12 @@ export default defineConfig({
   },
   redirects: {
     ...ghostRedirects,
+    // Merged duplicate posts
+    "/blog/washington-state-hotspring-resorts": { status: 301, destination: "/blog/washington-state-hot-springs-resorts" },
+    "/blog/the-complete-carson-hot-springs-spa-experience": { status: 301, destination: "/blog/carson-hot-springs-complete-visitor-guide" },
+    "/blog/things-to-do-near-carson-hot-springs": { status: 301, destination: "/blog/carson-hot-springs-complete-visitor-guide" },
+    "/blog/guide-to-washington-state-hot-springs": { status: 301, destination: "/blog/washington-hot-springs" },
+    "/blog/natural-hot-springs-in-washington-state": { status: 301, destination: "/blog/washington-hot-springs" },
   },
   adapter: cloudflare(),
   integrations: [
