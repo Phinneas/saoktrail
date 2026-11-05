@@ -56,13 +56,15 @@ export async function listOpenTasks(pat, projectGid) {
           name: name.replace(kind === 'article' ? ARTICLE_PREFIX_RE : REWRITE_PREFIX_RE, '').trim(),
           notes: t.notes || '',
           dueOn: t.due_on || null,
+          priority: /\[\s*priority\s*\]/i.test(name),
         });
       }
     }
     offset = data.next_page?.offset;
     if (!offset) break;
   }
-  return tasks;
+  // [PRIORITY] tasks jump the queue. Otherwise keep Asana project order (stable sort).
+  return tasks.sort((a, b) => Number(b.priority) - Number(a.priority));
 }
 
 // Mark a task complete. Uses the writable `completed` field on PUT /tasks/{gid}.
