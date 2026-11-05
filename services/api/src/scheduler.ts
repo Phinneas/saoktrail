@@ -1,7 +1,7 @@
 import { D1Database } from '@cloudflare/workers-types';
 import { MinimaxClient, parseBlogOutput } from '../lib/minimax.js';
 import { PexelsClient } from '../lib/pexels.js';
-import { listOpenTasks, markTaskComplete } from '../lib/asana.js';
+import { listOpenTasks, markTaskComplete, commentOnTask } from '../lib/asana.js';
 
 export interface Env {
   DB: D1Database;
@@ -14,6 +14,9 @@ export interface Env {
   ASANA_PROJECT_ALASKAHOTSPRINGS?: string;
   ASANA_PROJECT_SHASTAHOTSPRINGS?: string;
   ASANA_PROJECT_WASHINGTONHOTSPRINGS?: string;
+  // Rewrites go through the humanizer's fact-checked /v1/retrofit (Exa + Tavily).
+  HUMANIZER_URL?: string;
+  HUMANIZER_API_KEY?: string;
   ASANA_PROJECT_SOAKTRAIL?: string;
   AUTOPOSTER_ENABLED?: string;
   AI?: any;
@@ -53,6 +56,17 @@ const SITE_DIRS: Record<string, string> = {
   washingtonhotsprings: 'wa_hot',
 };
 const REPO_RAW = 'https://raw.githubusercontent.com/Phinneas/saoktrail/main';
+
+// Place hint added to every fact-check search.
+const SITE_REGIONS: Record<string, string> = {
+  desertsoak: 'Utah Nevada Arizona',
+  soakcolorado: 'Colorado',
+  soaktherockies: 'Idaho Montana Wyoming',
+  alaskahotsprings: 'Alaska',
+  shastahotsprings: 'Northern California Southern Oregon',
+  soaktrail: 'United States',
+  washingtonhotsprings: 'Washington state',
+};
 
 // The post to rewrite: a /blog/<slug> URL or a bare slug, in the notes or name.
 export function rewriteSlugFrom(...texts: string[]): string | null {
@@ -364,23 +378,31 @@ export async function runRewrite(env: Env, minimax: any, siteCfg: SiteProject, t
   }
   if (!originalBody) throw new Error(`Rewrite target not found for ${siteCfg.site}: ${slug}`);
 
-  console.log(`♻️ [${siteCfg.site}] Rewriting ${slug} (${fromMdx ? 'MDX' : 'D1'} source, ${originalBody.length} chars)`);
-  const raw = await minimax.rewritePost({
-    siteName: siteCfg.siteName,
-    originalTitle,
-    originalBody,
-    notes: target.notes,
-  });
-  const parsed = parseBlogOutput(raw);
-  const title = stripYears(parsed.title || originalTitle) || stripYears(originalTitle);
-
-  let body = parsed.body;
-  try {
-    const humanized = await minimax.humanizeBody(parsed.body, siteCfg.siteName);
-    if (humanized && humanized.trim()) body = humanized;
-  } catch (hErr: any) {
-    console.warn(`⚠️ [${siteCfg.site}] Humanize pass failed on rewrite: ${hErr.message}`);
+  console.log(`♻️ [${siteCfg.site}] Retrofitting ${slug} (${fromMdx ? 'MDX' : 'D1'} source, ${originalBody.length} chars)`);
+  // Fact-checked rewrite. No unverified fallback: if the humanizer is missing or fails,
+  // the task stays open and retries next run.
+  if (!env.HUMANIZER_URL || !env.HUMANIZER_API_KEY) {
+    throw new Error('HUMANIZER_URL / HUMANIZER_API_KEY not set: rewrites need the fact-checked retrofit');
   }
+  const res = await fetch(`${env.HUMANIZER_URL.replace(/\/$/, '')}/v1/retrofit`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${env.HUMANIZER_API_KEY}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      title: originalTitle,
+      body: originalBody,
+      brief: target.notes,
+      site: siteCfg.siteName,
+      region: SITE_REGIONS[siteCfg.site],
+    }),
+  });
+  if (!res.ok) throw new Error(`Retrofit HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
+  const rf: any = await res.json();
+  if (!rf.body || String(rf.body).length < 400) throw new Error('Retrofit returned an empty body');
+  const parsed = { title: rf.title, excerpt: rf.excerpt, body: rf.body, imagePrompt: '' };
+  const title = stripYears(parsed.title || originalTitle) || stripYears(originalTitle);
+  // No GLM humanize pass here: it could reintroduce facts the retrofit removed.
+  const body = parsed.body;
+  if (rf.report) await commentOnTask(env.ASANA_PAT, target.gid, rf.report);
 
   let imageUrl = originalImage;
   let credit = '';

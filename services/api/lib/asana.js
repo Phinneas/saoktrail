@@ -81,3 +81,18 @@ export async function markTaskComplete(pat, taskGid) {
   }
   return true;
 }
+
+// Add a comment to a task (e.g. the retrofit fact-check table). Returns true on success.
+export async function commentOnTask(pat, taskGid, text) {
+  if (!pat || !taskGid || !text) return false;
+  const res = await fetch(`${ASANA_API}/tasks/${taskGid}/stories`, {
+    method: 'POST',
+    headers: authHeaders(pat),
+    body: JSON.stringify({ data: { text: String(text).slice(0, 60000) } }),
+  });
+  if (!res.ok) {
+    console.error(`Asana comment failed (${res.status}): ${await res.text()}`);
+    return false;
+  }
+  return true;
+}

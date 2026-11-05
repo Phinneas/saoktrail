@@ -19,6 +19,8 @@ ENVIRONMENT = "production"
 AUTOPOSTER_ENABLED = "true"
 # Asana project GIDs are not secret; set here so no `wrangler secret put` is needed.
 ASANA_PROJECT_WASHINGTONHOTSPRINGS = "1218344132693889"
+# Fact-checked rewrites (Rewrite:/Retrofit: tasks). Also needs the HUMANIZER_API_KEY secret.
+HUMANIZER_URL = "https://humanizer-api.buzzuw2.workers.dev"
 
 [env.development]
 vars = { ENVIRONMENT = "development" }
