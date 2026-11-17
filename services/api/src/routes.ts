@@ -359,7 +359,7 @@ export const createApp = () => {
       return c.json({ error: 'GLM_API_KEY is not defined in environment.' }, 500);
     }
     
-    const minimax = new MinimaxClient(env.GLM_API_KEY as string);
+    const minimax = new MinimaxClient(env.GLM_API_KEY as string, undefined, { openrouterKey: (env as any).OPENROUTER_API_KEY, model: (env as any).WRITER_MODEL });
     
     let targetTopic = null;
     for (const topic of BlogQueue.topics) {

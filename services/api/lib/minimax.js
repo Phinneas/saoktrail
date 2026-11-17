@@ -226,29 +226,55 @@ async function readSseContent(body) {
   return content;
 }
 
+const GLM_DIRECT = { url: 'https://open.bigmodel.cn/api/paas/v4/chat/completions', model: 'GLM-5.3' };
+const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
+
 export class MinimaxClient {
-  constructor(apiKey, groupId) {
+  // opts.openrouterKey: when set, writing goes through OpenRouter (faster) using opts.model
+  // (default z-ai/glm-5.3). If OpenRouter fails and a GLM key exists, it falls back to GLM direct.
+  constructor(apiKey, groupId, opts = {}) {
     this.apiKey = apiKey || '';
-    this.baseUrl = 'https://open.bigmodel.cn/api/paas/v4/chat/completions';
-    this.model = 'GLM-5.3';
+    this.openrouterKey = opts.openrouterKey || '';
+    this.baseUrl = GLM_DIRECT.url;
+    this.model = GLM_DIRECT.model;
+    if (this.openrouterKey) {
+      this.baseUrl = OPENROUTER_URL;
+      this.model = opts.model || 'z-ai/glm-5.3';
+    }
   }
 
   async chat(messages, temperature = 0.7) {
+    if (this.openrouterKey) {
+      try {
+        return await this.chatOnce(OPENROUTER_URL, this.openrouterKey, this.model, messages, temperature, 'OpenRouter');
+      } catch (err) {
+        if (!this.apiKey) throw err;
+        console.warn(`OpenRouter failed, falling back to GLM direct: ${err.message}`);
+      }
+    }
     if (!this.apiKey) {
       throw new Error('GLM_API_KEY not configured');
     }
+    return this.chatOnce(GLM_DIRECT.url, this.apiKey, GLM_DIRECT.model, messages, temperature, 'GLM');
+  }
 
-    const response = await fetch(this.baseUrl, {
+  async chatOnce(url, key, model, messages, temperature, label) {
+    const headers = {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${key}`,
+    };
+    if (url === OPENROUTER_URL) {
+      headers['HTTP-Referer'] = 'https://www.soaktrail.com';
+      headers['X-Title'] = 'SoakTrail autoposter';
+    }
+    const response = await fetch(url, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.apiKey}`,
-      },
+      headers,
       // Stream the response. A non-streamed long post can take over 100s before
       // the first byte, and the upstream edge kills it with a 524. Streaming
       // sends bytes as they are generated, so the connection stays open.
       body: JSON.stringify({
-        model: this.model,
+        model,
         messages,
         temperature,
         stream: true,
@@ -257,13 +283,13 @@ export class MinimaxClient {
 
     if (!response.ok) {
       const error = await response.text();
-      throw new Error(`GLM API error: ${response.status} - ${error}`);
+      throw new Error(`${label} API error: ${response.status} - ${error}`);
     }
 
     const contentType = response.headers.get('content-type') || '';
     if (contentType.includes('text/event-stream') && response.body) {
       const content = await readSseContent(response.body);
-      if (!content.trim()) throw new Error('GLM API error: empty streamed response');
+      if (!content.trim()) throw new Error(`${label} API error: empty streamed response`);
       return stripThinkingBlock(content);
     }
 

@@ -21,6 +21,8 @@ AUTOPOSTER_ENABLED = "true"
 ASANA_PROJECT_WASHINGTONHOTSPRINGS = "1218344132693889"
 # Fact-checked rewrites (Rewrite:/Retrofit: tasks). Also needs the HUMANIZER_API_KEY secret.
 HUMANIZER_URL = "https://humanizer-api.buzzuw2.workers.dev"
+# Article writer model on OpenRouter. Used only when the OPENROUTER_API_KEY secret is set.
+WRITER_MODEL = "z-ai/glm-5.3"
 
 [env.development]
 vars = { ENVIRONMENT = "development" }

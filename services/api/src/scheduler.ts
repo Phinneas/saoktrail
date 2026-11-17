@@ -17,6 +17,9 @@ export interface Env {
   // Rewrites go through the humanizer's fact-checked /v1/retrofit (Exa + Tavily).
   HUMANIZER_URL?: string;
   HUMANIZER_API_KEY?: string;
+  // Article writing through OpenRouter. Unset key = GLM direct as before.
+  OPENROUTER_API_KEY?: string;
+  WRITER_MODEL?: string;
   // Service binding to humanizer-api. Worker-to-worker calls over workers.dev are blocked (error 1042).
   HUMANIZER?: { fetch: typeof fetch };
   ASANA_PROJECT_SOAKTRAIL?: string;
@@ -174,7 +177,7 @@ export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
     console.log(`🕐 Cron slot ${slot}: ${sites[0].site}`);
   }
 
-  const minimax = new MinimaxClient(env.GLM_API_KEY);
+  const minimax = new MinimaxClient(env.GLM_API_KEY, undefined, { openrouterKey: env.OPENROUTER_API_KEY, model: env.WRITER_MODEL });
 
   for (const siteCfg of sites) {
     if (!siteCfg.projectGid) {
