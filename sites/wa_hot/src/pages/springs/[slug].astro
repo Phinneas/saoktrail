@@ -127,6 +127,9 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
             <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
               <h2 class="h3 mb-4">About</h2>
               <p class="text-txt-s dark:text-darkmode-txt-s leading-relaxed">{spring.description}</p>
+              {spring.has_post && (
+                <p class="mt-4"><a href={`/blog/${spring.blog_slug || spring.slug}`} class="font-semibold underline">Read the full {spring.name} guide</a></p>
+              )}
             </div>
           )}
         </div>

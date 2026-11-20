@@ -19,10 +19,10 @@ content: |
 
   | Experience | Description |
   |:-----------|:------------|
-  | **Wild & Remote** | Hike to [Goldmyer](https://washingtonhotsprings.com/blog/goldmyer-hot-springs) or [Gamma Hot Springs](https://washingtonhotsprings.com/blog/gamma-hot-springs) for solitude in old-growth forest and undeveloped pools. |
+  | **Wild & Remote** | Hike to [Goldmyer](https://washingtonhotsprings.com/blog/goldmyer-hot-springs) or [Gamma Hot Springs](https://washingtonhotsprings.com/blog/gamma-hot-springs) for solitude in old-growth forest and true wilderness. |
   | **Resort & Relax** | Unwind at curated mineral pools with massage and mountain views. See [luxury Washington resorts](https://washingtonhotsprings.com/blog/washington-state-hot-springs-resorts). |
   | **Family Friendly** | Shallow pools, easy access, and space to explore. Start with our [family hot springs guide](https://washingtonhotsprings.com/blog/family-friendly-hot-springs-in-washington-state). |
-  | **Island Escape** | Soak in mineral pools with salt air and ocean views at [Doe Bay on Orcas Island](https://washingtonhotsprings.com/blog/doe-bay-hot-spring). |
+  | **Island Escape** | Book the heated soaking tubs and sauna at [Doe Bay Resort on Orcas Island](https://washingtonhotsprings.com/blog/doe-bay-hot-spring), with salt air and water views. |
 
   ---
 
@@ -32,7 +32,7 @@ content: |
 
   ### The Rainier-to-Gorge Loop
 
-  - **Day 1:** Soak at [Ohanapecosh](https://washingtonhotsprings.com/blog/ohanapecosh-hot-springs) under old-growth canopy inside Mount Rainier National Park.
+  - **Day 1:** Walk the Hot Springs Nature Trail at [Ohanapecosh](https://washingtonhotsprings.com/blog/ohanapecosh-hot-springs) inside Mount Rainier National Park. The springs are for viewing only. Soaking is not allowed.
   - **Day 2:** Drive the White Pass Scenic Byway to [Carson Hot Springs](https://washingtonhotsprings.com/blog/carson-hot-springs-complete-visitor-guide) for a historic stone soak and Columbia River Gorge views.
   - **Day 3:** Loop back toward the Seattle area — up the I-5 corridor or back over the Cascade crest — before heading home.
 

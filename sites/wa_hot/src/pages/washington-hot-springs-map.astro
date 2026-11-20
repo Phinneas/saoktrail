@@ -1008,7 +1008,7 @@ async function initMap() {
     detail.classList.remove('hidden');
     detail.style.display = '';
 
-    const blogSlug = spring.slug;
+    const blogSlug = spring.blog_slug || spring.slug;
 
     content.innerHTML = `
       <h2>${spring.name} ${spring.state === 'OR' ? '<span class="state-badge">OR</span>' : ''}</h2>
