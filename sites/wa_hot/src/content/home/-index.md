@@ -23,6 +23,7 @@ content: |
   | **Resort & Relax** | Unwind at curated mineral pools with massage and mountain views. See [luxury Washington resorts](https://washingtonhotsprings.com/blog/washington-state-hot-springs-resorts). |
   | **Family Friendly** | Shallow pools, easy access, and space to explore. Start with our [family hot springs guide](https://washingtonhotsprings.com/blog/family-friendly-hot-springs-in-washington-state). |
   | **Island Escape** | Book the heated soaking tubs and sauna at [Doe Bay Resort on Orcas Island](https://washingtonhotsprings.com/blog/doe-bay-hot-spring), with salt air and water views. |
+  | **Mineral Lake** | Float in a cold, mineral-heavy soda lake with two public beaches at [Soap Lake](https://washingtonhotsprings.com/blog/soap-lake-hot-springs-washington). It is not a hot spring. |
 
   ---
 
