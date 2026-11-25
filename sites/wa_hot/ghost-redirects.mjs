@@ -3,7 +3,7 @@
 // Regenerate by re-running the generator if blog slugs change.
 export const ghostRedirects = {
   "/baker-hot-springs-washington-state": { status: 301, destination: "/blog/baker-hot-springs-washington-state" },
-  "/best-hot-springs-near-seattle-washington": { status: 301, destination: "/blog/best-hot-springs-near-seattle-washington" },
+  "/best-hot-springs-near-seattle-washington": { status: 301, destination: "/blog/washington-hot-springs" },
   "/carson-hot-springs-complete-visitor-guide": { status: 301, destination: "/blog/carson-hot-springs-complete-visitor-guide" },
   "/doe-bay-hot-spring": { status: 301, destination: "/blog/doe-bay-hot-spring" },
   "/family-friendly-hot-springs-in-washington-state": { status: 301, destination: "/blog/family-friendly-hot-springs-in-washington-state" },

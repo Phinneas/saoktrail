@@ -28,6 +28,7 @@ export default defineConfig({
     "/blog/things-to-do-near-carson-hot-springs": { status: 301, destination: "/blog/carson-hot-springs-complete-visitor-guide" },
     "/blog/guide-to-washington-state-hot-springs": { status: 301, destination: "/blog/washington-hot-springs" },
     "/blog/natural-hot-springs-in-washington-state": { status: 301, destination: "/blog/washington-hot-springs" },
+    "/blog/best-hot-springs-near-seattle-washington": { status: 301, destination: "/blog/washington-hot-springs" },
   },
   adapter: cloudflare(),
   integrations: [
