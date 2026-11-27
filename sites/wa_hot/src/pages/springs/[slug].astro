@@ -71,6 +71,17 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
         <div class="lg:col-span-2">
+          {spring.status && (
+            <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
+              <h2 class="h3 mb-2">Status: <span class="capitalize">{spring.status}</span></h2>
+              {spring.status_note && <p class="text-txt-s dark:text-darkmode-txt-s mb-2">{spring.status_note}</p>}
+              <p class="text-xs text-txt-light dark:text-darkmode-txt-light">
+                Last verified {spring.last_verified}{spring.status_source && (<> against <a href={spring.status_source} rel="nofollow noopener" target="_blank" class="underline">this source</a></>)}.
+                {spring.location_source && <> Location from {spring.location_source}.</>}
+              </p>
+            </div>
+          )}
+
           <div class="glass p-6 mb-6 intersect:animate-fadeUp opacity-0">
             <h2 class="h3 mb-4">Details</h2>
             <div class="grid grid-cols-2 gap-4 text-sm">
@@ -108,10 +119,22 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
                   <p class="capitalize text-txt-p dark:text-darkmode-txt-p">{spring.season}</p>
                 </div>
               )}
-              {spring.fee !== undefined && (
+              {(spring.fee_note || spring.fee != null) && (
                 <div>
                   <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider text-xs">Fee</span>
-                  <p class="text-txt-p dark:text-darkmode-txt-p">{spring.fee === 0 ? "Free" : `$${spring.fee}`}</p>
+                  <p class="text-txt-p dark:text-darkmode-txt-p">{spring.fee_note || (spring.fee === 0 ? "Free" : `$${spring.fee}`)}</p>
+                </div>
+              )}
+              {spring.water_source && (
+                <div>
+                  <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider text-xs">Water source</span>
+                  <p class="capitalize text-txt-p dark:text-darkmode-txt-p">{spring.water_source}</p>
+                </div>
+              )}
+              {spring.reservation && spring.reservation !== "unknown" && (
+                <div>
+                  <span class="text-txt-light dark:text-darkmode-txt-light uppercase tracking-wider text-xs">Reservation needed</span>
+                  <p class="capitalize text-txt-p dark:text-darkmode-txt-p">{spring.reservation}</p>
                 </div>
               )}
               {spring.clothing && (

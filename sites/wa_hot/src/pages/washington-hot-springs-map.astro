@@ -1013,6 +1013,7 @@ async function initMap() {
     content.innerHTML = `
       <h2>${spring.name} ${spring.state === 'OR' ? '<span class="state-badge">OR</span>' : ''}</h2>
       <div class="detail-chips">
+        ${spring.status ? `<span class="chip">${spring.status}</span>` : ''}
         ${spring.temp_f ? `<span class="chip">🌡 ${spring.temp_f}°F</span>` : ''}
         ${spring.fee != null ? `<span class="chip">💰 ${spring.fee === 0 ? 'Free' : '$' + spring.fee}</span>` : ''}
         ${spring.access_type ? `<span class="chip">🥾 ${spring.access_type}</span>` : ''}

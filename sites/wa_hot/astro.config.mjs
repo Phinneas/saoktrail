@@ -29,6 +29,14 @@ export default defineConfig({
     "/blog/guide-to-washington-state-hot-springs": { status: 301, destination: "/blog/washington-hot-springs" },
     "/blog/natural-hot-springs-in-washington-state": { status: 301, destination: "/blog/washington-hot-springs" },
     "/blog/best-hot-springs-near-seattle-washington": { status: 301, destination: "/blog/washington-hot-springs" },
+    // Directory audit Nov 2026: duplicates, mislabels and Idaho springs removed
+    "/springs/hot-springs-washington-town": { status: 301, destination: "/directory" },
+    "/springs/mount-baker-hot-springs": { status: 301, destination: "/springs/baker-hot-springs" },
+    "/springs/skamania-hot-springs": { status: 301, destination: "/directory" },
+    "/springs/saint-martins-hot-springs": { status: 301, destination: "/springs/wind-river-hot-springs" },
+    "/springs/givens-hot-springs": { status: 301, destination: "/directory" },
+    "/springs/mundo-hot-springs": { status: 301, destination: "/directory" },
+    "/springs/paulina-hot-springs": { status: 301, destination: "/springs/paulina-lake-hot-springs" },
   },
   adapter: cloudflare(),
   integrations: [

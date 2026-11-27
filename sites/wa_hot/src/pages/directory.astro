@@ -9,7 +9,7 @@ const breadcrumbSchema = buildBreadcrumbSchema([
   { label: "Directory", href: "/directory" },
 ]);
 
-const pageDescription = `Explore ${springsData.length}+ hot springs across Washington and Oregon. Filter by temperature, access type, and state.`;
+const pageDescription = `Explore ${springsData.length} hot springs across Washington and Oregon with their status, fee and water source, each with a last-verified date.`;
 ---
 
 <BaseLayout
@@ -24,7 +24,7 @@ const pageDescription = `Explore ${springsData.length}+ hot springs across Washi
     <div class="container">
       <h1 class="h1 mb-4 intersect:animate-fadeUp opacity-0">Hot Springs Directory</h1>
       <p class="text-txt-s dark:text-darkmode-txt-s mb-8 intersect:animate-fadeUp opacity-0">
-        Browse all {springsData.length}+ catalogued hot springs across Washington and Oregon.
+        Browse all {springsData.length} hot springs in Washington and Oregon. Each one shows its current status and the date it was last verified.
       </p>
 
       <div id="directory-app" data-springs={JSON.stringify(springsData)}>
@@ -52,8 +52,14 @@ const pageDescription = `Explore ${springsData.length}+ hot springs across Washi
               </div>
 
               <div class="space-y-1 text-sm text-txt-s dark:text-darkmode-txt-s">
+                {spring.status && (
+                  <p class="font-semibold capitalize">{spring.status}{spring.water_source && spring.water_source !== "geothermal" ? ` · ${spring.water_source} water` : ""}</p>
+                )}
                 {spring.access_type && (
-                  <p class="capitalize">{spring.access_type}</p>
+                  <p class="capitalize">{spring.access_type}{spring.fee_note ? ` · ${spring.fee_note}` : spring.fee === 0 ? " · Free" : spring.fee != null ? ` · $${spring.fee}` : ""}</p>
+                )}
+                {spring.last_verified && (
+                  <p class="text-xs text-txt-light dark:text-darkmode-txt-light">Last verified {spring.last_verified}</p>
                 )}
                 {spring.description && (
                   <p class="text-txt-light dark:text-darkmode-txt-light line-clamp-2">{spring.description}</p>

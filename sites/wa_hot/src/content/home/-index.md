@@ -4,7 +4,7 @@ metaTitle: "Washington and Oregon Hot Springs: Access, Fees and Status"
 description: "Every hot spring in Washington and Oregon with its access, fee and current status. Know which springs are open, which need a reservation and which you cannot soak in."
 content: |
 
-  The Cascade Volcanic Arc stretches from British Columbia to Northern California, and along its flanks, groundwater heated by residual magma rises through fault lines to the surface. In Washington and Oregon, that geology has created more than 40 springs — from wilderness pools hidden deep in the Glacier Peak Wilderness to historic resort baths built by railroad workers in the 1890s.
+  The Cascade Volcanic Arc stretches from British Columbia to Northern California, and along its flanks, groundwater heated by residual magma rises through fault lines to the surface. In Washington and Oregon, that geology has created dozens of springs, from wilderness pools hidden deep in the Glacier Peak Wilderness to historic resort baths built by railroad workers in the 1890s.
 
   Some are a short walk from the car. Others require a backpack and a weekend. All of them carry the same minerals that have drawn people to these mountains for centuries.
 
@@ -44,7 +44,7 @@ content: |
 
   ## Coverage
 
-  **46 springs** across Washington and Oregon. Updated regularly with seasonal access conditions, road closures, and new trip routes.
+  **39 springs** across Washington and Oregon, each with its current status, fee and a last-verified date. Status checked November 2026.
 
   ---
 
