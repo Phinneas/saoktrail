@@ -9,8 +9,24 @@ const ASANA_API = 'https://app.asana.com/api/1.0';
 //   "Rewrite: <label>" or "Retrofit: <label>"  -> rewrite an existing post; its
 //       /blog/<slug> URL goes in the name or notes
 // An optional tag like "[PRIORITY]" before the colon is allowed and dropped.
+// The Retrofit Plan style also works: the kind as a leading tag, then the label.
+//   "[NEW PAGE] Sol Duc Hot Springs"          -> write a new post
+//   "[RETROFIT] Goldmyer: spec block"         -> rewrite the matching post
+// Other leading tags ([AUDIT], [TECH], ...) are not picked up.
 const ARTICLE_PREFIX_RE = /^\s*(?:article|new page)\s*(?:\[[^\]]*\]\s*)?:\s*/i;
 const REWRITE_PREFIX_RE = /^\s*(?:rewrite|retrofit)\s*(?:\[[^\]]*\]\s*)?:\s*/i;
+const ARTICLE_TAG_RE = /^\s*(?:\[\s*priority\s*\]\s*)?\[\s*(?:article|new page)\s*\]\s*/i;
+const REWRITE_TAG_RE = /^\s*(?:\[\s*priority\s*\]\s*)?\[\s*(?:rewrite|retrofit)\s*\]\s*/i;
+
+// Which kind of task a name is, and the name with its prefix or tag removed.
+export function taskKind(name) {
+  const n = String(name || '');
+  if (ARTICLE_PREFIX_RE.test(n)) return { kind: 'article', label: n.replace(ARTICLE_PREFIX_RE, '').trim() };
+  if (REWRITE_PREFIX_RE.test(n)) return { kind: 'rewrite', label: n.replace(REWRITE_PREFIX_RE, '').trim() };
+  if (ARTICLE_TAG_RE.test(n)) return { kind: 'article', label: n.replace(ARTICLE_TAG_RE, '').trim() };
+  if (REWRITE_TAG_RE.test(n)) return { kind: 'rewrite', label: n.replace(REWRITE_TAG_RE, '').trim() };
+  return { kind: null, label: n.trim() };
+}
 
 function authHeaders(pat) {
   return {
@@ -20,12 +36,24 @@ function authHeaders(pat) {
   };
 }
 
-// List incomplete "Article:" and "Rewrite:" tasks in a project, paginated. Returns [{ gid, name, notes, dueOn }].
+// List incomplete "Article:" and "Rewrite:" tasks in one project, or several
+// comma-separated project GIDs, paginated. Returns [{ gid, kind, name, notes, dueOn, priority }].
 // We fetch all tasks and filter `!completed` client-side (Asana has no `completed=false`
 // filter param; `completed_since` semantics are ambiguous across API versions).
 export async function listOpenTasks(pat, projectGid) {
   if (!pat) throw new Error('ASANA_PAT not configured');
-  if (!projectGid) return [];
+  const gids = String(projectGid || '').split(',').map((g) => g.trim()).filter(Boolean);
+  if (gids.length === 0) return [];
+  if (gids.length > 1) {
+    const seen = new Set();
+    const all = [];
+    for (const gid of gids) {
+      for (const t of await listOpenTasks(pat, gid)) {
+        if (!seen.has(t.gid)) { seen.add(t.gid); all.push(t); }
+      }
+    }
+    return all.sort((a, b) => Number(b.priority) - Number(a.priority));
+  }
 
   const tasks = [];
   let offset = undefined;
@@ -48,12 +76,12 @@ export async function listOpenTasks(pat, projectGid) {
     const data = await res.json();
     for (const t of data.data || []) {
       const name = t.name || '';
-      const kind = ARTICLE_PREFIX_RE.test(name) ? 'article' : REWRITE_PREFIX_RE.test(name) ? 'rewrite' : null;
+      const { kind, label } = taskKind(name);
       if (!t.completed && kind) {
         tasks.push({
           gid: t.gid,
           kind,
-          name: name.replace(kind === 'article' ? ARTICLE_PREFIX_RE : REWRITE_PREFIX_RE, '').trim(),
+          name: label,
           notes: t.notes || '',
           dueOn: t.due_on || null,
           priority: /\[\s*priority\s*\]/i.test(name),

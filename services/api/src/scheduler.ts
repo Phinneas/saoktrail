@@ -14,7 +14,9 @@ export interface Env {
   ASANA_PROJECT_ALASKAHOTSPRINGS?: string;
   ASANA_PROJECT_SHASTAHOTSPRINGS?: string;
   ASANA_PROJECT_WASHINGTONHOTSPRINGS?: string;
-  // Rewrites go through the humanizer's fact-checked /v1/retrofit (Exa + Tavily).
+  // Every post goes through the humanizer: /v1/retrofit (fact check, Exa + Tavily +
+  // official sites) and then /v1/humanize (style, with every figure preserved).
+  // Any ASANA_PROJECT_* value can list several project GIDs, comma-separated.
   HUMANIZER_URL?: string;
   HUMANIZER_API_KEY?: string;
   // Article writing through OpenRouter. Unset key = GLM direct as before.
@@ -84,6 +86,126 @@ export function rewriteSlugFrom(...texts: string[]): string | null {
     if (bare) return bare[1];
   }
   return null;
+}
+
+// An explicit "Slug: <slug>" line in a brief.
+export function briefSlug(notes: string): string | null {
+  const m = String(notes || '').match(/^\s*slug\s*:\s*\/?(?:blog\/)?([a-z0-9]+(?:-[a-z0-9]+)*)\s*$/im);
+  return m ? m[1].toLowerCase() : null;
+}
+
+// A title the brief asks for: "Title: 'X'" or Title: "X" on its own line.
+export function briefTitle(notes: string): string | null {
+  const m = String(notes || '').match(/^\s*title\s*:\s*['"\u2018\u201c]?(.+?)['"\u2019\u201d]?\.?\s*$/im);
+  return m ? m[1].trim() : null;
+}
+
+// Pick the one existing post a task label points at, e.g. "Goldmyer: spec block" ->
+// goldmyer-hot-springs. Every word of the label before the colon must be in the slug.
+// Returns null when no post or more than one post matches, so a vague task never
+// rewrites the wrong page.
+export function matchSlugByLabel(label: string, slugs: string[]): string | null {
+  const head = String(label || '').split(':')[0];
+  const key = slugify(head.replace(/\bhot springs?\b/gi, ''));
+  if (!key) return null;
+  const words = key.split('-').filter(Boolean);
+  const hits = [...new Set(slugs)].filter((s) => words.every((w) => s.split('-').includes(w)));
+  if (hits.length === 1) return hits[0];
+  const starts = hits.filter((s) => s.startsWith(`${key}-`) || s === key);
+  return starts.length === 1 ? starts[0] : null;
+}
+
+async function siteSlugs(env: Env, site: string): Promise<string[]> {
+  const out: string[] = [];
+  try {
+    const rows: any = await env.DB.prepare(
+      "SELECT slug FROM blog_posts WHERE site = ? AND status = 'published'"
+    ).bind(site).all();
+    for (const r of rows?.results ?? []) out.push(String(r.slug));
+  } catch { /* D1 lookup is best effort */ }
+  const dir = SITE_DIRS[site];
+  if (dir) {
+    try {
+      const res = await fetch(`https://api.github.com/repos/Phinneas/saoktrail/contents/sites/${dir}/src/content/blog`, {
+        headers: { 'User-Agent': 'soakatlas-autoposter', Accept: 'application/vnd.github+json' },
+      });
+      if (res.ok) {
+        for (const f of (await res.json()) as any[]) {
+          const m = String(f?.name || '').match(/^([a-z0-9][a-z0-9-]*)\.mdx?$/);
+          if (m) out.push(m[1]);
+        }
+      }
+    } catch { /* fall back to D1 slugs only */ }
+  }
+  return out;
+}
+
+// Numbers in a text, for checking that a style pass changed no figure.
+function numberTokens(s: string): Set<string> {
+  return new Set((String(s).match(/\$?\d[\d,]*(?:\.\d+)?/g) ?? []).map((t) => t.replace(/,/g, '')));
+}
+
+// Style pass through the humanizer's /v1/humanize. The Sources section is held back
+// so links are untouched. The result is used only if the humanizer reports every
+// protected token kept, the length held, and no number was added or removed.
+// Otherwise the fact-checked text is returned unchanged.
+export async function humanizeChecked(env: Env, body: string, keyword?: string): Promise<{ body: string; used: boolean; note: string }> {
+  if (!env.HUMANIZER_URL || !env.HUMANIZER_API_KEY) return { body, used: false, note: 'humanizer not configured' };
+  const split = body.search(/^##\s*sources\b/im);
+  const main = split === -1 ? body : body.slice(0, split).trimEnd();
+  const tail = split === -1 ? '' : body.slice(split);
+  try {
+    const call = env.HUMANIZER ? env.HUMANIZER.fetch.bind(env.HUMANIZER) : fetch;
+    const res = await call(`${env.HUMANIZER_URL.replace(/\/$/, '')}/v1/humanize`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${env.HUMANIZER_API_KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: main, mode: 'seo', strip_em_dashes: true, ...(keyword ? { keyword: keyword.slice(0, 100) } : {}) }),
+    });
+    if (!res.ok) return { body, used: false, note: `humanize HTTP ${res.status}` };
+    const out: any = await res.json();
+    const text = String(out?.text || '').trim();
+    if (!text) return { body, used: false, note: 'humanize returned nothing' };
+    if (out?.metrics?.preservation && out.metrics.preservation.ok === false) {
+      return { body, used: false, note: `humanize dropped ${JSON.stringify(out.metrics.preservation.missing).slice(0, 200)}` };
+    }
+    if (text.length < main.length * 0.8) return { body, used: false, note: 'humanize shortened the post too much' };
+    const before = numberTokens(main);
+    const after = numberTokens(text);
+    const added = [...after].filter((t) => !before.has(t));
+    const lost = [...before].filter((t) => !after.has(t));
+    if (added.length || lost.length) {
+      return { body, used: false, note: `humanize changed numbers (added ${added.join(' ')} lost ${lost.join(' ')})` };
+    }
+    const p = out?.ai_score?.after?.p_ai;
+    return { body: tail ? `${text}\n\n${tail}` : text, used: true, note: typeof p === 'number' ? `AI score after ${p.toFixed(2)}` : 'humanized' };
+  } catch (e: any) {
+    return { body, used: false, note: `humanize failed: ${e?.message || e}` };
+  }
+}
+
+// Fact check through the humanizer's /v1/retrofit. Throws on failure: nothing
+// unchecked is ever published, and the task stays open to retry next run.
+async function retrofitChecked(env: Env, siteCfg: SiteProject, req: { title: string; body: string; brief: string; draft?: boolean }) {
+  if (!env.HUMANIZER_URL || !env.HUMANIZER_API_KEY) {
+    throw new Error('HUMANIZER_URL / HUMANIZER_API_KEY not set: every post needs the fact-checked retrofit');
+  }
+  const call = env.HUMANIZER ? env.HUMANIZER.fetch.bind(env.HUMANIZER) : fetch;
+  const res = await call(`${env.HUMANIZER_URL.replace(/\/$/, '')}/v1/retrofit`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${env.HUMANIZER_API_KEY}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      title: req.title,
+      body: req.body,
+      brief: req.brief,
+      site: siteCfg.siteName,
+      region: SITE_REGIONS[siteCfg.site],
+      draft: Boolean(req.draft),
+    }),
+  });
+  if (!res.ok) throw new Error(`Retrofit HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
+  const rf: any = await res.json();
+  if (!rf.body || String(rf.body).length < 400) throw new Error('Retrofit returned an empty body');
+  return rf as { title?: string; excerpt?: string; body: string; report?: string };
 }
 
 // Split MDX/MD frontmatter. Returns the title, image and date it declares, and
@@ -226,14 +348,20 @@ export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
         continue;
       }
 
+      // 1. Draft from the brief. 2. Fact check it (brief facts are leads, not facts).
+      // 3. Style pass that may not change a figure. Then publish.
       const rawOutput = await minimax.generateBlogPostFromBrief({
         siteName: siteCfg.siteName,
         taskName: target.name,
         notes: target.notes,
       });
       const parsed = parseBlogOutput(rawOutput);
-      const postTitle = stripYears(parsed.title || target.name) || stripYears(target.name);
-      let slug = slugify(postTitle) || slugify(stripYears(target.name)) || target.gid;
+      const wantedTitle = briefTitle(target.notes);
+      const draftTitle = stripYears(wantedTitle || parsed.title || target.name) || stripYears(target.name);
+      const rf = await retrofitChecked(env, siteCfg, { title: draftTitle, body: parsed.body, brief: target.notes, draft: true });
+      if (rf.report) await commentOnTask(env.ASANA_PAT, target.gid, rf.report);
+      const postTitle = stripYears(wantedTitle || rf.title || draftTitle) || draftTitle;
+      let slug = briefSlug(target.notes) || slugify(postTitle) || slugify(stripYears(target.name)) || target.gid;
       // Guarantee slug uniqueness in D1
       const existingSlug = await env.DB
         .prepare('SELECT id FROM blog_posts WHERE slug = ?')
@@ -241,19 +369,10 @@ export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
         .first();
       if (existingSlug) slug = `${slug}-${String(target.gid).slice(-6)}`;
 
-      const postExcerpt = parsed.excerpt || '';
-      // Second pass: humanize the generated body to strip AI-writing patterns.
-      // Non-fatal — fall back to the raw body if the rewrite call fails.
-      let postBody = parsed.body;
-      try {
-        const humanized = await minimax.humanizeBody(parsed.body, siteCfg.siteName);
-        if (humanized && humanized.trim()) {
-          console.log(`✍️ [${siteCfg.site}] Humanized body (${parsed.body.length} -> ${humanized.length} chars).`);
-          postBody = humanized;
-        }
-      } catch (hErr: any) {
-        console.warn(`⚠️ [${siteCfg.site}] Humanize pass failed, using raw body: ${hErr.message}`);
-      }
+      const postExcerpt = rf.excerpt || parsed.excerpt || '';
+      const styled = await humanizeChecked(env, rf.body, target.name.split(':')[0]);
+      console.log(`✍️ [${siteCfg.site}] Style pass: ${styled.used ? 'used' : 'skipped'} (${styled.note}).`);
+      const postBody = styled.body;
       const publishedAt = new Date().toISOString();
 
       // Featured image from Pexels (optional)
@@ -345,8 +464,9 @@ export async function handleScheduledEvent(event: any, env: Env, ctx: any) {
 // D1 under the SAME slug; when the source was MDX it is flagged replaces_mdx so
 // the site shows it instead of the file. The URL never changes.
 export async function runRewrite(env: Env, minimax: any, siteCfg: SiteProject, target: any) {
-  const slug = rewriteSlugFrom(target.notes, target.name);
-  if (!slug) throw new Error('Rewrite task has no /blog/<slug> URL or slug in its notes or name');
+  const slug = briefSlug(target.notes) || rewriteSlugFrom(target.notes, target.name)
+    || matchSlugByLabel(target.name, await siteSlugs(env, siteCfg.site));
+  if (!slug) throw new Error('Rewrite task has no /blog/<slug> URL or "Slug:" line, and its label matches no single post');
 
   const row: any = await env.DB.prepare('SELECT * FROM blog_posts WHERE slug = ?').bind(slug).first();
   if (row && row.site !== siteCfg.site) {
@@ -386,29 +506,14 @@ export async function runRewrite(env: Env, minimax: any, siteCfg: SiteProject, t
   console.log(`♻️ [${siteCfg.site}] Retrofitting ${slug} (${fromMdx ? 'MDX' : 'D1'} source, ${originalBody.length} chars)`);
   // Fact-checked rewrite. No unverified fallback: if the humanizer is missing or fails,
   // the task stays open and retries next run.
-  if (!env.HUMANIZER_URL || !env.HUMANIZER_API_KEY) {
-    throw new Error('HUMANIZER_URL / HUMANIZER_API_KEY not set: rewrites need the fact-checked retrofit');
-  }
-  const call = env.HUMANIZER ? env.HUMANIZER.fetch.bind(env.HUMANIZER) : fetch;
-  const res = await call(`${env.HUMANIZER_URL.replace(/\/$/, '')}/v1/retrofit`, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${env.HUMANIZER_API_KEY}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      title: originalTitle,
-      body: originalBody,
-      brief: target.notes,
-      site: siteCfg.siteName,
-      region: SITE_REGIONS[siteCfg.site],
-    }),
-  });
-  if (!res.ok) throw new Error(`Retrofit HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`);
-  const rf: any = await res.json();
-  if (!rf.body || String(rf.body).length < 400) throw new Error('Retrofit returned an empty body');
+  const rf = await retrofitChecked(env, siteCfg, { title: originalTitle, body: originalBody, brief: target.notes });
   const parsed = { title: rf.title, excerpt: rf.excerpt, body: rf.body, imagePrompt: '' };
-  const title = stripYears(parsed.title || originalTitle) || stripYears(originalTitle);
-  // No GLM humanize pass here: it could reintroduce facts the retrofit removed.
-  const body = parsed.body;
+  const title = stripYears(briefTitle(target.notes) || parsed.title || originalTitle) || stripYears(originalTitle);
   if (rf.report) await commentOnTask(env.ASANA_PAT, target.gid, rf.report);
+  // Style pass through /v1/humanize. It is dropped if it would change any figure.
+  const styled = await humanizeChecked(env, parsed.body, title);
+  console.log(`✍️ [${siteCfg.site}] Style pass: ${styled.used ? 'used' : 'skipped'} (${styled.note}).`);
+  const body = styled.body;
 
   let imageUrl = originalImage;
   let credit = '';
