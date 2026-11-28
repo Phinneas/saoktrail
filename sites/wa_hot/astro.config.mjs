@@ -32,7 +32,7 @@ export default defineConfig({
     // Directory audit Nov 2026: duplicates, mislabels and Idaho springs removed
     "/springs/hot-springs-washington-town": { status: 301, destination: "/directory" },
     "/springs/mount-baker-hot-springs": { status: 301, destination: "/springs/baker-hot-springs" },
-    "/springs/skamania-hot-springs": { status: 301, destination: "/directory" },
+    "/springs/skamania-hot-springs": { status: 301, destination: "/blog/bonneville-vs-carson-vs-tenzen" },
     "/springs/saint-martins-hot-springs": { status: 301, destination: "/springs/wind-river-hot-springs" },
     "/springs/givens-hot-springs": { status: 301, destination: "/directory" },
     "/springs/mundo-hot-springs": { status: 301, destination: "/directory" },

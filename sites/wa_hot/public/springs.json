@@ -9,7 +9,7 @@
     "access_type": "Hike-in",
     "season": "Year-round",
     "description": "Natural hot springs near Stevens Pass in the Central Cascades.",
-    "has_post": false,
+    "has_post": true,
     "state": "WA",
     "osm": {
       "osm_id": 7788171896,
@@ -188,7 +188,8 @@
     "reservation": "yes",
     "last_verified": "2026-11-25",
     "status_source": "https://www.scenichotsprings.com/visitor-info",
-    "location_source": "OpenStreetMap, not field-verified"
+    "location_source": "OpenStreetMap, not field-verified",
+    "blog_slug": "scenic-hot-springs"
   },
   {
     "id": "2",
@@ -199,7 +200,7 @@
     "temp_f": 78,
     "fee": 19,
     "access_type": "Drive-up",
-    "season": "Late March to mid-October",
+    "season": "March 20 to October 31",
     "hours": "9 AM - 8 PM",
     "clothing": "Required",
     "parking": "Lot fills by 11 AM weekends",
@@ -207,7 +208,7 @@
     "road_condition": "Paved, narrow last 2 miles",
     "description": "Three mineral soaking pools in Olympic National Park surrounded by old-growth forest.",
     "best_time": "Weekday mornings before 10 AM",
-    "insider_tips": "The third pool from the entrance is the warmest and least crowded.",
+    "insider_tips": "Pool access is sold in 90-minute sessions at the main lodge. Cabin rates include the pool fee.",
     "nearby_gems": "Sol Duc Falls (1.6 miles), Appleton Pass trail",
     "last_verified": "2026-11-25",
     "alerts": "No current alerts - all pools open",
@@ -524,7 +525,9 @@
     "fee_note": "$19 adults, $15 ages 4 to 12 and seniors, plus park entry",
     "reservation": "no",
     "status_source": "https://www.recreation.gov/camping/campgrounds/251906",
-    "location_source": "OpenStreetMap, not field-verified"
+    "location_source": "OpenStreetMap, not field-verified",
+    "has_post": true,
+    "blog_slug": "sol-duc-hot-springs"
   },
   {
     "id": "5",
@@ -607,8 +610,8 @@
     "clothing": "Clothing optional",
     "description": "Natural hot springs deep in the Cascades near North Bend, accessible via hike or mountain bike.",
     "best_time": "Weekday visits for solitude",
-    "insider_tips": "Reservations required via goldmyer.org. The hike is 12 miles round trip.",
-    "has_post": false,
+    "insider_tips": "Permit by phone or monthly lottery at goldmyer.org. The hike or bike is 5 miles each way from the Dingford Creek Trailhead.",
+    "has_post": true,
     "state": "WA",
     "_provenance": {},
     "status": "reservation only",
@@ -617,7 +620,8 @@
     "fee_note": "$30 adults, $25 seniors, children free",
     "reservation": "yes",
     "last_verified": "2026-11-25",
-    "status_source": "http://www.goldmyer.org/visiting.php"
+    "status_source": "http://www.goldmyer.org/visiting.php",
+    "blog_slug": "goldmyer-hot-springs"
   },
   {
     "id": "7",
@@ -630,7 +634,7 @@
     "access_type": "Hike-in",
     "season": "Year-round",
     "description": "Natural hot springs near Mount Baker in the Mt. Baker-Snoqualmie National Forest.",
-    "has_post": false,
+    "has_post": true,
     "state": "WA",
     "osm": {
       "osm_id": 1931527696,
@@ -764,7 +768,8 @@
     "reservation": "no",
     "last_verified": "2026-11-25",
     "status_source": "https://www.wta.org/go-hiking/hikes/baker-hot-springs",
-    "location_source": "OpenStreetMap, not field-verified"
+    "location_source": "OpenStreetMap, not field-verified",
+    "blog_slug": "baker-hot-springs-washington-state"
   },
   {
     "id": "8",
@@ -778,7 +783,7 @@
     "description": "Undeveloped hot springs in the Elwha Valley of Olympic National Park. The road is closed to cars at Madison Falls, so the trip is about 9 miles by foot or bike plus the Boulder Creek Trail.",
     "best_time": "Late morning on weekdays",
     "insider_tips": "Water temperature varies with river flow. Check with ranger station for conditions.",
-    "has_post": false,
+    "has_post": true,
     "state": "WA",
     "elevation_ft": 2000.0,
     "huc_cd": "17110020",
@@ -800,7 +805,8 @@
     "fee_note": "Olympic National Park entry fee",
     "reservation": "no",
     "last_verified": "2026-11-25",
-    "status_source": "https://www.nps.gov/olym/hot-springs.htm"
+    "status_source": "https://www.nps.gov/olym/hot-springs.htm",
+    "blog_slug": "olympic-hot-springs-guide"
   },
   {
     "id": "9",
@@ -1029,12 +1035,12 @@
     "lat": 45.65622805,
     "lng": -121.958693,
     "temp_f": 100,
-    "access_type": "Hike-in",
+    "access_type": "Drive-up",
     "season": "Year-round",
     "clothing": "Clothing optional",
     "state": "WA",
     "description": "Resort in North Bonneville in the Columbia River Gorge with mineral spring-fed pools. Reopened as Bonneville Hot Springs Resort and Spa after closing in 2016.",
-    "has_post": false,
+    "has_post": true,
     "slug": "moffetts-hot-springs",
     "elevation_ft": 75.0,
     "huc_cd": "17080001",
@@ -1053,10 +1059,11 @@
     "status": "open",
     "status_note": "Operates as Bonneville Hot Springs Resort and Spa, reopened under new ownership.",
     "water_source": "geothermal",
-    "fee_note": "Day passes sold. Price not posted",
+    "fee_note": "1- or 2-hour passes, online or walk-in. Price not posted",
     "reservation": "no",
     "last_verified": "2026-11-25",
-    "status_source": "https://www.bonnevilleresorts.com/faq"
+    "status_source": "https://www.bonnevilleresorts.com/faq",
+    "blog_slug": "bonneville-vs-carson-vs-tenzen"
   },
   {
     "id": "22",
